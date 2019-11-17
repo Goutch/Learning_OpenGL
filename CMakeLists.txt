@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.14)
-project(Engine)
+project(OGL_Engine)
 
 set(CMAKE_CXX_STANDARD 14)
 
@@ -21,7 +21,7 @@ message("Including GLM")
 include_directories(Dependencies/GLM)
 add_subdirectory(Dependencies/GLM)
 
-add_executable(Engine
+add_executable(OGL_Engine
         src/engine/core/Game.h
         src/engine/graphics/Renderer.h
         src/engine/graphics/VAO.cpp
