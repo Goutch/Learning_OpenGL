@@ -1,17 +1,23 @@
 #define GLEW_STATIC
+
 #include "ShaderProgram.h"
 #include <GL/glew.h>
 #include <fstream>
 #include <iostream>
 #include <sstream>
-ShaderProgram::ShaderProgram(const std::string& vertexShader, const std::string& fragmentShader)
-{
+
+
+ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
 
     program_id = glCreateProgram();
-    std::cout << "Compiling shader..."<<vertexShader << std::endl;
-    unsigned int vs = compileShader(GL_VERTEX_SHADER, getSource(vertexShader));
-    std::cout << "Compiling shader..." <<fragmentShader<< std::endl;
-    unsigned int fs = compileShader(GL_FRAGMENT_SHADER, getSource(fragmentShader));
+
+    std::cout << "Compiling vertex shader..." << vertexShader << std::endl;
+    std::string sourcevs = getSource(vertexShader);
+    unsigned int vs = compileShader(GL_VERTEX_SHADER, sourcevs);
+
+    std::cout << "Compiling fragment shader..." << fragmentShader << std::endl;
+    std::string sourcefs = getSource(fragmentShader);
+    unsigned int fs = compileShader(GL_FRAGMENT_SHADER, sourcefs);
 
     glAttachShader(program_id, vs);
     glAttachShader(program_id, fs);
@@ -21,61 +27,62 @@ ShaderProgram::ShaderProgram(const std::string& vertexShader, const std::string&
     glDeleteShader(vs);
     glDeleteShader(fs);
 
+    std::cout << "Shader compilation complete!" << std::endl;
 }
 
-void ShaderProgram::bind()
-{
-	glUseProgram(program_id);
+ShaderProgram::~ShaderProgram() {
+    glDeleteShader(program_id);
 }
-void ShaderProgram::unBind()
-{
-	glUseProgram(0);
+void ShaderProgram::bind() {
+    glUseProgram(program_id);
 }
-unsigned int ShaderProgram::compileShader(unsigned int type, const std::string& source)
-{
 
+void ShaderProgram::unbind() {
+    glUseProgram(0);
+}
+
+unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
+    std::cout << source << std::endl;
     unsigned int id = glCreateShader(type);
-    const char* src = source.c_str();
-    glShaderSource(id,1,&src,nullptr);
+    const char *src = source.c_str();
+    glShaderSource(id, 1, &src, nullptr);
     glCompileShader(id);
     int result;
     glGetShaderiv(id, GL_COMPILE_STATUS, &result);
-    if(result==GL_FALSE)
-    {
-    	int length;
-    	glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
-    	char* message=(char*)alloca(length*sizeof(char));
-    	glGetShaderInfoLog(id, length, &length, message);
-    	std::cout << "FAILED: Compile" << (type==GL_VERTEX_SHADER?"vertex shader":"frag shader")<<std::endl;
-    	std::cout << message << std::endl;
+    if (result == GL_FALSE) {
+        int length;
+        glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
+        char *message = (char *) alloca(length * sizeof(char));
+        glGetShaderInfoLog(id, length, &length, message);
+        std::cerr << "FAILED:" << std::endl;
+        std::cerr << message << std::endl;
     }
-    else
-    {
-    	std::cout << "Shader compilation complete!" << std::endl;
-    }
-
     return id;
 }
-std::string ShaderProgram::getSource(const std::string& path)
-{
-	try
-	{
-		std::ifstream file;
-		file.open(path);
-		std::stringstream strStream;
-		strStream << file.rdbuf(); 
-		return strStream.str(); 
-	}
-	catch (std::ios_base::failure& e) {
-        std::cerr << "FAILED:Read " << path<< std::endl;
-		std::cerr << e.what() << std::endl;
-	}
-	return "";
+
+std::string ShaderProgram::getSource(const std::string &path) {
+    try {
+        std::ifstream file;
+        file.open(path);
+        if(file.is_open())
+        {
+            std::stringstream strStream;
+            strStream << file.rdbuf();
+            std::string str = strStream.str();
+            file.close();
+            return str;
+        } else{
+            std::cerr << "FAILED:Unable to find file:" <<path << std::endl;
+        }
+
+    }
+    catch (std::ios_base::failure &e) {
+        std::cerr << "FAILED:Read " << path << std::endl;
+        std::cerr << e.what() << std::endl;
+    }
+    return "";
 }
-ShaderProgram::~ShaderProgram()
-{
-	glDeleteShader(program_id);
-}
+
 
 
 

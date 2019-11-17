@@ -4,7 +4,7 @@ class ShaderProgram
 {
 public:
 	void bind();
-	void unBind();
+	void unbind();
 	ShaderProgram(const std::string& vertexShader, const std::string& fragmentShader);
 	~ShaderProgram();
 private:
