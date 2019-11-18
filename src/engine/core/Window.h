@@ -11,8 +11,12 @@ public:
     void close();
     bool shouldClose();
     void swapBuffer();
-    void pollEvents();
+    void getInputs();
+    bool isKeyDown(unsigned int keycode);
+    void getMousePosition(double &x, double &y);
+    void showCursor(bool showCursor);
 private:
     GLFWwindow* window;
     int sizeX=600, sizeY=400;
+
 };

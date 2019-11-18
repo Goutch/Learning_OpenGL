@@ -28,12 +28,13 @@ add_executable(OGL_Engine
         src/engine/graphics/VAO.h
         src/engine/graphics/VBO.cpp
         src/engine/graphics/VBO.h
-        src/engine/shaders/ShaderProgram.cpp
-        src/engine/shaders/ShaderProgram.h
-        src/engine/Window.cpp
-        src/engine/Window.h
+        src/engine/graphics/shaders/ShaderProgram.cpp
+        src/engine/graphics/shaders/ShaderProgram.h
+        src/engine/core/Window.cpp
+        src/engine/core/Window.h
         src/engine/graphics/DefaultRenderer.h
         src/engine/graphics/DefaultRenderer.cpp
-        src/main.cpp )
+        src/Debug.h
+        src/main.cpp src/engine/core/Engine.cpp src/engine/core/Engine.h src/engine/test/Test.cpp src/engine/test/Test.h)
 
 target_link_libraries(OGL_Engine  glfw3 libglew32.a  ${OPENGL_LIBRARIES})

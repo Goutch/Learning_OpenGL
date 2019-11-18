@@ -11,11 +11,11 @@ ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string 
 
     program_id = glCreateProgram();
 
-    std::cout << "Compiling vertex shader..." << vertexShader << std::endl;
+    std::cout << "Compiling vertex shader:" << vertexShader << std::endl;
     std::string sourcevs = getSource(vertexShader);
     unsigned int vs = compileShader(GL_VERTEX_SHADER, sourcevs);
 
-    std::cout << "Compiling fragment shader..." << fragmentShader << std::endl;
+    std::cout << "Compiling fragment shader:" << fragmentShader << std::endl;
     std::string sourcefs = getSource(fragmentShader);
     unsigned int fs = compileShader(GL_FRAGMENT_SHADER, sourcefs);
 
@@ -26,8 +26,6 @@ ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string 
 
     glDeleteShader(vs);
     glDeleteShader(fs);
-
-    std::cout << "Shader compilation complete!" << std::endl;
 }
 
 ShaderProgram::~ShaderProgram() {
