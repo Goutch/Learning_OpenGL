@@ -25,10 +25,10 @@ int main(void)
 			0.5f,-0.5f
 		};
         float colors[12] = {
-                1,0,0,
-                0,1,0,
                 0,0,1,
-                1,1,1
+                0,1,1,
+                1,1,0,
+                1,0,0
         };
 		VAO* vao=new VAO();
 		vao->put(0,2,vertices,8);
