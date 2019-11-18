@@ -10,7 +10,7 @@
 
 int main(void) {
     Window window = Window(900, 600);
-    DefaultRenderer renderer = DefaultRenderer();
+    Renderer* renderer =new DefaultRenderer();
     if (window.open()) {
         glewInit() == GLEW_OK ? std::cout << "Initialized GLEW" << std::endl : std::cerr << "FAILED:GLEW INITIALIZATION"
                                                                                          << std::endl;
@@ -41,11 +41,11 @@ int main(void) {
 
         while (!window.shouldClose()) {
             for (auto &vao : vaos) {
-                renderer.addToRenderQueue(vao);
+                renderer->addToRenderQueue(vao);
             }
             /* Render here */
             shader.bind();
-            renderer.render();
+            renderer->render();
             shader.unbind();
             /* Swap front and back buffers */
             window.swapBuffer();
