@@ -3,7 +3,7 @@
 #include <iostream>
 #include "engine/Window.h"
 #include "engine/shaders/ShaderProgram.h"
-
+#include "engine/graphics/VAO.h"
 int main(void)
 {
 	Window* window = new Window(900, 600);
@@ -30,20 +30,17 @@ int main(void)
                 0,0,1,
                 1,1,1
         };
-		unsigned int buffer;
-        glGenBuffers(1, &buffer);
-        glBindBuffer(GL_ARRAY_BUFFER, buffer);
-        glBufferData(GL_ARRAY_BUFFER, 8 * sizeof(float), vertices, GL_STATIC_DRAW);
-
-        glEnableVertexAttribArray(0);
-        glVertexAttribPointer(0, 2, GL_FLOAT, GL_FALSE, sizeof(float) * 2, nullptr);
-		
+		VAO* vao=new VAO();
+		vao->put(0,2,vertices,8);
+        vao->put(1,3,colors,12);
 		while (!window->shouldClose())
 		{
 			/* Render here */
 			glClear(GL_COLOR_BUFFER_BIT);
             shader->bind();
+            vao->bind();
 			glDrawArrays(GL_QUADS, 0, 4);
+			vao->unbind();
             shader->unbind();
 			/* Swap front and back buffers */
 			window->swapBuffer();
@@ -51,7 +48,8 @@ int main(void)
 			/* Poll for and process events */
 			window->pollEvents();
 		}
-        shader->unbind();
+
+		//delete vao;
 		delete shader;
 	}
 	delete window;
