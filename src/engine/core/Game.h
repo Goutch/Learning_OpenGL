@@ -1,5 +1,5 @@
 #pragma once
-#include "../graphics/Renderer.h"
+#include "Renderer.h"
 
 class Game
 {

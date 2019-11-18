@@ -42,7 +42,6 @@ void ShaderProgram::unbind() {
 }
 
 unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
-    std::cout << source << std::endl;
     unsigned int id = glCreateShader(type);
     const char *src = source.c_str();
     glShaderSource(id, 1, &src, nullptr);

@@ -23,7 +23,7 @@ add_subdirectory(Dependencies/GLM)
 
 add_executable(OGL_Engine
         src/engine/core/Game.h
-        src/engine/graphics/Renderer.h
+        src/engine/core/Renderer.h
         src/engine/graphics/VAO.cpp
         src/engine/graphics/VAO.h
         src/engine/graphics/VBO.cpp
@@ -32,6 +32,8 @@ add_executable(OGL_Engine
         src/engine/shaders/ShaderProgram.h
         src/engine/Window.cpp
         src/engine/Window.h
-        src/main.cpp)
+        src/engine/graphics/DefaultRenderer.h
+        src/engine/graphics/DefaultRenderer.cpp
+        src/main.cpp )
 
 target_link_libraries(OGL_Engine  glfw3 libglew32.a  ${OPENGL_LIBRARIES})

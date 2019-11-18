@@ -13,7 +13,6 @@ VBO::~VBO() {
 }
 void VBO::bind() {
     glEnableVertexAttribArray(position);
-
 }
 void VBO::unbind() {
     glDisableVertexAttribArray(position);
