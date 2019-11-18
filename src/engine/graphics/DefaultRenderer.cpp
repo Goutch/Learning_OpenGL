@@ -6,11 +6,12 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 #include "DefaultRenderer.h"
-
+#include <iostream>
 DefaultRenderer::DefaultRenderer() {
 
 }
-DefaultRenderer::~DefaultRenderer() {}
+DefaultRenderer::~DefaultRenderer() {
+}
 
 void DefaultRenderer::render() {
     glClear(GL_COLOR_BUFFER_BIT);

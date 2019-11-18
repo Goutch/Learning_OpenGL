@@ -4,8 +4,9 @@
 
 class Renderer
 {
-public:
 
+public:
+    virtual ~Renderer(){};
 	virtual void addToRenderQueue(VAO* objectVAO)=0;
 	virtual void render()=0;
 };

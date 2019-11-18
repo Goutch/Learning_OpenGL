@@ -57,6 +57,7 @@ int main(void) {
             delete vaos[i];
         }
     }
+    delete renderer;
     return 0;
 
 }
