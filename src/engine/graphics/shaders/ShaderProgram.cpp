@@ -49,7 +49,7 @@ unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &
     if (result == GL_FALSE) {
         int length;
         glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
-        char *message = (char *) alloca(length * sizeof(char));
+        char *message = (char *) malloc(length * sizeof(char));
         glGetShaderInfoLog(id, length, &length, message);
         std::cerr << "FAILED:" << std::endl;
         std::cerr << message << std::endl;

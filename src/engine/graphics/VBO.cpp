@@ -1,6 +1,6 @@
 #include "VBO.h"
 #define GLEW_STATIC
-#include <glew.h>
+#include <GL/glew.h>
 VBO::VBO(unsigned int atribute_position, unsigned int atribute_size, float* data, unsigned int data_length) {
 
     glGenBuffers(1, &vbo_id);
