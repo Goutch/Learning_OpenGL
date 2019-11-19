@@ -29,7 +29,7 @@ ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string 
 }
 
 ShaderProgram::~ShaderProgram() {
-    glDeleteShader(program_id);
+    glDeleteProgram(program_id);
 }
 void ShaderProgram::bind() {
     glUseProgram(program_id);
