@@ -22,6 +22,9 @@ include_directories(Dependencies/GLM)
 add_subdirectory(Dependencies/GLM)
 
 add_executable(OGL_Engine
+        src/main.cpp
+        src/engine/graphics/Mesh.h
+        src/engine/graphics/Mesh.cpp
         src/engine/core/Game.h
         src/engine/core/Renderer.h
         src/engine/graphics/VAO.cpp
@@ -35,6 +38,6 @@ add_executable(OGL_Engine
         src/engine/graphics/DefaultRenderer.h
         src/engine/graphics/DefaultRenderer.cpp
         src/Debug.h
-        src/main.cpp src/engine/core/Engine.cpp src/engine/core/Engine.h src/engine/test/Test.cpp src/engine/test/Test.h)
+         src/engine/core/Engine.cpp src/engine/core/Engine.h src/engine/test/Test.cpp src/engine/test/Test.h)
 
 target_link_libraries(OGL_Engine  glfw3 libglew32.a  ${OPENGL_LIBRARIES})

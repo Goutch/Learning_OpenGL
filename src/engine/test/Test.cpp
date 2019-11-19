@@ -3,28 +3,31 @@
 //
 
 #include "Test.h"
+#include <vector>
+
 Test::Test()
-: Game()
-{
+        : Game() {
 
 }
+
 void Test::init() {
-    for (int i = 0; i < vaos.size(); ++i) {
-        float vertices[8] = {
-                ((float) i * (0.5f / vaos.size())), -0.5f,
-                ((float) i * (0.5f / vaos.size())), 0.5f,
-                (((float) i * (0.5f / vaos.size())) + (1.0f / vaos.size())), 0.5f,
-                (((float) i * (0.5f / vaos.size())) + (1.0f / vaos.size())), -0.5f
-        };
+
+
+    for (int i = 0; i < 1; ++i) {
+        auto vert = std::vector<float>();
+        vert.push_back(-0.5);vert.push_back(-0.5);vert.push_back(0);
+        vert.push_back(-0.5);vert.push_back(0.5f);vert.push_back(0);
+        vert.push_back(0.5f);vert.push_back(0.5f);vert.push_back(0);
+        vert.push_back(0.5f);vert.push_back(-0.5);vert.push_back(0);
+
         float colors[12] = {
                 0, 0, 1,
                 0, 1, 1,
                 1, 1, 0,
                 1, 0, 0
         };
-        vaos.at(i) = new VAO();
-        vaos.at(i)->put(0, 2, vertices, 8);
-        vaos.at(i)->put(1, 3, colors, 12);
+        objects.push_back(new Mesh());
+        objects[i]->vertices(vert.data(), vert.size()).colors(colors, 12);
     }
 }
 
@@ -33,13 +36,14 @@ void Test::update(Window &window) {
 }
 
 void Test::render(Renderer &renderer) {
-    for (auto &vao : vaos) {
-        renderer.addToRenderQueue(vao);
+    for (auto &mesh : objects) {
+        renderer.addToRenderQueue(mesh);
     }
 }
 
 Test::~Test() {
-    for (int i = 0; i < vaos.size(); ++i) {
-        delete vaos[i];
+    for (auto &mesh : objects) {
+        delete mesh;
     }
+    objects.clear();
 }

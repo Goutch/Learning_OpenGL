@@ -1,10 +1,12 @@
 #pragma once
 
 #include <engine/core/Game.h>
+#include <vector>
+#include <engine/graphics/Mesh.h>
 
 class Test :  public Game{
 private:
-    std::array<VAO *, 10> vaos;
+    std::vector<Mesh *> objects;
 public:
     Test();
     ~Test();

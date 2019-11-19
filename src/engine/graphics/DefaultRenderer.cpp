@@ -17,18 +17,18 @@ DefaultRenderer::~DefaultRenderer() {
 void DefaultRenderer::render() {
     shader->bind();
     glClear(GL_COLOR_BUFFER_BIT);
-    for(auto vao:objects)
+    for(auto mesh:objects)
     {
-        vao->bind();
-        glDrawArrays(GL_QUADS, 0, 4);
-        vao->unbind();
+        mesh->bind();
+        glDrawArrays(GL_QUADS, 0, mesh->vertexCount());
+        mesh->unbind();
     }
     shader->unbind();
     objects.clear();
 }
 
-void DefaultRenderer::addToRenderQueue(VAO* objectVAO) {
-    objects.push_back(objectVAO);
+void DefaultRenderer::addToRenderQueue(Mesh* mesh) {
+    objects.push_back(mesh);
 }
 
 

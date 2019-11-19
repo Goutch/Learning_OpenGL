@@ -32,7 +32,12 @@ void VAO::unbind()
 
 void VAO::put(unsigned int atribute_position, unsigned int atribute_size, float* data, unsigned int data_length) {
     glBindVertexArray(vao_id);
-    vbos.insert(std::pair<unsigned int,VBO*>(atribute_position,new VBO(atribute_position,atribute_size,data,data_length)));
+    if(vbos.find(atribute_position)==vbos.end())
+        vbos.insert(std::pair<unsigned int,VBO*>(atribute_position,new VBO(atribute_position,atribute_size,data,data_length)));
+    else{
+        delete vbos.at(atribute_position);
+        vbos.at(atribute_position)=new VBO(atribute_position,atribute_size, data,data_length);
+    }
     glBindVertexArray(0);
 }
 
