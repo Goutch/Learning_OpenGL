@@ -51,6 +51,7 @@ unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &
         glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
         char *message = (char *) malloc(length * sizeof(char));
         glGetShaderInfoLog(id, length, &length, message);
+        free(message);
         std::cerr << "FAILED:" << std::endl;
         std::cerr << message << std::endl;
     }
