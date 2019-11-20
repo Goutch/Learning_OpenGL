@@ -59,10 +59,10 @@ void ShaderProgram::loadVectorUniform(unsigned int location,const glm::vec4& v) 
 }
 
 void ShaderProgram::loadMat2Uniform(unsigned int location,const glm::mat2& m) {
-    glUniformMatrix2fv(location,m.length(),false,glm::value_ptr(m));
+    glUniformMatrix2fv(location,1,false,glm::value_ptr(m));
 }
 void ShaderProgram::loadMat3Uniform(unsigned int location,const glm::mat3& m) {
-    glUniformMatrix3fv(location,m.length(),false,glm::value_ptr(m));
+    glUniformMatrix3fv(location,1,false,glm::value_ptr(m));
 }
 void ShaderProgram::loadMat4Uniform(unsigned int location,const glm::mat4 &m) {
     const float* values=glm::value_ptr(m);

@@ -5,7 +5,7 @@
 class Transform {
     glm::mat4 transform_mattrix;
 public:
-    glm::mat4 getTransformMattrix();
+    glm::mat4 getTransformMatrix();
     void translate(glm::vec3 pos);
     Transform();
 };
