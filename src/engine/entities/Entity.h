@@ -2,9 +2,16 @@
 
 
 
-#include "core/Window.h"
-#include "core/Renderer.h"
+
+#include "Transform.h"
+class Renderer;
+class ShaderProgram;
+class Transform;
+class Mesh;
+class Window;
 class Entity{
+protected:
+    Transform transform;
 public:
     virtual void render(Renderer& renderer)=0;
     virtual void update(float delta,Window& window)=0;

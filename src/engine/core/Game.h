@@ -1,7 +1,7 @@
 #pragma once
 
-#include "Window.h"
-#include "Renderer.h"
+class Window;
+class Renderer;
 
 class Game
 {

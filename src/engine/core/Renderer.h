@@ -1,14 +1,13 @@
 #pragma once
 
-#include "entities/Transform.h"
-#include "graphics/shaders/ShaderProgram.h"
-#include "graphics/Mesh.h"
-#include "entities/Entity.h"
+class Entity;
+#include <list>
 class Renderer
 {
-
+    std::list<Entity*> entities;
 public:
-    virtual ~Renderer(){};
-	virtual void addToRenderQueue(Entity& entity)=0;
-	virtual void render()=0;
+    Renderer();
+    ~Renderer();
+	virtual void addToRenderQueue(Entity* entity);
+	virtual void render();
 };

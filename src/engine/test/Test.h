@@ -1,17 +1,24 @@
 #pragma once
+
 #include <vector>
 #include "core/Game.h"
-#include "core/Window.h"
-#include "entities/Entity.h"
+#include "graphics/shaders/ShaderProgram.h"
+#include "graphics/Mesh.h"
 
-class Test :  public Game{
+class Window;
+
+class Entity;
+
+class Test : public Game {
 private:
     std::vector<Entity *> entities;
-    Mesh quad;
-    ShaderProgram shader=ShaderProgram("../src/engine/graphics/shaders/shadersSources/BaseVertex.glsl", "../src/engine/graphics/shaders/shadersSources/BaseFragment.glsl");
+    Mesh* quad;
+    ShaderProgram* shader;
 public:
     Test();
+
     ~Test();
+
     void init() override;
 
     void update(Window &window) override;

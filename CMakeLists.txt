@@ -33,12 +33,8 @@ add_executable(OGL_Engine
         src/engine/entities/MeshRenderer.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        src/engine/graphics/shaders/BaseShader.cpp
-        src/engine/graphics/shaders/BaseShader.h
         src/engine/graphics/shaders/ShaderProgram.cpp
         src/engine/graphics/shaders/ShaderProgram.h
-        src/engine/graphics/DefaultRenderer.cpp
-        src/engine/graphics/DefaultRenderer.h
         src/engine/graphics/Mesh.cpp
         src/engine/graphics/Mesh.h
         src/engine/graphics/VAO.cpp
@@ -48,5 +44,5 @@ add_executable(OGL_Engine
         src/engine/test/Test.cpp
         src/engine/test/Test.h
         src/Debug.h
-        src/main.cpp)
+        src/main.cpp src/engine/core/Renderer.cpp)
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})
