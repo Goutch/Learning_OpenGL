@@ -5,7 +5,7 @@
 #include <fstream>
 #include <iostream>
 #include <sstream>
-
+#include <glm/gtc/type_ptr.hpp>
 
 ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
 
@@ -39,6 +39,33 @@ void ShaderProgram::unbind() {
     glUseProgram(0);
 }
 
+void ShaderProgram::loadIntUniform(unsigned int location, int i) {
+    glUniform1i(location,i);
+}
+
+void ShaderProgram::loadFloatUniform(unsigned int location, float f) {
+    glUniform1f(location,f);
+}
+
+void ShaderProgram::loadVectorUniform(unsigned int location,glm::vec2& v) {
+    glUniform2f(location,v.x,v.y);
+}
+void ShaderProgram::loadVectorUniform(unsigned int location,glm::vec3& v) {
+    glUniform3f(location,v.x,v.y,v.z);
+}
+void ShaderProgram::loadVectorUniform(unsigned int location,glm::vec4& v) {
+    glUniform4f(location,v.x,v.y,v.z,v.w);
+}
+
+void ShaderProgram::loadMattrixUniform(unsigned int location,glm::mat2x2& m) {
+    glUniformMatrix2fv(location,m.length(),false,glm::value_ptr(m));
+}
+void ShaderProgram::loadMattrixUniform(unsigned int location,glm::mat3x3& m) {
+    glUniformMatrix3fv(location,m.length(),false,glm::value_ptr(m));
+}
+void ShaderProgram::loadMattrixUniform(unsigned int location,glm::mat4x4& m) {
+    glUniformMatrix4fv(location,m.length(),false,glm::value_ptr(m));
+}
 unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
     unsigned int id = glCreateShader(type);
     const char *src = source.c_str();
@@ -80,6 +107,11 @@ std::string ShaderProgram::getSource(const std::string &path) {
     }
     return "";
 }
+
+
+
+
+
 
 
 

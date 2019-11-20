@@ -17,38 +17,36 @@ message("Including GLFW")
 include_directories("Dependencies/GLFW/include")
 message("Linking GLFW")
 link_directories("Dependencies/GLFW/lib-mingw")
+
 message("Including GLM")
 include_directories(Dependencies/GLM)
 add_subdirectory(Dependencies/GLM)
 
 
 add_executable(OGL_Engine
-        src/main.cpp
-        src/engine/graphics/Mesh.h
-        src/engine/graphics/Mesh.cpp
-        src/engine/core/Game.h
-        src/engine/core/Renderer.h
-        src/engine/graphics/VAO.cpp
-        src/engine/graphics/VAO.h
-        src/engine/graphics/VBO.cpp
-        src/engine/graphics/VBO.h
-        src/engine/graphics/shaders/ShaderProgram.cpp
-        src/engine/graphics/shaders/ShaderProgram.h
-        src/engine/core/Window.cpp
-        src/engine/core/Window.h
-        src/engine/graphics/DefaultRenderer.h
-        src/engine/graphics/DefaultRenderer.cpp
-        src/Debug.h
         src/engine/core/Engine.cpp
         src/engine/core/Engine.h
-        src/engine/test/Test.cpp
-        src/engine/test/Test.h
+        src/engine/core/Game.h
+        src/engine/core/Window.cpp
+        src/engine/core/Window.h
         src/engine/entities/MeshRenderer.cpp
         src/engine/entities/MeshRenderer.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        src/engine/entities/Entity.h)
-
-
-
+        src/engine/graphics/shaders/BaseShader.cpp
+        src/engine/graphics/shaders/BaseShader.h
+        src/engine/graphics/shaders/ShaderProgram.cpp
+        src/engine/graphics/shaders/ShaderProgram.h
+        src/engine/graphics/DefaultRenderer.cpp
+        src/engine/graphics/DefaultRenderer.h
+        src/engine/graphics/Mesh.cpp
+        src/engine/graphics/Mesh.h
+        src/engine/graphics/VAO.cpp
+        src/engine/graphics/VAO.h
+        src/engine/graphics/VBO.cpp
+        src/engine/graphics/VBO.h
+        src/engine/test/Test.cpp
+        src/engine/test/Test.h
+        src/Debug.h
+        src/main.cpp)
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})
