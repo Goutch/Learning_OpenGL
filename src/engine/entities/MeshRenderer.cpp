@@ -2,11 +2,11 @@
 // Created by User on 19-Nov.-2019.
 //
 
-#include "graphics/Mesh.h"
-#include "graphics/shaders/ShaderProgram.h"
+
+
 #include "MeshRenderer.h"
 #include "core/Renderer.h"
-MeshRenderer::MeshRenderer(Mesh &mesh,ShaderProgram& shader, glm::vec3 pos) {
+MeshRenderer::MeshRenderer(Mesh &mesh,BaseShader& shader, glm::vec3 pos) {
     transform.translate(pos);
     this->mesh=&mesh;
     this->shader=&shader;
@@ -20,7 +20,7 @@ void MeshRenderer::update(float delta, Window &window) {
 
 }
 
-ShaderProgram &MeshRenderer::getShader() {
+BaseShader &MeshRenderer::getShader() {
     return *shader;
 }
 

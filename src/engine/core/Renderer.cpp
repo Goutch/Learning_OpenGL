@@ -4,7 +4,8 @@
 #include "Renderer.h"
 #include "entities/Entity.h"
 #include "graphics/Mesh.h"
-#include "graphics/shaders/ShaderProgram.h"
+#include "graphics/shaders/BaseShader.h"
+
 
 void Renderer::render() {
 
@@ -12,6 +13,7 @@ void Renderer::render() {
     for(auto &e:entities)
     {
         e->getShader().bind();
+        e->getShader().loadEntityUniforms(*e);
         e->getMesh().bind();
         glDrawArrays(GL_QUADS, 0, e->getMesh().vertexCount());
         e->getMesh().unbind();

@@ -3,12 +3,12 @@
 #include "Entity.h"
 
 class MeshRenderer :public Entity{
-    ShaderProgram* shader;
+    BaseShader* shader;
     Mesh* mesh;
 public:
-    MeshRenderer(Mesh& mesh,ShaderProgram& shader,glm::vec3 pos);
+    MeshRenderer(Mesh& mesh,BaseShader& shader,glm::vec3 pos);
 
-    ShaderProgram &getShader() override;
+    BaseShader &getShader() override;
 
     Transform &getTranform() override;
 

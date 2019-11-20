@@ -1,7 +1,7 @@
 #pragma once
 
 #include <map>
-#include "VBO.h"
+class VBO;
 
 class VAO
 {

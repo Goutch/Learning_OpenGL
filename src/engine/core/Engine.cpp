@@ -3,6 +3,7 @@
 //
 #define GLEW_STATIC
 #include <GL/glew.h>
+#include "Game.h"
 #include <iostream>
 #include "Window.h"
 #include "Engine.h"
@@ -20,6 +21,7 @@ void Engine::start(Game &game) {
         std::cout << "OPENGL Version " << glGetString(GL_VERSION) << std::endl;
     }
     Renderer renderer=Renderer();
+    std::cout << "starting game.." << std::endl;
     game.init();
     while (!window.shouldClose()) {
         game.update(window);

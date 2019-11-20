@@ -2,8 +2,8 @@
 
 #include <vector>
 #include "core/Game.h"
-#include "graphics/shaders/ShaderProgram.h"
-#include "graphics/Mesh.h"
+class BaseShader;
+class Mesh;
 
 class Window;
 
@@ -13,7 +13,7 @@ class Test : public Game {
 private:
     std::vector<Entity *> entities;
     Mesh* quad;
-    ShaderProgram* shader;
+    BaseShader* shader;
 public:
     Test();
 

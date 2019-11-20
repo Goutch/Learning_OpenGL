@@ -9,7 +9,7 @@
 #include "glm/mat4x4.hpp"
 
 class ShaderProgram {
-private:
+protected:
     unsigned int program_id;
 
     unsigned int compileShader(unsigned int type, const std::string &source);
@@ -17,7 +17,6 @@ private:
     std::string getSource(const std::string &path);
 
 public:
-    void bind();
 
     void unbind();
 
@@ -25,23 +24,25 @@ public:
 
     ~ShaderProgram();
 
+
+    void bind();
+
 protected:
     void loadIntUniform(unsigned int location, int i);
 
     void loadFloatUniform(unsigned int location, float f);
 
-    void loadVectorUniform(unsigned int location, glm::vec2 &v);
+    void loadVectorUniform(unsigned int location, const glm::vec2 &v);
 
-    void loadVectorUniform(unsigned int location, glm::vec3 &v);
+    void loadVectorUniform(unsigned int location, const glm::vec3 &v);
 
-    void loadVectorUniform(unsigned int location, glm::vec4 &v);
+    void loadVectorUniform(unsigned int location, const glm::vec4 &v);
 
-    void loadMattrixUniform(unsigned int location, glm::mat2x2 &m);
+    void loadMat2Uniform(unsigned int location, const glm::mat2 &m);
 
-    void loadMattrixUniform(unsigned int location, glm::mat3x3 &m);
+    void loadMat3Uniform(unsigned int location, const glm::mat3 &m);
 
-    void loadMattrixUniform(unsigned int location, glm::mat4x4 &m);
-
+    void loadMat4Uniform(unsigned int location, const glm::mat4 &m);
 
 };
 

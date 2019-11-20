@@ -1,11 +1,12 @@
 #define GLEW_STATIC
-
-#include "ShaderProgram.h"
 #include <GL/glew.h>
+#include "ShaderProgram.h"
+
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
+#include "glm/matrix.hpp"
 
 ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
 
@@ -47,24 +48,25 @@ void ShaderProgram::loadFloatUniform(unsigned int location, float f) {
     glUniform1f(location,f);
 }
 
-void ShaderProgram::loadVectorUniform(unsigned int location,glm::vec2& v) {
+void ShaderProgram::loadVectorUniform(unsigned int location,const glm::vec2& v) {
     glUniform2f(location,v.x,v.y);
 }
-void ShaderProgram::loadVectorUniform(unsigned int location,glm::vec3& v) {
+void ShaderProgram::loadVectorUniform(unsigned int location,const glm::vec3& v) {
     glUniform3f(location,v.x,v.y,v.z);
 }
-void ShaderProgram::loadVectorUniform(unsigned int location,glm::vec4& v) {
+void ShaderProgram::loadVectorUniform(unsigned int location,const glm::vec4& v) {
     glUniform4f(location,v.x,v.y,v.z,v.w);
 }
 
-void ShaderProgram::loadMattrixUniform(unsigned int location,glm::mat2x2& m) {
+void ShaderProgram::loadMat2Uniform(unsigned int location,const glm::mat2& m) {
     glUniformMatrix2fv(location,m.length(),false,glm::value_ptr(m));
 }
-void ShaderProgram::loadMattrixUniform(unsigned int location,glm::mat3x3& m) {
+void ShaderProgram::loadMat3Uniform(unsigned int location,const glm::mat3& m) {
     glUniformMatrix3fv(location,m.length(),false,glm::value_ptr(m));
 }
-void ShaderProgram::loadMattrixUniform(unsigned int location,glm::mat4x4& m) {
-    glUniformMatrix4fv(location,m.length(),false,glm::value_ptr(m));
+void ShaderProgram::loadMat4Uniform(unsigned int location,const glm::mat4 &m) {
+    const float* values=glm::value_ptr(m);
+    glUniformMatrix4fv(location,1,false,values);
 }
 unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
     unsigned int id = glCreateShader(type);
@@ -78,9 +80,9 @@ unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &
         glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
         char *message = (char *) malloc(length * sizeof(char));
         glGetShaderInfoLog(id, length, &length, message);
-        free(message);
         std::cerr << "FAILED:" << std::endl;
         std::cerr << message << std::endl;
+        free(message);
     }
     return id;
 }

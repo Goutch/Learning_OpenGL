@@ -1,4 +1,5 @@
 #include "VAO.h"
+#include "VBO.h"
 #define GLEW_STATIC
 #include <GL/glew.h>
 

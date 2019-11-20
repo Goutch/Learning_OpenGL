@@ -4,17 +4,16 @@
 
 #include "Test.h"
 #include "entities/MeshRenderer.h"
-#include "graphics/shaders/ShaderProgram.h"
+#include "graphics/shaders/BaseShader.h"
+#include "graphics/Mesh.h"
 #include "core/Window.h"
 #include "core/Renderer.h"
 Test::Test()
         : Game() {
-
 }
 
 void Test::init() {
-    shader=new ShaderProgram("../src/engine/graphics/shaders/shadersSources/BaseVertex.glsl",
-                             "../src/engine/graphics/shaders/shadersSources/BaseFragment.glsl");
+    shader=new BaseShader();
     quad=new Mesh();
     auto vert = std::vector<float>();
     vert.push_back(-0.5);
@@ -34,9 +33,7 @@ void Test::init() {
 
     quad->vertices(vert.data(), vert.size()).colors(colors, 12);
     for (int i = 0; i < 1; ++i) {
-
-
-        entities.push_back(new MeshRenderer(*quad, *shader, glm::vec3(i, 0, 0)));
+        entities.push_back(new MeshRenderer(*quad, *shader, glm::vec3(0, 0, 0)));
     }
 
 }

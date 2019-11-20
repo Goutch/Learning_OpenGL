@@ -1,8 +1,7 @@
 #pragma once
 
-#include "VAO.h"
 #include <array>
-
+#include "VAO.h"
 class Mesh {
 private:
     enum MeshAttributeType{

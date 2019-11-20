@@ -44,5 +44,5 @@ add_executable(OGL_Engine
         src/engine/test/Test.cpp
         src/engine/test/Test.h
         src/Debug.h
-        src/main.cpp src/engine/core/Renderer.cpp)
+        src/main.cpp src/engine/core/Renderer.cpp src/engine/graphics/shaders/BaseShader.cpp src/engine/graphics/shaders/BaseShader.h)
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})
