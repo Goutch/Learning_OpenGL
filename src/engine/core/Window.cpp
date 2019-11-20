@@ -2,10 +2,10 @@
 #include "Window.h"
 #include <iostream>
 
-Window::Window(int sizeX, int sizeY)
-{
-	Window::sizeX = sizeX;
-	Window::sizeY = sizeY;
+Window::Window(std::string title, int sizeX, int sizeY) {
+    this->title=title;
+    this->sizeX = sizeX;
+    this->sizeY = sizeY;
 }
 Window::~Window()
 {
@@ -18,7 +18,7 @@ bool Window::open()
 	if (glfwInit())
 	{
 		std::cout <<"Initialized GLFW" << std::endl;
-		window = glfwCreateWindow(sizeX, sizeY, "Hello World", NULL, NULL);
+		window = glfwCreateWindow(sizeX, sizeY, title.c_str(), NULL, NULL);
 		if (!window)
 		{
 			close();
@@ -67,6 +67,8 @@ void Window::showCursor(bool showCursor) {
     else
         glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
 }
+
+
 
 
 

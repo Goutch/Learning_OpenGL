@@ -8,28 +8,33 @@
 #include "DefaultRenderer.h"
 
 DefaultRenderer::DefaultRenderer() {
-    shader =new ShaderProgram("../src/engine/graphics/shaders/shadersSources/BaseVertex.glsl", "../src/engine/graphics/shaders/shadersSources/BaseFragment.glsl");
+
 }
 DefaultRenderer::~DefaultRenderer() {
-    delete shader;
+
 }
 
 void DefaultRenderer::render() {
-    shader->bind();
+
     glClear(GL_COLOR_BUFFER_BIT);
-    for(auto mesh:objects)
+    for(auto &e:entities)
     {
-        mesh->bind();
-        glDrawArrays(GL_QUADS, 0, mesh->vertexCount());
-        mesh->unbind();
+        e.getShader().bind();
+        e.getMesh().bind();
+        glDrawArrays(GL_QUADS, 0, e.getMesh().vertexCount());
+        e.getMesh().unbind();
+        e.getShader().unbind();
     }
-    shader->unbind();
-    objects.clear();
+    entities.clear();
 }
 
-void DefaultRenderer::addToRenderQueue(Mesh* mesh) {
-    objects.push_back(mesh);
+void DefaultRenderer::addToRenderQueue(Entity& entity) {
+    entities.push_back(entity);
 }
+
+
+
+
 
 
 

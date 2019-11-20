@@ -1,20 +1,21 @@
 
 #pragma once
 
-#include "../core/Renderer.h"
-#include "shaders/ShaderProgram.h"
-#include "Mesh.h"
+#include "core/Renderer.h"
+
 #include <list>
+#include <map>
+#include "entities/Entity.h"
 class DefaultRenderer:public Renderer {
 protected:
-    ShaderProgram* shader;
-    std::list<Mesh*> objects;
+    std::list<Entity> entities;
 public:
     DefaultRenderer();
     ~DefaultRenderer() override;
 
     void render() override;
-    void addToRenderQueue(Mesh* mesh) override;
+
+    void addToRenderQueue(Entity& entity ) override;
 };
 
 

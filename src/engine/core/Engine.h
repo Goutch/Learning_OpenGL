@@ -4,8 +4,7 @@
 
 class Engine {
 private:
-    Window* window;
-    Renderer* renderer;
+
 public:
     Engine();
     ~Engine();

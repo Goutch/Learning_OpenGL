@@ -3,7 +3,7 @@ project(OGL_Engine)
 
 set(CMAKE_CXX_STANDARD 11)
 
-include_directories(src)
+include_directories(src/engine)
 
 find_package(OpenGL REQUIRED)
 
@@ -20,6 +20,7 @@ link_directories("Dependencies/GLFW/lib-mingw")
 message("Including GLM")
 include_directories(Dependencies/GLM)
 add_subdirectory(Dependencies/GLM)
+
 
 add_executable(OGL_Engine
         src/main.cpp
@@ -38,6 +39,16 @@ add_executable(OGL_Engine
         src/engine/graphics/DefaultRenderer.h
         src/engine/graphics/DefaultRenderer.cpp
         src/Debug.h
-         src/engine/core/Engine.cpp src/engine/core/Engine.h src/engine/test/Test.cpp src/engine/test/Test.h)
+        src/engine/core/Engine.cpp
+        src/engine/core/Engine.h
+        src/engine/test/Test.cpp
+        src/engine/test/Test.h
+        src/engine/entities/MeshRenderer.cpp
+        src/engine/entities/MeshRenderer.h
+        src/engine/entities/Transform.cpp
+        src/engine/entities/Transform.h
+        src/engine/entities/Entity.h)
 
-target_link_libraries(OGL_Engine  glfw3 libglew32.a  ${OPENGL_LIBRARIES})
+
+
+target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})

@@ -1,11 +1,11 @@
 
 #pragma once
 #include <GLFW/glfw3.h>
-
+#include<string>
 class Window
 {
 public:
-    Window(int sizeX,int sizeY);
+    Window(std::string title,int sizeX,int sizeY);
     ~Window();
     bool open();
     void close();
@@ -17,6 +17,7 @@ public:
     void showCursor(bool showCursor);
 private:
     GLFWwindow* window;
+    std::string title;
     int sizeX=600, sizeY=400;
 
 };
