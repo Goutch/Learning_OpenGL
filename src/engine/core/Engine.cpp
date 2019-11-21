@@ -12,9 +12,9 @@ Engine::Engine() {
 
 }
 void Engine::start(Game &game) {
-    Window window=Window("WINDOW",900, 600);
+    Window window=Window();
 
-    if (window.open()) {
+    if (window.open("WINDOW",900, 600)) {
         glewInit() == GLEW_OK ?
         std::cout << "Initialized GLEW" << std::endl :
         std::cerr << "FAILED:GLEW INITIALIZATION" << std::endl;

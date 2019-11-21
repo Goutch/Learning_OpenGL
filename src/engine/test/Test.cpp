@@ -8,6 +8,7 @@
 #include "graphics/Mesh.h"
 #include "core/Window.h"
 #include "core/Renderer.h"
+#include <cmath>
 Test::Test()
         : Game() {
 }
@@ -32,8 +33,11 @@ void Test::init() {
     float colors[12] = {0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0};
 
     quad->vertices(vert.data(), vert.size()).colors(colors, 12);
-    for (int i = 0; i < 1; ++i) {
+    for (int i = 0; i < 5; ++i) {
         entities.push_back(new MeshRenderer(*quad, *shader, glm::vec3(0, 0, 0)));
+        entities[i]->getTranform().rotate(glm::vec3(0,0,1),(M_PI/8)*i);
+
+
     }
 
 }

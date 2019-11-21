@@ -2,23 +2,21 @@
 #include "Window.h"
 #include <iostream>
 
-Window::Window(std::string title, int sizeX, int sizeY) {
-    this->title=title;
-    this->sizeX = sizeX;
-    this->sizeY = sizeY;
+Window::Window() {
+
 }
 Window::~Window()
 {
 	close();
 }
 
-bool Window::open()
+bool Window::open(std::string title, int width, int height)
 {
     std::cout <<"Opening window..." << std::endl;
 	if (glfwInit())
 	{
 		std::cout <<"Initialized GLFW" << std::endl;
-		window = glfwCreateWindow(sizeX, sizeY, title.c_str(), NULL, NULL);
+		window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
 		if (!window)
 		{
 			close();

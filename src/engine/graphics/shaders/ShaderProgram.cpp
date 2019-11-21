@@ -65,8 +65,7 @@ void ShaderProgram::loadMat3Uniform(unsigned int location,const glm::mat3& m) {
     glUniformMatrix3fv(location,1,false,glm::value_ptr(m));
 }
 void ShaderProgram::loadMat4Uniform(unsigned int location,const glm::mat4 &m) {
-    const float* values=glm::value_ptr(m);
-    glUniformMatrix4fv(location,1,false,values);
+    glUniformMatrix4fv(location,1,false,glm::value_ptr(m));
 }
 unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
     unsigned int id = glCreateShader(type);
