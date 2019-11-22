@@ -7,9 +7,11 @@ Mesh::~Mesh() {
 Mesh::Mesh() {
 
 }
-
+Mesh& Mesh::indices(unsigned int *indices, unsigned int indices_size) {
+    vertex_count=indices_size;
+    vao.indicies(indices,indices_size);
+}
 Mesh &Mesh::vertices(float *vertices_array, unsigned int vertices_size) {
-    vertex_count=vertices_size;
     vao.put(MeshAttributeType::VERTICIES, 3, vertices_array, vertices_size);
     return *this;
 }

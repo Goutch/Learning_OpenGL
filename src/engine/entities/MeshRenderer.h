@@ -10,8 +10,6 @@ public:
 
     BaseShader &getShader() override;
 
-    Transform &getTranform() override;
-
     Mesh &getMesh() override;
 
 private:

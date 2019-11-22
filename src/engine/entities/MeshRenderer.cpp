@@ -24,10 +24,6 @@ BaseShader &MeshRenderer::getShader() {
     return *shader;
 }
 
-Transform &MeshRenderer::getTranform() {
-    return transform;
-}
-
 Mesh &MeshRenderer::getMesh() {
     return *mesh;
 }

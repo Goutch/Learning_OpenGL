@@ -10,7 +10,7 @@ BaseShader::BaseShader() : ShaderProgram("../src/engine/graphics/shaders/shaders
 }
 
 void BaseShader::loadEntityUniforms(Entity &e) {
-    loadMat4Uniform(transform_location, e.getTranform().getTransformMatrix());
+    loadMat4Uniform(transform_location, e.transform.toMatrix());
 }
 
 void BaseShader::getUniformsLocations() {

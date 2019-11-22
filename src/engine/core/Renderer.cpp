@@ -15,7 +15,7 @@ void Renderer::render() {
         e->getShader().bind();
         e->getShader().loadEntityUniforms(*e);
         e->getMesh().bind();
-        glDrawArrays(GL_QUADS, 0, e->getMesh().vertexCount());
+        glDrawElements(GL_QUADS, e->getMesh().vertexCount(), GL_UNSIGNED_INT, nullptr);
         e->getMesh().unbind();
         e->getShader().unbind();
     }

@@ -8,7 +8,7 @@ Transform::Transform() {
 
 }
 
-glm::mat4 Transform::getTransformMatrix() {
+glm::mat4 Transform::toMatrix() {
     return transform_mattrix;
 }
 

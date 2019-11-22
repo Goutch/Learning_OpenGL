@@ -6,7 +6,7 @@ set(CMAKE_CXX_STANDARD 11)
 include_directories(src/engine)
 
 find_package(OpenGL REQUIRED)
-
+set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 message("Including GLEW")
 include_directories(Dependencies/GLEW/include)
@@ -21,6 +21,8 @@ link_directories("Dependencies/GLFW/lib-mingw")
 message("Including GLM")
 include_directories(Dependencies/GLM)
 add_subdirectory(Dependencies/GLM)
+
+find_package(Vulkan REQUIRED)
 
 
 add_executable(OGL_Engine
@@ -44,5 +46,12 @@ add_executable(OGL_Engine
         src/engine/test/Test.cpp
         src/engine/test/Test.h
         src/Debug.h
-        src/main.cpp src/engine/core/Renderer.cpp src/engine/graphics/shaders/BaseShader.cpp src/engine/graphics/shaders/BaseShader.h)
-target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})
+        src/main.cpp
+        src/engine/core/Renderer.cpp
+        src/engine/graphics/shaders/BaseShader.cpp
+        src/engine/graphics/shaders/BaseShader.h)
+
+target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES} Vulkan::Vulkan)
+
+target_compile_definitions(OGL_Engine PRIVATE VK_USE_PLATFORM_WIN32_KHR)
+target_include_directories(OGL_Engine PRIVATE Vulkan::Vulkan)

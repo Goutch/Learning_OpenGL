@@ -9,13 +9,15 @@
 #include "core/Window.h"
 #include "core/Renderer.h"
 #include <cmath>
+
 Test::Test()
         : Game() {
 }
 
 void Test::init() {
-    shader=new BaseShader();
-    quad=new Mesh();
+    shader = new BaseShader();
+    quad = new Mesh();
+
     auto vert = std::vector<float>();
     vert.push_back(-0.5);
     vert.push_back(-0.5);
@@ -30,16 +32,37 @@ void Test::init() {
     vert.push_back(-0.5);
     vert.push_back(0);
 
-    float colors[12] = {0, 0, 1, 0, 1, 1, 1, 1, 0, 1, 0, 0};
+    auto colors = std::vector<float>();
+    colors.push_back(1);
+    colors.push_back(1);
+    colors.push_back(1);
 
-    quad->vertices(vert.data(), vert.size()).colors(colors, 12);
-    for (int i = 0; i < 5; ++i) {
+    colors.push_back(1);
+    colors.push_back(0);
+    colors.push_back(0);
+
+    colors.push_back(0);
+    colors.push_back(1);
+    colors.push_back(0);
+
+    colors.push_back(0);
+    colors.push_back(0);
+    colors.push_back(1);
+
+    auto indices = std::vector<unsigned int>();
+    indices.push_back(0);
+    indices.push_back(1);
+    indices.push_back(2);
+    indices.push_back(3);
+
+    quad->vertices(vert.data(), vert.size())
+            .colors(colors.data(), colors.size())
+            .indices(indices.data(), indices.size());
+
+    for (int i = 0; i < 100; ++i) {
         entities.push_back(new MeshRenderer(*quad, *shader, glm::vec3(0, 0, 0)));
-        entities[i]->getTranform().rotate(glm::vec3(0,0,1),(M_PI/8)*i);
-
-
+        entities[i]->transform.rotate(glm::vec3(0, 0, 1), (0.01) * i);
     }
-
 }
 
 void Test::update(Window &window) {

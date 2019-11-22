@@ -8,18 +8,21 @@
 #include "Window.h"
 #include "Engine.h"
 #include "Renderer.h"
+#include "../../Debug.h"
+
+
 Engine::Engine() {
 
 }
 void Engine::start(Game &game) {
     Window window=Window();
-
     if (window.open("WINDOW",900, 600)) {
         glewInit() == GLEW_OK ?
         std::cout << "Initialized GLEW" << std::endl :
         std::cerr << "FAILED:GLEW INITIALIZATION" << std::endl;
         std::cout << "OPENGL Version " << glGetString(GL_VERSION) << std::endl;
     }
+    initDebug();
     Renderer renderer=Renderer();
     std::cout << "starting game.." << std::endl;
     game.init();
@@ -30,11 +33,13 @@ void Engine::start(Game &game) {
         window.swapBuffer();
         window.getInputs();
     }
-
+    printGLErrors();
 }
 
 Engine::~Engine() {
 
 }
+
+
 
 

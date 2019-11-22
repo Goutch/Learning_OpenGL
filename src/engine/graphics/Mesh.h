@@ -20,6 +20,7 @@ public:
     unsigned int vertexCount();
     void bind();
     void unbind();
+    Mesh& indices(unsigned int* indices, unsigned int indices_size);
     Mesh& vertices(float* vertices_array, unsigned int vertices_size);
     Mesh& colors(float* colors_array,unsigned int colors_size);
 };

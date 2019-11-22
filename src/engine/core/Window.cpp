@@ -12,6 +12,9 @@ Window::~Window()
 
 bool Window::open(std::string title, int width, int height)
 {
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,3);
+    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,3);
+    glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     std::cout <<"Opening window..." << std::endl;
 	if (glfwInit())
 	{
