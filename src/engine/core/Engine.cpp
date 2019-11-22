@@ -21,17 +21,26 @@ void Engine::start(Game &game) {
         std::cout << "Initialized GLEW" << std::endl :
         std::cerr << "FAILED:GLEW INITIALIZATION" << std::endl;
         std::cout << "OPENGL Version " << glGetString(GL_VERSION) << std::endl;
-    }
-    initDebug();
-    Renderer renderer=Renderer();
-    std::cout << "starting game.." << std::endl;
-    game.init();
-    while (!window.shouldClose()) {
-        game.update(window);
-        game.render(renderer);
-        renderer.render();
-        window.swapBuffer();
-        window.getInputs();
+
+        initDebug();
+        glEnable(GL_TEXTURE_2D);
+        glCullFace(GL_BACK);
+        //enable depth test
+        //glEnable(GL_DEPTH_TEST);
+        //enable transparency
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+
+        Renderer renderer=Renderer();
+        std::cout << "starting game.." << std::endl;
+        game.init();
+        while (!window.shouldClose()) {
+            game.update(window);
+            game.render(renderer);
+            renderer.render();
+            window.swapBuffer();
+            window.getInputs();
+        }
     }
     printGLErrors();
 }

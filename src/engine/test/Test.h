@@ -4,16 +4,18 @@
 #include "core/Game.h"
 class BaseShader;
 class Mesh;
-
 class Window;
-
 class Entity;
-
+class Sprite;
+class Texture;
 class Test : public Game {
 private:
     std::vector<Entity *> entities;
     Mesh* quad;
     BaseShader* shader;
+    Sprite* sprite;
+    Texture* wall;
+    Texture* stone;
 public:
     Test();
 

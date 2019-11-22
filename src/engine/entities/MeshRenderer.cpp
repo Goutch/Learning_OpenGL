@@ -6,10 +6,11 @@
 
 #include "MeshRenderer.h"
 #include "core/Renderer.h"
-MeshRenderer::MeshRenderer(Mesh &mesh,BaseShader& shader, glm::vec3 pos) {
+#include "graphics/Mesh.h"
+MeshRenderer::MeshRenderer(Mesh* mesh,BaseShader* shader, glm::vec3 pos) {
     transform.translate(pos);
-    this->mesh=&mesh;
-    this->shader=&shader;
+    this->mesh=mesh;
+    this->shader=shader;
 }
 
 void MeshRenderer::render(Renderer &renderer) {
@@ -24,6 +25,6 @@ BaseShader &MeshRenderer::getShader() {
     return *shader;
 }
 
-Mesh &MeshRenderer::getMesh() {
+Drawable &MeshRenderer::getDrawable()  {
     return *mesh;
 }

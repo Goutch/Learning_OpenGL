@@ -4,6 +4,9 @@
 
 #include "Test.h"
 #include "entities/MeshRenderer.h"
+#include "entities/SpriteRenderer.h"
+#include "graphics/Sprite.h"
+#include "graphics/Texture.h"
 #include "graphics/shaders/BaseShader.h"
 #include "graphics/Mesh.h"
 #include "core/Window.h"
@@ -59,10 +62,18 @@ void Test::init() {
             .colors(colors.data(), colors.size())
             .indices(indices.data(), indices.size());
 
-    for (int i = 0; i < 100; ++i) {
-        entities.push_back(new MeshRenderer(*quad, *shader, glm::vec3(0, 0, 0)));
-        entities[i]->transform.rotate(glm::vec3(0, 0, 1), (0.01) * i);
+    for (int i = 0; i < 0; ++i) {
+        entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, 0)));
+        //entities[i]->transform.rotate(glm::vec3(0, 0, 1), (0.01) * i);
     }
+    wall=new Texture("../res/wall.jpg");
+    stone=new Texture("../res/stone.jpg");
+    stone->bind(1);
+    sprite=new Sprite(wall);
+    for (int j = 0; j < 1; ++j) {
+        entities.push_back(new SpriteRenderer(sprite,shader,glm::vec3(0, 0, 0)));
+    }
+    //
 }
 
 void Test::update(Window &window) {
@@ -76,10 +87,14 @@ void Test::render(Renderer &renderer) {
 }
 
 Test::~Test() {
+    stone->unbind(1);
     for (auto e : entities) {
         delete e;
     }
     entities.clear();
+    delete wall;
+    delete stone;
+    delete sprite;
     delete shader;
     delete quad;
 }

@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "Renderer.h"
 #include "entities/Entity.h"
-#include "graphics/Mesh.h"
+#include "graphics/Drawable.h"
 #include "graphics/shaders/BaseShader.h"
 
 
@@ -14,9 +14,9 @@ void Renderer::render() {
     {
         e->getShader().bind();
         e->getShader().loadEntityUniforms(*e);
-        e->getMesh().bind();
-        glDrawElements(GL_QUADS, e->getMesh().vertexCount(), GL_UNSIGNED_INT, nullptr);
-        e->getMesh().unbind();
+        e->getDrawable().bind();
+        glDrawElements(GL_TRIANGLES, e->getDrawable().vertexCount(), GL_UNSIGNED_INT, nullptr);
+        e->getDrawable().unbind();
         e->getShader().unbind();
     }
     entities.clear();
