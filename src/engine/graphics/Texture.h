@@ -13,6 +13,7 @@ int bits_per_pixel;
 public:
     ~Texture();
     Texture(const std::string& path);
+    Texture(char* data,int width,int height);
     void bind(unsigned int slot=0) const;
     void unbind(unsigned int slot=0) const;
 };

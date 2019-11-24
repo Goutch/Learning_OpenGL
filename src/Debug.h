@@ -1,7 +1,7 @@
 #pragma once
 #define GLEW_STATIC
 #include<iostream>
-#include "glew.h"
+#include "GL/glew.h"
 template<typename T>
 static void printVector(const T x, const T y, const T z) {
     std::cout << "(" << x << "," << y << "," << x << ")" << std::endl;

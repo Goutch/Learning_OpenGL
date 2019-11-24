@@ -2,7 +2,7 @@
 // Created by User on 22-Nov.-2019.
 //
 #define GLEW_STATIC
-#include "glew.h"
+#include "GL/glew.h"
 #include "Texture.h"
 #include "stb_image.h"
 Texture::Texture(const std::string& path) {
@@ -22,8 +22,11 @@ Texture::Texture(const std::string& path) {
     {
         stbi_image_free(buffer);
     }
-}
 
+}
+Texture::Texture(char *data, int width, int height) {
+
+}
 void Texture::bind(unsigned int slot)const  {
     glActiveTexture(GL_TEXTURE0+slot);
     glBindTexture(GL_TEXTURE_2D,texture_id);

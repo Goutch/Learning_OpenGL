@@ -26,7 +26,7 @@ message("Including STB")
 include_directories(Dependencies/STB_IMAGE)
 
 
-find_package(Vulkan REQUIRED)
+#find_package(Vulkan REQUIRED)
 
 
 add_executable(OGL_Engine
@@ -53,9 +53,9 @@ add_executable(OGL_Engine
         src/main.cpp
         src/engine/core/Renderer.cpp
         src/engine/graphics/shaders/BaseShader.cpp
-        src/engine/graphics/shaders/BaseShader.h src/engine/graphics/Sprite.cpp src/engine/graphics/Sprite.h src/engine/graphics/Drawable.cpp src/engine/graphics/Drawable.h src/engine/graphics/Texture.cpp src/engine/graphics/Texture.h src/engine/entities/SpriteRenderer.cpp src/engine/entities/SpriteRenderer.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp)
+        src/engine/graphics/shaders/BaseShader.h src/engine/graphics/Sprite.cpp src/engine/graphics/Sprite.h src/engine/graphics/Drawable.cpp src/engine/graphics/Drawable.h src/engine/graphics/Texture.cpp src/engine/graphics/Texture.h src/engine/entities/SpriteRenderer.cpp src/engine/entities/SpriteRenderer.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h)
 
-target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES} Vulkan::Vulkan)
+target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})# Vulkan::Vulkan)
 
-target_compile_definitions(OGL_Engine PRIVATE VK_USE_PLATFORM_WIN32_KHR)
-target_include_directories(OGL_Engine PRIVATE Vulkan::Vulkan)
+#target_compile_definitions(OGL_Engine PRIVATE VK_USE_PLATFORM_WIN32_KHR)
+#target_include_directories(OGL_Engine PRIVATE Vulkan::Vulkan)
