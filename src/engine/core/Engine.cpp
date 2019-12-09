@@ -27,11 +27,13 @@ void Engine::start(Game &game) {
         glCullFace(GL_BACK);
         //enable depth test
         //glEnable(GL_DEPTH_TEST);
+        //glDepthMask(GL_FALSE);
+        //glDepthFunc(GL_LESS);
         //enable transparency
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
-        Renderer renderer=Renderer();
+        Renderer renderer=Renderer(window,Renderer::PERSPECTIVE);
         std::cout << "starting game.." << std::endl;
         game.init();
         while (!window.shouldClose()) {

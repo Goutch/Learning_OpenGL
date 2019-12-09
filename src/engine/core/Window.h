@@ -19,6 +19,8 @@ public:
     bool isKeyDown(unsigned int keycode);
     void getMousePosition(double &x, double &y);
     void showCursor(bool showCursor);
+    int getWidth();
+    int getHeight();
 
 
 };

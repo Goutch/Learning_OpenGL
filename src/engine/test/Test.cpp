@@ -22,17 +22,17 @@ void Test::init() {
     quad = new Mesh();
 
     auto vert = std::vector<float>();
-    vert.push_back(-0.5);
-    vert.push_back(-0.5);
+    vert.push_back(-100.5);
+    vert.push_back(-100.5);
     vert.push_back(0);
-    vert.push_back(-0.5);
-    vert.push_back(0.5f);
+    vert.push_back(-100.5);
+    vert.push_back(100.5f);
     vert.push_back(0);
-    vert.push_back(0.5f);
-    vert.push_back(0.5f);
+    vert.push_back(100.5f);
+    vert.push_back(100.5f);
     vert.push_back(0);
-    vert.push_back(0.5f);
-    vert.push_back(-0.5);
+    vert.push_back(100.5f);
+    vert.push_back(-100.5);
     vert.push_back(0);
 
     auto colors = std::vector<float>();
@@ -62,18 +62,14 @@ void Test::init() {
             .colors(colors.data(), colors.size())
             .indices(indices.data(), indices.size());
 
-    for (int i = 0; i < 0; ++i) {
-        entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, 0)));
-        //entities[i]->transform.rotate(glm::vec3(0, 0, 1), (0.01) * i);
-    }
+    entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, 0.5)));
+
     wall=new Texture("../res/wall.jpg");
-    stone=new Texture("../res/stone.jpg");
-    stone->bind(1);
+    wall->bind(0);
     sprite=new Sprite(wall);
-    for (int j = 0; j < 1; ++j) {
-        entities.push_back(new SpriteRenderer(sprite,shader,glm::vec3(0, 0, 0)));
-    }
-    //
+    //for (int j = 0; j < 1; ++j) {
+    //    entities.push_back(new SpriteRenderer(sprite,shader,glm::vec3(0, 0, 0)));
+    //}
 }
 
 void Test::update(Window &window) {
@@ -87,7 +83,7 @@ void Test::render(Renderer &renderer) {
 }
 
 Test::~Test() {
-    stone->unbind(1);
+    stone->unbind(0);
     for (auto e : entities) {
         delete e;
     }

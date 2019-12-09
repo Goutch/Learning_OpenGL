@@ -6,7 +6,6 @@
 #include <iostream>
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
-#include "glm/matrix.hpp"
 
 ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
 
