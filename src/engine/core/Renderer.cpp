@@ -45,7 +45,8 @@ void Renderer::setRenderMode(Window& window,Renderer::RenderMode renderMode) {
     }
     else{
         float aspect_ratio=w/h;
-        projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
+        projection_matrix=glm::ortho<float>(-1,1,-1*aspect_ratio,1*aspect_ratio,-100,100);
+        //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
 
 }

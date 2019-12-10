@@ -33,7 +33,7 @@ void Engine::start(Game &game) {
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
-        Renderer renderer=Renderer(window,Renderer::PERSPECTIVE);
+        Renderer renderer=Renderer(window,Renderer::ORTHOGRAPHIC);
         std::cout << "starting game.." << std::endl;
         game.init();
         while (!window.shouldClose()) {
