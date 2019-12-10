@@ -19,3 +19,6 @@ void Transform::translate(glm::vec3 translation) {
 void Transform::rotate(glm::vec3 axis,float angle) {
     transform_mattrix=glm::rotate(transform_mattrix,angle,axis);
 }
+void Transform::scale(glm::vec3 scale) {
+    transform_mattrix=glm::scale(transform_mattrix,scale);
+}

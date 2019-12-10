@@ -1,7 +1,3 @@
-//
-// Created by User on 22-Nov.-2019.
-//
-
 #include "Drawable.h"
 Drawable::Drawable() {
     vao=new VAO;

@@ -22,17 +22,17 @@ void Test::init() {
     quad = new Mesh();
 
     auto vert = std::vector<float>();
-    vert.push_back(-100.5);
-    vert.push_back(-100.5);
+    vert.push_back(-.5);
+    vert.push_back(-.5);
+    vert.push_back(1);
+    vert.push_back(-.5);
+    vert.push_back(.5f);
+    vert.push_back(-1);
+    vert.push_back(.5f);
+    vert.push_back(.5f);
     vert.push_back(0);
-    vert.push_back(-100.5);
-    vert.push_back(100.5f);
-    vert.push_back(0);
-    vert.push_back(100.5f);
-    vert.push_back(100.5f);
-    vert.push_back(0);
-    vert.push_back(100.5f);
-    vert.push_back(-100.5);
+    vert.push_back(.5f);
+    vert.push_back(-.5);
     vert.push_back(0);
 
     auto colors = std::vector<float>();
@@ -61,9 +61,7 @@ void Test::init() {
     quad->vertices(vert.data(), vert.size())
             .colors(colors.data(), colors.size())
             .indices(indices.data(), indices.size());
-
-    entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, 0.5)));
-
+    entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, -1)));
     wall=new Texture("../res/wall.jpg");
     wall->bind(0);
     sprite=new Sprite(wall);

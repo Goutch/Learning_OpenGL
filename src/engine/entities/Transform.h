@@ -8,6 +8,7 @@ public:
     glm::mat4 toMatrix();
     void translate(glm::vec3 translation);
     void rotate(glm::vec3 axis, float angle);
+    void scale(glm::vec3 scale);
     Transform();
 
 
