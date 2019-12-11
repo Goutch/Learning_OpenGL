@@ -1,15 +1,17 @@
 #pragma once
 class Entity;
 #include "ShaderProgram.h"
-class BaseShader :public ShaderProgram{
+class EntityShader : public ShaderProgram{
 
     int transform_location;
     int texture_0_location;
     int has_texture_location;
     int projection_mat_location;
+    int view_mat_location;
     void getUniformsLocations();
 public:
-    BaseShader();
-    void loadProjectionMatrix(glm::mat4& projection_mat);
+    EntityShader();
+    void loadProjectionMatrix(const glm::mat4& projection_mat);
+    void loadViewMatrix(const glm::mat4& view_mat);
     void loadEntityUniforms(Entity& e);
 };

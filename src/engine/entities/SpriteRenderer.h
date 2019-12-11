@@ -1,19 +1,19 @@
 #include "Entity.h"
 class Sprite;
-class BaseShader;
+class EntityShader;
 class SpriteRenderer:public Entity {
 private:
     Sprite* sprite;
-    BaseShader* shader;
+    EntityShader* shader;
 public:
-    SpriteRenderer(Sprite* sprite,BaseShader* shader,glm::vec3 pos);
+    SpriteRenderer(Sprite* sprite, EntityShader* shader, glm::vec3 pos);
 
 private:
     void render(Renderer &renderer) override;
 
     void update(float delta, Window &window) override;
 
-    BaseShader &getShader() override;
+    EntityShader &getShader() override;
 
     Drawable &getDrawable() override;
 };

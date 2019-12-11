@@ -7,8 +7,7 @@
 #include "MeshRenderer.h"
 #include "core/Renderer.h"
 #include "graphics/Mesh.h"
-MeshRenderer::MeshRenderer(Mesh* mesh,BaseShader* shader, glm::vec3 pos) {
-    transform.translate(pos);
+MeshRenderer::MeshRenderer(Mesh* mesh, EntityShader* shader, glm::vec3 pos):Entity(pos) {
     this->mesh=mesh;
     this->shader=shader;
 }
@@ -21,7 +20,7 @@ void MeshRenderer::update(float delta, Window &window) {
 
 }
 
-BaseShader &MeshRenderer::getShader() {
+EntityShader &MeshRenderer::getShader() {
     return *shader;
 }
 

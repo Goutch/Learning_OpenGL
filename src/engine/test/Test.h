@@ -2,30 +2,34 @@
 
 #include <vector>
 #include "core/Game.h"
-class BaseShader;
+class EntityShader;
 class Mesh;
 class Window;
 class Entity;
 class Sprite;
 class Texture;
+#include "entities/Camera.h"
 class Test : public Game {
 private:
     std::vector<Entity *> entities;
     Mesh* quad;
-    BaseShader* shader;
+    EntityShader* shader;
     Sprite* sprite;
     Texture* wall;
     Texture* stone;
+    Window* window;
+    Renderer* renderer;
+    Camera camera=Camera(glm::vec3(0,0,0));
 public:
     Test();
 
     ~Test();
 
-    void init() override;
+    void init(Window &window,Renderer &renderer) override;
 
-    void update(Window &window) override;
+    void update() override;
 
-    void render(Renderer &renderer) override;
+    void render() override;
 };
 
 

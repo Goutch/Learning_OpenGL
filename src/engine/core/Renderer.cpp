@@ -4,16 +4,18 @@
 #include "Renderer.h"
 #include "entities/Entity.h"
 #include "graphics/Drawable.h"
-#include "graphics/shaders/BaseShader.h"
+#include "graphics/shaders/EntityShader.h"
 #include "glm/gtc/matrix_transform.hpp"
 #include "Window.h"
+#include "entities/Camera.h"
 void Renderer::render() {
-
+    glm::mat4 viewMat=cam!= nullptr?cam->getViewMatrix():glm::mat4();
     glClear(GL_COLOR_BUFFER_BIT);
     for(auto &e:entities)
     {
         e->getShader().bind();
         e->getShader().loadProjectionMatrix(projection_matrix);
+        e->getShader().loadViewMatrix(viewMat);
         e->getShader().loadEntityUniforms(*e);
         e->getDrawable().bind();
         glDrawElements(GL_QUADS, e->getDrawable().vertexCount(), GL_UNSIGNED_INT, nullptr);
@@ -48,7 +50,9 @@ void Renderer::setRenderMode(Window& window,Renderer::RenderMode renderMode) {
         projection_matrix=glm::ortho<float>(-1,1,-1*aspect_ratio,1*aspect_ratio,-100,100);
         //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
-
+}
+void Renderer::setCamera(Camera *camera) {
+    this->cam=camera;
 }
 
 

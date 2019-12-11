@@ -52,8 +52,8 @@ add_executable(OGL_Engine
         src/Debug.h
         src/main.cpp
         src/engine/core/Renderer.cpp
-        src/engine/graphics/shaders/BaseShader.cpp
-        src/engine/graphics/shaders/BaseShader.h src/engine/graphics/Sprite.cpp src/engine/graphics/Sprite.h src/engine/graphics/Drawable.cpp src/engine/graphics/Drawable.h src/engine/graphics/Texture.cpp src/engine/graphics/Texture.h src/engine/entities/SpriteRenderer.cpp src/engine/entities/SpriteRenderer.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h)
+        src/engine/graphics/shaders/EntityShader.cpp
+        src/engine/graphics/shaders/EntityShader.h src/engine/graphics/Sprite.cpp src/engine/graphics/Sprite.h src/engine/graphics/Drawable.cpp src/engine/graphics/Drawable.h src/engine/graphics/Texture.cpp src/engine/graphics/Texture.h src/engine/entities/SpriteRenderer.cpp src/engine/entities/SpriteRenderer.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h src/engine/entities/Camera.cpp src/engine/entities/Camera.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})# Vulkan::Vulkan)
 

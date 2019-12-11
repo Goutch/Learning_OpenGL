@@ -1,14 +1,14 @@
 
 #define GLEW_STATIC
 #include <GL/glew.h>
-#include "BaseShader.h"
+#include "EntityShader.h"
 #include "entities/Entity.h"
-BaseShader::BaseShader() : ShaderProgram("../src/engine/graphics/shaders/shadersSources/BaseVertex.glsl",
-                                         "../src/engine/graphics/shaders/shadersSources/BaseFragment.glsl") {
+EntityShader::EntityShader() : ShaderProgram("../src/engine/graphics/shaders/shadersSources/EntityVertex.glsl",
+                                             "../src/engine/graphics/shaders/shadersSources/EntityFragment.glsl") {
     getUniformsLocations();
 }
 
-void BaseShader::loadEntityUniforms(Entity &e) {
+void EntityShader::loadEntityUniforms(Entity &e) {
 
         loadMat4Uniform(transform_location, e.transform.toMatrix());
         //todo:move to material
@@ -16,14 +16,19 @@ void BaseShader::loadEntityUniforms(Entity &e) {
         loadIntUniform(has_texture_location,0);
 }
 
-void BaseShader::getUniformsLocations() {
+void EntityShader::getUniformsLocations() {
 
     transform_location =glGetUniformLocation(program_id,"transform");
     texture_0_location=glGetUniformLocation(program_id,"texture_0");
     has_texture_location=glGetUniformLocation(program_id,"has_texture");
     projection_mat_location=glGetUniformLocation(program_id,"projection_mat");
+    view_mat_location=glGetUniformLocation(program_id,"view_mat");
 }
 
-void BaseShader::loadProjectionMatrix(glm::mat4 &projection_mat) {
+void EntityShader::loadViewMatrix(const glm::mat4 &view_mat) {
+    loadMat4Uniform(view_mat_location,view_mat);
+}
+
+void EntityShader::loadProjectionMatrix(const glm::mat4 &projection_mat) {
     loadMat4Uniform(projection_mat_location,projection_mat);
 }

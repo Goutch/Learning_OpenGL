@@ -7,17 +7,18 @@
 #include "entities/SpriteRenderer.h"
 #include "graphics/Sprite.h"
 #include "graphics/Texture.h"
-#include "graphics/shaders/BaseShader.h"
+#include "graphics/shaders/EntityShader.h"
 #include "graphics/Mesh.h"
 #include "core/Window.h"
 #include "core/Renderer.h"
-
 Test::Test()
         : Game() {
 }
 
-void Test::init() {
-    shader = new BaseShader();
+void Test::init(Window &window,Renderer &renderer) {
+    this->renderer=&renderer;
+    this->window=&window;
+    shader = new EntityShader();
     quad = new Mesh();
     wall=new Texture("../res/wall.jpg");
     wall->bind(0);
@@ -40,27 +41,26 @@ void Test::init() {
     indices.push_back(1);
     indices.push_back(2);
     indices.push_back(3);
-
+    renderer.setCamera(&camera);
     quad->vertices(vert.data(), vert.size()).colors(colors.data(), colors.size()).indices(indices.data(), indices.size());
-    entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, -1)));
+    entities.push_back(new MeshRenderer(quad, shader, glm::vec3(0, 0, -0.5)));
 }
-Window w;
-void Test::update(Window &window) {
-    w=window;
+
+void Test::update() {
     entities[0]->transform.rotate(glm::vec3(0,1,0),0.01f);
 }
 
-void Test::render(Renderer &renderer) {
-    if(w.isKeyDown(GLFW_KEY_0))
+void Test::render() {
+    if(window->isKeyDown(GLFW_KEY_0))
     {
-        renderer.setRenderMode(w,Renderer::ORTHOGRAPHIC);
+        renderer->setRenderMode(*window,Renderer::ORTHOGRAPHIC);
     }
-    if(w.isKeyDown(GLFW_KEY_9))
+    if(window->isKeyDown(GLFW_KEY_9))
     {
-        renderer.setRenderMode(w,Renderer::PERSPECTIVE);
+        renderer->setRenderMode(*window,Renderer::PERSPECTIVE);
     }
     for (auto &e : entities) {
-        e->render(renderer);
+        e->render(*renderer);
     }
 }
 

@@ -4,6 +4,7 @@
 
 #include "Transform.h"
 #include <glm/gtx/transform.hpp>
+#include <glm/gtx/matrix_decompose.hpp>
 Transform::Transform() {
 
 }
@@ -21,4 +22,12 @@ void Transform::rotate(glm::vec3 axis,float angle) {
 }
 void Transform::scale(glm::vec3 scale) {
     transform_mattrix=glm::scale(transform_mattrix,scale);
+}
+
+Transform::Transform(glm::vec3 position) {
+    translate(position);
+}
+
+glm::vec3 Transform::position() {
+    return glm::vec3(transform_mattrix[3]);
 }

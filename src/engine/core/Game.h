@@ -12,7 +12,7 @@ public:
 
 	Game(){
 	};
-	virtual void init()=0;
-	virtual void update(Window& window)=0;
-	virtual void render(Renderer& renderer)=0;
+	virtual void init(Window &window,Renderer &renderer)=0;
+	virtual void update()=0;
+	virtual void render()=0;
 };

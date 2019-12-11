@@ -3,6 +3,7 @@
 #include "Texture.h"
 Sprite::Sprite(Texture* texture):Drawable() {
     this->texture=texture;
+    //todo create static quad to be used by all
     float vert[8]={-0.5f,-0.5f,
                  -0.5f,0.5,
                  0.5f,0.5f,

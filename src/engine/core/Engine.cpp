@@ -34,11 +34,12 @@ void Engine::start(Game &game) {
         glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
 
         Renderer renderer=Renderer(window,Renderer::ORTHOGRAPHIC);
+        std::cout << "initializing game.." << std::endl;
+        game.init(window,renderer);
         std::cout << "starting game.." << std::endl;
-        game.init();
         while (!window.shouldClose()) {
-            game.update(window);
-            game.render(renderer);
+            game.update();
+            game.render();
             renderer.render();
             window.swapBuffer();
             window.getInputs();
