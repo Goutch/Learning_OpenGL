@@ -7,7 +7,7 @@
 class Renderer;
 class EntityShader;
 class Transform;
-class Drawable;
+class VAO;
 class Window;
 class Entity{
 public:
@@ -16,5 +16,5 @@ public:
     virtual void render(Renderer& renderer)=0;
     virtual void update(float delta,Window& window)=0;
     virtual EntityShader& getShader()=0;
-    virtual Drawable& getDrawable()=0;
+    virtual VAO& getVAO()=0;
 };

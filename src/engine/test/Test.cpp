@@ -4,11 +4,11 @@
 
 #include "Test.h"
 #include "entities/MeshRenderer.h"
-#include "entities/SpriteRenderer.h"
-#include "graphics/Sprite.h"
-#include "graphics/Texture.h"
+
+#include "graphics/data/Sprite.h"
+#include "graphics/data/Texture.h"
 #include "graphics/shaders/EntityShader.h"
-#include "graphics/Mesh.h"
+#include "graphics/data/Mesh.h"
 #include "core/Window.h"
 #include "core/Renderer.h"
 Test::Test()

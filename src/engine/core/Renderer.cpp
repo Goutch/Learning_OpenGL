@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "Renderer.h"
 #include "entities/Entity.h"
-#include "graphics/Drawable.h"
+#include "graphics/data/VAO.h"
 #include "graphics/shaders/EntityShader.h"
 #include "glm/gtc/matrix_transform.hpp"
 #include "Window.h"
@@ -17,9 +17,9 @@ void Renderer::render() {
         e->getShader().loadProjectionMatrix(projection_matrix);
         e->getShader().loadViewMatrix(viewMat);
         e->getShader().loadEntityUniforms(*e);
-        e->getDrawable().bind();
-        glDrawElements(GL_QUADS, e->getDrawable().vertexCount(), GL_UNSIGNED_INT, nullptr);
-        e->getDrawable().unbind();
+        e->getVAO().bind();
+        glDrawElements(GL_QUADS, e->getVAO().getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        e->getVAO().unbind();
         e->getShader().unbind();
     }
     entities.clear();

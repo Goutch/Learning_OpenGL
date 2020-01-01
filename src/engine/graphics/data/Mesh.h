@@ -1,13 +1,13 @@
 #pragma once
 
 #include <array>
-#include "Drawable.h"
-class Mesh :public Drawable{
+#include "VAO.h"
+class Mesh : public VAO{
 private:
     enum MeshAttributeType{
         VERTICIES=0,
-        NORMALS=1,
-        UVS=2,
+        UVS=1,
+        NORMALS=2,
         CORLORS=3
     };
 public:

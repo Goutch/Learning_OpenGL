@@ -9,6 +9,7 @@ private:
     bool has_index_buffer=false;
     unsigned int index_buffer_id;
 	unsigned int vao_id;
+	unsigned int vertexCount=0;
 	std::map<unsigned  int,VBO*> vbos;
 public:
 	VAO();
@@ -17,5 +18,6 @@ public:
 	void put(unsigned int atribute_position, unsigned int atribute_size, float* data, unsigned int data_length);
 	void bind();
 	void unbind();
+	unsigned int getVertexCount();
 };
 

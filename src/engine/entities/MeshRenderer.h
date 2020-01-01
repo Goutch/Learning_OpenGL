@@ -4,13 +4,13 @@
 class Mesh;
 class MeshRenderer :public Entity{
     EntityShader* shader;
-    Mesh* mesh;
+    VAO* mesh;
 public:
-    MeshRenderer(Mesh* mesh, EntityShader* shader, glm::vec3 pos);
+    MeshRenderer(VAO* mesh, EntityShader* shader, glm::vec3 pos);
 
     EntityShader &getShader() override;
 
-    Drawable &getDrawable() override;
+    VAO &getVAO() override;
 
 private:
     void render(Renderer &renderer) override;

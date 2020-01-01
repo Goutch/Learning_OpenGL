@@ -2,8 +2,8 @@
 
 class Texture;
 
-#include "Drawable.h"
-class Sprite :public Drawable{
+#include "VAO.h"
+class Sprite : public VAO{
     Texture* texture;
 
 public:

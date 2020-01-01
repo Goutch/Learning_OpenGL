@@ -8,5 +8,6 @@ glm::mat4 Camera::getViewMatrix() {
     return inverse(toMatrix());
 }
 
-Camera::Camera(glm::vec3 position):Transform(position) {
+Camera::Camera(glm::vec3 position):Transform() {
+    translate(position);
 }

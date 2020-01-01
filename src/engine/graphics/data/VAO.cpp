@@ -50,5 +50,10 @@ void VAO::indicies(unsigned int *indices, unsigned int indices_lenght) {
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_lenght * sizeof(unsigned int), indices, GL_STATIC_DRAW);
     glBindVertexArray(0);
     has_index_buffer=true;
+    vertexCount=indices_lenght;
+}
+
+unsigned int VAO::getVertexCount() {
+    return vertexCount;
 }
 

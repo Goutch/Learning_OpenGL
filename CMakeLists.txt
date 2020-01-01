@@ -41,19 +41,19 @@ add_executable(OGL_Engine
         src/engine/entities/Transform.h
         src/engine/graphics/shaders/ShaderProgram.cpp
         src/engine/graphics/shaders/ShaderProgram.h
-        src/engine/graphics/Mesh.cpp
-        src/engine/graphics/Mesh.h
-        src/engine/graphics/VAO.cpp
-        src/engine/graphics/VAO.h
-        src/engine/graphics/VBO.cpp
-        src/engine/graphics/VBO.h
+        src/engine/graphics/data/Mesh.cpp
+        src/engine/graphics/data/Mesh.h
+        src/engine/graphics/data/VAO.cpp
+        src/engine/graphics/data/VAO.h
+        src/engine/graphics/data/VBO.cpp
+        src/engine/graphics/data/VBO.h
         src/engine/test/Test.cpp
         src/engine/test/Test.h
         src/Debug.h
         src/main.cpp
         src/engine/core/Renderer.cpp
         src/engine/graphics/shaders/EntityShader.cpp
-        src/engine/graphics/shaders/EntityShader.h src/engine/graphics/Sprite.cpp src/engine/graphics/Sprite.h src/engine/graphics/Drawable.cpp src/engine/graphics/Drawable.h src/engine/graphics/Texture.cpp src/engine/graphics/Texture.h src/engine/entities/SpriteRenderer.cpp src/engine/entities/SpriteRenderer.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h src/engine/entities/Camera.cpp src/engine/entities/Camera.h src/engine/math/vec3.cpp src/engine/math/vec3.h src/engine/math/mat4.cpp src/engine/math/mat4.h src/engine/math/quat.cpp src/engine/math/quat.h src/engine/test/MathTest.cpp src/engine/test/MathTest.h)
+        src/engine/graphics/shaders/EntityShader.h src/engine/graphics/data/Sprite.cpp src/engine/graphics/data/Sprite.h src/engine/graphics/data/Texture.cpp src/engine/graphics/data/Texture.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h src/engine/entities/Camera.cpp src/engine/entities/Camera.h src/engine/math/vec3.cpp src/engine/math/vec3.h src/engine/math/mat4.cpp src/engine/math/mat4.h src/engine/math/quat.cpp src/engine/math/quat.h src/engine/test/MathTest.cpp src/engine/test/MathTest.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})# Vulkan::Vulkan)
 
