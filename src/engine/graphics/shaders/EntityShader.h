@@ -11,7 +11,7 @@ class EntityShader : public ShaderProgram{
     void getUniformsLocations();
 public:
     EntityShader();
-    void loadProjectionMatrix(const glm::mat4& projection_mat);
-    void loadViewMatrix(const glm::mat4& view_mat);
+    void loadProjectionMatrix(const mat4& projection_mat);
+    void loadViewMatrix(const mat4& view_mat);
     void loadEntityUniforms(Entity& e);
 };

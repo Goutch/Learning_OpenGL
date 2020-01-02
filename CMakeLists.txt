@@ -37,8 +37,6 @@ add_executable(OGL_Engine
         src/engine/core/Window.h
         src/engine/entities/MeshRenderer.cpp
         src/engine/entities/MeshRenderer.h
-        src/engine/entities/Transform.cpp
-        src/engine/entities/Transform.h
         src/engine/graphics/shaders/ShaderProgram.cpp
         src/engine/graphics/shaders/ShaderProgram.h
         src/engine/graphics/data/Mesh.cpp
@@ -53,7 +51,7 @@ add_executable(OGL_Engine
         src/main.cpp
         src/engine/core/Renderer.cpp
         src/engine/graphics/shaders/EntityShader.cpp
-        src/engine/graphics/shaders/EntityShader.h src/engine/graphics/data/Sprite.cpp src/engine/graphics/data/Sprite.h src/engine/graphics/data/Texture.cpp src/engine/graphics/data/Texture.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h src/engine/entities/Camera.cpp src/engine/entities/Camera.h src/engine/math/vec3.cpp src/engine/math/vec3.h src/engine/math/mat4.cpp src/engine/math/mat4.h src/engine/math/quat.cpp src/engine/math/quat.h src/engine/test/MathTest.cpp src/engine/test/MathTest.h)
+        src/engine/graphics/shaders/EntityShader.h src/engine/graphics/data/Sprite.cpp src/engine/graphics/data/Sprite.h src/engine/graphics/data/Texture.cpp src/engine/graphics/data/Texture.h Dependencies/STB_IMAGE/stb_image.h Dependencies/STB_IMAGE/stb_image.cpp src/engine/utils/Color.cpp src/engine/utils/Color.h src/engine/entities/Camera.cpp src/engine/entities/Camera.h src/engine/sml/vec3.cpp src/engine/sml/vec3.h src/engine/sml/mat4.cpp src/engine/sml/mat4.h src/engine/sml/quat.cpp src/engine/sml/quat.h src/engine/test/MathTest.cpp src/engine/test/MathTest.h src/engine/entities/Transform.cpp src/engine/entities/Transform.h src/engine/sml/vec4.cpp src/engine/sml/vec4.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})# Vulkan::Vulkan)
 

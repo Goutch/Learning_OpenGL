@@ -3,11 +3,10 @@
 //
 
 #include "Camera.h"
-
-glm::mat4 Camera::getViewMatrix() {
-    return inverse(toMatrix());
+mat4 Camera::getViewMatrix() {
+    return mat4(getMatrix()).inverse();
 }
 
-Camera::Camera(glm::vec3 position):Transform() {
+Camera::Camera(vec3 position):Transform() {
     translate(position);
 }

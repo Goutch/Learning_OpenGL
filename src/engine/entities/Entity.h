@@ -11,7 +11,7 @@ class VAO;
 class Window;
 class Entity{
 public:
-    Entity(glm::vec3 position){transform.translate(position);};
+    Entity(vec3 position){transform.translate(position);};
     Transform transform;
     virtual void render(Renderer& renderer)=0;
     virtual void update(float delta,Window& window)=0;

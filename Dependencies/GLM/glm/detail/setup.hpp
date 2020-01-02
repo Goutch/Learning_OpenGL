@@ -541,7 +541,7 @@
 namespace glm {
 namespace std {
 	// Import SYCL's functions into the namespace glm::std to force their usages.
-	// It's important to use the math built-in function (sin, exp, ...)
+	// It's important to use the sml built-in function (sin, exp, ...)
 	// of SYCL instead the std ones.
 	using namespace cl::sycl;
 

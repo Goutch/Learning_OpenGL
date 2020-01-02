@@ -96,7 +96,7 @@ namespace glm
 	/// including for implementations with no NaN
 	/// representations.
 	///
-	/// /!\ When using compiler fast math, this function may fail.
+	/// /!\ When using compiler fast sml, this function may fail.
 	///
 	/// @tparam T A floating-point scalar type
 	/// @tparam Q A value from qualifier enum

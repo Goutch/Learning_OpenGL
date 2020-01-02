@@ -10,7 +10,7 @@ EntityShader::EntityShader() : ShaderProgram("../src/engine/graphics/shaders/sha
 
 void EntityShader::loadEntityUniforms(Entity &e) {
 
-        loadMat4Uniform(transform_location, e.transform.toMatrix());
+        loadMat4Uniform(transform_location, e.transform.getMatrix());
         //todo:move to material
         loadIntUniform(texture_0_location,0);
         loadIntUniform(has_texture_location,0);
@@ -25,10 +25,10 @@ void EntityShader::getUniformsLocations() {
     view_mat_location=glGetUniformLocation(program_id,"view_mat");
 }
 
-void EntityShader::loadViewMatrix(const glm::mat4 &view_mat) {
+void EntityShader::loadViewMatrix(const mat4 &view_mat) {
     loadMat4Uniform(view_mat_location,view_mat);
 }
 
-void EntityShader::loadProjectionMatrix(const glm::mat4 &projection_mat) {
+void EntityShader::loadProjectionMatrix(const mat4 &projection_mat) {
     loadMat4Uniform(projection_mat_location,projection_mat);
 }

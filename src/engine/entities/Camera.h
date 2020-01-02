@@ -3,7 +3,7 @@
 
 class Camera :public Transform {
 public:
-    Camera(glm::vec3 position);
-    glm::mat4  getViewMatrix();
+    Camera(vec3 position);
+    mat4  getViewMatrix();
 
 };

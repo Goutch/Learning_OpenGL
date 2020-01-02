@@ -3,7 +3,7 @@
 //
 
 #include "MathTest.h"
-#include "math/vec3.h"
+#include "sml/vec3.h"
 #include "iostream"
 void MathTest::init(Window &window, Renderer &renderer) {
     this->window = &window;

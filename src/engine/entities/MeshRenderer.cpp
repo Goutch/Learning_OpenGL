@@ -7,7 +7,7 @@
 #include "MeshRenderer.h"
 #include "core/Renderer.h"
 #include "graphics/data/VAO.h"
-MeshRenderer::MeshRenderer(VAO* mesh, EntityShader* shader, glm::vec3 pos):Entity(pos) {
+MeshRenderer::MeshRenderer(VAO* mesh, EntityShader* shader, vec3 pos):Entity(pos) {
     this->mesh=mesh;
     this->shader=shader;
 }

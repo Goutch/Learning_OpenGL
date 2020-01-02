@@ -372,7 +372,7 @@ namespace glm
 	/// including for implementations with no NaN
 	/// representations.
 	///
-	/// /!\ When using compiler fast math, this function may fail.
+	/// /!\ When using compiler fast sml, this function may fail.
 	///
 	/// @tparam L Integer between 1 and 4 included that qualify the dimension of the vector
 	/// @tparam T Floating-point scalar types

@@ -19,7 +19,7 @@ private:
     Texture* stone;
     Window* window;
     Renderer* renderer;
-    Camera camera=Camera(glm::vec3(0,0,0));
+    Camera camera=Camera(vec3(0,0,0));
 public:
     Test();
 

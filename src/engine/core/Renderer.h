@@ -3,13 +3,16 @@
 class Entity;
 class Window;
 class Camera;
+class mat4;
 #include "glm/glm.hpp"
+
 #include <list>
+#include <sml/mat4.h>
 
 class Renderer
 {
 private:
-    glm::mat4 projection_matrix;
+    mat4 projection_matrix;
     std::list<Entity*> entities;
     Camera* cam;
 public:

@@ -6,13 +6,14 @@
 #include "graphics/data/VAO.h"
 #include "graphics/shaders/EntityShader.h"
 #include "glm/gtc/matrix_transform.hpp"
+#include <glm/gtc/type_ptr.hpp>
 #include "Window.h"
 #include "entities/Camera.h"
+
 void Renderer::render() {
-    glm::mat4 viewMat=cam!= nullptr?cam->getViewMatrix():glm::mat4();
+    mat4 viewMat = cam != nullptr ? cam->getViewMatrix() : mat4();
     glClear(GL_COLOR_BUFFER_BIT);
-    for(auto &e:entities)
-    {
+    for (auto &e:entities) {
         e->getShader().bind();
         e->getShader().loadProjectionMatrix(projection_matrix);
         e->getShader().loadViewMatrix(viewMat);
@@ -25,34 +26,34 @@ void Renderer::render() {
     entities.clear();
 }
 
-void Renderer::addToRenderQueue(Entity* entity) {
+void Renderer::addToRenderQueue(Entity *entity) {
     entities.push_back(entity);
 }
 
 Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
-    setRenderMode(window,mode);
+    setRenderMode(window, mode);
 }
 
 Renderer::~Renderer() {
 
 }
 
-void Renderer::setRenderMode(Window& window,Renderer::RenderMode renderMode) {
-    float w=(float)window.getHeight();
-    float h=(float)window.getWidth();
+void Renderer::setRenderMode(Window &window, Renderer::RenderMode renderMode) {
+    float w = (float) window.getHeight();
+    float h = (float) window.getWidth();
 
-    if(renderMode==PERSPECTIVE)
-    {
-        projection_matrix= glm::perspective<float>(glm::radians(90.0f), h/w, 0.1f, 100.0f);
-    }
-    else{
-        float aspect_ratio=w/h;
-        projection_matrix=glm::ortho<float>(-1,1,-1*aspect_ratio,1*aspect_ratio,-100,100);
+    if (renderMode == PERSPECTIVE) {
+        projection_matrix = mat4(glm::value_ptr(glm::perspective<float>(glm::radians(90.0f), h / w, 0.1f, 100.0f)));
+    } else {
+        float aspect_ratio = w / h;
+        projection_matrix = mat4(
+                glm::value_ptr(glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100)));
         //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
 }
+
 void Renderer::setCamera(Camera *camera) {
-    this->cam=camera;
+    this->cam = camera;
 }
 
 
