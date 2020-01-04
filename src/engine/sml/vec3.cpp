@@ -3,6 +3,7 @@
 //
 
 #include "vec3.h"
+#include "string"
 
 vec3::vec3(){
     this->x=0;
@@ -45,5 +46,9 @@ vec3 vec3::operator-(const vec3 &other) const  {
 
 float vec3::dot(const vec3 &other) const {
     return (x*other.x)+(y*other.y)+(z*other.z);
+}
+
+std::string vec3::toString() {
+    return  {"("+ std::to_string(x) + ","+std::to_string(y) +"," +std::to_string(z)+")" };
 }
 

@@ -50,3 +50,7 @@ vec4 vec4::operator-(const vec4 &other) const  {
 float vec4::dot(const vec4 &other) const {
     return (x*other.x)+(y*other.y)+(z*other.z)+(w*other.w);
 }
+
+std::string vec4::toString() {
+    return  {"("+ std::to_string(x) + ","+std::to_string(y) +"," +std::to_string(z)+","+std::to_string(w)+")" };
+}

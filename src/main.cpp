@@ -4,7 +4,7 @@
 #include "engine/test/MathTest.h"
 int main() {
     Engine engine=Engine();
-    Test test=Test();
+    MathTest test=MathTest();
     engine.start(test);
    return 0;
 }

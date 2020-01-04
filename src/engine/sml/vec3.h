@@ -1,5 +1,6 @@
 #pragma once
 
+#include "string"
 struct vec3 {
     float data[3];
     float& x =data[0], y = data[1], z = data[2];
@@ -16,5 +17,6 @@ struct vec3 {
     vec3 operator+(const vec3 &other) const;
     void operator+=(const vec3 &other);
     vec3 operator-(const vec3 &other) const;
+    std::string toString();
 };
 

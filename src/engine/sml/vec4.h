@@ -2,8 +2,7 @@
 // Created by User on 2020-01-02.
 //
 
-
-
+#include "string"
 struct vec4 {
     float data[4];
     float& x =data[0], y = data[1], z = data[2],w=data[3];
@@ -20,6 +19,7 @@ struct vec4 {
     vec4 operator+(const vec4 &other) const;
     void operator+=(const vec4 &other);
     vec4 operator-(const vec4 &other) const;
+    std::string toString();
 };
 
 
