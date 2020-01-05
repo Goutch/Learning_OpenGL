@@ -12,13 +12,11 @@ mat4 Transform::getMatrix() {
 }
 
 void Transform::translate(const vec3 &translation) {
-    pos+=translation;
     transform_matrix.translate(translation);
 }
 
-void Transform::rotate(const vec3 &rotation) {
-    rot+=rotation;
-    transform_matrix.rotate(rotation);
+void Transform::rotate(float angle,const vec3& axis) {
+    transform_matrix.rotate(angle,axis);
 }
 
 

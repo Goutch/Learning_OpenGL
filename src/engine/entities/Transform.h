@@ -16,7 +16,7 @@ public:
     Transform();
     mat4 getMatrix();
     void translate(const vec3 & translation);
-    void rotate(const  vec3  &rotation);
+    void rotate(float angle,const  vec3  &axis);
 };
 
 

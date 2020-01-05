@@ -47,7 +47,15 @@ void Test::init(Window &window,Renderer &renderer) {
 }
 
 void Test::update() {
-    //entities[0]->transform.rotate(vec3(0,0.01f,0));
+    if(window->isKeyDown(GLFW_KEY_E))
+    {
+        entities[0]->transform.rotate(0.05,vec3(0,1,0));
+    }
+    if(window->isKeyDown(GLFW_KEY_Q))
+    {
+        entities[0]->transform.rotate(-0.05,vec3(0,1,0));
+    }
+
     if(window->isKeyDown(GLFW_KEY_A))
     {
         camera.translate(vec3(-0.1,0,0));

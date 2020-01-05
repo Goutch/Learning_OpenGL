@@ -3,8 +3,8 @@
 //
 
 #include "Camera.h"
-#include "iostream"
 mat4 Camera::getViewMatrix() {
+
     return getMatrix().inverse();
 }
 

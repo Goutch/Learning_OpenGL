@@ -9,6 +9,12 @@ vec4::vec4(){
     this->z=0;
     this->w=0;
 }
+vec4::vec4(const float( & other)[4]) {
+    data[0]=other[0];
+    data[1]=other[1];
+    data[2]=other[2];
+    data[3]=other[3];
+}
 vec4::vec4(const vec4& other) {
     this->x=other.x;
     this->y=other.y;
@@ -27,6 +33,10 @@ void vec4::normalize() {
     y=y/total;
     z=z/total;
     w=w/total;
+}
+vec4 vec4::normalized() const {
+    float total=x+y+z+w;
+    return {x/total,y/total,z/total,w/total};
 }
 vec4 vec4::operator*(const vec4 &other) const {
     return {x*other.x,y*other.y,z*other.z,w*other.w};
@@ -53,3 +63,5 @@ float vec4::dot(const vec4 &other) const {
 std::string vec4::toString() {
     return  {"("+ std::to_string(x) + ","+std::to_string(y) +"," +std::to_string(z)+","+std::to_string(w)+")" };
 }
+
+

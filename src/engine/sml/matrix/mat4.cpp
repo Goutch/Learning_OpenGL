@@ -1,7 +1,7 @@
 //
 // Created by User on 11-Dec.-2019.
 //
-
+#include "math.h"
 #include "mat4.h"
 #include "sml/vector/vec3.h"
 #include "sml/vector/vec4.h"
@@ -87,8 +87,26 @@ void mat4::translate(vec3 translation) {
 
 }
 
-void mat4::rotate(vec3 rotation) {
-    //TODO:implement this
+void mat4::rotate(const float angle, const vec3 &axis) {
+
+    float const c = cos(angle);
+    float const s = sin(angle);
+    vec3 n_axis=axis.normalized();
+    mat4 result=mat4();
+
+    result.data[0] = c + (1 - c) * n_axis.x * n_axis.x;
+    result.data[1] = (1 - c) * n_axis.x * n_axis.y + s * n_axis.z;
+    result.data[2] = (1 - c) * n_axis.x * n_axis.z - s * n_axis.y;
+
+    result.data[4] = (1 - c) * n_axis.y * n_axis.x - s * n_axis.z;
+    result.data[5] = c + (1 - c) * n_axis.y * n_axis.y;
+    result.data[6] = (1 - c) * n_axis.y * n_axis.z + s * n_axis.x;
+
+    result.data[8] = (1 - c) * n_axis.z * n_axis.x + s * n_axis.y;
+    result.data[9] = (1 - c) * n_axis.z * n_axis.y - s * n_axis.x;
+    result.data[10] = c + (1 - c) * n_axis.z * n_axis.z;
+
+    copy( (*this)*result);
 }
 
 void mat4::scale(vec3 scale) {
@@ -97,12 +115,15 @@ void mat4::scale(vec3 scale) {
 
 mat4 mat4::operator*(const mat4 &other) const {
     auto results = mat4();
-    for (int i = 0; i < 4; ++i) {
-        for (int j = 0; j < 4; ++j) {
-            results.data[(i * 4) + j] = (data[(i * 4)] * other.data[j]) +
-                                        (data[(i * 4) + 1] * other.data[j + 4]) +
-                                        (data[(i * 4) + 2] * other.data[j + 8]) +
-                                        (data[(i * 4) + 3] * other.data[j + 12]);
+    for (int c = 0; c < 4; ++c) {
+        for (int r = 0; r < 4; ++r) {
+            int index=(c * 4) + r;
+            int index_row = index % 4;
+            int index_column = (index - index % 4) ;
+            results.data[index] = (data[index_row] * other.data[index_column]) +
+                                        (data[index_row+4] * other.data[index_column+1]) +
+                                        (data[index_row+8] * other.data[index_column+2]) +
+                                        (data[index_row+12] * other.data[index_column+3]);
         }
     }
     return results;
@@ -114,8 +135,7 @@ vec4 mat4::operator*(const vec4 &other) const {
     for (int i = 0; i < 4; ++i) {
         result.data[i] = (data[(i * 4)] * other.data[0]) + (data[(i * 4) + 1] * other.data[1]) +
                          (data[(i * 4) + 2] * other.data[2]) + (data[(i * 4) + 3] * other.data[3]);
-        //result.data[i] = (data[0 + i] * other.data[0]) + (data[4 + i] * other.data[1]) + (data[8 + i] * other.data[2]) +
-        //                 (data[12 + i] * other.data[3]);
+
     }
     return result;
 }

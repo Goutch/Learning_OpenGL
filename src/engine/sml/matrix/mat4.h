@@ -15,7 +15,7 @@ struct mat4 {
 
     mat4 inverse();
     void translate(vec3 translation);
-    void rotate(vec3 rotation);
+    void rotate(const float angle,const vec3 &n_axis);
     void scale(vec3 scale);
     mat4 operator*(const mat4 &other) const;
     vec4 operator*(const vec4 &other) const;
