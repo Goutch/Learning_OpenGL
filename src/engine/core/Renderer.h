@@ -4,7 +4,7 @@ class Entity;
 class Window;
 class Camera;
 
-#include "glm/glm.hpp"
+#include "glm/mat4x4.hpp"
 
 #include <list>
 using namespace glm;

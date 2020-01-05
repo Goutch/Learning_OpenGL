@@ -4,7 +4,6 @@
 
 #include "Camera.h"
 mat4 Camera::getViewMatrix() {
-
     return inverse(getMatrix());
 }
 

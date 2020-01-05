@@ -5,8 +5,7 @@
 #include "entities/Entity.h"
 #include "graphics/data/VAO.h"
 #include "graphics/shaders/EntityShader.h"
-#include "glm/gtc/matrix_transform.hpp"
-#include <glm/gtc/type_ptr.hpp>
+
 #include "Window.h"
 #include "entities/Camera.h"
 
