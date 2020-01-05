@@ -22,6 +22,7 @@ struct mat4 {
     std::string toString();
 
 private:
+    void getSubMatrixIndexes(int index,int (&array)[9]);
     float determinant(float m11,float m21,float m12,float m22);
     float determinant(float m11, float m21, float m31, float m12, float m22, float m32, float m13, float m23, float m33);
 };

@@ -5,7 +5,6 @@
 #include "mat4.h"
 #include "sml/vector/vec3.h"
 #include "sml/vector/vec4.h"
-#include "array"
 
 mat4::mat4() {
     identity();
@@ -36,70 +35,21 @@ mat4 &mat4::identity() {
 mat4 mat4::inverse() {
     float det = 1 / determinant();
     mat4 inverse_mat = mat4();
-    inverse_mat.data[0] =
-            determinant(data[5], data[6], data[7],
-                        data[9], data[10], data[11],
-                        data[13], data[14], data[15]) * det;
-    inverse_mat.data[1] =
-            -determinant(data[4], data[6], data[7],
-                         data[8], data[10], data[11],
-                         data[12], data[14], data[15]) * det;
-    inverse_mat.data[2] =
-            determinant(data[4], data[5], data[7],
-                        data[8], data[9], data[11],
-                        data[12], data[13], data[15]) * det;
-    inverse_mat.data[3] =
-            -determinant(data[4], data[5], data[6],
-                         data[8], data[9], data[10],
-                         data[12], data[13], data[14]) * det;
-    inverse_mat.data[4] =
-            -determinant(data[1], data[2], data[3],
-                         data[9], data[10], data[11],
-                         data[13], data[14], data[15]) * det;
-    inverse_mat.data[5] =
-            determinant(data[0], data[2], data[3],
-                        data[8], data[10], data[11],
-                        data[12], data[14], data[15]) * det;
-    inverse_mat.data[6] =
-            -determinant(data[0], data[1], data[3],
-                         data[8], data[9], data[11],
-                         data[12], data[13], data[15]) * det;
-    inverse_mat.data[7] =
-            determinant(data[0], data[1], data[2],
-                        data[8], data[9], data[10],
-                        data[12], data[13], data[14]) * det;
-    inverse_mat.data[8] =
-            determinant(data[1], data[2], data[3],
-                        data[5], data[6], data[7],
-                        data[13], data[14], data[15]) * det;
-    inverse_mat.data[9] =
-            -determinant(data[0], data[2], data[3],
-                         data[4], data[6], data[7],
-                         data[12], data[14], data[15]) * det;
-    inverse_mat.data[10] =
-            determinant(data[0], data[1], data[3],
-                        data[4], data[5], data[7],
-                        data[12], data[13], data[15]) * det;
-    inverse_mat.data[11] =
-            -determinant(data[0], data[1], data[2],
-                         data[4], data[5], data[6],
-                         data[12], data[13], data[14]) * det;
-    inverse_mat.data[12] =
-            -determinant(data[1], data[2], data[3],
-                         data[5], data[6], data[7],
-                         data[9], data[10], data[11]) * det;
-    inverse_mat.data[13] =
-            determinant(data[0], data[2], data[3],
-                        data[4], data[6], data[7],
-                        data[8], data[10], data[11]) * det;
-    inverse_mat.data[14] =
-            -determinant(data[0], data[1], data[3],
-                         data[4], data[5], data[7],
-                         data[8], data[9], data[11]) * det;
-    inverse_mat.data[15] =
-            determinant(data[0], data[1], data[2],
-                        data[4], data[5], data[6],
-                        data[8], data[9], data[10]) * det;
+    int indexes[9];
+    float sign=1;
+    for (int i = 0; i < 16; ++i) {
+        sign*=-1;
+        if(i%4==0)
+        {
+            sign*=-1;
+        }
+        getSubMatrixIndexes(i, indexes);
+        inverse_mat.data[i] =
+                sign*determinant(data[indexes[0]], data[indexes[3]], data[indexes[6]],
+                            data[indexes[1]], data[indexes[4]], data[indexes[7]],
+                            data[indexes[2]], data[indexes[5]], data[indexes[8]]) * det;
+
+    }
     float temp_value;
     temp_value = inverse_mat.data[4];
     inverse_mat.data[4] = inverse_mat.data[1];
@@ -130,12 +80,10 @@ mat4 mat4::inverse() {
 
 
 void mat4::translate(vec3 translation) {
-        vec4 t=vec4(translation.x,translation.y,translation.z,1);
-        vec4 t2=(*this)*t;
-
-        data[12] += t2.x;
-        data[13] += t2.y;
-        data[14] += t2.z;
+    vec4 t = (*this) * vec4(translation.x, translation.y, translation.z, 1);
+    data[12] += t.x;
+    data[13] += t.y;
+    data[14] += t.z;
 
 }
 
@@ -148,26 +96,26 @@ void mat4::scale(vec3 scale) {
 }
 
 mat4 mat4::operator*(const mat4 &other) const {
-    auto results = std::array<float, 16>();
+    auto results = mat4();
     for (int i = 0; i < 4; ++i) {
         for (int j = 0; j < 4; ++j) {
-            results[(i * 4) + j] = (data[i] * other.data[j]) +
-                                   (data[i + 1] * other.data[j + 4]) +
-                                   (data[i + 2] * other.data[j + 8]) +
-                                   (data[i + 3] * other.data[j + 12]);
+            results.data[(i * 4) + j] = (data[(i * 4)] * other.data[j]) +
+                                        (data[(i * 4) + 1] * other.data[j + 4]) +
+                                        (data[(i * 4) + 2] * other.data[j + 8]) +
+                                        (data[(i * 4) + 3] * other.data[j + 12]);
         }
     }
-    return {results.data()};
+    return results;
 }
 
-#include "iostream"
 vec4 mat4::operator*(const vec4 &other) const {
-    vec4 result=vec4();
+    vec4 result = vec4();
 
     for (int i = 0; i < 4; ++i) {
-        float val=data[(i*4)+1];
-        std::cout<<val<<std::endl;
-        result.data[i]=(data[(i*4)]*other.data[0])+(data[(i*4)+1]*other.data[1])+(data[(i*4)+2]*other.data[2])+(data[(i*4)+3]*other.data[3]);
+        result.data[i] = (data[(i * 4)] * other.data[0]) + (data[(i * 4) + 1] * other.data[1]) +
+                         (data[(i * 4) + 2] * other.data[2]) + (data[(i * 4) + 3] * other.data[3]);
+        //result.data[i] = (data[0 + i] * other.data[0]) + (data[4 + i] * other.data[1]) + (data[8 + i] * other.data[2]) +
+        //                 (data[12 + i] * other.data[3]);
     }
     return result;
 }
@@ -175,8 +123,12 @@ vec4 mat4::operator*(const vec4 &other) const {
 std::string mat4::toString() {
     std::string s = "";
     for (int i = 0; i < 4; ++i) {
-        s += "[" + std::to_string(data[0 + (i * 4)]) + "  " + std::to_string(data[1 + (i * 4)]) + "  " +
-             std::to_string(data[2 + (i * 4)]) + "  " + std::to_string(data[3 + (i * 4)]) + "]\n";
+        s += "[" +
+             std::to_string(data[0 + i]) + "  " +
+             std::to_string(data[4 + i]) + "  " +
+             std::to_string(data[8 + i]) + "  " +
+             std::to_string(data[12 + i]) +
+             "]\n";
     }
     return s;
 }
@@ -184,13 +136,21 @@ std::string mat4::toString() {
 float mat4::determinant() {
 
     return (data[0] *
-            determinant(data[5], data[6], data[7], data[9], data[10], data[11], data[13], data[14], data[15])) -
-           (data[1] *
-            determinant(data[4], data[6], data[7], data[8], data[10], data[11], data[12], data[14], data[15])) +
-           (data[2] *
-            determinant(data[4], data[5], data[7], data[8], data[9], data[11], data[12], data[13], data[15])) -
-           (data[3] *
-            determinant(data[4], data[5], data[6], data[8], data[9], data[10], data[12], data[13], data[14]));
+            determinant(data[5], data[9], data[13],
+                        data[6], data[10], data[14],
+                        data[7], data[11], data[15]))
+           - (data[4] *
+              determinant(data[1], data[9], data[13],
+                          data[2], data[10], data[14],
+                          data[3], data[11], data[15]))
+           + (data[8] *
+              determinant(data[1], data[5], data[13],
+                          data[2], data[6], data[14],
+                          data[3], data[7], data[15]))
+           - (data[12] *
+              determinant(data[1], data[5], data[9],
+                          data[2], data[6], data[10],
+                          data[3], data[7], data[11]));
 }
 
 float mat4::determinant(float m11, float m21, float m12, float m22) {
@@ -215,6 +175,21 @@ void mat4::copy(const float *other) {
         data[i] = other[i];
     }
 }
+
+void mat4::getSubMatrixIndexes(int index, int (&array)[9]) {
+    int count = 0;
+    int index_row = index % 4;
+    int index_column = (index - index % 4) / 4;
+    for (int c = 0; c < 4; ++c) {
+        for (int r = 0; r < 4; ++r) {
+            if (c != index_column && r != index_row) {
+                array[count] = (c * 4) + r;
+                count++;
+            }
+        }
+    }
+}
+
 
 
 
