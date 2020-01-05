@@ -3,12 +3,11 @@
 class Entity;
 class Window;
 class Camera;
-class mat4;
+
 #include "glm/glm.hpp"
 
 #include <list>
-#include <sml/matrix/mat4.h>
-
+using namespace glm;
 class Renderer
 {
 private:

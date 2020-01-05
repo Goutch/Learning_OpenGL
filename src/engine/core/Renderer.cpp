@@ -43,11 +43,10 @@ void Renderer::setRenderMode(Window &window, Renderer::RenderMode renderMode) {
     float h = (float) window.getWidth();
 
     if (renderMode == PERSPECTIVE) {
-        projection_matrix.copy(glm::value_ptr(glm::perspective<float>(glm::radians(90.0f), h / w, 0.1f, 100.0f)));
+        projection_matrix=glm::perspective<float>(glm::radians(90.0f), h / w, 0.1f, 100.0f);
     } else {
         float aspect_ratio = w / h;
-        projection_matrix.copy(
-                glm::value_ptr(glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100)));
+        projection_matrix=glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100);
         //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
 

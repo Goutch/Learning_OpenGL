@@ -58,18 +58,8 @@ add_executable(OGL_Engine
         src/engine/utils/Color.h
         src/engine/entities/Camera.cpp
         src/engine/entities/Camera.h
-        src/engine/sml/vector/vec3.cpp
-        src/engine/sml/vector/vec3.h
-        src/engine/sml/matrix/mat4.cpp
-        src/engine/sml/matrix/mat4.h
-        src/engine/sml/quat.cpp
-        src/engine/sml/quat.h src/engine/test/MathTest.cpp
-        src/engine/test/MathTest.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        src/engine/sml/vector/vec4.cpp
-        src/engine/sml/vector/vec4.h
-        src/engine/sml/sml.h
         )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})

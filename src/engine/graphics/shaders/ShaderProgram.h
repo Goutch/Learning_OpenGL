@@ -2,9 +2,7 @@
 
 #include <string>
 #include "glm/glm.hpp"
-class mat4;
-class vec3;
-class vec4;
+using namespace glm;
 class ShaderProgram {
 protected:
     unsigned int program_id;

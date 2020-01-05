@@ -6,9 +6,9 @@
 #include <iostream>
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
-#include <sml/vector/vec4.h>
-#include <sml/vector/vec3.h>
-#include <sml/matrix/mat4.h>
+#include <glm/glm.hpp>
+#include "glm/vec3.hpp"
+using namespace glm;
 ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
 
     program_id = glCreateProgram();
@@ -58,7 +58,7 @@ void ShaderProgram::loadVectorUniform(unsigned int location,const vec4& v) {
 }
 
 void ShaderProgram::loadMat4Uniform(unsigned int location,const mat4 &m) {
-    glUniformMatrix4fv(location,1,false,m.data);
+    glUniformMatrix4fv(location,1,false,value_ptr(m));
 }
 unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
     unsigned int id = glCreateShader(type);

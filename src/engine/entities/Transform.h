@@ -3,18 +3,19 @@
 //
 
 #pragma once
-#include "../sml/sml.h"
-
+#include <glm/glm.hpp>
+#include <glm/gtx/transform.hpp>
+using namespace glm;
 class Transform {
-    mat4 transform_matrix = mat4();
-    vec3 rot = vec3();
-    vec3 pos = vec3();
-    vec3 scale = vec3();
+    glm::mat4 transform_matrix=glm::mat4(1.0f);
+    glm::vec3 rot;
+    glm::vec3 pos;
+    glm::vec3 scale;
 
 
 public:
     Transform();
-    mat4 getMatrix();
+    glm::mat4 getMatrix();
     void translate(const vec3 & translation);
     void rotate(float angle,const  vec3  &axis);
 };
