@@ -3,8 +3,9 @@
 //
 
 #include "Camera.h"
+
 mat4 Camera::getViewMatrix() {
-    return mat4(getMatrix()).inverse();
+    return getMatrix().inverse();
 }
 
 Camera::Camera(vec3 position):Transform() {

@@ -43,11 +43,20 @@ void Test::init(Window &window,Renderer &renderer) {
     indices.push_back(3);
     renderer.setCamera(&camera);
     quad->vertices(vert.data(), vert.size()).colors(colors.data(), colors.size()).indices(indices.data(), indices.size());
-    entities.push_back(new MeshRenderer(quad, shader, vec3(0, 0, -0.5)));
+    entities.push_back(new MeshRenderer(quad, shader, vec3(0, 0, -0.5f)));
 }
 
 void Test::update() {
     entities[0]->transform.rotate(vec3(0,0.01f,0));
+
+    if(window->isKeyDown(GLFW_KEY_A))
+    {
+        camera.translate(vec3(-0.1,0,0));
+    }
+    if(window->isKeyDown(GLFW_KEY_D))
+    {
+        camera.translate(vec3(0.1,0,0));
+    }
 }
 
 void Test::render() {
