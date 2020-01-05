@@ -25,25 +25,68 @@ void Test::init(Window &window,Renderer &renderer) {
     sprite=new Sprite(wall);
 
     auto vert = std::vector<float>();
-    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(0);
-    vert.push_back(-.5);vert.push_back(.5f);vert.push_back(0);
-    vert.push_back(.5f);vert.push_back(.5f);vert.push_back(0);
-    vert.push_back(.5f);vert.push_back(-.5);vert.push_back(0);
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(0.5);
+    vert.push_back(-.5);vert.push_back(.5f);vert.push_back(0.5);
+    vert.push_back(.5f);vert.push_back(.5f);vert.push_back(0.5);
+    vert.push_back(.5f);vert.push_back(-.5);vert.push_back(0.5);
 
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(-0.5);
+    vert.push_back(-.5);vert.push_back(.5f);vert.push_back(-0.5);
+    vert.push_back(.5f);vert.push_back(.5f);vert.push_back(-0.5);
+    vert.push_back(.5f);vert.push_back(-.5);vert.push_back(-0.5);
+
+    vert.push_back(0.5);vert.push_back(-.5);vert.push_back(-.5);
+    vert.push_back(0.5);vert.push_back(.5f);vert.push_back(-.5);
+    vert.push_back(0.5);vert.push_back(.5f);vert.push_back(.5f);
+    vert.push_back(0.5);vert.push_back(-.5);vert.push_back(.5f);
+
+    vert.push_back(-0.5);vert.push_back(-.5);vert.push_back(-.5);
+    vert.push_back(-0.5);vert.push_back(.5f);vert.push_back(-.5);
+    vert.push_back(-0.5);vert.push_back(.5f);vert.push_back(.5f);
+    vert.push_back(-0.5);vert.push_back(-.5);vert.push_back(.5f);
+
+    vert.push_back(-.5);vert.push_back(0.5);vert.push_back(-.5);
+    vert.push_back(.5f);vert.push_back(0.5);vert.push_back(-.5);
+    vert.push_back(.5f);vert.push_back(0.5);vert.push_back(.5f);
+    vert.push_back(-.5);vert.push_back(0.5);vert.push_back(.5f);
+
+    vert.push_back(-.5);vert.push_back(-0.5);vert.push_back(-.5);
+    vert.push_back(.5f);vert.push_back(-0.5);vert.push_back(-.5);
+    vert.push_back(.5f);vert.push_back(-0.5);vert.push_back(.5f);
+    vert.push_back(-.5);vert.push_back(-0.5);vert.push_back(.5f);
     auto colors = std::vector<float>();
     colors.push_back(1);colors.push_back(1);colors.push_back(1);
     colors.push_back(1);colors.push_back(0);colors.push_back(0);
     colors.push_back(0);colors.push_back(1);colors.push_back(0);
     colors.push_back(0);colors.push_back(0);colors.push_back(1);
-
+    colors.push_back(1);colors.push_back(1);colors.push_back(1);
+    colors.push_back(1);colors.push_back(0);colors.push_back(0);
+    colors.push_back(0);colors.push_back(1);colors.push_back(0);
+    colors.push_back(0);colors.push_back(0);colors.push_back(1);
+    colors.push_back(1);colors.push_back(1);colors.push_back(1);
+    colors.push_back(1);colors.push_back(0);colors.push_back(0);
+    colors.push_back(0);colors.push_back(1);colors.push_back(0);
+    colors.push_back(0);colors.push_back(0);colors.push_back(1);
+    colors.push_back(1);colors.push_back(1);colors.push_back(1);
+    colors.push_back(1);colors.push_back(0);colors.push_back(0);
+    colors.push_back(0);colors.push_back(1);colors.push_back(0);
+    colors.push_back(0);colors.push_back(0);colors.push_back(1);
+    colors.push_back(1);colors.push_back(1);colors.push_back(1);
+    colors.push_back(1);colors.push_back(0);colors.push_back(0);
+    colors.push_back(0);colors.push_back(1);colors.push_back(0);
+    colors.push_back(0);colors.push_back(0);colors.push_back(1);
+    colors.push_back(1);colors.push_back(1);colors.push_back(1);
+    colors.push_back(1);colors.push_back(0);colors.push_back(0);
+    colors.push_back(0);colors.push_back(1);colors.push_back(0);
+    colors.push_back(0);colors.push_back(0);colors.push_back(1);
     auto indices = std::vector<unsigned int>();
-    indices.push_back(0);
-    indices.push_back(1);
-    indices.push_back(2);
-    indices.push_back(3);
+    for (int i = 0; i <vert.size()/3 ; ++i) {
+        indices.push_back(i);
+    }
+
     renderer.setCamera(&camera);
     quad->vertices(vert.data(), vert.size()).colors(colors.data(), colors.size()).indices(indices.data(), indices.size());
-    entities.push_back(new MeshRenderer(quad, shader, vec3(0, 0, -0.5f)));
+    entities.push_back(new MeshRenderer(quad, shader, vec3(0, 0, -2.0f)));
 }
 
 void Test::update() {
@@ -55,7 +98,22 @@ void Test::update() {
     {
         entities[0]->transform.rotate(-0.05,vec3(0,1,0));
     }
-
+    if(window->isKeyDown(GLFW_KEY_Z))
+    {
+        entities[0]->transform.rotate(0.05,vec3(1,0,0));
+    }
+    if(window->isKeyDown(GLFW_KEY_X))
+    {
+        entities[0]->transform.rotate(-0.05,vec3(1,0,0));
+    }
+    if(window->isKeyDown(GLFW_KEY_C))
+    {
+        entities[0]->transform.rotate(0.05,vec3(0,0,1));
+    }
+    if(window->isKeyDown(GLFW_KEY_V))
+    {
+        entities[0]->transform.rotate(-0.05,vec3(0,0,1));
+    }
     if(window->isKeyDown(GLFW_KEY_A))
     {
         camera.translate(vec3(-0.1,0,0));

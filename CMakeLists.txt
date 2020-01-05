@@ -70,6 +70,6 @@ add_executable(OGL_Engine
         src/engine/sml/vector/vec4.cpp
         src/engine/sml/vector/vec4.h
         src/engine/sml/sml.h
-)
+        )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})

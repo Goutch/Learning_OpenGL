@@ -26,9 +26,8 @@ void Engine::start(Game &game) {
         glEnable(GL_TEXTURE_2D);
         glCullFace(GL_BACK);
         //enable depth test
-        //glEnable(GL_DEPTH_TEST);
-        //glDepthMask(GL_FALSE);
-        //glDepthFunc(GL_LESS);
+        glEnable(GL_DEPTH_TEST);
+        glDepthFunc(GL_LESS);
         //enable transparency
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
