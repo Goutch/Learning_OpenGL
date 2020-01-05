@@ -7,7 +7,7 @@ class mat4;
 #include "glm/glm.hpp"
 
 #include <list>
-#include <sml/mat4.h>
+#include <sml/matrix/mat4.h>
 
 class Renderer
 {

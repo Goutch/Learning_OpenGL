@@ -6,9 +6,9 @@
 #include <iostream>
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
-#include <sml/vec4.h>
-#include <sml/vec3.h>
-#include <sml/mat4.h>
+#include <sml/vector/vec4.h>
+#include <sml/vector/vec3.h>
+#include <sml/matrix/mat4.h>
 ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
 
     program_id = glCreateProgram();

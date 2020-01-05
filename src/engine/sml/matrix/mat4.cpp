@@ -3,7 +3,8 @@
 //
 
 #include "mat4.h"
-#include "vec3.h"
+#include "sml/vector/vec3.h"
+#include "sml/vector/vec4.h"
 #include "array"
 
 mat4::mat4() {
@@ -127,11 +128,14 @@ mat4 mat4::inverse() {
     return inverse_mat;
 }
 
-void mat4::translate(vec3 translation) {
 
-        data[3] += translation.x;
-        data[7] += translation.y;
-        data[11] += translation.z;
+void mat4::translate(vec3 translation) {
+        vec4 t=vec4(translation.x,translation.y,translation.z,1);
+        vec4 t2=(*this)*t;
+
+        data[12] += t2.x;
+        data[13] += t2.y;
+        data[14] += t2.z;
 
 }
 
@@ -156,12 +160,16 @@ mat4 mat4::operator*(const mat4 &other) const {
     return {results.data()};
 }
 
-mat4 mat4::operator*(const vec4 &other) const {
+#include "iostream"
+vec4 mat4::operator*(const vec4 &other) const {
+    vec4 result=vec4();
 
-}
-
-mat4 mat4::operator*(const vec3 &other) const {
-
+    for (int i = 0; i < 4; ++i) {
+        float val=data[(i*4)+1];
+        std::cout<<val<<std::endl;
+        result.data[i]=(data[(i*4)]*other.data[0])+(data[(i*4)+1]*other.data[1])+(data[(i*4)+2]*other.data[2])+(data[(i*4)+3]*other.data[3]);
+    }
+    return result;
 }
 
 std::string mat4::toString() {
@@ -207,6 +215,8 @@ void mat4::copy(const float *other) {
         data[i] = other[i];
     }
 }
+
+
 
 
 

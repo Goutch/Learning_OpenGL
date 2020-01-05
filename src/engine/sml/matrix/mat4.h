@@ -1,6 +1,6 @@
 #pragma once
 class vec3;
-class vec4
+class vec4;
 #include "string"
 struct mat4 {
     float* data=new float[4*4];
@@ -18,8 +18,7 @@ struct mat4 {
     void rotate(vec3 rotation);
     void scale(vec3 scale);
     mat4 operator*(const mat4 &other) const;
-    mat4 operator*(const vec4 &other) const;
-    mat4 operator*(const vec3&other) const;
+    vec4 operator*(const vec4 &other) const;
     std::string toString();
 
 private:

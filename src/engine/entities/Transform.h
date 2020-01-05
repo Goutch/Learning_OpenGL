@@ -3,8 +3,8 @@
 //
 
 #pragma once
-#include "../sml/vec3.h"
-#include "../sml/mat4.h"
+#include "../sml/sml.h"
+
 class Transform {
     mat4 transform_matrix = mat4();
     vec3 rot = vec3();
