@@ -22,8 +22,8 @@ public:
     };
     Renderer(Window& window,RenderMode mode);
     ~Renderer();
-	virtual void addToRenderQueue(Entity* entity);
+	virtual void addToRenderQueue( Entity& entity);
 	virtual void render();
-	virtual void setCamera(Camera* camera);
+	virtual void setCamera(Camera& camera);
 	void setRenderMode(Window& window,RenderMode renderMode);
 };

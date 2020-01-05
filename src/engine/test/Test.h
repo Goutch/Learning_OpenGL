@@ -1,25 +1,20 @@
 #pragma once
 
 #include <vector>
+#include <graphics/data/Sprite.h>
+#include <graphics/shaders/EntityShader.h>
+#include <graphics/data/Texture.h>
+#include <graphics/data/Mesh.h>
 #include "core/Game.h"
-class EntityShader;
-class Mesh;
-class Window;
-class Entity;
-class Sprite;
-class Texture;
 #include "entities/Camera.h"
 class Test : public Game {
 private:
-    std::vector<Entity *> entities;
-    Mesh* quad;
+    std::vector<Entity*> entities;
     EntityShader* shader;
-    Sprite* sprite;
-    Texture* wall;
-    Texture* stone;
     Window* window;
     Renderer* renderer;
-    Camera camera=Camera(vec3(0,0,0));
+    Mesh* mesh;
+    Camera* camera;
 public:
     Test();
 

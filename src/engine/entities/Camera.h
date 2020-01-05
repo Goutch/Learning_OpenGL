@@ -1,6 +1,6 @@
 #pragma once
-#include "Entity.h"
 
+#include "Transform.h"
 class Camera :public Transform {
 public:
     Camera(vec3 position);

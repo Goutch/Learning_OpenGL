@@ -26,8 +26,8 @@ void Renderer::render() {
     entities.clear();
 }
 
-void Renderer::addToRenderQueue(Entity *entity) {
-    entities.push_back(entity);
+void Renderer::addToRenderQueue( Entity& entity) {
+    entities.push_back(& entity);
 }
 
 Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
@@ -53,8 +53,8 @@ void Renderer::setRenderMode(Window &window, Renderer::RenderMode renderMode) {
 
 }
 
-void Renderer::setCamera(Camera *camera) {
-    this->cam = camera;
+void Renderer::setCamera(Camera& camera) {
+    cam = &camera;
 }
 
 

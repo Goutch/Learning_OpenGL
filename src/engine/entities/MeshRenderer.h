@@ -6,7 +6,7 @@ class MeshRenderer :public Entity{
     EntityShader* shader;
     VAO* mesh;
 public:
-    MeshRenderer(VAO* mesh, EntityShader* shader, vec3 pos);
+    MeshRenderer(VAO& mesh, EntityShader& shader, vec3 pos);
 
     EntityShader &getShader() override;
 
