@@ -3,21 +3,28 @@
 //
 
 #pragma once
-#include <glm/glm.hpp>
+
+#include "glm/gtx/quaternion.hpp"
 #include <glm/gtx/transform.hpp>
+#include "glm/gtx/matrix_decompose.hpp"
 using namespace glm;
 class Transform {
     mat4 transform_matrix=glm::mat4(1.0f);
-    vec3 rot;
-    vec3 pos;
-    vec3 scale;
-
+    quat rot;
 
 public:
     Transform();
     mat4 getMatrix();
+    vec3 position();
+    void position(const vec3& position);
     void translate(const vec3 & translation);
-    void rotate(float angle,const  vec3  &axis);
+    void rotate(quat rotation);
+    void rotate(float angle,vec3 axis);
+    quat rotation();
+
+    void scale(vec3 scale);
+    void setScale(vec3 scale);
+    vec3 scale();
 };
 
 

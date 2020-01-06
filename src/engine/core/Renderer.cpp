@@ -2,7 +2,7 @@
 
 #include <GL/glew.h>
 #include "Renderer.h"
-#include "entities/Entity.h"
+#include "entities/MeshRenderer.h"
 #include "graphics/data/VAO.h"
 #include "graphics/shaders/EntityShader.h"
 
@@ -25,7 +25,7 @@ void Renderer::render() {
     entities.clear();
 }
 
-void Renderer::addToRenderQueue( Entity& entity) {
+void Renderer::addToRenderQueue( MeshRenderer& entity) {
     entities.push_back(& entity);
 }
 

@@ -18,9 +18,9 @@ Test::Test()
 void Test::init(Window &window, Renderer &renderer) {
     this->renderer = &renderer;
     this->window = &window;
-    mesh=new Mesh();
-    shader=new EntityShader();
-    camera=new Camera(vec3(0,0,0));
+    mesh = new Mesh();
+    shader = new EntityShader();
+    camera = new Camera(vec3(0, 0, 0));
     auto vert = std::vector<float>();
     vert.push_back(-.5);
     vert.push_back(-.5);
@@ -100,78 +100,24 @@ void Test::init(Window &window, Renderer &renderer) {
     vert.push_back(-0.5);
     vert.push_back(.5f);
     auto colors = std::vector<float>();
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(0);
-    colors.push_back(1);
+    for (int j = 0; j < vert.size() / 3; ++j) {
+        colors.push_back(1);
+        colors.push_back(0);
+        colors.push_back(0);
+
+        colors.push_back(0);
+        colors.push_back(1);
+        colors.push_back(0);
+
+        colors.push_back(0);
+        colors.push_back(0);
+        colors.push_back(1);
+
+        colors.push_back(1);
+        colors.push_back(1);
+        colors.push_back(1);
+
+    }
     auto indices = std::vector<unsigned int>();
     for (int i = 0; i < vert.size() / 3; ++i) {
         indices.push_back(i);
@@ -179,22 +125,30 @@ void Test::init(Window &window, Renderer &renderer) {
 
     renderer.setCamera(*camera);
     mesh->vertices(vert.data(), vert.size()).colors(colors.data(), colors.size()).indices(indices.data(),
-                                                                                         indices.size());
+                                                                                          indices.size());
     entities.push_back(new MeshRenderer(*mesh, *shader, vec3(0, 0, -2.0f)));
 }
 
 void Test::update() {
+    if(window->isKeyDown(GLFW_KEY_MINUS))
+    {
+        entities[0]->transform.setScale(vec3(2,2,2));
+    }
+    if(window->isKeyDown(GLFW_KEY_EQUAL))
+    {
+        entities[0]->transform.setScale(vec3(0.5,0.5,0.5));
+    }
     if (window->isKeyDown(GLFW_KEY_E)) {
-        entities[0]->transform.rotate(0.05, vec3(0, 1, 0));
+        entities[0]->transform.rotate(quat(vec3(0,0.05f,0)));
     }
     if (window->isKeyDown(GLFW_KEY_Q)) {
-        entities[0]->transform.rotate(-0.05, vec3(0, 1, 0));
+        entities[0]->transform.rotate(quat(vec3(0, -0.05f, 0)));
     }
     if (window->isKeyDown(GLFW_KEY_Z)) {
-        entities[0]->transform.rotate(0.05, vec3(1, 0, 0));
+        entities[0]->transform.rotate(quat(vec3(0.05,0,0)));
     }
     if (window->isKeyDown(GLFW_KEY_X)) {
-        entities[0]->transform.rotate(-0.05, vec3(1, 0, 0));
+        entities[0]->transform.rotate(quat(vec3(-0.05,0,0)));
     }
     if (window->isKeyDown(GLFW_KEY_C)) {
         entities[0]->transform.rotate(0.05, vec3(0, 0, 1));

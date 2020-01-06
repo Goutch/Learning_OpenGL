@@ -8,9 +8,9 @@ class MeshRenderer :public Entity{
 public:
     MeshRenderer(VAO& mesh, EntityShader& shader, vec3 pos);
 
-    EntityShader &getShader() override;
+    EntityShader &getShader();
 
-    VAO &getVAO() override;
+    VAO &getVAO();
 
 private:
     void render(Renderer &renderer) override;

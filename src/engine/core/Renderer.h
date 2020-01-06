@@ -1,6 +1,6 @@
 #pragma once
 
-class Entity;
+class MeshRenderer;
 class Window;
 class Camera;
 
@@ -12,7 +12,7 @@ class Renderer
 {
 private:
     mat4 projection_matrix;
-    std::list<Entity*> entities;
+    std::list<MeshRenderer*> entities;
     Camera* cam;
 public:
     enum RenderMode{
@@ -21,7 +21,7 @@ public:
     };
     Renderer(Window& window,RenderMode mode);
     ~Renderer();
-	virtual void addToRenderQueue( Entity& entity);
+	virtual void addToRenderQueue( MeshRenderer& entity);
 	virtual void render();
 	virtual void setCamera(Camera& camera);
 	void setRenderMode(Window& window,RenderMode renderMode);

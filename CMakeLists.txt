@@ -60,6 +60,6 @@ add_executable(OGL_Engine
         src/engine/entities/Camera.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        )
+        src/engine/test/CameraController.cpp src/engine/test/CameraController.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})
