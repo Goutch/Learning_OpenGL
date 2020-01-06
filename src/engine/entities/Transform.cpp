@@ -8,7 +8,7 @@ Transform::Transform() {
 
 }
 
-mat4 Transform::getMatrix() {
+mat4 Transform::getMatrix() const{
     return transform_matrix;
 }
 
@@ -25,6 +25,15 @@ void Transform::rotate(quat rotation) {
 void Transform::rotate(float angle, vec3 axis) {
     rot=glm::rotate(rot,angle,axis);
     transform_matrix=glm::rotate(transform_matrix,angle,axis);
+}
+vec3 Transform::forward() {
+    return glm::normalize(transform_matrix[2]);
+}
+vec3 Transform::right() {
+    return glm::normalize(transform_matrix[0]);
+}
+vec3 Transform::up() {
+    return glm::normalize(transform_matrix[1]);
 }
 void Transform::scale(vec3 s) {
     transform_matrix = glm::scale(transform_matrix, s);
@@ -55,6 +64,10 @@ void Transform::setScale(vec3 scale) {
     transform_matrix[1]=normalize(transform_matrix[1])*scale.y;
     transform_matrix[2]=normalize(transform_matrix[2])*scale.z;
 }
+
+
+
+
 
 
 

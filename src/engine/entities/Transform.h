@@ -14,14 +14,19 @@ class Transform {
 
 public:
     Transform();
-    mat4 getMatrix();
+    mat4 getMatrix() const;
+
     vec3 position();
     void position(const vec3& position);
     void translate(const vec3 & translation);
+
     void rotate(quat rotation);
     void rotate(float angle,vec3 axis);
     quat rotation();
 
+    vec3 forward();
+    vec3 right();
+    vec3 up();
     void scale(vec3 scale);
     void setScale(vec3 scale);
     vec3 scale();

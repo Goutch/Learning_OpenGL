@@ -6,7 +6,6 @@
 #include <graphics/data/Texture.h>
 #include <graphics/data/Mesh.h>
 #include "core/Game.h"
-#include "entities/Camera.h"
 class Test : public Game {
 private:
     std::vector<Entity*> entities;
@@ -14,7 +13,7 @@ private:
     Window* window;
     Renderer* renderer;
     Mesh* mesh;
-    Camera* camera;
+
 public:
     Test();
 

@@ -33,7 +33,9 @@ bool Window::open(std::string title, int width, int height)
 	std::cerr << "FAILED:Initialized GLFW"<<std::endl;
 	return false;
 }
-
+void Window::setMousePosition(double x, double y) {
+    glfwSetCursorPos(window,x,y);
+}
 bool Window::shouldClose()
 {
 	return glfwWindowShouldClose(window);
@@ -48,8 +50,6 @@ void Window::getInputs()
 }
 void Window::close()
 {
-    std::cout <<"Closing window..." << std::endl;
-	glfwSetWindowShouldClose(window, true);
 	glfwTerminate();
 	std::cout << "Terminated GLFW" << std::endl;
 }
@@ -65,16 +65,27 @@ void Window::getMousePosition(double& x,double& y)
 }
 
 void Window::showCursor(bool showCursor) {
-    if(!showCursor)
-        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
-    else
-        glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+    if(showCursor!=cursor_shown)
+    {
+        if(!showCursor)
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_HIDDEN);
+        else
+            glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+
+        cursor_shown=showCursor;
+    }
+
 }
 int Window::getWidth() {
     return sizeX;
 }
 int Window::getHeight()  {
     return sizeY;
+}
+
+void Window::setShouldClose() {
+    std::cout <<"Closing window..." << std::endl;
+    glfwSetWindowShouldClose(window, true);
 }
 
 

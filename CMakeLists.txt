@@ -56,10 +56,8 @@ add_executable(OGL_Engine
         Dependencies/STB_IMAGE/stb_image.cpp
         src/engine/utils/Color.cpp
         src/engine/utils/Color.h
-        src/engine/entities/Camera.cpp
-        src/engine/entities/Camera.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        src/engine/test/CameraController.cpp src/engine/test/CameraController.h)
+        src/engine/test/FPSController.cpp src/engine/test/FPSController.h src/engine/entities/Entity.cpp)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})

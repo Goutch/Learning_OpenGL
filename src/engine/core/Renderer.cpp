@@ -7,10 +7,10 @@
 #include "graphics/shaders/EntityShader.h"
 
 #include "Window.h"
-#include "entities/Camera.h"
+#include "entities/Transform.h"
 
 void Renderer::render() {
-    mat4 viewMat = cam != nullptr ? cam->getViewMatrix() : mat4();
+    mat4 viewMat = cam != nullptr ? glm::inverse(cam->getMatrix()) : mat4();
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     for (auto &e:entities) {
         e->getShader().bind();
@@ -40,19 +40,29 @@ Renderer::~Renderer() {
 void Renderer::setRenderMode(Window &window, Renderer::RenderMode renderMode) {
     float w = (float) window.getHeight();
     float h = (float) window.getWidth();
+    aspect_ratio = w / h;
 
     if (renderMode == PERSPECTIVE) {
-        projection_matrix=glm::perspective<float>(glm::radians(90.0f), h / w, 0.1f, 100.0f);
+        fov=90;
+        projection_matrix=glm::perspective<float>(glm::radians(fov), h / w, 0.1f, 100.0f);
     } else {
-        float aspect_ratio = w / h;
+
         projection_matrix=glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100);
         //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
 
 }
 
-void Renderer::setCamera(Camera& camera) {
+void Renderer::setCamera(Transform& camera) {
     cam = &camera;
+}
+
+float Renderer::getFOV() {
+    return fov;
+}
+
+float Renderer::getAspectRatio() {
+    return aspect_ratio;
 }
 
 

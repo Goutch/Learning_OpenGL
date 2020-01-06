@@ -2,7 +2,7 @@
 
 class MeshRenderer;
 class Window;
-class Camera;
+class Transform;
 
 #include "glm/mat4x4.hpp"
 
@@ -11,9 +11,11 @@ using namespace glm;
 class Renderer
 {
 private:
+    float aspect_ratio;
+    float fov=90;
     mat4 projection_matrix;
     std::list<MeshRenderer*> entities;
-    Camera* cam;
+    const Transform* cam;
 public:
     enum RenderMode{
         ORTHOGRAPHIC,
@@ -23,6 +25,8 @@ public:
     ~Renderer();
 	virtual void addToRenderQueue( MeshRenderer& entity);
 	virtual void render();
-	virtual void setCamera(Camera& camera);
+	virtual void setCamera(Transform& camera);
 	void setRenderMode(Window& window,RenderMode renderMode);
+	float getFOV();
+	float getAspectRatio();
 };
