@@ -10,97 +10,20 @@
 #include "core/Window.h"
 #include "core/Renderer.h"
 #include "FPSController.h"
-
+#include "graphics/Geometry.h"
 Test::Test()
-        : Game() {
+        : Scene() {
 }
 
 void Test::init(Window &window, Renderer &renderer) {
-    this->renderer = &renderer;
-    this->window = &window;
-    mesh = new Mesh();
+    Scene::init(window,renderer);
+    stone.load("../res/stone.jpg");
     shader = new EntityShader();
 
-    auto vert = std::vector<float>();
-    vert.push_back(-.5);
-    vert.push_back(-.5);
-    vert.push_back(0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(0.5);
-    vert.push_back(.5f);
-    vert.push_back(.5f);
-    vert.push_back(0.5);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(0.5);
-
-    vert.push_back(-.5);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);
-    vert.push_back(.5f);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);
-
-    vert.push_back(0.5);
-    vert.push_back(-.5);
-    vert.push_back(-.5);
-    vert.push_back(0.5);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(0.5);
-    vert.push_back(.5f);
-    vert.push_back(.5f);
-    vert.push_back(0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-
-    vert.push_back(-0.5);
-    vert.push_back(-.5);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);
-    vert.push_back(.5f);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-
-    vert.push_back(-.5);
-    vert.push_back(0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(0.5);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(0.5);
-    vert.push_back(.5f);
-
-    vert.push_back(-.5);
-    vert.push_back(-0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);
-    vert.push_back(.5f);
     auto colors = std::vector<float>();
-    for (int j = 0; j < vert.size() / 3; ++j) {
+    mesh=new Mesh();
+    Geometry::makeCube(*mesh);
+    for (int j = 0; j < mesh->getVertexCount(); ++j) {
         colors.push_back(1);
         colors.push_back(0);
         colors.push_back(0);
@@ -118,49 +41,43 @@ void Test::init(Window &window, Renderer &renderer) {
         colors.push_back(1);
 
     }
-    auto indices = std::vector<unsigned int>();
-    for (int i = 0; i < vert.size() / 3; ++i) {
-        indices.push_back(i);
+    stone.bind();
+    mesh->colors(colors.data(), colors.size());
+    camera=new FPSController(renderer.getAspectRatio(), renderer.getFOV(), vec3(0), vec3(0), vec3(1.0f));
+    Entity* pivot=new Entity(vec3(0),vec3(0),vec3(1));
+    float range=200;
+    for (int i = 0; i < 10000; ++i) {
+        add(new MeshRenderer(*mesh, *shader,
+                vec3((float(rand())/float((RAND_MAX)) *range)-(range/2), (float(rand())/float((RAND_MAX)) *range)-(range/2), (float(rand())/float((RAND_MAX)) *range)-(range/2)),
+                vec3(float(rand())/float((RAND_MAX)) * M_PI,float(rand())/float((RAND_MAX)) * M_PI,float(rand())/float((RAND_MAX)) * M_PI),
+                vec3(1.0f)));
+        entities[i]->transform.parent=&(pivot->transform);
     }
-
-
-    mesh->vertices(vert.data(), vert.size()).colors(colors.data(), colors.size()).indices(indices.data(),
-                                                                                          indices.size());
-    entities.push_back(new FPSController(renderer.getAspectRatio(),renderer.getFOV(),vec3(0),vec3(0),vec3(1.0f)));
-    entities.push_back(new MeshRenderer(*mesh, *shader, vec3(0, 0, -2.0f),vec3(0),vec3(1.0f)));
-    entities.push_back(new MeshRenderer(*mesh, *shader, vec3(0, 0, 2.0f),vec3(0),vec3(1.0f)));
-    entities.push_back(new MeshRenderer(*mesh, *shader, vec3(2, 0, 0),vec3(0),vec3(1.0f)));
-    entities.push_back(new MeshRenderer(*mesh, *shader, vec3(-2, 0, 0),vec3(0),vec3(1.0f)));
-    renderer.setCamera(entities[0]->transform);
-
+    add(camera);
+    add(pivot);
+    renderer.setCamera(camera->transform);
 }
 
-void Test::update() {
-    for(auto e:entities)
-    {
-        e->update(0,*window);
-    }
+void Test::update(float delta) {
+    Scene::update(delta);
+    entities[4001]->transform.rotate(0.001,vec3(0,1,0));
+
     if (window->isKeyDown(GLFW_KEY_0)) {
         renderer->setRenderMode(*window, Renderer::ORTHOGRAPHIC);
     }
     if (window->isKeyDown(GLFW_KEY_9)) {
         renderer->setRenderMode(*window, Renderer::PERSPECTIVE);
     }
-    if(window->isKeyDown(GLFW_KEY_ESCAPE))
-    {
+    if (window->isKeyDown(GLFW_KEY_ESCAPE)) {
         window->setShouldClose();
     }
 }
 
-void Test::render() {
-    for (auto &e : entities) {
-        e->render(*renderer);
-    }
-}
+
 
 Test::~Test() {
     delete mesh;
     delete shader;
-    delete[]entities.data();
-    entities.clear();
+    delete camera;
+    stone.unbind();
 }

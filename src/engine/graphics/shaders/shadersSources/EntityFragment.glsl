@@ -9,11 +9,9 @@ void main()
     if(has_texture==1)
     {
         vec4 texColor0=texture(texture_0,uvs);
-        fragColor=texColor0;
+        fragColor=texColor0*vec4(color.rgb,1.);
     }
     else{
         fragColor=vec4(color.rgb,1.);
     }
-
-
 }

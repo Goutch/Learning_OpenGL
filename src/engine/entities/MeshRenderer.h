@@ -12,10 +12,7 @@ public:
 
     VAO &getVAO();
 
-private:
-    void render(Renderer &renderer) override;
-
-    void update(float delta, Window &window) override;
+    void render(Scene& scene) override ;
 };
 
 

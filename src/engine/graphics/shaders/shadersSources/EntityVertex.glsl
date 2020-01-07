@@ -4,7 +4,8 @@ uniform mat4 view_mat;
 uniform mat4 transform;
 
 layout(location=0)in vec3 vertexPosition;
-layout(location=2)in vec2 texCoord;
+layout(location=1)in vec2 texCoord;
+
 layout(location=3)in vec3 colors;
 
 out vec3 color;

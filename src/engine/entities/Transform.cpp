@@ -9,7 +9,7 @@ Transform::Transform() {
 }
 
 mat4 Transform::getMatrix() const{
-    return transform_matrix;
+    return parent==nullptr?transform_matrix:parent->getMatrix()*transform_matrix;
 }
 
 

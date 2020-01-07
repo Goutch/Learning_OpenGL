@@ -3,7 +3,7 @@
 //
 #define GLEW_STATIC
 #include <GL/glew.h>
-#include "Game.h"
+#include "Scene.h"
 #include <iostream>
 #include "Window.h"
 #include "Engine.h"
@@ -14,7 +14,7 @@
 Engine::Engine() {
 
 }
-void Engine::start(Game &game) {
+void Engine::start(Scene &game) {
     Window window=Window();
     if (window.open("WINDOW",900, 600)) {
         glewInit() == GLEW_OK ?
@@ -37,7 +37,7 @@ void Engine::start(Game &game) {
         game.init(window,renderer);
         std::cout << "starting game.." << std::endl;
         while (!window.shouldClose()) {
-            game.update();
+            game.update(1);
             game.render();
             renderer.render();
             window.swapBuffer();

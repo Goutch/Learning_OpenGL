@@ -1,6 +1,6 @@
 #pragma once
 
-class Game;
+class Scene;
 
 class Engine {
 private:
@@ -8,6 +8,6 @@ private:
 public:
     Engine();
     ~Engine();
-    void start(Game& game);
+    void start(Scene& game);
 };
 

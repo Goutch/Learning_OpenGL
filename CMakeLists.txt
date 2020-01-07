@@ -28,7 +28,7 @@ include_directories(Dependencies/STB_IMAGE)
 add_executable(OGL_Engine
         src/engine/core/Engine.cpp
         src/engine/core/Engine.h
-        src/engine/core/Game.h
+        src/engine/core/Scene.h
         src/engine/core/Window.cpp
         src/engine/core/Window.h
         src/engine/entities/MeshRenderer.cpp
@@ -58,6 +58,6 @@ add_executable(OGL_Engine
         src/engine/utils/Color.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        src/engine/test/FPSController.cpp src/engine/test/FPSController.h src/engine/entities/Entity.cpp)
+        src/engine/test/FPSController.cpp src/engine/test/FPSController.h src/engine/entities/Entity.cpp src/engine/graphics/Geometry.h src/engine/core/Scene.cpp)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a  ${OPENGL_LIBRARIES})

@@ -4,20 +4,18 @@
 
 #include "FPSController.h"
 #include "core/Window.h"
-
+#include "core/Scene.h"
 
 FPSController::FPSController(float aspectRatio,float fov,vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
     this->aspect_ratio=aspectRatio;
     this->fov=fov;
 }
-void FPSController::render(Renderer &renderer) {
 
-}
 
-#include "glm/gtx/string_cast.hpp"
-#include "iostream"
-void FPSController::update(float delta, Window &window) {
 
+
+void FPSController::update(float delta, Scene& scene) {
+    Window& window=scene.getWindow();
     vec3 forward= vec3(0,0,-1) * 0.1f;
     vec3 right=vec3(1,0,0)*0.1f;
     vec3 up=vec3(0,1,0)*0.1f;

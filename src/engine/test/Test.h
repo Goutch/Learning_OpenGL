@@ -5,14 +5,14 @@
 #include <graphics/shaders/EntityShader.h>
 #include <graphics/data/Texture.h>
 #include <graphics/data/Mesh.h>
-#include "core/Game.h"
-class Test : public Game {
+#include "core/Scene.h"
+class Test : public Scene {
 private:
-    std::vector<Entity*> entities;
+
     EntityShader* shader;
-    Window* window;
-    Renderer* renderer;
+    Entity* camera;
     Mesh* mesh;
+    Texture stone;
 
 public:
     Test();
@@ -21,9 +21,7 @@ public:
 
     void init(Window &window,Renderer &renderer) override;
 
-    void update() override;
-
-    void render() override;
+    void update(float delta) override ;
 };
 
 

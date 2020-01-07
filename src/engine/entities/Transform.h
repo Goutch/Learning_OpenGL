@@ -9,10 +9,12 @@
 #include "glm/gtx/matrix_decompose.hpp"
 using namespace glm;
 class Transform {
+
     mat4 transform_matrix=glm::mat4(1.0f);
     quat rot;
 
 public:
+    Transform* parent= nullptr;
     Transform();
     mat4 getMatrix() const;
 
