@@ -18,7 +18,6 @@ void Scene::render() {
 void Scene::init(Window &window, Renderer &renderer) {
     this->renderer=&renderer;
     this->window=&window;
-
 }
 
 unsigned int Scene::add(Entity* entity)

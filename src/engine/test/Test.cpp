@@ -11,6 +11,7 @@
 #include "core/Renderer.h"
 #include "FPSController.h"
 #include "graphics/Geometry.h"
+
 Test::Test()
         : Scene() {
 }
@@ -21,8 +22,11 @@ void Test::init(Window &window, Renderer &renderer) {
     shader = new EntityShader();
 
     auto colors = std::vector<float>();
+
     mesh=new Mesh();
+
     Geometry::makeCube(*mesh);
+
     for (int j = 0; j < mesh->getVertexCount(); ++j) {
         colors.push_back(1);
         colors.push_back(0);
@@ -50,12 +54,13 @@ void Test::init(Window &window, Renderer &renderer) {
         add(new MeshRenderer(*mesh, *shader,
                 vec3((float(rand())/float((RAND_MAX)) *range)-(range/2), (float(rand())/float((RAND_MAX)) *range)-(range/2), (float(rand())/float((RAND_MAX)) *range)-(range/2)),
                 vec3(float(rand())/float((RAND_MAX)) * M_PI,float(rand())/float((RAND_MAX)) * M_PI,float(rand())/float((RAND_MAX)) * M_PI),
-                vec3(1.0f)));
+                vec3(3.0f,1,1)));
         entities[i]->transform.parent=&(pivot->transform);
     }
     add(camera);
     add(pivot);
     renderer.setCamera(camera->transform);
+
 }
 
 void Test::update(float delta) {

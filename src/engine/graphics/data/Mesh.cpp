@@ -5,6 +5,7 @@ Mesh::Mesh():VAO() {
 }
 Mesh& Mesh::indices(unsigned int *indices, unsigned int indices_count) {
     indicies(indices,indices_count);
+    return *this;
 }
 Mesh &Mesh::vertices(float *vertices_array, unsigned int vertices_count) {
     put(MeshAttributeType::VERTICIES, 3, vertices_array, vertices_count);
