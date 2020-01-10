@@ -16,6 +16,7 @@ class Transform {
 public:
     Transform* parent= nullptr;
     Transform();
+    Transform(vec3 position,vec3 rotation,vec3 scale);
     mat4 getMatrix() const;
 
     vec3 position();

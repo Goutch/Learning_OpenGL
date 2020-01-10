@@ -18,7 +18,8 @@ public:
 	virtual void init(Window &window,Renderer &renderer);
 	virtual void update(float delta);
 	virtual void render();
-    unsigned int add(Entity* entity);
+    unsigned int addEntity(Entity& entity);
+    unsigned int addEntity(Entity* entity);
 	Window& getWindow();
 	Renderer& getRenderer();
 

@@ -6,7 +6,7 @@
 #include <graphics/data/Texture.h>
 #include <graphics/data/Mesh.h>
 #include "core/Scene.h"
-class Test : public Scene {
+class RandomCubes : public Scene {
 private:
 
     EntityShader* shader;
@@ -15,9 +15,9 @@ private:
     Texture stone;
 
 public:
-    Test();
+    RandomCubes();
 
-    ~Test();
+    ~RandomCubes();
 
     void init(Window &window,Renderer &renderer) override;
 

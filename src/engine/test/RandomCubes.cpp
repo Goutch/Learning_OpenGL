@@ -2,7 +2,7 @@
 // Created by User on 18-Nov.-2019.
 //
 
-#include "Test.h"
+#include "RandomCubes.h"
 #include "entities/MeshRenderer.h"
 
 #include "graphics/data/Texture.h"
@@ -12,11 +12,11 @@
 #include "FPSController.h"
 #include "graphics/Geometry.h"
 
-Test::Test()
+RandomCubes::RandomCubes()
         : Scene() {
 }
 
-void Test::init(Window &window, Renderer &renderer) {
+void RandomCubes::init(Window &window, Renderer &renderer) {
     Scene::init(window,renderer);
     stone.load("../res/stone.jpg");
     shader = new EntityShader();
@@ -51,19 +51,23 @@ void Test::init(Window &window, Renderer &renderer) {
     Entity* pivot=new Entity(vec3(0),vec3(0),vec3(1));
     float range=200;
     for (int i = 0; i < 10000; ++i) {
-        add(new MeshRenderer(*mesh, *shader,
-                vec3((float(rand())/float((RAND_MAX)) *range)-(range/2), (float(rand())/float((RAND_MAX)) *range)-(range/2), (float(rand())/float((RAND_MAX)) *range)-(range/2)),
-                vec3(float(rand())/float((RAND_MAX)) * M_PI,float(rand())/float((RAND_MAX)) * M_PI,float(rand())/float((RAND_MAX)) * M_PI),
-                vec3(3.0f,1,1)));
+        addEntity(new MeshRenderer(*mesh, *shader,
+                                   vec3((float(rand()) / float((RAND_MAX)) * range) - (range / 2),
+                                        (float(rand()) / float((RAND_MAX)) * range) - (range / 2),
+                                        (float(rand()) / float((RAND_MAX)) * range) - (range / 2)),
+                                   vec3(float(rand()) / float((RAND_MAX)) * M_PI,
+                                        float(rand()) / float((RAND_MAX)) * M_PI,
+                                        float(rand()) / float((RAND_MAX)) * M_PI),
+                                   vec3(3.0f, 1, 1)));
         entities[i]->transform.parent=&(pivot->transform);
     }
-    add(camera);
-    add(pivot);
+    addEntity(camera);
+    addEntity(pivot);
     renderer.setCamera(camera->transform);
 
 }
 
-void Test::update(float delta) {
+void RandomCubes::update(float delta) {
     Scene::update(delta);
     entities[4001]->transform.rotate(0.001,vec3(0,1,0));
 
@@ -80,7 +84,7 @@ void Test::update(float delta) {
 
 
 
-Test::~Test() {
+RandomCubes::~RandomCubes() {
     delete mesh;
     delete shader;
     delete camera;

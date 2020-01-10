@@ -15,7 +15,7 @@ public:
 	VAO();
 	~VAO();
 	void indicies(unsigned int* indicies,unsigned int indicies_lenght);
-	void put(unsigned int atribute_position, unsigned int atribute_size, float* data, unsigned int data_length);
+	void put(unsigned int atribute_position, unsigned int atribute_count_per_vertex, float* data, unsigned int data_count);
 
     virtual void bind();
 	void unbind();

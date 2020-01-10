@@ -8,6 +8,11 @@ Transform::Transform() {
 
 }
 
+Transform::Transform(vec3 position, vec3 rotation, vec3 scale) {
+    this->translate(position);
+    this->rotate(quat(rotation));
+    this->setScale(scale);
+}
 mat4 Transform::getMatrix() const{
     return parent==nullptr?transform_matrix:parent->getMatrix()*transform_matrix;
 }
@@ -64,6 +69,7 @@ void Transform::setScale(vec3 scale) {
     transform_matrix[1]=normalize(transform_matrix[1])*scale.y;
     transform_matrix[2]=normalize(transform_matrix[2])*scale.z;
 }
+
 
 
 

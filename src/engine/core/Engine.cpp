@@ -2,6 +2,7 @@
 // Created by User on 18-Nov.-2019.
 //
 #define GLEW_STATIC
+
 #include <GL/glew.h>
 #include "Scene.h"
 #include <iostream>
@@ -12,11 +13,8 @@
 
 
 Engine::Engine() {
-
-}
-void Engine::start(Scene &game) {
-    Window window=Window();
-    if (window.open("WINDOW",900, 600)) {
+    window = new Window();
+    if (window->open("WINDOW", 900, 600)) {
         glewInit() == GLEW_OK ?
         std::cout << "Initialized GLEW" << std::endl :
         std::cerr << "FAILED:GLEW INITIALIZATION" << std::endl;
@@ -30,18 +28,24 @@ void Engine::start(Scene &game) {
         glDepthFunc(GL_LESS);
         //enable transparency
         glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA,GL_ONE_MINUS_SRC_ALPHA);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    }
+}
 
-        Renderer renderer=Renderer(window,Renderer::PERSPECTIVE);
+void Engine::start(Scene &scene) {
+    if(glewInit() == GLEW_OK)
+    {
+
+        Renderer renderer = Renderer(*window, Renderer::ORTHOGRAPHIC);
         std::cout << "initializing game.." << std::endl;
-        game.init(window,renderer);
+        scene.init(*window, renderer);
         std::cout << "starting game.." << std::endl;
-        while (!window.shouldClose()) {
-            game.update(1);
-            game.render();
+        while (!window->shouldClose()) {
+            scene.update(1);
+            scene.render();
             renderer.render();
-            window.swapBuffer();
-            window.getInputs();
+            window->swapBuffer();
+            window->getInputs();
         }
     }
     printGLErrors();
@@ -50,6 +54,7 @@ void Engine::start(Scene &game) {
 Engine::~Engine() {
 
 }
+
 
 
 

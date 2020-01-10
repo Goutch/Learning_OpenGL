@@ -27,14 +27,14 @@ void VAO::unbind() {
     glBindVertexArray(0);
 }
 
-void VAO::put(unsigned int atribute_position, unsigned int atribute_size, float *data, unsigned int data_length) {
+void VAO::put(unsigned int atribute_position, unsigned int atribute_count_per_vertex, float *data, unsigned int data_count) {
     glBindVertexArray(vao_id);
     if (vbos.find(atribute_position) == vbos.end())
         vbos.insert(std::pair<unsigned int, VBO *>(atribute_position,
-                                                   new VBO(atribute_position, atribute_size, data, data_length)));
+                                                   new VBO(atribute_position, atribute_count_per_vertex, data, data_count)));
     else {
         delete vbos.at(atribute_position);
-        vbos.at(atribute_position) = new VBO(atribute_position, atribute_size, data, data_length);
+        vbos.at(atribute_position) = new VBO(atribute_position, atribute_count_per_vertex, data, data_count);
     }
     glBindVertexArray(0);
 }
