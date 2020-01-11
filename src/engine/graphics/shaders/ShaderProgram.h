@@ -13,14 +13,15 @@ protected:
 
 public:
 
-    void unbind();
+
 
     ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader);
 
     ~ShaderProgram();
 
 
-    void bind();
+    void bind() const;
+    void unbind() const;
 
 protected:
     void loadIntUniform(unsigned int location, int i);

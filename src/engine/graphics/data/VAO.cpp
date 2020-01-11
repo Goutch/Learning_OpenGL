@@ -18,12 +18,12 @@ VAO::~VAO() {
     glDeleteVertexArrays(1, &vao_id);
 }
 
-void VAO::bind() {
+void VAO::bind()  const{
     glBindVertexArray(vao_id);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,index_buffer_id);
 }
 
-void VAO::unbind() {
+void VAO::unbind()  const{
     glBindVertexArray(0);
 }
 
@@ -53,7 +53,7 @@ void VAO::indicies(unsigned int *indices, unsigned int indices_lenght) {
     vertexCount=indices_lenght;
 }
 
-unsigned int VAO::getVertexCount() {
+unsigned int VAO::getVertexCount()  const{
     return vertexCount;
 }
 

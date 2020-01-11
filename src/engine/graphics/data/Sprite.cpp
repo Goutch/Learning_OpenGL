@@ -9,7 +9,7 @@ Sprite::Sprite(Texture& texture):VAO(){
     Geometry::makeQuad(*this);
     setTexture(texture);
 }
-void Sprite::bind() {
+void Sprite::bind() const {
     VAO::bind();
     texture->bind();
 }

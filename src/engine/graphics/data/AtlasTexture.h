@@ -17,5 +17,5 @@ public:
 
     void setCellSize(unsigned int cellWidth, unsigned int cellHeight);
 
-    void getCoordinatesfloat (float (&uvs)[8],unsigned int row, unsigned int column);
+    void getCoordinates(float (&uvs)[8],unsigned int row, unsigned int column) const;
 };

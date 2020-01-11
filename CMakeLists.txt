@@ -58,8 +58,8 @@ add_executable(OGL_Engine
         src/engine/utils/Color.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
-        src/engine/test/FPSController.cpp
-        src/engine/test/FPSController.h
+        src/engine/entities/FPSController.cpp
+        src/engine/entities/FPSController.h
         src/engine/entities/Entity.cpp
         src/engine/graphics/Geometry.h
         src/engine/core/Scene.cpp

@@ -5,31 +5,27 @@
 #include "TextureCreation.h"
 #include "entities/MeshRenderer.h"
 #include "core/Renderer.h"
-
+#include "utils/SimplexNoise.h"
 void TextureCreation::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
     camera = new Transform(vec3(0), vec3(0), vec3(1));
-    unsigned char *textureColor = new unsigned char[4 * 4];
-    textureColor[0] = 255;
-    textureColor[1] = 0;
-    textureColor[2] = 0;
-    textureColor[3] = 255;
+    int width=300;
+    int height=300;
+    double scale=0.0033;
 
-    textureColor[4] = 0;
-    textureColor[5] = 255;
-    textureColor[6] = 0;
-    textureColor[7] = 255;
-
-    textureColor[8] = 0;
-    textureColor[9] = 0;
-    textureColor[10] = 255;
-    textureColor[11] = 255;
-
-    textureColor[12] = 255;
-    textureColor[13] = 255;
-    textureColor[14] = 255;
-    textureColor[15] = 255;
-    texture.setTexturePixelData(textureColor, 2, 2,true);
+    unsigned char *textureColor = new unsigned char[width * height*4];
+    for (int y = 0; y <height ; ++y) {
+        for (int x = 0; x < width; ++x) {
+            float n=(SimplexNoise::noise(x*scale,y*scale)+1)*0.5;
+            unsigned int c=static_cast<unsigned int>(n*255);
+            int i=((y*width)+x)*4;
+            textureColor[i]=c;
+            textureColor[i+1]=c;
+            textureColor[i+2]=c;
+            textureColor[i+3]=255;
+        }
+    }
+    texture.setTexturePixelData(textureColor, width, height,true);
 
     sprite.setTexture(texture);
 

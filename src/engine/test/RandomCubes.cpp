@@ -9,7 +9,7 @@
 
 #include "core/Window.h"
 #include "core/Renderer.h"
-#include "FPSController.h"
+#include "entities/FPSController.h"
 #include "graphics/Geometry.h"
 
 RandomCubes::RandomCubes()

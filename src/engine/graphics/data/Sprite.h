@@ -10,7 +10,7 @@ public:
     Sprite();
     Sprite(Texture& texture);
     void setTexture(Texture& texture);
-    void bind() override ;
+    void bind() const override ;
 };
 
 
