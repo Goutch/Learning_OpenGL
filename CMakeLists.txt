@@ -69,6 +69,8 @@ add_executable(OGL_Engine
         src/engine/graphics/data/AtlasTexture.cpp
         src/engine/graphics/data/AtlasTexture.h
         src/engine/test/TextureCreation.cpp
-        src/engine/test/TextureCreation.h)
+        src/engine/test/TextureCreation.h
+        src/engine/utils/SimplexNoise.h
+        src/engine/utils/SimplexNoise.cpp)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
