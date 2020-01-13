@@ -21,7 +21,7 @@ Mesh &Mesh::uvs(float *uvs_array, unsigned int uvs_count) {
     return *this;
 }
 Mesh &Mesh::colors(float *colors_array, unsigned int colors_count) {
-    put(MeshAttributeType::CORLORS, 3, colors_array, colors_count);
+    put(MeshAttributeType::CORLORS, 4, colors_array, colors_count);
     return *this;
 }
 

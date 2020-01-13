@@ -2,11 +2,11 @@
 // Created by User on 2020-01-09.
 //
 
-#include "TextureCreation.h"
+#include "NoiseTextureCreation.h"
 #include "entities/MeshRenderer.h"
 #include "core/Renderer.h"
 #include "utils/SimplexNoise.h"
-void TextureCreation::init(Window &window, Renderer &renderer) {
+void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
     camera = new Transform(vec3(0), vec3(0), vec3(1));
     int width=300;
@@ -17,7 +17,7 @@ void TextureCreation::init(Window &window, Renderer &renderer) {
     for (int y = 0; y <height ; ++y) {
         for (int x = 0; x < width; ++x) {
             float n=(SimplexNoise::noise(x*scale,y*scale)+1)*0.5;
-            unsigned int c=static_cast<unsigned int>(n*255);
+            auto c=static_cast<unsigned int>(n*255);
             int i=((y*width)+x)*4;
             textureColor[i]=c;
             textureColor[i+1]=c;
@@ -36,10 +36,10 @@ void TextureCreation::init(Window &window, Renderer &renderer) {
     delete[] textureColor;
 }
 
-void TextureCreation::update(float delta) {
+void NoiseTextureCreation::update(float delta) {
     Scene::update(delta);
 }
 
-TextureCreation::~TextureCreation() {
+NoiseTextureCreation::~NoiseTextureCreation() {
     delete camera;
 }

@@ -13,6 +13,11 @@ MeshRenderer::MeshRenderer(VAO &mesh, EntityShader &shader, vec3 position, vec3 
     this->shader=&shader;
 }
 
+MeshRenderer::MeshRenderer(VAO &mesh, EntityShader &shader):Entity() {
+    this->mesh=&mesh;
+    this->shader=&shader;
+}
+
 void MeshRenderer::render(Scene &scene) {
     scene.getRenderer().addToRenderQueue(*this);
 }
@@ -24,4 +29,6 @@ EntityShader &MeshRenderer::getShader() {
 VAO &MeshRenderer::getVAO()  {
     return *mesh;
 }
+
+
 

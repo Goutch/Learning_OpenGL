@@ -18,6 +18,7 @@ RandomCubes::RandomCubes()
 
 void RandomCubes::init(Window &window, Renderer &renderer) {
     Scene::init(window,renderer);
+    renderer.setRenderMode(window,Renderer::PERSPECTIVE);
     stone.load("../res/stone.jpg");
     shader = new EntityShader();
 
@@ -29,20 +30,24 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
 
     for (int j = 0; j < mesh->getVertexCount(); ++j) {
         colors.push_back(1);
-        colors.push_back(0);
-        colors.push_back(0);
-
-        colors.push_back(0);
         colors.push_back(1);
-        colors.push_back(0);
-
-        colors.push_back(0);
-        colors.push_back(0);
         colors.push_back(1);
+        colors.push_back(0.2);
 
         colors.push_back(1);
         colors.push_back(1);
         colors.push_back(1);
+        colors.push_back(0.2);
+
+        colors.push_back(1);
+        colors.push_back(1);
+        colors.push_back(1);
+        colors.push_back(0.2);
+
+        colors.push_back(1);
+        colors.push_back(1);
+        colors.push_back(1);
+        colors.push_back(0.2);
 
     }
     stone.bind();

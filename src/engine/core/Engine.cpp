@@ -35,7 +35,6 @@ Engine::Engine() {
 void Engine::start(Scene &scene) {
     if(glewInit() == GLEW_OK)
     {
-
         Renderer renderer = Renderer(*window, Renderer::ORTHOGRAPHIC);
         std::cout << "initializing game.." << std::endl;
         scene.init(*window, renderer);

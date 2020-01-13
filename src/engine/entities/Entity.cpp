@@ -8,6 +8,8 @@ Entity::Entity(vec3 position, vec3 rotation, vec3 scale) {
     transform.rotate(quat(rotation));
     transform.scale(scale);
 }
+Entity::Entity() {
+}
 
 void Entity::render(Scene &scene) {
 

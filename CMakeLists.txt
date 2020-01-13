@@ -41,8 +41,8 @@ add_executable(OGL_Engine
         src/engine/graphics/data/VAO.h
         src/engine/graphics/data/VBO.cpp
         src/engine/graphics/data/VBO.h
-        src/engine/test/RandomCubes.cpp
-        src/engine/test/RandomCubes.h
+        src/engine/test/3D/RandomCubes.cpp
+        src/engine/test/3D/RandomCubes.h
         src/Debug.h
         src/main.cpp
         src/engine/core/Renderer.cpp
@@ -68,9 +68,10 @@ add_executable(OGL_Engine
         src/engine/graphics/data/Text.h
         src/engine/graphics/data/AtlasTexture.cpp
         src/engine/graphics/data/AtlasTexture.h
-        src/engine/test/TextureCreation.cpp
-        src/engine/test/TextureCreation.h
+        src/engine/test/2D/NoiseTextureCreation.cpp
+        src/engine/test/2D/NoiseTextureCreation.h
         src/engine/utils/SimplexNoise.h
-        src/engine/utils/SimplexNoise.cpp)
+        src/engine/utils/SimplexNoise.cpp
+        src/engine/test/2D/AtlasTextureTest.cpp src/engine/test/2D/AtlasTextureTest.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

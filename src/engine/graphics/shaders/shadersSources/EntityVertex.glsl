@@ -6,9 +6,9 @@ uniform mat4 transform;
 layout(location=0)in vec3 vertexPosition;
 layout(location=1)in vec2 texCoord;
 
-layout(location=3)in vec3 colors;
+layout(location=3)in vec4 colors;
 
-out vec3 color;
+out vec4 color;
 out vec2 uvs;
 void main()
 {
