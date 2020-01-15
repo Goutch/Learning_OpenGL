@@ -18,7 +18,7 @@ void Renderer::render() {
         e->getShader().loadViewMatrix(viewMat);
         e->getShader().loadEntityUniforms(*e);
         e->getVAO().bind();
-        glDrawElements(GL_QUADS, e->getVAO().getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        glDrawElements(GL_TRIANGLES, e->getVAO().getVertexCount(), GL_UNSIGNED_INT, nullptr);
         e->getVAO().unbind();
         e->getShader().unbind();
     }

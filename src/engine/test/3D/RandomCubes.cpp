@@ -22,37 +22,18 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
     stone.load("../res/stone.jpg");
     shader = new EntityShader();
 
-    auto colors = std::vector<float>();
+
 
     mesh=new Mesh();
 
     Geometry::makeCube(*mesh);
+    std::vector<float> colors=std::vector<float>();
 
-    for (int j = 0; j < mesh->getVertexCount(); ++j) {
+    for (int j = 0; j <4*mesh->getVertexCount() ; ++j) {
         colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(0.2);
-
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(0.2);
-
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(0.2);
-
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(1);
-        colors.push_back(0.2);
-
     }
-    stone.bind();
     mesh->colors(colors.data(), colors.size());
-    camera=new FPSController(renderer.getAspectRatio(), renderer.getFOV(), vec3(0), vec3(0), vec3(1.0f));
+    camera=new FPSController();
     Entity* pivot=new Entity(vec3(0),vec3(0),vec3(1));
     float range=200;
     for (int i = 0; i < 10000; ++i) {
@@ -63,7 +44,7 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
                                    vec3(float(rand()) / float((RAND_MAX)) * M_PI,
                                         float(rand()) / float((RAND_MAX)) * M_PI,
                                         float(rand()) / float((RAND_MAX)) * M_PI),
-                                   vec3(3.0f, 1, 1)));
+                                   vec3(1, 1, 1)));
         entities[i]->transform.parent=&(pivot->transform);
     }
     addEntity(camera);
@@ -74,14 +55,6 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
 
 void RandomCubes::update(float delta) {
     Scene::update(delta);
-    entities[4001]->transform.rotate(0.001,vec3(0,1,0));
-
-    if (window->isKeyDown(GLFW_KEY_0)) {
-        renderer->setRenderMode(*window, Renderer::ORTHOGRAPHIC);
-    }
-    if (window->isKeyDown(GLFW_KEY_9)) {
-        renderer->setRenderMode(*window, Renderer::PERSPECTIVE);
-    }
     if (window->isKeyDown(GLFW_KEY_ESCAPE)) {
         window->setShouldClose();
     }

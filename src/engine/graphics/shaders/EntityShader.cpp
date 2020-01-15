@@ -13,7 +13,7 @@ void EntityShader::loadEntityUniforms(Entity &e) {
         loadMat4Uniform(transform_location, e.transform.getMatrix());
         //todo:move to material
         loadIntUniform(texture_0_location,0);//slot
-        loadIntUniform(has_texture_location,1);
+        loadIntUniform(has_texture_location,0);
 }
 
 void EntityShader::getUniformsLocations() {

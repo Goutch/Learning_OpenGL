@@ -5,13 +5,11 @@
 #include "FPSController.h"
 #include "core/Window.h"
 #include "core/Scene.h"
+#include <core/Renderer.h>
+FPSController::FPSController(vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
 
-FPSController::FPSController(float aspectRatio,float fov,vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
-    this->aspect_ratio=aspectRatio;
-    this->fov=fov;
 }
-
-
+FPSController::FPSController():Entity() {}
 
 
 void FPSController::update(float delta, Scene& scene) {
@@ -43,6 +41,9 @@ void FPSController::update(float delta, Scene& scene) {
     double x,y;
     float width=(float)window.getWidth();
     float height=(float)window.getHeight();
+
+    float fov=scene.getRenderer().getFOV();
+    float aspect_ratio=scene.getRenderer().getAspectRatio();
 
     window.getMousePosition(x,y);
     change.x=(((width/2)-x)/width)*fov;

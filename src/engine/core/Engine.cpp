@@ -22,6 +22,8 @@ Engine::Engine() {
 
         initDebug();
         glEnable(GL_TEXTURE_2D);
+        //enable cull face
+        glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         //enable depth test
         glEnable(GL_DEPTH_TEST);

@@ -4,9 +4,8 @@
 
 class FPSController: public Entity {
 public:
-    float aspect_ratio;
-    float fov;
-    FPSController(float aspectRatio,float fov,vec3 position,vec3 rotation,vec3 scale);
+    FPSController(vec3 position,vec3 rotation,vec3 scale);
+    FPSController();
     void update(float delta, Scene& scene) override ;
 
 };
