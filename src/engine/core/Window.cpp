@@ -1,4 +1,3 @@
-
 #include "Window.h"
 #include <iostream>
 
@@ -7,51 +6,47 @@ Window::Window() {
 }
 Window::~Window()
 {
-	close();
+    glfwTerminate();
+    std::cout << "Terminated GLFW" << std::endl;
 }
 
 bool Window::open(std::string title, int width, int height)
 {
+
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR,3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR,3);
     glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
-    sizeX=width;
-    sizeY=height;
+    width=width;
+    height=height;
     std::cout <<"Opening window..." << std::endl;
-	if (glfwInit())
-	{
-		std::cout <<"Initialized GLFW" << std::endl;
-		window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
-		if (!window)
-		{
-			close();
-		}
-		
-		glfwMakeContextCurrent(window);
-		return true;
-	}
-	std::cerr << "FAILED:Initialized GLFW"<<std::endl;
-	return false;
+    if (glfwInit())
+    {
+        std::cout <<"Initialized GLFW" << std::endl;
+        window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
+        glfwMakeContextCurrent(window);
+        glfwSetFramebufferSizeCallback(window, Window::windowSizeCallback);
+        //desactivate vsych
+        //glfwSwapInterval(0);
+        return true;
+    }
+
+    std::cerr << "FAILED:Initialized GLFW"<<std::endl;
+    return false;
 }
 void Window::setMousePosition(double x, double y) {
     glfwSetCursorPos(window,x,y);
 }
 bool Window::shouldClose()
 {
-	return glfwWindowShouldClose(window);
+    return glfwWindowShouldClose(window);
 }
 void Window::swapBuffer()
 {
-	glfwSwapBuffers(window);
+    glfwSwapBuffers(window);
 }
 void Window::getInputs()
 {
-	glfwPollEvents();
-}
-void Window::close()
-{
-	glfwTerminate();
-	std::cout << "Terminated GLFW" << std::endl;
+    glfwPollEvents();
 }
 
 bool Window::isKeyDown(unsigned int keycode) {
@@ -77,19 +72,21 @@ void Window::showCursor(bool showCursor) {
 
 }
 int Window::getWidth() {
-    return sizeX;
+    glfwGetFramebufferSize(window,&width,&height);
+    return width;
 }
 int Window::getHeight()  {
-    return sizeY;
+    glfwGetFramebufferSize(window,&width,&height);
+    return height;
 }
 
-void Window::setShouldClose() {
+void Window::close() {
     std::cout <<"Closing window..." << std::endl;
     glfwSetWindowShouldClose(window, true);
 }
 
-
-
-
+void Window::windowSizeCallback(GLFWwindow* window, int width, int height) {
+    glViewport(0,0,width,height);
+}
 
 

@@ -25,6 +25,7 @@ add_subdirectory(Dependencies/GLM)
 message("Including STB")
 include_directories(Dependencies/STB_IMAGE)
 
+
 add_executable(OGL_Engine
         src/engine/core/Engine.cpp
         src/engine/core/Engine.h
@@ -72,6 +73,13 @@ add_executable(OGL_Engine
         src/engine/test/2D/NoiseTextureCreation.h
         src/engine/utils/SimplexNoise.h
         src/engine/utils/SimplexNoise.cpp
-        src/engine/test/2D/AtlasTextureTest.cpp src/engine/test/2D/AtlasTextureTest.h src/engine/test/3D/ImportModelTest.cpp src/engine/test/3D/ImportModelTest.h src/engine/utils/StringUtils.cpp src/engine/utils/StringUtils.h)
+        src/engine/test/2D/AtlasTextureTest.cpp
+        src/engine/test/2D/AtlasTextureTest.h
+        src/engine/test/3D/ImportModelTest.cpp
+        src/engine/test/3D/ImportModelTest.h
+        src/engine/utils/StringUtils.cpp
+        src/engine/utils/StringUtils.h
+        src/engine/utils/TimeUtils.cpp
+        src/engine/utils/TimeUtils.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

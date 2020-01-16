@@ -56,7 +56,7 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
 void RandomCubes::update(float delta) {
     Scene::update(delta);
     if (window->isKeyDown(GLFW_KEY_ESCAPE)) {
-        window->setShouldClose();
+        window->close();
     }
 }
 
