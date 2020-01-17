@@ -8,7 +8,7 @@
 #include <core/Renderer.h>
 #include <entities/MeshRenderer.h>
 #include <core/Window.h>
-#include "utils/TimeUtils.h"
+#include "utils/Timer.h"
 #include <iostream>
 
 void ImportModelTest::init(Window &window, Renderer &renderer) {

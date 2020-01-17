@@ -21,10 +21,6 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
     renderer.setRenderMode(window,Renderer::PERSPECTIVE);
     stone.load("../res/stone.jpg");
 
-
-
-
-
     Geometry::makeCube(mesh);
     std::vector<float> colors=std::vector<float>();
 
@@ -36,6 +32,7 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
 
     float range=200;
     material.shader(shader);
+    material.texture(stone);
     for (int i = 0; i < 10000; ++i) {
         addEntity(new MeshRenderer(mesh,material,
                                    vec3((float(rand()) / float((RAND_MAX)) * range) - (range / 2),

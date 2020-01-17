@@ -9,15 +9,23 @@
 Material::Material() {
 
 }
+Material::Material(Shader &shader) {
+    this->shader(shader);
+}
+
+Material::Material(Shader &shader, Texture &texture) {
+    this->shader(shader);
+    this->texture(texture);
+}
 
 void Material::bind() {
     s->bind();
     if (has_texture) {
-        uniform("texture_0", 0);
-        uniform("has_texture", true);
+        s->loadUniform(texture_0_location, 0);
+        s->loadUniform(has_texture_location, true);
         t->bind();
     } else {
-        uniform("has_texture", false);
+        s->loadUniform(has_texture_location, false);
     }
 }
 
@@ -31,14 +39,6 @@ void Material::texture(Texture &texture) {
     has_texture = (t != nullptr);
 }
 
-Material::Material(Shader &shader) {
-    this->shader(shader);
-}
-
-Material::Material(Shader &shader, Texture &texture) {
-    this->shader(shader);
-    this->texture(texture);
-}
 
 const Texture &Material::texture() const {
     return *t;
@@ -46,43 +46,30 @@ const Texture &Material::texture() const {
 
 void Material::shader(Shader &shader) {
     s = &shader;
+    getUniformsLocations();
 }
 
 const Shader &Material::shader() const {
     return *s;
 }
-
-
-void Material::uniform(std::string name, bool value) {
-    s->loadUniform(name, value);
+void Material::getUniformsLocations() {
+    transform_location=s->uniformLocation("transform");
+    view_location=s->uniformLocation("view");
+    projection_location=s->uniformLocation("projection");
+    has_texture_location=s->uniformLocation("has_texture");
+    texture_0_location=s->uniformLocation("texture_0");
 }
 
-void Material::uniform(std::string name, int value) {
-    s->loadUniform(name, value);
+void Material::transform(const mat4& transform) {
+    s->loadUniform(transform_location,transform);
 }
 
-void Material::uniform(std::string name, float value) {
-    s->loadUniform(name, value);
+void Material::view(const mat4& view) {
+    s->loadUniform(view_location,view);
 }
 
-void Material::uniform(std::string name, vec2 value) {
-    s->loadUniform(name, value);
-}
-
-void Material::uniform(std::string name, vec3 value) {
-    s->loadUniform(name, value);
-}
-
-void Material::uniform(std::string name, vec4 value) {
-    s->loadUniform(name, value);
-}
-
-void Material::uniform(std::string name, mat3 value) {
-    s->loadUniform(name, value);
-}
-
-void Material::uniform(std::string name, mat4 value) {
-    s->loadUniform(name, value);
+void Material::projection(const mat4& projection) {
+    s->loadUniform(projection_location,projection);
 }
 
 

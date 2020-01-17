@@ -6,7 +6,7 @@
 #include <test/3D/ImportModelTest.h>
 int main() {
     Engine engine=Engine();
-    auto s=ImportModelTest();
+    auto s=RandomCubes();
     engine.start(s);
    return 0;
 }

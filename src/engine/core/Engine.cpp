@@ -6,7 +6,7 @@
 #include <GL/glew.h>
 #include "Scene.h"
 #include <iostream>
-#include <utils/TimeUtils.h>
+#include <utils/Timer.h>
 #include "Window.h"
 #include "Engine.h"
 #include "Renderer.h"
@@ -39,19 +39,22 @@ void Engine::start(Scene &scene) {
     if(glewInit() == GLEW_OK)
     {
         Renderer renderer = Renderer(*window, Renderer::ORTHOGRAPHIC);
-        std::cout << "initializing game.." << std::endl;
+        std::cout << "initializing scene.." << std::endl;
         scene.init(*window, renderer);
-        std::cout << "starting game.." << std::endl;
+
+
         double delta_time=0;
+        Timer t;
+        std::cout << "starting main loop.." << std::endl;
         while (!window->shouldClose()) {
-            TimeUtils::startTimer();
+            t.reset();
             printFPS();
             scene.update(delta_time);
             scene.render();
             renderer.render();
             window->swapBuffer();
             window->getInputs();
-            delta_time=TimeUtils::stopTimer();
+            delta_time= t.ms();
         }
     }
     printGLErrors();

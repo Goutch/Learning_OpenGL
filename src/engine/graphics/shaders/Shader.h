@@ -18,8 +18,6 @@ protected:
 
     unsigned int program_id;
 
-    int uniformLocation(std::string) ;
-
 public:
 
     Shader(const std::string &vertexShader, const std::string &fragmentShader);
@@ -32,7 +30,7 @@ public:
 
     void addUniform(std::string);
 
-    std::vector<std::string> getUniforms();
+    unsigned int uniformLocation(std::string);
 
     void loadUniform(std::string name, int i);
 
@@ -48,5 +46,18 @@ public:
 
     void loadUniform(std::string name, const glm::mat4 &m);
 
+    void loadUniform(unsigned int location, int i);
+
+    void loadUniform(unsigned int location, float f);
+
+    void loadUniform(unsigned int location, const glm::vec2 &v);
+
+    void loadUniform(unsigned int location, const glm::vec3 &v);
+
+    void loadUniform(unsigned int location, const glm::vec4 &v);
+
+    void loadUniform(unsigned int location, const glm::mat3 &m);
+
+    void loadUniform(unsigned int location, const glm::mat4 &m);
 };
 

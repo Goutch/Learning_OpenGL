@@ -14,9 +14,9 @@ void Renderer::render() {
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     for (auto &e:entities) {
         e->material().bind();
-        e->material().uniform("projection",projection_matrix);
-        e->material().uniform("view",viewMat);
-        e->material().uniform("transform",e->transform.getMatrix());
+        e->material().projection(projection_matrix);
+        e->material().view(viewMat);
+        e->material().transform(e->transform.getMatrix());
         e->getVAO().bind();
         glDrawElements(GL_TRIANGLES, e->getVAO().getVertexCount(), GL_UNSIGNED_INT, nullptr);
         e->getVAO().unbind();

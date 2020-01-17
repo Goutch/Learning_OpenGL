@@ -75,7 +75,7 @@ add_executable(OGL_Engine
         src/engine/test/3D/ImportModelTest.h
         src/engine/utils/StringUtils.cpp
         src/engine/utils/StringUtils.h
-        src/engine/utils/TimeUtils.cpp
-        src/engine/utils/TimeUtils.h src/engine/graphics/Material.cpp src/engine/graphics/Material.h)
+        src/engine/utils/Timer.cpp
+        src/engine/utils/Timer.h src/engine/graphics/Material.cpp src/engine/graphics/Material.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

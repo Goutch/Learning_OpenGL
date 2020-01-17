@@ -41,7 +41,7 @@ void Shader::unbind() const {
     glUseProgram(0);
 }
 
-int Shader::uniformLocation(std::string name) {
+unsigned int Shader::uniformLocation(std::string name) {
     if(uniforms.find(name)==uniforms.end())
         addUniform(name);
     return uniforms.at(name);
@@ -77,12 +77,32 @@ void Shader::loadUniform(std::string name, const glm::mat3 &m)  {
 void Shader::loadUniform(std::string name, const mat4 &m)  {
     glUniformMatrix4fv(uniformLocation(name), 1, false, value_ptr(m));
 }
-std::vector<std::string> Shader::getUniforms()  {
-    std::vector<std::string> v;
-    for (auto it=uniforms.begin();it!=uniforms.end();++it) {
-        v.push_back(it->first);
-    }
-    return v;
+
+void Shader::loadUniform(unsigned int location, int i)  {
+    glUniform1i(location, i);
+}
+
+void Shader::loadUniform(unsigned int location, float f)  {
+    glUniform1f(location, f);
+}
+
+void Shader::loadUniform(unsigned int location, const glm::vec2 &v) {
+    glUniform2f(location, v.x, v.y);
+}
+
+void Shader::loadUniform(unsigned int location, const vec3 &v)  {
+    glUniform3f(location, v.x, v.y, v.z);
+}
+
+void Shader::loadUniform(unsigned int location, const vec4 &v) {
+    glUniform4f(location, v.x, v.y, v.z, v.w);
+}
+void Shader::loadUniform(unsigned int location, const glm::mat3 &m)  {
+    glUniformMatrix3fv(location, 1, false, value_ptr(m));
+}
+
+void Shader::loadUniform(unsigned int location, const mat4 &m)  {
+    glUniformMatrix4fv(location, 1, false, value_ptr(m));
 }
 
 unsigned int Shader::compileShader(unsigned int type, const std::string &source) {
@@ -125,6 +145,7 @@ std::string Shader::getSource(const std::string &path) {
     }
     return "";
 }
+
 
 
 

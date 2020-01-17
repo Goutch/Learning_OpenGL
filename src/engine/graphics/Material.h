@@ -14,6 +14,8 @@ class Material {
 private:
     bool has_transparency;
     bool has_texture;
+    unsigned int transform_location,view_location,projection_location,has_texture_location,texture_0_location;
+
     Texture *t;
     Shader *s;
 public:
@@ -32,21 +34,15 @@ public:
 
     void texture(Texture &texture);
 
-    void uniform(std::string name, bool value);
+    void getUniformsLocations();
 
-    void uniform(std::string name, int value);
+    void transform(const mat4& transform);
 
-    void uniform(std::string name, float value);
+    void view(const mat4& view);
 
-    void uniform(std::string name, glm::vec2 value);
+    void projection(const mat4& projection);
 
-    void uniform(std::string name, glm::vec3 value);
 
-    void uniform(std::string name, glm::vec4 value);
-
-    void uniform(std::string name, glm::mat3 value);
-
-    void uniform(std::string name, glm::mat4 value);
 
 };
 
