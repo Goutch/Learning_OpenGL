@@ -39,13 +39,13 @@ void Engine::start(Scene &scene) {
     if(glewInit() == GLEW_OK)
     {
         Renderer renderer = Renderer(*window, Renderer::ORTHOGRAPHIC);
-        std::cout << "initializing scene.." << std::endl;
+        std::cout << "Initializing scene.." << std::endl;
         scene.init(*window, renderer);
 
 
         double delta_time=0;
         Timer t;
-        std::cout << "starting main loop.." << std::endl;
+        std::cout << "Starting main loop.." << std::endl;
         while (!window->shouldClose()) {
             t.reset();
             printFPS();
