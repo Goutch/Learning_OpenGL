@@ -1,17 +1,14 @@
 #define GLEW_STATIC
 
 #include <GL/glew.h>
-#include "ShaderProgram.h"
-
+#include "Shader.h"
 #include <fstream>
 #include <iostream>
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
-#include <glm/glm.hpp>
 
-using namespace glm;
 
-ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string &fragmentShader) {
+Shader::Shader(const std::string &vertexShader, const std::string &fragmentShader) {
 
     program_id = glCreateProgram();
 
@@ -32,40 +29,63 @@ ShaderProgram::ShaderProgram(const std::string &vertexShader, const std::string 
     glDeleteShader(fs);
 }
 
-ShaderProgram::~ShaderProgram() {
+Shader::~Shader() {
     glDeleteProgram(program_id);
 }
 
-void ShaderProgram::bind() const {
+void Shader::bind() const {
     glUseProgram(program_id);
 }
 
-void ShaderProgram::unbind() const {
+void Shader::unbind() const {
     glUseProgram(0);
 }
 
-void ShaderProgram::loadIntUniform(unsigned int location, int i) {
-    glUniform1i(location, i);
+int Shader::uniformLocation(std::string name) {
+    if(uniforms.find(name)==uniforms.end())
+        addUniform(name);
+    return uniforms.at(name);
 }
 
-void ShaderProgram::loadFloatUniform(unsigned int location, float f) {
-    glUniform1f(location, f);
+void Shader::addUniform(std::string name) {
+    uniforms.insert(std::pair<std::string, int>(name, glGetUniformLocation(program_id, name.c_str())));
 }
 
-
-void ShaderProgram::loadVectorUniform(unsigned int location, const vec3 &v) {
-    glUniform3f(location, v.x, v.y, v.z);
+void Shader::loadUniform(std::string name, int i)  {
+    glUniform1i(uniformLocation(name), i);
 }
 
-void ShaderProgram::loadVectorUniform(unsigned int location, const vec4 &v) {
-    glUniform4f(location, v.x, v.y, v.z, v.w);
+void Shader::loadUniform(std::string name, float f)  {
+    glUniform1f(uniformLocation(name), f);
 }
 
-void ShaderProgram::loadMat4Uniform(unsigned int location, const mat4 &m) {
-    glUniformMatrix4fv(location, 1, false, value_ptr(m));
+void Shader::loadUniform(std::string name, const glm::vec2 &v) {
+    glUniform2f(uniformLocation(name), v.x, v.y);
 }
 
-unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &source) {
+void Shader::loadUniform(std::string name, const vec3 &v)  {
+    glUniform3f(uniformLocation(name), v.x, v.y, v.z);
+}
+
+void Shader::loadUniform(std::string name, const vec4 &v) {
+    glUniform4f(uniformLocation(name), v.x, v.y, v.z, v.w);
+}
+void Shader::loadUniform(std::string name, const glm::mat3 &m)  {
+    glUniformMatrix3fv(uniformLocation(name), 1, false, value_ptr(m));
+}
+
+void Shader::loadUniform(std::string name, const mat4 &m)  {
+    glUniformMatrix4fv(uniformLocation(name), 1, false, value_ptr(m));
+}
+std::vector<std::string> Shader::getUniforms()  {
+    std::vector<std::string> v;
+    for (auto it=uniforms.begin();it!=uniforms.end();++it) {
+        v.push_back(it->first);
+    }
+    return v;
+}
+
+unsigned int Shader::compileShader(unsigned int type, const std::string &source) {
     unsigned int id = glCreateShader(type);
     const char *src = source.c_str();
     glShaderSource(id, 1, &src, nullptr);
@@ -84,7 +104,7 @@ unsigned int ShaderProgram::compileShader(unsigned int type, const std::string &
     return id;
 }
 
-std::string ShaderProgram::getSource(const std::string &path) {
+std::string Shader::getSource(const std::string &path) {
     try {
         std::ifstream file;
         file.open(path);
@@ -105,6 +125,9 @@ std::string ShaderProgram::getSource(const std::string &path) {
     }
     return "";
 }
+
+
+
 
 
 

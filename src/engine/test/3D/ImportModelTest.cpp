@@ -15,24 +15,22 @@ void ImportModelTest::init(Window &window, Renderer &renderer) {
 
     Scene::init(window, renderer);
     renderer.setRenderMode(window,Renderer::PERSPECTIVE);
-    mesh=new Mesh();
-    shader=new EntityShader();
-    //Geometry::makeCube(*mesh);
+    //Geometry::makeCube(mesh);
 
-    Geometry::import(*mesh,"../res/dragon.obj");
-
-    addEntity(new MeshRenderer(*mesh,*shader));
+    Geometry::import(mesh,"../res/dragon.obj");
+    material.shader(shader);
+    addEntity(new MeshRenderer(mesh,material));
 
     std::vector<float> colors=std::vector<float>();
 
-    for (int j = 0; j <4*mesh->getVertexCount() ; ++j) {
+    for (int j = 0; j <4*mesh.getVertexCount() ; ++j) {
         if(j%4==3)colors.push_back(1);
         else
             colors.push_back(float(rand() / float(RAND_MAX)));
 
     }
 
-    mesh->colors(colors.data(), colors.size());
+    mesh.colors(colors.data(), colors.size());
     FPSController* camera=new FPSController();
     addEntity(*camera);
     renderer.setCamera(camera->transform);

@@ -8,22 +8,22 @@
 #include "core/Renderer.h"
 #include "graphics/data/VAO.h"
 #include "core/Scene.h"
-MeshRenderer::MeshRenderer(VAO &mesh, EntityShader &shader, vec3 position, vec3 rotation, vec3 scale):Entity(position,rotation,scale) {
+MeshRenderer::MeshRenderer(VAO &mesh, Material &shader, vec3 position, vec3 rotation, vec3 scale): Entity(position, rotation, scale) {
     this->mesh=&mesh;
-    this->shader=&shader;
+    this->m=&shader;
 }
 
-MeshRenderer::MeshRenderer(VAO &mesh, EntityShader &shader):Entity() {
+MeshRenderer::MeshRenderer(VAO &mesh, Material &material): Entity() {
     this->mesh=&mesh;
-    this->shader=&shader;
+    this->m=&material;
 }
 
 void MeshRenderer::render(Scene &scene) {
     scene.getRenderer().addToRenderQueue(*this);
 }
 
-EntityShader &MeshRenderer::getShader() {
-    return *shader;
+Material &MeshRenderer::material() {
+    return *m;
 }
 
 VAO &MeshRenderer::getVAO()  {

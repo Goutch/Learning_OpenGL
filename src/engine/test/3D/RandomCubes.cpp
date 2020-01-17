@@ -20,24 +20,24 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
     Scene::init(window,renderer);
     renderer.setRenderMode(window,Renderer::PERSPECTIVE);
     stone.load("../res/stone.jpg");
-    shader = new EntityShader();
 
 
 
-    mesh=new Mesh();
 
-    Geometry::makeCube(*mesh);
+
+    Geometry::makeCube(mesh);
     std::vector<float> colors=std::vector<float>();
 
-    for (int j = 0; j <4*mesh->getVertexCount() ; ++j) {
+    for (int j = 0; j <4*mesh.getVertexCount() ; ++j) {
         colors.push_back(1);
     }
-    mesh->colors(colors.data(), colors.size());
+    mesh.colors(colors.data(), colors.size());
     camera=new FPSController();
-    Entity* pivot=new Entity(vec3(0),vec3(0),vec3(1));
+
     float range=200;
+    material.shader(shader);
     for (int i = 0; i < 10000; ++i) {
-        addEntity(new MeshRenderer(*mesh, *shader,
+        addEntity(new MeshRenderer(mesh,material,
                                    vec3((float(rand()) / float((RAND_MAX)) * range) - (range / 2),
                                         (float(rand()) / float((RAND_MAX)) * range) - (range / 2),
                                         (float(rand()) / float((RAND_MAX)) * range) - (range / 2)),
@@ -45,10 +45,9 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
                                         float(rand()) / float((RAND_MAX)) * M_PI,
                                         float(rand()) / float((RAND_MAX)) * M_PI),
                                    vec3(1, 1, 1)));
-        entities[i]->transform.parent=&(pivot->transform);
     }
     addEntity(camera);
-    addEntity(pivot);
+
     renderer.setCamera(camera->transform);
 
 }
@@ -63,8 +62,6 @@ void RandomCubes::update(float delta) {
 
 
 RandomCubes::~RandomCubes() {
-    delete mesh;
-    delete shader;
-    delete camera;
+
     stone.unbind();
 }

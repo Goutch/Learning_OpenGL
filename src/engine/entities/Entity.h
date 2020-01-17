@@ -5,7 +5,6 @@
 
 #include "Transform.h"
 class Renderer;
-class EntityShader;
 class Transform;
 class VAO;
 class Window;

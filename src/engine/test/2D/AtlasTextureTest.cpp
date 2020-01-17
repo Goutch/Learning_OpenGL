@@ -31,7 +31,8 @@ void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     textureColor[15] = 255;
     spriteSheet.setTexturePixelData(textureColor,2,2,true);
     sprite.setTexture(spriteSheet);
-    addEntity(new MeshRenderer(sprite,shader));
+    material.shader(shader);
+    addEntity(new MeshRenderer(sprite,material));
 }
 
 void AtlasTextureTest::update(float delta) {

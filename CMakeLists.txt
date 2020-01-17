@@ -34,8 +34,8 @@ add_executable(OGL_Engine
         src/engine/core/Window.h
         src/engine/entities/MeshRenderer.cpp
         src/engine/entities/MeshRenderer.h
-        src/engine/graphics/shaders/ShaderProgram.cpp
-        src/engine/graphics/shaders/ShaderProgram.h
+        src/engine/graphics/shaders/Shader.cpp
+        src/engine/graphics/shaders/Shader.h
         src/engine/graphics/data/Mesh.cpp
         src/engine/graphics/data/Mesh.h
         src/engine/graphics/data/VAO.cpp
@@ -47,16 +47,12 @@ add_executable(OGL_Engine
         src/Debug.h
         src/main.cpp
         src/engine/core/Renderer.cpp
-        src/engine/graphics/shaders/EntityShader.cpp
-        src/engine/graphics/shaders/EntityShader.h
         src/engine/graphics/data/Sprite.cpp
         src/engine/graphics/data/Sprite.h
         src/engine/graphics/data/Texture.cpp
         src/engine/graphics/data/Texture.h
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
-        src/engine/utils/Color.cpp
-        src/engine/utils/Color.h
         src/engine/entities/Transform.cpp
         src/engine/entities/Transform.h
         src/engine/entities/FPSController.cpp
@@ -80,6 +76,6 @@ add_executable(OGL_Engine
         src/engine/utils/StringUtils.cpp
         src/engine/utils/StringUtils.h
         src/engine/utils/TimeUtils.cpp
-        src/engine/utils/TimeUtils.h)
+        src/engine/utils/TimeUtils.h src/engine/graphics/Material.cpp src/engine/graphics/Material.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

@@ -30,8 +30,8 @@ void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
     sprite.setTexture(texture);
 
     texture.bind();
-
-    addEntity(new MeshRenderer(sprite, shader, vec3(0), vec3(0), vec3(1)));
+    material.shader(shader);
+    addEntity(new MeshRenderer(sprite, material));
     renderer.setCamera(*camera);
     delete[] textureColor;
 }

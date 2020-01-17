@@ -5,7 +5,7 @@ class Window;
 class Transform;
 
 #include "glm/mat4x4.hpp"
-class ShaderProgram;
+class Shader;
 #include <list>
 using namespace glm;
 class Renderer

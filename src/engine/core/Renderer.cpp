@@ -4,7 +4,7 @@
 #include "Renderer.h"
 #include "entities/MeshRenderer.h"
 #include "graphics/data/VAO.h"
-#include "graphics/shaders/EntityShader.h"
+#include "graphics/Material.h"
 
 #include "Window.h"
 #include "entities/Transform.h"
@@ -13,14 +13,14 @@ void Renderer::render() {
     mat4 viewMat = cam != nullptr ? glm::inverse(cam->getMatrix()) : mat4();
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);
     for (auto &e:entities) {
-        e->getShader().bind();
-        e->getShader().loadProjectionMatrix(projection_matrix);
-        e->getShader().loadViewMatrix(viewMat);
-        e->getShader().loadEntityUniforms(*e);
+        e->material().bind();
+        e->material().uniform("projection",projection_matrix);
+        e->material().uniform("view",viewMat);
+        e->material().uniform("transform",e->transform.getMatrix());
         e->getVAO().bind();
         glDrawElements(GL_TRIANGLES, e->getVAO().getVertexCount(), GL_UNSIGNED_INT, nullptr);
         e->getVAO().unbind();
-        e->getShader().unbind();
+        e->material().unbind();
     }
     entities.clear();
 }

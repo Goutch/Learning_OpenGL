@@ -1,6 +1,5 @@
 
 #include "Mesh.h"
-#include "../../utils/Color.h"
 Mesh::Mesh():VAO() {
 }
 Mesh& Mesh::indices(unsigned int *indices, unsigned int indices_count) {

@@ -1,6 +1,6 @@
 #version 400 core
-uniform mat4 projection_mat;
-uniform mat4 view_mat;
+uniform mat4 projection;
+uniform mat4 view;
 uniform mat4 transform;
 
 layout(location=0)in vec3 vertexPosition;
@@ -14,5 +14,5 @@ void main()
 {
     uvs=texCoord;
     color=colors;
-    gl_Position=projection_mat*view_mat*transform*vec4(vertexPosition.xyz,1.);
+    gl_Position=projection*view*transform*vec4(vertexPosition.xyz,1.);
 }
