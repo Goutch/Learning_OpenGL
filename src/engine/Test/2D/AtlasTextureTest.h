@@ -1,9 +1,9 @@
 #pragma once
 #include "core/Scene.h"
 #include "Geometry/VAO.h"
-#include "graphics/data/AtlasTexture.h"
-#include "graphics/shaders/Shader.h"
-#include "graphics/Material.h"
+#include "Geometry/data/AtlasTexture.h"
+#include "Geometry/shaders/Shader.h"
+#include "Geometry/Material.h"
 #include "entities/Transform.h"
 class AtlasTextureTest: public Scene {
 private:

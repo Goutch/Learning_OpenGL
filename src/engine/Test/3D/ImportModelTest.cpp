@@ -2,7 +2,7 @@
 // Created by User on 15-Jan.-2020.
 //
 
-#include <graphics/Geometry.h>
+#include <Geometry/Geometry.h>
 #include "ImportModelTest.h"
 #include <entities/FPSController.h>
 #include <core/Renderer.h>

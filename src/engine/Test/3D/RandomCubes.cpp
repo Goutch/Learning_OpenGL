@@ -5,12 +5,12 @@
 #include "RandomCubes.h"
 #include "entities/MeshRenderer.h"
 
-#include "graphics/data/Texture.h"
+#include "Geometry/data/Texture.h"
 
 #include "core/Window.h"
 #include "core/Renderer.h"
 #include "entities/FPSController.h"
-#include "graphics/Geometry.h"
+#include "Geometry/Geometry.h"
 
 RandomCubes::RandomCubes()
         : Scene() {

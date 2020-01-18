@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "Shader.h"
 #include <fstream>
-#include <iostream>
+#include "core/Log.h"
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -12,11 +12,11 @@ Shader::Shader(const std::string &vertexShader, const std::string &fragmentShade
 
     program_id = glCreateProgram();
 
-    std::cout << "Compiling vertex shader:" << vertexShader << std::endl;
+    Log::status("Compiling vertex shader:" + vertexShader);
     std::string sourcevs = getSource(vertexShader);
     unsigned int vs = compileShader(GL_VERTEX_SHADER, sourcevs);
 
-    std::cout << "Compiling fragment shader:" << fragmentShader << std::endl;
+    Log::status("Compiling fragment shader:" + fragmentShader);
     std::string sourcefs = getSource(fragmentShader);
     unsigned int fs = compileShader(GL_FRAGMENT_SHADER, sourcefs);
 
@@ -42,49 +42,50 @@ void Shader::unbind() const {
 }
 
 int Shader::uniformLocation(std::string name) const {
-    if(uniforms.find(name)!=uniforms.end())
+    if (uniforms.find(name) != uniforms.end())
         return uniforms.at(name);
-    int location=glGetUniformLocation(program_id, name.c_str());;
-    uniforms[name]=location;
+    int location = glGetUniformLocation(program_id, name.c_str());;
+    uniforms[name] = location;
     return location;
 }
 
-void Shader::loadUniform(std::string name, int i)  const{
+void Shader::loadUniform(std::string name, int i) const {
     glUniform1i(uniformLocation(name), i);
 }
 
-void Shader::loadUniform(std::string name, float f)  const{
+void Shader::loadUniform(std::string name, float f) const {
     glUniform1f(uniformLocation(name), f);
 }
 
-void Shader::loadUniform(std::string name, const glm::vec2 &v) const{
+void Shader::loadUniform(std::string name, const glm::vec2 &v) const {
     glUniform2f(uniformLocation(name), v.x, v.y);
 }
 
-void Shader::loadUniform(std::string name, const vec3 &v)  const{
+void Shader::loadUniform(std::string name, const vec3 &v) const {
     glUniform3f(uniformLocation(name), v.x, v.y, v.z);
 }
 
-void Shader::loadUniform(std::string name, const vec4 &v) const{
+void Shader::loadUniform(std::string name, const vec4 &v) const {
     glUniform4f(uniformLocation(name), v.x, v.y, v.z, v.w);
 }
-void Shader::loadUniform(std::string name, const glm::mat3 &m)  const{
+
+void Shader::loadUniform(std::string name, const glm::mat3 &m) const {
     glUniformMatrix3fv(uniformLocation(name), 1, false, value_ptr(m));
 }
 
-void Shader::loadUniform(std::string name, const mat4 &m)  const{
+void Shader::loadUniform(std::string name, const mat4 &m) const {
     glUniformMatrix4fv(uniformLocation(name), 1, false, value_ptr(m));
 }
 
-void Shader::loadUniform(unsigned int location, int i)  const{
+void Shader::loadUniform(unsigned int location, int i) const {
     glUniform1i(location, i);
 }
 
-void Shader::loadUniform(unsigned int location, float f)  const{
+void Shader::loadUniform(unsigned int location, float f) const {
     glUniform1f(location, f);
 }
 
-void Shader::loadUniform(unsigned int location, const glm::vec2 &v) const{
+void Shader::loadUniform(unsigned int location, const glm::vec2 &v) const {
     glUniform2f(location, v.x, v.y);
 }
 
@@ -92,14 +93,15 @@ void Shader::loadUniform(unsigned int location, const vec3 &v) const {
     glUniform3f(location, v.x, v.y, v.z);
 }
 
-void Shader::loadUniform(unsigned int location, const vec4 &v) const{
+void Shader::loadUniform(unsigned int location, const vec4 &v) const {
     glUniform4f(location, v.x, v.y, v.z, v.w);
 }
-void Shader::loadUniform(unsigned int location, const glm::mat3 &m)  const{
+
+void Shader::loadUniform(unsigned int location, const glm::mat3 &m) const {
     glUniformMatrix3fv(location, 1, false, value_ptr(m));
 }
 
-void Shader::loadUniform(unsigned int location, const mat4 &m)  const{
+void Shader::loadUniform(unsigned int location, const mat4 &m) const {
     glUniformMatrix4fv(location, 1, false, value_ptr(m));
 }
 
@@ -115,8 +117,7 @@ unsigned int Shader::compileShader(unsigned int type, const std::string &source)
         glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
         char *message = (char *) malloc(length * sizeof(char));
         glGetShaderInfoLog(id, length, &length, message);
-        std::cerr << "FAILED:" << std::endl;
-        std::cerr << message << std::endl;
+        Log::error( message);
         free(message);
     }
     return id;
@@ -133,13 +134,12 @@ std::string Shader::getSource(const std::string &path) {
             file.close();
             return str;
         } else {
-            std::cerr << "FAILED:Unable to find file:" << path << std::endl;
+            Log::error( "Unable to find file:"+path);
         }
 
     }
     catch (std::ios_base::failure &e) {
-        std::cerr << "FAILED:Read " << path << std::endl;
-        std::cerr << e.what() << std::endl;
+        Log::error("failed to read file "+path+"\n"+e.what());
     }
     return "";
 }

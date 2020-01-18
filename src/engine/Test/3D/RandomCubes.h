@@ -2,11 +2,11 @@
 
 #include <vector>
 
-#include <graphics/shaders/Shader.h>
-#include <graphics/data/Texture.h>
+#include <Geometry/shaders/Shader.h>
+#include <Geometry/data/Texture.h>
 #include <Geometry/Mesh.h>
 #include "core/Scene.h"
-#include <graphics/Material.h>
+#include <Geometry/Material.h>
 #include "entities/Entity.h"
 class RandomCubes : public Scene {
 private:

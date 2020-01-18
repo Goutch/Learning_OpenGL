@@ -1,13 +1,12 @@
 #include "Window.h"
-#include <iostream>
-
+#include "Log.h"
 Window::Window() {
 
 }
 Window::~Window()
 {
     glfwTerminate();
-    std::cout << "Terminated GLFW" << std::endl;
+    Log::status("Terminated GLFW");
 }
 
 bool Window::open(std::string title, int width, int height)
@@ -18,19 +17,21 @@ bool Window::open(std::string title, int width, int height)
     glfwWindowHint(GLFW_OPENGL_PROFILE,GLFW_OPENGL_CORE_PROFILE);
     width=width;
     height=height;
-    std::cout <<"Opening window..." << std::endl;
+    Log::status("Opening window...");
     if (glfwInit())
     {
-        std::cout <<"Initialized GLFW" << std::endl;
+        Log::status("Initialized GLFW");
+
         window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
         glfwMakeContextCurrent(window);
         glfwSetFramebufferSizeCallback(window, Window::windowSizeCallback);
         //desactivate vsych
         //glfwSwapInterval(0);
+        Log::status("window opened");
         return true;
     }
 
-    std::cerr << "FAILED:Initialized GLFW"<<std::endl;
+    Log::error("failed to initialize GLFW");
     return false;
 }
 void Window::setMousePosition(double x, double y) {
@@ -81,7 +82,7 @@ int Window::getHeight()  {
 }
 
 void Window::close() {
-    std::cout <<"Closing window..." << std::endl;
+    Log::status("Closing window..." );
     glfwSetWindowShouldClose(window, true);
 }
 

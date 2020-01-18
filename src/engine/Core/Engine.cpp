@@ -5,21 +5,25 @@
 
 #include <GL/glew.h>
 #include "Scene.h"
-#include <iostream>
-#include <utils/Timer.h>
+#include "Utils/Timer.h"
+#include "Log.h"
 #include "Window.h"
 #include "Engine.h"
 #include "Renderer.h"
-#include "../../Debug.h"
+#include "Debug.h"
 
 
 Engine::Engine() {
+    Log::logLevel(Log::DEBUG);
     window = new Window();
     if (window->open("WINDOW", 900, 600)) {
+
         glewInit() == GLEW_OK ?
-        std::cout << "Initialized GLEW" << std::endl :
-        std::cerr << "FAILED:GLEW INITIALIZATION" << std::endl;
-        std::cout << "OPENGL Version " << glGetString(GL_VERSION) << std::endl;
+        Log::status("Initialized GLEW") :
+        Log::error("failed to initialize GLEW");
+
+        std::string version=(char*)glGetString(GL_VERSION);
+        Log::message("OPENGL Version "+version);
 
         initDebug();
         glEnable(GL_TEXTURE_2D);
@@ -36,16 +40,15 @@ Engine::Engine() {
 }
 
 void Engine::start(Scene &scene) {
-    if(glewInit() == GLEW_OK)
-    {
+    if (glewInit() == GLEW_OK) {
         Renderer renderer = Renderer(*window, Renderer::ORTHOGRAPHIC);
-        std::cout << "Initializing scene.." << std::endl;
+        Log::status("Initializing scene..");
         scene.init(*window, renderer);
+        Log::status("Initialized scene");
 
-
-        double delta_time=0;
+        double delta_time = 0;
         Timer t;
-        std::cout << "Starting main loop.." << std::endl;
+        Log::status("Starting main loop..");
         while (!window->shouldClose()) {
             t.reset();
             printFPS();
@@ -54,7 +57,7 @@ void Engine::start(Scene &scene) {
             renderer.render();
             window->swapBuffer();
             window->getInputs();
-            delta_time= t.ms();
+            delta_time = t.ms();
         }
     }
     printGLErrors();
@@ -66,11 +69,10 @@ Engine::~Engine() {
 
 void Engine::printFPS() {
     fps++;
-    if(last_fps_print<std::time(0)-1)
-    {
-        std::cout<<"fps:"<<fps<<std::endl;
-        fps=0;
-        last_fps_print=std::time(0);
+    if (last_fps_print < std::time(0) - 1) {
+        Log::debug("fps:"+std::to_string( fps));
+        fps = 0;
+        last_fps_print = std::time(0);
     }
 }
 

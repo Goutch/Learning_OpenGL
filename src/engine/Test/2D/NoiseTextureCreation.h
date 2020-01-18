@@ -1,9 +1,9 @@
 
 #include "core/Scene.h"
 #include "Geometry/VAO.h"
-#include "graphics/data/Texture.h"
-#include "graphics/shaders/Shader.h"
-#include "graphics/Material.h"
+#include "Geometry/data/Texture.h"
+#include "Geometry/shaders/Shader.h"
+#include "Geometry/Material.h"
 
 class Transform;
 

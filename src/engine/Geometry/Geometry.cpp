@@ -6,7 +6,7 @@
 #include "Mesh.h"
 #include "vector"
 #include <utils/StringUtils.h>
-#include <iostream>
+#include "core/Log.h"
 
 void Geometry::makeQuad(VAO &vao) {
     auto vert = std::vector<float>();
@@ -149,7 +149,7 @@ void Geometry::makeCube(Mesh &mesh) {
 
 
 void Geometry::import(VAO &vao, std::string path) {
-    std::cout << "Loading model:" << path << std::endl;
+    Log::status( "Loading model:"+path);
     try {
         std::ifstream file(path);
         std::string line;
@@ -190,9 +190,6 @@ void Geometry::import(VAO &vao, std::string path) {
         auto data = std::vector<std::string>();
         for (unsigned int i = 0; i < indices.size(); ++i) {
             StringUtils::split(data, indices[i], '/');
-            if (data.size()!=3) {
-                std::cerr << "what :o" << path << std::endl;
-            }
             unsigned int vertexPointer = std::stoi(data.at(0)) - 1;
             unsigned int uvPointer = std::stoi(data.at(1)) - 1;
             //int normalPointer = std::stoi(data.at(2)) - 1;
@@ -215,8 +212,7 @@ void Geometry::import(VAO &vao, std::string path) {
             vao.put(1, 2,orderedUvs.data(), uvs.size());
     }
     catch (const std::exception &e) {
-        std::cerr << "error loading model:" << path << std::endl;
-        std::cerr << e.what() << std::endl;
+        Log::error("cant import model:"+path+"\n"+e.what());
     }
 
 

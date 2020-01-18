@@ -44,7 +44,7 @@ add_executable(OGL_Engine
         src/engine/Geometry/VBO.h
         src/engine/Test/3D/RandomCubes.cpp
         src/engine/Test/3D/RandomCubes.h
-        src/Debug.h
+        src/engine/Core/Debug.h
         src/main.cpp
         src/engine/Core/Renderer.cpp
         src/engine/Geometry/data/Texture.cpp
@@ -74,6 +74,10 @@ add_executable(OGL_Engine
         src/engine/Utils/StringUtils.cpp
         src/engine/Utils/StringUtils.h
         src/engine/Utils/Timer.cpp
-        src/engine/Utils/Timer.h src/engine/Geometry/Material.cpp src/engine/Geometry/Material.h)
+        src/engine/Utils/Timer.h
+        src/engine/Geometry/Material.cpp
+        src/engine/Geometry/Material.h
+        src/engine/Core/Log.cpp
+        src/engine/Core/Log.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

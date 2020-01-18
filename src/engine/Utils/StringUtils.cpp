@@ -3,7 +3,7 @@
 //
 
 #include "StringUtils.h"
-#include <sstream>
+
 void StringUtils::split(std::vector<std::string>& buffer,std::string s, char separator) {
 
    std::size_t start = 0, end = 0;
@@ -12,9 +12,5 @@ void StringUtils::split(std::vector<std::string>& buffer,std::string s, char sep
        start = end + 1;
    }
    buffer.push_back(s.substr(start));
-   //std::stringstream ss(s);
-   //std::string token;
-   //while (std::getline(ss, token, separator)) {
-   //    buffer.push_back(token);
-   //}
+
 }

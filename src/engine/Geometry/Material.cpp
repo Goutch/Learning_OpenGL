@@ -4,7 +4,7 @@
 
 #include "Material.h"
 
-#include <graphics/data/Texture.h>
+#include <Geometry/data/Texture.h>
 
 Material::Material() {
 

@@ -5,7 +5,7 @@
 #include "AtlasTextureTest.h"
 #include "core/Renderer.h"
 #include "entities/MeshRenderer.h"
-#include "graphics/Geometry.h"
+#include "Geometry/Geometry.h"
 void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
     renderer.setCamera(camera);

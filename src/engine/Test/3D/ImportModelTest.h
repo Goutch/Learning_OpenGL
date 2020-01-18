@@ -1,9 +1,9 @@
 #pragma once
 
 
-#include <graphics/shaders/Shader.h>
-#include <graphics/Material.h>
-#include <graphics/data/Texture.h>
+#include <Geometry/shaders/Shader.h>
+#include <Geometry/Material.h>
+#include <Geometry/data/Texture.h>
 #include <Geometry/Mesh.h>
 #include "core/Scene.h"
 class ImportModelTest: public Scene {

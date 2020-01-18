@@ -4,7 +4,7 @@
 #include "Renderer.h"
 #include "entities/MeshRenderer.h"
 #include "Geometry/VAO.h"
-#include "graphics/Material.h"
+#include "Geometry/Material.h"
 
 #include "Window.h"
 #include "entities/Transform.h"

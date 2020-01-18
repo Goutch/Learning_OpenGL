@@ -2,14 +2,10 @@
 #define GLEW_STATIC
 #include<iostream>
 #include "GL/glew.h"
-template<typename T>
-static void printVector(const T x, const T y, const T z) {
-    std::cout << "(" << x << "," << y << "," << x << ")" << std::endl;
-}
+
 static void clearGLErrors() {
     while(glGetError()!=GL_NO_ERROR);
 }
-
 
 static void printGLErrors()
 {
@@ -17,10 +13,6 @@ static void printGLErrors()
     {
         std::cerr<<"[OPENGL ERROR]:"<<error<<std::endl;
     }
-}
-template<typename T>
-static void printVector(const T x, const T y) {
-    std::cout << "(" << x << "," << y << ")" << std::endl;
 }
 
 static void APIENTRY GLDebugMessageCallback(GLenum source, GLenum type, GLuint id,
