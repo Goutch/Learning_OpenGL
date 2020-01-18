@@ -41,67 +41,65 @@ void Shader::unbind() const {
     glUseProgram(0);
 }
 
-unsigned int Shader::uniformLocation(std::string name) {
-    if(uniforms.find(name)==uniforms.end())
-        addUniform(name);
-    return uniforms.at(name);
+int Shader::uniformLocation(std::string name) const {
+    if(uniforms.find(name)!=uniforms.end())
+        return uniforms.at(name);
+    int location=glGetUniformLocation(program_id, name.c_str());;
+    uniforms[name]=location;
+    return location;
 }
 
-void Shader::addUniform(std::string name) {
-    uniforms.insert(std::pair<std::string, int>(name, glGetUniformLocation(program_id, name.c_str())));
-}
-
-void Shader::loadUniform(std::string name, int i)  {
+void Shader::loadUniform(std::string name, int i)  const{
     glUniform1i(uniformLocation(name), i);
 }
 
-void Shader::loadUniform(std::string name, float f)  {
+void Shader::loadUniform(std::string name, float f)  const{
     glUniform1f(uniformLocation(name), f);
 }
 
-void Shader::loadUniform(std::string name, const glm::vec2 &v) {
+void Shader::loadUniform(std::string name, const glm::vec2 &v) const{
     glUniform2f(uniformLocation(name), v.x, v.y);
 }
 
-void Shader::loadUniform(std::string name, const vec3 &v)  {
+void Shader::loadUniform(std::string name, const vec3 &v)  const{
     glUniform3f(uniformLocation(name), v.x, v.y, v.z);
 }
 
-void Shader::loadUniform(std::string name, const vec4 &v) {
+void Shader::loadUniform(std::string name, const vec4 &v) const{
     glUniform4f(uniformLocation(name), v.x, v.y, v.z, v.w);
 }
-void Shader::loadUniform(std::string name, const glm::mat3 &m)  {
+void Shader::loadUniform(std::string name, const glm::mat3 &m)  const{
     glUniformMatrix3fv(uniformLocation(name), 1, false, value_ptr(m));
 }
 
-void Shader::loadUniform(std::string name, const mat4 &m)  {
+void Shader::loadUniform(std::string name, const mat4 &m)  const{
     glUniformMatrix4fv(uniformLocation(name), 1, false, value_ptr(m));
 }
 
-void Shader::loadUniform(unsigned int location, int i)  {
+void Shader::loadUniform(unsigned int location, int i)  const{
     glUniform1i(location, i);
 }
 
-void Shader::loadUniform(unsigned int location, float f)  {
+void Shader::loadUniform(unsigned int location, float f)  const{
     glUniform1f(location, f);
 }
 
-void Shader::loadUniform(unsigned int location, const glm::vec2 &v) {
+void Shader::loadUniform(unsigned int location, const glm::vec2 &v) const{
     glUniform2f(location, v.x, v.y);
 }
 
-void Shader::loadUniform(unsigned int location, const vec3 &v)  {
+void Shader::loadUniform(unsigned int location, const vec3 &v) const {
     glUniform3f(location, v.x, v.y, v.z);
 }
 
-void Shader::loadUniform(unsigned int location, const vec4 &v) {
+void Shader::loadUniform(unsigned int location, const vec4 &v) const{
     glUniform4f(location, v.x, v.y, v.z, v.w);
 }
-void Shader::loadUniform(unsigned int location, const glm::mat3 &m)  {
+void Shader::loadUniform(unsigned int location, const glm::mat3 &m)  const{
     glUniformMatrix3fv(location, 1, false, value_ptr(m));
 }
 
-void Shader::loadUniform(unsigned int location, const mat4 &m)  {
+void Shader::loadUniform(unsigned int location, const mat4 &m)  const{
     glUniformMatrix4fv(location, 1, false, value_ptr(m));
 }
 

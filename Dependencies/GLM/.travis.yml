@@ -162,7 +162,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-4.9
       env:
@@ -179,7 +179,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-4.9
       env:
@@ -196,7 +196,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-4.9
       env:
@@ -213,7 +213,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-5
       env:
@@ -230,7 +230,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-5
       env:
@@ -247,7 +247,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-5
       env:
@@ -264,7 +264,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-5
       env:
@@ -281,7 +281,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-6
       env:
@@ -298,7 +298,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-6
       env:
@@ -315,7 +315,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-6
       env:
@@ -332,7 +332,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-6
       env:
@@ -349,7 +349,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-7
       env:
@@ -366,7 +366,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-7
       env:
@@ -383,7 +383,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-7
       env:
@@ -400,7 +400,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-7
       env:
@@ -417,7 +417,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
           packages:
             - g++-7
       env:
@@ -434,7 +434,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
@@ -452,7 +452,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6
@@ -470,7 +470,7 @@ matrix:
       addons:
         apt:
           sources:
-            - ubuntu-toolchain-r-test
+            - ubuntu-toolchain-r-Test
             - llvm-toolchain-precise-3.6
           packages:
             - clang-3.6

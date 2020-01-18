@@ -6,6 +6,7 @@
 #include "entities/MeshRenderer.h"
 #include "core/Renderer.h"
 #include "utils/SimplexNoise.h"
+#include "graphics/Geometry.h"
 void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
     camera = new Transform(vec3(0), vec3(0), vec3(1));
@@ -27,10 +28,11 @@ void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
     }
     texture.setTexturePixelData(textureColor, width, height,true);
 
-    sprite.setTexture(texture);
 
-    texture.bind();
+
     material.shader(shader);
+    material.texture(texture);
+    Geometry::makeQuad(sprite);
     addEntity(new MeshRenderer(sprite, material));
     renderer.setCamera(*camera);
     delete[] textureColor;

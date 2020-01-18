@@ -14,7 +14,7 @@ class Material {
 private:
     bool has_transparency;
     bool has_texture;
-    unsigned int transform_location,view_location,projection_location,has_texture_location,texture_0_location;
+    int transform_location,view_location,projection_location,has_texture_location,texture_0_location;
 
     Texture *t;
     Shader *s;

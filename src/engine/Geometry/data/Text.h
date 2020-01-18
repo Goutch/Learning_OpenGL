@@ -1,6 +1,6 @@
 #pragma once
 
-#include "VAO.h"
+#include "Geometry/VAO.h"
 
 class Text : VAO {
 public:

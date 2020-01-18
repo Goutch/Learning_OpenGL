@@ -5,6 +5,7 @@
 #include "AtlasTextureTest.h"
 #include "core/Renderer.h"
 #include "entities/MeshRenderer.h"
+#include "graphics/Geometry.h"
 void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
     renderer.setCamera(camera);
@@ -30,8 +31,10 @@ void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     textureColor[14] = 255;
     textureColor[15] = 255;
     spriteSheet.setTexturePixelData(textureColor,2,2,true);
-    sprite.setTexture(spriteSheet);
     material.shader(shader);
+
+    material.texture(spriteSheet);
+    Geometry::makeQuad(sprite);
     addEntity(new MeshRenderer(sprite,material));
 }
 

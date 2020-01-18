@@ -14,7 +14,7 @@
 #include <cmath>
 #include <ctime>
 
-// This file has divisions by zero to test isnan
+// This file has divisions by zero to Test isnan
 #if GLM_COMPILER & GLM_COMPILER_VC
 #	pragma warning(disable : 4723)
 #endif

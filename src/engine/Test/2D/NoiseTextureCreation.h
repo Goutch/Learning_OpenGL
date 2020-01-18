@@ -1,6 +1,6 @@
 
 #include "core/Scene.h"
-#include "graphics/data/Sprite.h"
+#include "Geometry/VAO.h"
 #include "graphics/data/Texture.h"
 #include "graphics/shaders/Shader.h"
 #include "graphics/Material.h"
@@ -9,11 +9,11 @@ class Transform;
 
 class NoiseTextureCreation : public Scene {
 private:
-    Sprite sprite;
+    VAO sprite;
     Texture texture;
     Material material;
-    Shader shader = Shader("../src/engine/graphics/shaders/shadersSources/EntityVertex.glsl",
-                           "../src/engine/graphics/shaders/shadersSources/EntityFragment.glsl");
+    Shader shader = Shader("../src/engine/Geometry/shaders/shadersSources/EntityVertex.glsl",
+                           "../src/engine/Geometry/shaders/shadersSources/EntityFragment.glsl");
     Transform *camera;
 public:
     ~NoiseTextureCreation();

@@ -26,7 +26,7 @@ Engine::Engine() {
         //enable cull face
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
-        //enable depth test
+        //enable depth Test
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LESS);
         //enable transparency

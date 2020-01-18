@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "Renderer.h"
 #include "entities/MeshRenderer.h"
-#include "graphics/data/VAO.h"
+#include "Geometry/VAO.h"
 #include "graphics/Material.h"
 
 #include "Window.h"

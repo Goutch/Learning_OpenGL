@@ -3,7 +3,7 @@
 //
 #include <fstream>
 #include "Geometry.h"
-#include "data/Mesh.h"
+#include "Mesh.h"
 #include "vector"
 #include <utils/StringUtils.h>
 #include <iostream>

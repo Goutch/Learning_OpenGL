@@ -7,7 +7,7 @@ class Window;
 class Engine {
 private:
     Window* window;
-    unsigned int fps;
+    unsigned int fps=0;
     std::time_t last_fps_print=std::time(0);
     void printFPS();
 public:

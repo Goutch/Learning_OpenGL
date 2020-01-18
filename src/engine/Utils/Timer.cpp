@@ -16,6 +16,11 @@ double Timer::ms() {
 
 }
 
+double Timer::ns() {
+    std::chrono::duration<double> duration = std::chrono::high_resolution_clock::now() - Timer::start;
+    return static_cast<double >(std::chrono::duration_cast<std::chrono::nanoseconds>(duration).count())/1000000;
+}
+
 
 
 

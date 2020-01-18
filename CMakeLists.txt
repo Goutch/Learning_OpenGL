@@ -27,55 +27,53 @@ include_directories(Dependencies/STB_IMAGE)
 
 
 add_executable(OGL_Engine
-        src/engine/core/Engine.cpp
-        src/engine/core/Engine.h
-        src/engine/core/Scene.h
-        src/engine/core/Window.cpp
-        src/engine/core/Window.h
-        src/engine/entities/MeshRenderer.cpp
-        src/engine/entities/MeshRenderer.h
-        src/engine/graphics/shaders/Shader.cpp
-        src/engine/graphics/shaders/Shader.h
-        src/engine/graphics/data/Mesh.cpp
-        src/engine/graphics/data/Mesh.h
-        src/engine/graphics/data/VAO.cpp
-        src/engine/graphics/data/VAO.h
-        src/engine/graphics/data/VBO.cpp
-        src/engine/graphics/data/VBO.h
-        src/engine/test/3D/RandomCubes.cpp
-        src/engine/test/3D/RandomCubes.h
+        src/engine/Core/Engine.cpp
+        src/engine/Core/Engine.h
+        src/engine/Core/Scene.h
+        src/engine/Core/Window.cpp
+        src/engine/Core/Window.h
+        src/engine/Entities/MeshRenderer.cpp
+        src/engine/Entities/MeshRenderer.h
+        src/engine/Geometry/shaders/Shader.cpp
+        src/engine/Geometry/shaders/Shader.h
+        src/engine/Geometry/Mesh.cpp
+        src/engine/Geometry/Mesh.h
+        src/engine/Geometry/VAO.cpp
+        src/engine/Geometry/VAO.h
+        src/engine/Geometry/VBO.cpp
+        src/engine/Geometry/VBO.h
+        src/engine/Test/3D/RandomCubes.cpp
+        src/engine/Test/3D/RandomCubes.h
         src/Debug.h
         src/main.cpp
-        src/engine/core/Renderer.cpp
-        src/engine/graphics/data/Sprite.cpp
-        src/engine/graphics/data/Sprite.h
-        src/engine/graphics/data/Texture.cpp
-        src/engine/graphics/data/Texture.h
+        src/engine/Core/Renderer.cpp
+        src/engine/Geometry/data/Texture.cpp
+        src/engine/Geometry/data/Texture.h
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
-        src/engine/entities/Transform.cpp
-        src/engine/entities/Transform.h
-        src/engine/entities/FPSController.cpp
-        src/engine/entities/FPSController.h
-        src/engine/entities/Entity.cpp
-        src/engine/graphics/Geometry.h
-        src/engine/core/Scene.cpp
-        src/engine/graphics/Geometry.cpp
-        src/engine/graphics/data/Text.cpp
-        src/engine/graphics/data/Text.h
-        src/engine/graphics/data/AtlasTexture.cpp
-        src/engine/graphics/data/AtlasTexture.h
-        src/engine/test/2D/NoiseTextureCreation.cpp
-        src/engine/test/2D/NoiseTextureCreation.h
-        src/engine/utils/SimplexNoise.h
-        src/engine/utils/SimplexNoise.cpp
-        src/engine/test/2D/AtlasTextureTest.cpp
-        src/engine/test/2D/AtlasTextureTest.h
-        src/engine/test/3D/ImportModelTest.cpp
-        src/engine/test/3D/ImportModelTest.h
-        src/engine/utils/StringUtils.cpp
-        src/engine/utils/StringUtils.h
-        src/engine/utils/Timer.cpp
-        src/engine/utils/Timer.h src/engine/graphics/Material.cpp src/engine/graphics/Material.h)
+        src/engine/Entities/Transform.cpp
+        src/engine/Entities/Transform.h
+        src/engine/Entities/FPSController.cpp
+        src/engine/Entities/FPSController.h
+        src/engine/Entities/Entity.cpp
+        src/engine/Geometry/Geometry.h
+        src/engine/Core/Scene.cpp
+        src/engine/Geometry/Geometry.cpp
+        src/engine/Geometry/data/Text.cpp
+        src/engine/Geometry/data/Text.h
+        src/engine/Geometry/data/AtlasTexture.cpp
+        src/engine/Geometry/data/AtlasTexture.h
+        src/engine/Test/2D/NoiseTextureCreation.cpp
+        src/engine/Test/2D/NoiseTextureCreation.h
+        src/engine/Utils/SimplexNoise.h
+        src/engine/Utils/SimplexNoise.cpp
+        src/engine/Test/2D/AtlasTextureTest.cpp
+        src/engine/Test/2D/AtlasTextureTest.h
+        src/engine/Test/3D/ImportModelTest.cpp
+        src/engine/Test/3D/ImportModelTest.h
+        src/engine/Utils/StringUtils.cpp
+        src/engine/Utils/StringUtils.h
+        src/engine/Utils/Timer.cpp
+        src/engine/Utils/Timer.h src/engine/Geometry/Material.cpp src/engine/Geometry/Material.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

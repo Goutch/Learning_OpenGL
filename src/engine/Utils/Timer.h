@@ -9,6 +9,7 @@ public:
     void reset();
 
     double ms();
+    double ns();
 
 };
 

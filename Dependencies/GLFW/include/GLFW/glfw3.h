@@ -2504,7 +2504,7 @@ GLFWAPI void glfwWindowHintString(int hint, const char* value);
  *  hint is `GLFW_TRUE` and the `NSHighResolutionCapable` key is enabled in the
  *  application bundle's `Info.plist`.  For more information, see
  *  [High Resolution Guidelines for OS X](https://developer.apple.com/library/mac/documentation/GraphicsAnimation/Conceptual/HighResolutionOSX/Explained/Explained.html)
- *  in the Mac Developer Library.  The GLFW test and example programs use
+ *  in the Mac Developer Library.  The GLFW Test and example programs use
  *  a custom `Info.plist` template for this, which can be found as
  *  `CMake/MacOSXBundleInfo.plist.in` in the source tree.
  *
@@ -4694,7 +4694,7 @@ GLFWAPI const unsigned char* glfwGetJoystickButtons(int jid, int* count);
  *  `GLFW_HAT_LEFT_DOWN`  | `GLFW_HAT_LEFT` \| `GLFW_HAT_DOWN`
  *
  *  The diagonal directions are bitwise combinations of the primary (up, right,
- *  down and left) directions and you can test for these individually by ANDing
+ *  down and left) directions and you can Test for these individually by ANDing
  *  it with the corresponding direction.
  *
  *  @code

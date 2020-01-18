@@ -916,7 +916,7 @@ int main()
 	int Error = 0;
 
 /* Tests for a faster and to reserve bitfieldInterleave
-	Error += ::bitfieldInterleave5::test();
+	Error += ::bitfieldInterleave5::Test();
 	Error += ::bitfieldInterleave5::perf();
 */
 	Error += ::mask::test();

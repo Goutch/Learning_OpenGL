@@ -100,7 +100,7 @@ static inline uint8_t hash(int32_t i) {
     return perm[static_cast<uint8_t>(i)];
 }
 
-/* NOTE Gradient table to test if lookup-table are more efficient than calculs
+/* NOTE Gradient table to Test if lookup-table are more efficient than calculs
 static const float gradients1D[16] = {
         -8.f, -7.f, -6.f, -5.f, -4.f, -3.f, -2.f, -1.f,
          1.f,  2.f,  3.f,  4.f,  5.f,  6.f,  7.f,  8.f
