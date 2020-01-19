@@ -19,15 +19,7 @@ MeshRenderer::MeshRenderer(VAO &mesh, Material &material): Entity() {
 }
 
 void MeshRenderer::render(Scene &scene) {
-    scene.getRenderer().addToRenderQueue(*this);
-}
-
-Material &MeshRenderer::material() {
-    return *m;
-}
-
-VAO &MeshRenderer::getVAO()  {
-    return *mesh;
+    scene.getRenderer().addToRenderQueue(*m,*mesh,transform);
 }
 
 

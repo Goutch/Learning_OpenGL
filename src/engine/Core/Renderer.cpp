@@ -31,10 +31,8 @@ void Renderer::render() {
     material_batch.clear();
 }
 
-void Renderer::addToRenderQueue(MeshRenderer &entity) {
-    Material &material = entity.material();
-    VAO &vao = entity.getVAO();
-    Transform &transform = entity.transform;
+void Renderer::addToRenderQueue(Material& material,VAO& vao,Transform& transform) {
+
     if (material_batch.find(&material) == material_batch.end()) {
         material_batch.insert(std::make_pair(&material, std::unordered_map<VAO *, std::list<Transform *>>()));
     }

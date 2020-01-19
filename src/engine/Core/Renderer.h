@@ -25,7 +25,7 @@ public:
     };
     Renderer(Window& window,RenderMode mode);
     ~Renderer();
-	virtual void addToRenderQueue( MeshRenderer& entity);
+	virtual void addToRenderQueue(Material& material,VAO& vao,Transform& transform);
 	virtual void render();
 	virtual void setCamera(Transform& camera);
 	void setRenderMode(Window& window,RenderMode renderMode);

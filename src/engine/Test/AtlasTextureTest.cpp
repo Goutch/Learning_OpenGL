@@ -3,7 +3,6 @@
 //
 
 #include "AtlasTextureTest.h"
-#include "Core/Renderer.h"
 #include "Entities/MeshRenderer.h"
 #include "Geometry/Geometry.h"
 
