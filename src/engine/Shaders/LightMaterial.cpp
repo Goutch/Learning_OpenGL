@@ -32,14 +32,14 @@ void LightMaterial::bind(const Scene &scene) const {
     }
 }
 
-LightMaterial &LightMaterial::shine(float shine) {
+void LightMaterial::shine(float shine) {
     this->shineFactor = shine;
-    return *this;
+
 }
 
-LightMaterial &LightMaterial::damp(float damp) {
+void LightMaterial::damp(float damp) {
     this->dampFactor = damp;
-    return *this;
+
 }
 
 void LightMaterial::getUniformsLocations() {
