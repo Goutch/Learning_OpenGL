@@ -7,7 +7,7 @@
 #include "Test/FullSceneTest.h"
 int main() {
     Engine engine=Engine();
-    auto s=PerformanceTest();
+    auto s=FullSceneTest();
     engine.start(s);
    return 0;
 }

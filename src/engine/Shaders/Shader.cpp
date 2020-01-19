@@ -104,6 +104,47 @@ void Shader::loadUniform(unsigned int location, const glm::mat3 &m) const {
 void Shader::loadUniform(unsigned int location, const mat4 &m) const {
     glUniformMatrix4fv(location, 1, false, value_ptr(m));
 }
+void Shader::loadUniformIntArray(unsigned int location, int *i, unsigned int count) const {
+    glUniform1iv(location,count, i);
+}
+
+void Shader::loadUniformFloatArray(unsigned int location, float *f, unsigned int count) const {
+    glUniform1fv(location,count, f);
+}
+
+void Shader::loadUniformVec2Array(unsigned int location, const glm::vec2 *v, unsigned int count) const {
+    //const float *flat_array = &v[0].x;
+    float flat_array[count*3];
+    for (int i = 0; i < count; ++i) {
+        flat_array[i*3]=v[i].x;
+        flat_array[i*3+1]=v[i].y;
+    }
+    glUniform2fv(location,count,flat_array);
+}
+
+void Shader::loadUniformVec3Array(unsigned int location, const glm::vec3 *v, unsigned int count) const {
+    //const float *flat_array = &v[0].x;
+    float flat_array[count*3];
+    for (int i = 0; i < count; ++i) {
+        flat_array[i*3]=v[i].x;
+        flat_array[i*3+1]=v[i].y;
+        flat_array[i*3+2]=v[i].z;
+    }
+    glUniform3fv(location,count,flat_array);
+}
+
+void Shader::loadUniformVec4Array(unsigned int location, const glm::vec4 *v, unsigned int count) const {
+    //const float *flat_array = &v[0].x;
+    float flat_array[count*3];
+    for (int i = 0; i < count; ++i) {
+        flat_array[i*3]=v[i].x;
+        flat_array[i*3+1]=v[i].y;
+        flat_array[i*3+2]=v[i].z;
+        flat_array[i*3+3]=v[i].w;
+    }
+    glUniform4fv(location,count,flat_array);
+}
+
 
 unsigned int Shader::compileShader(unsigned int type, const std::string &source) {
     unsigned int id = glCreateShader(type);
@@ -144,16 +185,5 @@ std::string Shader::getSource(const std::string &path) {
     }
     return "";
 }
-
-
-
-
-
-
-
-
-
-
-
 
 

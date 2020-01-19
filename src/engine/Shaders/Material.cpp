@@ -3,7 +3,7 @@
 //
 
 #include "Shaders/Material.h"
-
+#include "Core/Scene.h"
 #include "Data/Texture.h"
 
 Material::Material() {
@@ -17,6 +17,7 @@ Material::Material(Shader &shader) {
 Material::Material(Shader &shader,const Color &color) {
     this->shader(shader);
     this->color(color);
+
 }
 
 Material::Material(Shader &shader, Texture &texture) {
@@ -31,7 +32,7 @@ Material::Material(Shader &shader, Texture &texture,const Color &color) {
 }
 
 
-void Material::bind() const{
+void Material::bind(const Scene& scene) const{
     s->bind();
     s->loadUniform(material_color_location,c.data);
     if (has_texture) {
@@ -48,9 +49,10 @@ void Material::unbind() const{
     if (has_texture)t->unbind();
 }
 
-void Material::texture(Texture &texture) {
+Material& Material::texture(Texture &texture) {
     t = &texture;
     has_texture = (t != nullptr);
+    return *this;
 }
 
 
@@ -58,9 +60,10 @@ const Texture &Material::texture() const {
     return *t;
 }
 
-void Material::shader(Shader &shader) {
+Material& Material::shader(Shader &shader) {
     s = &shader;
-    getUniformsLocations();
+    this->getUniformsLocations();
+    return *this;
 }
 
 const Shader &Material::shader() const {
@@ -88,8 +91,9 @@ void Material::projection(const mat4 &projection) const{
     s->loadUniform(projection_location, projection);
 }
 
-void Material::color(const Color &color) {
+Material& Material::color(const Color &color) {
     c = color;
+    return *this;
 }
 
 const Color &Material::color() const {

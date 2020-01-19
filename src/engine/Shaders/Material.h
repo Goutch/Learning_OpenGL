@@ -9,13 +9,15 @@ class Texture;
 #include <Data/Color.h>
 #include "Shaders/Shader.h"
 
+class Scene;
+
 using namespace glm;
 
 class Material {
-private:
+protected:
     bool has_transparency;
     bool has_texture;
-    int transform_location, view_location, projection_location, has_texture_location, texture_0_location,material_color_location;
+    int transform_location, view_location, projection_location, has_texture_location, texture_0_location, material_color_location;
     Color c = Color::WHITE;
     Texture *t;
     Shader *s;
@@ -24,34 +26,38 @@ public:
 
     Material(Shader &shader);
 
-    Material(Shader &shader,const Color &color);
+    Material(Shader &shader, const Color &color);
 
     Material(Shader &shader, Texture &texture);
 
-    Material(Shader &shader, Texture &texture,const Color &color);
+    Material(Shader &shader, Texture &texture, const Color &color);
 
-    void bind() const;
+    virtual void bind(const Scene &scene) const;
 
     void unbind() const;
 
     const Shader &shader() const;
 
-    void shader(Shader &shader);
+    Material &shader(Shader &shader);
 
     const Texture &texture() const;
 
-    void texture(Texture &texture);
+    Material &texture(Texture &texture);
 
-    void color(const Color &color);
+    Material &color(const Color &color);
+
     const Color &color() const;
-    void getUniformsLocations();
+
+
 
     void transform(const mat4 &transform) const;
 
     void view(const mat4 &view) const;
 
-    void projection(const mat4 &projection)const;
+    void projection(const mat4 &projection) const;
 
+private:
+    void getUniformsLocations();
 
 };
 

@@ -30,13 +30,13 @@ void Scene::init(Window &window, Renderer &renderer) {
     renderer.setCamera(camera);
 }
 
-unsigned int Scene::addEntity(Entity& entity)
+void Scene::addEntity(Entity& entity)
 {
     entities.push_back(&entity);
     entity.init(*this);
 }
 
-unsigned int Scene::addEntity(Entity *entity) {
+void Scene::addEntity(Entity *entity) {
     entities.push_back(entity);
     entity->init(*this);
 }
@@ -48,7 +48,21 @@ Renderer &Scene::getRenderer() {
 }
 Scene::~Scene() {
     delete[] entities.data();
+    delete [] point_lights.data();
+    point_lights.clear();
     entities.clear();
+}
+
+void Scene::addLight(PointLight *light) {
+    point_lights.push_back(light);
+}
+
+const std::vector<PointLight *> &Scene::getPointLights() const {
+    return point_lights;
+}
+
+const Color &Scene::getAmbientLight() const {
+    return ambient_light;
 }
 
 

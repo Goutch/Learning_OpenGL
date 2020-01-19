@@ -4,7 +4,7 @@
 
 #include "Light.h"
 
-Light::Light(Color color, vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
+Light::Light(const Color&color, vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
     this->color=color;
 }
 
@@ -18,4 +18,8 @@ Light::Light(const Color& color) : Entity() {
 
 Light::Light() : Entity() {
 
+}
+
+const Color &Light::getColor() {
+    return color;
 }

@@ -49,8 +49,8 @@ add_executable(OGL_Engine
         src/engine/Entities/Entity.cpp
         src/engine/Entities/Light/Light.cpp
         src/engine/Entities/Light/Light.h
-        src/engine/Entities/Light/Directionnal.cpp
-        src/engine/Entities/Light/Directionnal.h
+        src/engine/Entities/Light/DirectionnalLight.cpp
+        src/engine/Entities/Light/DirectionnalLight.h
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Shader.h
@@ -95,6 +95,6 @@ add_executable(OGL_Engine
         src/engine/Test/TextureCreationTest.h
         src/engine/Test/FullSceneTest.cpp
         src/engine/Test/FullSceneTest.h
-)
+        src/engine/Entities/Light/PointLight.cpp src/engine/Entities/Light/PointLight.h src/engine/Shaders/LightMaterial.cpp src/engine/Shaders/LightMaterial.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

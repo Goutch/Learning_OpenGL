@@ -8,13 +8,13 @@
 #include "Window.h"
 #include "Entities/Transform.h"
 #include "Log.h"
-
-void Renderer::render() {
+#include "Core/Scene.h"
+void Renderer::render(const Scene& scene) {
     mat4 viewMat = cam != nullptr ? glm::inverse(cam->getMatrix()) : mat4();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for (auto &vao_batch:material_batch) {
         const Material &material = *vao_batch.first;
-        material.bind();
+        material.bind(scene);
         material.projection(projection_matrix);
         material.view(viewMat);
         for (auto &transform_batch:vao_batch.second) {

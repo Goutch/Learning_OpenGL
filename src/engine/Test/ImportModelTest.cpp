@@ -8,11 +8,12 @@
 #include <Core/Renderer.h>
 #include <Entities/MeshRenderer.h>
 #include "Core/Window.h"
-
+#include "Entities/Light/PointLight.h"
 
 void ImportModelTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
     addEntity(new MeshRenderer(mesh,material));
     addEntity(new FPSController(camera));
+
 }
 

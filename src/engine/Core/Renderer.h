@@ -7,6 +7,7 @@ class Transform;
 #include "glm/mat4x4.hpp"
 class Material;
 class VAO;
+class Scene;
 #include <unordered_map>
 #include "list"
 using namespace glm;
@@ -26,7 +27,7 @@ public:
     Renderer(Window& window,RenderMode mode);
     ~Renderer();
 	virtual void addToRenderQueue(Material& material,VAO& vao,Transform& transform);
-	virtual void render();
+	virtual void render(const Scene& scene);
 	virtual void setCamera(Transform& camera);
 	void setRenderMode(Window& window,RenderMode renderMode);
 	float getFOV();

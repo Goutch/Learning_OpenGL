@@ -57,7 +57,7 @@ void Engine::start(Scene &scene) {
             printFPS();
             scene.update(delta_time);
             scene.render();
-            renderer.render();
+            renderer.render(scene);
             window->swapBuffer();
             window->getInputs();
             delta_time = t.ms();
