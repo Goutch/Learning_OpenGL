@@ -24,6 +24,7 @@ void LightMaterial::bind(const Scene &scene) const {
             radius.push_back(pointLights[i]->getRadius());
             positions.push_back(pointLights[i]->transform.position());
             colors.emplace_back(pointLights[i]->getColor().data);
+            if(i==4)break;
         }
         s->loadUniformVec3Array(point_light_positions_location,positions.data(),positions.size());
         s->loadUniformVec3Array(point_light_colors_location,colors.data(),colors.size());

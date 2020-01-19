@@ -4,8 +4,8 @@
 
 class LightMaterial : public Material {
 private:
-    float shineFactor = 1;
-    float dampFactor = 1;
+    float shineFactor =0;
+    float dampFactor =0;
     int ambient_light_location,
             damp_factor_location,
             shine_factor_location,

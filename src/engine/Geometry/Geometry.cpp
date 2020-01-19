@@ -154,6 +154,7 @@ void Geometry::make_cube(VAO &vao) {
     vao.indicies(indices.data(), indices.size());
 
     vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
+    vao.put(Mesh::NORMALS, 3, vert.data(), vert.size());
     vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
 
@@ -252,13 +253,13 @@ void Geometry::import(VAO &vao, std::string path) {
             data.clear();
             orderedIndices[i] = vertexPointer;
             if (!uvs.empty()) {
-                orderedUvs[vertexPointer * 2] = uvs[uvPointer];
-                orderedUvs[vertexPointer * 2 + 1] = 1 - uvs[uvPointer];
+                orderedUvs[vertexPointer * 2] = uvs[uvPointer*2];
+                orderedUvs[vertexPointer * 2 + 1] = 1 - uvs[uvPointer*2+1];
             }
             if (!normals.empty()) {
-                orderedNormals[vertexPointer * 3] = normals[normalPointer];
-                orderedNormals[vertexPointer * 3 + 1] = normals[normalPointer];
-                orderedNormals[vertexPointer * 3 + 2] = normals[normalPointer];
+                orderedNormals[vertexPointer * 3] = normals[normalPointer*3];
+                orderedNormals[vertexPointer * 3 + 1] = normals[normalPointer*3+1];
+                orderedNormals[vertexPointer * 3 + 2] = normals[normalPointer*3+2];
             }
         }
         vao.indicies(orderedIndices.data(), orderedIndices.size());

@@ -11,7 +11,7 @@ class FullSceneTest :public Scene{
     Shader lightShader=Shader("../src/engine/Shaders/shadersSources/LightVertex.glsl",
                               "../src/engine/Shaders/shadersSources/LightFragment.glsl");
 
-    Material dragon_material=Material(shader,Color::RED);
+    LightMaterial dragon_material=LightMaterial(lightShader,Color::RED);
     Texture ground_texture=Texture("../res/wall.jpg");
     LightMaterial ground_material=LightMaterial(lightShader,ground_texture,Color::WHITE);
     Mesh dragon=Mesh("../res/dragon.obj");
