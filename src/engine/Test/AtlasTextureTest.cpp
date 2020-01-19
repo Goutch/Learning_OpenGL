@@ -32,9 +32,6 @@ void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     textureColor[14] = 255;
     textureColor[15] = 255;
     spriteSheet.setTexturePixelData(textureColor, 2, 2, true);
-    material.shader(shader);
-
-    material.texture(spriteSheet);
     Geometry::make_quad(sprite);
     addEntity(new MeshRenderer(sprite, material));
 }

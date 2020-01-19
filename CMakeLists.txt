@@ -79,14 +79,14 @@ add_executable(OGL_Engine
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
 
-        src/engine/Test/RandomCubes.cpp
-        src/engine/Test/RandomCubes.h
+        src/engine/Test/PerformanceTest.cpp
+        src/engine/Test/PerformanceTest.h
         src/engine/Test/AtlasTextureTest.cpp
         src/engine/Test/AtlasTextureTest.h
         src/engine/Test/ImportModelTest.cpp
         src/engine/Test/ImportModelTest.h
-        src/engine/Test/NoiseTextureCreation.cpp
-        src/engine/Test/NoiseTextureCreation.h
+        src/engine/Test/TextureCreationTest.cpp
+        src/engine/Test/TextureCreationTest.h
         src/engine/Entities/Light/Light.cpp src/engine/Entities/Light/Light.h src/engine/Entities/Light/Directionnal.cpp src/engine/Entities/Light/Directionnal.h src/engine/Data/Color.cpp src/engine/Data/Color.h src/engine/Test/FullSceneTest.cpp src/engine/Test/FullSceneTest.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

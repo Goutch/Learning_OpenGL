@@ -1,18 +1,24 @@
 #pragma once
 
+#include <vector>
 
 #include <Shaders/Shader.h>
-#include <Shaders/Material.h>
 #include <Data/Texture.h>
 #include <Geometry/Mesh.h>
 #include "Core/Scene.h"
-class ImportModelTest: public Scene {
+#include <Shaders/Material.h>
+#include "Entities/Entity.h"
+class PerformanceTest : public Scene {
 private:
     Shader shader=Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
                          "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
-    Material material=Material(shader);
-    Mesh mesh=Mesh("../res/dragon.obj");
-public:
-    void init(Window &window, Renderer &renderer) override;
+    Material material=Material(shader,stone);
 
+    Mesh mesh;
+    Texture stone=Texture("../res/stone.jpg");
+
+public:
+    void init(Window &window,Renderer &renderer) override;
 };
+
+

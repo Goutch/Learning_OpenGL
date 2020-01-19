@@ -5,8 +5,10 @@ class Window;
 class Transform;
 
 #include "glm/mat4x4.hpp"
-class Shader;
-#include <list>
+class Material;
+class VAO;
+#include <unordered_map>
+#include "list"
 using namespace glm;
 class Renderer
 {
@@ -14,7 +16,7 @@ private:
     float aspect_ratio;
     float fov=90;
     mat4 projection_matrix;
-    std::list<MeshRenderer*> entities;
+    std::unordered_map<Material*,std::unordered_map<VAO*,std::list<Transform*>>> material_batch;
     const Transform* cam;
 public:
     enum RenderMode{

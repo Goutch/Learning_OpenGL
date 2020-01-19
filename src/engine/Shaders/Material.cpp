@@ -31,7 +31,7 @@ Material::Material(Shader &shader, Texture &texture,const Color &color) {
 }
 
 
-void Material::bind() {
+void Material::bind() const{
     s->bind();
     s->loadUniform(material_color_location,c.data);
     if (has_texture) {
@@ -43,7 +43,7 @@ void Material::bind() {
     }
 }
 
-void Material::unbind() {
+void Material::unbind() const{
     s->unbind();
     if (has_texture)t->unbind();
 }
@@ -76,15 +76,15 @@ void Material::getUniformsLocations() {
     material_color_location=s->uniformLocation("material_color");
 }
 
-void Material::transform(const mat4 &transform) {
+void Material::transform(const mat4 &transform) const {
     s->loadUniform(transform_location, transform);
 }
 
-void Material::view(const mat4 &view) {
+void Material::view(const mat4 &view) const{
     s->loadUniform(view_location, view);
 }
 
-void Material::projection(const mat4 &projection) {
+void Material::projection(const mat4 &projection) const{
     s->loadUniform(projection_location, projection);
 }
 

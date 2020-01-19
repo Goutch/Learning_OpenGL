@@ -30,9 +30,9 @@ public:
 
     Material(Shader &shader, Texture &texture,const Color &color);
 
-    void bind();
+    void bind() const;
 
-    void unbind();
+    void unbind() const;
 
     const Shader &shader() const;
 
@@ -46,11 +46,11 @@ public:
     const Color &color() const;
     void getUniformsLocations();
 
-    void transform(const mat4 &transform);
+    void transform(const mat4 &transform) const;
 
-    void view(const mat4 &view);
+    void view(const mat4 &view) const;
 
-    void projection(const mat4 &projection);
+    void projection(const mat4 &projection)const;
 
 
 };

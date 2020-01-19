@@ -6,8 +6,8 @@
 #include "Core/Scene.h"
 #include "Geometry/Geometry.h"
 class FullSceneTest :public Scene{
-    Shader shader=Shader("../src/engine/Shaders/shadersSources/EntityVertex.glsl",
-                         "../src/engine/Shaders/shadersSources/EntityFragment.glsl");
+    Shader shader=Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
+                         "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
 
     Material dragon_material=Material(shader,Color::RED);
     Texture ground_texture=Texture("../res/wall.jpg");
