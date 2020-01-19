@@ -64,7 +64,6 @@ void main(){
             lightValue=max(lightValue,0.);
             diffuseLight+=point_light_colors[i]*lightValue*intensity;
             //specular
-
             if(shine_factor>0.0001)
             {
                 vec3 normalizedToCameraDirection=normalize(to_camera_direction);

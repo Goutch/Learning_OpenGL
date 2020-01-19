@@ -27,9 +27,9 @@ public:
 
     void bind(const Scene &scene) const override;
 
-    LightMaterial &shine(float);
+    void shine(float);
 
-    LightMaterial &damp(float);
+    void damp(float);
 
 private:
     void getUniformsLocations();
