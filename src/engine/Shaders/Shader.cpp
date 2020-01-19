@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "Shader.h"
 #include <fstream>
-#include "core/Log.h"
+#include "Core/Log.h"
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
 
@@ -138,7 +138,8 @@ std::string Shader::getSource(const std::string &path) {
         }
 
     }
-    catch (std::ios_base::failure &e) {
+    catch(std::exception &e)
+    {
         Log::error("failed to read file "+path+"\n"+e.what());
     }
     return "";

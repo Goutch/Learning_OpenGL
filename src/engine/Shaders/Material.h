@@ -6,7 +6,7 @@ class Texture;
 
 #include <string>
 #include <unordered_map>
-#include "Geometry/shaders/Shader.h"
+#include "Shaders/Shader.h"
 
 using namespace glm;
 

@@ -5,9 +5,9 @@
 #include "Log.h"
 #include "iostream"
 
-int Log::log_level = Log::DEBUG;
+Log::LogLevel Log::log_level = Log::DEBUG;
 
-void Log::logLevel(int level) {
+void Log::logLevel(Log::LogLevel level) {
     Log::log_level = level;
 }
 

@@ -2,41 +2,52 @@
 // Created by User on 2020-01-05.
 //
 
+#include <Core/Log.h>
 #include "FPSController.h"
-#include "core/Window.h"
-#include "core/Scene.h"
-#include <core/Renderer.h>
-FPSController::FPSController(vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
-
+#include "Core/Window.h"
+#include "Core/Scene.h"
+#include "Core/Renderer.h"
+FPSController::FPSController(Transform& camera,vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
+    this->camera=&camera;
+    this->camera->parent=&transform;
 }
-FPSController::FPSController():Entity() {}
 
+FPSController::FPSController(Transform& camera):Entity() {
+    this->camera=&camera;
+    this->camera->parent=&transform;
+}
+
+void FPSController::init(Scene &scene) {
+    Entity::init(scene);
+    scene.getWindow().showCursor(false);
+    Log::message("init");
+}
 
 void FPSController::update(float delta, Scene& scene) {
     Window& window=scene.getWindow();
     vec3 forward= vec3(0,0,-1) * 0.1f;
     vec3 right=vec3(1,0,0)*0.1f;
     vec3 up=vec3(0,1,0)*0.1f;
-
+    vec3 dir=vec3(0);
     if (window.isKeyDown(GLFW_KEY_A)) {
-        transform.translate(-right);
+        dir-=right;
     }
     if (window.isKeyDown(GLFW_KEY_D)) {
-        transform.translate(right);
+        dir+=right;
     }
     if (window.isKeyDown(GLFW_KEY_W)) {
-        transform.translate(forward);
+        dir+=forward;
     }
     if (window.isKeyDown(GLFW_KEY_S)) {
-        transform.translate(-forward);
+        dir-=forward;
     }
     if (window.isKeyDown(GLFW_KEY_SPACE)) {
-        transform.translate(up);
+        dir+=up;
     }
     if (window.isKeyDown(GLFW_KEY_LEFT_CONTROL)) {
-        transform.translate(-up);
+        dir-=up;
     }
-
+    transform.translate(dir*delta*speed);
     vec2 change=vec2(0.0f);
     double x,y;
     float width=(float)window.getWidth();
@@ -48,7 +59,8 @@ void FPSController::update(float delta, Scene& scene) {
     window.getMousePosition(x,y);
     change.x=(((width/2)-x)/width)*fov;
     change.y=(((height/2)-y)/height)*(fov*aspect_ratio);
-    transform.rotate(radians(change.x),vec3(0,1,0));
-    window.showCursor(false);
+    transform.rotate(quat(vec3(0,radians(change.x),0)));
+    camera->rotate(quat(vec3(radians(change.y),0,0)));
+
     window.setMousePosition((double)window.getWidth()/2,(double)window.getHeight()/2);
 }

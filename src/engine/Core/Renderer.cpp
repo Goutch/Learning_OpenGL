@@ -2,12 +2,11 @@
 
 #include <GL/glew.h>
 #include "Renderer.h"
-#include "entities/MeshRenderer.h"
+#include "Entities/MeshRenderer.h"
 #include "Geometry/VAO.h"
-#include "Geometry/Material.h"
-
+#include "Shaders/Material.h"
 #include "Window.h"
-#include "entities/Transform.h"
+#include "Entities/Transform.h"
 
 void Renderer::render() {
     mat4 viewMat = cam != nullptr ? glm::inverse(cam->getMatrix()) : mat4();

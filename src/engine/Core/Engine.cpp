@@ -26,6 +26,7 @@ Engine::Engine() {
         Log::message("OPENGL Version "+version);
 
         initDebug();
+        //enable textures
         glEnable(GL_TEXTURE_2D);
         //enable cull face
         glEnable(GL_CULL_FACE);

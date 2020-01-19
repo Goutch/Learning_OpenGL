@@ -1,5 +1,5 @@
 
-#include "Mesh.h"
+#include "Geometry/Mesh.h"
 Mesh::Mesh():VAO() {
 }
 Mesh& Mesh::indices(unsigned int *indices, unsigned int indices_count) {

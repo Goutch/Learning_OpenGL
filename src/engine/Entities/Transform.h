@@ -23,8 +23,9 @@ public:
     void position(const vec3& position);
     void translate(const vec3 & translation);
 
-    void rotate(quat rotation);
+    void rotate(const quat& rotation);
     void rotate(float angle,vec3 axis);
+
     quat rotation();
 
     vec3 forward();

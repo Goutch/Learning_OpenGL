@@ -5,6 +5,8 @@ class Renderer;
 class Entity;
 class Transform;
 class MeshRenderer;
+
+#include "Entities/Transform.h"
 #include "vector"
 class Scene
 {
@@ -13,8 +15,9 @@ protected:
     Renderer* renderer;
     std::vector<Entity*> entities;
 public:
+    Transform camera;
     ~Scene();
-	Scene(){};
+	Scene();
 	virtual void init(Window &window,Renderer &renderer);
 	virtual void update(float delta);
 	virtual void render();

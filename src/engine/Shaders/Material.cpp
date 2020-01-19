@@ -2,9 +2,9 @@
 // Created by User on 16-Jan.-2020.
 //
 
-#include "Material.h"
+#include "Shaders/Material.h"
 
-#include <Geometry/data/Texture.h>
+#include "Data/Texture.h"
 
 Material::Material() {
 

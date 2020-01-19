@@ -3,13 +3,13 @@
 //
 
 #include "RandomCubes.h"
-#include "entities/MeshRenderer.h"
+#include "Entities/MeshRenderer.h"
 
-#include "Geometry/data/Texture.h"
+#include "Data/Texture.h"
 
-#include "core/Window.h"
-#include "core/Renderer.h"
-#include "entities/FPSController.h"
+#include "Core/Window.h"
+#include "Core/Renderer.h"
+#include "Entities/FPSController.h"
 #include "Geometry/Geometry.h"
 
 RandomCubes::RandomCubes()
@@ -21,15 +21,13 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
     renderer.setRenderMode(window,Renderer::PERSPECTIVE);
     stone.load("../res/stone.jpg");
 
-    Geometry::makeCube(mesh);
+    Geometry::make_cube(mesh);
     std::vector<float> colors=std::vector<float>();
 
     for (int j = 0; j <4*mesh.getVertexCount() ; ++j) {
         colors.push_back(1);
     }
     mesh.colors(colors.data(), colors.size());
-    camera=new FPSController();
-
     float range=200;
     material.shader(shader);
     material.texture(stone);
@@ -43,10 +41,7 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
                                         float(rand()) / float((RAND_MAX)) * M_PI),
                                    vec3(1, 1, 1)));
     }
-    addEntity(camera);
-
-    renderer.setCamera(camera->transform);
-
+    addEntity(new FPSController(camera));
 }
 
 void RandomCubes::update(float delta) {
@@ -60,5 +55,4 @@ void RandomCubes::update(float delta) {
 
 RandomCubes::~RandomCubes() {
 
-    stone.unbind();
 }

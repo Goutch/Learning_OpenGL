@@ -3,14 +3,15 @@
 //
 
 #include "AtlasTextureTest.h"
-#include "core/Renderer.h"
-#include "entities/MeshRenderer.h"
+#include "Core/Renderer.h"
+#include "Entities/MeshRenderer.h"
 #include "Geometry/Geometry.h"
+
 void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
-    renderer.setCamera(camera);
+
     unsigned char *textureColor = new unsigned char[4 * 4];
-    spriteSheet.setCellSize(1,1);
+    spriteSheet.setCellSize(1, 1);
     textureColor[0] = 255;
     textureColor[1] = 0;
     textureColor[2] = 0;
@@ -30,12 +31,12 @@ void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     textureColor[13] = 255;
     textureColor[14] = 255;
     textureColor[15] = 255;
-    spriteSheet.setTexturePixelData(textureColor,2,2,true);
+    spriteSheet.setTexturePixelData(textureColor, 2, 2, true);
     material.shader(shader);
 
     material.texture(spriteSheet);
-    Geometry::makeQuad(sprite);
-    addEntity(new MeshRenderer(sprite,material));
+    Geometry::make_quad(sprite);
+    addEntity(new MeshRenderer(sprite, material));
 }
 
 void AtlasTextureTest::update(float delta) {

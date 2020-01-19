@@ -8,7 +8,7 @@ class VAO;
 
 #include <string>
 namespace Geometry{
-    void makeCube(Mesh& mesh);
-    void makeQuad(VAO& vao);
+    void make_cube(Mesh& mesh);
+    void make_quad(VAO& vao);
     void import(VAO& vao,std::string path);
 }

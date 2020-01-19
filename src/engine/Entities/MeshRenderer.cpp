@@ -5,9 +5,9 @@
 
 
 #include "MeshRenderer.h"
-#include "core/Renderer.h"
+#include "Core/Renderer.h"
 #include "Geometry/VAO.h"
-#include "core/Scene.h"
+#include "Core/Scene.h"
 MeshRenderer::MeshRenderer(VAO &mesh, Material &shader, vec3 position, vec3 rotation, vec3 scale): Entity(position, rotation, scale) {
     this->mesh=&mesh;
     this->m=&shader;

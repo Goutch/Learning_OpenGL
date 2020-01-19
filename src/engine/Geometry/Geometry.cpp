@@ -5,10 +5,10 @@
 #include "Geometry.h"
 #include "Mesh.h"
 #include "vector"
-#include <utils/StringUtils.h>
-#include "core/Log.h"
+#include "Utils/StringUtils.h"
+#include "Core/Log.h"
 
-void Geometry::makeQuad(VAO &vao) {
+void Geometry::make_quad(VAO &vao) {
     auto vert = std::vector<float>();
     vert.push_back(-.5);
     vert.push_back(-.5);
@@ -46,7 +46,7 @@ void Geometry::makeQuad(VAO &vao) {
     vao.put(1, 2, uvs.data(), uvs.size());
 }
 
-void Geometry::makeCube(Mesh &mesh) {
+void Geometry::make_cube(Mesh &mesh) {
     //1-------2     5-------6
     //|       |     |       |
     //|       |     |       |
@@ -192,7 +192,7 @@ void Geometry::import(VAO &vao, std::string path) {
             StringUtils::split(data, indices[i], '/');
             unsigned int vertexPointer = std::stoi(data.at(0)) - 1;
             unsigned int uvPointer = std::stoi(data.at(1)) - 1;
-            //int normalPointer = std::stoi(data.at(2)) - 1;
+            //int normalPointer = std::stoi(Data.at(2)) - 1;
             data.clear();
             orderedIndices[i] = vertexPointer;
             if (!uvs.empty()) {

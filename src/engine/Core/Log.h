@@ -4,18 +4,18 @@
 
 class Log {
 public:
-
-    static const int DEBUG = 5;
-    static const int MESSAGE= 4;
-    static const int STATUS = 3;
-    static const int WARNING = 2;
-    static const int ERROR = 1;
-    static const int NOTHING = 0;
-
+    enum LogLevel{
+        DEBUG = 5,
+        MESSAGE= 4,
+        STATUS = 3,
+        WARNING = 2,
+        ERROR = 1,
+        NOTHING = 0,
+    };
 private:
-    static int log_level;
+    static LogLevel log_level;
 public:
-    static void logLevel(int level);
+    static void logLevel(LogLevel level);
 
     static void debug(const std::string &s);
 

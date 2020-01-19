@@ -16,3 +16,7 @@ void Entity::render(Scene &scene) {
 void Entity::update(float delta,Scene &scene) {
 
 }
+
+void Entity::init(Scene &scene) {
+
+}

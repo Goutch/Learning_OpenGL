@@ -3,13 +3,13 @@
 //
 
 #include "NoiseTextureCreation.h"
-#include "entities/MeshRenderer.h"
-#include "core/Renderer.h"
-#include "utils/SimplexNoise.h"
+#include "Entities/MeshRenderer.h"
+#include "Core/Renderer.h"
+#include "Utils/SimplexNoise.h"
 #include "Geometry/Geometry.h"
 void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
-    camera = new Transform(vec3(0), vec3(0), vec3(1));
+
     int width=300;
     int height=300;
     double scale=0.0033;
@@ -32,9 +32,9 @@ void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
 
     material.shader(shader);
     material.texture(texture);
-    Geometry::makeQuad(sprite);
+    Geometry::make_quad(sprite);
     addEntity(new MeshRenderer(sprite, material));
-    renderer.setCamera(*camera);
+
     delete[] textureColor;
 }
 
@@ -43,5 +43,5 @@ void NoiseTextureCreation::update(float delta) {
 }
 
 NoiseTextureCreation::~NoiseTextureCreation() {
-    delete camera;
+
 }

@@ -27,57 +27,66 @@ include_directories(Dependencies/STB_IMAGE)
 
 
 add_executable(OGL_Engine
+        src/main.cpp
+
         src/engine/Core/Engine.cpp
         src/engine/Core/Engine.h
         src/engine/Core/Scene.h
         src/engine/Core/Window.cpp
         src/engine/Core/Window.h
+        src/engine/Core/Debug.h
+        src/engine/Core/Renderer.cpp
+        src/engine/Core/Scene.cpp
+        src/engine/Core/Log.cpp
+        src/engine/Core/Log.h
+
         src/engine/Entities/MeshRenderer.cpp
         src/engine/Entities/MeshRenderer.h
-        src/engine/Geometry/shaders/Shader.cpp
-        src/engine/Geometry/shaders/Shader.h
-        src/engine/Geometry/Mesh.cpp
-        src/engine/Geometry/Mesh.h
-        src/engine/Geometry/VAO.cpp
-        src/engine/Geometry/VAO.h
-        src/engine/Geometry/VBO.cpp
-        src/engine/Geometry/VBO.h
-        src/engine/Test/3D/RandomCubes.cpp
-        src/engine/Test/3D/RandomCubes.h
-        src/engine/Core/Debug.h
-        src/main.cpp
-        src/engine/Core/Renderer.cpp
-        src/engine/Geometry/data/Texture.cpp
-        src/engine/Geometry/data/Texture.h
-        Dependencies/STB_IMAGE/stb_image.h
-        Dependencies/STB_IMAGE/stb_image.cpp
         src/engine/Entities/Transform.cpp
         src/engine/Entities/Transform.h
         src/engine/Entities/FPSController.cpp
         src/engine/Entities/FPSController.h
         src/engine/Entities/Entity.cpp
+
+        src/engine/Shaders/Shader.cpp
+        src/engine/Shaders/Shader.h
+        src/engine/Shaders/Material.cpp
+        src/engine/Shaders/Material.h
+
         src/engine/Geometry/Geometry.h
-        src/engine/Core/Scene.cpp
         src/engine/Geometry/Geometry.cpp
-        src/engine/Geometry/data/Text.cpp
-        src/engine/Geometry/data/Text.h
-        src/engine/Geometry/data/AtlasTexture.cpp
-        src/engine/Geometry/data/AtlasTexture.h
-        src/engine/Test/2D/NoiseTextureCreation.cpp
-        src/engine/Test/2D/NoiseTextureCreation.h
+        src/engine/Shaders/Mesh.cpp
+        src/engine/Geometry/Mesh.h
+        src/engine/Geometry/VAO.cpp
+        src/engine/Geometry/VAO.h
+        src/engine/Geometry/VBO.cpp
+        src/engine/Geometry/VBO.h
+
+        src/engine/Data/Texture.cpp
+        src/engine/Data/Texture.h
+        src/engine/Data/Text.cpp
+        src/engine/Data/Text.h
+        src/engine/Data/AtlasTexture.cpp
+        src/engine/Data/AtlasTexture.h
+
         src/engine/Utils/SimplexNoise.h
         src/engine/Utils/SimplexNoise.cpp
-        src/engine/Test/2D/AtlasTextureTest.cpp
-        src/engine/Test/2D/AtlasTextureTest.h
-        src/engine/Test/3D/ImportModelTest.cpp
-        src/engine/Test/3D/ImportModelTest.h
         src/engine/Utils/StringUtils.cpp
         src/engine/Utils/StringUtils.h
         src/engine/Utils/Timer.cpp
         src/engine/Utils/Timer.h
-        src/engine/Geometry/Material.cpp
-        src/engine/Geometry/Material.h
-        src/engine/Core/Log.cpp
-        src/engine/Core/Log.h)
+
+        Dependencies/STB_IMAGE/stb_image.h
+        Dependencies/STB_IMAGE/stb_image.cpp
+
+        src/engine/Test/RandomCubes.cpp
+        src/engine/Test/RandomCubes.h
+        src/engine/Test/AtlasTextureTest.cpp
+        src/engine/Test/AtlasTextureTest.h
+        src/engine/Test/ImportModelTest.cpp
+        src/engine/Test/ImportModelTest.h
+        src/engine/Test/NoiseTextureCreation.cpp
+        src/engine/Test/NoiseTextureCreation.h
+        src/engine/Entities/Light/Light.cpp src/engine/Entities/Light/Light.h src/engine/Entities/Light/Directionnal.cpp src/engine/Entities/Light/Directionnal.h src/engine/Data/Color.cpp src/engine/Data/Color.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

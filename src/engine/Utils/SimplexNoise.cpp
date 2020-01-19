@@ -55,7 +55,7 @@ static inline int32_t fastfloor(float fp) {
  * at a distance far enough to be able to see a repeatable pattern of 256.
  *
  * This needs to be exactly the same for all instances on all platforms,
- * so it's easiest to just keep it as static explicit data.
+ * so it's easiest to just keep it as static explicit Data.
  * This also removes the need for any initialisation of this class.
  *
  * Note that making this an uint32_t[] instead of a uint8_t[] might make the
