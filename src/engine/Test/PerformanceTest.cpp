@@ -18,7 +18,7 @@ void PerformanceTest::init(Window &window, Renderer &renderer) {
     renderer.setRenderMode(window,Renderer::PERSPECTIVE);
     Geometry::make_cube(mesh);
 
-    float range=100;
+    float range=200;
     for (int i = 0; i < 50000; ++i) {
         addEntity(new MeshRenderer(mesh,material,
                                    vec3((float(rand()) / float((RAND_MAX)) * range) - (range / 2),

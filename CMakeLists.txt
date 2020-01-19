@@ -47,6 +47,10 @@ add_executable(OGL_Engine
         src/engine/Entities/FPSController.cpp
         src/engine/Entities/FPSController.h
         src/engine/Entities/Entity.cpp
+        src/engine/Entities/Light/Light.cpp
+        src/engine/Entities/Light/Light.h
+        src/engine/Entities/Light/Directionnal.cpp
+        src/engine/Entities/Light/Directionnal.h
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Shader.h
@@ -68,6 +72,8 @@ add_executable(OGL_Engine
         src/engine/Data/Text.h
         src/engine/Data/AtlasTexture.cpp
         src/engine/Data/AtlasTexture.h
+        src/engine/Data/Color.cpp
+        src/engine/Data/Color.h
 
         src/engine/Utils/SimplexNoise.h
         src/engine/Utils/SimplexNoise.cpp
@@ -87,6 +93,8 @@ add_executable(OGL_Engine
         src/engine/Test/ImportModelTest.h
         src/engine/Test/TextureCreationTest.cpp
         src/engine/Test/TextureCreationTest.h
-        src/engine/Entities/Light/Light.cpp src/engine/Entities/Light/Light.h src/engine/Entities/Light/Directionnal.cpp src/engine/Entities/Light/Directionnal.h src/engine/Data/Color.cpp src/engine/Data/Color.h src/engine/Test/FullSceneTest.cpp src/engine/Test/FullSceneTest.h)
+        src/engine/Test/FullSceneTest.cpp
+        src/engine/Test/FullSceneTest.h
+)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
