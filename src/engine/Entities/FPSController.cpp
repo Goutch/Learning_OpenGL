@@ -20,7 +20,6 @@ FPSController::FPSController(Transform& camera):Entity() {
 void FPSController::init(Scene &scene) {
     Entity::init(scene);
     scene.getWindow().showCursor(false);
-    Log::message("init");
 }
 
 void FPSController::update(float delta, Scene& scene) {

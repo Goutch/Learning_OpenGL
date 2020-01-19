@@ -10,12 +10,9 @@ class ImportModelTest: public Scene {
 private:
     Shader shader=Shader("../src/engine/Shaders/shadersSources/EntityVertex.glsl",
                          "../src/engine/Shaders/shadersSources/EntityFragment.glsl");
-    Material material;
-    Mesh mesh;
+    Material material=Material(shader);
+    Mesh mesh=Mesh("../res/dragon.obj");
 public:
     void init(Window &window, Renderer &renderer) override;
 
-    void update(float delta) override;
-
-    void render() override;
 };

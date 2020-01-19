@@ -1,7 +1,12 @@
 
 #include "Geometry/Mesh.h"
+#include "Geometry/Geometry.h"
 Mesh::Mesh():VAO() {
 }
+Mesh::Mesh(std::string path) {
+    Geometry::import(*this,path);
+}
+
 Mesh& Mesh::indices(unsigned int *indices, unsigned int indices_count) {
     indicies(indices,indices_count);
     return *this;
@@ -23,6 +28,7 @@ Mesh &Mesh::colors(float *colors_array, unsigned int colors_count) {
     put(MeshAttributeType::CORLORS, 4, colors_array, colors_count);
     return *this;
 }
+
 
 
 

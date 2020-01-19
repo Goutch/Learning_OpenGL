@@ -22,8 +22,8 @@ Engine::Engine() {
         Log::status("Initialized GLEW") :
         Log::error("failed to initialize GLEW");
 
-        std::string version=(char*)glGetString(GL_VERSION);
-        Log::message("OPENGL Version "+version);
+        std::string version = (char *) glGetString(GL_VERSION);
+        Log::message("OPENGL Version " + version);
 
         initDebug();
         //enable textures
@@ -42,15 +42,17 @@ Engine::Engine() {
 
 void Engine::start(Scene &scene) {
     if (glewInit() == GLEW_OK) {
-        Renderer renderer = Renderer(*window, Renderer::ORTHOGRAPHIC);
+        Renderer renderer = Renderer(*window, Renderer::PERSPECTIVE);
         Log::status("Initializing scene..");
         scene.init(*window, renderer);
         Log::status("Initialized scene");
 
         double delta_time = 0;
         Timer t;
+        window->getInputs();
         Log::status("Starting main loop..");
         while (!window->shouldClose()) {
+            window->getInputs();
             t.reset();
             printFPS();
             scene.update(delta_time);
@@ -71,7 +73,7 @@ Engine::~Engine() {
 void Engine::printFPS() {
     fps++;
     if (last_fps_print < std::time(0) - 1) {
-        Log::debug("fps:"+std::to_string( fps));
+        Log::debug("fps:" + std::to_string(fps));
         fps = 0;
         last_fps_print = std::time(0);
     }

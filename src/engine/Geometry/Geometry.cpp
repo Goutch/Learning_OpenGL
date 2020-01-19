@@ -42,16 +42,24 @@ void Geometry::make_quad(VAO &vao) {
         uvs.push_back(1);
     }
     vao.indicies(indices.data(), indices.size());
-    vao.put(0, 3, vert.data(), vert.size());
-    vao.put(1, 2, uvs.data(), uvs.size());
+    vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
+    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
 
-void Geometry::make_cube(Mesh &mesh) {
-    //1-------2     5-------6
-    //|       |     |       |
-    //|       |     |       |
-    //0-------3     4-------7
+void Geometry::make_cube(VAO &vao) {
+    //front
+    //1-------2
+    //|       |
+    //|       |
+    //0-------3
+    //back
+    // 5-------6
+    // |       |
+    // |       |
+    // 4-------7
     auto vert = std::vector<float>();
+    auto indices = std::vector<unsigned int>();
+    auto uvs = std::vector<float>();
     vert.push_back(-.5);
     vert.push_back(-.5);
     vert.push_back(0.5);//0
@@ -78,18 +86,18 @@ void Geometry::make_cube(Mesh &mesh) {
     vert.push_back(-.5);
     vert.push_back(-0.5);//7
 
-    auto uvs = std::vector<float>();
-
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(0);
 
 
+    uvs.push_back(0);
+    uvs.push_back(0);
+    uvs.push_back(0);
+    uvs.push_back(1);
+    uvs.push_back(1);
+    uvs.push_back(1);
+    uvs.push_back(1);
+    uvs.push_back(0);
+
+
     uvs.push_back(1);
     uvs.push_back(1);
     uvs.push_back(1);
@@ -99,7 +107,7 @@ void Geometry::make_cube(Mesh &mesh) {
     uvs.push_back(0);
     uvs.push_back(1);
 
-    auto indices = std::vector<unsigned int>();
+
     //down
     indices.push_back(3);
     indices.push_back(0);
@@ -143,13 +151,61 @@ void Geometry::make_cube(Mesh &mesh) {
     indices.push_back(5);
     indices.push_back(4);
     indices.push_back(0);
+    vao.indicies(indices.data(), indices.size());
 
-    mesh.vertices(vert.data(), vert.size()).indices(indices.data(), indices.size()).uvs(uvs.data(), uvs.size());
+    vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
+    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
 
+void Geometry::make_plane(VAO &vao,int sizeX,int sizeZ) {
 
+    auto vertices = std::vector<float>();
+    vertices.resize((sizeX + 1) * (sizeZ + 1) * 3);
+    auto indices = std::vector<unsigned int>();
+    indices.resize(sizeX * sizeZ * 6);
+    auto normals = std::vector<float>();
+    normals.resize((sizeX + 1) * (sizeZ + 1) * 3);
+    auto uvs = std::vector<float>();
+    uvs.resize((sizeX + 1) * (sizeZ + 1) * 2);
+    for (int z = 0; z < sizeZ + 1; z++) {
+        for (int x = 0; x < sizeX + 1; x++) {
+            int index = (x * (sizeZ + 1)) + z;
+            vertices[index * 3] = x - (float) sizeX / 2;
+            vertices[index * 3 + 1] = 0;
+            vertices[index * 3 + 2] = z - (float) sizeZ / 2;
+        }
+    }
+
+    for (int x = 0; x < sizeX; x++) {
+        for (int z = 0; z < sizeZ; z++) {
+            int index = (x * (sizeZ) + z);
+            indices[index * 6] = index + x;
+            indices[index * 6 + 1] = index + x + 1;
+            indices[index * 6 + 2] = index + x + sizeZ + 1;
+            indices[index * 6 + 3] = index + x + sizeZ + 1;
+            indices[index * 6 + 4] = index + x + 1;
+            indices[index * 6 + 5] = index + x + sizeZ + 2;
+        }
+    }
+    for (int i = 0; i < (sizeX + 1) * (sizeZ + 1); i++) {
+        normals[i * 3] = 0;
+        normals[i * 3 + 1] = 1;
+        normals[i * 3 + 2] = 0;
+    }
+    for (int x = 0; x < sizeX+1; ++x) {
+        for (int z = 0; z <sizeZ+1 ; ++z) {
+            int index = (x * (sizeZ + 1)) + z;
+            uvs[index*2]=(float(x)/(sizeX+1));
+            uvs[(index*2)+1]=(float(z)/(sizeZ+1));
+        }
+    }
+    vao.indicies(indices.data(), indices.size());
+    vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
+    vao.put(Mesh::NORMALS, 3, normals.data(), normals.size());
+    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
+}
 void Geometry::import(VAO &vao, std::string path) {
-    Log::status( "Loading model:"+path);
+    Log::status("Loading model:" + path);
     try {
         std::ifstream file(path);
         std::string line;
@@ -183,37 +239,40 @@ void Geometry::import(VAO &vao, std::string path) {
         }
         auto orderedUvs = std::vector<float>();
         auto orderedIndices = std::vector<unsigned int>();
-        //auto orderedNormals = std::vector<float>();
+        auto orderedNormals = std::vector<float>();
         orderedUvs.resize((vertices.size() / 3) * 2);
-        //orderedNormals.resize(vertices.size());
+        orderedNormals.resize(vertices.size());
         orderedIndices.resize(indices.size());
         auto data = std::vector<std::string>();
         for (unsigned int i = 0; i < indices.size(); ++i) {
             StringUtils::split(data, indices[i], '/');
             unsigned int vertexPointer = std::stoi(data.at(0)) - 1;
             unsigned int uvPointer = std::stoi(data.at(1)) - 1;
-            //int normalPointer = std::stoi(Data.at(2)) - 1;
+            int normalPointer = std::stoi(data.at(2)) - 1;
             data.clear();
             orderedIndices[i] = vertexPointer;
             if (!uvs.empty()) {
                 orderedUvs[vertexPointer * 2] = uvs[uvPointer];
-                orderedUvs[vertexPointer * 2 + 1] = 1-uvs[uvPointer];
+                orderedUvs[vertexPointer * 2 + 1] = 1 - uvs[uvPointer];
             }
-            //if (!normals.empty()) {
-            //    orderedNormals[vertexPointer * 3] = normals[normalPointer];
-            //    orderedNormals[vertexPointer * 3 + 1] = normals[normalPointer];
-            //    orderedNormals[vertexPointer * 3 + 2] = normals[normalPointer];
-            //}
+            if (!normals.empty()) {
+                orderedNormals[vertexPointer * 3] = normals[normalPointer];
+                orderedNormals[vertexPointer * 3 + 1] = normals[normalPointer];
+                orderedNormals[vertexPointer * 3 + 2] = normals[normalPointer];
+            }
         }
-
-        vao.put(0, 3, vertices.data(), vertices.size());
-        vao.indicies(orderedIndices.data(),orderedIndices.size());
-        if(!orderedUvs.empty())
-            vao.put(1, 2,orderedUvs.data(), uvs.size());
+        vao.indicies(orderedIndices.data(), orderedIndices.size());
+        vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
+        if (!orderedUvs.empty())
+            vao.put(Mesh::UVS, 2, orderedUvs.data(), uvs.size());
+        if (!orderedNormals.empty())
+            vao.put(Mesh::NORMALS, 3, orderedNormals.data(), orderedNormals.size());
     }
     catch (const std::exception &e) {
-        Log::error("cant import model:"+path+"\n"+e.what());
+        Log::error("cant import model:" + path + "\n" + e.what());
     }
 
 
 }
+
+

@@ -20,7 +20,7 @@ VAO::~VAO() {
 
 void VAO::bind()  const{
     glBindVertexArray(vao_id);
-    glBindBuffer(GL_ELEMENT_ARRAY_BUFFER,index_buffer_id);
+
 }
 
 void VAO::unbind()  const{
@@ -41,16 +41,16 @@ void VAO::put(unsigned int atribute_position, unsigned int atribute_count_per_ve
 
 void VAO::indicies(unsigned int *indices, unsigned int indices_lenght) {
     glBindVertexArray(vao_id);
-    if (has_index_buffer)
+    if (!has_index_buffer)
     {
-        glDeleteBuffers(1, &index_buffer_id);
+        glGenBuffers(1, &index_buffer_id);
     }
-    glGenBuffers(1, &index_buffer_id);
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer_id);
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_lenght * sizeof(unsigned int), indices, GL_STATIC_DRAW);
     glBindVertexArray(0);
     has_index_buffer=true;
     vertexCount=indices_lenght;
+
 }
 
 unsigned int VAO::getVertexCount()  const{

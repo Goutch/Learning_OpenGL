@@ -38,10 +38,3 @@ void NoiseTextureCreation::init(Window &window, Renderer &renderer) {
     delete[] textureColor;
 }
 
-void NoiseTextureCreation::update(float delta) {
-    Scene::update(delta);
-}
-
-NoiseTextureCreation::~NoiseTextureCreation() {
-
-}

@@ -7,7 +7,6 @@
 #include "Shaders/Material.h"
 #include "Window.h"
 #include "Entities/Transform.h"
-
 void Renderer::render() {
     mat4 viewMat = cam != nullptr ? glm::inverse(cam->getMatrix()) : mat4();
     glClear(GL_COLOR_BUFFER_BIT|GL_DEPTH_BUFFER_BIT);

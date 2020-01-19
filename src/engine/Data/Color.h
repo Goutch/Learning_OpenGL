@@ -4,7 +4,7 @@
 
 #pragma once
 
-
+#include "glm/vec4.hpp"
 struct Color {
     const static Color WHITE;
     const static Color BLACK;
@@ -12,7 +12,7 @@ struct Color {
     const static Color GREEN;
     const static Color BLUE;
 
-    float data[4];
+    glm::vec4 data;
     float& r=data[0];
     float& g=data[1];
     float& b=data[2];

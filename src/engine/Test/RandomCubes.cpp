@@ -12,9 +12,6 @@
 #include "Entities/FPSController.h"
 #include "Geometry/Geometry.h"
 
-RandomCubes::RandomCubes()
-        : Scene() {
-}
 
 void RandomCubes::init(Window &window, Renderer &renderer) {
     Scene::init(window,renderer);
@@ -44,15 +41,5 @@ void RandomCubes::init(Window &window, Renderer &renderer) {
     addEntity(new FPSController(camera));
 }
 
-void RandomCubes::update(float delta) {
-    Scene::update(delta);
-    if (window->isKeyDown(GLFW_KEY_ESCAPE)) {
-        window->close();
-    }
-}
 
 
-
-RandomCubes::~RandomCubes() {
-
-}

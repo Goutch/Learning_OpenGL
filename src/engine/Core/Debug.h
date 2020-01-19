@@ -1,24 +1,23 @@
 #pragma once
 #define GLEW_STATIC
+
 #include<iostream>
 #include "GL/glew.h"
+#include "Log.h"
 
 static void clearGLErrors() {
-    while(glGetError()!=GL_NO_ERROR);
+    while (glGetError() != GL_NO_ERROR);
 }
 
-static void printGLErrors()
-{
-    while(GLenum error=glGetError())
-    {
-        std::cerr<<"[OPENGL ERROR]:"<<error<<std::endl;
+static void printGLErrors() {
+    while (GLenum error = glGetError()) {
+        Log::error("[OPENGL ERROR]:" + error);
     }
 }
 
 static void APIENTRY GLDebugMessageCallback(GLenum source, GLenum type, GLuint id,
-                                     GLenum severity, GLsizei length,
-                                     const GLchar *msg, const void *data)
-{
+                                            GLenum severity, GLsizei length,
+                                            const GLchar *msg, const void *data) {
     std::string _source;
     std::string _type;
     std::string _severity;
@@ -108,12 +107,15 @@ static void APIENTRY GLDebugMessageCallback(GLenum source, GLenum type, GLuint i
             _severity = "UNKNOWN";
             break;
     }
-    if(severity!=GL_DEBUG_SEVERITY_NOTIFICATION)
-    printf("[OPENGL ERROR]:ID:%d \n TYPE:%s \n SEVERITY: %s \n SOURCE: %s \n MESSAGE: %s\n",
-           id, _type.c_str(), _severity.c_str(), _source.c_str(), msg);
+    if (severity != GL_DEBUG_SEVERITY_NOTIFICATION)
+        Log::error("[OPENGL ERROR]:ID:" + std::to_string(id) +
+        "\nTYPE: " + _type.c_str() +
+        "\nSEVERITY: " +_severity.c_str() +
+        "\nSOURCE: "+_source.c_str() +
+        "\nMESSAGE: "+ msg);
 }
-static void initDebug()
-{
+
+static void initDebug() {
     glEnable(GL_DEBUG_OUTPUT);
     glDebugMessageCallback(GLDebugMessageCallback, NULL);
 }

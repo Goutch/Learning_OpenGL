@@ -6,6 +6,7 @@
 #include "GL/glew.h"
 #include "Texture.h"
 #include "stb_image.h"
+#include "Core/Log.h"
 
 Texture::Texture(const std::string &path) {
     load(path);
@@ -33,15 +34,24 @@ void Texture::unbind(unsigned int slot) const {
 Texture::~Texture() {
     glDeleteTextures(1, &texture_id);
 }
-
+#include <fstream>
 void Texture::load(const std::string &path) {
-    unsigned char *buffer;
-    stbi_set_flip_vertically_on_load(1);
-    buffer = stbi_load(path.c_str(), &width, &height, &bits_per_pixel, 4);
-    setTexturePixelData(buffer, width, height,false);
-    if (buffer) {
-        stbi_image_free(buffer);
+    std::ifstream f(path.c_str());
+    Log::status("Loading texture:"+path);
+    if(f.good())
+    {
+
+        unsigned char *buffer;
+        stbi_set_flip_vertically_on_load(true);
+        buffer = stbi_load(path.c_str(), &width, &height, &bits_per_pixel, 4);
+        setTexturePixelData(buffer, width, height,false);
+        if (buffer) {
+            stbi_image_free(buffer);
+        }
+    } else{
+        Log::error("Cant load texture:"+path);
     }
+
 }
 
 void Texture::setTexturePixelData(unsigned char *data, int width, int height, bool smoothed) {

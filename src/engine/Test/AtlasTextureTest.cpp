@@ -39,7 +39,3 @@ void AtlasTextureTest::init(Window &window, Renderer &renderer) {
     addEntity(new MeshRenderer(sprite, material));
 }
 
-void AtlasTextureTest::update(float delta) {
-    Scene::update(delta);
-}
-

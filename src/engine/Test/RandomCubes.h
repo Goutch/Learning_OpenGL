@@ -18,13 +18,7 @@ private:
     Texture stone;
 
 public:
-    RandomCubes();
-
-    ~RandomCubes();
-
     void init(Window &window,Renderer &renderer) override;
-
-    void update(float delta) override ;
 };
 
 

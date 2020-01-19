@@ -4,11 +4,15 @@
 #include "Scene.h"
 #include "../Entities/Entity.h"
 #include "Core/Renderer.h"
+#include "Core/Window.h"
 Scene::Scene() {
 
 }
 
 void Scene::update(float delta) {
+    if (window->isKeyDown(GLFW_KEY_ESCAPE)) {
+        window->close();
+    }
     for(auto e:entities){
         e->update(delta,*this);
     }

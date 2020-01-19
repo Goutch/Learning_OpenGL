@@ -55,7 +55,7 @@ add_executable(OGL_Engine
 
         src/engine/Geometry/Geometry.h
         src/engine/Geometry/Geometry.cpp
-        src/engine/Shaders/Mesh.cpp
+        src/engine/Geometry/Mesh.cpp
         src/engine/Geometry/Mesh.h
         src/engine/Geometry/VAO.cpp
         src/engine/Geometry/VAO.h
@@ -87,6 +87,6 @@ add_executable(OGL_Engine
         src/engine/Test/ImportModelTest.h
         src/engine/Test/NoiseTextureCreation.cpp
         src/engine/Test/NoiseTextureCreation.h
-        src/engine/Entities/Light/Light.cpp src/engine/Entities/Light/Light.h src/engine/Entities/Light/Directionnal.cpp src/engine/Entities/Light/Directionnal.h src/engine/Data/Color.cpp src/engine/Data/Color.h)
+        src/engine/Entities/Light/Light.cpp src/engine/Entities/Light/Light.h src/engine/Entities/Light/Directionnal.cpp src/engine/Entities/Light/Directionnal.h src/engine/Data/Color.cpp src/engine/Data/Color.h src/engine/Test/FullSceneTest.cpp src/engine/Test/FullSceneTest.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
