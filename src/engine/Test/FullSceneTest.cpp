@@ -13,10 +13,10 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
 
     dragon_material.damp(10);
     dragon_material.shine(10);
-    addEntity(new MeshRenderer(plane,ground_material,vec3(0),vec3(0),vec3(20)));
+    addEntity(new MeshRenderer(plane,ground_material,vec3(0),vec3(0),vec3(5)));
     addEntity(new MeshRenderer(cube,dragon_material,vec3(0,0.5,0),vec3(0),vec3(12,1,8)));
     addEntity(new MeshRenderer(dragon,dragon_material,vec3(0,.9,0)));
-    addEntity(new MeshRenderer(spider,dragon_material,vec3(0,30,0)));
+
 
     addEntity(new FPSController(camera,vec3(0,1,10),vec3(0),vec3(1)));
 

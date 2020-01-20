@@ -15,7 +15,6 @@ class FullSceneTest :public Scene{
     Texture ground_texture=Texture("../res/wall.jpg");
     LightMaterial ground_material=LightMaterial(lightShader,ground_texture,Color::WHITE);
     Mesh dragon=Mesh("../res/dragon.obj");
-    Mesh spider=Mesh("../res/spider.obj");
     Mesh plane;
     Mesh cube;
 
