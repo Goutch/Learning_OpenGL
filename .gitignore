@@ -1,3 +1,7 @@
 cmake-build-debug
 cmake-build-release
 .idea
+OGL_Engine/
+.vs/
+OGL_Engine.sln
+Debug/
