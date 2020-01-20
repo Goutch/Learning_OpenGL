@@ -29,6 +29,7 @@ public:
     void addLight(PointLight* light);
     const std::vector<PointLight*>& getPointLights() const;
     const Color& getAmbientLight() const;
+    const Transform& getCamera() const;
 	Window& getWindow();
 	Renderer& getRenderer();
 

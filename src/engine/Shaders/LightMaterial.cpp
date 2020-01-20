@@ -15,6 +15,7 @@ void LightMaterial::bind(const Scene &scene) const {
 
     std::vector<PointLight *> pointLights = scene.getPointLights();
     s->loadUniform(point_light_count_location, (int) pointLights.size());
+    s->loadUniform(view_pos_location,scene.getCamera().position());
     if(pointLights.size()>0)
     {
         std::vector<float> radius;
@@ -51,6 +52,7 @@ void LightMaterial::getUniformsLocations() {
     point_light_positions_location = s->uniformLocation("point_light_positions");
     point_light_radius_location = s->uniformLocation("point_light_radius");
     point_light_colors_location = s->uniformLocation("point_light_colors");
+    view_pos_location=s->uniformLocation("view_pos");
 }
 
 LightMaterial::LightMaterial():Material() {

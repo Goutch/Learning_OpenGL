@@ -19,14 +19,14 @@ public:
     Transform(vec3 position,vec3 rotation,vec3 scale);
     mat4 getMatrix() const;
 
-    vec3 position();
+    vec3 position() const ;
     void position(const vec3& position);
     void translate(const vec3 & translation);
 
     void rotate(const quat& rotation);
     void rotate(float angle,vec3 axis);
 
-    quat rotation();
+    quat rotation() const;
 
     vec3 forward();
     vec3 right();
