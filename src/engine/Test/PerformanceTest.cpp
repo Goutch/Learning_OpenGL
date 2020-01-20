@@ -12,7 +12,7 @@
 #include "Entities/FPSController.h"
 #include "Geometry/Geometry.h"
 
-
+const float PI=3.1416;
 void PerformanceTest::init(Window &window, Renderer &renderer) {
     Scene::init(window,renderer);
     renderer.setRenderMode(window,Renderer::PERSPECTIVE);
@@ -24,9 +24,9 @@ void PerformanceTest::init(Window &window, Renderer &renderer) {
                                    vec3((float(rand()) / float((RAND_MAX)) * range) - (range / 2),
                                         (float(rand()) / float((RAND_MAX)) * range) - (range / 2),
                                         (float(rand()) / float((RAND_MAX)) * range) - (range / 2)),
-                                   vec3(float(rand()) / float((RAND_MAX)) * M_PI,
-                                        float(rand()) / float((RAND_MAX)) * M_PI,
-                                        float(rand()) / float((RAND_MAX)) * M_PI),
+                                   vec3(float(rand()) / float((RAND_MAX)) * PI,
+                                        float(rand()) / float((RAND_MAX)) * PI,
+                                        float(rand()) / float((RAND_MAX)) * PI),
                                    vec3(1, 1, 1)));
     }
     addEntity(new FPSController(camera));
