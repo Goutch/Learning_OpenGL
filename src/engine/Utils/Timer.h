@@ -3,7 +3,8 @@
 #include <chrono>
 #include <unordered_map>
 class Timer {
-    std::chrono::time_point<std::chrono::system_clock,std::chrono::duration<double>> start;
+    std::chrono::high_resolution_clock ::time_point start;
+
 public:
     Timer();
     void reset();
