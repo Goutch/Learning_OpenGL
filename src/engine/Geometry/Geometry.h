@@ -7,6 +7,7 @@
 class VAO;
 #include <string>
 namespace Geometry{
+    void make_sphere(VAO &vao,unsigned int xSegments, unsigned int ySegments);
     void make_cube(VAO &vao);
     void make_quad(VAO& vao);
     void make_plane(VAO& vao,int sizeX,int sizeZ);
