@@ -16,7 +16,7 @@ class FullSceneTest :public Scene{
     LightMaterial ground_material=LightMaterial(lightShader,ground_texture,Color::WHITE);
     Mesh dragon=Mesh("../res/dragon.obj");
     Mesh plane;
-    Mesh cube;
+    Mesh cube=Mesh("../res/cube.obj");
 
 
 public:

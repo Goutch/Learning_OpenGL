@@ -5,14 +5,15 @@
 class LightMaterial : public Material {
 private:
     float shineFactor =0;
-    float dampFactor =0;
+    float dampFactor =16;
     int ambient_light_location,
             damp_factor_location,
             shine_factor_location,
             point_light_count_location,
             point_light_positions_location,
             point_light_radius_location,
-            point_light_colors_location;
+            point_light_colors_location,
+            view_pos_location;
 
 public:
     LightMaterial();
