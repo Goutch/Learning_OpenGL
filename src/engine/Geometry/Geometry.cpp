@@ -7,7 +7,7 @@
 #include "vector"
 #include "Utils/StringUtils.h"
 #include "Core/Log.h"
-
+#include <math.h>
 void Geometry::make_quad(VAO &vao) {
     auto vert = std::vector<float>();
     vert.push_back(-.5);
@@ -47,117 +47,165 @@ void Geometry::make_quad(VAO &vao) {
 }
 
 void Geometry::make_cube(VAO &vao) {
+
+    auto vert = std::vector<float>();
+    auto indices = std::vector<unsigned int>();
+    auto uvs = std::vector<float>();
+    auto normals=std::vector<float >();
     //front
     //1-------2
     //|       |
     //|       |
     //0-------3
+
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(0.5);//0
+    vert.push_back(-.5);vert.push_back(.5f);vert.push_back(0.5);//1
+    vert.push_back(.5f);vert.push_back(.5f);vert.push_back(0.5);//2
+    vert.push_back(.5f);vert.push_back(-.5);vert.push_back(0.5);//3
+    uvs.push_back(0);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(0);
+    for (int j = 0; j <4 ; ++j) {normals.push_back(0);normals.push_back(0);normals.push_back(1);}
+    indices.push_back(2);
+    indices.push_back(1);
+    indices.push_back(0);
+    indices.push_back(0);
+    indices.push_back(3);
+    indices.push_back(2);
+
     //back
     // 5-------6
     // |       |
     // |       |
     // 4-------7
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(-0.5);//4
+    vert.push_back(-.5);vert.push_back(.5f);vert.push_back(-0.5);//5
+    vert.push_back(.5f);vert.push_back(.5f);vert.push_back(-0.5);//6
+    vert.push_back(.5f);vert.push_back(-.5);vert.push_back(-0.5);//7
+    uvs.push_back(1);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(1);
+    for (int j = 0; j <4 ; ++j) {normals.push_back(0);normals.push_back(0);normals.push_back(-1);}
+    indices.push_back(0+4);
+    indices.push_back(1+4);
+    indices.push_back(2+4);
+    indices.push_back(2+4);
+    indices.push_back(3+4);
+    indices.push_back(0+4);
+    //top
+
+    vert.push_back(-.5);vert.push_back(.5);vert.push_back(-0.5);//8
+    vert.push_back(-.5);vert.push_back(.5f);vert.push_back(0.5);//9
+    vert.push_back(.5f);vert.push_back(.5f);vert.push_back(0.5);//10
+    vert.push_back(.5f);vert.push_back(.5);vert.push_back(-0.5);//11
+    uvs.push_back(0);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(0);
+    for (int j = 0; j <4 ; ++j) {normals.push_back(0);normals.push_back(1);normals.push_back(0);}
+    indices.push_back(0+8);
+    indices.push_back(1+8);
+    indices.push_back(2+8);
+    indices.push_back(2+8);
+    indices.push_back(3+8);
+    indices.push_back(0+8);
+    //bottom
+
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(-0.5);//12
+    vert.push_back(-.5);vert.push_back(-.5f);vert.push_back(0.5);//13
+    vert.push_back(.5f);vert.push_back(-.5f);vert.push_back(0.5);//14
+    vert.push_back(.5f);vert.push_back(-.5);vert.push_back(-0.5);//15
+    uvs.push_back(1);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(1);
+    for (int j = 0; j <4 ; ++j) {normals.push_back(0);normals.push_back(-1);normals.push_back(0);}
+    indices.push_back(2+12);
+    indices.push_back(1+12);
+    indices.push_back(0+12);
+    indices.push_back(0+12);
+    indices.push_back(3+12);
+    indices.push_back(2+12);
+    //right
+    vert.push_back(.5);vert.push_back(-.5);vert.push_back(-0.5);//16
+    vert.push_back(.5);vert.push_back(-.5);vert.push_back(0.5);//17
+    vert.push_back(.5f);vert.push_back(.5);vert.push_back(0.5);//18
+    vert.push_back(.5f);vert.push_back(.5);vert.push_back(-0.5);//19
+    uvs.push_back(0);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(0);
+    for (int j = 0; j <4 ; ++j) {normals.push_back(0);normals.push_back(1);normals.push_back(0);}
+    indices.push_back(2+16);
+    indices.push_back(1+16);
+    indices.push_back(0+16);
+    indices.push_back(0+16);
+    indices.push_back(3+16);
+    indices.push_back(2+16);
+    //left
+
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(-0.5);//20
+    vert.push_back(-.5);vert.push_back(-.5);vert.push_back(0.5);//21
+    vert.push_back(-.5);vert.push_back(.5);vert.push_back(0.5);//22
+    vert.push_back(-.5);vert.push_back(.5);vert.push_back(-0.5);//23
+    uvs.push_back(1);uvs.push_back(1);
+    uvs.push_back(1);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(0);
+    uvs.push_back(0);uvs.push_back(1);
+    for (int j = 0; j <4 ; ++j) {normals.push_back(0);normals.push_back(-1);normals.push_back(0);}
+    indices.push_back(0+20);
+    indices.push_back(1+20);
+    indices.push_back(2+20);
+    indices.push_back(2+20);
+    indices.push_back(3+20);
+    indices.push_back(0+20);
+
+    vao.indicies(indices.data(), indices.size());
+
+    vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
+    vao.put(Mesh::NORMALS, 3, normals.data(), normals.size());
+    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
+}
+const float PI=3.1416;
+const float TAU=2*PI;
+void Geometry::make_sphere(VAO &vao,unsigned int xSegments, unsigned int ySegments) {
     auto vert = std::vector<float>();
     auto indices = std::vector<unsigned int>();
     auto uvs = std::vector<float>();
-    vert.push_back(-.5);
-    vert.push_back(-.5);
-    vert.push_back(0.5);//0
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(0.5);//1
-    vert.push_back(.5f);
-    vert.push_back(.5f);
-    vert.push_back(0.5);//2
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(0.5);//3
+    for (unsigned int y = 0; y <= ySegments; ++y)
+    {
+        for (unsigned int x = 0; x <= xSegments; ++x)
+        {
+            float xSegment = (float)x / (float)xSegments;
+            float ySegment = (float)y / (float)ySegments;
+            float xPos = cos(xSegment * TAU) * sin(ySegment * PI);
+            float yPos = cos(ySegment * PI);
+            float zPos = sin(xSegment * TAU) * sin(ySegment * PI);
 
-    vert.push_back(-.5);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);//4
-    vert.push_back(-.5);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);//5
-    vert.push_back(.5f);
-    vert.push_back(.5f);
-    vert.push_back(-0.5);//6
-    vert.push_back(.5f);
-    vert.push_back(-.5);
-    vert.push_back(-0.5);//7
+            vert.push_back(xPos);vert.push_back(yPos);vert.push_back( zPos);
+            uvs.push_back(xSegment);uvs.push_back( ySegment);
+        }
+    }
 
+    for (int y = 0; y < ySegments; ++y)
+    {
+        for (int x = 0; x < xSegments; ++x)
+        {
+            indices.push_back((y + 1) * (xSegments + 1) + x);
+            indices.push_back(y       * (xSegments + 1) + x);
+            indices.push_back(y       * (xSegments + 1) + x + 1);
 
-
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(0);
-
-
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(1);
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(0);
-    uvs.push_back(1);
-
-
-    //down
-    indices.push_back(3);
-    indices.push_back(0);
-    indices.push_back(4);
-    indices.push_back(4);
-    indices.push_back(7);
-    indices.push_back(3);
-    //up
-    indices.push_back(5);
-    indices.push_back(1);
-    indices.push_back(2);
-    indices.push_back(2);
-    indices.push_back(6);
-    indices.push_back(5);
-    //front
-    indices.push_back(2);
-    indices.push_back(1);
-    indices.push_back(0);
-    indices.push_back(0);
-    indices.push_back(3);
-    indices.push_back(2);
-    //back
-    indices.push_back(4);
-    indices.push_back(5);
-    indices.push_back(6);
-    indices.push_back(6);
-    indices.push_back(7);
-    indices.push_back(4);
-    //right
-    indices.push_back(6);
-    indices.push_back(2);
-    indices.push_back(3);
-    indices.push_back(3);
-    indices.push_back(7);
-    indices.push_back(6);
-
-    //left
-    indices.push_back(0);
-    indices.push_back(1);
-    indices.push_back(5);
-    indices.push_back(5);
-    indices.push_back(4);
-    indices.push_back(0);
-    vao.indicies(indices.data(), indices.size());
-
+            indices.push_back((y + 1) * (xSegments + 1) + x);
+            indices.push_back(y       * (xSegments + 1) + x + 1);
+            indices.push_back((y + 1) * (xSegments + 1) + x + 1);
+        }
+    }
     vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
     vao.put(Mesh::NORMALS, 3, vert.data(), vert.size());
     vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
-
 void Geometry::make_plane(VAO &vao,int sizeX,int sizeZ) {
 
     auto vertices = std::vector<float>();

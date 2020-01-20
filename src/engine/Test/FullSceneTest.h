@@ -10,13 +10,14 @@ class FullSceneTest :public Scene{
                          "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
     Shader lightShader=Shader("../src/engine/Shaders/shadersSources/LightVertex.glsl",
                               "../src/engine/Shaders/shadersSources/LightFragment.glsl");
-
+    Material cube_material=Material(shader);
     LightMaterial dragon_material=LightMaterial(lightShader,Color(0.5,0.5,0));
     Texture ground_texture=Texture("../res/wall.jpg");
     LightMaterial ground_material=LightMaterial(lightShader,ground_texture,Color::WHITE);
     Mesh dragon=Mesh("../res/dragon.obj");
     Mesh plane;
     Mesh cube;
+    Mesh sphere;
 
 
 public:

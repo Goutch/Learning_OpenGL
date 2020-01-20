@@ -65,5 +65,9 @@ const Color &Scene::getAmbientLight() const {
     return ambient_light;
 }
 
+const Transform &Scene::getCamera() const{
+    return camera;
+}
+
 
 
