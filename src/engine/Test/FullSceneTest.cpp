@@ -11,13 +11,15 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
     Geometry::make_plane(plane,10,10);
     Geometry::make_cube(cube);
 
-    dragon_material.damp(20);
-    dragon_material.shine(20);
-    addEntity(new MeshRenderer(plane,ground_material,vec3(0),vec3(0),vec3(10)));
+    dragon_material.damp(10);
+    dragon_material.shine(10);
+    addEntity(new MeshRenderer(plane,ground_material,vec3(0),vec3(0),vec3(20)));
     addEntity(new MeshRenderer(cube,dragon_material,vec3(0,0.5,0),vec3(0),vec3(12,1,8)));
     addEntity(new MeshRenderer(dragon,dragon_material,vec3(0,.9,0)));
+    addEntity(new MeshRenderer(spider,dragon_material,vec3(0,30,0)));
 
     addEntity(new FPSController(camera,vec3(0,1,10),vec3(0),vec3(1)));
+
     addLight(new PointLight(20,vec3(10,1,10)));
     addLight(new PointLight(20,vec3(-10,1,10)));
     addLight(new PointLight(20,vec3(10,1,-10)));
