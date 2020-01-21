@@ -95,6 +95,6 @@ add_executable(OGL_Engine
         src/engine/Test/TextureCreationTest.h
         src/engine/Test/FullSceneTest.cpp
         src/engine/Test/FullSceneTest.h
-        src/engine/Entities/Light/PointLight.cpp src/engine/Entities/Light/PointLight.h src/engine/Shaders/LightMaterial.cpp src/engine/Shaders/LightMaterial.h)
+        src/engine/Entities/Light/PointLight.cpp src/engine/Entities/Light/PointLight.h src/engine/Shaders/LightMaterial.cpp src/engine/Shaders/LightMaterial.h src/engine/Test/LAB2.cpp src/engine/Test/LAB2.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

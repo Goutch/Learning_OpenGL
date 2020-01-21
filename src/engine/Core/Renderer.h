@@ -21,7 +21,8 @@ private:
     const Transform* cam;
 public:
     enum RenderMode{
-        ORTHOGRAPHIC,
+        ORTHOGRAPHIC_PIXEL,
+        ORTHOGRAPHIC_UNITS,
         PERSPECTIVE
     };
     Renderer(Window& window,RenderMode mode);

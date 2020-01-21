@@ -61,11 +61,11 @@ void Renderer::setRenderMode(Window &window, Renderer::RenderMode renderMode) {
     if (renderMode == PERSPECTIVE) {
         fov = 90;
         projection_matrix = glm::perspective<float>(glm::radians(fov), h / w, 0.1f, 200.0f);
-    } else {
-        //units
+    } else if(renderMode==ORTHOGRAPHIC_PIXEL) {
+        projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2,-100,100);
+    } else
+    {
         projection_matrix = glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100);
-        //pixels
-        //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
 
 }
@@ -81,5 +81,7 @@ float Renderer::getFOV() {
 float Renderer::getAspectRatio() {
     return aspect_ratio;
 }
+
+
 
 
