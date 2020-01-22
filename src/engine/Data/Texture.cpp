@@ -7,17 +7,18 @@
 #include "Texture.h"
 #include "stb_image.h"
 #include "Core/Log.h"
-
+#include <fstream>
 Texture::Texture(const std::string &path) {
+    glGenTextures(1, &texture_id);
     load(path);
-
 }
 
 Texture::Texture() {
-
+    glGenTextures(1, &texture_id);
 }
 
 Texture::Texture(unsigned char *data, int width, int height) {
+    glGenTextures(1, &texture_id);
     setTexturePixelData(data, width, height,false);
 }
 
@@ -34,13 +35,12 @@ void Texture::unbind(unsigned int slot) const {
 Texture::~Texture() {
     glDeleteTextures(1, &texture_id);
 }
-#include <fstream>
+
 void Texture::load(const std::string &path) {
     std::ifstream f(path.c_str());
     Log::status("Loading texture:"+path);
     if(f.good())
     {
-
         unsigned char *buffer;
         stbi_set_flip_vertically_on_load(true);
         buffer = stbi_load(path.c_str(), &width, &height, &bits_per_pixel, 4);
@@ -55,7 +55,6 @@ void Texture::load(const std::string &path) {
 }
 
 void Texture::setTexturePixelData(unsigned char *data, int width, int height, bool smoothed) {
-    glGenTextures(1, &texture_id);
     bind();
     if (smoothed) {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -78,6 +77,10 @@ unsigned int Texture::getWidth() {
 
 unsigned int Texture::getHeight() {
     return height;
+}
+
+const unsigned int Texture::getID() {
+    return texture_id;
 }
 
 

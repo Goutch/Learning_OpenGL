@@ -15,7 +15,7 @@
 const float PI=3.1416;
 void PerformanceTest::init(Window &window, Renderer &renderer) {
     Scene::init(window,renderer);
-    renderer.setRenderMode(window,Renderer::PERSPECTIVE);
+    renderer.setRenderMode(window.getWidth(),window.getHeight(),Renderer::PERSPECTIVE);
     Geometry::make_cube(mesh);
 
     float range=200;
