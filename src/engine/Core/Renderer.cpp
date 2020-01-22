@@ -104,6 +104,10 @@ void Renderer::onWindowSizeChange(int width, int height) {
     setRenderMode(width,height,currentRenderMode);
 }
 
+const Texture &Renderer::getFrameBufferTexture() {
+    return frame_buffer.getTexture();
+}
+
 
 
 

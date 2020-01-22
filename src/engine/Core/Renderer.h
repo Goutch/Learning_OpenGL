@@ -52,5 +52,5 @@ public:
 	float getFOV();
     float getAspectRatio();
     void onWindowSizeChange( int width, int height) override;
-
+    const Texture& getFrameBufferTexture();
 };

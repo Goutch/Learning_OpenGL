@@ -5,6 +5,7 @@
 #include "../Entities/Entity.h"
 #include "Core/Renderer.h"
 #include "Core/Window.h"
+#include "Utils/TimeUtils.h"
 Scene::Scene() {
 
 }
@@ -12,6 +13,9 @@ Scene::Scene() {
 void Scene::update(float delta) {
     if (window->isKeyDown(GLFW_KEY_ESCAPE)) {
         window->close();
+    }
+    if (window->isKeyDown(GLFW_KEY_F11)) {
+        renderer->getFrameBufferTexture().save(TimeUtils::getTimeString()+".jpg");
     }
     for(auto e:entities){
         e->update(delta,*this);
