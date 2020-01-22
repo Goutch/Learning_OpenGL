@@ -8,7 +8,7 @@
 #include "Test/FullSceneTest.h"
 int main() {
     Engine engine=Engine();
-    auto s=LAB2();
+    auto s=FullSceneTest();
     engine.start(s);
    return 0;
 }

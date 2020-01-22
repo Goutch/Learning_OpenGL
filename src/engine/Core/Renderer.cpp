@@ -10,11 +10,13 @@
 #include "Log.h"
 #include "Core/Scene.h"
 Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
+    Geometry::make_quad(quad);
     setRenderMode(window.getWidth(),window.getHeight(), mode);
     window.subscribeSizeChange(*this);
-
+    frame_buffer.setSize(window.getWidth(),window.getHeight());
 }
 Renderer::Renderer(Window &window) {
+    setRenderMode(window.getWidth(),window.getHeight(),currentRenderMode);
     Geometry::make_quad(quad);
     window.subscribeSizeChange(*this);
     frame_buffer.setSize(window.getWidth(),window.getHeight());
@@ -74,11 +76,13 @@ void Renderer::addToRenderQueue(Material& material,VAO& vao,Transform& transform
 
 void Renderer::setRenderMode(int width, int height,RenderMode renderMode) {
     currentRenderMode=renderMode;
+    float w = (float) width;
+    float h = (float) height;
+    aspect_ratio=w/h;
     if (renderMode == PERSPECTIVE) {
-        float w = (float) width;
-        float h = (float) height;
+
         fov = 90;
-        projection_matrix = glm::perspective<float>(glm::radians(fov), h / w, 0.1f, 200.0f);
+        projection_matrix = glm::perspective<float>(glm::radians(fov), aspect_ratio, 0.1f, 200.0f);
     } else if(renderMode==ORTHOGRAPHIC_PIXEL) {
         projection_matrix=glm::ortho<float>(0,width,0,height,-100,100);
     } else
