@@ -25,8 +25,9 @@ public:
 
     Texture(unsigned char *data, int width, int height);
     void bind(unsigned int slot = 0) const;
-    void setTexturePixelData(unsigned char *data, int width, int height, bool smoothed);
+    void setTexturePixelData(unsigned char *data, int width, int height, bool smoothed=true);
     void unbind(unsigned int slot = 0) const;
     unsigned int getWidth();
     unsigned int getHeight();
+    const unsigned int getID();
 };

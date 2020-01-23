@@ -51,11 +51,15 @@ add_executable(OGL_Engine
         src/engine/Entities/Light/Light.h
         src/engine/Entities/Light/DirectionnalLight.cpp
         src/engine/Entities/Light/DirectionnalLight.h
+        src/engine/Entities/Light/PointLight.cpp
+        src/engine/Entities/Light/PointLight.h
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Shader.h
         src/engine/Shaders/Material.cpp
         src/engine/Shaders/Material.h
+        src/engine/Shaders/LightMaterial.cpp
+        src/engine/Shaders/LightMaterial.h
 
         src/engine/Geometry/Geometry.h
         src/engine/Geometry/Geometry.cpp
@@ -74,6 +78,10 @@ add_executable(OGL_Engine
         src/engine/Data/AtlasTexture.h
         src/engine/Data/Color.cpp
         src/engine/Data/Color.h
+        src/engine/Data/FBO.cpp
+        src/engine/Data/FBO.h
+        src/engine/Data/RBO.cpp
+        src/engine/Data/RBO.h
 
         src/engine/Utils/SimplexNoise.h
         src/engine/Utils/SimplexNoise.cpp
@@ -95,6 +103,10 @@ add_executable(OGL_Engine
         src/engine/Test/TextureCreationTest.h
         src/engine/Test/FullSceneTest.cpp
         src/engine/Test/FullSceneTest.h
-        src/engine/Entities/Light/PointLight.cpp src/engine/Entities/Light/PointLight.h src/engine/Shaders/LightMaterial.cpp src/engine/Shaders/LightMaterial.h)
+        src/engine/Test/LAB2.cpp
+        src/engine/Test/LAB2.h
+
+        src/engine/Events/WindowSizeListener.h
+   )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

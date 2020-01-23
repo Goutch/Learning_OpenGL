@@ -1,9 +1,12 @@
 #pragma once
 #include <GLFW/glfw3.h>
 #include<string>
+#include "list"
+class WindowSizeListener;
 class Window
 {
 private:
+    static std::list<WindowSizeListener*> sizeListeners;
     GLFWwindow* window;
     int width=600, height=400;
     bool cursor_shown=true;
@@ -21,5 +24,6 @@ public:
     void setMousePosition(double x,double y);
     int getWidth();
     int getHeight();
+    void subscribeSizeChange(WindowSizeListener& l);
     static void windowSizeCallback(GLFWwindow* window, int width, int height);
 };

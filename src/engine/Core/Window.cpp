@@ -1,5 +1,8 @@
 #include "Window.h"
 #include "Log.h"
+#include "Events/WindowSizeListener.h"
+
+std::list<WindowSizeListener*> Window::sizeListeners=std::list<WindowSizeListener*>();
 Window::Window() {
 
 }
@@ -88,6 +91,13 @@ void Window::close() {
 
 void Window::windowSizeCallback(GLFWwindow* window, int width, int height) {
     glViewport(0,0,width,height);
+    for (auto l:sizeListeners) {
+        l->onWindowSizeChange(width,height);
+    }
+}
+
+void Window::subscribeSizeChange(WindowSizeListener &l) {
+    sizeListeners.push_back(&l);
 }
 
 

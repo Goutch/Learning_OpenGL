@@ -9,7 +9,22 @@
 #include "Entities/Transform.h"
 #include "Log.h"
 #include "Core/Scene.h"
+Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
+    setRenderMode(window.getWidth(),window.getHeight(), mode);
+    window.subscribeSizeChange(*this);
+
+}
+Renderer::Renderer(Window &window) {
+    Geometry::make_quad(quad);
+    window.subscribeSizeChange(*this);
+    frame_buffer.setSize(window.getWidth(),window.getHeight());
+}
+Renderer::~Renderer() {
+
+}
 void Renderer::render(const Scene& scene) {
+    glEnable(GL_DEPTH_TEST);
+    frame_buffer.bind();
     mat4 viewMat = cam != nullptr ? glm::inverse(cam->getMatrix()) : mat4();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for (auto &vao_batch:material_batch) {
@@ -29,6 +44,17 @@ void Renderer::render(const Scene& scene) {
         material.unbind();
     }
     material_batch.clear();
+    frame_buffer.unbind();
+
+    glClear(GL_COLOR_BUFFER_BIT);
+    glDisable(GL_DEPTH_TEST);
+    screenShader.bind();
+    quad.bind();
+    frame_buffer.getTexture().bind();
+    glDrawElements(GL_TRIANGLES, quad.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+    frame_buffer.getTexture().unbind();
+    quad.unbind();
+    screenShader.unbind();
 }
 
 void Renderer::addToRenderQueue(Material& material,VAO& vao,Transform& transform) {
@@ -42,30 +68,22 @@ void Renderer::addToRenderQueue(Material& material,VAO& vao,Transform& transform
     }
     std::list<Transform *> &transform_batch = vao_batch.at(&vao);
     transform_batch.push_back(&transform);
-
 }
 
-Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
-    setRenderMode(window, mode);
-}
 
-Renderer::~Renderer() {
 
-}
-
-void Renderer::setRenderMode(Window &window, Renderer::RenderMode renderMode) {
-    float w = (float) window.getHeight();
-    float h = (float) window.getWidth();
-    aspect_ratio = w / h;
-
+void Renderer::setRenderMode(int width, int height,RenderMode renderMode) {
+    currentRenderMode=renderMode;
     if (renderMode == PERSPECTIVE) {
+        float w = (float) width;
+        float h = (float) height;
         fov = 90;
         projection_matrix = glm::perspective<float>(glm::radians(fov), h / w, 0.1f, 200.0f);
-    } else {
-        //units
+    } else if(renderMode==ORTHOGRAPHIC_PIXEL) {
+        projection_matrix=glm::ortho<float>(0,width,0,height,-100,100);
+    } else
+    {
         projection_matrix = glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100);
-        //pixels
-        //projection_matrix=glm::ortho<float>(-w/2,w/2,-w*aspect_ratio/2,w*aspect_ratio/2);
     }
 
 }
@@ -81,5 +99,11 @@ float Renderer::getFOV() {
 float Renderer::getAspectRatio() {
     return aspect_ratio;
 }
+
+void Renderer::onWindowSizeChange(int width, int height) {
+    setRenderMode(width,height,currentRenderMode);
+}
+
+
 
 

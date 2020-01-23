@@ -42,7 +42,7 @@ Engine::Engine() {
 
 void Engine::start(Scene &scene) {
     if (glewInit() == GLEW_OK) {
-        Renderer renderer = Renderer(*window, Renderer::PERSPECTIVE);
+        Renderer renderer = Renderer(*window);
         Log::status("Initializing scene..");
         scene.init(*window, renderer);
         Log::status("Initialized scene");
