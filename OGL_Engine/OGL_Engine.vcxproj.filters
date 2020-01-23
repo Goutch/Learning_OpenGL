@@ -1,244 +1,281 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="engine\Core">
-      <UniqueIdentifier>{1177b9fc-802a-4278-9729-ee6081f11eb9}</UniqueIdentifier>
+    <Filter Include="src">
+      <UniqueIdentifier>{ceaedcd1-da31-40a9-81e2-da5433b3625c}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine">
-      <UniqueIdentifier>{e356d16c-c846-4d66-9764-8cfe67b2f7af}</UniqueIdentifier>
+    <Filter Include="src\engine\Core">
+      <UniqueIdentifier>{26e9e7ec-18cc-478c-b6f7-2745670ed3f6}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Data">
-      <UniqueIdentifier>{e01723b5-5921-48a0-985a-648b8a3314b6}</UniqueIdentifier>
+    <Filter Include="src\engine">
+      <UniqueIdentifier>{62191c9b-bb2c-410f-8493-6cae8b35b510}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Entities">
-      <UniqueIdentifier>{13a2daa8-0998-4431-90fc-5e51a7c1b292}</UniqueIdentifier>
+    <Filter Include="src\engine\Data">
+      <UniqueIdentifier>{b95ff7d8-da7a-4454-ad27-f55d5c57e5ba}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Entities\Light">
-      <UniqueIdentifier>{05d90356-d88d-4cbb-be6f-6ca9ef29f301}</UniqueIdentifier>
+    <Filter Include="src\engine\Entities">
+      <UniqueIdentifier>{c131aac2-93eb-47bb-8e16-b69567997a02}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Geometry">
-      <UniqueIdentifier>{5904505c-9169-49b2-80e5-30e5cb0e3273}</UniqueIdentifier>
+    <Filter Include="src\engine\Entities\Light">
+      <UniqueIdentifier>{a07de4bd-d83d-4d20-beb3-5df680739952}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Shaders">
-      <UniqueIdentifier>{6e3882df-ece3-4f35-8529-20e7a80e132e}</UniqueIdentifier>
+    <Filter Include="src\engine\Geometry">
+      <UniqueIdentifier>{74f7aec8-8188-43c0-85b0-96bc43831b25}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Test">
-      <UniqueIdentifier>{84d79f1a-c0c2-463e-a654-9a4eb5dc3236}</UniqueIdentifier>
+    <Filter Include="src\engine\Shaders">
+      <UniqueIdentifier>{4932a016-9eac-4500-bf72-54af07055bb7}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Utils">
-      <UniqueIdentifier>{3512748b-e55b-4488-8968-2b7d80edd819}</UniqueIdentifier>
+    <Filter Include="src\engine\Test">
+      <UniqueIdentifier>{8f181f59-33f8-4e1a-92b5-82f39dd68635}</UniqueIdentifier>
     </Filter>
-    <Filter Include="engine\Shaders\shadersSources">
-      <UniqueIdentifier>{13959ef8-8af4-4b5d-ad97-2fb30093f95a}</UniqueIdentifier>
+    <Filter Include="src\engine\Utils">
+      <UniqueIdentifier>{b6d78d51-7405-43d2-94e2-9ec65c5b2a0f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies\STB_IMAGE">
+      <UniqueIdentifier>{3f2f89c3-9dd3-4226-b302-252e0628ff05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Dependencies">
+      <UniqueIdentifier>{e0ec974e-2554-49d8-a8e2-417160c50430}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\engine\Events">
+      <UniqueIdentifier>{729dd466-2031-49ee-a25b-e8b0a6c786a6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="src\engine\Shaders\shadersSources">
+      <UniqueIdentifier>{4e5fe82f-30a0-4c68-8fa6-86f02495dd32}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="..\src\main.cpp">
+      <Filter>src</Filter>
+    </ClCompile>
     <ClCompile Include="..\src\engine\Core\Engine.cpp">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Core\Log.cpp">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Core\Renderer.cpp">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Core\Scene.cpp">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Core\Window.cpp">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Data\AtlasTexture.cpp">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Data\Color.cpp">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Data\FBO.cpp">
+      <Filter>src\engine\Data</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Data\RBO.cpp">
+      <Filter>src\engine\Data</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Data\Text.cpp">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Data\Texture.cpp">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\Entity.cpp">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\FPSController.cpp">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\MeshRenderer.cpp">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\Transform.cpp">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\Light\DirectionnalLight.cpp">
-      <Filter>engine\Entities\Light</Filter>
+      <Filter>src\engine\Entities\Light</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\Light\Light.cpp">
-      <Filter>engine\Entities\Light</Filter>
+      <Filter>src\engine\Entities\Light</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\Light\PointLight.cpp">
-      <Filter>engine\Entities\Light</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\engine\Geometry\VBO.cpp">
-      <Filter>engine\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\engine\Geometry\VAO.cpp">
-      <Filter>engine\Geometry</Filter>
-    </ClCompile>
-    <ClCompile Include="..\src\engine\Geometry\Mesh.cpp">
-      <Filter>engine\Geometry</Filter>
+      <Filter>src\engine\Entities\Light</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Geometry\Geometry.cpp">
-      <Filter>engine\Geometry</Filter>
+      <Filter>src\engine\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Geometry\Mesh.cpp">
+      <Filter>src\engine\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Geometry\VAO.cpp">
+      <Filter>src\engine\Geometry</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Geometry\VBO.cpp">
+      <Filter>src\engine\Geometry</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Shaders\LightMaterial.cpp">
-      <Filter>engine\Shaders</Filter>
+      <Filter>src\engine\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Shaders\Material.cpp">
-      <Filter>engine\Shaders</Filter>
+      <Filter>src\engine\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Shaders\Shader.cpp">
-      <Filter>engine\Shaders</Filter>
+      <Filter>src\engine\Shaders</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Test\AtlasTextureTest.cpp">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Test\FullSceneTest.cpp">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Test\ImportModelTest.cpp">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Test\PerformanceTest.cpp">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Test\TextureCreationTest.cpp">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Utils\SimplexNoise.cpp">
-      <Filter>engine\Utils</Filter>
+      <Filter>src\engine\Utils</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Utils\StringUtils.cpp">
-      <Filter>engine\Utils</Filter>
+      <Filter>src\engine\Utils</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Utils\Timer.cpp">
-      <Filter>engine\Utils</Filter>
+      <Filter>src\engine\Utils</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\main.cpp" />
-    <ClCompile Include="..\Dependencies\STB_IMAGE\stb_image.cpp" />
+    <ClCompile Include="..\Dependencies\STB_IMAGE\stb_image.cpp">
+      <Filter>Dependencies\STB_IMAGE</Filter>
+    </ClCompile>
+    <ClCompile Include="..\src\engine\Test\LAB2.cpp">
+      <Filter>src\engine\Test</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\engine\Core\Debug.h">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Core\Engine.h">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Core\Log.h">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Core\Renderer.h">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Core\Scene.h">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Core\Window.h">
-      <Filter>engine\Core</Filter>
+      <Filter>src\engine\Core</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Data\AtlasTexture.h">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Data\Color.h">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Data\FBO.h">
+      <Filter>src\engine\Data</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Data\RBO.h">
+      <Filter>src\engine\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Data\Text.h">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Data\Texture.h">
-      <Filter>engine\Data</Filter>
+      <Filter>src\engine\Data</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\Entity.h">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\FPSController.h">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\MeshRenderer.h">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\Transform.h">
-      <Filter>engine\Entities</Filter>
+      <Filter>src\engine\Entities</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\Light\DirectionnalLight.h">
-      <Filter>engine\Entities\Light</Filter>
+      <Filter>src\engine\Entities\Light</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\Light\Light.h">
-      <Filter>engine\Entities\Light</Filter>
+      <Filter>src\engine\Entities\Light</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\Light\PointLight.h">
-      <Filter>engine\Entities\Light</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\engine\Geometry\VBO.h">
-      <Filter>engine\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\engine\Geometry\VAO.h">
-      <Filter>engine\Geometry</Filter>
-    </ClInclude>
-    <ClInclude Include="..\src\engine\Geometry\Mesh.h">
-      <Filter>engine\Geometry</Filter>
+      <Filter>src\engine\Entities\Light</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Geometry\Geometry.h">
-      <Filter>engine\Geometry</Filter>
+      <Filter>src\engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Geometry\Mesh.h">
+      <Filter>src\engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Geometry\VAO.h">
+      <Filter>src\engine\Geometry</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Geometry\VBO.h">
+      <Filter>src\engine\Geometry</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Shaders\LightMaterial.h">
-      <Filter>engine\Shaders</Filter>
+      <Filter>src\engine\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Shaders\Material.h">
-      <Filter>engine\Shaders</Filter>
+      <Filter>src\engine\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Shaders\Shader.h">
-      <Filter>engine\Shaders</Filter>
+      <Filter>src\engine\Shaders</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Test\AtlasTextureTest.h">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Test\FullSceneTest.h">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Test\ImportModelTest.h">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Test\PerformanceTest.h">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Test\TextureCreationTest.h">
-      <Filter>engine\Test</Filter>
+      <Filter>src\engine\Test</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Utils\SimplexNoise.h">
-      <Filter>engine\Utils</Filter>
+      <Filter>src\engine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Utils\StringUtils.h">
-      <Filter>engine\Utils</Filter>
+      <Filter>src\engine\Utils</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Utils\Timer.h">
-      <Filter>engine\Utils</Filter>
+      <Filter>src\engine\Utils</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Events\WindowSizeListener.h">
+      <Filter>src\engine\Events</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Test\LAB2.h">
+      <Filter>src\engine\Test</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="..\src\engine\Shaders\shadersSources\DefaultFragment.glsl">
-      <Filter>engine\Shaders\shadersSources</Filter>
+      <Filter>src\engine\Shaders\shadersSources</Filter>
     </None>
     <None Include="..\src\engine\Shaders\shadersSources\DefaultVertex.glsl">
-      <Filter>engine\Shaders\shadersSources</Filter>
+      <Filter>src\engine\Shaders\shadersSources</Filter>
     </None>
     <None Include="..\src\engine\Shaders\shadersSources\LightFragment.glsl">
-      <Filter>engine\Shaders\shadersSources</Filter>
+      <Filter>src\engine\Shaders\shadersSources</Filter>
     </None>
     <None Include="..\src\engine\Shaders\shadersSources\LightVertex.glsl">
-      <Filter>engine\Shaders\shadersSources</Filter>
+      <Filter>src\engine\Shaders\shadersSources</Filter>
     </None>
   </ItemGroup>
 </Project>

@@ -27,6 +27,8 @@
     <ClInclude Include="..\src\engine\Core\Window.h" />
     <ClInclude Include="..\src\engine\Data\AtlasTexture.h" />
     <ClInclude Include="..\src\engine\Data\Color.h" />
+    <ClInclude Include="..\src\engine\Data\FBO.h" />
+    <ClInclude Include="..\src\engine\Data\RBO.h" />
     <ClInclude Include="..\src\engine\Data\Text.h" />
     <ClInclude Include="..\src\engine\Data\Texture.h" />
     <ClInclude Include="..\src\engine\Entities\Entity.h" />
@@ -36,6 +38,7 @@
     <ClInclude Include="..\src\engine\Entities\Light\PointLight.h" />
     <ClInclude Include="..\src\engine\Entities\MeshRenderer.h" />
     <ClInclude Include="..\src\engine\Entities\Transform.h" />
+    <ClInclude Include="..\src\engine\Events\WindowSizeListener.h" />
     <ClInclude Include="..\src\engine\Geometry\Geometry.h" />
     <ClInclude Include="..\src\engine\Geometry\Mesh.h" />
     <ClInclude Include="..\src\engine\Geometry\VAO.h" />
@@ -46,6 +49,7 @@
     <ClInclude Include="..\src\engine\Test\AtlasTextureTest.h" />
     <ClInclude Include="..\src\engine\Test\FullSceneTest.h" />
     <ClInclude Include="..\src\engine\Test\ImportModelTest.h" />
+    <ClInclude Include="..\src\engine\Test\LAB2.h" />
     <ClInclude Include="..\src\engine\Test\PerformanceTest.h" />
     <ClInclude Include="..\src\engine\Test\TextureCreationTest.h" />
     <ClInclude Include="..\src\engine\Utils\SimplexNoise.h" />
@@ -61,6 +65,8 @@
     <ClCompile Include="..\src\engine\Core\Window.cpp" />
     <ClCompile Include="..\src\engine\Data\AtlasTexture.cpp" />
     <ClCompile Include="..\src\engine\Data\Color.cpp" />
+    <ClCompile Include="..\src\engine\Data\FBO.cpp" />
+    <ClCompile Include="..\src\engine\Data\RBO.cpp" />
     <ClCompile Include="..\src\engine\Data\Text.cpp" />
     <ClCompile Include="..\src\engine\Data\Texture.cpp" />
     <ClCompile Include="..\src\engine\Entities\Entity.cpp" />
@@ -80,6 +86,7 @@
     <ClCompile Include="..\src\engine\Test\AtlasTextureTest.cpp" />
     <ClCompile Include="..\src\engine\Test\FullSceneTest.cpp" />
     <ClCompile Include="..\src\engine\Test\ImportModelTest.cpp" />
+    <ClCompile Include="..\src\engine\Test\LAB2.cpp" />
     <ClCompile Include="..\src\engine\Test\PerformanceTest.cpp" />
     <ClCompile Include="..\src\engine\Test\TextureCreationTest.cpp" />
     <ClCompile Include="..\src\engine\Utils\SimplexNoise.cpp" />
