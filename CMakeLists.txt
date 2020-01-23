@@ -25,7 +25,6 @@ add_subdirectory(Dependencies/GLM)
 message("Including STB")
 include_directories(Dependencies/STB_IMAGE)
 
-
 add_executable(OGL_Engine
         src/main.cpp
 

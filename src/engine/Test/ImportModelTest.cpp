@@ -5,10 +5,7 @@
 #include "Geometry/Geometry.h"
 #include "ImportModelTest.h"
 #include <Entities/FPSController.h>
-#include <Core/Renderer.h>
 #include <Entities/MeshRenderer.h>
-#include "Core/Window.h"
-#include "Entities/Light/PointLight.h"
 
 void ImportModelTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);

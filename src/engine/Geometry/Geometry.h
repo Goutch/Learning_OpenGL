@@ -12,4 +12,5 @@ namespace Geometry{
     void make_quad(VAO& vao);
     void make_plane(VAO& vao,int sizeX,int sizeZ);
     void import(VAO& vao,std::string path);
+
 }

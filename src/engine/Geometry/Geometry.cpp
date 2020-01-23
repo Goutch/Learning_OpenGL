@@ -7,8 +7,7 @@
 #include "vector"
 #include "Utils/StringUtils.h"
 #include "Core/Log.h"
-#include <math.h>
-
+#include "Utils/Timer.h"
 void Geometry::make_quad(VAO &vao) {
     //1-------2
     //|       |
@@ -356,9 +355,11 @@ void Geometry::make_plane(VAO &vao, int sizeX, int sizeZ) {
     vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
 
+
 void Geometry::import(VAO &vao, std::string path) {
     //https://en.wikipedia.org/wiki/Wavefront_.obj_file
     Log::status("Loading model:" + path);
+    Timer t;
     try {
         std::ifstream file(path);
         std::string line;
@@ -389,6 +390,8 @@ void Geometry::import(VAO &vao, std::string path) {
                 }
             }
         }
+        file.close();
+        Log::message("1:"+std::to_string(t.ms()));
         auto orderedUvs = std::vector<float>();
         auto orderedIndices = std::vector<unsigned int>();
         auto orderedNormals = std::vector<float>();
@@ -396,12 +399,14 @@ void Geometry::import(VAO &vao, std::string path) {
         orderedNormals.resize(vertices.size());
         orderedIndices.resize(indices.size());
         auto data = std::vector<std::string>();
+        data.reserve(3);
         for (unsigned int i = 0; i < indices.size(); ++i) {
             StringUtils::split(data, indices[i], '/');
             unsigned int vertexPointer = std::stoi(data.at(0)) - 1;
             unsigned int uvPointer = std::stoi(data.at(1)) - 1;
             int normalPointer = std::stoi(data.at(2)) - 1;
             data.clear();
+            data.reserve(3);
             orderedIndices[i] = vertexPointer;
             if (!uvs.empty()) {
                 orderedUvs[vertexPointer * 2] = uvs[uvPointer * 2];
@@ -412,6 +417,7 @@ void Geometry::import(VAO &vao, std::string path) {
                 orderedNormals[vertexPointer * 3 + 1] = normals[normalPointer * 3 + 1];
                 orderedNormals[vertexPointer * 3 + 2] = normals[normalPointer * 3 + 2];
             }
+
         }
         vao.indicies(orderedIndices.data(), orderedIndices.size());
         vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
@@ -419,12 +425,12 @@ void Geometry::import(VAO &vao, std::string path) {
             vao.put(Mesh::UVS, 2, orderedUvs.data(), uvs.size());
         if (!orderedNormals.empty())
             vao.put(Mesh::NORMALS, 3, orderedNormals.data(), orderedNormals.size());
+        Log::message("2:"+std::to_string(t.ms()));
     }
     catch (const std::exception &e) {
         Log::error("cant import model:" + path + "\n" + e.what());
     }
-
-
+    Log::message(path +" loaded in "+std::to_string(t.ms())+"s");
 }
 
 

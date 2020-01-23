@@ -2,5 +2,5 @@
 #include <vector>
 class StringUtils {
 public:
-    static void split(std::vector<std::string>& buffer,std::string s,char delim);
+    static void split(std::vector<std::string>& buffer,const std::string& s,char delim);
 };

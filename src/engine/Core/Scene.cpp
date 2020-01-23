@@ -5,7 +5,8 @@
 #include "../Entities/Entity.h"
 #include "Core/Renderer.h"
 #include "Core/Window.h"
-#include "Utils/TimeUtils.h"
+#include "Entities/Light/PointLight.h"
+
 Scene::Scene() {
 
 }
@@ -58,7 +59,6 @@ Scene::~Scene() {
     for (int i = 0; i < point_lights.size(); ++i) {
         delete point_lights[i];
     }
-
     point_lights.clear();
     entities.clear();
 }
