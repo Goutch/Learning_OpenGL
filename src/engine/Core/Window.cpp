@@ -8,6 +8,7 @@ Window::Window() {
 }
 Window::~Window()
 {
+    glfwDestroyWindow(window);
     glfwTerminate();
     Log::status("Terminated GLFW");
 }
