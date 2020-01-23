@@ -153,6 +153,9 @@
     <ClCompile Include="..\src\engine\Test\LAB2.cpp">
       <Filter>src\engine\Test</Filter>
     </ClCompile>
+    <ClCompile Include="..\src\engine\Utils\TimeUtils.cpp">
+      <Filter>src\engine\Utils</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\src\engine\Core\Debug.h">
@@ -262,6 +265,9 @@
     </ClInclude>
     <ClInclude Include="..\src\engine\Test\LAB2.h">
       <Filter>src\engine\Test</Filter>
+    </ClInclude>
+    <ClInclude Include="..\src\engine\Utils\TimeUtils.h">
+      <Filter>src\engine\Utils</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

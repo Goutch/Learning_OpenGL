@@ -6,13 +6,12 @@
 
 std::string TimeUtils::getTimeString() {
     time_t rawtime;
-    struct tm *timeinfo;
     char buffer[80];
 
-    time(&rawtime);
-    timeinfo = localtime(&rawtime);
+	struct tm timeinfo;
+	localtime_s(&timeinfo, &rawtime);
 
-    strftime(buffer, sizeof(buffer), "%d_%m_%Y %H_%M_%S", timeinfo);
+    strftime(buffer, sizeof(buffer), "%d_%m_%Y %H_%M_%S", &timeinfo);
     std::string str(buffer);
 
     return str;

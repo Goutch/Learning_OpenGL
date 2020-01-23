@@ -55,6 +55,7 @@
     <ClInclude Include="..\src\engine\Utils\SimplexNoise.h" />
     <ClInclude Include="..\src\engine\Utils\StringUtils.h" />
     <ClInclude Include="..\src\engine\Utils\Timer.h" />
+    <ClInclude Include="..\src\engine\Utils\TimeUtils.h" />
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="..\Dependencies\STB_IMAGE\stb_image.cpp" />
@@ -92,6 +93,7 @@
     <ClCompile Include="..\src\engine\Utils\SimplexNoise.cpp" />
     <ClCompile Include="..\src\engine\Utils\StringUtils.cpp" />
     <ClCompile Include="..\src\engine\Utils\Timer.cpp" />
+    <ClCompile Include="..\src\engine\Utils\TimeUtils.cpp" />
     <ClCompile Include="..\src\main.cpp" />
   </ItemGroup>
   <ItemGroup>
