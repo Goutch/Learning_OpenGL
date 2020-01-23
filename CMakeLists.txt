@@ -89,9 +89,9 @@ add_executable(OGL_Engine
         src/engine/Utils/StringUtils.h
         src/engine/Utils/Timer.cpp
         src/engine/Utils/Timer.h
+        src/engine/Utils/TimeUtils.h
+        src/engine/Utils/TimeUtils.cpp
 
-        Dependencies/STB_IMAGE/stb_image.h
-        Dependencies/STB_IMAGE/stb_image.cpp
 
         src/engine/Test/PerformanceTest.cpp
         src/engine/Test/PerformanceTest.h
@@ -107,6 +107,10 @@ add_executable(OGL_Engine
         src/engine/Test/LAB2.h
 
         src/engine/Events/WindowSizeListener.h
+
+        Dependencies/STB_IMAGE/stb_image.h
+        Dependencies/STB_IMAGE/stb_image.cpp
+        Dependencies/STB_IMAGE/stb_image_write.h
    )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

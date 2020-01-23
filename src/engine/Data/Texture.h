@@ -12,8 +12,7 @@ class Texture {
 protected:
     int width;
     int height;
-
-
+    unsigned char* data;
 public:
     Texture();
 
@@ -30,4 +29,5 @@ public:
     unsigned int getWidth();
     unsigned int getHeight();
     const unsigned int getID();
+    void save(std::string path) const;
 };

@@ -10,6 +10,10 @@
 #include <math.h>
 
 void Geometry::make_quad(VAO &vao) {
+    //1-------2
+    //|       |
+    //|       |
+    //0-------3
     auto vert = std::vector<float>();
     vert.push_back(-.5);
     vert.push_back(-.5);
@@ -34,13 +38,13 @@ void Geometry::make_quad(VAO &vao) {
     auto uvs = std::vector<float>();
     for (int i = 0; i < (vert.size() / 3) / 4; ++i) {
         uvs.push_back(0);
-        uvs.push_back(1);
         uvs.push_back(0);
         uvs.push_back(0);
         uvs.push_back(1);
+        uvs.push_back(1);
+        uvs.push_back(1);
+        uvs.push_back(1);
         uvs.push_back(0);
-        uvs.push_back(1);
-        uvs.push_back(1);
     }
     vao.indicies(indices.data(), indices.size());
     vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());

@@ -6,8 +6,10 @@
 #include "GL/glew.h"
 #include "Texture.h"
 #include "stb_image.h"
+#include "stb_image_write.h"
 #include "Core/Log.h"
 #include <fstream>
+
 Texture::Texture(const std::string &path) {
     glGenTextures(1, &texture_id);
     load(path);
@@ -19,7 +21,7 @@ Texture::Texture() {
 
 Texture::Texture(unsigned char *data, int width, int height) {
     glGenTextures(1, &texture_id);
-    setTexturePixelData(data, width, height,false);
+    setTexturePixelData(data, width, height, false);
 }
 
 void Texture::bind(unsigned int slot) const {
@@ -33,28 +35,31 @@ void Texture::unbind(unsigned int slot) const {
 }
 
 Texture::~Texture() {
+    free(data);
     glDeleteTextures(1, &texture_id);
 }
 
 void Texture::load(const std::string &path) {
     std::ifstream f(path.c_str());
-    Log::status("Loading texture:"+path);
-    if(f.good())
-    {
+    Log::status("Loading texture:" + path);
+    if (f.good()) {
         unsigned char *buffer;
         stbi_set_flip_vertically_on_load(true);
         buffer = stbi_load(path.c_str(), &width, &height, &bits_per_pixel, 4);
-        setTexturePixelData(buffer, width, height,false);
+        setTexturePixelData(buffer, width, height, false);
         if (buffer) {
             stbi_image_free(buffer);
         }
-    } else{
-        Log::error("Cant load texture:"+path);
+    } else {
+        Log::error("Cant load texture:" + path);
     }
 
 }
 
 void Texture::setTexturePixelData(unsigned char *data, int width, int height, bool smoothed) {
+    this->width=width;
+    this->height=height;
+
     bind();
     if (smoothed) {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -81,6 +86,17 @@ unsigned int Texture::getHeight() {
 
 const unsigned int Texture::getID() {
     return texture_id;
+}
+
+void Texture::save(std::string path) const {
+    bind();
+    auto buffer=new unsigned char[width*height*4];
+    glGetTexImage(GL_TEXTURE_2D,0,GL_RGBA,GL_UNSIGNED_BYTE,buffer);
+    stbi_write_jpg(path.c_str(),width,height,4,buffer,100);
+    delete[] buffer;
+    unbind();
+    Log::message("ScreenShot:"+path);
+
 }
 
 
