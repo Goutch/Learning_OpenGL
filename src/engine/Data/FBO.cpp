@@ -33,11 +33,11 @@ void FBO::unbind() const{
     glBindFramebuffer(GL_FRAMEBUFFER, 0);
 }
 
-const Texture &FBO::getTexture() {
+const Texture &FBO::getTexture() const {
     return texture;
 }
 
-unsigned int FBO::getID() {
+unsigned int FBO::getID() const {
     return fbo_id;
 }
 

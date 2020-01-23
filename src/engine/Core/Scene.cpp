@@ -15,7 +15,7 @@ void Scene::update(float delta) {
         window->close();
     }
     if (window->isKeyDown(GLFW_KEY_F11)) {
-        renderer->getFrameBufferTexture().save(TimeUtils::getTimeString()+".jpg");
+        renderer->screenshot();
     }
     for(auto e:entities){
         e->update(delta,*this);
@@ -51,8 +51,14 @@ Renderer &Scene::getRenderer() {
     return *renderer;
 }
 Scene::~Scene() {
-    delete[] entities.data();
-    delete [] point_lights.data();
+    for (int i = 0; i < entities.size(); ++i) {
+        delete entities[i];
+    }
+
+    for (int i = 0; i < point_lights.size(); ++i) {
+        delete point_lights[i];
+    }
+
     point_lights.clear();
     entities.clear();
 }

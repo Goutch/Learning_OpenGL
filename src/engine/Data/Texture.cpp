@@ -92,7 +92,8 @@ void Texture::save(std::string path) const {
     bind();
     auto buffer=new unsigned char[width*height*4];
     glGetTexImage(GL_TEXTURE_2D,0,GL_RGBA,GL_UNSIGNED_BYTE,buffer);
-    stbi_write_jpg(path.c_str(),width,height,4,buffer,100);
+    stbi_flip_vertically_on_write(1);
+    stbi_write_png(path.c_str(),width,height,4,buffer,0);
     delete[] buffer;
     unbind();
     Log::message("ScreenShot:"+path);

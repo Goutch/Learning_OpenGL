@@ -9,6 +9,8 @@
 #include "Entities/Transform.h"
 #include "Log.h"
 #include "Core/Scene.h"
+#include "Utils/TimeUtils.h"
+
 Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
     Geometry::make_quad(quad);
     setRenderMode(window.getWidth(),window.getHeight(), mode);
@@ -105,6 +107,7 @@ float Renderer::getAspectRatio() {
 }
 
 void Renderer::onWindowSizeChange(int width, int height) {
+    frame_buffer.setSize(width, height);
     setRenderMode(width,height,currentRenderMode);
 }
 
@@ -112,6 +115,7 @@ const Texture &Renderer::getFrameBufferTexture() {
     return frame_buffer.getTexture();
 }
 
-
-
+void Renderer::screenshot() const {
+    frame_buffer.getTexture().save("../screenshot/" + TimeUtils::getTimeString() + ".png");
+}
 

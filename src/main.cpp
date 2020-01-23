@@ -6,9 +6,10 @@
 #include <Test/ImportModelTest.h>
 #include <Test/LAB2.h>
 #include "Test/FullSceneTest.h"
+#include "Test/LAB2.h"
 int main() {
     Engine engine=Engine();
-    auto s=FullSceneTest();
+    auto s=LAB2();
     engine.start(s);
     return 0;
 }

@@ -15,10 +15,11 @@ void LAB2::init(Window &window, Renderer &renderer) {
     int height=3;
     int size=100;
     int gap=25;
-    for (int i = 1; i <=width+1 ; ++i) {
-        for (int j = 1; j <=height+1 ; ++j) {
-            int index=((i*width)+j)%2;
-            addEntity(new MeshRenderer(quad,materials[index],vec3((float)i*(size+gap),(float)j*(size+gap),-1),vec3(0),vec3(size)));
+
+    
+    for (int i = 1; i <= width+1 ; ++i) {
+        for (int j = 1; j <= height+1 ; ++j) {
+            addEntity(new MeshRenderer(quad,materials[(i + j) % 2],vec3((float)i*(size+gap),(float)j*(size+gap),-1),vec3(0),vec3(size)));
         }
     }
 

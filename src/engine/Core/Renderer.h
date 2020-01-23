@@ -53,4 +53,5 @@ public:
     float getAspectRatio();
     void onWindowSizeChange( int width, int height) override;
     const Texture& getFrameBufferTexture();
+    void screenshot() const;
 };

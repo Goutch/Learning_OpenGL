@@ -21,7 +21,7 @@ void LightMaterial::bind(const Scene &scene) const {
         std::vector<float> radius;
         std::vector<vec3> positions;
         std::vector<vec3> colors;
-        for (int i = 0; i < pointLights.size(); ++i) {
+        for (unsigned int i = 0; i < pointLights.size(); ++i) {
             radius.push_back(pointLights[i]->getRadius());
             positions.push_back(pointLights[i]->transform.position());
             colors.emplace_back(pointLights[i]->getColor().data);

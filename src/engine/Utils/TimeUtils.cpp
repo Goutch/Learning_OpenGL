@@ -5,13 +5,13 @@
 #include "TimeUtils.h"
 
 std::string TimeUtils::getTimeString() {
-    time_t rawtime;
     char buffer[80];
 
-	struct tm timeinfo;
-	localtime_s(&timeinfo, &rawtime);
+    struct tm newtime;
+    time_t now = time(0);
+    localtime_s(&newtime, &now);
 
-    strftime(buffer, sizeof(buffer), "%d_%m_%Y %H_%M_%S", &timeinfo);
+    strftime(buffer, sizeof(buffer), "%d_%m_%Y %H_%M_%S", &newtime);
     std::string str(buffer);
 
     return str;

@@ -36,7 +36,7 @@ void Geometry::make_quad(VAO &vao) {
     indices.push_back(3);
     indices.push_back(2);
     auto uvs = std::vector<float>();
-    for (int i = 0; i < (vert.size() / 3) / 4; ++i) {
+    for (unsigned int i = 0; i < (vert.size() / 3) / 4; ++i) {
         uvs.push_back(0);
         uvs.push_back(0);
         uvs.push_back(0);
@@ -271,7 +271,7 @@ void Geometry::make_cube(VAO &vao) {
 }
 
 void Geometry::make_sphere(VAO &vao, unsigned int xSegments, unsigned int ySegments) {
-    const float PI = 3.1416;
+    /*const float PI = 3.1416;
     const float TAU = 2 * PI;
     auto vert = std::vector<float>();
     auto indices = std::vector<unsigned int>();
@@ -305,7 +305,7 @@ void Geometry::make_sphere(VAO &vao, unsigned int xSegments, unsigned int ySegme
     }
     vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
     vao.put(Mesh::NORMALS, 3, vert.data(), vert.size());
-    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
+    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());*/
 }
 
 void Geometry::make_plane(VAO &vao, int sizeX, int sizeZ) {

@@ -15,7 +15,7 @@ public:
     void bind() const ;
     void unbind() const;
     void setSize(int width,int height);
-    const Texture& getTexture();
-    unsigned int getID();
+    const Texture& getTexture() const;
+    unsigned int getID() const;
 };
 
