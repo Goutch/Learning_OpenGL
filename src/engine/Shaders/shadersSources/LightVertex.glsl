@@ -20,7 +20,7 @@ void main(){
     uv=vertexUv;
     //Diffuselight
     position=transform*vec4(vertexPosition.xyz, 1.);
-    normal=vertexNormal;
+    normal=normalize(vertexNormal);
     frag_pos = position.xyz;
     normal = vertexNormal;
 

@@ -27,35 +27,38 @@ uniform vec3 directional_light_direction;
 
 
 out vec4 fragColor;
+vec3 calculateLight(vec3 lightDir,vec3 color)
+{
+    vec3 ouputLight=vec3(0,0,0);
+    float diffuse = max(dot(normal, lightDir), 0.0);
+    ouputLight+=diffuse*color;
+    //specular
+    if (shine_factor>0.0001)
+    {
+        vec3 viewDir = normalize(view_pos - frag_pos);
+        vec3 reflectDir = reflect(-lightDir, normal);
+        float spec = pow(max(dot(viewDir, reflectDir), 0.0), damp_factor);
+        ouputLight+= vec3(shine_factor * spec);
+    }
+    return ouputLight;
+}
 void main(){
 
-    vec3 normalizedNormal=normalize(normal);
-    vec3 diffuseLight=vec3(0., 0., 0.);
-    vec3 specularLight=vec3(0., 0., 0.);
+    vec3 light=vec3(0,0,0);
     //direcitonnal
     for (int i=0;i<directional_light_count;i++){
+        vec3 normalizedLightDir=normalize(directional_light_direction);
         if (shadow_coord.x>0&&shadow_coord.x<1&&shadow_coord.y<1&&shadow_coord.y>0)
         {
-
             if (texture(directional_light_shadowMap, shadow_coord.xy).z >= shadow_coord.z-0.005){
-                float intensity=dot(normalizedNormal,normalize(directional_light_direction));
-                intensity=max(intensity,0.);
-                diffuseLight+=directional_light_color*intensity;
-                if(shine_factor>0.0001)
-                {
-                    vec3 viewDir = normalize(view_pos - frag_pos);
-                    vec3 reflectDir = reflect(-directional_light_direction, normalizedNormal);
-                    float spec = pow(max(dot(viewDir, reflectDir), 0.0), damp_factor);
-                    specularLight+= vec3(shine_factor * spec)*intensity;
-                }
+                light+=calculateLight(normalizedLightDir,directional_light_color);
             }
+            //else shadow
         }
+        //outside of shadowmap
         else
         {
-            float lightValue=dot(normalizedNormal,normalize(directional_light_direction));
-            lightValue=max(lightValue,0.);
-            diffuseLight+=directional_light_color*lightValue;
-
+            light+=calculateLight(normalizedLightDir,directional_light_color);
         }
     }
 
@@ -63,32 +66,21 @@ void main(){
     for (int i=0;i<point_light_count;i++)
     {
         float dist=distance(point_light_positions[i], position.xyz);
-
         if (dist<point_light_radius[i])
         {
             float intensity=1-dist/point_light_radius[i];
             vec3 lightDir = normalize(point_light_positions[i] - frag_pos);
-            float diff = max(dot(normalizedNormal, lightDir), 0.0);
-            diffuseLight+=diff*point_light_colors[i]*intensity;
-            //specular
-            if (shine_factor>0.0001)
-            {
-                vec3 viewDir = normalize(view_pos - frag_pos);
-                vec3 reflectDir = reflect(-lightDir, normalizedNormal);
-                float spec = pow(max(dot(viewDir, reflectDir), 0.0), damp_factor);
-                specularLight+= vec3(shine_factor * spec)*intensity;
-            }
+            light+=calculateLight(lightDir,point_light_colors[i])*intensity;
         }
     }
-    vec4 light=vec4(ambient_light+diffuseLight+specularLight, 1.);
     if (has_texture==1)
     {
         //texture
         vec4 textureColor=texture(texture_0, uv);
-        fragColor=textureColor*material_color*light;
+        fragColor=textureColor*material_color*vec4(light,1.);
     }
     else {
-        fragColor=material_color*light;
+        fragColor=material_color*vec4(light,1.);
     }
 
 
