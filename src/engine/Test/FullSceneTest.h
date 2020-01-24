@@ -11,12 +11,21 @@ class FullSceneTest : public Scene {
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
     Shader lightShader = Shader("../src/engine/Shaders/shadersSources/LightVertex.glsl",
                                 "../src/engine/Shaders/shadersSources/LightFragment.glsl");
+
     Material cube_material = Material(shader);
-    LightMaterial dragon_material = LightMaterial(lightShader, Color(1, 1, 1));
+    LightMaterial sphere_material = LightMaterial(lightShader);
+    LightMaterial dragon_material = LightMaterial(lightShader);
+    LightMaterial ground_material = LightMaterial(lightShader, ground_texture);
+    LightMaterial bunny_material = LightMaterial(lightShader,stone_texture);
+
     Texture ground_texture = Texture("../res/wall.jpg");
-    LightMaterial ground_material = LightMaterial(lightShader, ground_texture, Color::WHITE);
-    Mesh dragon = Mesh("../res/dragon.obj");
-    Mesh cube;
+    Texture stone_texture=Texture("../res/stone.jpg");
+
+    Mesh dragon_mesh = Mesh("../res/dragon.obj");
+    Mesh bunny_mesh = Mesh("../res/bunny.obj");
+    Mesh cube_mesh;
+    Mesh sphere_mesh;
+
     DirectionalLight *sun;
 
 public:

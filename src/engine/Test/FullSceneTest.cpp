@@ -10,19 +10,24 @@
 void FullSceneTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
 
-    //create cube mesh
-    Geometry::make_cube(cube);
+    //create cube_mesh mesh
+    Geometry::make_cube(cube_mesh);
+    Geometry::make_sphere(sphere_mesh,1,100,50);
 
+    //sphere
+    addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
     //ground
-    addEntity(new MeshRenderer(cube, ground_material, vec3(0, 0, 0), vec3(0), vec3(100,1,100)));
-
+    addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(100, 1, 100)));
+    //bunnies
+    addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(10,0,0)));
+    addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(-10,0,0)));
     //dragons
     dragon_material.shine(1);
     dragon_material.damp(6);
-    addEntity(new MeshRenderer(cube, dragon_material, vec3(0, 0.5, 10), vec3(0), vec3(12, 1, 8)));
-    addEntity(new MeshRenderer(dragon, dragon_material, vec3(0, .9, -10)));
-    addEntity(new MeshRenderer(cube, dragon_material, vec3(0, 0.5, -10), vec3(0), vec3(12, 1, 8)));
-    addEntity(new MeshRenderer(dragon, dragon_material, vec3(0, .9, 10)));
+    addEntity(new MeshRenderer(cube_mesh, dragon_material, vec3(0, 0.5, 10), vec3(0), vec3(12, 1, 8)));
+    addEntity(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, -10)));
+    addEntity(new MeshRenderer(cube_mesh, dragon_material, vec3(0, 0.5, -10), vec3(0), vec3(12, 1, 8)));
+    addEntity(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, 10)));
 
     //controller
     addEntity(new FPSController(camera, vec3(0, 1, 2), vec3(0), vec3(1)));
@@ -31,7 +36,7 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
     addLight(new PointLight(Color(1, 0, 0), 10, vec3(0, 1, 0)));
 
     //Directional sun light
-    MeshRenderer* sun_cube=new MeshRenderer(cube, cube_material, vec3(0, 0, 30), vec3(0), vec3(3));
+    MeshRenderer* sun_cube=new MeshRenderer(cube_mesh, cube_material, vec3(0, 0, 30), vec3(0), vec3(3));
     sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, 0, 0)));
     cube_material.color(Color(1,1,0));
     addEntity(sun_cube);

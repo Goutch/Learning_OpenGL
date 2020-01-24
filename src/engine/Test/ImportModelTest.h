@@ -15,7 +15,7 @@ private:
     Material material=Material(shader);
 
 
-    Mesh mesh=Mesh("../res/dragon.obj");
+    Mesh mesh=Mesh("../res/dragon_mesh.obj");
 public:
     void init(Window &window, Renderer &renderer) override;
 

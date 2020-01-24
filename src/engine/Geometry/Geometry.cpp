@@ -7,6 +7,7 @@
 #include "vector"
 #include "Utils/StringUtils.h"
 #include "Core/Log.h"
+#include "math.h"
 #include "Utils/Timer.h"
 void Geometry::make_quad(VAO &vao) {
     //1-------2
@@ -269,42 +270,88 @@ void Geometry::make_cube(VAO &vao) {
     vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
 
-void Geometry::make_sphere(VAO &vao, unsigned int xSegments, unsigned int ySegments) {
-    /*const float PI = 3.1416;
-    const float TAU = 2 * PI;
-    auto vert = std::vector<float>();
+
+void Geometry::make_sphere(VAO &vao, float radius,int xCount,int yCount) {
+    //https://www.songho.ca/opengl/gl_sphere.html
+    const float PI = 3.14159265359;
+    auto vertices = std::vector<float>();
+    auto normals = std::vector<float>();
     auto indices = std::vector<unsigned int>();
     auto uvs = std::vector<float>();
-    for (unsigned int y = 0; y <= ySegments; ++y) {
-        for (unsigned int x = 0; x <= xSegments; ++x) {
-            float xSegment = (float) x / (float) xSegments;
-            float ySegment = (float) y / (float) ySegments;
-            float xPos = cos(xSegment * TAU) * sin(ySegment * PI);
-            float yPos = cos(ySegment * PI);
-            float zPos = sin(xSegment * TAU) * sin(ySegment * PI);
 
-            vert.push_back(xPos);
-            vert.push_back(yPos);
-            vert.push_back(zPos);
-            uvs.push_back(xSegment);
-            uvs.push_back(ySegment);
+    float x, y, z, xy;                              // vertex position
+    float nx, ny, nz, lengthInv = 1.0f / radius;    // vertex normal
+    float s, t;                                     // vertex texCoord
+
+    float sectorStep = 2 * PI / xCount;
+    float stackStep = PI / yCount;
+    float sectorAngle, stackAngle;
+
+    for(int i = 0; i <= yCount; ++i)
+    {
+        stackAngle = PI / 2 - i * stackStep;        // starting from pi/2 to -pi/2
+        xy = radius * cosf(stackAngle);             // r * cos(u)
+        z = radius * sinf(stackAngle);              // r * sin(u)
+
+        // add (sectorCount+1) vertices per stack
+        // the first and last vertices have same position and normal, but different tex coords
+        for(int j = 0; j <= xCount; ++j)
+        {
+            sectorAngle = j * sectorStep;           // starting from 0 to 2pi
+
+            // vertex position (x, y, z)
+            x = xy * cosf(sectorAngle);             // r * cos(u) * cos(v)
+            y = xy * sinf(sectorAngle);             // r * cos(u) * sin(v)
+            vertices.push_back(x);
+            vertices.push_back(y);
+            vertices.push_back(z);
+
+            // normalized vertex normal (nx, ny, nz)
+            nx = x * lengthInv;
+            ny = y * lengthInv;
+            nz = z * lengthInv;
+            normals.push_back(nx);
+            normals.push_back(ny);
+            normals.push_back(nz);
+
+            // vertex tex coord (s, t) range between [0, 1]
+            s = (float)j / xCount;
+            t = (float)i / yCount;
+            uvs.push_back(s);
+            uvs.push_back(t);
+        }
+    }
+    int k1, k2;
+    for(int i = 0; i <yCount; ++i)
+    {
+        k1 = i * (xCount + 1);     // beginning of current stack
+        k2 = k1 + xCount + 1;      // beginning of next stack
+
+        for(int j = 0; j < xCount; ++j, ++k1, ++k2)
+        {
+            // 2 triangles per sector excluding first and last stacks
+            // k1 => k2 => k1+1
+            if(i != 0)
+            {
+                indices.push_back(k1);
+                indices.push_back(k2);
+                indices.push_back(k1 + 1);
+            }
+
+            // k1+1 => k2 => k2+1
+            if(i != (yCount-1))
+            {
+                indices.push_back(k1 + 1);
+                indices.push_back(k2);
+                indices.push_back(k2 + 1);
+            }
         }
     }
 
-    for (int y = 0; y < ySegments; ++y) {
-        for (int x = 0; x < xSegments; ++x) {
-            indices.push_back((y + 1) * (xSegments + 1) + x);
-            indices.push_back(y * (xSegments + 1) + x);
-            indices.push_back(y * (xSegments + 1) + x + 1);
-
-            indices.push_back((y + 1) * (xSegments + 1) + x);
-            indices.push_back(y * (xSegments + 1) + x + 1);
-            indices.push_back((y + 1) * (xSegments + 1) + x + 1);
-        }
-    }
-    vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
-    vao.put(Mesh::NORMALS, 3, vert.data(), vert.size());
-    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());*/
+    vao.indicies(indices.data(),indices.size());
+    vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
+    vao.put(Mesh::NORMALS, 3, normals.data(), normals.size());
+    vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
 }
 
 void Geometry::make_plane(VAO &vao, int sizeX, int sizeZ) {
@@ -429,5 +476,3 @@ void Geometry::import(VAO &vao, std::string path) {
     }
     Log::message(path +" loaded in "+std::to_string(t.ms())+"s");
 }
-
-
