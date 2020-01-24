@@ -391,12 +391,9 @@ void Geometry::import(VAO &vao, std::string path) {
             }
         }
         file.close();
-        auto orderedUvs = std::vector<float>();
-        auto orderedIndices = std::vector<unsigned int>();
-        auto orderedNormals = std::vector<float>();
-        orderedUvs.resize((vertices.size() / 3) * 2);
-        orderedNormals.resize(vertices.size());
-        orderedIndices.resize(indices.size());
+        float* orderedUvs=new float[(vertices.size() / 3) * 2];
+        unsigned int* orderedIndices=new unsigned int[indices.size()];
+        float* orderedNormals=new float[vertices.size()];
         auto data = std::vector<std::string>();
         data.reserve(3);
         for (unsigned int i = 0; i < indices.size(); ++i) {
@@ -416,14 +413,16 @@ void Geometry::import(VAO &vao, std::string path) {
                 orderedNormals[vertexPointer * 3 + 1] = normals[normalPointer * 3 + 1];
                 orderedNormals[vertexPointer * 3 + 2] = normals[normalPointer * 3 + 2];
             }
-
         }
-        vao.indicies(orderedIndices.data(), orderedIndices.size());
+        vao.indicies(orderedIndices, indices.size());
         vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
-        if (!orderedUvs.empty())
-            vao.put(Mesh::UVS, 2, orderedUvs.data(), uvs.size());
-        if (!orderedNormals.empty())
-            vao.put(Mesh::NORMALS, 3, orderedNormals.data(), orderedNormals.size());
+        if (!uvs.empty())
+            vao.put(Mesh::UVS, 2, orderedUvs, (vertices.size()/3)*2);
+        if (!normals.empty())
+            vao.put(Mesh::NORMALS, 3, orderedNormals, vertices.size());
+        delete[](orderedIndices);
+        delete[](orderedNormals);
+        delete[](orderedUvs);
     }
     catch (const std::exception &e) {
         Log::error("cant import model:" + path + "\n" + e.what());
