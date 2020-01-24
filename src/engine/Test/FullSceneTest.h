@@ -12,7 +12,7 @@ class FullSceneTest : public Scene {
     Shader lightShader = Shader("../src/engine/Shaders/shadersSources/LightVertex.glsl",
                                 "../src/engine/Shaders/shadersSources/LightFragment.glsl");
     Material cube_material = Material(shader);
-    LightMaterial dragon_material = LightMaterial(lightShader, Color(0.5, 0.5, 0));
+    LightMaterial dragon_material = LightMaterial(lightShader, Color(1, 1, 1));
     Texture ground_texture = Texture("../res/wall.jpg");
     LightMaterial ground_material = LightMaterial(lightShader, ground_texture, Color::WHITE);
     Mesh dragon = Mesh("../res/dragon.obj");

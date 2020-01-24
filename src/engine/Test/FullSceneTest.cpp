@@ -13,7 +13,8 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
 
     Geometry::make_cube(cube);
 
-    dragon_material.shine(20);
+    dragon_material.shine(1);
+    dragon_material.damp(6);
 
     addEntity(new MeshRenderer(cube, ground_material, vec3(0), vec3(0), vec3(100,1,100)));
     addEntity(new MeshRenderer(cube, cube_material, vec3(0, 1.5, 0), vec3(0), vec3(3)));
@@ -23,8 +24,8 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
     addEntity(new MeshRenderer(dragon, dragon_material, vec3(0, .9, 10)));
 
     addEntity(new FPSController(camera, vec3(0, 1, 2), vec3(0), vec3(1)));
-    addLight(new PointLight(Color(0, 1, 0), 20, vec3(0, 1, 0)));
-    sun = new DirectionalLight(Color(0.8,0.6,0),vec3(0, 2, 0), glm::radians(vec3(-45, 0, 0)));
+    addLight(new PointLight(Color(1, 0, 0), 20, vec3(0, 1, 0)));
+    sun = new DirectionalLight(Color(1,1,0.5),vec3(0, 2, 0), glm::radians(vec3(-45, 0, 0)));
     addLight(sun);
     cube_material.texture(sun->shadowMap());
 }
