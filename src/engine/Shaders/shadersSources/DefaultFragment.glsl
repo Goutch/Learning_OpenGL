@@ -5,13 +5,13 @@ uniform sampler2D texture_0;
 uniform int has_texture;
 
 
-in vec2 uvs;
+in vec2 uv;
 out vec4 fragColor;
 void main()
 {
     if(has_texture==1)
     {
-        vec4 texColor0=texture(texture_0,uvs);
+        vec4 texColor0=texture(texture_0,uv);
         fragColor=texColor0*material_color;
     }
     else{

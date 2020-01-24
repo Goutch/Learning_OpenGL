@@ -49,18 +49,17 @@ void FPSController::update(float delta, Scene& scene) {
     transform.translate(dir*delta*speed);
     vec2 change=vec2(0.0f);
     double x,y;
-    float width=(float)window.getWidth();
-    float height=(float)window.getHeight();
+    auto width=(double)window.getWidth();
+    auto height=(double)window.getHeight();
 
     float fov=scene.getRenderer().getFOV();
-    float aspect_ratio=scene.getRenderer().getAspectRatio();
+    double aspect_ratio=height/width;
 
     window.getMousePosition(x,y);
     change.x=(((width/2)-x)/width)*fov;
-    change.y=(((height/2)-y)/height)*(fov/aspect_ratio);
-
+    change.y=(((height/2)-y)/height)*(fov*aspect_ratio);
     transform.rotate(quat(vec3(0,radians(change.x),0)));
     camera->rotate(quat(vec3(radians(change.y),0,0)));
 
-    window.setMousePosition((double)window.getWidth()/2,(double)window.getHeight()/2);
+    window.setMousePosition(width/2,height/2);
 }

@@ -1,8 +1,8 @@
 #pragma once
 #define GLEW_STATIC
-
-#include<iostream>
 #include "GL/glew.h"
+#include<iostream>
+
 #include "Log.h"
 
 static void clearGLErrors() {

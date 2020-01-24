@@ -35,7 +35,7 @@ void Texture::unbind(unsigned int slot) const {
 }
 
 Texture::~Texture() {
-    free(data);
+
     glDeleteTextures(1, &texture_id);
 }
 
@@ -56,10 +56,10 @@ void Texture::load(const std::string &path) {
 
 }
 
-void Texture::setTexturePixelData(unsigned char *data, int width, int height, bool smoothed) {
-    this->width=width;
-    this->height=height;
-
+void Texture::setTexturePixelData(unsigned char *data, int width, int height, bool smoothed, Type type) {
+    this->width = width;
+    this->height = height;
+    this->type = type;
     bind();
     if (smoothed) {
         glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
@@ -71,32 +71,54 @@ void Texture::setTexturePixelData(unsigned char *data, int width, int height, bo
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+    switch (type) {
+        case RGBA:
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
+            break;
+        case RGB:
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB8, width, height, 0, GL_RGB, GL_UNSIGNED_BYTE, data);
+            break;
+        case DEPTH:
+            glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32F, width, height, 0, GL_DEPTH_COMPONENT, GL_FLOAT, data);
+            break;
+    }
 
-    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
     unbind();
 }
 
-unsigned int Texture::getWidth() {
+unsigned int Texture::getWidth() const{
     return width;
 }
 
-unsigned int Texture::getHeight() {
+unsigned int Texture::getHeight()  const{
     return height;
 }
 
-const unsigned int Texture::getID() {
+const unsigned int Texture::getID()  const{
     return texture_id;
 }
 
 void Texture::save(std::string path) const {
     bind();
-    auto buffer=new unsigned char[width*height*4];
-    glGetTexImage(GL_TEXTURE_2D,0,GL_RGBA,GL_UNSIGNED_BYTE,buffer);
+
     stbi_flip_vertically_on_write(1);
-    stbi_write_png(path.c_str(),width,height,4,buffer,0);
-    delete[] buffer;
+
+    if (type == DEPTH) {
+        //float *depth_buffer = new float[width * height];
+        //glGetTexImage(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, GL_FLOAT, depth_buffer);
+        //stbi_write_png(path.c_str(), width, height, 1, depth_buffer, 0);
+        //delete[] depth_buffer;
+        Log::warning("Screenshot not supported for depth texture");
+
+    } else if (type == RGBA) {
+        unsigned char *color_buffer = new unsigned char[width * height * 4];
+        glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, color_buffer);
+        stbi_write_png(path.c_str(), width, height, 4, color_buffer, 0);
+        delete[] color_buffer;
+        Log::message("ScreenShot:" + path);
+    }
     unbind();
-    Log::message("ScreenShot:"+path);
+
 
 }
 

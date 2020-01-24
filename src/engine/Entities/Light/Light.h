@@ -12,4 +12,5 @@ public:
     Light(const Color& color);
     Light();
     const Color& getColor();
+
 };

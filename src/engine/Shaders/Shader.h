@@ -13,7 +13,7 @@ private:
 
     std::string getSource(const std::string &path);
 
-    mutable std::unordered_map<std::string,int> uniforms;
+    mutable std::unordered_map<std::string, int> uniforms;
 
     unsigned int program_id;
 
@@ -57,17 +57,15 @@ public:
 
     void loadUniform(unsigned int location, const glm::mat4 &m) const;
 
-    void loadUniformIntArray(unsigned int location, int* i, unsigned int count) const;
+    void loadUniformIntArray(unsigned int location, int *i, unsigned int count) const;
 
-    void loadUniformFloatArray(unsigned int location, float* f, unsigned int count) const;
+    void loadUniformFloatArray(unsigned int location, float *f, unsigned int count) const;
 
-    void loadUniformVec2Array(unsigned int location, const glm::vec2* v, unsigned int count) const;
+    void loadUniformVec2Array(unsigned int location, const glm::vec2 *v, unsigned int count) const;
 
-    void loadUniformVec3Array(unsigned int location, const glm::vec3* v, unsigned int count) const;
+    void loadUniformVec3Array(unsigned int location, const glm::vec3 *v, unsigned int count) const;
 
-    void loadUniformVec4Array(unsigned int location, const glm::vec4* v, unsigned int count) const;
-
-
+    void loadUniformVec4Array(unsigned int location, const glm::vec4 *v, unsigned int count) const;
 
 };
 

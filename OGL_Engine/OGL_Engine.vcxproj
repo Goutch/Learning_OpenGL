@@ -33,7 +33,7 @@
     <ClInclude Include="..\src\engine\Data\Texture.h" />
     <ClInclude Include="..\src\engine\Entities\Entity.h" />
     <ClInclude Include="..\src\engine\Entities\FPSController.h" />
-    <ClInclude Include="..\src\engine\Entities\Light\DirectionnalLight.h" />
+    <ClInclude Include="..\src\engine\Entities\Light\DirectionalLight.h" />
     <ClInclude Include="..\src\engine\Entities\Light\Light.h" />
     <ClInclude Include="..\src\engine\Entities\Light\PointLight.h" />
     <ClInclude Include="..\src\engine\Entities\MeshRenderer.h" />
@@ -72,7 +72,7 @@
     <ClCompile Include="..\src\engine\Data\Texture.cpp" />
     <ClCompile Include="..\src\engine\Entities\Entity.cpp" />
     <ClCompile Include="..\src\engine\Entities\FPSController.cpp" />
-    <ClCompile Include="..\src\engine\Entities\Light\DirectionnalLight.cpp" />
+    <ClCompile Include="..\src\engine\Entities\Light\DirectionalLight.cpp" />
     <ClCompile Include="..\src\engine\Entities\Light\Light.cpp" />
     <ClCompile Include="..\src\engine\Entities\Light\PointLight.cpp" />
     <ClCompile Include="..\src\engine\Entities\MeshRenderer.cpp" />

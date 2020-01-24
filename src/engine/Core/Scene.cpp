@@ -2,11 +2,11 @@
 // Created by User on 2020-01-06.
 //
 #include "Scene.h"
-#include "../Entities/Entity.h"
+#include "Entities/Entity.h"
 #include "Core/Renderer.h"
 #include "Core/Window.h"
 #include "Entities/Light/PointLight.h"
-
+#include "Entities/Light/DirectionnalLight.h"
 Scene::Scene() {
 
 }
@@ -21,9 +21,12 @@ void Scene::update(float delta) {
     for(auto e:entities){
         e->update(delta,*this);
     }
+    for (int i = 0; i < directional_lights.size(); ++i) {
+        directional_lights[i]->calculateShadowMap(*this);
+    }
 }
 
-void Scene::render() {
+void Scene::render() const {
     for(auto e:entities){
         e->render(*this);
     }
@@ -32,7 +35,6 @@ void Scene::render() {
 void Scene::init(Window &window, Renderer &renderer) {
     this->renderer=&renderer;
     this->window=&window;
-    renderer.setCamera(camera);
 }
 
 void Scene::addEntity(Entity& entity)
@@ -45,26 +47,24 @@ void Scene::addEntity(Entity *entity) {
     entities.push_back(entity);
     entity->init(*this);
 }
-Window &Scene::getWindow() {
+Window &Scene::getWindow() const{
     return *window;
 }
-Renderer &Scene::getRenderer() {
+Renderer &Scene::getRenderer()const {
     return *renderer;
 }
 Scene::~Scene() {
     for (int i = 0; i < entities.size(); ++i) {
         delete entities[i];
     }
-
-    for (int i = 0; i < point_lights.size(); ++i) {
-        delete point_lights[i];
-    }
+    directional_lights.clear();
     point_lights.clear();
     entities.clear();
 }
 
 void Scene::addLight(PointLight *light) {
     point_lights.push_back(light);
+    entities.push_back(light);
 }
 
 const std::vector<PointLight *> &Scene::getPointLights() const {
@@ -77,6 +77,14 @@ const Color &Scene::getAmbientLight() const {
 
 const Transform &Scene::getCamera() const{
     return camera;
+}
+
+void Scene::addLight(DirectionalLight *light) {
+    directional_lights.push_back(light);
+    entities.push_back(light);
+}
+const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
+    return directional_lights;
 }
 
 

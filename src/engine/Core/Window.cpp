@@ -101,5 +101,9 @@ void Window::subscribeSizeChange(WindowSizeListener &l) {
     sizeListeners.push_back(&l);
 }
 
+void Window::unsubscribeSizeChange(WindowSizeListener &l) {
+    sizeListeners.remove(&l);
+}
+
 
 

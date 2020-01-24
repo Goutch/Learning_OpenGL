@@ -18,7 +18,7 @@ MeshRenderer::MeshRenderer(VAO &mesh, Material &material): Entity() {
     this->m=&material;
 }
 
-void MeshRenderer::render(Scene &scene) {
+void MeshRenderer::render(const Scene &scene) const{
     scene.getRenderer().addToRenderQueue(*m,*mesh,transform);
 }
 

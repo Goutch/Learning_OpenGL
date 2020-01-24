@@ -391,7 +391,6 @@ void Geometry::import(VAO &vao, std::string path) {
             }
         }
         file.close();
-        Log::message("1:"+std::to_string(t.ms()));
         auto orderedUvs = std::vector<float>();
         auto orderedIndices = std::vector<unsigned int>();
         auto orderedNormals = std::vector<float>();
@@ -425,7 +424,6 @@ void Geometry::import(VAO &vao, std::string path) {
             vao.put(Mesh::UVS, 2, orderedUvs.data(), uvs.size());
         if (!orderedNormals.empty())
             vao.put(Mesh::NORMALS, 3, orderedNormals.data(), orderedNormals.size());
-        Log::message("2:"+std::to_string(t.ms()));
     }
     catch (const std::exception &e) {
         Log::error("cant import model:" + path + "\n" + e.what());

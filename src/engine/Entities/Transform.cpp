@@ -77,6 +77,10 @@ void Transform::setScale(vec3 scale) {
     transform_matrix[2] = normalize(transform_matrix[2]) * scale.z;
 }
 
+vec3 Transform::eulerRotation() const {
+    return glm::eulerAngles(rot);
+}
+
 
 
 

@@ -24,7 +24,7 @@ Shader::Shader(const std::string &vertexShader, const std::string &fragmentShade
     glAttachShader(program_id, fs);
     glLinkProgram(program_id);
     glValidateProgram(program_id);
-
+    Log::debug("program id="+std::to_string(program_id));
     glDeleteShader(vs);
     glDeleteShader(fs);
 }
@@ -127,6 +127,8 @@ void Shader::loadUniformVec4Array(unsigned int location, const glm::vec4 *v, uns
 
     glUniform4fv(location,count,flat_array);
 }
+
+
 
 
 unsigned int Shader::compileShader(unsigned int type, const std::string &source) {

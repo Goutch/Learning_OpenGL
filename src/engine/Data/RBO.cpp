@@ -3,25 +3,30 @@
 #define GLEW_STATIC
 
 #include <GL/glew.h>
+
 #include "RBO.h"
+
 RBO::RBO() {
+
     glGenRenderbuffers(1, &rbo_id);
 }
 
-
-RBO::RBO(int width,int height) {
-    glGenRenderbuffers(1, &rbo_id);
-    setSize(width,height);
-}
-void RBO::setSize(int width,int height) {
+void RBO::setSize(int width, int height,Type type) {
     bind();
-    glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8,width, height);
+    switch (type) {
+        case DEPTH_AND_STENCIL:
+            glRenderbufferStorage(GL_RENDERBUFFER, GL_DEPTH24_STENCIL8, width, height);
+            break;
+        case COLOR:
+            glRenderbufferStorage(GL_RENDERBUFFER, GL_RGBA, width, height);
+            break;
+
+    }
     unbind();
 }
 
-
 RBO::~RBO() {
-    glDeleteRenderbuffers(1,&rbo_id);
+    glDeleteRenderbuffers(1, &rbo_id);
 }
 
 void RBO::bind() const {
@@ -31,8 +36,12 @@ void RBO::bind() const {
 void RBO::unbind() const {
     glBindRenderbuffer(GL_RENDERBUFFER, 0);
 }
+
 unsigned int RBO::getID() {
     return rbo_id;
 }
+
+
+
 
 

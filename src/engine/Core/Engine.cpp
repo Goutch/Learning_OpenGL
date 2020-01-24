@@ -16,7 +16,7 @@
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     window = new Window();
-    if (window->open("WINDOW", 1000, 675)) {
+    if (window->open("WINDOW", 1000, 700)) {
 
         glewInit() == GLEW_OK ?
         Log::status("Initialized GLEW") :
@@ -56,7 +56,6 @@ void Engine::start(Scene &scene) {
             t.reset();
             printFPS();
             scene.update(delta_time);
-            scene.render();
             renderer.render(scene);
             window->swapBuffer();
             window->getInputs();

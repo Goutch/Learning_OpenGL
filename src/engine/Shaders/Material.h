@@ -19,30 +19,30 @@ protected:
     bool has_texture;
     int transform_location, view_location, projection_location, has_texture_location, texture_0_location, material_color_location;
     Color c = Color::WHITE;
-    Texture *t;
-    Shader *s;
+    const Texture *t;
+    const Shader *s;
 public:
     Material();
 
-    Material(Shader &shader);
+    Material(const Shader &shader);
 
-    Material(Shader &shader, const Color &color);
+    Material(const Shader &shader, const Color &color);
 
-    Material(Shader &shader, Texture &texture);
+    Material(const Shader &shader,const Texture &texture);
 
-    Material(Shader &shader, Texture &texture, const Color &color);
+    Material(const Shader &shader,const Texture &texture, const Color &color);
 
     virtual void bind(const Scene &scene) const;
 
-    void unbind() const;
+   virtual void unbind() const;
 
     const Shader &shader() const;
 
-    Material &shader(Shader &shader);
+    Material &shader(const Shader &shader);
 
     const Texture &texture() const;
 
-    Material &texture(Texture &texture);
+    Material &texture(const Texture &texture);
 
     Material &color(const Color &color);
 

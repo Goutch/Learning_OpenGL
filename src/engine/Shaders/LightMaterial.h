@@ -1,30 +1,47 @@
 #pragma once
 
 #include "Material.h"
-
+#include "vector"
 class LightMaterial : public Material {
 private:
+private:
+    mutable std::vector<const Texture*> boundShadowMaps;
     float shineFactor =0;
     float dampFactor =16;
+    mat4 bias_mat=mat4(0.5f, 0.0f, 0.0f, 0.0f,
+                       0.0f, 0.5f, 0.0f, 0.0f,
+                       0.0f, 0.0f, 0.5f, 0.0f,
+                       0.5f, 0.5f, 0.5f, 1.0f);
     int ambient_light_location,
             damp_factor_location,
             shine_factor_location,
+
             point_light_count_location,
             point_light_positions_location,
             point_light_radius_location,
             point_light_colors_location,
+
+            directional_light_count_location,
+            directional_light_shadowMap_location,
+            directional_light_color_location,
+            directional_light_direction_location,
+
+            light_space_mat_location,
+
             view_pos_location;
 
 public:
     LightMaterial();
 
-    LightMaterial(Shader &shader);
+    LightMaterial(const Shader &shader);
 
-    LightMaterial(Shader &shader, const Color &color);
+    void unbind() const override;
 
-    LightMaterial(Shader &shader, Texture &texture);
+    LightMaterial(const Shader &shader, const Color &color);
 
-    LightMaterial(Shader &shader, Texture &texture, const Color &color);
+    LightMaterial(const Shader &shader, const Texture &texture);
+
+    LightMaterial(const Shader &shader,const  Texture &texture, const Color &color);
 
     void bind(const Scene &scene) const override;
 

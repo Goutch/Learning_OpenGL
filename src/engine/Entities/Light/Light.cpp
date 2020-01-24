@@ -3,7 +3,6 @@
 //
 
 #include "Light.h"
-
 Light::Light(const Color&color, vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
     this->color=color;
 }

@@ -25,5 +25,6 @@ public:
     int getWidth();
     int getHeight();
     void subscribeSizeChange(WindowSizeListener& l);
+    void unsubscribeSizeChange(WindowSizeListener& l);
     static void windowSizeCallback(GLFWwindow* window, int width, int height);
 };

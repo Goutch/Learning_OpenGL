@@ -27,6 +27,7 @@ public:
     void rotate(float angle,vec3 axis);
 
     quat rotation() const;
+    vec3 eulerRotation() const;
 
     vec3 forward();
     vec3 right();

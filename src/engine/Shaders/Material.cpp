@@ -10,22 +10,22 @@ Material::Material() {
 
 }
 
-Material::Material(Shader &shader) {
+Material::Material(const Shader &shader) {
     this->shader(shader);
 }
 
-Material::Material(Shader &shader,const Color &color) {
+Material::Material(const Shader &shader,const Color &color) {
     this->shader(shader);
     this->color(color);
 
 }
 
-Material::Material(Shader &shader, Texture &texture) {
+Material::Material(const Shader &shader,const  Texture &texture) {
     this->shader(shader);
     this->texture(texture);
 }
 
-Material::Material(Shader &shader, Texture &texture,const Color &color) {
+Material::Material(const Shader &shader, const Texture &texture,const Color &color) {
     this->shader(shader);
     this->texture(texture);
     this->c = color;
@@ -49,7 +49,7 @@ void Material::unbind() const{
     if (has_texture)t->unbind();
 }
 
-Material& Material::texture(Texture &texture) {
+Material& Material::texture(const Texture &texture) {
     t = &texture;
     has_texture = (t != nullptr);
     return *this;
@@ -60,7 +60,7 @@ const Texture &Material::texture() const {
     return *t;
 }
 
-Material& Material::shader(Shader &shader) {
+Material& Material::shader(const Shader &shader) {
     s = &shader;
     this->getUniformsLocations();
     return *this;

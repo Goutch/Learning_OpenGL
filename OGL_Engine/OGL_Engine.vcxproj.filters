@@ -93,7 +93,7 @@
     <ClCompile Include="..\src\engine\Entities\Transform.cpp">
       <Filter>src\engine\Entities</Filter>
     </ClCompile>
-    <ClCompile Include="..\src\engine\Entities\Light\DirectionnalLight.cpp">
+    <ClCompile Include="..\src\engine\Entities\Light\DirectionalLight.cpp">
       <Filter>src\engine\Entities\Light</Filter>
     </ClCompile>
     <ClCompile Include="..\src\engine\Entities\Light\Light.cpp">
@@ -206,7 +206,7 @@
     <ClInclude Include="..\src\engine\Entities\Transform.h">
       <Filter>src\engine\Entities</Filter>
     </ClInclude>
-    <ClInclude Include="..\src\engine\Entities\Light\DirectionnalLight.h">
+    <ClInclude Include="..\src\engine\Entities\Light\DirectionalLight.h">
       <Filter>src\engine\Entities\Light</Filter>
     </ClInclude>
     <ClInclude Include="..\src\engine\Entities\Light\Light.h">

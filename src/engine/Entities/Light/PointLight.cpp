@@ -4,7 +4,7 @@
 
 #include "PointLight.h"
 
-PointLight::PointLight(const Color &color, float radius, vec3 position) : Light(position) {
+PointLight::PointLight(const Color &color, float radius, vec3 position) : Light(color,position) {
     this->radius = radius;
 }
 
@@ -12,8 +12,7 @@ PointLight::PointLight(float radius, vec3 position) : Light(position) {
     this->radius = radius;
 }
 
-PointLight::PointLight(const Color &color, vec3 position) : Light(position) {
-    this->color = color;
+PointLight::PointLight(const Color &color, vec3 position) : Light(color,position) {
 }
 
 PointLight::PointLight(vec3 position) : Light(position) {

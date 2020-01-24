@@ -10,7 +10,7 @@ Entity::Entity(vec3 position, vec3 rotation, vec3 scale) {
 }
 Entity::Entity() {}
 
-void Entity::render(Scene &scene) {
+void Entity::render(const Scene &scene) const{
 
 }
 void Entity::update(float delta,Scene &scene) {
