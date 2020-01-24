@@ -10,24 +10,33 @@
 void FullSceneTest::init(Window &window, Renderer &renderer) {
     Scene::init(window, renderer);
 
-
+    //create cube mesh
     Geometry::make_cube(cube);
 
+    //ground
+    addEntity(new MeshRenderer(cube, ground_material, vec3(0, 0, 0), vec3(0), vec3(100,1,100)));
+
+    //dragons
     dragon_material.shine(1);
     dragon_material.damp(6);
-
-    addEntity(new MeshRenderer(cube, ground_material, vec3(0), vec3(0), vec3(100,1,100)));
-    addEntity(new MeshRenderer(cube, cube_material, vec3(0, 1.5, 0), vec3(0), vec3(3)));
     addEntity(new MeshRenderer(cube, dragon_material, vec3(0, 0.5, 10), vec3(0), vec3(12, 1, 8)));
     addEntity(new MeshRenderer(dragon, dragon_material, vec3(0, .9, -10)));
     addEntity(new MeshRenderer(cube, dragon_material, vec3(0, 0.5, -10), vec3(0), vec3(12, 1, 8)));
     addEntity(new MeshRenderer(dragon, dragon_material, vec3(0, .9, 10)));
 
+    //controller
     addEntity(new FPSController(camera, vec3(0, 1, 2), vec3(0), vec3(1)));
-    addLight(new PointLight(Color(1, 0, 0), 20, vec3(0, 1, 0)));
-    sun = new DirectionalLight(Color(1,1,0.5),vec3(0, 2, 0), glm::radians(vec3(-45, 0, 0)));
+
+    //middle point light
+    addLight(new PointLight(Color(1, 0, 0), 10, vec3(0, 1, 0)));
+
+    //Directional sun light
+    MeshRenderer* sun_cube=new MeshRenderer(cube, cube_material, vec3(0, 0, 30), vec3(0), vec3(3));
+    sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, 0, 0)));
+    cube_material.color(Color(1,1,0));
+    addEntity(sun_cube);
     addLight(sun);
-    cube_material.texture(sun->shadowMap());
+    sun_cube->transform.parent=&sun->transform;
 }
 
 
@@ -38,5 +47,5 @@ void FullSceneTest::render() const {
 
 void FullSceneTest::update(float delta) {
     Scene::update(delta);
-    sun->transform.rotate(quat(vec3(delta*0.1,0,0)));
+    sun->transform.rotate(quat(vec3(delta*0.01,0,0)));
 }

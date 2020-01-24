@@ -44,7 +44,7 @@ vec3 calculateLight(vec3 lightDir,vec3 color)
 }
 void main(){
 
-    vec3 light=vec3(0,0,0);
+    vec3 light=ambient_light;
     //direcitonnal
     for (int i=0;i<directional_light_count;i++){
         vec3 normalizedLightDir=normalize(directional_light_direction);
@@ -73,6 +73,7 @@ void main(){
             light+=calculateLight(lightDir,point_light_colors[i])*intensity;
         }
     }
+
     if (has_texture==1)
     {
         //texture
