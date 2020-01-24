@@ -86,9 +86,9 @@ void Renderer::renderShadowMapToBuffer(FBO &buffer, const Scene &scene,const  gl
     scene.render();
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
+    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     shadowMapShader.bind();
     shadowMapShader.loadUniform(shadowMapShader_light_space_matrix_location,depth_mat);
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for (auto &vao_batch:material_batch) {
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;

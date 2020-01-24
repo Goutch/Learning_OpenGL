@@ -108,7 +108,7 @@ static void APIENTRY GLDebugMessageCallback(GLenum source, GLenum type, GLuint i
             break;
     }
     if (severity != GL_DEBUG_SEVERITY_NOTIFICATION)
-        Log::error("[OPENGL ERROR]:ID:" + std::to_string(id) +
+        Log::error("[OPENGL]:ID:" + std::to_string(id) +
         "\nTYPE: " + _type.c_str() +
         "\nSEVERITY: " +_severity.c_str() +
         "\nSOURCE: "+_source.c_str() +
