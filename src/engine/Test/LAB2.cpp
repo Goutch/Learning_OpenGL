@@ -13,13 +13,13 @@ void LAB2::init(Window &window, Renderer &renderer) {
     renderer.setRenderMode(window.getWidth(), window.getHeight(), Renderer::ORTHOGRAPHIC_PIXEL);
     Geometry::make_quad(quad);
     int width = 3;
-    int height = 2;
+    int height = 1;
     int size = 300;
     int gap = 25;
 
 
-    for (int col = 0; col <= width; ++col) {
-        for (int row = 0; row <= height; ++row) {
+    for (int col = 0; col < width; ++col) {
+        for (int row = 0; row < height; ++row) {
             float x = (float) (gap+(gap*col)+(size*col)+((float)size/2));
             float y =(float) (gap+(gap*row)+(size*row)+((float)size/2)) ;
             addEntity(new MeshRenderer(quad, materials[(col+row) % 3], vec3(x, y, -1), vec3(0), vec3(size)));
