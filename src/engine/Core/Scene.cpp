@@ -21,7 +21,7 @@ void Scene::update(float delta) {
     for(auto e:entities){
         e->update(delta,*this);
     }
-    for (int i = 0; i < directional_lights.size(); ++i) {
+    for (unsigned int i = 0; i < directional_lights.size(); ++i) {
         directional_lights[i]->calculateShadowMap(*this);
     }
 }
@@ -54,7 +54,7 @@ Renderer &Scene::getRenderer()const {
     return *renderer;
 }
 Scene::~Scene() {
-    for (int i = 0; i < entities.size(); ++i) {
+    for (unsigned int i = 0; i < entities.size(); ++i) {
         delete entities[i];
     }
     directional_lights.clear();

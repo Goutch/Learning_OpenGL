@@ -2,7 +2,7 @@
 
 #include <array>
 #include "VAO.h"
-class Color;
+struct Color;
 class Mesh : public VAO{
 
 public:

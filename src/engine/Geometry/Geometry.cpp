@@ -273,7 +273,7 @@ void Geometry::make_cube(VAO &vao) {
 
 void Geometry::make_sphere(VAO &vao, float radius,int xCount,int yCount) {
     //https://www.songho.ca/opengl/gl_sphere.html
-    const float PI = 3.14159265359;
+    const double PI = 3.14159265359;
     auto vertices = std::vector<float>();
     auto normals = std::vector<float>();
     auto indices = std::vector<unsigned int>();

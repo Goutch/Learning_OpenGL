@@ -18,7 +18,7 @@ protected:
     std::vector<Entity*> entities;
     std::vector<PointLight*> point_lights;
     std::vector<DirectionalLight*> directional_lights;
-    Color ambient_light=Color(0.1,0.1,0.1);
+    Color ambient_light=Color(0.1f,0.1f,0.1f);
 public:
     Transform camera;
     ~Scene();
