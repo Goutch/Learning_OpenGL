@@ -474,5 +474,5 @@ void Geometry::import(VAO &vao, std::string path) {
     catch (const std::exception &e) {
         Log::error("cant import model:" + path + "\n" + e.what());
     }
-    Log::message(path +" loaded in "+std::to_string(t.ms())+"s");
+    Log::message(path +" loaded in "+std::to_string(t.ms())+"s with "+std::to_string(vao.getVertexCount())+" vertices" );
 }

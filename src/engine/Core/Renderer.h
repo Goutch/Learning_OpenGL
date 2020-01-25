@@ -1,17 +1,9 @@
 #pragma once
 
-class MeshRenderer;
-class Window;
-class Transform;
+
 
 #include "glm/mat4x4.hpp"
 #include "Data/Texture.h"
-class Material;
-class VAO;
-class Scene;
-class Shader;
-
-
 #include "Geometry/VAO.h"
 #include "Events/WindowSizeListener.h"
 #include <unordered_map>
@@ -20,6 +12,15 @@ class Shader;
 #include "Shaders/Shader.h"
 #include "Data/FBO.h"
 #include "Data/RBO.h"
+
+class MeshRenderer;
+class Window;
+class Transform;
+class Material;
+class VAO;
+class Scene;
+class Shader;
+
 using namespace glm;
 class Renderer:WindowSizeListener
 {

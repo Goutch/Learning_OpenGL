@@ -3,15 +3,17 @@
 //
 
 #include "TimeUtils.h"
-
+//delete warning about using localtime_s instead of localtime
+#pragma warning(disable:4996)
 std::string TimeUtils::getTimeString() {
+    time_t rawtime;
+    struct tm * timeinfo;
     char buffer[80];
 
-    struct tm newtime;
-    time_t now = time(0);
-    localtime_s(&newtime, &now);
+    time (&rawtime);
+    timeinfo = localtime(&rawtime);
 
-    strftime(buffer, sizeof(buffer), "%d_%m_%Y %H_%M_%S", &newtime);
+    strftime(buffer,sizeof(buffer),"%d_%m_%Y %H_%M_%S",timeinfo);
     std::string str(buffer);
 
     return str;
