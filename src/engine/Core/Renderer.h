@@ -41,7 +41,7 @@ private:
     Shader screenShader=Shader("../src/engine/Shaders/shadersSources/ScreenVertex.glsl",
                                "../src/engine/Shaders/shadersSources/ScreenFragment.glsl");
     RenderMode currentRenderMode=PERSPECTIVE;
-    double aspect_ratio;
+
     float fov=90;
     mat4 projection_matrix;
     mutable std::unordered_map<const Material*,std::unordered_map<const VAO*,std::list<const Transform*>>> material_batch;
@@ -55,10 +55,11 @@ public:
 	virtual void render(const Scene& scene);
 	virtual void renderBufferInQuad(FBO& buffer);
     virtual void renderSceneToBuffer(FBO& buffer, const Scene& scene, const Transform& camera, const glm::mat4& projection);
-    virtual void renderShadowMapToBuffer(FBO& buffer, const Scene& scene,const glm::mat4& depth_mat);
+    virtual void renderSceneToBuffer(FBO& buffer, const Scene& scene, const Transform& camera);
+    virtual void renderDepthToBuffer(FBO& buffer, const Scene& scene, const glm::mat4& depth_mat);
 	void setRenderMode(int width, int height, RenderMode renderMode);
 	float getFOV() const;
-    double getAspectRatio()const;
+
     void onWindowSizeChange( int width, int height) override;
     const Texture& getFrameBufferTexture()const;
     void screenshot() const;

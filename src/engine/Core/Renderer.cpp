@@ -81,7 +81,7 @@ void Renderer::renderSceneToBuffer(FBO &buffer, const Scene &scene, const Transf
     buffer.unbind();
 }
 
-void Renderer::renderShadowMapToBuffer(FBO &buffer, const Scene &scene,const  glm::mat4& depth_mat) {
+void Renderer::renderDepthToBuffer(FBO &buffer, const Scene &scene, const  glm::mat4& depth_mat) {
     glEnable(GL_DEPTH_TEST);
     scene.render();
     buffer.bind();
@@ -106,7 +106,6 @@ void Renderer::renderShadowMapToBuffer(FBO &buffer, const Scene &scene,const  gl
 }
 
 void Renderer::addToRenderQueue(const Material &material, const VAO &vao, const Transform &transform) {
-
     if (material_batch.find(&material) == material_batch.end()) {
         material_batch.insert(
                 std::make_pair(&material, std::unordered_map<const VAO *, std::list<const Transform *>>()));
@@ -118,15 +117,12 @@ void Renderer::addToRenderQueue(const Material &material, const VAO &vao, const 
     std::list<const Transform *> &transform_batch = vao_batch.at(&vao);
     transform_batch.push_back(&transform);
 }
-
-
 void Renderer::setRenderMode(int width, int height, RenderMode renderMode) {
     currentRenderMode = renderMode;
     float w = (float) width;
     float h = (float) height;
-    aspect_ratio = w / h;
+    double aspect_ratio = w / h;
     if (renderMode == PERSPECTIVE) {
-
         fov = 90;
         projection_matrix = glm::perspective<float>(glm::radians(fov), aspect_ratio, 0.1f, 200.0f);
     } else if (renderMode == ORTHOGRAPHIC_PIXEL) {
@@ -136,16 +132,9 @@ void Renderer::setRenderMode(int width, int height, RenderMode renderMode) {
     }
     frame_buffer->setSize(width, height);
 }
-
-
 float Renderer::getFOV() const {
     return fov;
 }
-
-double Renderer::getAspectRatio() const {
-    return aspect_ratio;
-}
-
 void Renderer::onWindowSizeChange(int width, int height) {
     setRenderMode(width, height, currentRenderMode);
 }
@@ -156,6 +145,10 @@ const Texture &Renderer::getFrameBufferTexture() const {
 
 void Renderer::screenshot() const {
     frame_buffer->save("../screenshot/" + TimeUtils::getTimeString() + ".png");
+}
+
+void Renderer::renderSceneToBuffer(FBO &buffer, const Scene &scene, const Transform &camera) {
+    renderSceneToBuffer(buffer,scene,camera,projection_matrix);
 }
 
 

@@ -17,5 +17,4 @@ public:
     virtual void init(Scene& scene);
     virtual void render(const Scene& scene) const;
     virtual void update(float delta,Scene& scene);
-
 };

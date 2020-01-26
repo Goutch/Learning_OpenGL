@@ -6,6 +6,7 @@
 #include "Core/Renderer.h"
 #include "Core/Window.h"
 #include "Entities/Light/PointLight.h"
+#include "Data/FBO.h"
 #include "Entities/Light/DirectionnalLight.h"
 Scene::Scene() {
 
@@ -33,6 +34,7 @@ void Scene::render() const {
 }
 
 void Scene::init(Window &window, Renderer &renderer) {
+    frame_buffer=new FBO(window.getWidth(),window.getHeight(),FBO::COLOR);
     this->renderer=&renderer;
     this->window=&window;
 }
@@ -85,6 +87,10 @@ void Scene::addLight(DirectionalLight *light) {
 }
 const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
     return directional_lights;
+}
+
+FBO &Scene::getFBO() const {
+    return *frame_buffer;
 }
 
 

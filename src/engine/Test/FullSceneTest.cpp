@@ -16,11 +16,14 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
 
     //sphere
     addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
+
     //ground
     addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(100, 1, 100)));
+
     //bunnies
     addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(10,0,0)));
     addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(-10,0,0)));
+
     //dragons
     dragon_material.shine(1);
     dragon_material.damp(6);

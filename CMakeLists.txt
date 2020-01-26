@@ -110,6 +110,6 @@ add_executable(OGL_Engine
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
         Dependencies/STB_IMAGE/stb_image_write.h
-   )
+        src/engine/Editor/Editor.cpp src/engine/Editor/Editor.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

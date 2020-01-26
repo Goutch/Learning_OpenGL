@@ -46,12 +46,11 @@ void Engine::start(Scene &scene) {
         Log::status("Initializing scene..");
         scene.init(*window, renderer);
         Log::status("Initialized scene");
-
         double delta_time = 0;
         Timer t;
         window->getInputs();
         Log::status("Starting main loop..");
-        while (!window->shouldClose()) {
+        while (!window->shouldClose()){
             window->getInputs();
             t.reset();
             printFPS();

@@ -6,13 +6,15 @@ class Entity;
 class Transform;
 class MeshRenderer;
 class PointLight;
+class DirectionalLight;
+class FBO;
 #include "Entities/Transform.h"
 #include "Data/Color.h"
 #include "vector"
-class DirectionalLight;
 class Scene
 {
 protected:
+    FBO* frame_buffer;
     Window* window;
     Renderer* renderer;
     std::vector<Entity*> entities;
@@ -36,5 +38,5 @@ public:
     const Transform& getCamera() const;
 	Window& getWindow()const;
 	Renderer& getRenderer()const ;
-
+    FBO& getFBO() const;
 };
