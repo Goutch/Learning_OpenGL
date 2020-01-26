@@ -53,7 +53,7 @@ public:
     ~Renderer();
 	virtual void addToRenderQueue(const Material& material,const VAO& vao, const Transform& transform);
 	virtual void render(const Scene& scene);
-	virtual void renderBufferInQuad(FBO& buffer);
+	virtual void renderBufferInQuad(FBO& buffer, const VAO& quad);
     virtual void renderSceneToBuffer(FBO& buffer, const Scene& scene, const Transform& camera, const glm::mat4& projection);
     virtual void renderShadowMapToBuffer(FBO& buffer, const Scene& scene,const glm::mat4& depth_mat);
 	void setRenderMode(int width, int height, RenderMode renderMode);

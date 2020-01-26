@@ -33,6 +33,8 @@ void Scene::render() const {
 }
 
 void Scene::init(Window &window, Renderer &renderer) {
+    Geometry::make_quad(quad);
+
     this->renderer=&renderer;
     this->window=&window;
 }
@@ -85,6 +87,10 @@ void Scene::addLight(DirectionalLight *light) {
 }
 const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
     return directional_lights;
+}
+
+const VAO &Scene::getQuad() const {
+    return quad;
 }
 
 

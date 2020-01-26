@@ -50,7 +50,7 @@ void LightMaterial::bind(const Scene &scene) const {
 
 void LightMaterial::unbind() const {
     Material::unbind();
-    boundShadowMaps[0]->unbind(1);
+    //boundShadowMaps[0]->unbind(1);
     boundShadowMaps.clear();
 }
 

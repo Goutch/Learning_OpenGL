@@ -6,6 +6,8 @@ class Entity;
 class Transform;
 class MeshRenderer;
 class PointLight;
+
+#include <Geometry/VAO.h>
 #include "Entities/Transform.h"
 #include "Data/Color.h"
 #include "vector"
@@ -19,6 +21,10 @@ protected:
     std::vector<PointLight*> point_lights;
     std::vector<DirectionalLight*> directional_lights;
     Color ambient_light=Color(0.1f,0.1f,0.1f);
+    VAO quad;
+public:
+    const VAO &getQuad() const;
+
 public:
     Transform camera;
     ~Scene();

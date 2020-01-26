@@ -38,10 +38,10 @@ Renderer::~Renderer() {
 
 void Renderer::render(const Scene &scene) {
     renderSceneToBuffer(*frame_buffer, scene, scene.getCamera(), projection_matrix);
-    renderBufferInQuad(*frame_buffer);
+    renderBufferInQuad(*frame_buffer, scene.getQuad());
 }
 
-void Renderer::renderBufferInQuad(FBO &buffer) {
+void Renderer::renderBufferInQuad(FBO &buffer, const VAO& quad) {
     glClear(GL_COLOR_BUFFER_BIT);
     glDisable(GL_DEPTH_TEST);
     screenShader.bind();
