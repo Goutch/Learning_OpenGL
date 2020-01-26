@@ -4,7 +4,7 @@ class Window;
 class Renderer;
 class Entity;
 class Transform;
-class MeshRenderer;
+
 class PointLight;
 
 #include <Geometry/VAO.h>
