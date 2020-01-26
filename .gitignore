@@ -5,3 +5,4 @@ cmake-build-release
 Debug/
 .user
 /OGL_Engine/*.user
+out/
