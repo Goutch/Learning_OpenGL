@@ -8,7 +8,7 @@
 #include "Entities/Light/DirectionnalLight.h"
 #include "Core/Scene.h"
 #include "Data/Texture.h"
-
+#include "Entities/Camera.h"
 void LightMaterial::bind(const Scene &scene) const {
     Material::bind(scene);
     s->loadUniform(ambient_light_location, (vec3) scene.getAmbientLight().data);
@@ -17,7 +17,7 @@ void LightMaterial::bind(const Scene &scene) const {
 
     std::vector<PointLight *> pointLights = scene.getPointLights();
     s->loadUniform(point_light_count_location, (int) pointLights.size());
-    s->loadUniform(view_pos_location, scene.getCamera().position());
+    s->loadUniform(view_pos_location, scene.getCamera().transform.position());
     if (pointLights.size() > 0) {
         std::vector<float> radius;
         std::vector<vec3> positions;

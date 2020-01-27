@@ -9,23 +9,26 @@
 #include "Core/Log.h"
 #include "math.h"
 #include "Utils/Timer.h"
-void Geometry::make_quad(VAO &vao) {
+void Geometry::make_quad(VAO &vao,float width,float height) {
     //1-------2
     //|       |
     //|       |
     //0-------3
+
+    width/=2;
+    height/=2;
     auto vert = std::vector<float>();
-    vert.push_back(-.5);
-    vert.push_back(-.5);
+    vert.push_back(-width);
+    vert.push_back(-height);
     vert.push_back(0);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
+    vert.push_back(-width);
+    vert.push_back(height);
     vert.push_back(0);
-    vert.push_back(.5f);
-    vert.push_back(.5f);
+    vert.push_back(width);
+    vert.push_back(height);
     vert.push_back(0);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
+    vert.push_back(width);
+    vert.push_back(-height);
     vert.push_back(0);
 
     auto indices = std::vector<unsigned int>();

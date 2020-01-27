@@ -34,7 +34,7 @@ public:
     void update(float delta) override;
 
 public:
-    void init(Window &window, Renderer &renderer) override;
+    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
 };
 

@@ -24,6 +24,7 @@ private:
 public:
     void setSize(int width,int height);
     FBO(int width,int height,Type type);
+    FBO(Type type);
     ~FBO();
     void bind() const ;
     void unbind() const;

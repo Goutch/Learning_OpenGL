@@ -8,8 +8,8 @@
 #include <Entities/MeshRenderer.h>
 #include <Core/Window.h>
 
-void LAB2::init(Window &window, Renderer &renderer) {
-    Scene::init(window, renderer);
+void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window){
+    Scene::init(viewport,renderer,window);
     renderer.setRenderMode(window.getWidth(), window.getHeight(), Renderer::ORTHOGRAPHIC_PIXEL);
     Geometry::make_quad(quad);
     int width = 3;

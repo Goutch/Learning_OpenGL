@@ -11,7 +11,7 @@
 #include "Engine.h"
 #include "Renderer.h"
 #include "Debug.h"
-
+#include "Core/Viewport.h"
 
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
@@ -41,10 +41,12 @@ Engine::Engine() {
 }
 
 void Engine::start(Scene &scene) {
+
     if (glewInit() == GLEW_OK) {
         Renderer renderer = Renderer(*window);
         Log::status("Initializing scene..");
-        scene.init(*window, renderer);
+        Viewport viewport=Viewport(window->getWidth(),window->getHeight());
+        scene.init(viewport,renderer,*window);
         Log::status("Initialized scene");
         double delta_time = 0;
         Timer t;
@@ -56,6 +58,7 @@ void Engine::start(Scene &scene) {
             printFPS();
             scene.update((float)delta_time);
             renderer.render(scene);
+            renderer.draw(scene.getFBO());
             window->swapBuffer();
             window->getInputs();
             delta_time = t.ms();

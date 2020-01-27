@@ -8,6 +8,9 @@
 #include "Entities/Light/PointLight.h"
 #include "Data/FBO.h"
 #include "Entities/Light/DirectionnalLight.h"
+#include "Utils/TimeUtils.h"
+#include "Entities/Camera.h"
+#include "Core/Viewport.h"
 Scene::Scene() {
 
 }
@@ -17,7 +20,7 @@ void Scene::update(float delta) {
         window->close();
     }
     if (window->isKeyDown(GLFW_KEY_F11)) {
-        renderer->screenshot();
+        frame_buffer.save("../screenshot/" + TimeUtils::getTimeString() + ".png");
     }
     for(auto e:entities){
         e->update(delta,*this);
@@ -33,10 +36,15 @@ void Scene::render() const {
     }
 }
 
-void Scene::init(Window &window, Renderer &renderer) {
-    frame_buffer=new FBO(window.getWidth(),window.getHeight(),FBO::COLOR);
+
+void Scene::init(Viewport &viewport, Renderer &renderer, Window &window) {
+    frame_buffer.setSize(viewport.getWidth(),viewport.getHeight());
+
     this->renderer=&renderer;
+    this->viewport=&viewport;
     this->window=&window;
+    this->camera=new Camera(Camera::PERSPECTIVE);
+    addEntity(this->camera);
 }
 
 void Scene::addEntity(Entity& entity)
@@ -49,8 +57,8 @@ void Scene::addEntity(Entity *entity) {
     entities.push_back(entity);
     entity->init(*this);
 }
-Window &Scene::getWindow() const{
-    return *window;
+const Viewport &Scene::getViewport() const{
+    return *viewport;
 }
 Renderer &Scene::getRenderer()const {
     return *renderer;
@@ -77,8 +85,8 @@ const Color &Scene::getAmbientLight() const {
     return ambient_light;
 }
 
-const Transform &Scene::getCamera() const{
-    return camera;
+const Camera &Scene::getCamera() const{
+    return *camera;
 }
 
 void Scene::addLight(DirectionalLight *light) {
@@ -89,9 +97,16 @@ const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
     return directional_lights;
 }
 
-FBO &Scene::getFBO() const {
-    return *frame_buffer;
+const FBO &Scene::getFBO() const {
+    return frame_buffer;
 }
+
+Window& Scene::getWindow() const {
+    return *window;
+}
+
+
+
 
 
 

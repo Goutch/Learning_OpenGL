@@ -12,6 +12,6 @@ class LAB2 : public Scene{
     Material materials[3]={Material(shader,textures[0]),Material(shader,textures[1]),Material(shader,textures[2])};
     Mesh quad;
 public:
-    void init(Window &window, Renderer &renderer) override;
+    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
 };

@@ -72,8 +72,8 @@ const Shader &Material::shader() const {
 
 void Material::getUniformsLocations() {
     transform_location = s->uniformLocation("transform");
-    view_location = s->uniformLocation("view");
-    projection_location = s->uniformLocation("projection");
+    space_mat_location = s->uniformLocation("space");
+
     has_texture_location = s->uniformLocation("has_texture");
     texture_0_location = s->uniformLocation("texture_0");
     material_color_location=s->uniformLocation("material_color");
@@ -83,13 +83,11 @@ void Material::transform(const mat4 &transform) const {
     s->loadUniform(transform_location, transform);
 }
 
-void Material::view(const mat4 &view) const{
-    s->loadUniform(view_location, view);
+void Material::space(const mat4 &space_mat) const{
+    s->loadUniform(space_mat_location, space_mat);
 }
 
-void Material::projection(const mat4 &projection) const{
-    s->loadUniform(projection_location, projection);
-}
+
 
 Material& Material::color(const Color &color) {
     c = color;

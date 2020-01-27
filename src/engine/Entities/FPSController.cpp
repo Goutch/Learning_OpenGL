@@ -23,7 +23,7 @@ void FPSController::init(Scene &scene) {
 }
 
 void FPSController::update(float delta, Scene& scene) {
-    Window& window=scene.getWindow();
+   Window& window= scene.getWindow();
     vec3 forward= vec3(0,0,-1) * 0.1f;
     vec3 right=vec3(1,0,0)*0.1f;
     vec3 up=vec3(0,1,0)*0.1f;

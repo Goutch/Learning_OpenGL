@@ -18,7 +18,8 @@ private:
     Texture stone=Texture("../res/stone.jpg");
 
 public:
-    void init(Window &window,Renderer &renderer) override;
+    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+
 };
 
 

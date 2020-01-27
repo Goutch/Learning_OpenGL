@@ -11,10 +11,11 @@
 #include "Core/Renderer.h"
 #include "Entities/FPSController.h"
 #include "Geometry/Geometry.h"
-
+#include "Entities/Camera.h"
 const float PI=3.1416;
-void PerformanceTest::init(Window &window, Renderer &renderer) {
-    Scene::init(window,renderer);
+
+void PerformanceTest::init(Viewport &viewport, Renderer &renderer, Window &window) {
+    Scene::init(viewport,renderer,window);
     renderer.setRenderMode(window.getWidth(),window.getHeight(),Renderer::PERSPECTIVE);
     Geometry::make_cube(mesh);
 
@@ -29,7 +30,7 @@ void PerformanceTest::init(Window &window, Renderer &renderer) {
                                         float(rand()) / float((RAND_MAX)) * PI),
                                    vec3(1, 1, 1)));
     }
-    addEntity(new FPSController(camera));
+    addEntity(new FPSController(camera->transform));
 }
 
 

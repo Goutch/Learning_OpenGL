@@ -38,6 +38,8 @@ add_executable(OGL_Engine
         src/engine/Core/Scene.cpp
         src/engine/Core/Log.cpp
         src/engine/Core/Log.h
+        src/engine/Core/ViewPort.cpp
+        src/engine/Core/ViewPort.h
 
         src/engine/Entities/MeshRenderer.cpp
         src/engine/Entities/MeshRenderer.h
@@ -52,6 +54,8 @@ add_executable(OGL_Engine
         src/engine/Entities/Light/DirectionnalLight.h
         src/engine/Entities/Light/PointLight.cpp
         src/engine/Entities/Light/PointLight.h
+        src/engine/Entities/Camera.cpp
+        src/engine/Entities/Camera.h
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Shader.h
@@ -105,11 +109,16 @@ add_executable(OGL_Engine
         src/engine/Test/LAB2.cpp
         src/engine/Test/LAB2.h
 
-        src/engine/Events/WindowSizeListener.h
+        src/engine/Editor/Editor.cpp
+        src/engine/Editor/Editor.h
+
+        src/engine/Events/ViewportResizeListener.h
 
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
         Dependencies/STB_IMAGE/stb_image_write.h
-        src/engine/Editor/Editor.cpp src/engine/Editor/Editor.h)
+
+
+        )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

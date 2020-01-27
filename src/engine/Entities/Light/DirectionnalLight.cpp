@@ -6,7 +6,7 @@
 #include "Data/FBO.h"
 #include "Core/Renderer.h"
 #include "Core/Scene.h"
-
+#include "Entities/Camera.h"
 DirectionalLight::DirectionalLight(const Color &color,vec3 position, vec3 rotation) : Light(color, position, rotation) {
     fbo = new FBO(2048, 2048, FBO::DEPTH);
 }
@@ -25,9 +25,9 @@ const Texture &DirectionalLight::shadowMap() {
 
 
 void DirectionalLight::calculateShadowMap(Scene &scene) {
-    this->transform.position(scene.camera.position());
+    this->transform.position(scene.getCamera().transform.position());
     light_space_mat = depth_projection * glm::inverse(this->transform.getMatrix());
-    scene.getRenderer().renderDepthToBuffer(*fbo, scene, light_space_mat);
+    scene.getRenderer().renderDepth(*fbo, scene, light_space_mat);
 }
 
 const mat4 &DirectionalLight::getLightSpaceMat() {

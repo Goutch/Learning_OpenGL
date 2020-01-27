@@ -14,6 +14,10 @@ FBO::FBO(int width,int height,FBO::Type type) {
     setSize(width,height);
 
 }
+FBO::FBO(FBO::Type type) {
+    glGenFramebuffers(1, &fbo_id);
+    this->type=type;
+}
 
 FBO::~FBO() {
     glDeleteFramebuffers(1, &fbo_id);
@@ -77,6 +81,7 @@ void FBO::save(std::string path) const {
     Log::message("ScreenShot:" + path);
 
 }
+
 
 
 

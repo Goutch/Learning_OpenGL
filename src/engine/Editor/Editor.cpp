@@ -4,8 +4,8 @@
 
 #include "Editor.h"
 
-void Editor::init(Window &window, Renderer &renderer) {
-    Scene::init(window, renderer);
+void Editor::init(Viewport &viewport, Renderer &renderer, Window &window) {
+    Scene::init(viewport, renderer, window);
 }
 
 void Editor::update(float delta) {
@@ -15,4 +15,5 @@ void Editor::update(float delta) {
 void Editor::render() const {
     Scene::render();
 }
+
 

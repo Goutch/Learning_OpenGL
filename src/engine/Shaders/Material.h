@@ -17,7 +17,7 @@ class Material {
 protected:
     bool has_transparency;
     bool has_texture;
-    int transform_location, view_location, projection_location, has_texture_location, texture_0_location, material_color_location;
+    int transform_location, space_mat_location, has_texture_location, texture_0_location, material_color_location;
     Color c = Color::WHITE;
     const Texture *t;
     const Shader *s;
@@ -52,9 +52,8 @@ public:
 
     void transform(const mat4 &transform) const;
 
-    void view(const mat4 &view) const;
+    void space(const mat4 &space_mat) const;
 
-    void projection(const mat4 &projection) const;
 
 private:
     void getUniformsLocations();

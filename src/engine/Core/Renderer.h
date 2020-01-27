@@ -5,7 +5,7 @@
 #include "glm/mat4x4.hpp"
 #include "Data/Texture.h"
 #include "Geometry/VAO.h"
-#include "Events/WindowSizeListener.h"
+#include "Events/ViewportResizeListener.h"
 #include <unordered_map>
 #include "list"
 #include "Geometry/Geometry.h"
@@ -20,9 +20,9 @@ class Material;
 class VAO;
 class Scene;
 class Shader;
-
+class Camera;
 using namespace glm;
-class Renderer:WindowSizeListener
+class Renderer: ViewportResizeListener
 {
 public:
     enum RenderMode{
@@ -31,13 +31,12 @@ public:
         PERSPECTIVE=2
     };
 private:
-    FBO* frame_buffer;
     Window* window;
     VAO quad;
-    Shader shadowMapShader=Shader("../src/engine/Shaders/shadersSources/ShadowMapVertex.glsl",
-                               "../src/engine/Shaders/shadersSources/ShadowMapFragment.glsl");
-    int shadowMapShader_light_space_matrix_location;
-    int shadowMapShader_transform_mat_location;
+    Shader depthShader=Shader("../src/engine/Shaders/shadersSources/DepthVertex.glsl",
+                              "../src/engine/Shaders/shadersSources/DepthFragment.glsl");
+    int depthShader_light_space_matrix_location;
+    int depthShader_transform_mat_location;
     Shader screenShader=Shader("../src/engine/Shaders/shadersSources/ScreenVertex.glsl",
                                "../src/engine/Shaders/shadersSources/ScreenFragment.glsl");
     RenderMode currentRenderMode=PERSPECTIVE;
@@ -53,14 +52,13 @@ public:
     ~Renderer();
 	virtual void addToRenderQueue(const Material& material,const VAO& vao, const Transform& transform);
 	virtual void render(const Scene& scene);
-	virtual void renderBufferInQuad(FBO& buffer);
-    virtual void renderSceneToBuffer(FBO& buffer, const Scene& scene, const Transform& camera, const glm::mat4& projection);
-    virtual void renderSceneToBuffer(FBO& buffer, const Scene& scene, const Transform& camera);
-    virtual void renderDepthToBuffer(FBO& buffer, const Scene& scene, const glm::mat4& depth_mat);
+	virtual void draw(const FBO& buffer);
+    virtual void render(const FBO& buffer, const Scene& scene,const glm::mat4& space_mat);
+    virtual void renderDepth(const FBO& buffer, const Scene& scene, const glm::mat4& depth_space_mat);
+
 	void setRenderMode(int width, int height, RenderMode renderMode);
 	float getFOV() const;
 
-    void onWindowSizeChange( int width, int height) override;
-    const Texture& getFrameBufferTexture()const;
-    void screenshot() const;
+    void onViewportSizeChange(int width, int height) override;
+
 };

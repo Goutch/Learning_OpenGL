@@ -2,46 +2,37 @@
 
 #include <GL/glew.h>
 #include "Renderer.h"
-#include "Entities/MeshRenderer.h"
 #include "Geometry/VAO.h"
 #include "Shaders/Material.h"
 #include "Window.h"
 #include "Entities/Transform.h"
 #include "Log.h"
 #include "Core/Scene.h"
-#include "Utils/TimeUtils.h"
-
+#include "Entities/Camera.h"
 Renderer::Renderer(Window &window, Renderer::RenderMode mode) {
     this->window = &window;
-    frame_buffer = new FBO(window.getWidth(), window.getHeight(), FBO::COLOR);
     Geometry::make_quad(quad);
     setRenderMode(window.getWidth(), window.getHeight(), mode);
     window.subscribeSizeChange(*this);
-    shadowMapShader_light_space_matrix_location=shadowMapShader.uniformLocation("light_space_matrix");
-    shadowMapShader_transform_mat_location=shadowMapShader.uniformLocation("transform");
+    depthShader_light_space_matrix_location=depthShader.uniformLocation("space_matrix");
+    depthShader_transform_mat_location=depthShader.uniformLocation("transform");
 }
 
 Renderer::Renderer(Window &window) {
     this->window = &window;
-    frame_buffer = new FBO(window.getWidth(), window.getHeight(), FBO::COLOR);
     Geometry::make_quad(quad);
     setRenderMode(window.getWidth(), window.getHeight(), currentRenderMode);
     window.subscribeSizeChange(*this);
-    shadowMapShader_light_space_matrix_location=shadowMapShader.uniformLocation("light_space_matrix");
-    shadowMapShader_transform_mat_location=shadowMapShader.uniformLocation("transform");
+    depthShader_light_space_matrix_location=depthShader.uniformLocation("space_matrix");
+    depthShader_transform_mat_location=depthShader.uniformLocation("transform");
 }
 
 Renderer::~Renderer() {
-    delete frame_buffer;
     window->unsubscribeSizeChange(*this);
 }
 
-void Renderer::render(const Scene &scene) {
-    renderSceneToBuffer(*frame_buffer, scene, scene.getCamera(), projection_matrix);
-    renderBufferInQuad(*frame_buffer);
-}
 
-void Renderer::renderBufferInQuad(FBO &buffer) {
+void Renderer::draw(const FBO &buffer) {
     glClear(GL_COLOR_BUFFER_BIT);
     glDisable(GL_DEPTH_TEST);
     screenShader.bind();
@@ -52,19 +43,21 @@ void Renderer::renderBufferInQuad(FBO &buffer) {
     quad.unbind();
     screenShader.unbind();
 }
+void Renderer::render(const Scene &scene) {
+    render(scene.getFBO(),scene,scene.getCamera().getCameraSpaceMatrix());
+}
 
-void Renderer::renderSceneToBuffer(FBO &buffer, const Scene &scene, const Transform &camera, const glm::mat4 &projection) {
+void Renderer::render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat) {
     glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     scene.render();
     buffer.bind();
-    mat4 viewMat = glm::inverse(camera.getMatrix());
+
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for (auto &vao_batch:material_batch) {
         const Material &material = *vao_batch.first;
         material.bind(scene);
-        material.projection(projection);
-        material.view(viewMat);
+        material.space(space_mat);
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
@@ -81,27 +74,28 @@ void Renderer::renderSceneToBuffer(FBO &buffer, const Scene &scene, const Transf
     buffer.unbind();
 }
 
-void Renderer::renderDepthToBuffer(FBO &buffer, const Scene &scene, const  glm::mat4& depth_mat) {
+
+void Renderer::renderDepth(const FBO &buffer, const Scene &scene, const  glm::mat4& depth_space_mat) {
     glEnable(GL_DEPTH_TEST);
     scene.render();
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    shadowMapShader.bind();
-    shadowMapShader.loadUniform(shadowMapShader_light_space_matrix_location,depth_mat);
+    depthShader.bind();
+    depthShader.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     for (auto &vao_batch:material_batch) {
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
             for (auto &transform:transform_batch.second) {
-                shadowMapShader.loadUniform(shadowMapShader_transform_mat_location,transform->getMatrix());
+                depthShader.loadUniform(depthShader_transform_mat_location, transform->getMatrix());
                 glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
             }
             vao.unbind();
         }
     }
     material_batch.clear();
-    shadowMapShader.unbind();
+    depthShader.unbind();
     buffer.unbind();
 }
 
@@ -130,26 +124,16 @@ void Renderer::setRenderMode(int width, int height, RenderMode renderMode) {
     } else {
         projection_matrix = glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100);
     }
-    frame_buffer->setSize(width, height);
 }
 float Renderer::getFOV() const {
     return fov;
 }
-void Renderer::onWindowSizeChange(int width, int height) {
+void Renderer::onViewportSizeChange(int width, int height) {
     setRenderMode(width, height, currentRenderMode);
 }
 
-const Texture &Renderer::getFrameBufferTexture() const {
-    return frame_buffer->getTexture();
-}
 
-void Renderer::screenshot() const {
-    frame_buffer->save("../screenshot/" + TimeUtils::getTimeString() + ".png");
-}
 
-void Renderer::renderSceneToBuffer(FBO &buffer, const Scene &scene, const Transform &camera) {
-    renderSceneToBuffer(buffer,scene,camera,projection_matrix);
-}
 
 
 

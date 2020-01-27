@@ -1,8 +1,8 @@
 #include "Window.h"
 #include "Log.h"
-#include "Events/WindowSizeListener.h"
+#include "Events/ViewportResizeListener.h"
 
-std::list<WindowSizeListener*> Window::sizeListeners=std::list<WindowSizeListener*>();
+std::list<ViewportResizeListener*> Window::sizeListeners=std::list<ViewportResizeListener*>();
 Window::Window() {
 
 }
@@ -41,25 +41,25 @@ bool Window::open(std::string title, int width, int height)
 void Window::setMousePosition(double x, double y) {
     glfwSetCursorPos(window,x,y);
 }
-bool Window::shouldClose()
+bool Window::shouldClose()const
 {
     return glfwWindowShouldClose(window);
 }
-void Window::swapBuffer()
+void Window::swapBuffer()const
 {
     glfwSwapBuffers(window);
 }
-void Window::getInputs()
+void Window::getInputs()const
 {
     glfwPollEvents();
 }
 
-bool Window::isKeyDown(unsigned int keycode) {
+bool Window::isKeyDown(unsigned int keycode) const{
     int state=glfwGetKey(window,keycode);
     return state == GLFW_PRESS;
 }
 
-void Window::getMousePosition(double& x,double& y)
+void Window::getMousePosition(double& x,double& y)const
 {
     glfwGetCursorPos(window, &x, &y);
 }
@@ -80,7 +80,7 @@ int Window::getWidth() {
     glfwGetFramebufferSize(window,&width,&height);
     return width;
 }
-int Window::getHeight()  {
+int Window::getHeight() {
     glfwGetFramebufferSize(window,&width,&height);
     return height;
 }
@@ -93,15 +93,15 @@ void Window::close() {
 void Window::windowSizeCallback(GLFWwindow* window, int width, int height) {
     glViewport(0,0,width,height);
     for (auto l:sizeListeners) {
-        l->onWindowSizeChange(width,height);
+        l->onViewportSizeChange(width, height);
     }
 }
 
-void Window::subscribeSizeChange(WindowSizeListener &l) {
+void Window::subscribeSizeChange(ViewportResizeListener &l) {
     sizeListeners.push_back(&l);
 }
 
-void Window::unsubscribeSizeChange(WindowSizeListener &l) {
+void Window::unsubscribeSizeChange(ViewportResizeListener &l) {
     sizeListeners.remove(&l);
 }
 

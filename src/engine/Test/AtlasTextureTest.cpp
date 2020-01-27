@@ -6,8 +6,8 @@
 #include "Entities/MeshRenderer.h"
 #include "Geometry/Geometry.h"
 
-void AtlasTextureTest::init(Window &window, Renderer &renderer) {
-    Scene::init(window, renderer);
+void AtlasTextureTest::init(Viewport &viewport, Renderer &renderer, Window &window){
+    Scene::init(viewport,renderer,window);
 
     unsigned char *textureColor = new unsigned char[4 * 4];
     spriteSheet.setCellSize(1, 1);

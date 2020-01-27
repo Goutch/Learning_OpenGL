@@ -4,7 +4,8 @@
 
 class Editor: public Scene{
 public:
-    void init(Window &window, Renderer &renderer) override;
+    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+
 
     void update(float delta) override;
 
