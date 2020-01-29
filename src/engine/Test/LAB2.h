@@ -13,5 +13,4 @@ class LAB2 : public Scene{
     Mesh quad;
 public:
     void init(Window &window, Renderer &renderer) override;
-
 };

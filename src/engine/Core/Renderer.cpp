@@ -77,7 +77,6 @@ void Renderer::renderSceneToBuffer(FBO &buffer, const Scene &scene, const Transf
         material.unbind();
     }
     material_batch.clear();
-
     buffer.unbind();
 }
 

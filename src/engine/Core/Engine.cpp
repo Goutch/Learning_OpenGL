@@ -17,7 +17,6 @@ Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     window = new Window();
     if (window->open("WINDOW", 1000, 700)) {
-
         glewInit() == GLEW_OK ?
         Log::status("Initialized GLEW") :
         Log::error("failed to initialize GLEW");
