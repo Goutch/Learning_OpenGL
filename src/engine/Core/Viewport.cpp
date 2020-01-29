@@ -30,11 +30,13 @@ Viewport::Viewport(const Viewport &parent_viewport, float width, float height, f
     this->window = parent_viewport.window;
     this->width = width;
     this->height = height;
+    this->offsetX=offsetX;
+    this->offsetY=offsetY;
     pixel_width = static_cast<unsigned int>(window->getWidth() * width);
     pixel_height = static_cast<unsigned int>( window->getHeight() * height);
     window->subscribeSizeChange(*this);
     frame_buffer.setSize(pixel_width, pixel_height);
-    Geometry::make_quad(render_space,2*width,2*height);
+    Geometry::make_quad(render_space,2*width,2*height,offsetX,offsetY);
 }
 
 void Viewport::onWindowSizeChange(unsigned int width, unsigned int height) {

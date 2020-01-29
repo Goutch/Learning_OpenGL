@@ -18,7 +18,7 @@ Editor::~Editor() {
 void Editor::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
 
-    current_scene_viewport = new Viewport(viewport, 0.5, 0.5, 0, 0);
+    current_scene_viewport = new Viewport(viewport, 0.5, 0.5, 0, 0.5);
     current_scene->init(*current_scene_viewport, renderer, window);
 
     screen_mat.shader(current_scene_viewport->getShader());
