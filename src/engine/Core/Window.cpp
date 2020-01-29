@@ -86,7 +86,7 @@ int Window::getHeight() const{
 }
 
 void Window::close() {
-    Log::status("Closing window..." );
+
     glfwSetWindowShouldClose(window, true);
 }
 

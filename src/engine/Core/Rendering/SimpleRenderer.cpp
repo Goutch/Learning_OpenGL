@@ -15,7 +15,6 @@ void SimpleRenderer::addToRenderQueue(const VAO &vao, const Material &material,c
     render_queue.emplace(&material,&vao,&transform);
 }
 
-
 void SimpleRenderer::render(const FBO &buffer, const Scene &scene, const mat4 &space_mat) {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
@@ -52,11 +51,11 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
         const Material& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
+
         depthShader.loadUniform(depthShader_transform_mat_location, transform.getMatrix());
         vao.bind();
         glDrawElements(GL_TRIANGLES,vao.getVertexCount(),GL_UNSIGNED_INT,nullptr);
         vao.unbind();
-
         render_queue.pop();
     }
     depthShader.unbind();

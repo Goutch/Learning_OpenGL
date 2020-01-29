@@ -20,7 +20,7 @@ void Renderer::clearColor() {
 
 void Renderer::draw(const VAO &vao, const Shader &shader, const Texture &texture) {
     glDisable(GL_DEPTH_TEST);
-    glClear(GL_COLOR_BUFFER_BIT);
+    clearColor();
     shader.bind();
     vao.bind();
     texture.bind();
@@ -28,12 +28,11 @@ void Renderer::draw(const VAO &vao, const Shader &shader, const Texture &texture
     texture.unbind();
     vao.unbind();
     shader.unbind();
-
 }
 
 void Renderer::draw(const VAO &vao, const Shader &shader) {
     glDisable(GL_DEPTH_TEST);
-    glClear(GL_COLOR_BUFFER_BIT);
+    clearColor();
     shader.bind();
     vao.bind();
     glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);

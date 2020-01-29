@@ -53,7 +53,6 @@ void Engine::start(Scene &scene) {
         double delta_time = 0;
         Timer t;
         window->pollEvents();
-
         Log::status("Starting main loop..");
         while (!window->shouldClose()){
             window->pollEvents();
@@ -66,10 +65,10 @@ void Engine::start(Scene &scene) {
             window->swapBuffer();
             delta_time = t.ms();
         }
+        Log::status("Cleaning up..");
         scene.destroy();
         delete renderer;
     }
-
     printGLErrors();
 }
 
