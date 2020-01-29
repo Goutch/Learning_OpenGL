@@ -55,7 +55,7 @@ public:
 
     virtual void draw(const Texture& texture,const VAO& quad,const Shader& shader);
 
-    virtual void render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat);
+    virtual void render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat=mat4(1.0f));
 
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat);
 

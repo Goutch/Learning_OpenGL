@@ -45,5 +45,4 @@ public:
 	const Viewport& getViewport()const;
     Window& getWindow() const;
 	Renderer& getRenderer()const ;
-    const FBO& getFBO() const;
 };
