@@ -2,6 +2,7 @@
 // Created by User on 2020-01-26.
 //
 
+#include <Geometry/Geometry.h>
 #include "Viewport.h"
 #include "Core/Window.h"
 #include "Events/ViewportResizeListener.h"
@@ -21,7 +22,7 @@ Viewport::Viewport(const Window &window) {
     this->pixel_width = window.getWidth();
     this->pixel_height = window.getHeight();
     this->window->subscribeSizeChange(*this);
-
+    Geometry::make_quad(render_space,2,2);
     frame_buffer.setSize(pixel_width, pixel_height);
 }
 
@@ -33,6 +34,7 @@ Viewport::Viewport(const Viewport &parent_viewport, float width, float height, f
     pixel_height = static_cast<unsigned int>( window->getHeight() * height);
     window->subscribeSizeChange(*this);
     frame_buffer.setSize(pixel_width, pixel_height);
+    Geometry::make_quad(render_space,2*width,2*height);
 }
 
 void Viewport::onWindowSizeChange(unsigned int width, unsigned int height) {
@@ -66,6 +68,14 @@ void Viewport::unsubscribeSizeChange(ViewportResizeListener &l) const {
 
 const FBO &Viewport::getFrameBuffer() const {
     return frame_buffer;
+}
+
+const VAO &Viewport::getRenderSpace() const {
+    return render_space;
+}
+
+const Shader &Viewport::getShader() const{
+    return shader;
 }
 
 

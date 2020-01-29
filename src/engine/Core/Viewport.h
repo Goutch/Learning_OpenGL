@@ -6,10 +6,15 @@
 #include <list>
 #include <Events/ViewportResizeListener.h>
 #include <Data/FBO.h>
+#include <Shaders/Shader.h>
+
 class window;
 class Viewport: WindowResizeListener {
 private:
     mutable std::list<ViewportResizeListener*> sizeListeners;
+    Shader shader= Shader("../src/engine/Shaders/shadersSources/ScreenVertex.glsl",
+                                       "../src/engine/Shaders/shadersSources/ScreenFragment.glsl");
+    VAO render_space;
     FBO frame_buffer=FBO(FBO::COLOR);
     const Window* window;
     unsigned int pixel_width;
@@ -26,7 +31,9 @@ public:
     unsigned int getPixelHeight() const;
     float getWidth()const ;
     float getHeight()const ;
+    const VAO& getRenderSpace() const;
     const FBO& getFrameBuffer() const;
+    const Shader& getShader() const;
     void subscribeSizeChange(ViewportResizeListener& l)const;
     void unsubscribeSizeChange(ViewportResizeListener& l)const ;
     void onWindowSizeChange(unsigned int width, unsigned int height) override;

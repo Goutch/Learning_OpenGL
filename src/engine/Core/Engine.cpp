@@ -44,25 +44,24 @@ Engine::Engine() {
 void Engine::start(Scene &scene) {
 
     if (glewInit() == GLEW_OK) {
-        Renderer renderer = Renderer(*window);
+        Renderer renderer = Renderer();
         Log::status("Initializing scene..");
         Viewport viewport=Viewport(*window);
         scene.init(viewport,renderer,*window);
         Log::status("Initialized scene");
         double delta_time = 0;
         Timer t;
-        window->getInputs();
-        VAO screen_quad;
-        Geometry::make_quad(screen_quad,2,2);
+        window->pollEvents();
+
         Log::status("Starting main loop..");
         while (!window->shouldClose()){
-            window->getInputs();
+            window->pollEvents();
             t.reset();
             printFPS();
             scene.update((float)delta_time);
             scene.prepareRender();
             scene.render();
-            renderer.draw(viewport.getFrameBuffer().getTexture(),screen_quad);
+            renderer.draw(viewport.getFrameBuffer().getTexture(),viewport.getRenderSpace(),viewport.getShader());
             window->swapBuffer();
             delta_time = t.ms();
         }

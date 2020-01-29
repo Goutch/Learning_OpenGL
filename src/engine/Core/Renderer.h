@@ -34,21 +34,16 @@ class Viewport;
 
 class Renderer {
 private:
-    Window *window;
 
     Shader depthShader = Shader("../src/engine/Shaders/shadersSources/DepthVertex.glsl",
                                 "../src/engine/Shaders/shadersSources/DepthFragment.glsl");
     int depthShader_light_space_matrix_location;
     int depthShader_transform_mat_location;
-    Shader screenShader = Shader("../src/engine/Shaders/shadersSources/ScreenVertex.glsl",
-                                 "../src/engine/Shaders/shadersSources/ScreenFragment.glsl");
-
-
     mutable std::unordered_map<const Material *, std::unordered_map<const VAO *, std::list<const Transform *>>> material_batch;
 
 public:
 
-    Renderer(Window &window);
+    Renderer();
 
     ~Renderer();
 
@@ -58,7 +53,7 @@ public:
     void clearDepth();
     void clearColor();
 
-    virtual void draw(const Texture& texture,const VAO& quad);
+    virtual void draw(const Texture& texture,const VAO& quad,const Shader& shader);
 
     virtual void render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat);
 

@@ -12,10 +12,9 @@
 #include "Entities/Camera.h"
 
 
-Renderer::Renderer(Window &window) {
-    this->window = &window;
-    depthShader_light_space_matrix_location=depthShader.uniformLocation("space");
-    depthShader_transform_mat_location=depthShader.uniformLocation("transform");
+Renderer::Renderer() {
+    depthShader_light_space_matrix_location = depthShader.uniformLocation("space");
+    depthShader_transform_mat_location = depthShader.uniformLocation("transform");
 }
 
 Renderer::~Renderer() {
@@ -23,18 +22,21 @@ Renderer::~Renderer() {
 }
 
 
-void Renderer::draw(const Texture& texture,const VAO& quad) {
+void Renderer::draw(const Texture &texture, const VAO &quad,const Shader& shader) {
+    glDisable(GL_DEPTH_TEST);
     glClear(GL_COLOR_BUFFER_BIT);
-    screenShader.bind();
+
+    shader.bind();
     quad.bind();
     texture.bind();
-    glDrawElements(GL_TRIANGLES,quad.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+    glDrawElements(GL_TRIANGLES, quad.getVertexCount(), GL_UNSIGNED_INT, nullptr);
     texture.unbind();
     quad.unbind();
-    screenShader.unbind();
+    shader.unbind();
 }
 
 void Renderer::render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat) {
+    glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     buffer.bind();
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -59,7 +61,8 @@ void Renderer::render(const FBO &buffer, const Scene &scene, const glm::mat4 &sp
 }
 
 
-void Renderer::renderDepth(const FBO &buffer,const  glm::mat4& depth_space_mat) {
+void Renderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) {
+    glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
@@ -103,7 +106,7 @@ void Renderer::clearDepth() {
 }
 
 void Renderer::clearColor() {
-    glClear(GL_COLOR_BUFFER_BIT );
+    glClear(GL_COLOR_BUFFER_BIT);
 }
 
 

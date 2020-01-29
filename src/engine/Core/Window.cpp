@@ -49,7 +49,7 @@ void Window::swapBuffer()const
 {
     glfwSwapBuffers(window);
 }
-void Window::getInputs()const
+void Window::pollEvents()const
 {
     glfwPollEvents();
 }

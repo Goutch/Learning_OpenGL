@@ -34,7 +34,7 @@ void FullSceneTest::init(Viewport &viewport, Renderer &renderer, Window &window)
     addEntity(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, 10)));
 
     //controller
-    addEntity(new FPSController(camera->transform, vec3(0, 1, 2), vec3(0), vec3(1)));
+    //addEntity(new FPSController(camera->transform, vec3(0, 1, 2), vec3(0), vec3(1)));
 
     //middle point light
     addLight(new PointLight(Color(1, 0, 0), 10, vec3(0, 1, 0)));

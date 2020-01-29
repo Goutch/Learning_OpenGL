@@ -18,7 +18,7 @@ public:
     bool shouldClose()const;
     void close();
     void swapBuffer()const;
-    void getInputs()const;
+    void pollEvents()const;
     bool isKeyDown(unsigned int keycode)const;
     void getMousePosition(double &x, double &y)const;
     void showCursor(bool showCursor);
