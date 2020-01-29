@@ -7,10 +7,11 @@
 #include "LAB2.h"
 #include <Entities/MeshRenderer.h>
 #include <Core/Window.h>
+#include <Entities/Camera.h>
 
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window){
     Scene::init(viewport,renderer,window);
-    renderer.setRenderMode(window.getWidth(), window.getHeight(), Renderer::ORTHOGRAPHIC_PIXEL);
+    camera->setProjectionMode(Camera::ORTHOGRAPHIC_PIXEL);
     Geometry::make_quad(quad);
     int width = 3;
     int height = 2;

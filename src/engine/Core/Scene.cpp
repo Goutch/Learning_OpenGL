@@ -20,7 +20,7 @@ void Scene::update(float delta) {
         window->close();
     }
     if (window->isKeyDown(GLFW_KEY_F11)) {
-        frame_buffer.save("../screenshot/" + TimeUtils::getTimeString() + ".png");
+        viewport->getFrameBuffer().save("../screenshot/" + TimeUtils::getTimeString() + ".png");
     }
     for(auto e:entities){
         e->update(delta,*this);
@@ -29,21 +29,23 @@ void Scene::update(float delta) {
         directional_lights[i]->calculateShadowMap(*this);
     }
 }
-
-void Scene::render() const {
+void Scene::prepareRender() const{
     for(auto e:entities){
         e->render(*this);
     }
 }
+void Scene::render() const {
+    renderer->render(viewport->getFrameBuffer(),*this,camera->getCameraSpaceMatrix());
+}
 
 
 void Scene::init(Viewport &viewport, Renderer &renderer, Window &window) {
-    frame_buffer.setSize(viewport.getWidth(),viewport.getHeight());
+
 
     this->renderer=&renderer;
     this->viewport=&viewport;
     this->window=&window;
-    this->camera=new Camera(Camera::PERSPECTIVE);
+    this->camera=new Camera(viewport,Camera::PERSPECTIVE);
     addEntity(this->camera);
 }
 
@@ -65,6 +67,7 @@ Renderer &Scene::getRenderer()const {
 }
 Scene::~Scene() {
     for (unsigned int i = 0; i < entities.size(); ++i) {
+        entities[i]->destroy(*this);
         delete entities[i];
     }
     directional_lights.clear();
@@ -96,14 +99,11 @@ void Scene::addLight(DirectionalLight *light) {
 const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
     return directional_lights;
 }
-
-const FBO &Scene::getFBO() const {
-    return frame_buffer;
-}
-
 Window& Scene::getWindow() const {
     return *window;
 }
+
+
 
 
 

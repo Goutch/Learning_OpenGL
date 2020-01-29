@@ -1,14 +1,15 @@
 #pragma once
-#include <GLFW/glfw3.h>
+class GLFWwindow;
 #include<string>
 #include "list"
-class ViewportResizeListener;
+class WindowResizeListener;
 class Window
 {
 private:
-    static std::list<ViewportResizeListener*> sizeListeners;
+    static std::list<WindowResizeListener*> sizeListeners;
     GLFWwindow* window;
-    int width=600, height=400;
+    mutable int width=600;
+    mutable int height=400;
     bool cursor_shown=true;
 public:
     Window();
@@ -22,9 +23,9 @@ public:
     void getMousePosition(double &x, double &y)const;
     void showCursor(bool showCursor);
     void setMousePosition(double x,double y);
-    int getWidth();
-    int getHeight();
-    void subscribeSizeChange(ViewportResizeListener& l);
-    void unsubscribeSizeChange(ViewportResizeListener& l);
+    int getWidth()const;
+    int getHeight()const;
+    void subscribeSizeChange( WindowResizeListener& l) const;
+    void unsubscribeSizeChange(WindowResizeListener& l) const;
     static void windowSizeCallback(GLFWwindow* window, int width, int height);
 };

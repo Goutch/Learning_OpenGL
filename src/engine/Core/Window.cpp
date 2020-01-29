@@ -1,8 +1,8 @@
 #include "Window.h"
 #include "Log.h"
-#include "Events/ViewportResizeListener.h"
-
-std::list<ViewportResizeListener*> Window::sizeListeners=std::list<ViewportResizeListener*>();
+#include "Events/WindowResizeListener.h"
+#include <GLFW/glfw3.h>
+std::list<WindowResizeListener*> Window::sizeListeners=std::list<WindowResizeListener*>();
 Window::Window() {
 
 }
@@ -76,11 +76,11 @@ void Window::showCursor(bool showCursor) {
     }
 
 }
-int Window::getWidth() {
+int Window::getWidth() const{
     glfwGetFramebufferSize(window,&width,&height);
     return width;
 }
-int Window::getHeight() {
+int Window::getHeight() const{
     glfwGetFramebufferSize(window,&width,&height);
     return height;
 }
@@ -93,15 +93,15 @@ void Window::close() {
 void Window::windowSizeCallback(GLFWwindow* window, int width, int height) {
     glViewport(0,0,width,height);
     for (auto l:sizeListeners) {
-        l->onViewportSizeChange(width, height);
+        l->onWindowSizeChange(width, height);
     }
 }
 
-void Window::subscribeSizeChange(ViewportResizeListener &l) {
+void Window::subscribeSizeChange(WindowResizeListener &l) const{
     sizeListeners.push_back(&l);
 }
 
-void Window::unsubscribeSizeChange(ViewportResizeListener &l) {
+void Window::unsubscribeSizeChange( WindowResizeListener &l) const{
     sizeListeners.remove(&l);
 }
 

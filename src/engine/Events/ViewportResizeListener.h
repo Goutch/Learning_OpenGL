@@ -1,7 +1,7 @@
 #pragma once
 
-class Window;
+
 class ViewportResizeListener{
 public:
-    virtual void onViewportSizeChange(int width, int height)=0;
+    virtual void onViewportSizeChange(unsigned int width, unsigned int height)=0;
 };

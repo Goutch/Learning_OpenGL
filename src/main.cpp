@@ -5,11 +5,14 @@
 #include "Test/AtlasTextureTest.h"
 #include <Test/ImportModelTest.h>
 #include <Test/LAB2.h>
+#include <Editor/Editor.h>
 #include "Test/FullSceneTest.h"
 #include "Test/LAB2.h"
 int main() {
     Engine engine=Engine();
-    auto s=FullSceneTest();
-    engine.start(s);
+    auto s=LAB2();
+    auto e=Editor(s);
+
+    engine.start(e);
     return 0;
 }

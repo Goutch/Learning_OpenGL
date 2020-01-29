@@ -1,8 +1,8 @@
 cmake_minimum_required(VERSION 3.14)
 project(OGL_Engine)
 
-set(CMAKE_CXX_STANDARD 14)
-set (CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++14")
+set(CMAKE_CXX_STANDARD 11)
+
 include_directories(src/engine)
 
 find_package(OpenGL REQUIRED)
@@ -112,13 +112,13 @@ add_executable(OGL_Engine
         src/engine/Editor/Editor.cpp
         src/engine/Editor/Editor.h
 
-        src/engine/Events/ViewportResizeListener.h
+        src/engine/Events/WindowResizeListener.h
 
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
         Dependencies/STB_IMAGE/stb_image_write.h
 
 
-        )
+        src/engine/Events/ViewportResizeListener.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

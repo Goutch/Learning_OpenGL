@@ -20,3 +20,7 @@ void Entity::update(float delta,Scene &scene) {
 void Entity::init(Scene &scene) {
 
 }
+
+void Entity::destroy(Scene& scene) {
+
+}

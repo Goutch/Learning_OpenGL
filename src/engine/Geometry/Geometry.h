@@ -7,7 +7,7 @@ class VAO;
 namespace Geometry{
     void make_sphere(VAO &vao, float radius,int xCount,int yCount) ;
     void make_cube(VAO &vao);
-    void make_quad(VAO& vao,float width=1,float height=1);
+    void make_quad(VAO& vao,float width=1,float height=1,float offsetX=0,float offsetY=0);
     void make_plane(VAO& vao,int sizeX,int sizeZ);
     void import(VAO& vao,std::string path);
 

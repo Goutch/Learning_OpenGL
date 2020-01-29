@@ -4,7 +4,6 @@
 #include <GL/glew.h>
 #include <Core/Log.h>
 
-#include "Core/Window.h"
 #include "FBO.h"
 #include "string"
 #include "stb_image_write.h"
@@ -79,7 +78,6 @@ void FBO::save(std::string path) const {
     stbi_write_png(path.c_str(), width, height, 4, buffer, 0);
     delete[] buffer;
     Log::message("ScreenShot:" + path);
-
 }
 
 

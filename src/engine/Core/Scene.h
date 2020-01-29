@@ -9,6 +9,8 @@ class PointLight;
 class DirectionalLight;
 class Camera;
 class Viewport;
+
+#include <GLFW/glfw3.h>
 #include "Data/FBO.h"
 #include "Entities/Transform.h"
 #include "Data/Color.h"
@@ -17,7 +19,6 @@ class Viewport;
 class Scene
 {
 protected:
-    FBO frame_buffer=FBO(FBO::COLOR);
     Viewport* viewport;
     Window* window;
     Renderer* renderer;
@@ -31,6 +32,7 @@ public:
 	Scene();
 	virtual void init(Viewport &viewport,Renderer &renderer,Window& window);
 	virtual void update(float delta);
+	virtual void prepareRender() const;
 	virtual void render() const;
     void addEntity(Entity& entity);
     void addEntity(Entity* entity);

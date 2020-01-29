@@ -8,12 +8,12 @@
 #include "Core/Renderer.h"
 #include "Geometry/VAO.h"
 #include "Core/Scene.h"
-MeshRenderer::MeshRenderer(VAO &mesh, Material &material, vec3 position, vec3 rotation, vec3 scale): Entity(position, rotation, scale) {
+MeshRenderer::MeshRenderer(const VAO &mesh, Material &material, vec3 position, vec3 rotation, vec3 scale): Entity(position, rotation, scale) {
     this->mesh=&mesh;
     this->m=&material;
 }
 
-MeshRenderer::MeshRenderer(VAO &mesh, Material &material): Entity() {
+MeshRenderer::MeshRenderer(const VAO &mesh, Material &material): Entity() {
     this->mesh=&mesh;
     this->m=&material;
 }
