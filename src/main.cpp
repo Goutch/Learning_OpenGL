@@ -11,8 +11,8 @@
 int main() {
     Engine engine=Engine();
     auto s=FullSceneTest();
-    //auto e=Editor(s);
+    auto e=Editor(s);
 
-    engine.start(s);
+    engine.start(e);
     return 0;
 }
