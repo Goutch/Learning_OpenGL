@@ -2,7 +2,7 @@
 // Created by User on 21-Jan.-2020.
 //
 
-#include <Core/Renderer.h>
+#include <Core/Rendering/BatchRenderer.h>
 #include <Geometry/Geometry.h>
 #include "LAB2.h"
 #include <Entities/MeshRenderer.h>

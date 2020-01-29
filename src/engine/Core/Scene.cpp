@@ -3,7 +3,7 @@
 //
 #include "Scene.h"
 #include "Entities/Entity.h"
-#include "Core/Renderer.h"
+#include "Core/Rendering/Renderer.h"
 #include "Core/Window.h"
 #include "Entities/Light/PointLight.h"
 #include "Data/FBO.h"
@@ -65,7 +65,7 @@ const Viewport &Scene::getViewport() const{
 Renderer &Scene::getRenderer()const {
     return *renderer;
 }
-Scene::~Scene() {
+void Scene::destroy() {
     for (unsigned int i = 0; i < entities.size(); ++i) {
         entities[i]->destroy(*this);
         delete entities[i];
@@ -102,6 +102,7 @@ const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
 Window& Scene::getWindow() const {
     return *window;
 }
+
 
 
 

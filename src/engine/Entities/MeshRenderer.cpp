@@ -5,7 +5,7 @@
 
 
 #include "MeshRenderer.h"
-#include "Core/Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
 #include "Geometry/VAO.h"
 #include "Core/Scene.h"
 MeshRenderer::MeshRenderer(const VAO &mesh, Material &material, vec3 position, vec3 rotation, vec3 scale): Entity(position, rotation, scale) {
@@ -19,7 +19,7 @@ MeshRenderer::MeshRenderer(const VAO &mesh, Material &material): Entity() {
 }
 
 void MeshRenderer::render(const Scene &scene) const{
-    scene.getRenderer().addToRenderQueue(*m,*mesh,transform);
+    scene.getRenderer().addToRenderQueue(*mesh,*m,transform);
 }
 
 

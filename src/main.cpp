@@ -13,6 +13,6 @@ int main() {
     auto s=FullSceneTest();
     auto e=Editor(s);
 
-    engine.start(e);
+    engine.start(s);
     return 0;
 }

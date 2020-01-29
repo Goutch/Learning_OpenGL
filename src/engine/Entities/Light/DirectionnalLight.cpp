@@ -4,7 +4,7 @@
 
 #include "DirectionnalLight.h"
 #include "Data/FBO.h"
-#include "Core/Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
 #include "Core/Scene.h"
 #include "Entities/Camera.h"
 

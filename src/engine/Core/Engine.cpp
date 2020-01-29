@@ -9,7 +9,8 @@
 #include "Log.h"
 #include "Window.h"
 #include "Engine.h"
-#include "Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
+#include "Core/Rendering/SimpleRenderer.h"
 #include "Debug.h"
 #include "Core/Viewport.h"
 #include <Entities/Camera.h>
@@ -44,10 +45,10 @@ Engine::Engine() {
 void Engine::start(Scene &scene) {
 
     if (glewInit() == GLEW_OK) {
-        Renderer renderer = Renderer();
+        Renderer* renderer =new SimpleRenderer();
         Log::status("Initializing scene..");
         Viewport viewport=Viewport(*window);
-        scene.init(viewport,renderer,*window);
+        scene.init(viewport,*renderer,*window);
         Log::status("Initialized scene");
         double delta_time = 0;
         Timer t;
@@ -61,16 +62,19 @@ void Engine::start(Scene &scene) {
             scene.update((float)delta_time);
             scene.prepareRender();
             scene.render();
-            renderer.draw(viewport.getFrameBuffer().getTexture(),viewport.getRenderSpace(),viewport.getShader());
+            renderer->draw(viewport.getRenderSpace(),viewport.getShader(),viewport.getFrameBuffer().getTexture());
             window->swapBuffer();
             delta_time = t.ms();
         }
+        scene.destroy();
+        delete renderer;
     }
+
     printGLErrors();
 }
 
 Engine::~Engine() {
-
+    delete window;
 }
 
 void Engine::printFPS() {

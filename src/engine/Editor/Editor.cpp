@@ -3,7 +3,7 @@
 //
 
 #include "Editor.h"
-#include <Core/Renderer.h>
+#include <Core/Rendering/BatchRenderer.h>
 #include <Entities/Camera.h>
 #include <Entities/MeshRenderer.h>
 

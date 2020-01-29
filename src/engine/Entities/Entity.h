@@ -4,7 +4,7 @@
 
 
 #include "Transform.h"
-class Renderer;
+class BatchRenderer;
 class Transform;
 class VAO;
 class Window;

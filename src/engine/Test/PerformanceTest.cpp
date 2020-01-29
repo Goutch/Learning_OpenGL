@@ -8,7 +8,7 @@
 #include "Data/Texture.h"
 
 #include "Core/Window.h"
-#include "Core/Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
 #include "Entities/FPSController.h"
 #include "Geometry/Geometry.h"
 #include "Entities/Camera.h"

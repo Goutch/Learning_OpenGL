@@ -11,12 +11,9 @@
 #include "Shaders/Shader.h"
 #include "Data/FBO.h"
 #include "Data/RBO.h"
+#include "Renderer.h"
 
 class MeshRenderer;
-
-class Window;
-
-class Transform;
 
 class Material;
 
@@ -30,34 +27,17 @@ class Camera;
 
 using namespace glm;
 
-class Viewport;
-
-class Renderer {
+class BatchRenderer:public Renderer {
 private:
-
     Shader depthShader = Shader("../src/engine/Shaders/shadersSources/DepthVertex.glsl",
                                 "../src/engine/Shaders/shadersSources/DepthFragment.glsl");
     int depthShader_light_space_matrix_location;
     int depthShader_transform_mat_location;
-    mutable std::unordered_map<const Material *, std::unordered_map<const VAO *, std::list<const Transform *>>> material_batch;
+    mutable std::unordered_map<const Material *, std::unordered_map<const VAO *, std::list<const Transform*>>> material_batch;
 
 public:
-
-    Renderer();
-
-    ~Renderer();
-
-    virtual void addToRenderQueue(const Material &material, const VAO &vao, const Transform &transform);
-
-    void clear();
-    void clearDepth();
-    void clearColor();
-
-    virtual void draw(const Texture& texture,const VAO& quad,const Shader& shader);
-
-    virtual void render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat=mat4(1.0f));
-
-    virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat);
-
-
+    BatchRenderer();
+    virtual void addToRenderQueue(const VAO &vao,const Material &material,const Transform& transform) override ;
+    virtual void render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat=mat4(1.0f)) override ;
+    virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) override ;
 };

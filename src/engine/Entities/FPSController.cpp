@@ -7,7 +7,7 @@
 #include "Core/Window.h"
 #include "Core/Scene.h"
 #include "Camera.h"
-#include "Core/Renderer.h"
+
 #include <Core/Viewport.h>
 
 FPSController::FPSController(Transform& camera,vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {

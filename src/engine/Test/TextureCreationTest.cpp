@@ -4,7 +4,7 @@
 
 #include "TextureCreationTest.h"
 #include "Entities/MeshRenderer.h"
-#include "Core/Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
 #include "Utils/SimplexNoise.h"
 #include "Geometry/Geometry.h"
 
