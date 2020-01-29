@@ -31,3 +31,13 @@ void Renderer::draw(const VAO &vao, const Shader &shader, const Texture &texture
 
 }
 
+void Renderer::draw(const VAO &vao, const Shader &shader) {
+    glDisable(GL_DEPTH_TEST);
+    glClear(GL_COLOR_BUFFER_BIT);
+    shader.bind();
+    vao.bind();
+    glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+    vao.unbind();
+    shader.unbind();
+}
+
