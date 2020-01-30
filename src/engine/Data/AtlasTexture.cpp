@@ -34,4 +34,8 @@ void AtlasTexture::getCoordinates(float (&uvs)[8], unsigned int row, unsigned in
     uvs[7]=uvs[1]+cellHeight;
 }
 
+void AtlasTexture::getCoordinates(float (&uvs)[8], unsigned int index) const {
+    getCoordinates(uvs,index-index%width,index%width);
+}
+
 
