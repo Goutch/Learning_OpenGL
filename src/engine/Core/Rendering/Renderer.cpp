@@ -20,15 +20,15 @@ void Renderer::clearColor() {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void Renderer::draw(const VAO &vao, const Shader &shader, const Material &material) {
+void Renderer::draw(const VAO &vao, const Material &material) {
     glDisable(GL_DEPTH_TEST);
-    shader.bind();
-    vao.bind();
     material.bind();
+    material.transform(mat4(1));
+    material.space(mat4(1));
+    vao.bind();
     glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
-    material.unbind();
     vao.unbind();
-    shader.unbind();
+    material.unbind();
 }
 
 void Renderer::draw(const VAO &vao, const Shader &shader, const Texture &texture) {

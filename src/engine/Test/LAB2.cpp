@@ -11,15 +11,13 @@
 #include <Core/Viewport.h>
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
+
     Geometry::make_quad(vao);
 }
 
 void LAB2::render() const {
     Scene::render();
-    shader.bind();
-    shader.loadUniform("color",vec4(1,0,0,1));
-    shader.unbind();
-    renderer->draw(vao,shader);
+    renderer->draw(vao,material);
 
 }
 

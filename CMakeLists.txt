@@ -119,6 +119,6 @@ add_executable(OGL_Engine
         Dependencies/STB_IMAGE/stb_image_write.h
 
 
-        src/engine/Events/ViewportResizeListener.h src/engine/Core/Inputs.cpp src/engine/Core/Inputs.h src/engine/Core/Rendering/Renderer.cpp src/engine/Core/Rendering/Renderer.h src/engine/Core/Rendering/SimpleRenderer.cpp src/engine/Core/Rendering/SimpleRenderer.h)
+        src/engine/Events/ViewportResizeListener.h src/engine/Core/Inputs.cpp src/engine/Core/Inputs.h src/engine/Core/Rendering/Renderer.cpp src/engine/Core/Rendering/Renderer.h src/engine/Core/Rendering/SimpleRenderer.cpp src/engine/Core/Rendering/SimpleRenderer.h src/engine/Entities/Primitves/Circle.cpp src/engine/Entities/Primitves/Circle.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
