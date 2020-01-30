@@ -26,7 +26,7 @@ void SimpleRenderer::render(const FBO &buffer, const Scene &scene, const mat4 &s
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
 
-        material.bind(scene);
+        material.bind();
         material.space(space_mat);
         material.transform(transform.getMatrix());
         vao.bind();

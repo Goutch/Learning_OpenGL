@@ -13,10 +13,10 @@ class FullSceneTest : public Scene {
                                 "../src/engine/Shaders/shadersSources/LightFragment.glsl");
 
     Material cube_material = Material(shader);
-    LightMaterial sphere_material = LightMaterial(lightShader);
-    LightMaterial dragon_material = LightMaterial(lightShader);
-    LightMaterial ground_material = LightMaterial(lightShader, ground_texture);
-    LightMaterial bunny_material = LightMaterial(lightShader,stone_texture);
+    LightMaterial sphere_material = LightMaterial(lightShader, *this);
+    LightMaterial dragon_material = LightMaterial(lightShader, *this);
+    LightMaterial ground_material = LightMaterial(lightShader, ground_texture, *this);
+    LightMaterial bunny_material = LightMaterial(lightShader,stone_texture, *this);
 
     Texture ground_texture = Texture("../res/wall.jpg");
     Texture stone_texture=Texture("../res/stone.jpg");

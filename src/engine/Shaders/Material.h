@@ -32,7 +32,7 @@ public:
 
     Material(const Shader &shader,const Texture &texture, const Color &color);
 
-    virtual void bind(const Scene &scene) const;
+    virtual void bind() const;
 
    virtual void unbind() const;
 

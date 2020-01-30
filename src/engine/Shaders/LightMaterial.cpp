@@ -9,15 +9,15 @@
 #include "Core/Scene.h"
 #include "Data/Texture.h"
 #include "Entities/Camera.h"
-void LightMaterial::bind(const Scene &scene) const {
-    Material::bind(scene);
-    s->loadUniform(ambient_light_location, (vec3) scene.getAmbientLight().data);
+void LightMaterial::bind() const {
+    Material::bind();
+    s->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight().data);
     s->loadUniform(damp_factor_location, dampFactor);
     s->loadUniform(shine_factor_location, shineFactor);
 
-    std::vector<PointLight *> pointLights = scene.getPointLights();
+    std::vector<PointLight *> pointLights = scene->getPointLights();
     s->loadUniform(point_light_count_location, (int) pointLights.size());
-    s->loadUniform(view_pos_location, scene.getCamera().transform.position());
+    s->loadUniform(view_pos_location, scene->getCamera().transform.position());
     if (pointLights.size() > 0) {
         std::vector<float> radius;
         std::vector<vec3> positions;
@@ -32,7 +32,7 @@ void LightMaterial::bind(const Scene &scene) const {
         s->loadUniformVec3Array(point_light_colors_location, colors.data(), colors.size());
         s->loadUniformFloatArray(point_light_radius_location, radius.data(), radius.size());
     }
-    std::vector<DirectionalLight *> directionalLights = scene.getDirectionalLights();
+    std::vector<DirectionalLight *> directionalLights = scene->getDirectionalLights();
     s->loadUniform(directional_light_count_location,(int)directionalLights.size());
     if (directionalLights.size() > 0) {
         boundShadowMaps.push_back(&(directionalLights[0]->shadowMap()));
@@ -88,22 +88,26 @@ LightMaterial::LightMaterial() : Material() {
     getUniformsLocations();
 }
 
-LightMaterial::LightMaterial(const Shader &shader) : Material(shader) {
+LightMaterial::LightMaterial(const Shader &shader, const Scene &scene) : Material(shader) {
     getUniformsLocations();
+    this->scene = &scene;
 }
 
-LightMaterial::LightMaterial(const Shader &shader, const Color &color) : Material(shader, color) {
+LightMaterial::LightMaterial(const Shader &shader, const Color &color, const Scene &scene) : Material(shader, color) {
     getUniformsLocations();
+    this->scene = &scene;
 }
 
-LightMaterial::LightMaterial(const Shader &shader, const Texture &texture) : Material(shader, texture) {
+LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const Scene &scene) : Material(shader, texture) {
     getUniformsLocations();
+    this->scene = &scene;
 }
 
-LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const Color &color) : Material(shader,
+LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const Color &color, const Scene &scene) : Material(shader,
                                                                                                           texture,
                                                                                                           color) {
     getUniformsLocations();
+    this->scene = &scene;
 }
 
 

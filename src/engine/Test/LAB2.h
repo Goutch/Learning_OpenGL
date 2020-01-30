@@ -6,8 +6,10 @@
 #include <Geometry/Mesh.h>
 
 class LAB2 : public Scene{
-    Shader shader = Shader("../src/engine/Shaders/shadersSources/PrimitiveVertex.glsl",
-                           "../src/engine/Shaders/shadersSources/PrimitiveFragment.glsl");
+    Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
+                           "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
+    Texture texture = Texture("../res/wall.jpg");
+    Material mat = Material(shader, texture);
     VAO vao;
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;

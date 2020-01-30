@@ -24,7 +24,7 @@ void BatchRenderer::render(const FBO &buffer, const Scene &scene, const glm::mat
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for (auto &vao_batch:material_batch) {
         const Material &material = *vao_batch.first;
-        material.bind(scene);
+        material.bind();
         material.space(space_mat);
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
