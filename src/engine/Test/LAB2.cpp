@@ -8,8 +8,14 @@
 #include <Entities/MeshRenderer.h>
 #include <Core/Window.h>
 
+#include <Core/Viewport.h>
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
+    Scene::init(viewport, renderer, window);
+    Geometry::make_quad(vao);
+}
 
+void LAB2::render() const {
+    Scene::render();
 
 }
 

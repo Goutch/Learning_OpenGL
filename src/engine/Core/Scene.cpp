@@ -38,10 +38,7 @@ void Scene::render() const {
     renderer->render(viewport->getFrameBuffer(),*this,camera->getCameraSpaceMatrix());
 }
 
-
 void Scene::init(Viewport &viewport, Renderer &renderer, Window &window) {
-
-
     this->renderer=&renderer;
     this->viewport=&viewport;
     this->window=&window;
@@ -102,6 +99,8 @@ const std::vector<DirectionalLight*>& Scene::getDirectionalLights() const{
 Window& Scene::getWindow() const {
     return *window;
 }
+
+
 
 
 
