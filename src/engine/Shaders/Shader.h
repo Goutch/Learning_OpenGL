@@ -19,7 +19,7 @@ private:
 
 public:
 
-    Shader(const std::string &vertexShader, const std::string &fragmentShader);
+    Shader(const std::string &vertexShader, const std::string &fragmentShader,bool source=false);
 
     ~Shader();
 
