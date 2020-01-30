@@ -9,6 +9,77 @@
 #include "Core/Log.h"
 #include "math.h"
 #include "Utils/Timer.h"
+void Geometry::make_text(VAO &vao) {
+    //font_width
+    //font_height
+
+    //Size: 0
+    //return;
+
+    //Size: 1
+    //1-------3
+    //|       |
+    //|       |
+    //0-------2
+
+    //vertices
+    //{0,0,0}
+    //{0,font_height,0}
+    //{font_width, 0, 0}
+    //{font_width, font_height, 0}
+
+    //indices
+    // 1
+    // 0
+    // 3
+    // 0
+    // 2
+    // 3
+
+    //Size: 2
+    //1-------3-------5
+    //|       |       |
+    //|       |       |
+    //0-------2-------4
+
+    //vertices
+    //{0,0,0}
+    //{0,font_height,0}
+    //{font_width, 0, 0}
+    //{font_width, font_height, 0}
+    //{font_width + font_width, 0, 0}
+    //{font_width + font_width, font_height, 0}
+
+    //indices
+    // 1
+    // 0
+    // 3
+    // 0
+    // 2
+    // 3
+    // 3 (+2)
+    // 2 (+2)
+    // 5 (+2)
+    // 2 (+2)
+    // 4 (+2)
+    // 5 (+2)
+
+    //Size: n
+    //vertices
+    // pour tout i de 0 à n
+    //{font_width*i, 0, 0}
+    //{font_width*i, font_height, 0}
+
+    //indices
+    // pour tout i de 0 à n - 1
+    // {1 + i*2}
+    // {0 + i*2}
+    // {3 + i*2}
+    // {0 + i*2}
+    // {2 + i*2}
+    // {3 + i*2}
+}
+
 void Geometry::make_quad(VAO &vao,float width,float height,float offsetX,float offsetY) {
     //1-------2
     //|       |
