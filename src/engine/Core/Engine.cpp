@@ -59,8 +59,8 @@ void Engine::start(Scene &scene) {
             printFPS();
             scene.update((float)delta_time);
             scene.prepareRender();
+            renderer->clear();
             scene.render();
-            renderer->clearColor();
             renderer->draw(viewport.getRenderSpace(),viewport.getShader(),viewport.getFrameBuffer().getTexture());
             window->swapBuffer();
             delta_time = t.ms();

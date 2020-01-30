@@ -16,6 +16,10 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
 
 void LAB2::render() const {
     Scene::render();
+    shader.bind();
+    shader.loadUniform("color",vec4(1,0,0,1));
+    shader.unbind();
+    renderer->draw(vao,shader);
 
 }
 
