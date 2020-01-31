@@ -3,7 +3,6 @@
 //
 
 #include "LightMaterial.h"
-#include "vector"
 #include "Entities/Light/PointLight.h"
 #include "Entities/Light/DirectionnalLight.h"
 #include "Core/Scene.h"

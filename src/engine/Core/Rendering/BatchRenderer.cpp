@@ -4,20 +4,16 @@
 #include "BatchRenderer.h"
 #include "Geometry/VAO.h"
 #include "Shaders/Material.h"
-#include "Core/Window.h"
 #include "Entities/Transform.h"
 #include "Core/Log.h"
 #include "Core/Scene.h"
-#include "Core/Viewport.h"
-#include "Entities/Camera.h"
 
 
 BatchRenderer::BatchRenderer() {
     depthShader_light_space_matrix_location = depthShader.uniformLocation("space");
     depthShader_transform_mat_location = depthShader.uniformLocation("transform");
 }
-
-void BatchRenderer::render(const FBO &buffer, const Scene &scene, const glm::mat4 &space_mat) {
+void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) {
     glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     buffer.bind();
@@ -25,7 +21,8 @@ void BatchRenderer::render(const FBO &buffer, const Scene &scene, const glm::mat
     for (auto &vao_batch:material_batch) {
         const Material &material = *vao_batch.first;
         material.bind();
-        material.space(space_mat);
+        material.projection(projection);
+        material.view(view_mat);
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
@@ -38,11 +35,8 @@ void BatchRenderer::render(const FBO &buffer, const Scene &scene, const glm::mat
         material.unbind();
     }
     material_batch.clear();
-
     buffer.unbind();
 }
-
-
 void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
@@ -78,6 +72,9 @@ void BatchRenderer::addToRenderQueue(const VAO &vao, const Material &material, c
     std::list<const Transform *> &transform_batch = vao_batch.at(&vao);
     transform_batch.push_back(&transform);
 }
+
+
+
 
 
 

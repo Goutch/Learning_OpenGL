@@ -1,8 +1,9 @@
 #version 400 core
 
-//base
+uniform mat4 projection;
+uniform mat4 view;
 uniform mat4 transform;
-uniform mat4 space;
+
 uniform mat4 depth_bias_mat;
 
 layout(location=0)in vec3 vertexPosition;
@@ -24,7 +25,7 @@ void main(){
     normal = vertexNormal;
 
     //position
-    gl_Position=space*position;
+    gl_Position=projection*view*position;
 
     shadow_coord = depth_bias_mat *position;
 }

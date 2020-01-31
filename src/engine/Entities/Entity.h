@@ -4,11 +4,11 @@
 
 
 #include "Transform.h"
-class BatchRenderer;
 class Transform;
 class VAO;
 class Window;
 class Scene;
+
 class Entity{
 public:
     Transform transform;

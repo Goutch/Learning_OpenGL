@@ -24,7 +24,7 @@ void Renderer::draw(const VAO &vao, const Material &material) {
     glDisable(GL_DEPTH_TEST);
     material.bind();
     material.transform(mat4(1));
-    material.space(mat4(1));
+    material.view(mat4(1));
     vao.bind();
     glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
     vao.unbind();

@@ -1,7 +1,7 @@
 #pragma once
 
 #include "Material.h"
-#include "vector"
+
 class LightMaterial : public Material {
 private:
     const Scene* scene;

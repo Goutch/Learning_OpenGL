@@ -11,12 +11,12 @@
 Shader::Shader(const std::string &vertexShader, const std::string &fragmentShader, bool source) {
     program_id = glCreateProgram();
 
-    Log::status("Compiling vertex shader:" + vertexShader);
+    if(!source)Log::status("Compiling vertex shader:" + vertexShader);
     std::string sourcevs;
     !source?sourcevs= getSource(vertexShader):sourcevs=vertexShader;
     unsigned int vs = compileShader(GL_VERTEX_SHADER, sourcevs);
 
-    Log::status("Compiling fragment shader:" + fragmentShader);
+    if(!source)Log::status("Compiling fragment shader:" + fragmentShader);
     std::string sourcefs;
     !source?sourcefs= getSource(fragmentShader):sourcefs=fragmentShader;
     unsigned int fs = compileShader(GL_FRAGMENT_SHADER, sourcefs);

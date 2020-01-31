@@ -15,7 +15,7 @@ void SimpleRenderer::addToRenderQueue(const VAO &vao, const Material &material,c
     render_queue.emplace(&material,&vao,&transform);
 }
 
-void SimpleRenderer::render(const FBO &buffer, const Scene &scene, const mat4 &space_mat) {
+void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
@@ -27,7 +27,8 @@ void SimpleRenderer::render(const FBO &buffer, const Scene &scene, const mat4 &s
         const Transform& transform=*std::get<2>(renderableObject);
 
         material.bind();
-        material.space(space_mat);
+        material.projection(projection);
+        material.view(view_mat);
         material.transform(transform.getMatrix());
         vao.bind();
         glDrawElements(GL_TRIANGLES,vao.getVertexCount(),GL_UNSIGNED_INT,nullptr);
