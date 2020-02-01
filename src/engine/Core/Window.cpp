@@ -2,8 +2,10 @@
 #include "Log.h"
 #include "Events/WindowResizeListener.h"
 #include <GLFW/glfw3.h>
+#include <Events/KeyPressListener.h>
 
 std::list<WindowResizeListener *> Window::sizeListeners = std::list<WindowResizeListener *>();
+std::list<KeyPressListener *> Window::keyboardListeners = std::list<KeyPressListener *>();
 
 Window::Window() {
 
@@ -112,13 +114,21 @@ void Window::unsubscribeSizeChange(WindowResizeListener &l) const {
 }
 
 void Window::keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
-    if(action= GLFW_PRESS)
-    {
+    if (action = GLFW_PRESS) {
+        for (auto l:keyboardListeners) {
+            l->onKeyPress(static_cast<unsigned char>(key));
+        }
+    } else if (action == GLFW_RELEASE) {
         //idk do somehting
     }
-    else if (action == GLFW_RELEASE) {
-        //idk do somehting
-    }
+}
+
+void Window::subscribeKeyPress(KeyPressListener &l) const {
+    keyboardListeners.push_back(&l);
+}
+
+void Window::unsubscribeKeyPress(KeyPressListener &l) const {
+    keyboardListeners.remove(&l);
 }
 
 

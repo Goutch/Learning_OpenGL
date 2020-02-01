@@ -6,7 +6,8 @@
 #include <Shaders/Material.h>
 #include <Geometry/Mesh.h>
 #include "Entities/Transform.h"
-class LAB2 : public Scene{
+#include <Events/KeyPressListener.h>
+class LAB2 : public Scene,KeyPressListener{
     Transform transform = Transform();
     Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
@@ -14,14 +15,16 @@ class LAB2 : public Scene{
     AtlasTexture font = AtlasTexture("../res/font.bmp", 64, 64, false);
     Material material = Material(shader, font);
     Material defaultMat = Material(shader);
-    unsigned int counter=0;
+
     Mesh vao;
+
+    void onKeyPress(char key) override;
+
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
     void render() const override;
 
-    void update(float delta) override;
 };
 
 
