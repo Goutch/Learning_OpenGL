@@ -7,12 +7,14 @@
 #include "LAB2.h"
 #include <Entities/MeshRenderer.h>
 #include <Core/Window.h>
+#include "Entities/Camera.h"
 
 #include <Core/Viewport.h>
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
+    //camera->setProjectionMode(Camera::ORTHOGRAPHIC_UNITS);
 
-    Geometry::make_quad(vao);
+    Geometry::make_text(vao);
     float uvs[8];
     font.getCoordinates(uvs, 3);
     vao.uvs(uvs, 8);

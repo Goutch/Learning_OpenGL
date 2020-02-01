@@ -7,7 +7,7 @@
 #include <Geometry/Mesh.h>
 
 class LAB2 : public Scene{
-
+    Transform transform = Transform();
     Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
     Texture texture = Texture("../res/wall.jpg", false);
