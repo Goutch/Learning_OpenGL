@@ -14,7 +14,7 @@ class LAB2 : public Scene{
     AtlasTexture font = AtlasTexture("../res/font.bmp", 64, 64, false);
     Material material = Material(shader, font);
     Material defaultMat = Material(shader);
-
+    unsigned int counter=0;
     Mesh vao;
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;
