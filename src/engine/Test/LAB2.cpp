@@ -17,7 +17,8 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
 
 void LAB2::render() const {
     Scene::render();
+    renderer->enableWireframe(true);
     renderer->draw(vao, defaultMat);
-
+    renderer->enableWireframe(false);
 }
 
