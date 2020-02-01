@@ -12,10 +12,7 @@
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
-    Geometry::make_quad(vao);
-    float uvs[8];
-    font.getCoordinates(uvs,counter);
-    vao.uvs(uvs, 8);
+    Geometry::make_text(vao, "test", font);
 }
 void LAB2::render() const {
     Scene::render();
@@ -23,11 +20,4 @@ void LAB2::render() const {
 }
 void LAB2::update(float delta) {
     Scene::update(delta);
-    if(window->isKeyDown(GLFW_KEY_EQUAL))
-    {
-        counter++;
-        float uvs[8];
-        font.getCoordinates(uvs,counter);
-        vao.uvs(uvs, 8);
-    }
 }
