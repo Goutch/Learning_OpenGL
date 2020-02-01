@@ -22,8 +22,7 @@ public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
     void render() const override;
-
-    void update(float delta) override;
+    
 };
 
 
