@@ -15,7 +15,7 @@ private:
     Material material=Material(shader,stone);
 
     Mesh mesh;
-    Texture stone=Texture("../res/stone.jpg");
+    Texture stone= Texture("../res/stone.jpg", false);
 
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;

@@ -10,9 +10,9 @@
 #include "Core/Log.h"
 #include <fstream>
 
-Texture::Texture(const std::string &path) {
+Texture::Texture(const std::string &path, bool flip_on_load) {
     glGenTextures(1, &texture_id);
-    load(path);
+    load(path, flip_on_load);
 }
 
 Texture::Texture() {
@@ -39,7 +39,7 @@ Texture::~Texture() {
     glDeleteTextures(1, &texture_id);
 }
 
-void Texture::load(const std::string &path) {
+void Texture::load(const std::string &path, bool flip_on_load) {
     std::ifstream f(path.c_str());
     Log::status("Loading texture:" + path);
     if (f.good()) {

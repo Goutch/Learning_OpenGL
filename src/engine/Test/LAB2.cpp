@@ -12,13 +12,14 @@
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
 
-    Geometry::make_text(vao);
+    Geometry::make_quad(vao);
+    float uvs[8];
+    font.getCoordinates(uvs, 3);
+    vao.uvs(uvs, 8);
 }
 
 void LAB2::render() const {
     Scene::render();
-    renderer->enableWireframe(true);
-    renderer->draw(vao, defaultMat);
-    renderer->enableWireframe(false);
+    renderer->draw(vao, material);
 }
 

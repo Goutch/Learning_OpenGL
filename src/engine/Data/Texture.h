@@ -23,11 +23,11 @@ protected:
 public:
     Texture();
 
-    Texture(const std::string &path);
+    Texture(const std::string &path, bool flip_on_load = true);
 
     ~Texture();
 
-    void load(const std::string &path);
+    void load(const std::string &path, bool flip_on_load = true);
 
     Texture(unsigned char *data, int width, int height);
     void bind(unsigned int slot = 0) const;

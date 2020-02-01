@@ -13,7 +13,7 @@ public:
 
     AtlasTexture(unsigned int cellWidth, unsigned int cellHeight);
 
-    AtlasTexture(std::string path, unsigned int cellWidth, unsigned int cellHeight);
+    AtlasTexture(std::string path, unsigned int cellWidth, unsigned int cellHeight, bool flip_on_load);
 
     void setCellSize(unsigned int cellWidth, unsigned int cellHeight);
 

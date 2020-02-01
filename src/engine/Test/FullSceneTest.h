@@ -7,6 +7,7 @@
 #include "Geometry/Geometry.h"
 
 class FullSceneTest : public Scene {
+
     Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
     Shader lightShader = Shader("../src/engine/Shaders/shadersSources/LightVertex.glsl",
@@ -18,8 +19,8 @@ class FullSceneTest : public Scene {
     LightMaterial ground_material = LightMaterial(lightShader, ground_texture, *this);
     LightMaterial bunny_material = LightMaterial(lightShader,stone_texture, *this);
 
-    Texture ground_texture = Texture("../res/wall.jpg");
-    Texture stone_texture=Texture("../res/stone.jpg");
+    Texture ground_texture = Texture("../res/wall.jpg", false);
+    Texture stone_texture= Texture("../res/stone.jpg", false);
 
     Mesh dragon_mesh = Mesh("../res/dragon.obj");
     Mesh bunny_mesh = Mesh("../res/bunny.obj");
