@@ -20,6 +20,7 @@ public:
     void swapBuffer()const;
     void pollEvents()const;
     bool isKeyDown(unsigned int keycode)const;
+    bool isKeyPressed(unsigned int keycode)const;
     void getMousePosition(double &x, double &y)const;
     void showCursor(bool showCursor);
     void setMousePosition(double x,double y);
@@ -28,4 +29,6 @@ public:
     void subscribeSizeChange( WindowResizeListener& l) const;
     void unsubscribeSizeChange(WindowResizeListener& l) const;
     static void windowSizeCallback(GLFWwindow* window, int width, int height);
+    static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
 };

@@ -14,11 +14,20 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
     Geometry::make_quad(vao);
     float uvs[8];
-    font.getCoordinates(uvs, 3);
+    font.getCoordinates(uvs,counter);
     vao.uvs(uvs, 8);
 }
 void LAB2::render() const {
     Scene::render();
     renderer->draw(vao, material, transform);
 }
-
+void LAB2::update(float delta) {
+    Scene::update(delta);
+    if(window->isKeyDown(GLFW_KEY_EQUAL))
+    {
+        counter++;
+        float uvs[8];
+        font.getCoordinates(uvs,counter);
+        vao.uvs(uvs, 8);
+    }
+}
