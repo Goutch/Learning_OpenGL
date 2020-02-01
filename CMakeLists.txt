@@ -69,6 +69,8 @@ add_executable(OGL_Engine
         src/engine/Shaders/Material.h
         src/engine/Shaders/LightMaterial.cpp
         src/engine/Shaders/LightMaterial.h
+        src/engine/Shaders/FontText.cpp
+        src/engine/Shaders/FontText.h
 
         src/engine/Geometry/Geometry.h
         src/engine/Geometry/Geometry.cpp
@@ -101,7 +103,6 @@ add_executable(OGL_Engine
         src/engine/Utils/TimeUtils.h
         src/engine/Utils/TimeUtils.cpp
 
-
         src/engine/Test/PerformanceTest.cpp
         src/engine/Test/PerformanceTest.h
         src/engine/Test/AtlasTextureTest.cpp
@@ -120,10 +121,12 @@ add_executable(OGL_Engine
 
         src/engine/Events/ViewportResizeListener.h
         src/engine/Events/WindowResizeListener.h
+        src/engine/Events/KeyPressListener.h
 
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
-        Dependencies/STB_IMAGE/stb_image_write.h src/engine/Events/KeyPressListener.h
-        src/engine/Shaders/FontText.cpp src/engine/Shaders/FontText.h)
+        Dependencies/STB_IMAGE/stb_image_write.h
+
+)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
