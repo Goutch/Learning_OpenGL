@@ -8,7 +8,7 @@
 #include <Shaders/FontText.h>
 #include "Entities/Transform.h"
 #include <Events/KeyPressListener.h>
-class LAB2 : public Scene,KeyPressListener{
+class TextTest : public Scene, KeyPressListener{
     Transform transform = Transform();
     Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
@@ -22,7 +22,7 @@ public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
     void render() const override;
-    
+
 };
 
 

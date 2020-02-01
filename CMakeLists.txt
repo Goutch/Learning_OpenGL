@@ -112,8 +112,8 @@ add_executable(OGL_Engine
         src/engine/Test/TextureCreationTest.h
         src/engine/Test/FullSceneTest.cpp
         src/engine/Test/FullSceneTest.h
-        src/engine/Test/LAB2.cpp
-        src/engine/Test/LAB2.h
+        src/engine/Test/TextTest.cpp
+        src/engine/Test/TextTest.h
 
         src/engine/Editor/Editor.cpp
         src/engine/Editor/Editor.h

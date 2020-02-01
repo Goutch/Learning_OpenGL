@@ -4,12 +4,12 @@
 
 #include <Core/Rendering/Renderer.h>
 #include <Geometry/Geometry.h>
-#include "LAB2.h"
+#include "TextTest.h"
 #include <Entities/MeshRenderer.h>
 #include <Core/Window.h>
 #include <Entities/Camera.h>
 #include <Core/Viewport.h>
-void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
+void TextTest::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
     Geometry::make_quad(vao);
@@ -18,13 +18,13 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     font.getCoordinates(uvs,'!'-32);
     vao.uvs(uvs, 8);
 }
-void LAB2::render() const {
+void TextTest::render() const {
     Scene::render();
     renderer->draw(vao, font, transform);
 }
 
 
-void LAB2::onKeyPress(char key) {
+void TextTest::onKeyPress(char key) {
     float uvs[8];
     font.getCoordinates(uvs,key-32);
     vao.uvs(uvs, 8);
