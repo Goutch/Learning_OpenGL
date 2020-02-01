@@ -10,7 +10,7 @@
 #include "Test/LAB2.h"
 int main() {
     Engine engine=Engine();
-    auto s=FullSceneTest();
+    auto s=LAB2();
    // auto e=Editor(s);
 
     engine.start(s);

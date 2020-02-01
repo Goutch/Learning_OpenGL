@@ -10,74 +10,111 @@
 #include "math.h"
 #include "Utils/Timer.h"
 void Geometry::make_text(VAO &vao) {
-    //font_width
-    //font_height
+    float font_width = 0.2f;
+    float font_height = 0.2f;
+    unsigned int string_length = 1;
 
     //Size: 0
     //return;
 
     //Size: 1
-    //1-------3
+    //1-------2
     //|       |
     //|       |
-    //0-------2
+    //0-------3
 
     //vertices
     //{0,0,0}
     //{0,font_height,0}
-    //{font_width, 0, 0}
-    //{font_width, font_height, 0}
+    //{font_width,font_height,0}
+    //{font_width,0,0}
 
     //indices
-    // 1
-    // 0
-    // 3
-    // 0
-    // 2
-    // 3
+    //2
+    //1
+    //0
+    //0
+    //3
+    //2
 
     //Size: 2
-    //1-------3-------5
-    //|       |       |
-    //|       |       |
-    //0-------2-------4
+    //1-------25-------6
+    //|       ||       |
+    //|       ||       |
+    //0-------34-------7
 
     //vertices
     //{0,0,0}
     //{0,font_height,0}
-    //{font_width, 0, 0}
-    //{font_width, font_height, 0}
-    //{font_width + font_width, 0, 0}
-    //{font_width + font_width, font_height, 0}
+    //{font_width,font_height,0}
+    //{font_width,0,0}
+    //{font_width,0,0}
+    //{font_width,font_height,0}
+    //{font_width*2,font_height,0}
+    //{font_width*2,0,0}
 
     //indices
-    // 1
-    // 0
-    // 3
-    // 0
-    // 2
-    // 3
-    // 3 (+2)
-    // 2 (+2)
-    // 5 (+2)
-    // 2 (+2)
-    // 4 (+2)
-    // 5 (+2)
+    //2
+    //1
+    //0
+    //0
+    //3
+    //2
+    //6
+    //5
+    //4
+    //4
+    //7
+    //6
 
     //Size: n
     //vertices
-    // pour tout i de 0 à n
-    //{font_width*i, 0, 0}
-    //{font_width*i, font_height, 0}
+    //for i = 1 to n
+    //{font_width *(i - 1), 0, 0}
+    //{font_width *(i - 1), font_height, 0}
+    //{font_width *(i), font_height, 0}
+    //{font_width *(i), 0, 0}
 
     //indices
-    // pour tout i de 0 à n - 1
-    // {1 + i*2}
-    // {0 + i*2}
-    // {3 + i*2}
-    // {0 + i*2}
-    // {2 + i*2}
-    // {3 + i*2}
+    //for i = 0 to n - 1
+    //2 + (4*i)
+    //1 + (4*i)
+    //0 + (4*i)
+    //0 + (4*i)
+    //3 + (4*i)
+    //2 + (4*i)
+
+    auto vert = std::vector<float>();
+    for(unsigned int i = 1; i <= string_length; ++i) {
+        vert.push_back(font_width * (i - 1));
+        vert.push_back(0);
+        vert.push_back(0);
+
+        vert.push_back(font_width * (i - 1));
+        vert.push_back(font_height);
+        vert.push_back(0);
+
+        vert.push_back(font_width * (i));
+        vert.push_back(font_height);
+        vert.push_back(0);
+
+        vert.push_back(font_width * (i));
+        vert.push_back(0);
+        vert.push_back(0);
+    }
+
+    auto indices = std::vector<unsigned int>();
+    for(unsigned int i = 0; i < string_length; ++i) {
+        indices.push_back(2 + (4*i));
+        indices.push_back(1 + (4*i));
+        indices.push_back(0 + (4*i));
+        indices.push_back(0 + (4*i));
+        indices.push_back(3 + (4*i));
+        indices.push_back(2 + (4*i));
+    }
+
+    vao.indicies(indices.data(), indices.size());
+    vao.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
 }
 
 void Geometry::make_quad(VAO &vao,float width,float height,float offsetX,float offsetY) {

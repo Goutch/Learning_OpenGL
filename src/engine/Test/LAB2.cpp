@@ -12,12 +12,12 @@
 void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
 
-    Geometry::make_quad(vao);
+    Geometry::make_text(vao);
 }
 
 void LAB2::render() const {
     Scene::render();
-    renderer->draw(vao,material);
+    renderer->draw(vao, defaultMat);
 
 }
 
