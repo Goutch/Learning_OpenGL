@@ -123,6 +123,7 @@ add_executable(OGL_Engine
 
         Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
-        Dependencies/STB_IMAGE/stb_image_write.h src/engine/Events/KeyPressListener.h)
+        Dependencies/STB_IMAGE/stb_image_write.h src/engine/Events/KeyPressListener.h
+        src/engine/Shaders/FontText.cpp src/engine/Shaders/FontText.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

@@ -5,17 +5,15 @@
 #include <Data/AtlasTexture.h>
 #include <Shaders/Material.h>
 #include <Geometry/Mesh.h>
+#include <Shaders/FontText.h>
 #include "Entities/Transform.h"
 #include <Events/KeyPressListener.h>
 class LAB2 : public Scene,KeyPressListener{
     Transform transform = Transform();
     Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
-    Texture texture = Texture("../res/wall.jpg", false);
-    AtlasTexture font = AtlasTexture("../res/font.bmp", 64, 64, false);
-    Material material = Material(shader, font);
-    Material defaultMat = Material(shader);
-
+    FontText font = FontText("../res/font.bmp", 64, 64, shader);
+    unsigned int counter=0;
     Mesh vao;
 
     void onKeyPress(char key) override;
@@ -25,6 +23,7 @@ public:
 
     void render() const override;
 
+    void update(float delta) override;
 };
 
 

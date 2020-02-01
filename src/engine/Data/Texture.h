@@ -25,7 +25,7 @@ public:
 
     Texture(const std::string &path, bool flip_on_load = true);
 
-    ~Texture();
+    virtual ~Texture();
 
     void load(const std::string &path, bool flip_on_load = true);
 
