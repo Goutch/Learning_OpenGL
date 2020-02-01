@@ -22,7 +22,7 @@ class SimpleRenderer:public Renderer {
     int depthShader_transform_mat_location;
 public:
     SimpleRenderer();
-    void addToRenderQueue(const VAO &vao, const Material &material ,const Transform& transform) override;
+    void draw(const VAO &vao, const Material &material , const Transform& transform) override;
 
     void render(const FBO &buffer,const glm::mat4 &projection=mat4(1.0f),const glm::mat4& view_mat=mat4(1.0f)) override;
 

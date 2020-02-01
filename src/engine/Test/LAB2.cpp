@@ -19,6 +19,6 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
 }
 void LAB2::render() const {
     Scene::render();
-    renderer->addToRenderQueue(vao, material,transform);
+    renderer->draw(vao, material, transform);
 }
 

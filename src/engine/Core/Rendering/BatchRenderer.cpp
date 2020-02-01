@@ -60,7 +60,7 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
     buffer.unbind();
 }
 
-void BatchRenderer::addToRenderQueue(const VAO &vao, const Material &material, const Transform &transform) {
+void BatchRenderer::draw(const VAO &vao, const Material &material, const Transform &transform) {
     if (material_batch.find(&material) == material_batch.end()) {
         material_batch.insert(
                 std::make_pair(&material, std::unordered_map<const VAO *, std::list<const Transform *>>()));
