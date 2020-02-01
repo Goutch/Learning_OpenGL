@@ -2,7 +2,6 @@
 // Created by User on 2020-01-05.
 //
 
-#include <Core/Log.h>
 #include "FPSController.h"
 #include "Core/Window.h"
 #include "Core/Scene.h"

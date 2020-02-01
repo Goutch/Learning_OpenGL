@@ -35,7 +35,7 @@ void Scene::prepareRender() const{
     }
 }
 void Scene::render() const {
-    renderer->render(viewport->getFrameBuffer(),camera->getCameraSpaceMatrix());
+    renderer->render(viewport->getFrameBuffer(),camera->getProjectionMatrix(),camera->getViewMatrix());
 }
 
 void Scene::init(Viewport &viewport, Renderer &renderer, Window &window) {
