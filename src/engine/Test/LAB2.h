@@ -12,8 +12,9 @@ class LAB2 : public Scene{
                            "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
     Texture texture = Texture("../res/wall.jpg", false);
     AtlasTexture font = AtlasTexture("../res/font.bmp", 32, 32, false);
-    Material material = Material(shader, font);
+    Material material = Material(shader, texture);
     Material defaultMat = Material(shader);
+    Transform transform;
     Mesh vao;
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;

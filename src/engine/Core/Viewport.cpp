@@ -39,9 +39,11 @@ Viewport::Viewport(const Viewport &parent_viewport, float width, float height, f
     Geometry::make_quad(render_space,2*width,2*height,offsetX,offsetY);
 }
 
+#include <Core/Log.h>
 void Viewport::onWindowSizeChange(unsigned int width, unsigned int height) {
     pixel_width = static_cast<unsigned int>(width * this->width);
     pixel_height = static_cast<unsigned int>(height * this->height);
+    Log::warning(std::to_string(pixel_width));
     frame_buffer.setSize(pixel_width, pixel_height);
     for (auto l:sizeListeners) {
         l->onViewportSizeChange(pixel_width, pixel_height);

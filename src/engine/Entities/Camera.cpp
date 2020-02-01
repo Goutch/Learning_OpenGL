@@ -37,7 +37,7 @@ void Camera::calculateProjectionMatrix() {
     } else if (projectionMode == ORTHOGRAPHIC_PIXEL) {
         projection_matrix = glm::ortho<float>(0, viewport->getPixelWidth(), 0, viewport->getPixelHeight(), -100, 100);
     } else {
-        projection_matrix = glm::ortho<float>(-1, 1, -1 * aspect_ratio, 1 * aspect_ratio, -100, 100);
+        projection_matrix = glm::ortho<float>(-1, 1, -1 / aspect_ratio, 1 / aspect_ratio, -100, 100);
 
     }
 }
