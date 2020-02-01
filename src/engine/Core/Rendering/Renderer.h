@@ -1,4 +1,5 @@
 #pragma once
+
 #include "glm/mat4x4.hpp"
 
 class MeshRenderer;
@@ -16,21 +17,35 @@ class Scene;
 class Shader;
 
 class Camera;
+
 class Texture;
+
 class FBO;
+
 using namespace glm;
 
 class Viewport;
+
 class Renderer {
 public:
     void clear();
+
     void clearDepth();
+
     void clearColor();
-    virtual void addToRenderQueue(const VAO &vao,const Material &material,const Transform& transform)=0;
-    virtual void draw(const VAO& vao, const Material& material);
-    virtual void draw(const VAO& vao, const Shader& shader, const Texture& texture);
-    virtual void draw(const VAO& vao, const Shader& shader);
+
+    virtual void draw(const VAO &vao, const Material &material, const Transform &transform) = 0;
+
+    virtual void draw(const VAO &vao, const Material &material);
+
+    virtual void draw(const VAO &vao, const Shader &shader, const Texture &texture);
+
+    virtual void draw(const VAO &vao, const Shader &shader);
+
     void enableWireframe(bool enable);
-    virtual void render(const FBO &buffer,const glm::mat4 &projection=mat4(1.0f),const glm::mat4& view_mat=mat4(1.0f))=0;
-    virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat)=0;
+
+    virtual void
+    render(const FBO &buffer, const glm::mat4 &projection = mat4(1.0f), const glm::mat4 &view_mat = mat4(1.0f)) = 0;
+
+    virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) = 0;
 };

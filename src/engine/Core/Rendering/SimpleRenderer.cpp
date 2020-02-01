@@ -11,7 +11,7 @@ SimpleRenderer::SimpleRenderer() {
     depthShader_light_space_matrix_location = depthShader.uniformLocation("space");
     depthShader_transform_mat_location = depthShader.uniformLocation("transform");
 }
-void SimpleRenderer::addToRenderQueue(const VAO &vao, const Material &material,const Transform& transform) {
+void SimpleRenderer::draw(const VAO &vao, const Material &material, const Transform& transform) {
     render_queue.emplace(&material,&vao,&transform);
 }
 
