@@ -19,7 +19,7 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
 }
 void LAB2::render() const {
     Scene::render();
-    renderer->draw(vao, material, transform);
+    renderer->draw(vao, font, transform);
 }
 void LAB2::update(float delta) {
     Scene::update(delta);
