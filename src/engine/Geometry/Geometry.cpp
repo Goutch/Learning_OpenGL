@@ -12,7 +12,7 @@
 void Geometry::make_text(VAO &vao) {
     float font_width = 0.2f;
     float font_height = 0.2f;
-    unsigned int string_length = 1;
+    unsigned int string_length = 3;
 
     //Size: 0
     //return;

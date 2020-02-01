@@ -22,13 +22,16 @@ void Renderer::clearColor() {
 
 void Renderer::draw(const VAO &vao, const Material &material) {
     glDisable(GL_DEPTH_TEST);
+    glPolygonMode( GL_FRONT_AND_BACK, GL_LINE );
     material.bind();
     material.transform(mat4(1));
     material.view(mat4(1));
+    material.projection(mat4(1));
     vao.bind();
     glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
     vao.unbind();
     material.unbind();
+    glPolygonMode( GL_FRONT_AND_BACK, GL_FILL );
 }
 
 void Renderer::draw(const VAO &vao, const Shader &shader, const Texture &texture) {
