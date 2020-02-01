@@ -13,12 +13,12 @@ void LAB2::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
     Geometry::make_quad(vao);
-    //float uvs[8];
-    //font.getCoordinates(uvs, 3);
-    //vao.uvs(uvs, 8);
+    float uvs[8];
+    font.getCoordinates(uvs, 3);
+    vao.uvs(uvs, 8);
 }
 void LAB2::render() const {
     Scene::render();
-    renderer->addToRenderQueue(vao, defaultMat,transform);
+    renderer->addToRenderQueue(vao, material,transform);
 }
 
