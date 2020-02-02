@@ -4,13 +4,13 @@
 #include "Test/TextureCreationTest.h"
 #include "Test/AtlasTextureTest.h"
 #include <Test/ImportModelTest.h>
-#include <Test/LAB2.h>
+#include <Test/TextTest.h>
 #include <Editor/Editor.h>
 #include "Test/FullSceneTest.h"
-#include "Test/LAB2.h"
+#include "Test/TextTest.h"
 int main() {
     Engine engine=Engine();
-    auto s=LAB2();
+    auto s=TextTest();
    // auto e=Editor(s);
 
     engine.start(s);

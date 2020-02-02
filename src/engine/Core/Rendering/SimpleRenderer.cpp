@@ -62,7 +62,3 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
     depthShader.unbind();
     buffer.unbind();
 }
-
-
-
-

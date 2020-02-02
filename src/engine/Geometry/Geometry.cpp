@@ -12,7 +12,6 @@
 void Geometry::make_text(Mesh &mesh, std::string text, FontText& font) {
     float font_width = 0.2f;
     float font_height = 0.2f;
-    unsigned int string_length = 3;
 
     //Size: 0
     //return;
@@ -86,7 +85,7 @@ void Geometry::make_text(Mesh &mesh, std::string text, FontText& font) {
 
     auto vert = std::vector<float>();
     auto uvs = std::vector<float>();
-    for(unsigned int i = 0; i < string_length; ++i) {
+    for(unsigned int i = 0; i < text.size(); ++i) {
         vert.push_back(font_width * (i));
         vert.push_back(0);
         vert.push_back(0);
@@ -104,14 +103,14 @@ void Geometry::make_text(Mesh &mesh, std::string text, FontText& font) {
         vert.push_back(0);
 
         float uvs_current_char[8];
-        font.getCoordinates(uvs_current_char, 3);
+        font.getCoordinates(uvs_current_char, text[i] - 32);
         for(int j = 0; j < 8; ++j) {
             uvs.push_back(uvs_current_char[j]);
         }
     }
 
     auto indices = std::vector<unsigned int>();
-    for(unsigned int i = 0; i < string_length; ++i) {
+    for(unsigned int i = 0; i < text.size(); ++i) {
         indices.push_back(2 + (4*i));
         indices.push_back(1 + (4*i));
         indices.push_back(0 + (4*i));
