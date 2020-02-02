@@ -60,6 +60,14 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
     buffer.unbind();
 }
 
+void SimpleRenderer::renderUI(const FBO &buffer, const mat4 &projection) {
+
+}
+
+void SimpleRenderer::drawUI(const VAO &vao, const Material &material, const Transform &transform) {
+
+}
+
 
 
 

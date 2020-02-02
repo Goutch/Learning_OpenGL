@@ -15,7 +15,9 @@ public:
 
     void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) override;
 
+    void renderUI(const FBO &buffer, const mat4 &projection) override;
 
+    void drawUI(const VAO &vao, const Material &material, const Transform &transform) override;
 
 };
 

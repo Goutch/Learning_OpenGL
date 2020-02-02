@@ -35,7 +35,7 @@ void Camera::calculateProjectionMatrix() {
         fov = 90;
         projection_matrix = glm::perspective<float>(glm::radians(fov), aspect_ratio, 0.1f, 200.0f);
     } else if (projectionMode == ORTHOGRAPHIC_PIXEL) {
-        projection_matrix = glm::ortho<float>(0, viewport->getPixelWidth(), 0, viewport->getPixelHeight(), -100, 100);
+        projection_matrix = viewport->getPixelProjection();
     } else {
         projection_matrix = glm::ortho<float>(-1, 1, -1 / aspect_ratio, 1 / aspect_ratio, -100, 100);
 

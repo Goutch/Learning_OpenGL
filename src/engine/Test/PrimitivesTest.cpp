@@ -4,9 +4,13 @@
 
 #include "PrimitivesTest.h"
 #include <Core/Rendering/Renderer.h>
+#include <Core/Viewport.h>
 void PrimitivesTest::render() const {
     Scene::render();
-    renderer->drawRect(0,0,1,1,Color::RED);
-    renderer->drawEllipse(0,0,1,1,Color::BLUE);
-    renderer->drawLine(-1,-1,1,1,0.1,Color::GREEN);
+    float w=viewport->getPixelWidth();
+    float h=viewport->getPixelHeight();
+    renderer->drawRect(100, 100, 100, 100, Color::RED);
+    renderer->drawLine(0 ,0,w ,h, 1, Color::GREEN);
+    renderer->drawLine(w ,0,0 ,h, 3, Color::WHITE);
+    renderer->drawEllipse(w/2,h/2, 200, 50, Color::BLUE);
 }

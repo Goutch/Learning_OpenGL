@@ -7,6 +7,7 @@
 #include <Events/ViewportResizeListener.h>
 #include <Data/FBO.h>
 #include <Shaders/Shader.h>
+#include <glm/glm.hpp>
 
 class window;
 
@@ -32,6 +33,7 @@ private:
                            "}", true);
     VAO render_space;
     FBO frame_buffer = FBO(FBO::COLOR);
+    mat4 pixel_projection;
     const Window *window;
     unsigned int pixel_width;
     unsigned int pixel_height;
@@ -50,9 +52,8 @@ public:
 
     unsigned int getPixelHeight() const;
 
-    float getWidth() const;
 
-    float getHeight() const;
+    const mat4 getPixelProjection() const;
 
     const VAO &getRenderSpace() const;
 
