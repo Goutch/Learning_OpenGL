@@ -41,9 +41,9 @@ public:
     virtual void draw(const VAO &vao, const Shader &shader, const Texture &texture);
 
     virtual void draw(const VAO &vao, const Shader &shader);
-    virtual void drawRect(unsigned int width, unsigned int height);
-    virtual void drawElipse();
-    virtual void drawLine();
+    //virtual void drawRect(unsigned int width, unsigned int height);
+    //virtual void drawElipse();
+    //virtual void drawLine();
     void enableWireframe(bool enable);
 
     virtual void render(const FBO &buffer, const glm::mat4 &projection = mat4(1.0f), const glm::mat4 &view_mat = mat4(1.0f)) = 0;

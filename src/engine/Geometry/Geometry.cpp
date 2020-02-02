@@ -9,7 +9,7 @@
 #include "Core/Log.h"
 #include "math.h"
 #include "Utils/Timer.h"
-void Geometry::make_text(Mesh &mesh, std::string text, FontText& font) {
+void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
     float font_width = 0.2f;
     float font_height = 0.2f;
 

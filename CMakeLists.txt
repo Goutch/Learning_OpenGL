@@ -69,8 +69,8 @@ add_executable(OGL_Engine
         src/engine/Shaders/Material.h
         src/engine/Shaders/LightMaterial.cpp
         src/engine/Shaders/LightMaterial.h
-        src/engine/Shaders/FontText.cpp
-        src/engine/Shaders/FontText.h
+        src/engine/Shaders/FontMaterial.cpp
+        src/engine/Shaders/FontMaterial.h
 
         src/engine/Geometry/Geometry.h
         src/engine/Geometry/Geometry.cpp
@@ -83,8 +83,6 @@ add_executable(OGL_Engine
 
         src/engine/Data/Texture.cpp
         src/engine/Data/Texture.h
-        src/engine/Data/Text.cpp
-        src/engine/Data/Text.h
         src/engine/Data/AtlasTexture.cpp
         src/engine/Data/AtlasTexture.h
         src/engine/Data/Color.cpp
@@ -127,6 +125,6 @@ add_executable(OGL_Engine
         Dependencies/STB_IMAGE/stb_image.cpp
         Dependencies/STB_IMAGE/stb_image_write.h
 
-)
+        src/engine/Entities/Text.cpp src/engine/Entities/Text.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
