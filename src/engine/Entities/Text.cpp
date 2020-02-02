@@ -24,7 +24,7 @@ void Text::destroy(Scene &scene) {
     Entity::destroy(scene);
 }
 
-Text::Text(std::string text, const vec3 &position, FontMaterial &font) : Entity(position, vec3(1), vec3(1)),
+Text::Text(std::string text, const vec3 &position, FontMaterial &font) : Entity(position, vec3(0), vec3(1)),
                                                                                                 font(font) {
     Geometry::make_text(mesh, text, font);
 }
