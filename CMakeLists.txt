@@ -29,104 +29,57 @@ add_executable(OGL_Engine
         src/main.cpp
 
         src/engine/Core/Engine.cpp
-        src/engine/Core/Engine.h
-        src/engine/Core/Scene.h
         src/engine/Core/Window.cpp
-        src/engine/Core/Window.h
-        src/engine/Core/Debug.h
-        src/engine/Core/Rendering/BatchRenderer.cpp
         src/engine/Core/Scene.cpp
         src/engine/Core/Log.cpp
-        src/engine/Core/Log.h
         src/engine/Core/ViewPort.cpp
-        src/engine/Core/ViewPort.h
         src/engine/Core/Inputs.cpp
-        src/engine/Core/Inputs.h
         src/engine/Core/Rendering/Renderer.cpp
-        src/engine/Core/Rendering/Renderer.h
         src/engine/Core/Rendering/SimpleRenderer.cpp
-        src/engine/Core/Rendering/SimpleRenderer.h
+        src/engine/Core/Rendering/BatchRenderer.cpp
 
         src/engine/Entities/MeshRenderer.cpp
-        src/engine/Entities/MeshRenderer.h
         src/engine/Entities/Transform.cpp
-        src/engine/Entities/Transform.h
         src/engine/Entities/FPSController.cpp
-        src/engine/Entities/FPSController.h
         src/engine/Entities/Entity.cpp
         src/engine/Entities/Light/Light.cpp
-        src/engine/Entities/Light/Light.h
         src/engine/Entities/Light/DirectionnalLight.cpp
-        src/engine/Entities/Light/DirectionnalLight.h
         src/engine/Entities/Light/PointLight.cpp
-        src/engine/Entities/Light/PointLight.h
         src/engine/Entities/Camera.cpp
-        src/engine/Entities/Camera.h
 
         src/engine/Shaders/Shader.cpp
-        src/engine/Shaders/Shader.h
         src/engine/Shaders/Material.cpp
-        src/engine/Shaders/Material.h
         src/engine/Shaders/LightMaterial.cpp
-        src/engine/Shaders/LightMaterial.h
         src/engine/Shaders/FontText.cpp
-        src/engine/Shaders/FontText.h
 
-        src/engine/Geometry/Geometry.h
         src/engine/Geometry/Geometry.cpp
         src/engine/Geometry/Mesh.cpp
-        src/engine/Geometry/Mesh.h
         src/engine/Geometry/VAO.cpp
-        src/engine/Geometry/VAO.h
         src/engine/Geometry/VBO.cpp
-        src/engine/Geometry/VBO.h
+        src/engine/Geometry/Quad.cpp
 
         src/engine/Data/Texture.cpp
-        src/engine/Data/Texture.h
         src/engine/Data/Text.cpp
-        src/engine/Data/Text.h
         src/engine/Data/AtlasTexture.cpp
-        src/engine/Data/AtlasTexture.h
         src/engine/Data/Color.cpp
-        src/engine/Data/Color.h
         src/engine/Data/FBO.cpp
-        src/engine/Data/FBO.h
         src/engine/Data/RBO.cpp
-        src/engine/Data/RBO.h
 
-        src/engine/Utils/SimplexNoise.h
         src/engine/Utils/SimplexNoise.cpp
         src/engine/Utils/StringUtils.cpp
-        src/engine/Utils/StringUtils.h
         src/engine/Utils/Timer.cpp
-        src/engine/Utils/Timer.h
-        src/engine/Utils/TimeUtils.h
         src/engine/Utils/TimeUtils.cpp
 
         src/engine/Test/PerformanceTest.cpp
-        src/engine/Test/PerformanceTest.h
         src/engine/Test/AtlasTextureTest.cpp
-        src/engine/Test/AtlasTextureTest.h
         src/engine/Test/ImportModelTest.cpp
-        src/engine/Test/ImportModelTest.h
         src/engine/Test/TextureCreationTest.cpp
-        src/engine/Test/TextureCreationTest.h
         src/engine/Test/FullSceneTest.cpp
-        src/engine/Test/FullSceneTest.h
         src/engine/Test/TextTest.cpp
-        src/engine/Test/TextTest.h
 
         src/engine/Editor/Editor.cpp
-        src/engine/Editor/Editor.h
 
-        src/engine/Events/ViewportResizeListener.h
-        src/engine/Events/WindowResizeListener.h
-        src/engine/Events/KeyPressListener.h
-
-        Dependencies/STB_IMAGE/stb_image.h
         Dependencies/STB_IMAGE/stb_image.cpp
-        Dependencies/STB_IMAGE/stb_image_write.h
-
-)
+        src/engine/Test/PrimitivesTest.cpp src/engine/Test/PrimitivesTest.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

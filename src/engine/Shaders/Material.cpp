@@ -33,7 +33,7 @@ Material::Material(const Shader &shader, const Texture &texture,const Color &col
 
 void Material::bind() const{
     s->bind();
-    s->loadUniform(material_color_location,c.data);
+    s->loadUniform(material_color_location,c);
     if (has_texture) {
         s->loadUniform(texture_0_location, 0);
         s->loadUniform(has_texture_location, true);

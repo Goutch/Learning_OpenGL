@@ -1,4 +1,4 @@
-#version 400 core
+#version 330 core
 
 uniform vec4 material_color;
 in vec2 uv;
@@ -10,7 +10,6 @@ void main()
     {
             fragColor=vec4(0, 0, 0, 0);
     }
-
     else
     {
         fragColor=material_color;

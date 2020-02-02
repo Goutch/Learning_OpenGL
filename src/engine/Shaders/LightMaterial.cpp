@@ -10,7 +10,7 @@
 #include "Entities/Camera.h"
 void LightMaterial::bind() const {
     Material::bind();
-    s->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight().data);
+    s->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight());
     s->loadUniform(damp_factor_location, dampFactor);
     s->loadUniform(shine_factor_location, shineFactor);
 
@@ -24,7 +24,7 @@ void LightMaterial::bind() const {
         for (unsigned int i = 0; i < pointLights.size(); ++i) {
             radius.push_back(pointLights[i]->getRadius());
             positions.push_back(pointLights[i]->transform.position());
-            colors.emplace_back(pointLights[i]->getColor().data);
+            colors.emplace_back(pointLights[i]->getColor());
             if (i == 4)break;
         }
         s->loadUniformVec3Array(point_light_positions_location, positions.data(), positions.size());
@@ -39,7 +39,7 @@ void LightMaterial::bind() const {
         glm::mat4 depth_bias_mat=bias_mat* directionalLights[0]->getLightSpaceMat();
         s->loadUniform(light_space_mat_location, depth_bias_mat);
         s->loadUniform(directional_light_shadowMap_location, 1);
-        s->loadUniform(directional_light_color_location, vec3(directionalLights[0]->getColor().data));
+        s->loadUniform(directional_light_color_location, vec3(directionalLights[0]->getColor()));
         s->loadUniform(directional_light_direction_location, vec3(directionalLights[0]->transform.forward()));
         boundShadowMaps[0]->bind(1);
     }
