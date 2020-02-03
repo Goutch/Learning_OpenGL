@@ -11,6 +11,6 @@ void PrimitivesTest::render() const {
     float h=viewport->getPixelHeight();
     renderer->drawRect(100, 100, 100, 100, Color::RED);
     renderer->drawLine(0 ,0,w ,h, 1, Color::GREEN);
-    renderer->drawLine(w ,0,0 ,h, 3, Color::WHITE);
-    renderer->drawEllipse(w/2,h/2, 200, 50, Color::BLUE);
+    renderer->drawLine(w ,0,0 ,h, 1, Color::WHITE);
+    renderer->drawEllipse(w/2,h/2, 200, 200, Color::BLUE);
 }
