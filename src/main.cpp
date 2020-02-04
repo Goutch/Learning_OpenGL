@@ -9,9 +9,10 @@
 #include <Editor/Editor.h>
 #include "Test/FullSceneTest.h"
 #include "Test/TextTest.h"
+#include "Test/LAB3.h"
 int main() {
     Engine engine=Engine();
-    auto s=PrimitivesTest();
+    auto s=LAB3();
     auto e=Editor(s);
     engine.start(e);
     return 0;

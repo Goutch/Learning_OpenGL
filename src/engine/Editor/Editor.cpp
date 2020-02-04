@@ -21,7 +21,7 @@ void Editor::init(Viewport &viewport, Renderer &renderer, Window &window) {
     viewport_mat.texture(viewport.getFrameBuffer().getTexture());
     viewport_transform.position(vec3(100,100,0));
     viewport_transform.scale(vec3(viewport.getPixelWidth(),viewport.getPixelHeight(),1));
-    current_scene_viewport = new Viewport(viewport, 0.5, 0.5, 0, 0);
+    current_scene_viewport = new Viewport(viewport, 1, 1, 0, 0);
     current_scene->init(*current_scene_viewport, renderer, window);
 }
 
