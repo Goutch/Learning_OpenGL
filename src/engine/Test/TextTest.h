@@ -10,8 +10,8 @@
 #include <Events/KeyPressListener.h>
 class TextTest : public Scene{
     Transform transform = Transform();
-    Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
-                           "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
+    Shader shader = Shader("../src/engine/Shaders/shadersSources/TextVertex.glsl",
+                           "../src/engine/Shaders/shadersSources/TextFragment.glsl");
     FontMaterial font = FontMaterial("../res/font.bmp", 64, 64, shader);
     Mesh vao;
 
