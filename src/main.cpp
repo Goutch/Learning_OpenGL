@@ -12,7 +12,7 @@
 #include "Test/LAB3.h"
 int main() {
     Engine engine=Engine();
-    auto s=LAB3();
+    auto s=TextTest();
     auto e=Editor(s);
     engine.start(e);
     return 0;

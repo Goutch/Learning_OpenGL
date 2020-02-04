@@ -10,7 +10,7 @@ private:
 public:
     Text(std::string text, const vec3 &position, FontMaterial &font);
 
-    void render(const Scene &scene) const override;
+    void draw(const Scene &scene) const override;
 };
 
 
