@@ -1,10 +1,10 @@
 #pragma once
 
 #include "Material.h"
-#include "vector"
+
 class LightMaterial : public Material {
 private:
-private:
+    const Scene* scene;
     mutable std::vector<const Texture*> boundShadowMaps;
     float shineFactor =0;
     float dampFactor =16;
@@ -33,17 +33,17 @@ private:
 public:
     LightMaterial();
 
-    LightMaterial(const Shader &shader);
+    LightMaterial(const Shader &shader, const Scene &scene);
 
     void unbind() const override;
 
-    LightMaterial(const Shader &shader, const Color &color);
+    LightMaterial(const Shader &shader, const Color &color, const Scene &scene);
 
-    LightMaterial(const Shader &shader, const Texture &texture);
+    LightMaterial(const Shader &shader, const Texture &texture, const Scene &scene);
 
-    LightMaterial(const Shader &shader,const  Texture &texture, const Color &color);
+    LightMaterial(const Shader &shader,const  Texture &texture, const Color &color, const Scene &scene);
 
-    void bind(const Scene &scene) const override;
+    void bind() const override;
 
     void shine(float);
 

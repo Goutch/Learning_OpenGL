@@ -9,6 +9,8 @@ private:
 public:
     FPSController(Transform& camera,vec3 position,vec3 rotation,vec3 scale);
     FPSController(Transform& camera);
+
+
     void update(float delta, Scene& scene) override ;
 
     void init(Scene &scene) override;

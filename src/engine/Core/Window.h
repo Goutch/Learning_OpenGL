@@ -1,30 +1,38 @@
 #pragma once
-#include <GLFW/glfw3.h>
+class GLFWwindow;
 #include<string>
 #include "list"
-class WindowSizeListener;
+class WindowResizeListener;
+class KeyPressListener;
 class Window
 {
 private:
-    static std::list<WindowSizeListener*> sizeListeners;
+    static std::list<WindowResizeListener*> sizeListeners;
+    static std::list<KeyPressListener*> keyboardListeners;
     GLFWwindow* window;
-    int width=600, height=400;
+    mutable int width=600;
+    mutable int height=400;
     bool cursor_shown=true;
 public:
     Window();
     ~Window();
     bool open(std::string title, int width, int height);
-    bool shouldClose();
+    bool shouldClose()const;
     void close();
-    void swapBuffer();
-    void getInputs();
-    bool isKeyDown(unsigned int keycode);
-    void getMousePosition(double &x, double &y);
+    void swapBuffer()const;
+    void pollEvents()const;
+    bool isKeyDown(unsigned int keycode)const;
+    bool isKeyPressed(unsigned int keycode)const;
+    void getMousePosition(double &x, double &y)const;
     void showCursor(bool showCursor);
     void setMousePosition(double x,double y);
-    int getWidth();
-    int getHeight();
-    void subscribeSizeChange(WindowSizeListener& l);
-    void unsubscribeSizeChange(WindowSizeListener& l);
+    int getWidth()const;
+    int getHeight()const;
+    void subscribeSizeChange( WindowResizeListener& l) const;
+    void unsubscribeSizeChange(WindowResizeListener& l) const;
+    void subscribeKeyPress(KeyPressListener& l) const;
+    void unsubscribeKeyPress(KeyPressListener& l) const;
     static void windowSizeCallback(GLFWwindow* window, int width, int height);
+    static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
+
 };

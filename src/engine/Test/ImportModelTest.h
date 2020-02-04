@@ -17,6 +17,6 @@ private:
 
     Mesh mesh=Mesh("../res/dragon_mesh.obj");
 public:
-    void init(Window &window, Renderer &renderer) override;
+    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
 };

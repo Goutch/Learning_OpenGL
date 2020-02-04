@@ -7,8 +7,9 @@
 #include "Entities/FPSController.h"
 #include "Entities/Light/PointLight.h"
 #include "Entities/Light/DirectionnalLight.h"
-void FullSceneTest::init(Window &window, Renderer &renderer) {
-    Scene::init(window, renderer);
+#include "Entities/Camera.h"
+void FullSceneTest::init(Viewport &viewport, Renderer &renderer, Window &window){
+    Scene::init(viewport,renderer,window);
 
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);
@@ -16,11 +17,14 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
 
     //sphere
     addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
+
     //ground
     addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(100, 1, 100)));
+
     //bunnies
     addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(10,0,0)));
     addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(-10,0,0)));
+
     //dragons
     dragon_material.shine(1);
     dragon_material.damp(6);
@@ -30,7 +34,7 @@ void FullSceneTest::init(Window &window, Renderer &renderer) {
     addEntity(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, 10)));
 
     //controller
-    addEntity(new FPSController(camera, vec3(0, 1, 2), vec3(0), vec3(1)));
+    addEntity(new FPSController(camera->transform, vec3(0, 2, 2), vec3(0), vec3(1)));
 
     //middle point light
     addLight(new PointLight(Color(1, 0, 0), 10, vec3(0, 1, 0)));

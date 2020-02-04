@@ -4,12 +4,12 @@
 
 #include "TextureCreationTest.h"
 #include "Entities/MeshRenderer.h"
-#include "Core/Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
 #include "Utils/SimplexNoise.h"
 #include "Geometry/Geometry.h"
 
-void TextureCreationTest::init(Window &window, Renderer &renderer) {
-    Scene::init(window, renderer);
+void TextureCreationTest::init(Viewport &viewport, Renderer &renderer, Window &window){
+    Scene::init(viewport,renderer,window);
 
     int width = 300;
     int height = 300;

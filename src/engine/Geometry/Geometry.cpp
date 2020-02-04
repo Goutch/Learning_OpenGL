@@ -9,23 +9,141 @@
 #include "Core/Log.h"
 #include "math.h"
 #include "Utils/Timer.h"
-void Geometry::make_quad(VAO &vao) {
+void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
+    float font_width = 0.2f;
+    float font_height = 0.2f;
+
+    //Size: 0
+    //return;
+
+    //Size: 1
     //1-------2
     //|       |
     //|       |
     //0-------3
+
+    //vertices
+    //{0,0,0}
+    //{0,font_height,0}
+    //{font_width,font_height,0}
+    //{font_width,0,0}
+
+    //indices
+    //2
+    //1
+    //0
+    //0
+    //3
+    //2
+
+    //Size: 2
+    //1-------25-------6
+    //|       ||       |
+    //|       ||       |
+    //0-------34-------7
+
+    //vertices
+    //{0,0,0}
+    //{0,font_height,0}
+    //{font_width,font_height,0}
+    //{font_width,0,0}
+    //{font_width,0,0}
+    //{font_width,font_height,0}
+    //{font_width*2,font_height,0}
+    //{font_width*2,0,0}
+
+    //indices
+    //2
+    //1
+    //0
+    //0
+    //3
+    //2
+    //6
+    //5
+    //4
+    //4
+    //7
+    //6
+
+    //Size: n
+    //vertices
+    //for i = 1 to n
+    //{font_width *(i - 1), 0, 0}
+    //{font_width *(i - 1), font_height, 0}
+    //{font_width *(i), font_height, 0}
+    //{font_width *(i), 0, 0}
+
+    //indices
+    //for i = 0 to n - 1
+    //2 + (4*i)
+    //1 + (4*i)
+    //0 + (4*i)
+    //0 + (4*i)
+    //3 + (4*i)
+    //2 + (4*i)
+
     auto vert = std::vector<float>();
-    vert.push_back(-.5);
-    vert.push_back(-.5);
+    auto uvs = std::vector<float>();
+    for(unsigned int i = 0; i < text.size(); ++i) {
+        vert.push_back(font_width * (i));
+        vert.push_back(0);
+        vert.push_back(0);
+
+        vert.push_back(font_width * (i));
+        vert.push_back(font_height);
+        vert.push_back(0);
+
+        vert.push_back(font_width * (i + 1));
+        vert.push_back(font_height);
+        vert.push_back(0);
+
+        vert.push_back(font_width * (i + 1));
+        vert.push_back(0);
+        vert.push_back(0);
+
+        float uvs_current_char[8];
+        font.getCoordinates(uvs_current_char, text[i] - 32);
+        for(int j = 0; j < 8; ++j) {
+            uvs.push_back(uvs_current_char[j]);
+        }
+    }
+
+    auto indices = std::vector<unsigned int>();
+    for(unsigned int i = 0; i < text.size(); ++i) {
+        indices.push_back(2 + (4*i));
+        indices.push_back(1 + (4*i));
+        indices.push_back(0 + (4*i));
+        indices.push_back(0 + (4*i));
+        indices.push_back(3 + (4*i));
+        indices.push_back(2 + (4*i));
+    }
+
+    mesh.indicies(indices.data(), indices.size());
+    mesh.put(Mesh::VERTICIES, 3, vert.data(), vert.size());
+    mesh.uvs(uvs.data(), uvs.size());
+}
+
+void Geometry::make_quad(VAO &vao,float width,float height,float offsetX,float offsetY) {
+    //1-------2
+    //|       |
+    //|       |
+    //0-------3
+
+    width/=2;
+    height/=2;
+    auto vert = std::vector<float>();
+    vert.push_back(-width+offsetX);
+    vert.push_back(-height+offsetY);
     vert.push_back(0);
-    vert.push_back(-.5);
-    vert.push_back(.5f);
+    vert.push_back(-width+offsetX);
+    vert.push_back(height+offsetY);
     vert.push_back(0);
-    vert.push_back(.5f);
-    vert.push_back(.5f);
+    vert.push_back(width+offsetX);
+    vert.push_back(height+offsetY);
     vert.push_back(0);
-    vert.push_back(.5f);
-    vert.push_back(-.5);
+    vert.push_back(width+offsetX);
+    vert.push_back(-height+offsetY);
     vert.push_back(0);
 
     auto indices = std::vector<unsigned int>();

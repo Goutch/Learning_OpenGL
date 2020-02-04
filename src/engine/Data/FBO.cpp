@@ -4,7 +4,6 @@
 #include <GL/glew.h>
 #include <Core/Log.h>
 
-#include "Core/Window.h"
 #include "FBO.h"
 #include "string"
 #include "stb_image_write.h"
@@ -13,6 +12,10 @@ FBO::FBO(int width,int height,FBO::Type type) {
     this->type=type;
     setSize(width,height);
 
+}
+FBO::FBO(FBO::Type type) {
+    glGenFramebuffers(1, &fbo_id);
+    this->type=type;
 }
 
 FBO::~FBO() {
@@ -75,8 +78,8 @@ void FBO::save(std::string path) const {
     stbi_write_png(path.c_str(), width, height, 4, buffer, 0);
     delete[] buffer;
     Log::message("ScreenShot:" + path);
-
 }
+
 
 
 

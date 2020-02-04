@@ -9,15 +9,16 @@
 #include "Log.h"
 #include "Window.h"
 #include "Engine.h"
-#include "Renderer.h"
+#include "Core/Rendering/BatchRenderer.h"
+#include "Core/Rendering/SimpleRenderer.h"
 #include "Debug.h"
-
+#include "Core/Viewport.h"
+#include <Entities/Camera.h>
 
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     window = new Window();
     if (window->open("WINDOW", 1000, 700)) {
-
         glewInit() == GLEW_OK ?
         Log::status("Initialized GLEW") :
         Log::error("failed to initialize GLEW");
@@ -41,32 +42,38 @@ Engine::Engine() {
 }
 
 void Engine::start(Scene &scene) {
-    if (glewInit() == GLEW_OK) {
-        Renderer renderer = Renderer(*window);
-        Log::status("Initializing scene..");
-        scene.init(*window, renderer);
-        Log::status("Initialized scene");
 
+    if (glewInit() == GLEW_OK) {
+        Renderer* renderer =new SimpleRenderer();
+        Log::status("Initializing scene..");
+        Viewport viewport=Viewport(*window);
+        scene.init(viewport,*renderer,*window);
+        Log::status("Initialized scene");
         double delta_time = 0;
         Timer t;
-        window->getInputs();
+        window->pollEvents();
         Log::status("Starting main loop..");
-        while (!window->shouldClose()) {
-            window->getInputs();
+        while (!window->shouldClose()){
+            window->pollEvents();
             t.reset();
             printFPS();
             scene.update((float)delta_time);
-            renderer.render(scene);
+            scene.prepareRender();
+            renderer->clear();
+            scene.render();
+            renderer->draw(viewport.getRenderSpace(),viewport.getShader(),viewport.getFrameBuffer().getTexture());
             window->swapBuffer();
-            window->getInputs();
             delta_time = t.ms();
         }
+        Log::status("Cleaning up..");
+        scene.destroy();
+        delete renderer;
     }
     printGLErrors();
 }
 
 Engine::~Engine() {
-
+    delete window;
 }
 
 void Engine::printFPS() {

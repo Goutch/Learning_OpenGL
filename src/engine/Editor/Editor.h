@@ -1,21 +1,22 @@
-//
-// Created by le6mon on 2020-01-26.
-//
-#include <Shaders/Material.h>
-#include "Core/Scene.h"
-#include "Geometry/Mesh.h"
-#include "Shaders/Shader.h"
-#include "Data/Texture.h"
+#pragma once
+
+#include <Core/Scene.h>
+#include <Core/Viewport.h>
 #include "Test/FullSceneTest.h"
+class Editor: public Scene{
+    Scene* current_scene;
+    Viewport* current_scene_viewport;
 
-class Editor : public Scene{
-private:
-    //TODO Delete reference
-    Scene* currentScene = new FullSceneTest();
+    Material screen_mat;
+
 public:
-    void init(Window &window, Renderer &renderer) override;
-
+    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+    Editor(Scene& scene);
+    ~Editor();
     void update(float delta) override;
 
-    void render() const override;
+    void prepareRender() const override ;
+
 };
+
+

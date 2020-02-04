@@ -6,11 +6,11 @@
 #include "ImportModelTest.h"
 #include <Entities/FPSController.h>
 #include <Entities/MeshRenderer.h>
-
-void ImportModelTest::init(Window &window, Renderer &renderer) {
-    Scene::init(window, renderer);
+#include "Entities/Camera.h"
+void ImportModelTest::init(Viewport &viewport, Renderer &renderer, Window &window){
+    Scene::init(viewport,renderer,window);
     addEntity(new MeshRenderer(mesh,material));
-    addEntity(new FPSController(camera));
+    addEntity(new FPSController(camera->transform));
 
 }
 

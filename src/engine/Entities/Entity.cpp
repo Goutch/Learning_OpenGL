@@ -8,7 +8,7 @@ Entity::Entity(vec3 position, vec3 rotation, vec3 scale) {
     transform.rotate(quat(rotation));
     transform.scale(scale);
 }
-Entity::Entity() {}
+
 
 void Entity::render(const Scene &scene) const{
 
@@ -18,5 +18,9 @@ void Entity::update(float delta,Scene &scene) {
 }
 
 void Entity::init(Scene &scene) {
+
+}
+
+void Entity::destroy(Scene& scene) {
 
 }

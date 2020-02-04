@@ -1,10 +1,8 @@
-#version 400 core
+#version 330 core
 
 uniform vec4 material_color;
 uniform sampler2D texture_0;
 uniform int has_texture;
-
-
 in vec2 uv;
 out vec4 fragColor;
 void main()

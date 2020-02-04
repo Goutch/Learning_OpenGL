@@ -4,34 +4,36 @@ class Window;
 class Renderer;
 class Entity;
 class Transform;
-
+class MeshRenderer;
 class PointLight;
+class DirectionalLight;
+class Camera;
+class Viewport;
 
-#include <Geometry/VAO.h>
+#include <GLFW/glfw3.h>
+#include "Data/FBO.h"
 #include "Entities/Transform.h"
 #include "Data/Color.h"
 #include "vector"
-class DirectionalLight;
+
 class Scene
 {
 protected:
+    Viewport* viewport;
     Window* window;
     Renderer* renderer;
     std::vector<Entity*> entities;
     std::vector<PointLight*> point_lights;
     std::vector<DirectionalLight*> directional_lights;
     Color ambient_light=Color(0.1f,0.1f,0.1f);
-    VAO quad;
 public:
-    const VAO &getQuad() const;
-
-public:
-    Transform camera;
-    ~Scene();
+    Camera* camera;
 	Scene();
-	virtual void init(Window &window,Renderer &renderer);
+	virtual void init(Viewport &viewport, Renderer &renderer, Window& window);
 	virtual void update(float delta);
+	virtual void prepareRender() const;
 	virtual void render() const;
+	virtual void destroy();
     void addEntity(Entity& entity);
     void addEntity(Entity* entity);
     void addLight(PointLight* light);
@@ -39,8 +41,8 @@ public:
     const std::vector<PointLight*>& getPointLights() const;
     const std::vector<DirectionalLight*>& getDirectionalLights() const;
     const Color& getAmbientLight() const;
-    const Transform& getCamera() const;
-	Window& getWindow()const;
+    const Camera& getCamera() const;
+	const Viewport& getViewport()const;
+    Window& getWindow() const;
 	Renderer& getRenderer()const ;
-
 };

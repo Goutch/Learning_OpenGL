@@ -1,9 +1,9 @@
-#version 400 core
+#version 330 core
 
-//base
-uniform mat4 transform;
 uniform mat4 projection;
 uniform mat4 view;
+uniform mat4 transform;
+
 uniform mat4 depth_bias_mat;
 
 layout(location=0)in vec3 vertexPosition;

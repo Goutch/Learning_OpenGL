@@ -2,11 +2,13 @@
 // Created by User on 2020-01-05.
 //
 
-#include <Core/Log.h>
 #include "FPSController.h"
 #include "Core/Window.h"
 #include "Core/Scene.h"
-#include "Core/Renderer.h"
+#include "Camera.h"
+
+#include <Core/Viewport.h>
+
 FPSController::FPSController(Transform& camera,vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
     this->camera=&camera;
     this->camera->parent=&transform;
@@ -23,7 +25,7 @@ void FPSController::init(Scene &scene) {
 }
 
 void FPSController::update(float delta, Scene& scene) {
-    Window& window=scene.getWindow();
+   Window& window= scene.getWindow();
     vec3 forward= vec3(0,0,-1) * 0.1f;
     vec3 right=vec3(1,0,0)*0.1f;
     vec3 up=vec3(0,1,0)*0.1f;
@@ -52,7 +54,7 @@ void FPSController::update(float delta, Scene& scene) {
     auto width=(double)window.getWidth();
     auto height=(double)window.getHeight();
 
-    float fov=scene.getRenderer().getFOV();
+    float fov=scene.getCamera().getFOV();
     double aspect_ratio=height/width;
 
     window.getMousePosition(x,y);

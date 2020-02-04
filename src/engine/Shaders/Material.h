@@ -1,13 +1,11 @@
 #pragma once
 
-class Shader;
-
-class Texture;
-
 #include <string>
 #include <unordered_map>
 #include <Data/Color.h>
 #include "Shaders/Shader.h"
+
+class Texture;
 
 class Scene;
 
@@ -17,7 +15,7 @@ class Material {
 protected:
     bool has_transparency;
     bool has_texture;
-    int transform_location, view_location, projection_location, has_texture_location, texture_0_location, material_color_location;
+    int transform_location, view_mat_location,projection_mat_location, has_texture_location, texture_0_location, material_color_location;
     Color c = Color::WHITE;
     const Texture *t;
     const Shader *s;
@@ -32,7 +30,7 @@ public:
 
     Material(const Shader &shader,const Texture &texture, const Color &color);
 
-    virtual void bind(const Scene &scene) const;
+    virtual void bind() const;
 
    virtual void unbind() const;
 
@@ -49,12 +47,10 @@ public:
     const Color &color() const;
 
 
-
-    void transform(const mat4 &transform) const;
-
-    void view(const mat4 &view) const;
-
     void projection(const mat4 &projection) const;
+    void transform(const mat4 &transform) const;
+    void view(const mat4 &space_mat) const;
+
 
 private:
     void getUniformsLocations();

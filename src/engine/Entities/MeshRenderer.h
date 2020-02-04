@@ -5,10 +5,10 @@ class Material;
 class Mesh;
 class MeshRenderer :public Entity{
     Material* m;
-    VAO* mesh;
+    const VAO* mesh;
 public:
-    MeshRenderer(VAO& mesh, Material& material, vec3 position, vec3 rotation=vec3(0), vec3 scale=vec3(1));
-    MeshRenderer(VAO& mesh, Material& material);
+    MeshRenderer(const VAO& mesh,Material& material, vec3 position, vec3 rotation=vec3(0), vec3 scale=vec3(1));
+    MeshRenderer(const VAO& mesh, Material& material);
 
     void render(const Scene& scene)const override ;
 };

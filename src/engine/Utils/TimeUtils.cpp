@@ -3,7 +3,7 @@
 //
 
 #include "TimeUtils.h"
-//delete warning about using localtime_s instead of localtime
+//suppress warning about using localtime_s instead of localtime
 #pragma warning(disable:4996)
 std::string TimeUtils::getTimeString() {
     time_t rawtime;

@@ -12,8 +12,7 @@ public:
         DEPTH,
     };
 private:
-    int width,height;
-    Window* window;
+    unsigned int width,height;
     Texture texture;
     std::vector<RBO> rbos;
     Type type=Type::COLOR;
@@ -24,6 +23,7 @@ private:
 public:
     void setSize(int width,int height);
     FBO(int width,int height,Type type);
+    FBO(Type type);
     ~FBO();
     void bind() const ;
     void unbind() const;
