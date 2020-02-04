@@ -11,9 +11,12 @@ void LAB3::render() const {
     float w=viewport->getPixelWidth();
     float h=viewport->getPixelHeight();
     renderer->drawRect(w/2, h/2, w, h, Color::WHITE);
-    renderer->drawRect(w/2, h/2, w/2, h/2, Color::BLACK);
+    renderer->drawRect(w/2, h/2, 500, 500, Color::BLACK);
+    renderer->drawRect(w/2, h/2, 500 - 50, 500 - 50, Color::WHITE);
 }
 
 void LAB3::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
+
+    addEntity(new Text)
 }
