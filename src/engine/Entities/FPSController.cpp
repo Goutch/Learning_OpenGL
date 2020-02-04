@@ -65,7 +65,3 @@ void FPSController::update(float delta, Scene& scene) {
 
     window.setMousePosition(width/2,height/2);
 }
-
-
-
-
