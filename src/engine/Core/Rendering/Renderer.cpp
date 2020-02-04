@@ -8,6 +8,7 @@
 #include <Geometry/VAO.h>
 #include "Shaders/Material.h"
 #include <math.h>
+#include <Core/Viewport.h>
 #include <Data/FBO.h>
 
 Renderer::Renderer() {
@@ -27,17 +28,21 @@ void Renderer::clearColor() {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void Renderer::draw(const VAO &vao, const Shader &shader, const Texture &texture) {
+void Renderer::drawViewport(const Viewport& viewport) {
     glDisable(GL_DEPTH_TEST);
-    shader.bind();
-    vao.bind();
-    texture.bind();
-    glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
-    texture.unbind();
-    vao.unbind();
-    shader.unbind();
+    viewport.getShader().bind();
+    viewport.getRenderSpace().bind();
+    viewport.getFrameBuffer().getTexture().bind();
+    glDrawElements(GL_TRIANGLES, viewport.getRenderSpace().getVertexCount(), GL_UNSIGNED_INT, nullptr);
+    viewport.getFrameBuffer().getTexture().unbind();
+    viewport.getRenderSpace().unbind();
+    viewport.getShader().unbind();
 }
-
+void Renderer::drawViewport(const FBO& buffer,const Viewport &viewport){
+    buffer.bind();
+    drawViewport(viewport);
+    buffer.unbind();
+}
 void Renderer::draw(const VAO &vao) {
     draw(vao, DEFAULT_MATERIAL, DEFAULT_TRANSFORM);
 }
@@ -50,42 +55,38 @@ void Renderer::draw(const VAO &vao, const Transform &transform) {
     draw(vao, DEFAULT_MATERIAL, transform);
 }
 
-
+void Renderer::drawUI(const VAO &vao, const Transform &transform, const Material& material){
+    primitive_queue.emplace(vao, transform, material);
+}
 void Renderer::drawUI(const VAO &vao) {
-    drawUI(vao, DEFAULT_MATERIAL, DEFAULT_TRANSFORM);
+    primitive_queue.emplace(vao, DEFAULT_TRANSFORM, DEFAULT_MATERIAL);
 }
 
 void Renderer::drawUI(const VAO &vao, const Material &material) {
-    drawUI(vao, material, DEFAULT_TRANSFORM);
+    primitive_queue.emplace(vao, DEFAULT_TRANSFORM, material);
 }
 
 void Renderer::drawUI(const VAO &vao, const Transform &transform) {
-    drawUI(vao, DEFAULT_MATERIAL, transform);
+    primitive_queue.emplace(vao, transform, DEFAULT_MATERIAL);
+}
+void Renderer::drawUI(const VAO &vao, const Transform &transform, Color color) {
+    primitive_queue.emplace(vao, transform, PRIMITIVE_MATERIAL, color);
 }
 
 
-void Renderer::renderPrimitives(const FBO &buffer, const mat4 &projection) {
+void Renderer::renderUI(const FBO &buffer, const mat4 &projection) {
     glDisable(GL_DEPTH_TEST);
     buffer.bind();
     while (!primitive_queue.empty()) {
         Primitive primitive = primitive_queue.front();
-        Material *material;
-        switch (primitive.type) {
-            case Primitive::PrimitiveType::Ellipse:
-                material=&ELLIPSE_MATERIAL;
-                break;
-            case Primitive::PrimitiveType::Rect:
-                material=&PRIMITIVE_MATERIAL;
-                break;
-        }
-
-        material->color(primitive.color);
+        const Material *material = primitive.material;
         material->bind();
+        primitive.setCustomMaterialAttributes();
         material->transform(primitive.transform.getMatrix());
         material->projection(projection);
-        QUAD.bind();
+        primitive.vao->bind();
         glDrawElements(GL_TRIANGLES, QUAD.getVertexCount(), GL_UNSIGNED_INT, nullptr);
-        QUAD.unbind();
+        primitive.vao->unbind();
         material->unbind();
         primitive_queue.pop();
     }
@@ -94,12 +95,12 @@ void Renderer::renderPrimitives(const FBO &buffer, const mat4 &projection) {
 
 void Renderer::drawRect(float x, float y, float width, float height, const Color &color) {
     Transform transform(vec3(x, y, 0), vec3(0), vec3(width, height, 1));
-    primitive_queue.emplace(transform, color, Primitive::PrimitiveType::Rect);
+    primitive_queue.emplace(QUAD, transform, PRIMITIVE_MATERIAL, color);
 }
 
 void Renderer::drawEllipse(float x, float y, float width, float height, const Color &color) {
     Transform transform(vec3(x, y, 0), vec3(0), vec3(width, height, 1));
-    primitive_queue.emplace(transform, color, Primitive::PrimitiveType::Ellipse);
+    primitive_queue.emplace(QUAD, transform, ELLIPSE_MATERIAL, color);
 }
 
 void Renderer::drawLine(float x1, float y1, float x2, float y2, float width, const Color &color) {
@@ -110,12 +111,13 @@ void Renderer::drawLine(float x1, float y1, float x2, float y2, float width, con
     float lenght = (float) sqrt((deltaX * deltaX) + (deltaY * deltaY)) + (width * 2);
     float rot = atan(deltaY, deltaX);
     Transform transform(vec3(x, y, 0), vec3(0, 0, rot), vec3(lenght, width, 1));
-    primitive_queue.emplace(transform, color,Primitive::PrimitiveType::Rect);
+    primitive_queue.emplace(QUAD, transform, PRIMITIVE_MATERIAL, color);
 }
 
 void Renderer::wireframe(bool enable) {
     enable ? glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
+
 
 
 

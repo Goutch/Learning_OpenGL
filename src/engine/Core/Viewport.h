@@ -20,7 +20,7 @@ private:
                            "out vec2 uv;\n"
                            "void main()\n"
                            "{\n"
-                           "    gl_Position = vec4(vertexPosition.x, vertexPosition.y, 0.0, 1.0);\n"
+                           "    gl_Position = vec4(vertexPosition.xy, 0.0, 1.0);\n"
                            "    uv = vertexUv;\n"
                            "}",
                            "#version 330 core\n"

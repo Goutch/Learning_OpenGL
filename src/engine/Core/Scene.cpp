@@ -31,16 +31,15 @@ void Scene::update(float delta) {
     }
 }
 
-void Scene::prepareRender() const {
+void Scene::draw() const {
     for (auto e:entities) {
-        e->render(*this);
+        e->draw(*this);
     }
 }
 
 void Scene::render() const {
     renderer->render(viewport->getFrameBuffer(), camera->getProjectionMatrix(), camera->getViewMatrix());
     renderer->renderUI(viewport->getFrameBuffer(), viewport->getPixelProjection());
-    renderer->renderPrimitives(viewport->getFrameBuffer(), viewport->getPixelProjection());
 }
 
 void Scene::init(Viewport &viewport, Renderer &renderer, Window &window) {

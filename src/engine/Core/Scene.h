@@ -31,7 +31,7 @@ public:
 	Scene();
 	virtual void init(Viewport &viewport, Renderer &renderer, Window& window);
 	virtual void update(float delta);
-	virtual void prepareRender() const;
+	virtual void draw() const;
 	virtual void render() const;
 	virtual void destroy();
     void addEntity(Entity& entity);

@@ -6,8 +6,8 @@
 class Editor: public Scene{
     Scene* current_scene;
     Viewport* current_scene_viewport;
-
-    Material screen_mat;
+    Transform viewport_transform;
+    Material viewport_mat;
 
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;
@@ -15,8 +15,9 @@ public:
     ~Editor();
     void update(float delta) override;
 
-    void prepareRender() const override ;
+    void draw() const override ;
 
+    void render() const override;
 };
 
 

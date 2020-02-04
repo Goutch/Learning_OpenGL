@@ -12,8 +12,7 @@
 int main() {
     Engine engine=Engine();
     auto s=PrimitivesTest();
-   // auto e=Editor(s);
-
-    engine.start(s);
+    auto e=Editor(s);
+    engine.start(e);
     return 0;
 }

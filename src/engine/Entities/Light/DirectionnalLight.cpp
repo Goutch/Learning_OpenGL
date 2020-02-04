@@ -29,7 +29,7 @@ const Texture &DirectionalLight::shadowMap() {
 void DirectionalLight::calculateShadowMap(Scene &scene) {
     this->transform.position(scene.getCamera().transform.position());
     light_space_mat = depth_projection * glm::inverse(this->transform.getMatrix());
-    scene.prepareRender();
+    scene.draw();
     scene.getRenderer().renderDepth(*fbo, light_space_mat);
 }
 

@@ -70,14 +70,6 @@ void BatchRenderer::draw(const VAO &vao, const Material &material, const Transfo
     transform_batch.push_back(&transform);
 }
 
-void BatchRenderer::renderUI(const FBO &buffer, const mat4 &projection) {
-
-}
-
-void BatchRenderer::drawUI(const VAO &vao, const Material &material, const Transform &transform) {
-
-}
-
 
 
 

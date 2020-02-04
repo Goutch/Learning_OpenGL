@@ -58,10 +58,10 @@ void Engine::start(Scene &scene) {
             t.reset();
             printFPS();
             scene.update((float)delta_time);
-            scene.prepareRender();
+            scene.draw();
             renderer->clear();
             scene.render();
-            renderer->draw(viewport.getRenderSpace(),viewport.getShader(),viewport.getFrameBuffer().getTexture());
+            renderer->drawViewport(viewport);
             window->swapBuffer();
             delta_time = t.ms();
         }

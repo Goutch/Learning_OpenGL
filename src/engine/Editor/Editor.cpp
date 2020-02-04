@@ -17,15 +17,12 @@ Editor::~Editor() {
 
 void Editor::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
-
-    current_scene_viewport = new Viewport(viewport, 0.5, 0.5, 0, 0.5);
+    viewport_mat=renderer.DEFAULT_MATERIAL;
+    viewport_mat.texture(viewport.getFrameBuffer().getTexture());
+    viewport_transform.position(vec3(100,100,0));
+    viewport_transform.scale(vec3(viewport.getPixelWidth(),viewport.getPixelHeight(),1));
+    current_scene_viewport = new Viewport(viewport, 0.5, 0.5, 0, 0);
     current_scene->init(*current_scene_viewport, renderer, window);
-
-    screen_mat.shader(current_scene_viewport->getShader());
-    screen_mat.texture(current_scene_viewport->getFrameBuffer().getTexture());
-
-    camera->setProjectionMode(Camera::ORTHOGRAPHIC_UNITS);
-    addEntity(new MeshRenderer(current_scene_viewport->getRenderSpace(), screen_mat));
 }
 
 void Editor::update(float delta) {
@@ -33,10 +30,21 @@ void Editor::update(float delta) {
     current_scene->update(delta);
 }
 
-void Editor::prepareRender() const {
-    current_scene->prepareRender();
+void Editor::draw() const {
+    //draw scene into scene buffer
+    current_scene->draw();
     current_scene->render();
-    Scene::prepareRender();
+    //if Need to update
+    if(true);
+    {
+        Scene::draw();
+    }
+}
+
+void Editor::render() const {
+    Scene::render();
+    //draw current scene viewport in editor buffer
+    renderer->drawUI(renderer->QUAD,viewport_transform,viewport_mat);
 }
 
 

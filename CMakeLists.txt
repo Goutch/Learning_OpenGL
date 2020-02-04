@@ -80,6 +80,6 @@ add_executable(OGL_Engine
         src/engine/Editor/Editor.cpp
 
         Dependencies/STB_IMAGE/stb_image.cpp
-        src/engine/Test/PrimitivesTest.cpp src/engine/Test/PrimitivesTest.h)
+        src/engine/Test/PrimitivesTest.cpp src/engine/Test/PrimitivesTest.h src/engine/Core/Rendering/Primitive.cpp src/engine/Core/Rendering/Primitive.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

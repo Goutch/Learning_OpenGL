@@ -5,7 +5,7 @@
 #pragma once
 
 #include "glm/vec4.hpp"
-struct Color:glm::vec4 {
+class Color:public glm::vec4 {
 public:
     const static Color WHITE;
     const static Color BLACK;
