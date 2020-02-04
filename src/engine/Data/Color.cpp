@@ -15,17 +15,5 @@ Color::Color(float r, float g, float b, float a) {
     this->a=a;
 }
 
-Color::Color(const Color &other) {
-    this->data[0]=other.data[0];
-    this->data[1]=other.data[1];
-    this->data[2]=other.data[2];
-    this->data[3]=other.data[3];
-}
 
-void Color::operator=(const Color &other) {
-    this->data[0]=other.data[0];
-    this->data[1]=other.data[1];
-    this->data[2]=other.data[2];
-    this->data[3]=other.data[3];
-}
 

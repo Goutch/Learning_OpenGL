@@ -1,4 +1,4 @@
-#version 400 core
+#version 330 core
 //https://www.opengl-tutorial.org/intermediate-tutorials/tutorial-16-shadow-mapping/
 //https://learnopengl.com/Advanced-Lighting/Shadows/Shadow-Mapping
 in vec4 position;

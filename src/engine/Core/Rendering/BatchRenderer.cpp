@@ -9,10 +9,7 @@
 #include "Core/Scene.h"
 
 
-BatchRenderer::BatchRenderer() {
-    depthShader_light_space_matrix_location = depthShader.uniformLocation("space");
-    depthShader_transform_mat_location = depthShader.uniformLocation("transform");
-}
+
 void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) {
     glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
@@ -42,21 +39,21 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
-    depthShader.bind();
-    depthShader.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
+    DEPTH_SHADER.bind();
+    DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     for (auto &vao_batch:material_batch) {
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
             for (auto &transform:transform_batch.second) {
-                depthShader.loadUniform(depthShader_transform_mat_location, transform->getMatrix());
+                DEPTH_SHADER.loadUniform(depthShader_transform_mat_location, transform->getMatrix());
                 glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
             }
             vao.unbind();
         }
     }
     material_batch.clear();
-    depthShader.unbind();
+    DEPTH_SHADER.unbind();
     buffer.unbind();
 }
 
@@ -71,6 +68,14 @@ void BatchRenderer::draw(const VAO &vao, const Material &material, const Transfo
     }
     std::list<const Transform *> &transform_batch = vao_batch.at(&vao);
     transform_batch.push_back(&transform);
+}
+
+void BatchRenderer::renderUI(const FBO &buffer, const mat4 &projection) {
+
+}
+
+void BatchRenderer::drawUI(const VAO &vao, const Material &material, const Transform &transform) {
+
 }
 
 
