@@ -11,7 +11,7 @@
 #include "Test/TextTest.h"
 int main() {
     Engine engine=Engine();
-    auto s=PrimitivesTest();
+    auto s=TextTest();
     auto e=Editor(s);
     engine.start(e);
     return 0;
