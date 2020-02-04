@@ -13,12 +13,9 @@
 
 void TextTest::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
-    camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
-    Geometry::make_text(vao, "test", font);
-    addEntity(new Text("test", vec3(0),  font));
+    Entity* e=new Text("test", vec3(viewport.getPixelWidth()/2,viewport.getPixelHeight()/2,0),  font);
+    addEntity(e);
 }
 void TextTest::render() const {
     Scene::render();
-    renderer->drawUI(vao, transform, font);
 }
-

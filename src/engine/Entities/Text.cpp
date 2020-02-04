@@ -6,10 +6,13 @@
 #include "Core/Scene.h"
 
 
-Text::Text(std::string text, const vec3 &position, FontMaterial &font) : Entity(position),font(font) {
+Text::Text(std::string text, const vec3 &position, FontMaterial &font) : Entity(position){
+    this->font=&font;
     Geometry::make_text(mesh, text, font);
+    transform.scale(vec3(100,100,1));
 }
+
 void Text::draw(const Scene &scene) const {
     Entity::draw(scene);
-    scene.getRenderer().drawUI(mesh, transform, font);
+    scene.getRenderer().drawUI(mesh, transform, *font);
 }

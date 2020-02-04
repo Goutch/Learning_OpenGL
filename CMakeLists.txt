@@ -37,7 +37,8 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/Renderer.cpp
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
-
+        src/engine/Core/Rendering/Primitive.cpp
+        
         src/engine/Entities/MeshRenderer.cpp
         src/engine/Entities/Transform.cpp
         src/engine/Entities/FPSController.cpp
@@ -76,11 +77,15 @@ add_executable(OGL_Engine
         src/engine/Test/TextureCreationTest.cpp
         src/engine/Test/FullSceneTest.cpp
         src/engine/Test/TextTest.cpp
+        src/engine/Test/PrimitivesTest.h
 
         src/engine/Editor/Editor.cpp
         src/engine/Entities/Text.cpp
         src/engine/Entities/Text.h
         Dependencies/STB_IMAGE/stb_image.cpp
-        src/engine/Test/PrimitivesTest.cpp src/engine/Test/PrimitivesTest.h src/engine/Core/Rendering/Primitive.cpp src/engine/Core/Rendering/Primitive.h src/engine/Test/LAB3.cpp src/engine/Test/LAB3.h)
+        src/engine/Test/PrimitivesTest.cpp
+
+
+)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

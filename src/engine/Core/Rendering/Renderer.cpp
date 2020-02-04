@@ -85,7 +85,7 @@ void Renderer::renderUI(const FBO &buffer, const mat4 &projection) {
         material->transform(primitive.transform.getMatrix());
         material->projection(projection);
         primitive.vao->bind();
-        glDrawElements(GL_TRIANGLES, QUAD.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        glDrawElements(GL_TRIANGLES, primitive.vao->getVertexCount(), GL_UNSIGNED_INT, nullptr);
         primitive.vao->unbind();
         material->unbind();
         primitive_queue.pop();
