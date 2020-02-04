@@ -44,7 +44,7 @@ Engine::Engine() {
 void Engine::start(Scene &scene) {
 
     if (glewInit() == GLEW_OK) {
-        Renderer* renderer =new BatchRenderer();
+        Renderer* renderer =new SimpleRenderer();
         Log::status("Initializing scene..");
         Viewport viewport=Viewport(*window);
         scene.init(viewport,*renderer,*window);

@@ -9,21 +9,19 @@
 #include <Core/Window.h>
 #include <Entities/Camera.h>
 #include <Core/Viewport.h>
+#include <Entities/Text.h>
+
 void TextTest::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
-    Geometry::make_quad(vao);
-    window.subscribeKeyPress(*this);
-    float uvs[8];
-    font.getCoordinates(uvs,'!'-32);
-    vao.uvs(uvs, 8);
-    transform.scale(vec3(300,300,1));
-    transform.position(vec3(100,100,1));
+    camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
+    //Geometry::make_text(vao, "test", font);
+    addEntity(new Text("test", vec3(0),  font));
 }
 void TextTest::render() const {
     renderer->drawUI(vao, transform, font);
     Scene::render();
+    //renderer->draw(vao, font, transform);
 }
-
 
 void TextTest::onKeyPress(char key) {
     float uvs[8];
