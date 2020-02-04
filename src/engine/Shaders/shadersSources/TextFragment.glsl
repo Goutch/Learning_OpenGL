@@ -11,7 +11,12 @@ void main()
     if (has_texture==1)
     {
         vec4 texColor0=texture(texture_0, uv);
-        fragColor=texColor0*material_color;
+        if(texColor0.r==0) {
+            fragColor=vec4(0,0,0,0);
+        }
+        else {
+            fragColor=texColor0*material_color;
+        }
     }
     else {
         fragColor=material_color;

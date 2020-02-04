@@ -103,7 +103,7 @@ void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
         vert.push_back(0);
 
         float uvs_current_char[8];
-        font.getCoordinates(uvs_current_char, text[i] - 32);
+        font.getCoordinates(uvs_current_char, text[i]);
         for(int j = 0; j < 8; ++j) {
             uvs.push_back(uvs_current_char[j]);
         }
