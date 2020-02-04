@@ -15,10 +15,10 @@ void TextTest::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
     Geometry::make_text(vao, "test", font);
-    //addEntity(new Text("test", vec3(0),  font));
+    addEntity(new Text("test", vec3(0),  font));
 }
 void TextTest::render() const {
     Scene::render();
-    renderer->draw(vao, font, transform);
+    renderer->drawUI(vao, transform, font);
 }
 
