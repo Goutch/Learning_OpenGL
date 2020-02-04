@@ -16,13 +16,16 @@ void LAB3::render() const {
     camera->setProjectionMode(Camera::ProjectionMode::ORTHOGRAPHIC_UNITS);
     float w=viewport->getPixelWidth();
     float h=viewport->getPixelHeight();
-    renderer->drawRect(w/2, h/2, w, h, Color::WHITE);
-    renderer->drawRect(w/2, h/2, 500, 500, Color::BLACK);
-    //renderer->drawRect(w/2, h/2, 500 - 50, 500 - 50, Color::WHITE);
+    renderer->drawRect(w/2, h/2, 500, 500, Color::WHITE);
+    renderer->drawRect(w/2, h/2, 500 - 50, 500 - 50, Color::BLACK);
+    renderer->drawRect(w/2 - 150, h/2 - 300, 500 - 50, 500 - 50, Color::BLACK);
 }
 
 void LAB3::init(Viewport &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
 
-    addEntity(new Text("test", vec3(0),  font));
+    Entity* e= new Text("Your", vec3(viewport.getPixelWidth() / 2 - 300, viewport.getPixelHeight() / 2 - 180, 0), font, 64);
+    Entity* t= new Text("Company", vec3(viewport.getPixelWidth() / 2 - 300, viewport.getPixelHeight() / 2 - 264, 0), font, 64);
+    addEntity(e);
+    addEntity(t);
 }

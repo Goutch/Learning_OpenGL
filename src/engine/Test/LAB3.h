@@ -15,8 +15,8 @@
 
 class LAB3 : public Scene {
 private:
-    Shader shader = Shader("../src/engine/Shaders/shadersSources/DefaultVertex.glsl",
-                           "../src/engine/Shaders/shadersSources/DefaultFragment.glsl");
+    Shader shader = Shader("../src/engine/Shaders/shadersSources/TextVertex.glsl",
+                           "../src/engine/Shaders/shadersSources/TextFragment.glsl");
     FontMaterial font = FontMaterial("../res/font.bmp", 64, 64, shader);
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;

@@ -84,6 +84,8 @@ add_executable(OGL_Engine
         src/engine/Entities/Text.h
         Dependencies/STB_IMAGE/stb_image.cpp
         src/engine/Test/PrimitivesTest.cpp
+        src/engine/Test/LAB3.h
+        src/engine/Test/LAB3.cpp
 
 
 )
