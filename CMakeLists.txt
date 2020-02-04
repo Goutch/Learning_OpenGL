@@ -50,7 +50,8 @@ add_executable(OGL_Engine
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Material.cpp
         src/engine/Shaders/LightMaterial.cpp
-        src/engine/Shaders/FontText.cpp
+        src/engine/Shaders/FontMaterial.cpp
+        src/engine/Shaders/FontMaterial.h
 
         src/engine/Geometry/Geometry.cpp
         src/engine/Geometry/Mesh.cpp
@@ -59,7 +60,6 @@ add_executable(OGL_Engine
         src/engine/Geometry/Quad.cpp
 
         src/engine/Data/Texture.cpp
-        src/engine/Data/Text.cpp
         src/engine/Data/AtlasTexture.cpp
         src/engine/Data/Color.cpp
         src/engine/Data/FBO.cpp
@@ -78,7 +78,8 @@ add_executable(OGL_Engine
         src/engine/Test/TextTest.cpp
 
         src/engine/Editor/Editor.cpp
-
+        src/engine/Entities/Text.cpp
+        src/engine/Entities/Text.h
         Dependencies/STB_IMAGE/stb_image.cpp
         src/engine/Test/PrimitivesTest.cpp src/engine/Test/PrimitivesTest.h src/engine/Core/Rendering/Primitive.cpp src/engine/Core/Rendering/Primitive.h src/engine/Test/LAB3.cpp src/engine/Test/LAB3.h)
 
