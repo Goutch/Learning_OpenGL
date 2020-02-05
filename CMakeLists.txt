@@ -88,6 +88,6 @@ add_executable(OGL_Engine
         src/engine/Test/LAB3.cpp
 
 
-)
+        src/engine/Test/LSystem.cpp src/engine/Test/LSystem.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
