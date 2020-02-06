@@ -18,6 +18,7 @@ private:
     Shader shader = Shader("../src/engine/Shaders/shadersSources/TextVertex.glsl",
                            "../src/engine/Shaders/shadersSources/TextFragment.glsl");
     FontMaterial font = FontMaterial("../res/font_arial.bmp", 64, 64, shader);
+    FontMaterial font2 = FontMaterial("../res/consolas.bmp", 128, 128, shader);
 public:
     void init(Viewport &viewport, Renderer &renderer, Window &window) override;
 
