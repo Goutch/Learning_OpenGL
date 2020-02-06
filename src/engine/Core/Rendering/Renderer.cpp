@@ -6,9 +6,9 @@
 #include "Shaders/Shader.h"
 #include <Data/Texture.h>
 #include <Geometry/VAO.h>
-#include "Shaders/Material.h"
-#include <math.h>
-#include <Core/Viewport.h>
+#include <Shaders/Canvas/CanvasMaterial.h>
+#include <cmath>
+#include <Core/Canvas.h>
 #include <Data/FBO.h>
 
 Renderer::Renderer() {
@@ -16,107 +16,63 @@ Renderer::Renderer() {
     depthShader_transform_mat_location = DEPTH_SHADER.uniformLocation("transform");
 }
 
-void Renderer::clear() {
+void Renderer::clear() const {
     glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::clearDepth() {
+void Renderer::clearDepth()const  {
     glClear(GL_DEPTH_BUFFER_BIT);
 }
 
-void Renderer::clearColor() {
+void Renderer::clearColor() const {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void Renderer::drawViewport(const Viewport& viewport) {
+void Renderer::drawCanvas(const Canvas& canvas) {
     glDisable(GL_DEPTH_TEST);
-    viewport.getShader().bind();
-    viewport.getRenderSpace().bind();
-    viewport.getFrameBuffer().getTexture().bind();
-    glDrawElements(GL_TRIANGLES, viewport.getRenderSpace().getVertexCount(), GL_UNSIGNED_INT, nullptr);
-    viewport.getFrameBuffer().getTexture().unbind();
-    viewport.getRenderSpace().unbind();
-    viewport.getShader().unbind();
+    canvas.getShader().bind();
+    canvas.getRenderSpace().bind();
+    canvas.getFrameBuffer().getTexture().bind();
+    glDrawElements(GL_TRIANGLES, canvas.getRenderSpace().getVertexCount(), GL_UNSIGNED_INT, nullptr);
+    canvas.getFrameBuffer().getTexture().unbind();
+    canvas.getRenderSpace().unbind();
+    canvas.getShader().unbind();
 }
-void Renderer::drawViewport(const FBO& buffer,const Viewport &viewport){
+void Renderer::drawCanvas(const FBO& buffer, const Canvas &canvas){
     buffer.bind();
-    drawViewport(viewport);
+    drawCanvas(canvas);
     buffer.unbind();
 }
-void Renderer::draw(const VAO &vao) {
-    draw(vao, DEFAULT_MATERIAL, DEFAULT_TRANSFORM);
-}
 
-void Renderer::draw(const VAO &vao, const Material &material) {
-    draw(vao, material, DEFAULT_TRANSFORM);
-}
-
-void Renderer::draw(const VAO &vao, const Transform &transform) {
-    draw(vao, DEFAULT_MATERIAL, transform);
-}
-
-void Renderer::drawUI(const VAO &vao, const Transform &transform, const Material& material){
-    primitive_queue.emplace(vao, transform, material);
-}
-void Renderer::drawUI(const VAO &vao) {
-    primitive_queue.emplace(vao, DEFAULT_TRANSFORM, DEFAULT_MATERIAL);
-}
-
-void Renderer::drawUI(const VAO &vao, const Material &material) {
-    primitive_queue.emplace(vao, DEFAULT_TRANSFORM, material);
-}
-
-void Renderer::drawUI(const VAO &vao, const Transform &transform) {
-    primitive_queue.emplace(vao, transform, DEFAULT_MATERIAL);
-}
-void Renderer::drawUI(const VAO &vao, const Transform &transform, Color color) {
-    primitive_queue.emplace(vao, transform, PRIMITIVE_MATERIAL, color);
-}
-
-
-void Renderer::renderUI(const FBO &buffer, const mat4 &projection) {
+void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection)const  {
     glDisable(GL_DEPTH_TEST);
     buffer.bind();
-    while (!primitive_queue.empty()) {
-        Primitive primitive = primitive_queue.front();
-        const Material *material = primitive.material;
-        material->bind();
-        primitive.setCustomMaterialAttributes();
-        material->transform(primitive.transform.getMatrix());
-        material->projection(projection);
-        primitive.vao->bind();
-        glDrawElements(GL_TRIANGLES, primitive.vao->getVertexCount(), GL_UNSIGNED_INT, nullptr);
-        primitive.vao->unbind();
-        material->unbind();
-        primitive_queue.pop();
+    while (!canvas_elements.empty()) {
+        CanvasElement& canvas_element = canvas_elements.front();
+        canvas_element.material->bind();
+        canvas_element.material->transform(canvas_element.transform->getMatrix());
+        canvas_element.material->projection(projection);
+        canvas_element.vao->bind();
+        glDrawElements(GL_TRIANGLES, canvas_element.vao->getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        canvas_element.vao->unbind();
+        canvas_element.material->unbind();
+        canvas_elements.pop();
     }
     buffer.unbind();
 }
-
-void Renderer::drawRect(float x, float y, float width, float height, const Color &color) {
-    Transform transform(vec3(x, y, 0), vec3(0), vec3(width, height, 1));
-    primitive_queue.emplace(QUAD, transform, PRIMITIVE_MATERIAL, color);
+void Renderer::draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material) const {
+    canvas_elements.emplace(transform,material,vao);
 }
 
-void Renderer::drawEllipse(float x, float y, float width, float height, const Color &color) {
-    Transform transform(vec3(x, y, 0), vec3(0), vec3(width, height, 1));
-    primitive_queue.emplace(QUAD, transform, ELLIPSE_MATERIAL, color);
-}
-
-void Renderer::drawLine(float x1, float y1, float x2, float y2, float width, const Color &color) {
-    float deltaX = x2 - x1;
-    float deltaY = y2 - y1;
-    float x = x1 + (deltaX / 2);
-    float y = y1 + (deltaY / 2);
-    float lenght = (float) sqrt((deltaX * deltaX) + (deltaY * deltaY)) + (width * 2);
-    float rot = atan(deltaY, deltaX);
-    Transform transform(vec3(x, y, 0), vec3(0, 0, rot), vec3(lenght, width, 1));
-    primitive_queue.emplace(QUAD, transform, PRIMITIVE_MATERIAL, color);
-}
 
 void Renderer::wireframe(bool enable) {
     enable ? glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
+
+
+
+
+
 
 
 

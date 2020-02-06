@@ -31,28 +31,26 @@ add_executable(OGL_Engine
         src/engine/Core/Engine.cpp
         src/engine/Core/Window.cpp
         src/engine/Core/Scene.cpp
-        src/engine/Core/Log.cpp
-        src/engine/Core/ViewPort.cpp
-        src/engine/Core/Inputs.cpp
+        src/engine/Core/Debug/Log.cpp
+        src/engine/Core/Canvas.cpp
         src/engine/Core/Rendering/Renderer.cpp
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
-        src/engine/Core/Rendering/Primitive.cpp
-        
-        src/engine/Entities/MeshRenderer.cpp
-        src/engine/Entities/Transform.cpp
-        src/engine/Entities/FPSController.cpp
-        src/engine/Entities/Entity.cpp
-        src/engine/Entities/Light/Light.cpp
-        src/engine/Entities/Light/DirectionnalLight.cpp
-        src/engine/Entities/Light/PointLight.cpp
-        src/engine/Entities/Camera.cpp
+
+        src/engine/Entities/Spacial/MeshRenderer.cpp
+        src/engine/Entities/Spacial/Transform.cpp
+        src/engine/Entities/Spacial/FPSController.cpp
+        src/engine/Entities/Spacial/SpacialEntity.cpp
+        src/engine/Entities/Spacial/Light/Light.cpp
+        src/engine/Entities/Spacial/Light/DirectionnalLight.cpp
+        src/engine/Entities/Spacial/Light/PointLight.cpp
+        src/engine/Entities/Spacial/Camera.cpp
 
         src/engine/Shaders/Shader.cpp
-        src/engine/Shaders/Material.cpp
-        src/engine/Shaders/LightMaterial.cpp
-        src/engine/Shaders/FontMaterial.cpp
-        src/engine/Shaders/FontMaterial.h
+        src/engine/Shaders/Spacial/SpacialMaterial.cpp
+        src/engine/Shaders/Spacial/LightMaterial.cpp
+        src/engine/Shaders/Canvas/FontMaterial.cpp
+        src/engine/Shaders/Canvas/FontMaterial.h
 
         src/engine/Geometry/Geometry.cpp
         src/engine/Geometry/Mesh.cpp
@@ -71,23 +69,19 @@ add_executable(OGL_Engine
         src/engine/Utils/Timer.cpp
         src/engine/Utils/TimeUtils.cpp
 
-        src/engine/Test/PerformanceTest.cpp
-        src/engine/Test/AtlasTextureTest.cpp
-        src/engine/Test/ImportModelTest.cpp
-        src/engine/Test/TextureCreationTest.cpp
-        src/engine/Test/FullSceneTest.cpp
+        src/engine/Test/SpacialSceneTest.cpp
         src/engine/Test/TextTest.cpp
         src/engine/Test/PrimitivesTest.h
 
         src/engine/Editor/Editor.cpp
-        src/engine/Entities/Text.cpp
-        src/engine/Entities/Text.h
+        src/engine/Entities/Canvas/Text.cpp
+        src/engine/Entities/Canvas/Text.h
         Dependencies/STB_IMAGE/stb_image.cpp
         src/engine/Test/PrimitivesTest.cpp
         src/engine/Test/LAB3.h
         src/engine/Test/LAB3.cpp
 
 
-        src/engine/Test/LSystem.cpp src/engine/Test/LSystem.h)
+        src/engine/Test/LSystem.cpp src/engine/Test/LSystem.h src/engine/Entities/Canvas/Rect.cpp src/engine/Entities/Canvas/Rect.h src/engine/Entities/Canvas/Ellipse.cpp src/engine/Entities/Canvas/Ellipse.h src/engine/Entities/Canvas/Line.cpp src/engine/Entities/Canvas/Line.h src/engine/Entities/Canvas/CanvasTransform.cpp src/engine/Entities/Canvas/CanvasTransform.h src/engine/Entities/Canvas/CanvasEntity.cpp src/engine/Entities/Canvas/CanvasEntity.h src/engine/Core/SpacialScene.cpp src/engine/Core/SpacialScene.h src/engine/Shaders/Material.h src/engine/Shaders/Material.cpp src/engine/Shaders/Canvas/CanvasMaterial.cpp src/engine/Shaders/Canvas/CanvasMaterial.h src/engine/Shaders/TexturedMaterial.cpp src/engine/Shaders/TexturedMaterial.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

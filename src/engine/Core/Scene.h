@@ -2,47 +2,35 @@
 
 class Window;
 class Renderer;
-class Entity;
+class SpacialEntity;
 class Transform;
 class MeshRenderer;
-class PointLight;
-class DirectionalLight;
-class Camera;
-class Viewport;
+
+class Canvas;
 
 #include <GLFW/glfw3.h>
 #include "Data/FBO.h"
-#include "Entities/Transform.h"
+#include "Entities/Canvas/CanvasEntity.h"
 #include "Data/Color.h"
 #include "vector"
 
 class Scene
 {
 protected:
-    Viewport* viewport;
+    Canvas* canvas;
     Window* window;
     Renderer* renderer;
-    std::vector<Entity*> entities;
-    std::vector<PointLight*> point_lights;
-    std::vector<DirectionalLight*> directional_lights;
-    Color ambient_light=Color(0.1f,0.1f,0.1f);
+    std::vector<CanvasEntity*> canvasEntities;
+
 public:
-    Camera* camera;
 	Scene();
-	virtual void init(Viewport &viewport, Renderer &renderer, Window& window);
+	virtual void init(Canvas &viewport, Renderer &renderer, Window& window);
 	virtual void update(float delta);
 	virtual void draw() const;
 	virtual void render() const;
 	virtual void destroy();
-    void addEntity(Entity& entity);
-    void addEntity(Entity* entity);
-    void addLight(PointLight* light);
-    void addLight(DirectionalLight* light);
-    const std::vector<PointLight*>& getPointLights() const;
-    const std::vector<DirectionalLight*>& getDirectionalLights() const;
-    const Color& getAmbientLight() const;
-    const Camera& getCamera() const;
-	const Viewport& getViewport()const;
+    void addEntity(CanvasEntity* entity);
+	const Canvas& getCanvas() const;
     Window& getWindow() const;
 	Renderer& getRenderer()const ;
 };

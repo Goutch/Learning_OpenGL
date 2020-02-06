@@ -3,20 +3,21 @@
 #include <Core/Scene.h>
 #include <Data/Texture.h>
 #include <Data/AtlasTexture.h>
-#include <Shaders/Material.h>
+#include <Shaders/Spacial/SpacialMaterial.h>
 #include <Geometry/Mesh.h>
-#include <Shaders/FontMaterial.h>
-#include "Entities/Transform.h"
+#include <Shaders/Canvas/FontMaterial.h>
+#include "Entities/Spacial/Transform.h"
 #include <Events/KeyPressListener.h>
+#include <Shaders/Shader.h>
 class TextTest : public Scene{
     Transform transform = Transform();
-    Shader shader = Shader("../src/engine/Shaders/shadersSources/TextVertex.glsl",
-                           "../src/engine/Shaders/shadersSources/TextFragment.glsl");
-    FontMaterial font = FontMaterial("../res/font.bmp", 64, 64, shader);
+    Shader shader = Shader("../src/engine/Shaders/ShadersSources/TextVertex.glsl",
+                           "../src/engine/Shaders/ShadersSources/TextFragment.glsl");
+    FontMaterial font = FontMaterial(shader,"../res/font.bmp", 64, 64);
     Mesh vao;
 
 public:
-    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+    void init(Canvas &viewport, Renderer &renderer, Window &window) override;
 
     void render() const override;
 

@@ -5,15 +5,15 @@
 #include <Core/Rendering/Renderer.h>
 #include <Geometry/Geometry.h>
 #include "TextTest.h"
-#include <Entities/MeshRenderer.h>
+#include <Entities/Spacial/MeshRenderer.h>
 #include <Core/Window.h>
-#include <Entities/Camera.h>
-#include <Core/Viewport.h>
-#include <Entities/Text.h>
+#include <Entities/Spacial/Camera.h>
+#include <Core/Canvas.h>
+#include <Entities/Canvas/Text.h>
 
-void TextTest::init(Viewport &viewport, Renderer &renderer, Window &window) {
+void TextTest::init(Canvas &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
-    Entity* e= new Text("test", vec3(viewport.getPixelWidth() / 2, viewport.getPixelHeight() / 2, 0), font, 100);
+    CanvasEntity* e= new Text("test", vec3(viewport.getPixelWidth() / 2, viewport.getPixelHeight() / 2, 0), font, 100);
     addEntity(e);
 }
 void TextTest::render() const {

@@ -7,7 +7,7 @@
 #include "Texture.h"
 #include "stb_image.h"
 #include "stb_image_write.h"
-#include "Core/Log.h"
+#include "Core/Debug/Log.h"
 #include <fstream>
 
 Texture::Texture(const std::string &path, bool flip_on_load) {
@@ -41,7 +41,7 @@ Texture::~Texture() {
 
 void Texture::load(const std::string &path, bool flip_on_load) {
     std::ifstream f(path.c_str());
-    Log::status("Loading texture:" + path);
+    Log::status("Loading getTexture:" + path);
     if (f.good()) {
         unsigned char *buffer;
         stbi_set_flip_vertically_on_load(true);
@@ -51,7 +51,7 @@ void Texture::load(const std::string &path, bool flip_on_load) {
             stbi_image_free(buffer);
         }
     } else {
-        Log::error("Cant load texture:" + path);
+        Log::error("Cant load getTexture:" + path);
     }
 
 }
@@ -108,7 +108,7 @@ void Texture::save(std::string path) const {
         //glGetTexImage(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT, GL_FLOAT, depth_buffer);
         //stbi_write_png(path.c_str(), width, height, 1, depth_buffer, 0);
         //delete[] depth_buffer;
-        Log::warning("Screenshot not supported for depth texture");
+        Log::warning("Screenshot not supported for depth getTexture");
 
     } else if (type == RGBA) {
         unsigned char *color_buffer = new unsigned char[width * height * 4];

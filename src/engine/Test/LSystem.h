@@ -20,7 +20,7 @@ class LSystem : public Scene {
     std::vector<std::tuple<vec3, vec3>> lines;
 
 public:
-    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+    void init(Canvas &viewport, Renderer &renderer, Window &window) override;
 
 private:
     void generate();

@@ -1,24 +1,19 @@
 #pragma once
 
-#include <string>
-#include <unordered_map>
 #include <Data/Color.h>
-#include "Shaders/Shader.h"
 
-class Texture;
+class Color;
 
-class Scene;
-
-using namespace glm;
+class Shader;
 
 class Material {
 protected:
-    bool has_transparency;
-    bool has_texture;
-    int transform_location, view_mat_location,projection_mat_location, has_texture_location, texture_0_location, material_color_location;
-    Color c = Color::WHITE;
-    const Texture *t;
-    const Shader *s;
+    const Shader *shader;
+    Color color = Color::WHITE;
+    int material_color_location;
+
+    virtual void getUniformsLocations();
+
 public:
     Material();
 
@@ -26,35 +21,16 @@ public:
 
     Material(const Shader &shader, const Color &color);
 
-    Material(const Shader &shader,const Texture &texture);
-
-    Material(const Shader &shader,const Texture &texture, const Color &color);
-
     virtual void bind() const;
 
-   virtual void unbind() const;
+    virtual void unbind() const;
 
-    const Shader &shader() const;
+    void setColor(const Color &color);
 
-    Material &shader(const Shader &shader);
+    const Color &getColor() const;
 
-    const Texture &texture() const;
+    const Shader &getShader() const;
 
-    Material &texture(const Texture &texture);
-
-    Material &color(const Color &color);
-
-    const Color &color() const;
-
-
-    void projection(const mat4 &projection) const;
-    void transform(const mat4 &transform) const;
-    void view(const mat4 &space_mat) const;
-
-
-private:
-    void getUniformsLocations();
-
+    void setShader(const Shader &shader);
 };
-
 

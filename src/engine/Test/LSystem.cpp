@@ -1,13 +1,13 @@
 //
 // Created by User on 04-Feb.-2020.
 //
-#include <Core/Viewport.h>
-#include <Core/Log.h>
+#include <Core/Canvas.h>
+#include <Core/Debug/Log.h>
 #include "LSystem.h"
 #include <Core/Rendering/Renderer.h>
 #include <stack>
 
-void LSystem::init(Viewport &viewport, Renderer &renderer, Window &window) {
+void LSystem::init(Canvas &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     generations.push_back(START);
     for (int i = 0; i < NUMBER_OF_RECURSE; ++i) {
@@ -36,7 +36,7 @@ void LSystem::draw() const {
     for (int i = 0; i < lines.size(); ++i) {
         vec3 p1=std::get<0>(lines[i]);
         vec3 p2=std::get<1>(lines[i]);
-        renderer->drawLine(p1.x,p1.y,p2.x,p2.y,1,Color::WHITE);
+       // renderer->drawLine(p1.x,p1.y,p2.x,p2.y,1,Color::WHITE);
     }
 }
 

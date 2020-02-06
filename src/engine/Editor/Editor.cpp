@@ -4,25 +4,25 @@
 
 #include "Editor.h"
 #include <Core/Rendering/BatchRenderer.h>
-#include <Entities/Camera.h>
-#include <Entities/MeshRenderer.h>
+#include <Entities/Spacial/Camera.h>
+#include <Entities/Spacial/MeshRenderer.h>
 
 Editor::Editor(Scene &scene) {
     this->current_scene = &scene;
 }
 
 Editor::~Editor() {
-    delete current_scene_viewport;
+    delete current_scene_canvas;
 }
 
-void Editor::init(Viewport &viewport, Renderer &renderer, Window &window) {
-    Scene::init(viewport, renderer, window);
-    viewport_mat=renderer.DEFAULT_MATERIAL;
-    viewport_mat.texture(viewport.getFrameBuffer().getTexture());
-    viewport_transform.position(vec3(100,100,0));
-    viewport_transform.scale(vec3(viewport.getPixelWidth(),viewport.getPixelHeight(),1));
-    current_scene_viewport = new Viewport(viewport, 1, 1, 0, 0);
-    current_scene->init(*current_scene_viewport, renderer, window);
+void Editor::init(Canvas &canvas, Renderer &renderer, Window &window) {
+    Scene::init(canvas, renderer, window);
+    current_scene_canvas_material=renderer.DEFAULT_CANVAS_MATERIAL;
+    current_scene_canvas_material.setTexture(canvas.getFrameBuffer().getTexture());
+    current_scene_canvas_transform.position(vec3(100, 100, 0));
+    current_scene_canvas_transform.scale(vec3(canvas.getPixelWidth(), canvas.getPixelHeight(), 1));
+    current_scene_canvas = new Canvas(canvas, 1, 1, 0, 0);
+    current_scene->init(*current_scene_canvas, renderer, window);
 }
 
 void Editor::update(float delta) {
@@ -43,8 +43,8 @@ void Editor::draw() const {
 
 void Editor::render() const {
     Scene::render();
-    //draw current scene viewport in editor buffer
-    renderer->drawUI(renderer->QUAD,viewport_transform,viewport_mat);
+    //draw current scene canvas in editor buffer
+    renderer->draw(renderer->QUAD, current_scene_canvas_transform, current_scene_canvas_material);
 }
 
 

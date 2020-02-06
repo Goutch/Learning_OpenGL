@@ -1,16 +1,16 @@
 #pragma once
 
 #include <Core/Scene.h>
-#include <Core/Viewport.h>
-#include "Test/FullSceneTest.h"
+#include <Core/Canvas.h>
+#include "Test/SpacialSceneTest.h"
 class Editor: public Scene{
     Scene* current_scene;
-    Viewport* current_scene_viewport;
-    Transform viewport_transform;
-    Material viewport_mat;
+    Canvas* current_scene_canvas;
+    CanvasTransform current_scene_canvas_transform;
+    CanvasMaterial current_scene_canvas_material;
 
 public:
-    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+    void init(Canvas &canvas, Renderer &renderer, Window &window) override;
     Editor(Scene& scene);
     ~Editor();
     void update(float delta) override;

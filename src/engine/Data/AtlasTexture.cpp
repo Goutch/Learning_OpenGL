@@ -2,7 +2,7 @@
 // Created by User on 2020-01-09.
 //
 
-#include <Core/Log.h>
+#include <Core/Debug/Log.h>
 #include "AtlasTexture.h"
 
 AtlasTexture::AtlasTexture():Texture() {

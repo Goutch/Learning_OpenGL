@@ -3,23 +3,23 @@
 
 #include <GL/glew.h>
 #include "SimpleRenderer.h"
-#include <Shaders/Material.h>
+#include <Shaders/Spacial/SpacialMaterial.h>
 #include <Data/FBO.h>
 #include "Geometry/VAO.h"
-#include <Entities/Transform.h>
+#include <Entities/Spacial/Transform.h>
 
-void SimpleRenderer::draw(const VAO &vao, const Material &material, const Transform& transform) {
+void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform& transform)const  {
     render_queue.emplace(&material,&vao,&transform);
 }
 
-void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) {
+void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     clear();
     while(!render_queue.empty()) {
-        std::tuple<const Material*,const VAO*,const Transform *>& renderableObject=render_queue.front();
-        const Material& material=*std::get<0>(renderableObject);
+        std::tuple<const SpacialMaterial*,const VAO*,const Transform *>& renderableObject=render_queue.front();
+        const SpacialMaterial& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
 
@@ -37,7 +37,7 @@ void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat
     buffer.unbind();
 }
 
-void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) {
+void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
@@ -45,8 +45,8 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     while(!render_queue.empty()) {
-        std::tuple<const Material*,const VAO*,const Transform *>& renderableObject=render_queue.front();
-        const Material& material=*std::get<0>(renderableObject);
+        std::tuple<const SpacialMaterial*,const VAO*,const Transform *>& renderableObject=render_queue.front();
+        const SpacialMaterial& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
 

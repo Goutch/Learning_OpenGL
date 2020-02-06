@@ -6,7 +6,7 @@
 #include "Mesh.h"
 #include "vector"
 #include "Utils/StringUtils.h"
-#include "Core/Log.h"
+#include "Core/Debug/Log.h"
 #include "math.h"
 #include "Utils/Timer.h"
 void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {

@@ -2,7 +2,7 @@
 #define GLEW_STATIC
 
 #include <GL/glew.h>
-#include <Core/Log.h>
+#include <Core/Debug/Log.h>
 
 #include "FBO.h"
 #include "string"
