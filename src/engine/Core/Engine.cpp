@@ -46,14 +46,15 @@ void Engine::start(Scene &scene) {
     if (glewInit() == GLEW_OK) {
         Renderer* renderer =new SimpleRenderer();
         Log::status("Initializing scene..");
-        Canvas canvas=Canvas(*window);
+        Canvas canvas=Canvas(*window,renderer->DEFAULT_CANVAS_SHADER);
         scene.init(canvas, *renderer, *window);
         Log::status("Initialized scene");
         double delta_time = 0;
         Timer t;
         window->pollEvents();
         Log::status("Starting main loop..");
-        while (!window->shouldClose()){
+        while (!window->shouldClose())
+        {
             window->pollEvents();
             t.reset();
             printFPS();

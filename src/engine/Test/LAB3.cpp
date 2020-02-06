@@ -21,7 +21,7 @@ void LAB3::render() const {
     //renderer->drawRect(w/2 - 75, h/2 - 195, 500 - 25, 148, Color::RED);
 }
 
-void LAB3::init(Canvas &viewport, Renderer &renderer, Window &window) {
+void LAB3::init(const Canvas &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
 
     CanvasEntity* e= new Text("Your", vec3(viewport.getPixelWidth() / 2 - 300, viewport.getPixelHeight() / 2 - 200, 0), font, 64);

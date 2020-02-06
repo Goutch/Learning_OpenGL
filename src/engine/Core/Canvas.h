@@ -2,49 +2,35 @@
 
 
 #include "Events/WindowResizeListener.h"
-#include "Geometry/VAO.h"
 #include <list>
 #include <Events/CanvasResizeListener.h>
 #include <Data/FBO.h>
-#include <Shaders/Shader.h>
-#include <glm/glm.hpp>
-
+#include <Entities/Canvas/CanvasTransform.h>
+#include <Shaders/Canvas/CanvasMaterial.h>
 class window;
 
-class Canvas : WindowResizeListener {
+class Canvas : WindowResizeListener,CanvasResizeListener {
 private:
+
+    CanvasMaterial material;
+
     mutable std::list<CanvasResizeListener *> sizeListeners;
-    Shader shader = Shader("#version 330 core\n"
-                           "layout (location = 0) in vec3 vertexPosition;\n"
-                           "layout (location = 1) in vec2 vertexUv;\n"
-                           "out vec2 uv;\n"
-                           "void main()\n"
-                           "{\n"
-                           "    gl_Position = vec4(vertexPosition.xy, 0.0, 1.0);\n"
-                           "    uv = vertexUv;\n"
-                           "}",
-                           "#version 330 core\n"
-                           "out vec4 FragColor;\n"
-                           "in vec2 uv;\n"
-                           "uniform sampler2D screenTexture;\n"
-                           "void main()\n"
-                           "{\n"
-                           "    FragColor = texture(screenTexture, uv);\n"
-                           "}", true);
-    VAO render_space;
     FBO frame_buffer = FBO(FBO::COLOR);
     mat4 pixel_projection;
     const Window *window;
+    const Canvas* parent;
     unsigned int pixel_width;
     unsigned int pixel_height;
-    float width = 1;
-    float height = 1;
-    float offsetX = 0;
-    float offsetY = 0;
+    bool subscribed_window=false;
+    bool subscribed_parent=false;
+    glm::vec2 parent_ratio;
+    void setSize(unsigned int pixel_width, unsigned int pixel_height);
 public:
-    Canvas(const Window &window);
+    CanvasTransform transform;
+    Canvas(const Window &window,const Shader& shader);
 
-    Canvas(const Canvas &parent_viewport, float width, float height, float offsetX = 0, float offsetY = 0);
+    Canvas(const Canvas &parent_canvas, const Shader& shader,unsigned int pixel_width, unsigned int pixel_height, float offsetX = 0,
+           float offsetY = 0);
 
     ~Canvas();
 
@@ -54,15 +40,16 @@ public:
 
     const mat4 getPixelProjection() const;
 
-    const VAO &getRenderSpace() const;
+
 
     const FBO &getFrameBuffer() const;
 
-    const Shader &getShader() const;
+
 
     void subscribeSizeChange(CanvasResizeListener &l) const;
 
     void unsubscribeSizeChange(CanvasResizeListener &l) const;
 
     void onWindowSizeChange(unsigned int width, unsigned int height) override;
+    void onViewportSizeChange(unsigned int width, unsigned int height) override;
 };

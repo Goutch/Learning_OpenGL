@@ -17,7 +17,7 @@ class TextTest : public Scene{
     Mesh vao;
 
 public:
-    void init(Canvas &viewport, Renderer &renderer, Window &window) override;
+    void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
 
     void render() const override;
 

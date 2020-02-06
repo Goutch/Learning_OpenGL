@@ -17,14 +17,14 @@ class Canvas;
 class Scene
 {
 protected:
-    Canvas* canvas;
+    const Canvas* canvas;
     Window* window;
     Renderer* renderer;
     std::vector<CanvasEntity*> canvasEntities;
 
 public:
 	Scene();
-	virtual void init(Canvas &canvas, Renderer &renderer, Window& window);
+	virtual void init(const Canvas &canvas, Renderer &renderer, Window& window);
 	virtual void update(float delta);
 	virtual void draw() const;
 	virtual void render() const;

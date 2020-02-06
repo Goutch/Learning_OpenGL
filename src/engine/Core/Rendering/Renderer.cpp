@@ -30,13 +30,14 @@ void Renderer::clearColor() const {
 
 void Renderer::drawCanvas(const Canvas& canvas) {
     glDisable(GL_DEPTH_TEST);
-    canvas.getShader().bind();
-    canvas.getRenderSpace().bind();
-    canvas.getFrameBuffer().getTexture().bind();
-    glDrawElements(GL_TRIANGLES, canvas.getRenderSpace().getVertexCount(), GL_UNSIGNED_INT, nullptr);
-    canvas.getFrameBuffer().getTexture().unbind();
-    canvas.getRenderSpace().unbind();
-    canvas.getShader().unbind();
+    screen_material.setTexture(canvas.getFrameBuffer().getTexture());
+    screen_material.bind();
+    QUAD_DOWN_LEFT.bind();
+    DEFAULT_CANVAS_MATERIAL.transform(canvas.transform.getMatrix());
+    DEFAULT_CANVAS_MATERIAL.projection(canvas.getPixelProjection());
+    glDrawElements(GL_TRIANGLES, QUAD_CENTER.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+    QUAD_DOWN_LEFT.unbind();
+    screen_material.unbind();
 }
 void Renderer::drawCanvas(const FBO& buffer, const Canvas &canvas){
     buffer.bind();

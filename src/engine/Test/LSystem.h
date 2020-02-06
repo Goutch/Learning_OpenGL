@@ -3,6 +3,7 @@
 #include <Core/Scene.h>
 #include <unordered_map>
 #include <vector>
+#include <Shaders/Canvas/CanvasMaterial.h>
 
 class LSystem : public Scene {
     const std::string START = "X";
@@ -17,17 +18,15 @@ class LSystem : public Scene {
     const unsigned int START_LENGHT=10;
     const unsigned int NUMBER_OF_RECURSE = 6;
     std::vector<std::string> generations;
-    std::vector<std::tuple<vec3, vec3>> lines;
+
 
 public:
-    void init(Canvas &viewport, Renderer &renderer, Window &window) override;
+    void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
 
 private:
     void generate();
 
     void turtle();
 
-public:
-    void draw() const override;
 };
 

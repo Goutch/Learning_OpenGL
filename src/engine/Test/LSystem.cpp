@@ -7,7 +7,7 @@
 #include <Core/Rendering/Renderer.h>
 #include <stack>
 
-void LSystem::init(Canvas &viewport, Renderer &renderer, Window &window) {
+void LSystem::init(const Canvas &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     generations.push_back(START);
     for (int i = 0; i < NUMBER_OF_RECURSE; ++i) {
@@ -31,23 +31,15 @@ void LSystem::generate() {
     generations.push_back(current_gen);
 }
 
-void LSystem::draw() const {
-    Scene::draw();
-    for (int i = 0; i < lines.size(); ++i) {
-        vec3 p1=std::get<0>(lines[i]);
-        vec3 p2=std::get<1>(lines[i]);
-       // renderer->drawLine(p1.x,p1.y,p2.x,p2.y,1,Color::WHITE);
-    }
-}
-
+#include <Entities/Canvas/Line.h>
 
 void LSystem::turtle() {
 
 
     float rot = glm::radians(ANGLE_DEGREE);
 
-    std::stack<Transform> saves;
-    Transform t;
+    std::stack<CanvasTransform> saves;
+    CanvasTransform t;
 
     t.translate(START_POSITION);
     unsigned int len = START_LENGHT;
@@ -59,16 +51,16 @@ void LSystem::turtle() {
             char current = path.at(i);
             switch (current) {
                 case 'F': {
-                    vec3 begin = t.position();
+                    vec2 begin = t.position();
                     t.translate(vec3(0, len, 0));
-                    lines.emplace_back(begin,t.position());
+                    addEntity(new Line(begin,t.position(),1,renderer->DEFAULT_CANVAS_MATERIAL));
                 }
                     break;
                 case '+':
-                    t.rotate(vec3(0, 0, -rot));
+                    t.rotate(-rot);
                     break;
                 case '-':
-                    t.rotate(vec3(0, 0, rot));
+                    t.rotate(rot);
                     break;
                 case '[':
                     saves.push(t);

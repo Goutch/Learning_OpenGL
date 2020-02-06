@@ -4,13 +4,13 @@
 #include <Test/PrimitivesTest.h>
 #include <Test/TextTest.h>
 #include <Editor/Editor.h>
-#include <Test/TestRefactor.h>
+
 #include "Test/SpacialSceneTest.h"
 #include "Test/LAB3.h"
 #include <Test/LSystem.h>
 int main() {
     Engine engine=Engine();
-    auto s=SpacialSceneTest();
+    auto s=PrimitivesTest();
     //auto e=Editor(s);
     engine.start(s);
     return 0;

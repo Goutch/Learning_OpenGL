@@ -17,7 +17,7 @@ public:
     CanvasMaterial(const Shader& shader,const Color color);
     CanvasMaterial(const Shader& shader,const Texture& texture);
     CanvasMaterial(const Shader& shader,const Color color,const Texture& texture);
-    void projection(const mat3 &projection) const;
-    void transform(const mat3 &transform) const;
+    void projection(const mat4 &projection) const;
+    void transform(const mat4 &transform) const;
 
 };

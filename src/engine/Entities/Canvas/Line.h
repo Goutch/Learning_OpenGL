@@ -7,9 +7,8 @@ class CanvasMaterial;
 
 class Line: public CanvasEntity {
     const CanvasMaterial* material;
-    Line(float x1, float y1, float x2, float y2, float width,const CanvasMaterial& material);
-
 public:
+    Line(vec2 point1,vec2 point2, float width,const CanvasMaterial& material);
     void draw(const Scene &scene) const override;
 };
 

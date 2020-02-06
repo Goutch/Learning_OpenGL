@@ -10,7 +10,7 @@ class Editor: public Scene{
     CanvasMaterial current_scene_canvas_material;
 
 public:
-    void init(Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
     Editor(Scene& scene);
     ~Editor();
     void update(float delta) override;

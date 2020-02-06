@@ -32,8 +32,8 @@ public:
     vec3 forward();
     vec3 right();
     vec3 up();
+
     void scale(vec3 scale);
-    void setScale(vec3 scale);
     vec3 scale();
 };
 

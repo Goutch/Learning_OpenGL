@@ -12,7 +12,7 @@ protected:
     std::vector<SpacialEntity*> spacialEntities;
     Camera camera;
 public:
-    void init(Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
     void update(float delta) override;
     void render() const override;
     void draw() const override;

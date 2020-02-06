@@ -6,14 +6,13 @@
 #include <Core/Rendering/Renderer.h>
 #include <Core/Scene.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
-Line::Line(float x1, float y1, float x2, float y2, float width, const CanvasMaterial &material) :CanvasEntity(){
+Line::Line(vec2 point1,vec2 point2, float width, const CanvasMaterial &material) :CanvasEntity(){
     this->material= &material;
-    float deltaX = x2 - x1;
-    float deltaY = y2 - y1;
-    float x = x1 + (deltaX / 2);
-    float y = y1 + (deltaY / 2);
-    float lenght = (float) sqrt((deltaX * deltaX) + (deltaY * deltaY)) + (width * 2);
-    float rot = atan(deltaY, deltaX);
+    vec2 delta = point2 - point1;
+    float x = point1.x + (delta.x / 2);
+    float y = point1.y + (delta.y / 2);
+    float lenght = (float) sqrt((delta.x* delta.x) + (delta.y * delta.y)) + (width * 2);
+    float rot = atan(delta.y, delta.x);
     transform.translate(vec2(x, y));
     transform.rotate(rot);
     transform.scale(vec2(lenght, width));
@@ -21,5 +20,5 @@ Line::Line(float x1, float y1, float x2, float y2, float width, const CanvasMate
 void Line::draw(const Scene &scene) const {
     CanvasEntity::draw(scene);
     const Renderer& r=scene.getRenderer();
-    r.draw(r.QUAD,transform,*material);
+    r.draw(r.QUAD_CENTER, transform, *material);
 }

@@ -53,8 +53,8 @@ protected:
     mutable std::queue<CanvasElement> canvas_elements;
 
 public:
-    const Quad QUAD;
-
+    const Quad QUAD_CENTER=Quad();
+    const Quad QUAD_DOWN_LEFT=Quad(Quad::PIVOT::DOWN_LEFT);
     const Shader DEFAULT_SPACIAL_SHADER = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
                                                  "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
     const Shader DEPTH_SHADER = Shader("#version 330 core\n"
@@ -103,18 +103,28 @@ public:
                                                 "    gl_Position=projection*transform*vec4(vertexPosition.xyz,1.);\n"
                                                 "}",
                                                 "#version 330 core\n"
+                                                "uniform sampler2D texture_0;\n"
+                                                "uniform int has_texture;\n"
                                                 "uniform vec4 material_color;\n"
                                                 "in vec2 uv;\n"
                                                 "out vec4 fragColor;\n"
                                                 "void main()\n"
                                                 "{\n"
-                                                "    fragColor=material_color;\n"
+                                                "    if(has_texture==1)\n"
+                                                "    {\n"
+                                                "        vec4 texColor0=texture(texture_0,uv);\n"
+                                                "        fragColor=texColor0*material_color;\n"
+                                                "    }\n"
+                                                "    else{\n"
+                                                "        fragColor=material_color;\n"
+                                                "    }\n"
                                                 "}", true);;
 
 protected:
 
     int depthShader_light_space_matrix_location;
     int depthShader_transform_mat_location;
+    CanvasMaterial screen_material=CanvasMaterial(DEFAULT_CANVAS_SHADER);
 public:
     const CanvasMaterial DEFAULT_CANVAS_MATERIAL = CanvasMaterial(DEFAULT_CANVAS_SHADER);
     const SpacialMaterial DEFAULT_SPACIAL_MATERIAL = SpacialMaterial(DEFAULT_SPACIAL_SHADER);

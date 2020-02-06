@@ -9,39 +9,46 @@ CanvasTransform::CanvasTransform() {
 }
 
 CanvasTransform::CanvasTransform(vec2 position, float rotation, vec2 scale) {
-    //todo
+    this->translate(position);
+    this->rotate(rotation);
+    this->scale(scale);
 }
 
 void CanvasTransform::position(vec2 position) {
-    //todo
+    transform_matrix[3] = vec4(position,0, transform_matrix[3].w);
 }
 
 void CanvasTransform::translate(vec2 translation) {
-    //todo
+    transform_matrix = glm::translate(transform_matrix, vec3(translation,0));
 }
 
 vec2 CanvasTransform::position() const {
-    return glm::vec2();
+    return parent == nullptr ?transform_matrix[3]: parent->position() + (vec2)transform_matrix[3];
 }
 
 void CanvasTransform::scale(vec2 scale) {
-    //todo
+    transform_matrix[0] = normalize(transform_matrix[0]) * scale.x;
+    transform_matrix[1] = normalize(transform_matrix[1]) * scale.y;
+    transform_matrix[2][2]=1;
 }
 
 vec2 CanvasTransform::scale() const{
-    //todo
-    return glm::vec2();
+    vec2 s;
+    s.x = glm::length(transform_matrix[0]);
+    s.y = glm::length(transform_matrix[1]);
+    return s;
+
 }
 
 void CanvasTransform::rotate(float rotation) {
-    //todo
+    rot+=rotation;
+    transform_matrix=glm::rotate(transform_matrix,rotation,vec3(0,0,1));
 }
 
 float CanvasTransform::rotation() const{
-    //todo
-    return 0;
+    return rot;
 }
 
-mat3 CanvasTransform::getMatrix()const {
+mat4 CanvasTransform::getMatrix()const {
     return transform_matrix;
 }

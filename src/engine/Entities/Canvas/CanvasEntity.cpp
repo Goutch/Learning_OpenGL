@@ -11,3 +11,8 @@ void CanvasEntity::onDestroy(Scene &scene) {}
 CanvasEntity::CanvasEntity() {
 
 }
+CanvasEntity::CanvasEntity(vec2 position, float rotation, vec2 scale) {
+    transform.translate(position);
+    transform.rotate(rotation);
+    transform.scale(scale);
+}

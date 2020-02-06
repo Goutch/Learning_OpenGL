@@ -4,5 +4,9 @@
 
 class PrimitivesTest: public Scene {
 public:
-    void render() const override;
+    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+
+public:
+
 };
+

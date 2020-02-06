@@ -11,7 +11,7 @@ Transform::Transform() {
 Transform::Transform(vec3 position, vec3 rotation, vec3 scale) {
     this->translate(position);
     this->rotate(quat(rotation));
-    this->setScale(scale);
+    this->scale(scale);
 }
 
 mat4 Transform::getMatrix() const {
@@ -46,9 +46,7 @@ vec3 Transform::up() {
     return glm::normalize(transform_matrix[1]);
 }
 
-void Transform::scale(vec3 s) {
-    transform_matrix = glm::scale(transform_matrix, s);
-}
+
 
 quat Transform::rotation() const {
     return rot;
@@ -71,7 +69,7 @@ void Transform::position(const vec3 &position) {
     transform_matrix[3] = vec4(position, transform_matrix[3].w);
 }
 
-void Transform::setScale(vec3 scale) {
+void Transform::scale(vec3 scale) {
     transform_matrix[0] = normalize(transform_matrix[0]) * scale.x;
     transform_matrix[1] = normalize(transform_matrix[1]) * scale.y;
     transform_matrix[2] = normalize(transform_matrix[2]) * scale.z;

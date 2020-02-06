@@ -32,7 +32,7 @@ void Scene::render() const {
     renderer->renderCanvas(canvas->getFrameBuffer(), canvas->getPixelProjection());
 }
 
-void Scene::init(Canvas &canvas, Renderer &renderer, Window &window) {
+void Scene::init(const Canvas &canvas, Renderer &renderer, Window &window) {
     this->renderer = &renderer;
     this->canvas = &canvas;
     this->window = &window;

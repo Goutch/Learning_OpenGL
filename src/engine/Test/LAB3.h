@@ -17,7 +17,7 @@ private:
                            "../src/engine/Shaders/ShadersSources/TextFragment.glsl");
     FontMaterial font = FontMaterial(shader,"../res/font_arial.bmp", 64, 64);
 public:
-    void init(Canvas &viewport, Renderer &renderer, Window &window) override;
+    void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
 
     void render() const override;
 };

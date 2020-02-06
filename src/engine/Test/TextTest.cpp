@@ -11,7 +11,7 @@
 #include <Core/Canvas.h>
 #include <Entities/Canvas/Text.h>
 
-void TextTest::init(Canvas &viewport, Renderer &renderer, Window &window) {
+void TextTest::init(const Canvas &viewport, Renderer &renderer, Window &window) {
     Scene::init(viewport, renderer, window);
     CanvasEntity* e= new Text("test", vec3(viewport.getPixelWidth() / 2, viewport.getPixelHeight() / 2, 0), font, 100);
     addEntity(e);
