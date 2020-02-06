@@ -46,8 +46,8 @@ void Engine::start(Scene &scene) {
     if (glewInit() == GLEW_OK) {
         Renderer* renderer =new SimpleRenderer();
         Log::status("Initializing scene..");
-        Canvas viewport=Canvas(*window);
-        scene.init(viewport,*renderer,*window);
+        Canvas canvas=Canvas(*window);
+        scene.init(canvas, *renderer, *window);
         Log::status("Initialized scene");
         double delta_time = 0;
         Timer t;
@@ -61,7 +61,7 @@ void Engine::start(Scene &scene) {
             scene.draw();
             renderer->clear();
             scene.render();
-            renderer->drawCanvas(viewport);
+            renderer->drawCanvas(canvas);
             window->swapBuffer();
             delta_time = t.ms();
         }

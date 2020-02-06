@@ -10,6 +10,7 @@
 #include <Core/Canvas.h>
 void SpacialScene::init(Canvas &canvas, Renderer &renderer, Window &window) {
     Scene::init(canvas, renderer, window);
+    camera.init(*this);
 }
 void SpacialScene::update(float delta) {
     Scene::update(delta);

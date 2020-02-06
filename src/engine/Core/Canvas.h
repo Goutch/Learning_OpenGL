@@ -15,7 +15,7 @@ class Canvas : WindowResizeListener {
 private:
     mutable std::list<CanvasResizeListener *> sizeListeners;
     Shader shader = Shader("#version 330 core\n"
-                           "layout (location = 0) in vec2 vertexPosition;\n"
+                           "layout (location = 0) in vec3 vertexPosition;\n"
                            "layout (location = 1) in vec2 vertexUv;\n"
                            "out vec2 uv;\n"
                            "void main()\n"
@@ -33,7 +33,7 @@ private:
                            "}", true);
     VAO render_space;
     FBO frame_buffer = FBO(FBO::COLOR);
-    mat3 pixel_projection;
+    mat4 pixel_projection;
     const Window *window;
     unsigned int pixel_width;
     unsigned int pixel_height;
@@ -51,7 +51,6 @@ public:
     unsigned int getPixelWidth() const;
 
     unsigned int getPixelHeight() const;
-
 
     const mat4 getPixelProjection() const;
 

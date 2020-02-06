@@ -43,8 +43,6 @@ void LightMaterial::bind() const {
         shader->loadUniform(directional_light_direction_location, vec3(directionalLights[0]->transform.forward()));
         boundShadowMaps[0]->bind(1);
     }
-
-
 }
 
 void LightMaterial::unbind() const {
@@ -65,7 +63,7 @@ void LightMaterial::damp(float damp) {
 
 }
 
-void LightMaterial::getUniformsLocations() {
+void LightMaterial::getUniformsLocations()  const{
     SpacialMaterial::getUniformsLocations();
     point_light_count_location = shader->uniformLocation("point_light_count");
     shine_factor_location = shader->uniformLocation("shine_factor");

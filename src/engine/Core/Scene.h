@@ -24,7 +24,7 @@ protected:
 
 public:
 	Scene();
-	virtual void init(Canvas &viewport, Renderer &renderer, Window& window);
+	virtual void init(Canvas &canvas, Renderer &renderer, Window& window);
 	virtual void update(float delta);
 	virtual void draw() const;
 	virtual void render() const;

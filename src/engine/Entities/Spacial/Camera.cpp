@@ -1,7 +1,6 @@
 //
 // Created by User on 2020-01-26.
 //
-
 #include "Camera.h"
 #include "Core/Canvas.h"
 #include "Core/SpacialScene.h"
@@ -9,11 +8,17 @@
 Camera::Camera(vec3 position, vec3 rotation)  : SpacialEntity(position, rotation, vec3(1)){
 
 }
-
+void Camera::init(SpacialScene &scene) {
+    SpacialEntity::init(scene);
+    this->canvas=&scene.getCanvas();
+    canvas->subscribeSizeChange(*this);
+    setProjectionMode(ProjectionMode::PERSPECTIVE);
+}
 void Camera::setProjectionMode(ProjectionMode projectionMode) {
     this->projectionMode = projectionMode;
     calculateProjectionMatrix();
 }
+
 const mat4& Camera::getProjectionMatrix() const {
     return projection_matrix;
 }
@@ -36,18 +41,14 @@ void Camera::calculateProjectionMatrix() {
 }
 
 
-void Camera::init(SpacialScene &scene) {
-    SpacialEntity::init(scene);
-    this->canvas=&scene.getCanvas();
-    canvas->subscribeSizeChange(*this);
-    calculateProjectionMatrix();
-}
+
 
 float Camera::getFOV() const {
     return fov;
 }
 
 void Camera::onViewportSizeChange(unsigned int width, unsigned int height) {
+
     calculateProjectionMatrix();
 }
 

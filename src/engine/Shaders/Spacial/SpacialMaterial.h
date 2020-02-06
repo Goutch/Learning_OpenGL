@@ -16,7 +16,7 @@ using namespace glm;
 
 class SpacialMaterial: public TexturedMaterial {
 protected:
-    int transform_location, view_mat_location,projection_mat_location;
+    mutable int transform_location, view_mat_location,projection_mat_location;
 
 public:
     SpacialMaterial();
@@ -34,7 +34,7 @@ public:
     virtual void unbind() const override ;
 
 protected:
-    void getUniformsLocations() override;
+    void getUniformsLocations() const override;
 
 public:
     void projection(const mat4 &projection) const;

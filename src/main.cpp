@@ -4,6 +4,7 @@
 #include <Test/PrimitivesTest.h>
 #include <Test/TextTest.h>
 #include <Editor/Editor.h>
+#include <Test/TestRefactor.h>
 #include "Test/SpacialSceneTest.h"
 #include "Test/LAB3.h"
 #include <Test/LSystem.h>

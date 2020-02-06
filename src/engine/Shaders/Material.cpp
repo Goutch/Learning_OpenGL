@@ -18,7 +18,7 @@ Material::Material(const Shader &shader,const Color &color) {
 }
 void Material::setShader(const Shader &shader) {
     this->shader=&shader;
-    getUniformsLocations();
+    shader_initialized= false;
 }
 void Material::unbind() const {
     this->shader->unbind();
@@ -28,10 +28,12 @@ const Shader &Material::getShader() const {
 }
 
 void Material::bind() const {
+    if(!shader_initialized) getUniformsLocations();
     shader->bind();
+    shader->loadUniform(material_color_location,color);
 }
 
-void Material::getUniformsLocations() {
+void Material::getUniformsLocations() const{
     material_color_location=shader->uniformLocation("material_color");
 }
 void Material::setColor(const Color &color) {

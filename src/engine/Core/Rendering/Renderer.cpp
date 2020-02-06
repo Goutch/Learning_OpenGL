@@ -47,6 +47,7 @@ void Renderer::drawCanvas(const FBO& buffer, const Canvas &canvas){
 void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection)const  {
     glDisable(GL_DEPTH_TEST);
     buffer.bind();
+
     while (!canvas_elements.empty()) {
         CanvasElement& canvas_element = canvas_elements.front();
         canvas_element.material->bind();

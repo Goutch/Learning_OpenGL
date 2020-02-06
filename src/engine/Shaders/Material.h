@@ -7,12 +7,13 @@ class Color;
 class Shader;
 
 class Material {
+    bool shader_initialized=false;
 protected:
     const Shader *shader;
     Color color = Color::WHITE;
-    int material_color_location;
+    mutable int material_color_location;
 
-    virtual void getUniformsLocations();
+    virtual void getUniformsLocations() const;
 
 public:
     Material();

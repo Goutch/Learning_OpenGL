@@ -13,11 +13,12 @@ protected:
     Camera camera;
 public:
     void init(Canvas &canvas, Renderer &renderer, Window &window) override;
+    void update(float delta) override;
     void render() const override;
     void draw() const override;
     void destroy() override;
     void addEntity(SpacialEntity *entity);
-    void update(float delta) override;
+
     void addLight(PointLight* light);
     void addLight(DirectionalLight* light);
     const std::vector<PointLight*>& getPointLights() const;

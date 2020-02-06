@@ -36,7 +36,7 @@ const Texture &TexturedMaterial::getTexture() const {
     return *this->texture;
 }
 
-void TexturedMaterial::getUniformsLocations() {
+void TexturedMaterial::getUniformsLocations() const {
     Material::getUniformsLocations();
     has_texture_location = shader->uniformLocation("has_texture");
     texture_0_location = shader->uniformLocation("texture_0");

@@ -9,7 +9,7 @@
 #include "Entities/Spacial/Light/DirectionnalLight.h"
 #include "Entities/Spacial/Camera.h"
 void SpacialSceneTest::init(Canvas &viewport, Renderer &renderer, Window &window){
-    Scene::init(viewport,renderer,window);
+    SpacialScene::init(viewport,renderer,window);
 
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);
@@ -49,12 +49,9 @@ void SpacialSceneTest::init(Canvas &viewport, Renderer &renderer, Window &window
 }
 
 
-void SpacialSceneTest::render() const {
-    Scene::render();
 
-}
 
 void SpacialSceneTest::update(float delta) {
-    Scene::update(delta);
+    SpacialScene::update(delta);
     sun->transform.rotate(quat(vec3(delta*0.01,0,0)));
 }

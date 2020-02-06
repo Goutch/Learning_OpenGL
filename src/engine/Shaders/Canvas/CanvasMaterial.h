@@ -6,9 +6,9 @@
 using namespace glm;
 class CanvasMaterial:public TexturedMaterial {
 protected:
-    int transform_location, projection_mat_location;
+    mutable int transform_location, projection_mat_location;
 protected:
-    void getUniformsLocations() override;
+    void getUniformsLocations() const override;
 
 public:
 

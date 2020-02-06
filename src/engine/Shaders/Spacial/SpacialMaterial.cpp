@@ -47,8 +47,8 @@ void SpacialMaterial::projection(const mat4 &projection) const {
     shader->loadUniform(projection_mat_location, projection);
 }
 
-void SpacialMaterial::getUniformsLocations() {
-    Material::getUniformsLocations();
+void SpacialMaterial::getUniformsLocations() const {
+    TexturedMaterial::getUniformsLocations();
     transform_location = shader->uniformLocation("transform");
     view_mat_location = shader->uniformLocation("view");
     projection_mat_location=shader->uniformLocation("projection");

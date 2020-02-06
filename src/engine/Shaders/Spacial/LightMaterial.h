@@ -13,7 +13,7 @@ private:
                          0.0f, 0.5f, 0.0f, 0.0f,
                          0.0f, 0.0f, 0.5f, 0.0f,
                          0.5f, 0.5f, 0.5f, 1.0f);
-    int ambient_light_location,
+    mutable int ambient_light_location,
             damp_factor_location,
             shine_factor_location,
 
@@ -49,7 +49,7 @@ public:
     void damp(float);
 
 protected:
-    virtual void getUniformsLocations() override ;
+    virtual void getUniformsLocations() const override ;
 };
 
 

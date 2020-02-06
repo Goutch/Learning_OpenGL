@@ -24,7 +24,7 @@ CanvasMaterial::CanvasMaterial(const Shader &shader, const Color color, const Te
         shader, color, texture) {
 
 }
-void CanvasMaterial::getUniformsLocations() {
+void CanvasMaterial::getUniformsLocations()  const{
     TexturedMaterial::getUniformsLocations();
 }
 
