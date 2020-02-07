@@ -3,11 +3,10 @@
 
 #include "Renderer.h"
 #include <GL/glew.h>
-#include "Shaders/Shader.h"
-#include <Data/Texture.h>
+
 #include <Geometry/VAO.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
-#include <cmath>
+
 #include <Core/Canvas.h>
 #include <Data/FBO.h>
 
@@ -28,27 +27,21 @@ void Renderer::clearColor() const {
     glClear(GL_COLOR_BUFFER_BIT);
 }
 
-void Renderer::drawCanvas(const Canvas& canvas) {
+void Renderer::renderOnMainBuffer(const Canvas& canvas) {
     glDisable(GL_DEPTH_TEST);
-    screen_material.setTexture(canvas.getFrameBuffer().getTexture());
-    screen_material.bind();
-    QUAD_DOWN_LEFT.bind();
-    DEFAULT_CANVAS_MATERIAL.transform(canvas.transform.getMatrix());
-    DEFAULT_CANVAS_MATERIAL.projection(canvas.getPixelProjection());
+    canvas.getMaterial().bind();
+    canvas.getVAO().bind();
+    canvas.getMaterial().transform(canvas.transform.getMatrix());
+    canvas.getMaterial().projection(canvas.getPixelProjection());
     glDrawElements(GL_TRIANGLES, QUAD_CENTER.getVertexCount(), GL_UNSIGNED_INT, nullptr);
-    QUAD_DOWN_LEFT.unbind();
-    screen_material.unbind();
-}
-void Renderer::drawCanvas(const FBO& buffer, const Canvas &canvas){
-    buffer.bind();
-    drawCanvas(canvas);
-    buffer.unbind();
+    canvas.getVAO().unbind();
+    canvas.getMaterial().unbind();
 }
 
 void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection)const  {
     glDisable(GL_DEPTH_TEST);
     buffer.bind();
-
+    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while (!canvas_elements.empty()) {
         CanvasElement& canvas_element = canvas_elements.front();
         canvas_element.material->bind();

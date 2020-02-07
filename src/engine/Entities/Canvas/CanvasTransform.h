@@ -10,10 +10,11 @@ using namespace glm;
 class CanvasTransform {
     mat4 transform_matrix = glm::mat4(1.0f);
     float rot=0;
-    CanvasTransform *parent = nullptr;
-public:
-    CanvasTransform();
 
+public:
+    const CanvasTransform *parent = nullptr;
+    CanvasTransform();
+    CanvasTransform(const CanvasTransform& other);
     CanvasTransform(vec2 position, float rotation, vec2 scale);
 
     void position(vec2 position);

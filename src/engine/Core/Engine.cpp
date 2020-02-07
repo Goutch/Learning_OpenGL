@@ -62,7 +62,7 @@ void Engine::start(Scene &scene) {
             scene.draw();
             renderer->clear();
             scene.render();
-            renderer->drawCanvas(canvas);
+            renderer->renderOnMainBuffer(canvas);
             window->swapBuffer();
             delta_time = t.ms();
         }

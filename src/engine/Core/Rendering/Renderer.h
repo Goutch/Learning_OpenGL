@@ -54,7 +54,6 @@ protected:
 
 public:
     const Quad QUAD_CENTER=Quad();
-    const Quad QUAD_DOWN_LEFT=Quad(Quad::PIVOT::DOWN_LEFT);
     const Shader DEFAULT_SPACIAL_SHADER = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
                                                  "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
     const Shader DEPTH_SHADER = Shader("#version 330 core\n"
@@ -139,10 +138,7 @@ public:
 
     void clearColor() const ;
 
-    virtual void drawCanvas(const Canvas &canvas);
-
-    virtual void drawCanvas(const FBO &buffer, const Canvas &canvas);
-
+    virtual void renderOnMainBuffer(const Canvas &canvas);
 
     virtual void draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform) const= 0;
 

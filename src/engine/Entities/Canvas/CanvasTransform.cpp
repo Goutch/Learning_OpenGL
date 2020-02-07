@@ -29,7 +29,6 @@ vec2 CanvasTransform::position() const {
 void CanvasTransform::scale(vec2 scale) {
     transform_matrix[0] = normalize(transform_matrix[0]) * scale.x;
     transform_matrix[1] = normalize(transform_matrix[1]) * scale.y;
-    transform_matrix[2][2]=1;
 }
 
 vec2 CanvasTransform::scale() const{
@@ -51,4 +50,10 @@ float CanvasTransform::rotation() const{
 
 mat4 CanvasTransform::getMatrix()const {
     return transform_matrix;
+}
+
+CanvasTransform::CanvasTransform(const CanvasTransform &other) {
+    this->transform_matrix=other.transform_matrix;
+    this->rot=other.rot;
+    this->parent=other.parent;
 }

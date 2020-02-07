@@ -6,8 +6,9 @@
 class Editor: public Scene{
     Scene* current_scene;
     Canvas* current_scene_canvas;
-    CanvasTransform current_scene_canvas_transform;
-    CanvasMaterial current_scene_canvas_material;
+
+    CanvasMaterial primary_material;
+    CanvasMaterial secondary_material;
 
 public:
     void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
@@ -15,9 +16,9 @@ public:
     ~Editor();
     void update(float delta) override;
 
-    void draw() const override ;
+    void destroy() override;
 
-    void render() const override;
+    void draw() const override ;
 };
 
 

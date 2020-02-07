@@ -7,14 +7,13 @@
 #include <Core/Rendering/Renderer.h>
 #include <stack>
 
-void LSystem::init(const Canvas &viewport, Renderer &renderer, Window &window) {
-    Scene::init(viewport, renderer, window);
+void LSystem::init(const Canvas &canvas, Renderer &renderer, Window &window) {
+    Scene::init(canvas, renderer, window);
     generations.push_back(START);
     for (int i = 0; i < NUMBER_OF_RECURSE; ++i) {
         generate();
     }
     turtle();
-
 }
 
 void LSystem::generate() {
@@ -34,13 +33,9 @@ void LSystem::generate() {
 #include <Entities/Canvas/Line.h>
 
 void LSystem::turtle() {
-
-
     float rot = glm::radians(ANGLE_DEGREE);
-
     std::stack<CanvasTransform> saves;
     CanvasTransform t;
-
     t.translate(START_POSITION);
     unsigned int len = START_LENGHT;
     for (int j = 0; j <generations.size() ; ++j) {
@@ -53,7 +48,7 @@ void LSystem::turtle() {
                 case 'F': {
                     vec2 begin = t.position();
                     t.translate(vec3(0, len, 0));
-                    addEntity(new Line(begin,t.position(),1,renderer->DEFAULT_CANVAS_MATERIAL));
+                    addEntity(new Line(begin,t.position(),2,material));
                 }
                     break;
                 case '+':
@@ -63,7 +58,7 @@ void LSystem::turtle() {
                     t.rotate(rot);
                     break;
                 case '[':
-                    saves.push(t);
+                    saves.push(CanvasTransform(t));
                     break;
                 case ']':
                     t=saves.top();
