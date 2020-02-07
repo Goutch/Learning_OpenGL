@@ -12,7 +12,7 @@ Line::Line(vec2 point1,vec2 point2, float width, const CanvasMaterial &material)
     float x = point1.x + (delta.x / 2);
     float y = point1.y + (delta.y / 2);
     float lenght = (float) sqrt((delta.x* delta.x) + (delta.y * delta.y)) + (width * 2);
-    float rot = atan(delta.y, delta.x);
+    float rot = atan(delta.x, delta.y);
     transform.translate(vec2(x, y));
     transform.rotate(rot);
     transform.scale(vec2(lenght, width));
@@ -20,5 +20,5 @@ Line::Line(vec2 point1,vec2 point2, float width, const CanvasMaterial &material)
 void Line::draw(const Scene &scene) const {
     CanvasEntity::draw(scene);
     const Renderer& r=scene.getRenderer();
-    r.draw(r.QUAD_CENTER, transform, *material);
+    r.draw(r.QUAD, transform, *material);
 }

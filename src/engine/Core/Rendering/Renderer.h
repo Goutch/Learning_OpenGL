@@ -35,7 +35,7 @@ class CanvasMaterial;
 #include <Entities/Canvas/CanvasTransform.h>
 #include <Shaders/Shader.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
-
+#include <deque>
 class Renderer {
 protected:
     struct CanvasElement {
@@ -53,7 +53,7 @@ protected:
     mutable std::queue<CanvasElement> canvas_elements;
 
 public:
-    const Quad QUAD_CENTER=Quad();
+    const Quad QUAD=Quad();
     const Shader DEFAULT_SPACIAL_SHADER = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
                                                  "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
     const Shader DEPTH_SHADER = Shader("#version 330 core\n"
@@ -123,12 +123,14 @@ protected:
 
     int depthShader_light_space_matrix_location;
     int depthShader_transform_mat_location;
-    CanvasMaterial screen_material=CanvasMaterial(DEFAULT_CANVAS_SHADER);
+    mutable std::deque<CanvasMaterial> temp_materials;
+    mutable std::deque<CanvasTransform> temp_transforms;
 public:
     const CanvasMaterial DEFAULT_CANVAS_MATERIAL = CanvasMaterial(DEFAULT_CANVAS_SHADER);
     const SpacialMaterial DEFAULT_SPACIAL_MATERIAL = SpacialMaterial(DEFAULT_SPACIAL_SHADER);
     const SpacialMaterial ELLIPSE_MATERIAL = SpacialMaterial(ELLIPSE_SHADER);
     const Transform DEFAULT_TRANSFORM = Transform();
+
 
     Renderer();
 
@@ -149,6 +151,8 @@ public:
     virtual void renderCanvas(const FBO &buffer, const glm::mat4 &projection) const;
 
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const = 0;
-
+    void drawRect(float x, float y, float width, float height, const Color &color);
+    void drawLine(float x1, float y1, float x2, float y2, float width, const Color &color);
+    void drawEllipse(float x, float y, float width, float height, const Color &color);
     void wireframe(bool enable);
 };

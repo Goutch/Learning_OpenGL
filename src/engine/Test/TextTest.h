@@ -13,13 +13,10 @@ class TextTest : public Scene{
     Transform transform = Transform();
     Shader shader = Shader("../src/engine/Shaders/ShadersSources/TextVertex.glsl",
                            "../src/engine/Shaders/ShadersSources/TextFragment.glsl");
-    FontMaterial font = FontMaterial(shader,"../res/font.bmp", 64, 64);
-    Mesh vao;
+    FontMaterial font = FontMaterial(shader,"../res/consolas.bmp",128, 128);
 
 public:
     void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
-
-    void render() const override;
 
 };
 

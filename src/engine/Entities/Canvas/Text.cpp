@@ -5,7 +5,7 @@
 #include "Core/Rendering/Renderer.h"
 #include "Core/Scene.h"
 
-Text::Text(std::string text, const vec3 &position, FontMaterial &font, float size) : CanvasEntity(){
+Text::Text(std::string text, const vec2 &position, FontMaterial &font, float size) : CanvasEntity(position){
     this->font=&font;
     Geometry::make_text(mesh, text, font);
     transform.scale(vec2(size,size));

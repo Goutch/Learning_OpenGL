@@ -15,7 +15,7 @@ FontMaterial::~FontMaterial() {
 
 void FontMaterial::getCoordinates(float (&uvs)[8], unsigned int index) const {
     const AtlasTexture* fontTexture = dynamic_cast<const AtlasTexture*>(texture);
-    fontTexture->getCoordinates(uvs, index-32);
+    fontTexture->getCoordinates(uvs, index);
 }
 
 

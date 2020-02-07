@@ -42,7 +42,6 @@ void AtlasTexture::getCoordinates(float (&uvs)[8], unsigned int index) const {
 
     unsigned int num_col=width/cellWidth;
     getCoordinates(uvs,(index%num_col),(index-(index%num_col))/num_col);
-    Log::message(std::to_string(index)+":("+std::to_string((index%num_col))+","+std::to_string((index-(index%num_col))/num_col)+")");
 }
 
 

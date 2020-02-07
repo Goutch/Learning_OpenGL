@@ -8,7 +8,7 @@ class TexturedMaterial : public Material {
 protected:
     const Texture *texture;
     mutable int has_texture_location, texture_0_location;
-    bool has_texture;
+    bool has_texture=false;
 
     void getUniformsLocations() const override;
 

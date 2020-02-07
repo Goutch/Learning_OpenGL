@@ -1,30 +1,29 @@
-//
-// Created by Simon on 2020-02-04.
-//
-
-#ifndef OGL_ENGINE_LAB3_H
-#define OGL_ENGINE_LAB3_H
+#pragma once
 
 #include <Core/Scene.h>
-#include "Shaders/FontMaterial.h"
+
 #include <Core/Scene.h>
 #include <Shaders/Material.h>
 #include <Geometry/Mesh.h>
-#include <Shaders/FontMaterial.h>
-#include "Entities/Transform.h"
+
+#include <Shaders/Canvas/FontMaterial.h>
+#include <Shaders/Shader.h>
+
 
 class LAB3 : public Scene {
 private:
     Shader shader = Shader("../src/engine/Shaders/shadersSources/TextVertex.glsl",
                            "../src/engine/Shaders/shadersSources/TextFragment.glsl");
-    FontMaterial font = FontMaterial("../res/font_arial.bmp", 64, 64, shader);
-    FontMaterial font2 = FontMaterial("../res/consolas.bmp", 128, 128, shader);
-public:
-    void init(Viewport &viewport, Renderer &renderer, Window &window) override;
+    FontMaterial font = FontMaterial(shader,"../res/font_arial.bmp", 64, 64);
+    FontMaterial font2 = FontMaterial(shader,"../res/consolas.bmp", 128, 128);
 
-    void render() const override;
+public:
+
+    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+
+    void draw() const override;
 };
 
 
 
-#endif //OGL_ENGINE_LAB3_H
+

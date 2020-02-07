@@ -13,5 +13,7 @@ Rect::Rect(vec2 position, vec2 size, const CanvasMaterial &material):CanvasEntit
 void Rect::draw(const Scene &scene) const {
     CanvasEntity::draw(scene);
     const Renderer& r=scene.getRenderer();
-    r.draw(r.QUAD_CENTER, transform, *material);
+    r.draw(r.QUAD, transform, *material);
 }
+
+
