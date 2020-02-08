@@ -38,6 +38,8 @@ Canvas::Canvas(const Canvas &parent_canvas,const Shader& shader, int pixel_width
     setSize(pixel_width,pixel_height);
     material.setShader(shader);
     material.setTexture(frame_buffer.getTexture());
+    if(parent!= nullptr)
+        parent_ratio = vec2((float)pixel_width / (float)parent->getPixelWidth(), (float)pixel_height / (float)parent->getPixelHeight());
 }
 
 
@@ -77,7 +79,6 @@ const mat4 Canvas::getPixelProjection() const {
 void Canvas::setSize(int pixel_width,int pixel_height) {
     this->pixel_width=pixel_width;
     this->pixel_height=pixel_height;
-    parent_ratio = vec2((float)pixel_width / (float)parent->getPixelWidth(), (float)pixel_height / (float)parent->getPixelHeight());
     transform.scale(vec2(pixel_width,pixel_height));
     pixel_projection = glm::ortho<float>(0, pixel_width, 0, pixel_height, -100, 100);
     frame_buffer.setSize(pixel_width, pixel_height);
