@@ -32,12 +32,13 @@ add_executable(OGL_Engine
         src/engine/Core/Engine.cpp
         src/engine/Core/Window.cpp
         src/engine/Core/Scene.cpp
-        src/engine/Core/Debug/Log.cpp
         src/engine/Core/Canvas.cpp
         src/engine/Core/Rendering/Renderer.cpp
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
         src/engine/Core/SpacialScene.cpp
+
+        src/engine/Debug/Log.cpp
 
         src/engine/Entities/Spacial/MeshRenderer.cpp
         src/engine/Entities/Spacial/Transform.cpp
@@ -83,12 +84,11 @@ add_executable(OGL_Engine
         src/engine/Test/SpacialSceneTest.cpp
         src/engine/Test/TextTest.cpp
         src/engine/Test/PrimitivesTest.h
-
-        src/engine/Editor/Editor.cpp
-
         src/engine/Test/PrimitivesTest.cpp
         src/engine/Test/LAB3.cpp
         src/engine/Test/LSystem.cpp
+
+        src/engine/Editor/Editor.cpp
 
         Dependencies/STB_IMAGE/stb_image.cpp
 )
