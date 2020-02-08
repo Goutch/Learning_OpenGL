@@ -29,6 +29,7 @@ add_executable(OGL_Engine
         src/main.cpp
 
         src/engine/Core/Engine.cpp
+        src/engine/Core/Engine.cpp
         src/engine/Core/Window.cpp
         src/engine/Core/Scene.cpp
         src/engine/Core/Debug/Log.cpp
@@ -36,6 +37,7 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/Renderer.cpp
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
+        src/engine/Core/SpacialScene.cpp
 
         src/engine/Entities/Spacial/MeshRenderer.cpp
         src/engine/Entities/Spacial/Transform.cpp
@@ -45,12 +47,21 @@ add_executable(OGL_Engine
         src/engine/Entities/Spacial/Light/DirectionnalLight.cpp
         src/engine/Entities/Spacial/Light/PointLight.cpp
         src/engine/Entities/Spacial/Camera.cpp
+        src/engine/Entities/Canvas/Rect.cpp
+        src/engine/Entities/Canvas/Line.cpp
+        src/engine/Entities/Canvas/CanvasTransform.cpp
+        src/engine/Entities/Canvas/CanvasEntity.cpp
+        src/engine/Entities/Canvas/Text.cpp
+        src/engine/Entities/Canvas/Text.h
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Spacial/SpacialMaterial.cpp
         src/engine/Shaders/Spacial/LightMaterial.cpp
         src/engine/Shaders/Canvas/FontMaterial.cpp
         src/engine/Shaders/Canvas/FontMaterial.h
+        src/engine/Shaders/Material.cpp
+        src/engine/Shaders/Canvas/CanvasMaterial.cpp
+        src/engine/Shaders/TexturedMaterial.cpp
 
         src/engine/Geometry/Geometry.cpp
         src/engine/Geometry/Mesh.cpp
@@ -74,14 +85,12 @@ add_executable(OGL_Engine
         src/engine/Test/PrimitivesTest.h
 
         src/engine/Editor/Editor.cpp
-        src/engine/Entities/Canvas/Text.cpp
-        src/engine/Entities/Canvas/Text.h
-        Dependencies/STB_IMAGE/stb_image.cpp
+
         src/engine/Test/PrimitivesTest.cpp
-        src/engine/Test/LAB3.h
         src/engine/Test/LAB3.cpp
+        src/engine/Test/LSystem.cpp
 
-
-        src/engine/Test/LSystem.cpp src/engine/Test/LSystem.h src/engine/Entities/Canvas/Rect.cpp src/engine/Entities/Canvas/Rect.h src/engine/Entities/Canvas/Line.cpp src/engine/Entities/Canvas/Line.h src/engine/Entities/Canvas/CanvasTransform.cpp src/engine/Entities/Canvas/CanvasTransform.h src/engine/Entities/Canvas/CanvasEntity.cpp src/engine/Entities/Canvas/CanvasEntity.h src/engine/Core/SpacialScene.cpp src/engine/Core/SpacialScene.h src/engine/Shaders/Material.h src/engine/Shaders/Material.cpp src/engine/Shaders/Canvas/CanvasMaterial.cpp src/engine/Shaders/Canvas/CanvasMaterial.h src/engine/Shaders/TexturedMaterial.cpp src/engine/Shaders/TexturedMaterial.h)
+        Dependencies/STB_IMAGE/stb_image.cpp
+)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
