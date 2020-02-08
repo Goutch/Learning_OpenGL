@@ -37,8 +37,8 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
         src/engine/Core/SpacialScene.cpp
-
-        src/engine/Debug/Log.cpp
+        src/engine/Core/Debug/Log.cpp
+        src/engine/Core/Debug/Debug.h
 
         src/engine/Entities/Spacial/MeshRenderer.cpp
         src/engine/Entities/Spacial/Transform.cpp
@@ -87,6 +87,8 @@ add_executable(OGL_Engine
         src/engine/Test/PrimitivesTest.cpp
         src/engine/Test/LAB3.cpp
         src/engine/Test/LSystem.cpp
+
+
 
         src/engine/Editor/Editor.cpp
 

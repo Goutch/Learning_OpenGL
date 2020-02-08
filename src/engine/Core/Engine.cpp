@@ -1,19 +1,19 @@
 //
 // Created by User on 18-Nov.-2019.
 //
-#define GLEW_STATIC
 
+#define GLEW_STATIC
 #include <GL/glew.h>
+
 #include "Scene.h"
 #include "Utils/Timer.h"
-#include "Core/Debug/Log.h"
+
 #include "Window.h"
 #include "Engine.h"
 #include "Core/Rendering/BatchRenderer.h"
 #include "Core/Rendering/SimpleRenderer.h"
-#include "Core/Debug/Debug.h"
+#include "Debug/Debug.h"
 #include "Core/Canvas.h"
-#include <Entities/Spacial/Camera.h>
 
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);

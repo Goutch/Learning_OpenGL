@@ -1,5 +1,5 @@
 
-#include "engine/core/Engine.h"
+#include "engine/Core/Engine.h"
 
 #include <Test/PrimitivesTest.h>
 #include <Test/TextTest.h>

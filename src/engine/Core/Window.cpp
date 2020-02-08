@@ -1,5 +1,5 @@
 #include "Window.h"
-#include "Core/Debug/Log.h"
+#include "Debug/Log.h"
 #include "Events/WindowResizeListener.h"
 #include <GLFW/glfw3.h>
 #include <Events/KeyPressListener.h>
