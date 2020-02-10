@@ -93,6 +93,6 @@ add_executable(OGL_Engine
         src/engine/Editor/Editor.cpp
 
         Dependencies/STB_IMAGE/stb_image.cpp
-)
+        src/engine/Test/LAB4.cpp src/engine/Test/LAB4.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
