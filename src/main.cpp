@@ -10,7 +10,7 @@
 #include <Test/LSystem.h>
 int main() {
     Engine engine=Engine();
-    auto s=LAB3();
+    auto s=PrimitivesTest();
     //auto e=Editor(s);
     engine.start(s);
     return 0;
