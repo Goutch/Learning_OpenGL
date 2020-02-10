@@ -12,7 +12,10 @@ void PrimitivesTest::init(const Canvas &canvas, Renderer &renderer, Window &wind
     Scene::init(canvas, renderer, window);
     material.setShader(renderer.DEFAULT_CANVAS_SHADER);
     material.setColor(Color::RED);
-    addEntity(new Rect(vec2(canvas.getPixelWidth()/2,canvas.getPixelHeight()/2),vec2(canvas.getPixelWidth(),canvas.getPixelHeight()),material));
-    addEntity(new Rect(vec2(canvas.getPixelWidth()/2,canvas.getPixelHeight()/2),vec2(canvas.getPixelWidth()/2,canvas.getPixelHeight()/2),renderer.DEFAULT_CANVAS_MATERIAL));
-
+    float w=canvas.getPixelWidth();
+    float h=canvas.getPixelHeight();
+    addEntity(new Line(vec2((w/2)+200,h/2),
+            vec2(w/2,(h/2)+200),
+            2,material));
+    renderer.drawLine((w/2)+200,h/2,w/2,(h/2)+200,3,Color::GREEN);
 }
