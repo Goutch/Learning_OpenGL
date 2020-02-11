@@ -91,7 +91,7 @@ void Renderer::drawLine(float x1, float y1, float x2, float y2, float width, con
     vec2 delta = p2 - p1;
     float x = p1.x + (delta.x / 2);
     float y = p1.y + (delta.y / 2);
-    float lenght = (float) sqrt((delta.x* delta.x) + (delta.y * delta.y)) + (width * 2);
+    float lenght = (float) sqrt((delta.x* delta.x) + (delta.y * delta.y)) + (width );
     float rot = atan(delta.y, delta.x);
     temp_materials.emplace_back(DEFAULT_CANVAS_SHADER, color);
     temp_transforms.emplace_back( vec2(x, y), rot, vec2(lenght, width));
