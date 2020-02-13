@@ -15,9 +15,8 @@ void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const
 void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
-    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     clear();
-
+    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while(!render_queue.empty()) {
         std::tuple<const SpacialMaterial*,const VAO*,const Transform *>& renderableObject=render_queue.front();
         const SpacialMaterial& material=*std::get<0>(renderableObject);
@@ -41,8 +40,8 @@ void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, cons
 void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
-    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     clearDepth();
+    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     while(!render_queue.empty()) {

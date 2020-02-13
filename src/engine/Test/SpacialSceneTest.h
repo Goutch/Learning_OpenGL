@@ -30,8 +30,6 @@ class SpacialSceneTest : public SpacialScene {
     DirectionalLight *sun;
 
 public:
-
-
     void update(float delta) override;
 
 public:

@@ -11,7 +11,7 @@
 #include <Test/LSystem.h>
 int main() {
     Engine engine=Engine();
-    auto s=LAB4();
+    auto s=SpacialSceneTest();
     //auto e=Editor(s);
     engine.start(s);
     return 0;

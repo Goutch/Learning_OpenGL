@@ -14,7 +14,6 @@ void BatchRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const
     glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     buffer.bind();
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
     for (auto &vao_batch:spacial_material_batch) {
         const SpacialMaterial &material = *vao_batch.first;
         material.bind();
@@ -38,7 +37,7 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
-    glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     for (auto &vao_batch:spacial_material_batch) {

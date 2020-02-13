@@ -60,7 +60,6 @@ void Engine::start(Scene &scene) {
             printFPS();
             scene.update((float)delta_time);
             scene.draw();
-            renderer->clear();
             scene.render();
             renderer->renderOnMainBuffer(canvas);
             window->swapBuffer();

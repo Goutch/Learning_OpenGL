@@ -26,9 +26,10 @@ void Scene::draw() const {
     for (auto e:canvasEntities) {
         e->draw(*this);
     }
+    renderer->clear();
 }
 
-void Scene::render() const {
+void Scene::render() const{
     renderer->renderCanvas(canvas->getFrameBuffer(), canvas->getPixelProjection());
 }
 

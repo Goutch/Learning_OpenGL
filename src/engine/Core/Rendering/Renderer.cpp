@@ -9,11 +9,12 @@
 
 #include <Core/Canvas.h>
 #include <Data/FBO.h>
-#include <memory>
+
 
 Renderer::Renderer() {
     depthShader_light_space_matrix_location = DEPTH_SHADER.uniformLocation("space");
     depthShader_transform_mat_location = DEPTH_SHADER.uniformLocation("transform");
+    glClearColor(0,0,0,0);
 }
 
 void Renderer::clear() const {
@@ -42,7 +43,7 @@ void Renderer::renderOnMainBuffer(const Canvas &canvas) {
 void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection) const {
     glDisable(GL_DEPTH_TEST);
     buffer.bind();
-    clearColor();
+
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while (!canvas_elements.empty()) {
         CanvasElement &canvas_element = canvas_elements.front();

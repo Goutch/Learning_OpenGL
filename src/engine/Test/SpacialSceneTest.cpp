@@ -48,9 +48,6 @@ void SpacialSceneTest::init(const Canvas &viewport, Renderer &renderer, Window &
     sun_cube->transform.parent=&sun->transform;
 }
 
-
-
-
 void SpacialSceneTest::update(float delta) {
     SpacialScene::update(delta);
     sun->transform.rotate(quat(vec3(delta*0.01,0,0)));
