@@ -11,6 +11,7 @@ void ImguiTest::init(const Canvas &canvas, Renderer &renderer, Window &window) {
 }
 
 void ImguiTest::draw() const {
+    //https://blog.conan.io/2019/06/26/An-introduction-to-the-Dear-ImGui-library.html
     Scene::draw();
     bool my_tool_active;
     // Create a window called "My First Tool", with a menu bar.
