@@ -24,8 +24,17 @@ add_subdirectory(Dependencies/GLM)
 
 message("Including STB")
 include_directories(Dependencies/STB_IMAGE)
-
+message("Including IMGUI")
+include_directories(Dependencies/IMGUI)
 add_executable(OGL_Engine
+        Dependencies/IMGUI/imgui.cpp
+        Dependencies/IMGUI/imgui_draw.cpp
+        Dependencies/IMGUI/imgui_widgets.cpp
+        Dependencies/IMGUI/imgui_impl_opengl3.cpp
+        Dependencies/IMGUI/imgui_impl_glfw.cpp
+
+        Dependencies/STB_IMAGE/stb_image.cpp
+
         src/main.cpp
 
         src/engine/Core/Engine.cpp
@@ -87,12 +96,9 @@ add_executable(OGL_Engine
         src/engine/Test/PrimitivesTest.cpp
         src/engine/Test/LAB3.cpp
         src/engine/Test/LSystem.cpp
-
-
+        src/engine/Test/LAB4.cpp src/engine/Test/LAB4.h
 
         src/engine/Editor/Editor.cpp
-
-        Dependencies/STB_IMAGE/stb_image.cpp
-        src/engine/Test/LAB4.cpp src/engine/Test/LAB4.h)
+        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

@@ -28,6 +28,7 @@ public:
     void setMousePosition(double x,double y);
     int getWidth()const;
     int getHeight()const;
+    GLFWwindow& getHandle();
     void subscribeSizeChange( WindowResizeListener& l) const;
     void unsubscribeSizeChange(WindowResizeListener& l) const;
     void subscribeKeyPress(KeyPressListener& l) const;

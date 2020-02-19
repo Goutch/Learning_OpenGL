@@ -131,6 +131,10 @@ void Window::unsubscribeKeyPress(KeyPressListener &l) const {
     keyboardListeners.remove(&l);
 }
 
+GLFWwindow &Window::getHandle() {
+    return *window;
+}
+
 
 
 

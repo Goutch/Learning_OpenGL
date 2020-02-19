@@ -5,6 +5,9 @@
 #define GLEW_STATIC
 #include <GL/glew.h>
 
+#include <imgui.h>
+#include <imgui_impl_glfw.h>
+#include <imgui_impl_opengl3.h>
 #include "Scene.h"
 #include "Utils/Timer.h"
 
@@ -38,6 +41,15 @@ Engine::Engine() {
         //enable transparency
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+
+        IMGUI_CHECKVERSION();
+        ImGui::CreateContext();
+        ImGuiIO &io = ImGui::GetIO();
+        ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(),true);
+        ImGui_ImplOpenGL3_Init("#version 330 core");
+        // Setup Dear ImGui style
+        ImGui::StyleColorsDark();
     }
 }
 
@@ -45,6 +57,7 @@ void Engine::start(Scene &scene) {
 
     if (glewInit() == GLEW_OK) {
         Renderer* renderer =new SimpleRenderer();
+
         Log::status("Initializing scene..");
         Canvas canvas=Canvas(*window,renderer->DEFAULT_CANVAS_SHADER);
         scene.init(canvas, *renderer, *window);
@@ -58,10 +71,20 @@ void Engine::start(Scene &scene) {
             window->pollEvents();
             t.reset();
             printFPS();
+
             scene.update((float)delta_time);
+
+            ImGui_ImplOpenGL3_NewFrame();
+            ImGui_ImplGlfw_NewFrame();
+            ImGui::NewFrame();
+
             scene.draw();
             scene.render();
             renderer->renderOnMainBuffer(canvas);
+
+            ImGui::Render();
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+
             window->swapBuffer();
             delta_time = t.ms();
         }
@@ -73,6 +96,9 @@ void Engine::start(Scene &scene) {
 }
 
 Engine::~Engine() {
+    ImGui_ImplOpenGL3_Shutdown();
+    ImGui_ImplGlfw_Shutdown();
+    ImGui::DestroyContext();
     delete window;
 }
 
