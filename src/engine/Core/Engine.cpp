@@ -57,7 +57,7 @@ void Engine::start(Scene &scene) {
 
     if (glewInit() == GLEW_OK) {
         Renderer* renderer =new SimpleRenderer();
-
+        glClearColor(0.4,0.4,0.7,1);
         Log::status("Initializing scene..");
         Canvas canvas=Canvas(*window,renderer->DEFAULT_CANVAS_SHADER);
         scene.init(canvas, *renderer, *window);
