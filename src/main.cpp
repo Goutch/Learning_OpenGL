@@ -15,7 +15,7 @@
 int main() {
     Engine engine=Engine();
     auto s=LAB5();
-    //auto e=Editor(s);
-    engine.start(s);
+    auto e=Editor(s);
+    engine.start(e);
     return 0;
 }
