@@ -50,6 +50,8 @@ Engine::Engine() {
         ImGui_ImplOpenGL3_Init("#version 330 core");
         // Setup Dear ImGui style
         ImGui::StyleColorsDark();
+        io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+
     }
 }
 

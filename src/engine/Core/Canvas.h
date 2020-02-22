@@ -26,7 +26,6 @@ private:
     bool subscribed_window=false;
     bool subscribed_parent=false;
     glm::vec2 parent_ratio;
-    void setSize(int pixel_width,int pixel_height);
 public:
     CanvasTransform transform;
     Canvas(const Window &window,const Shader& shader);
@@ -54,4 +53,6 @@ public:
 
     void onWindowSizeChange(unsigned int width, unsigned int height) override;
     void onViewportSizeChange(unsigned int width, unsigned int height) override;
+
+    void setSize(int pixel_width,int pixel_height);
 };

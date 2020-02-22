@@ -22,8 +22,10 @@ class LAB5 : public SpacialScene{
 
 
     DirectionalLight *sun;
-
+    Transform pivot;
 public:
+    void update(float delta) override;
+
     void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
 };
 

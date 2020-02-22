@@ -23,4 +23,11 @@ void LAB5::init(const Canvas &viewport, Renderer &renderer, Window &window) {
 
     camera.transform.position(vec3(0,10,20));
     camera.transform.rotate(vec3(-3.1416/4,0,0));
+
+    camera.transform.parent=&pivot;
+}
+
+void LAB5::update(float delta) {
+    SpacialScene::update(delta);
+    pivot.rotate(delta*(3.1416/4),vec3(0,1,0));
 }

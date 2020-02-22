@@ -3,6 +3,7 @@
 #include <Core/Scene.h>
 #include <Core/Canvas.h>
 #include "Test/SpacialSceneTest.h"
+
 class Editor: public Scene{
     Scene* current_scene;
     Canvas* current_scene_canvas;
