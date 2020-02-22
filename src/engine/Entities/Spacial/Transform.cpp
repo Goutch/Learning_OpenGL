@@ -46,15 +46,12 @@ vec3 Transform::up() {
     return glm::normalize(transform_matrix[1]);
 }
 
-
-
 quat Transform::rotation() const {
-    return rot;
+    return parent == nullptr ?rot: rot + parent->rotation();
 }
 
 vec3 Transform::position() const {
-    return parent == nullptr ?transform_matrix[3]: parent->position() + (vec3)transform_matrix[3];
-
+    return parent == nullptr ?transform_matrix[3]: (vec3)(parent->getMatrix()*transform_matrix)[3];
 }
 
 vec3 Transform::scale() {

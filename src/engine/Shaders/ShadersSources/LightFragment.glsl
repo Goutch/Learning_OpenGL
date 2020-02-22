@@ -4,7 +4,6 @@
 in vec4 position;
 in vec2 uv;
 in vec3 normal;
-in vec3 to_camera_direction;
 in vec3 frag_pos;
 in vec4 shadow_coord;
 
@@ -36,9 +35,9 @@ vec3 calculateLight(vec3 lightDir,vec3 color)
     //specular
     if (shine_factor>0.0001)
     {
-        vec3 viewDir = normalize(view_pos - frag_pos);
+        vec3 to_view_dir=normalize(view_pos-frag_pos);
         vec3 reflectDir = reflect(-lightDir, normal);
-        float spec = pow(max(dot(viewDir, reflectDir), 0.0), damp_factor);
+        float spec = pow(max(dot(to_view_dir, reflectDir), 0.0), damp_factor);
         ouputLight+= vec3(shine_factor * spec);
     }
     return ouputLight;

@@ -13,6 +13,7 @@ layout(location=1)in vec2 vertexUv;
 out vec4 position;
 out vec3 normal;
 out vec2 uv;
+
 out vec3 frag_pos;
 out vec4 shadow_coord;
 void main(){
