@@ -28,8 +28,6 @@ void Editor::init(const Canvas &canvas, Renderer &renderer, Window &window) {
 
     primary_material.setShader(renderer.DEFAULT_CANVAS_SHADER);
     primary_material.setColor(Color(1, 1, 1));
-
-
 }
 
 void Editor::update(float delta) {
@@ -79,9 +77,10 @@ void Editor::draw() const {
     ImGui::End();
 
     ImGui::SetNextWindowDockID(dockspaceID , ImGuiCond_FirstUseEver);
+
     ImGui::Begin("Properties");
     {
-
+        ImGui::ColorPicker4("Color", &color.r);
     }
     ImGui::End();
 }

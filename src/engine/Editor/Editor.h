@@ -7,7 +7,7 @@
 class Editor: public Scene{
     Scene* current_scene;
     Canvas* current_scene_canvas;
-
+    mutable Color color;
     CanvasMaterial primary_material;
     CanvasMaterial secondary_material;
 
