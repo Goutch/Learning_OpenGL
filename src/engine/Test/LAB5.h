@@ -19,7 +19,7 @@ class LAB5 : public SpacialScene{
     Mesh dragon_mesh = Mesh("../res/dragon.obj");
     Mesh bunny_mesh=Mesh("../res/bunny.obj");
     Mesh cube_mesh;
-
+    float v=0;
 
     DirectionalLight *sun;
     Transform pivot;

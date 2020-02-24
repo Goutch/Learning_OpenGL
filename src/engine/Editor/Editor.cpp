@@ -77,7 +77,6 @@ void Editor::draw() const {
     ImGui::End();
 
     ImGui::SetNextWindowDockID(dockspaceID , ImGuiCond_FirstUseEver);
-
     ImGui::Begin("Properties");
     {
         ImGui::ColorPicker4("Color", &color.r);

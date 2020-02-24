@@ -19,7 +19,7 @@ private:
 public:
 
     Camera(vec3 position=vec3(0), vec3 rotation=vec3(0));
-
+    void setFOV(float fov);
     void calculateProjectionMatrix();
     void setProjectionMode(ProjectionMode projectionMode);
     mat4 getViewMatrix() const;

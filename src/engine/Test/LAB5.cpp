@@ -26,4 +26,6 @@ void LAB5::init(const Canvas &viewport, Renderer &renderer, Window &window) {
 void LAB5::update(float delta) {
     SpacialScene::update(delta);
     pivot.rotate(delta*(3.1416/4),vec3(0,1,0));
+    v+=delta;
+    camera.setFOV((sin(v)*30)+90);
 }

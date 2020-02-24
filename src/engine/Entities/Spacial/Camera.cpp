@@ -30,7 +30,6 @@ void Camera::calculateProjectionMatrix() {
     double h = (float) canvas->getPixelHeight();
     double aspect_ratio = w / h;
     if (projectionMode == PERSPECTIVE) {
-        fov = 90;
         projection_matrix = glm::perspective<float>(glm::radians(fov), aspect_ratio, 0.1f, 200.0f);
     } else if (projectionMode == ORTHOGRAPHIC_PIXEL) {
         projection_matrix = canvas->getPixelProjection();
@@ -55,6 +54,11 @@ void Camera::onViewportSizeChange(unsigned int width, unsigned int height) {
 void Camera::onDestroy(SpacialScene &scene) {
     SpacialEntity::onDestroy(scene);
     scene.getCanvas().unsubscribeSizeChange(*this);
+}
+
+void Camera::setFOV(float fov) {
+    this->fov=fov;
+    calculateProjectionMatrix();
 }
 
 
