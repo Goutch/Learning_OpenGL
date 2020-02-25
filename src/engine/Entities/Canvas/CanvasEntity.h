@@ -2,8 +2,8 @@
 
 class Scene;
 #include "CanvasTransform.h"
-
-class CanvasEntity {
+#include "Entities/Entity.h"
+class CanvasEntity:Entity {
 public:
     CanvasTransform transform;
     CanvasEntity();

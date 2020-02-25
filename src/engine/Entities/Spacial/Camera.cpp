@@ -46,7 +46,7 @@ float Camera::getFOV() const {
     return fov;
 }
 
-void Camera::onViewportSizeChange(unsigned int width, unsigned int height) {
+void Camera::onCanvasSizeChange(unsigned int width, unsigned int height) {
 
     calculateProjectionMatrix();
 }

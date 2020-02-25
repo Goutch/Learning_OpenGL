@@ -29,7 +29,7 @@ public:
     void init(SpacialScene &scene) override;
     const mat4 &getProjectionMatrix() const;
     float getFOV() const;
-    void onViewportSizeChange(unsigned int width, unsigned int height) override;
+    void onCanvasSizeChange(unsigned int width, unsigned int height) override;
 
 };
 

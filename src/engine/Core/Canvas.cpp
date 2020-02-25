@@ -47,7 +47,7 @@ void Canvas::onWindowSizeChange(unsigned int width, unsigned int height) {
     setSize(width,height);
 }
 
-void Canvas::onViewportSizeChange(unsigned int width, unsigned int height) {
+void Canvas::onCanvasSizeChange(unsigned int width, unsigned int height) {
     pixel_width = static_cast<int>(width * parent_ratio.x);
     pixel_height = static_cast<int>(height * parent_ratio.y);
     setSize(pixel_width,pixel_height);
@@ -83,7 +83,7 @@ void Canvas::setSize(int pixel_width,int pixel_height) {
     pixel_projection = glm::ortho<float>(0, pixel_width, 0, pixel_height, -100, 100);
     frame_buffer.setSize(pixel_width, pixel_height);
     for (auto l:sizeListeners) {
-        l->onViewportSizeChange(pixel_width, pixel_height);
+        l->onCanvasSizeChange(pixel_width, pixel_height);
     }
 }
 

@@ -13,7 +13,6 @@ class window;
 
 class Canvas : WindowResizeListener,CanvasResizeListener {
 private:
-
     CanvasMaterial material;
     Quad quad=Quad(0.5,0.5);
     mutable std::list<CanvasResizeListener *> sizeListeners;
@@ -48,11 +47,10 @@ public:
     const VAO& getVAO() const;
 
     void subscribeSizeChange(CanvasResizeListener &l) const;
-
     void unsubscribeSizeChange(CanvasResizeListener &l) const;
 
     void onWindowSizeChange(unsigned int width, unsigned int height) override;
-    void onViewportSizeChange(unsigned int width, unsigned int height) override;
+    void onCanvasSizeChange(unsigned int width, unsigned int height) override;
 
     void setSize(int pixel_width,int pixel_height);
 };

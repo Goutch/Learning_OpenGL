@@ -3,5 +3,5 @@
 
 class CanvasResizeListener{
 public:
-    virtual void onViewportSizeChange(unsigned int width, unsigned int height)=0;
+    virtual void onCanvasSizeChange(unsigned int width, unsigned int height)=0;
 };

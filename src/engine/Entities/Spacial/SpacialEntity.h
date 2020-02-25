@@ -2,10 +2,12 @@
 
 
 class SpacialScene;
+
+#include "Entities/Entity.h"
 #include "Entities/Spacial/Transform.h"
 class Scene;
 
-class SpacialEntity{
+class SpacialEntity:Entity{
 public:
     Transform transform;
     SpacialEntity(vec3 position=vec3(0), vec3 rotation=vec3(0), vec3 scale=vec3(1));

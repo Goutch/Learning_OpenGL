@@ -101,6 +101,6 @@ add_executable(OGL_Engine
         src/engine/Test/LAB4.cpp src/engine/Test/LAB4.h
 
         src/engine/Editor/Editor.cpp
-        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h)
+        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
