@@ -27,9 +27,9 @@ class Canvas;
 
 class CanvasMaterial;
 
-#include <Data/Color.h>
+#include <Ressources/Color.h>
 #include <Entities/Spacial/Transform.h>
-#include <Geometry/Quad.h>
+#include <Ressources/Quad.h>
 #include <queue>
 #include <tuple>
 #include <Entities/Canvas/CanvasTransform.h>

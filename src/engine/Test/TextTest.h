@@ -1,10 +1,10 @@
 #pragma  once
 
 #include <Core/Scene.h>
-#include <Data/Texture.h>
-#include <Data/AtlasTexture.h>
+#include <Ressources/Texture.h>
+#include <Ressources/AtlasTexture.h>
 #include <Shaders/Spacial/SpacialMaterial.h>
-#include <Geometry/Mesh.h>
+#include <Ressources/Mesh.h>
 #include <Shaders/Canvas/FontMaterial.h>
 #include "Entities/Spacial/Transform.h"
 #include <Events/KeyPressListener.h>

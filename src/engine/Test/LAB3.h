@@ -4,7 +4,7 @@
 
 #include <Core/Scene.h>
 #include <Shaders/Material.h>
-#include <Geometry/Mesh.h>
+#include <Ressources/Mesh.h>
 
 #include <Shaders/Canvas/FontMaterial.h>
 #include <Shaders/Shader.h>

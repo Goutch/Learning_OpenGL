@@ -2,7 +2,7 @@
 
 #include <GL/glew.h>
 #include "BatchRenderer.h"
-#include "Geometry/VAO.h"
+#include "Ressources/VAO.h"
 #include "Shaders/Spacial/SpacialMaterial.h"
 #include "Entities/Spacial/Transform.h"
 #include "Core/Debug/Log.h"

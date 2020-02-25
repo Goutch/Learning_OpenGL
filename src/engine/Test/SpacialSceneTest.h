@@ -1,8 +1,8 @@
 #pragma once
 
-#include <Geometry/Mesh.h>
+#include <Ressources/Mesh.h>
 #include <Shaders/Spacial/LightMaterial.h>
-#include <Data/Texture.h>
+#include <Ressources/Texture.h>
 #include "Core/SpacialScene.h"
 #include "Geometry/Geometry.h"
 #include <Shaders/Shader.h>

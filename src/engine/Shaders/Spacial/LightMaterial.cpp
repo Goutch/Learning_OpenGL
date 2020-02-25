@@ -6,7 +6,7 @@
 #include "Entities/Spacial/Light/PointLight.h"
 #include "Entities/Spacial/Light/DirectionnalLight.h"
 #include "Core/SpacialScene.h"
-#include "Data/Texture.h"
+#include "Ressources/Texture.h"
 #include <Shaders/Shader.h>
 #include <Core/Debug/Log.h>
 void LightMaterial::bind() const {

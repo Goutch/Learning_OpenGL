@@ -10,7 +10,7 @@
 #include <imgui_impl_opengl3.h>
 #include "Scene.h"
 #include "Utils/Timer.h"
-
+#include "memory"
 #include "Window.h"
 #include "Engine.h"
 #include "Core/Rendering/BatchRenderer.h"
@@ -22,58 +22,30 @@ Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     window = new Window();
     if (window->open("WINDOW", 1000, 700)) {
-        glewInit() == GLEW_OK ?
-        Log::status("Initialized GLEW") :
-        Log::error("failed to initialize GLEW");
-
-        std::string version = (char *) glGetString(GL_VERSION);
-        Log::message("OPENGL Version " + version);
-
+        initGlew();
         initDebug();
-        //enable textures
-        glEnable(GL_TEXTURE_2D);
-        //enable cull face
-        glEnable(GL_CULL_FACE);
-        glCullFace(GL_BACK);
-        //enable depth Test
-        glEnable(GL_DEPTH_TEST);
-        glDepthFunc(GL_LESS);
-        //enable transparency
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
-
-        IMGUI_CHECKVERSION();
-        ImGui::CreateContext();
-        ImGuiIO &io = ImGui::GetIO();
-        ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(),true);
-        ImGui_ImplOpenGL3_Init("#version 330 core");
-        // Setup Dear ImGui style
-        ImGui::StyleColorsDark();
-        io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
-
+        initImgui();
+        glClearColor(0.4,0.4,0.7,1);
     }
 }
 
 void Engine::start(Scene &scene) {
 
-    if (glewInit() == GLEW_OK) {
         Renderer* renderer =new SimpleRenderer();
-        glClearColor(0.4,0.4,0.7,1);
-        Log::status("Initializing scene..");
         Canvas canvas=Canvas(*window,renderer->DEFAULT_CANVAS_SHADER);
+
+        Log::status("Initializing scene..");
         scene.init(canvas, *renderer, *window);
         Log::status("Initialized scene");
+
         double delta_time = 0;
-        Timer t;
-        window->pollEvents();
+        Timer delta_time_timer;
+
         Log::status("Starting main loop..");
         while (!window->shouldClose())
         {
-            window->pollEvents();
-            t.reset();
-            printFPS();
 
+            window->pollEvents();
             scene.update((float)delta_time);
 
             ImGui_ImplOpenGL3_NewFrame();
@@ -88,12 +60,13 @@ void Engine::start(Scene &scene) {
             ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
             window->swapBuffer();
-            delta_time = t.ms();
+
+            delta_time = delta_time_timer.ms();
+            delta_time_timer.reset();
+            printFPS();
         }
         Log::status("Cleaning up..");
         scene.destroy();
-        delete renderer;
-    }
     printGLErrors();
 }
 
@@ -111,6 +84,38 @@ void Engine::printFPS() {
         fps = 0;
         last_fps_print = std::time(0);
     }
+}
+
+void Engine::initImgui() {
+    IMGUI_CHECKVERSION();
+    ImGui::CreateContext();
+    ImGuiIO &io = ImGui::GetIO();
+    ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(),true);
+    ImGui_ImplOpenGL3_Init("#version 330 core");
+    // Setup Dear ImGui style
+    ImGui::StyleColorsDark();
+    io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
+}
+
+void Engine::initGlew() {
+    if(glewInit() == GLEW_OK){
+        Log::status("Initialized GLEW");
+
+        std::string version = (char *) glGetString(GL_VERSION);
+        Log::message("OPENGL Version " + version);
+        //enable textures
+        glEnable(GL_TEXTURE_2D);
+        //enable cull face
+        glEnable(GL_CULL_FACE);
+        glCullFace(GL_BACK);
+        //enable depth Test
+        glEnable(GL_DEPTH_TEST);
+        glDepthFunc(GL_LESS);
+        //enable transparency
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+    }
+    Log::error("failed to initialize GLEW");
 }
 
 

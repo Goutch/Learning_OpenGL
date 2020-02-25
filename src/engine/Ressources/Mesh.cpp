@@ -1,5 +1,5 @@
 
-#include "Geometry/Mesh.h"
+#include "Mesh.h"
 #include "Geometry/Geometry.h"
 Mesh::Mesh():VAO() {
 }

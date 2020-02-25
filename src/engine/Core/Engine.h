@@ -13,6 +13,8 @@ private:
 public:
     Engine();
     ~Engine();
+    void initImgui();
+    void initGlew();
     void start(Scene& scene);
 };
 

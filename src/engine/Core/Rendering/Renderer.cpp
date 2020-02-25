@@ -4,11 +4,11 @@
 #include "Renderer.h"
 #include <GL/glew.h>
 
-#include <Geometry/VAO.h>
+#include <Ressources/VAO.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
 
 #include <Core/Canvas.h>
-#include <Data/FBO.h>
+#include <Core/Rendering/FBO.h>
 
 
 Renderer::Renderer() {

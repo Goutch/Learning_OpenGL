@@ -4,7 +4,7 @@
 
 #include "SpacialMaterial.h"
 #include "Core/Scene.h"
-#include "Data/Texture.h"
+#include "Ressources/Texture.h"
 #include <Shaders/Shader.h>
 SpacialMaterial::SpacialMaterial():TexturedMaterial() {
 

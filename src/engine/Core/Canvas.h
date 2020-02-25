@@ -4,13 +4,14 @@
 #include "Events/WindowResizeListener.h"
 #include <list>
 #include <Events/CanvasResizeListener.h>
-#include <Data/FBO.h>
+#include <Core/Rendering/FBO.h>
 #include <Entities/Canvas/CanvasTransform.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
-#include <Geometry/Quad.h>
+#include <Ressources/Quad.h>
 
 class window;
 
+//Virtual render space for a scene.
 class Canvas : WindowResizeListener,CanvasResizeListener {
 private:
     CanvasMaterial material;

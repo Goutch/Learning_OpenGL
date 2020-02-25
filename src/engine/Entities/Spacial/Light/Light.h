@@ -2,7 +2,7 @@
 #pragma once
 
 #include "Entities/Spacial/SpacialEntity.h"
-#include "Data/Color.h"
+#include "Ressources/Color.h"
 class Light: public SpacialEntity {
 protected:
     Color color=Color::WHITE;

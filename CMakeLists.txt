@@ -76,16 +76,16 @@ add_executable(OGL_Engine
         src/engine/Shaders/TexturedMaterial.cpp
 
         src/engine/Geometry/Geometry.cpp
-        src/engine/Geometry/Mesh.cpp
-        src/engine/Geometry/VAO.cpp
-        src/engine/Geometry/VBO.cpp
-        src/engine/Geometry/Quad.cpp
+        src/engine/Ressources/Mesh.cpp
+        src/engine/Ressources/VAO.cpp
+        src/engine/Ressources/VBO.cpp
+        src/engine/Ressources/Quad.cpp
 
-        src/engine/Data/Texture.cpp
-        src/engine/Data/AtlasTexture.cpp
-        src/engine/Data/Color.cpp
-        src/engine/Data/FBO.cpp
-        src/engine/Data/RBO.cpp
+        src/engine/Ressources/Texture.cpp
+        src/engine/Ressources/AtlasTexture.cpp
+        src/engine/Ressources/Color.cpp
+        src/engine/Core/Rendering/FBO.cpp
+        src/engine/Core/Rendering/RBO.cpp
 
         src/engine/Utils/SimplexNoise.cpp
         src/engine/Utils/StringUtils.cpp

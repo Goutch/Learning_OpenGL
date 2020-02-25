@@ -9,9 +9,9 @@ class MeshRenderer;
 class Canvas;
 
 #include <GLFW/glfw3.h>
-#include "Data/FBO.h"
+#include "Core/Rendering/FBO.h"
 #include "Entities/Canvas/CanvasEntity.h"
-#include "Data/Color.h"
+#include "Ressources/Color.h"
 #include "vector"
 
 class Scene

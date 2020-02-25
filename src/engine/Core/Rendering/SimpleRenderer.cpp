@@ -4,8 +4,8 @@
 #include <GL/glew.h>
 #include "SimpleRenderer.h"
 #include <Shaders/Spacial/SpacialMaterial.h>
-#include <Data/FBO.h>
-#include "Geometry/VAO.h"
+#include <Core/Rendering/FBO.h>
+#include "Ressources/VAO.h"
 #include <Entities/Spacial/Transform.h>
 
 void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform& transform)const  {

@@ -6,7 +6,7 @@
 
 #include "MeshRenderer.h"
 #include "Core/Rendering/BatchRenderer.h"
-#include "Geometry/VAO.h"
+#include "Ressources/VAO.h"
 #include "Core/Scene.h"
 MeshRenderer::MeshRenderer(const VAO &mesh,const  SpacialMaterial &material, vec3 position, vec3 rotation, vec3 scale): SpacialEntity(position, rotation, scale) {
     this->mesh=&mesh;

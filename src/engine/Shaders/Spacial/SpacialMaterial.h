@@ -2,7 +2,7 @@
 
 #include <string>
 #include <unordered_map>
-#include <Data/Color.h>
+#include <Ressources/Color.h>
 #include <glm/glm.hpp>
 #include <Shaders/TexturedMaterial.h>
 #include "Shaders/Material.h"

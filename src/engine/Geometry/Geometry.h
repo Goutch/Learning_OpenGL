@@ -5,7 +5,7 @@
 class VAO;
 #include <string>
 #include <Shaders/Canvas/FontMaterial.h>
-#include "Mesh.h"
+#include "Ressources/Mesh.h"
 
 namespace Geometry{
     void make_sphere(VAO &vao, float radius,int xCount,int yCount) ;

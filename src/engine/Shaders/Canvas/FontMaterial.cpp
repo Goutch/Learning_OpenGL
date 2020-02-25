@@ -2,7 +2,7 @@
 // Created by le6mon on 2020-02-01.
 //
 
-#include <Data/AtlasTexture.h>
+#include <Ressources/AtlasTexture.h>
 #include "FontMaterial.h"
 FontMaterial::FontMaterial(const Shader &shader, std::string path_to_font_texture, unsigned int width,
                            unsigned int height) :CanvasMaterial(shader, *(new AtlasTexture(path_to_font_texture, width, height, false))){
