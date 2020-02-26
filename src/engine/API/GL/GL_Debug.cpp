@@ -1,6 +1,6 @@
 
 
-#include "Core/Debug/Log.h"
+#include "Core/Log.h"
 #include "GL_Debug.h"
 
 

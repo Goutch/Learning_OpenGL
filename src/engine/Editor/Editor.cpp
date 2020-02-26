@@ -84,10 +84,7 @@ void Editor::draw() const {
     ImGui::End();
 }
 
-void Editor::destroy() {
-    current_scene->destroy();
-    Scene::destroy();
-}
+
 
 
 

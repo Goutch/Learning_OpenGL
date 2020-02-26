@@ -48,7 +48,7 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
         src/engine/Core/SpacialScene.cpp
-        src/engine/Core/Debug/Log.cpp
+        src/engine/Core/Log.cpp
 
         src/engine/Entities/Spacial/MeshRenderer.cpp
         src/engine/Entities/Spacial/Transform.cpp

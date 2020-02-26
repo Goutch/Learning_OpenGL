@@ -5,7 +5,7 @@
 #include "Ressources/VAO.h"
 #include "Shaders/Spacial/SpacialMaterial.h"
 #include "Entities/Spacial/Transform.h"
-#include "Core/Debug/Log.h"
+#include "Core/Log.h"
 #include "Core/Scene.h"
 
 

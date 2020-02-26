@@ -50,16 +50,17 @@ Renderer &Scene::getRenderer() const {
     return *renderer;
 }
 
-void Scene::destroy() {
+
+Window &Scene::getWindow() const {
+    return *window;
+}
+
+Scene::~Scene() {
     for (unsigned int i = 0; i < canvasEntities.size(); ++i) {
         canvasEntities[i]->onDestroy(*this);
         delete canvasEntities[i];
     }
     canvasEntities.clear();
-}
-
-Window &Scene::getWindow() const {
-    return *window;
 }
 
 

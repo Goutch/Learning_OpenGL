@@ -7,7 +7,7 @@
 #include "Texture.h"
 #include "stb_image.h"
 #include "stb_image_write.h"
-#include "Core/Debug/Log.h"
+#include "Core/Log.h"
 #include <fstream>
 
 Texture::Texture(const std::string &path, bool flip_on_load) {

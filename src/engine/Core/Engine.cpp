@@ -9,58 +9,57 @@
 #include "Window.h"
 #include "Core/Rendering/BatchRenderer.h"
 #include "Core/Rendering/SimpleRenderer.h"
-
+#include <type_traits>
 #include "Core/Canvas.h"
-#include "Debug/Log.h"
+#include "Log.h"
+
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
-    graphics=new GL_API();
+    graphics = new GL_API();
     window = new Window(graphics->createWindow("WINDOW", 1000, 700));
     initImgui();
+    Renderer *renderer = new SimpleRenderer();
+    canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
 }
 
-void Engine::start(Scene &scene) {
+void Engine::start() {
+    Log::status("Initializing scene..");
+    scene->init(*canvas, *renderer, *window);
+    Log::status("Initialized scene");
 
-        Renderer* renderer =new SimpleRenderer();
-        Canvas canvas=Canvas(*window,renderer->DEFAULT_CANVAS_SHADER);
+    double delta_time = 0;
+    Timer delta_time_timer;
 
-        Log::status("Initializing scene..");
-        scene.init(canvas, *renderer, *window);
-        Log::status("Initialized scene");
+    Log::status("Starting main loop..");
+    while (!window->shouldClose()) {
 
-        double delta_time = 0;
-        Timer delta_time_timer;
+        window->pollEvents();
+        scene->update((float) delta_time);
 
-        Log::status("Starting main loop..");
-        while (!window->shouldClose())
-        {
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
 
-            window->pollEvents();
-            scene.update((float)delta_time);
+        scene->draw();
+        scene->render();
+        renderer->renderOnMainBuffer(*canvas);
 
-            ImGui_ImplOpenGL3_NewFrame();
-            ImGui_ImplGlfw_NewFrame();
-            ImGui::NewFrame();
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
-            scene.draw();
-            scene.render();
-            renderer->renderOnMainBuffer(canvas);
+        window->swapBuffer();
 
-            ImGui::Render();
-            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-            window->swapBuffer();
-
-            delta_time = delta_time_timer.ms();
-            delta_time_timer.reset();
-            printFPS();
-        }
-        Log::status("Cleaning up..");
-        scene.destroy();
-
+        delta_time = delta_time_timer.ms();
+        delta_time_timer.reset();
+        printFPS();
+    }
+    Log::status("Cleaning up..");
+    delete scene;
 }
 
 Engine::~Engine() {
+    delete canvas;
+    delete renderer;
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
@@ -82,12 +81,15 @@ void Engine::initImgui() {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO &io = ImGui::GetIO();
-    ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(),true);
+    ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(), true);
     ImGui_ImplOpenGL3_Init("#version 330 core");
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
+
+
+
 
 
 

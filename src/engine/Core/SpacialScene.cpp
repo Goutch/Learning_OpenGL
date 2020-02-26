@@ -61,8 +61,8 @@ void SpacialScene::addLight(DirectionalLight *light) {
 const std::vector<DirectionalLight *> &SpacialScene::getDirectionalLights() const {
     return directional_lights;
 }
-void SpacialScene::destroy() {
-    Scene::destroy();
+
+SpacialScene::~SpacialScene() {
     for (unsigned int i = 0; i < spacialEntities.size(); ++i) {
         spacialEntities[i]->onDestroy(*this);
         delete spacialEntities[i];
@@ -71,6 +71,7 @@ void SpacialScene::destroy() {
     directional_lights.clear();
     point_lights.clear();
 }
+
 
 
 

@@ -5,7 +5,7 @@
 #include "GL_API.h"
 #define GLEW_STATIC
 #include <GL/glew.h>
-#include <Core/Debug/Log.h>
+#include <Core/Log.h>
 #include "GL_Debug.h"
 #include <GLFW/glfw3.h>
 void GL_API::init() {

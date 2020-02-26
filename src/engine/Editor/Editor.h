@@ -17,8 +17,6 @@ public:
     ~Editor();
     void update(float delta) override;
 
-    void destroy() override;
-
     void draw() const override ;
 };
 
