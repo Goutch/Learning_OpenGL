@@ -4,9 +4,11 @@ class Scene;
 class Window;
 
 #include <ctime>
+#include <API/API.h>
 class Engine {
 private:
     Window* window;
+    API* graphics;
     unsigned int fps=0;
     std::time_t last_fps_print=std::time(0);
     void printFPS();

@@ -1,32 +1,22 @@
-//
-// Created by User on 18-Nov.-2019.
-//
 
-#define GLEW_STATIC
-#include <GL/glew.h>
-
+#include "Engine.h"
+#include <API/GL/GL_API.h>
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 #include "Scene.h"
 #include "Utils/Timer.h"
-#include "memory"
 #include "Window.h"
-#include "Engine.h"
 #include "Core/Rendering/BatchRenderer.h"
 #include "Core/Rendering/SimpleRenderer.h"
-#include "Debug/Debug.h"
-#include "Core/Canvas.h"
 
+#include "Core/Canvas.h"
+#include "Debug/Log.h"
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
-    window = new Window();
-    if (window->open("WINDOW", 1000, 700)) {
-        initGlew();
-        initDebug();
-        initImgui();
-        glClearColor(0.4,0.4,0.7,1);
-    }
+    graphics=new GL_API();
+    window = new Window(graphics->createWindow("WINDOW", 1000, 700));
+    initImgui();
 }
 
 void Engine::start(Scene &scene) {
@@ -67,13 +57,15 @@ void Engine::start(Scene &scene) {
         }
         Log::status("Cleaning up..");
         scene.destroy();
-    printGLErrors();
+
 }
 
 Engine::~Engine() {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
+    graphics->terminate();
+    delete graphics;
     delete window;
 }
 
@@ -97,26 +89,7 @@ void Engine::initImgui() {
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
 
-void Engine::initGlew() {
-    if(glewInit() == GLEW_OK){
-        Log::status("Initialized GLEW");
 
-        std::string version = (char *) glGetString(GL_VERSION);
-        Log::message("OPENGL Version " + version);
-        //enable textures
-        glEnable(GL_TEXTURE_2D);
-        //enable cull face
-        glEnable(GL_CULL_FACE);
-        glCullFace(GL_BACK);
-        //enable depth Test
-        glEnable(GL_DEPTH_TEST);
-        glDepthFunc(GL_LESS);
-        //enable transparency
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    }
-    Log::error("failed to initialize GLEW");
-}
 
 
 

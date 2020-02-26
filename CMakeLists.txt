@@ -49,7 +49,6 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/BatchRenderer.cpp
         src/engine/Core/SpacialScene.cpp
         src/engine/Core/Debug/Log.cpp
-        src/engine/Core/Debug/Debug.h
 
         src/engine/Entities/Spacial/MeshRenderer.cpp
         src/engine/Entities/Spacial/Transform.cpp
@@ -101,6 +100,6 @@ add_executable(OGL_Engine
         src/engine/Test/LAB4.cpp src/engine/Test/LAB4.h
 
         src/engine/Editor/Editor.cpp
-        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h)
+        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h src/engine/API/GL/GL_API.cpp src/engine/API/GL/GL_API.h src/engine/API/API.h src/engine/API/VK/VK_API.cpp src/engine/API/VK/VK_API.h src/engine/API/GL/GL_Debug.h src/engine/API/GL/GL_Debug.h src/engine/API/GL/GL_Debug.cpp)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

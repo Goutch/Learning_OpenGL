@@ -14,9 +14,9 @@ private:
     mutable int height=400;
     bool cursor_shown=true;
 public:
-    Window();
+    Window(GLFWwindow* window);
     ~Window();
-    bool open(std::string title, int width, int height);
+
     bool shouldClose()const;
     void close();
     void swapBuffer()const;

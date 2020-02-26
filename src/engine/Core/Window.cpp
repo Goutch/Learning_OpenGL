@@ -7,38 +7,16 @@
 std::list<WindowResizeListener *> Window::sizeListeners = std::list<WindowResizeListener *>();
 std::list<KeyPressListener *> Window::keyboardListeners = std::list<KeyPressListener *>();
 
-Window::Window() {
-
+Window::Window(GLFWwindow* window) {
+    this->window=window;
+    glfwSetFramebufferSizeCallback(window, Window::windowSizeCallback);
+    glfwSetKeyCallback(window, Window::keyCallback);
 }
 
 Window::~Window() {
     glfwDestroyWindow(window);
     glfwTerminate();
     Log::status("Terminated GLFW");
-}
-
-bool Window::open(std::string title, int width, int height) {
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
-    glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
-    //glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    width = width;
-    height = height;
-    Log::status("Opening window...");
-    if (glfwInit()) {
-        Log::status("Initialized GLFW");
-
-        window = glfwCreateWindow(width, height, title.c_str(), NULL, NULL);
-        glfwMakeContextCurrent(window);
-        glfwSetFramebufferSizeCallback(window, Window::windowSizeCallback);
-        glfwSetKeyCallback(window, Window::keyCallback);
-        //desactivate vsych
-        //glfwSwapInterval(0);
-        Log::status("window opened");
-        return true;
-    }
-
-    Log::error("failed to initialize GLFW");
-    return false;
 }
 
 void Window::setMousePosition(double x, double y) {
