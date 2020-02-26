@@ -23,6 +23,7 @@ public:
     void initImgui();
     template<class T>
     void runInEditor(){
+
         static_assert(std::is_base_of<Scene, T>::value, "template argument must be a Scene");
         if (scene) {
             delete scene;

@@ -27,17 +27,19 @@ include_directories(Dependencies/STB_IMAGE)
 
 message("Including IMGUI")
 include_directories(Dependencies/IMGUI)
-
-add_executable(OGL_Engine
-        Dependencies/IMGUI/imgui.cpp
+set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_draw.cpp
         Dependencies/IMGUI/imgui_widgets.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
-        Dependencies/IMGUI/imgui_impl_glfw.cpp
-
+        Dependencies/IMGUI/imgui_impl_glfw.cpp)
+add_executable(OGL_Engine
+        ${IMGUI_FILES}
         Dependencies/STB_IMAGE/stb_image.cpp
 
         src/main.cpp
+
+        src/engine/API/GL/GL_API.cpp
+        src/engine/API/GL/GL_Debug.cpp
 
         src/engine/Core/Engine.cpp
         src/engine/Core/Engine.cpp
@@ -64,6 +66,7 @@ add_executable(OGL_Engine
         src/engine/Entities/Canvas/CanvasEntity.cpp
         src/engine/Entities/Canvas/Text.cpp
         src/engine/Entities/Canvas/Text.h
+        src/engine/Entities/Entity.cpp
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Spacial/SpacialMaterial.cpp
@@ -91,15 +94,18 @@ add_executable(OGL_Engine
         src/engine/Utils/Timer.cpp
         src/engine/Utils/TimeUtils.cpp
 
+        src/engine/Editor/Editor.cpp
+
         src/engine/Test/SpacialSceneTest.cpp
         src/engine/Test/TextTest.cpp
-        src/engine/Test/PrimitivesTest.h
         src/engine/Test/PrimitivesTest.cpp
         src/engine/Test/LAB3.cpp
         src/engine/Test/LSystem.cpp
-        src/engine/Test/LAB4.cpp src/engine/Test/LAB4.h
+        src/engine/Test/LAB4.cpp
+        src/engine/Test/LAB5.cpp
+        src/engine/Test/ImguiTest.cpp
 
-        src/engine/Editor/Editor.cpp
-        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h src/engine/API/GL/GL_API.cpp src/engine/API/GL/GL_API.h src/engine/API/API.h src/engine/API/VK/VK_API.cpp src/engine/API/VK/VK_API.h src/engine/API/GL/GL_Debug.h src/engine/API/GL/GL_Debug.h src/engine/API/GL/GL_Debug.cpp)
+
+)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

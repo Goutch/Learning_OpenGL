@@ -14,7 +14,7 @@
 
 int main() {
     Engine engine=Engine();
-    engine.run<LAB5>();
-    //engine.run<Editor>();
+    //engine.run<LAB5>();
+    engine.runInEditor<LAB5>();
     return 0;
 }
