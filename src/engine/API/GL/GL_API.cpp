@@ -26,6 +26,9 @@ void GL_API::init() {
         //enable transparency
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
+
+        //antializing
+        //glEnable(GL_MULTISAMPLE);
     }
     Log::error("failed to initialize GLEW");
     GL_Debug::init();

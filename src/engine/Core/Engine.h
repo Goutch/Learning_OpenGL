@@ -6,6 +6,8 @@ class Canvas;
 class Renderer;
 #include <ctime>
 #include <API/API.h>
+#include <Editor/Editor.h>
+
 class Engine {
 private:
     Window* window=nullptr;
@@ -19,7 +21,15 @@ public:
     Engine();
     ~Engine();
     void initImgui();
-
+    template<class T>
+    void runInEditor(){
+        static_assert(std::is_base_of<Scene, T>::value, "template argument must be a Scene");
+        if (scene) {
+            delete scene;
+        }
+        scene = new Editor(new T());
+        start();
+    }
     template<class T>
     void run(){
         static_assert(std::is_base_of<Scene, T>::value, "template argument must be a Scene");

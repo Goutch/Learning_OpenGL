@@ -33,6 +33,7 @@ void Renderer::clearColor() const {
 void Renderer::renderOnMainBuffer(const Canvas &canvas) {
     glDisable(GL_DEPTH_TEST);
     canvas.getMaterial().bind();
+
     canvas.getVAO().bind();
     canvas.getMaterial().transform(canvas.transform.getMatrix());
     canvas.getMaterial().projection(canvas.getPixelProjection());

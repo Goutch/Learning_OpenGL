@@ -10,15 +10,15 @@
 
 DirectionalLight::DirectionalLight(const Color &color, vec3 position, vec3 rotation) : Light(color, position,
                                                                                              rotation) {
-    fbo = new FBO(2048, 2048, FBO::DEPTH);
+    fbo = new FBO(quality, quality, FBO::DEPTH);
 }
 
 DirectionalLight::DirectionalLight(vec3 position, vec3 rotation) : Light(color, position, rotation) {
-    fbo = new FBO(2048, 2048, FBO::DEPTH);
+    fbo = new FBO(quality, quality, FBO::DEPTH);
 }
 
 DirectionalLight::DirectionalLight() : Light() {
-    fbo = new FBO(2048, 2048, FBO::DEPTH);
+    fbo = new FBO(quality,quality, FBO::DEPTH);
 }
 
 const Texture &DirectionalLight::shadowMap() {

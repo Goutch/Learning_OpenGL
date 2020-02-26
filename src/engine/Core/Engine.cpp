@@ -18,7 +18,7 @@ Engine::Engine() {
     graphics = new GL_API();
     window = new Window(graphics->createWindow("WINDOW", 1000, 700));
     initImgui();
-    Renderer *renderer = new SimpleRenderer();
+    renderer = new SimpleRenderer();
     canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
 }
 
