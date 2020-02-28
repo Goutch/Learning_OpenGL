@@ -73,13 +73,6 @@ void Editor::draw() const {
                 ImVec2(1, 0));
     }
     ImGui::End();
-
-    ImGui::SetNextWindowDockID(dockspaceID , ImGuiCond_FirstUseEver);
-    ImGui::Begin("Properties");
-    {
-        ImGui::ColorPicker4("Color", &color.r);
-    }
-    ImGui::End();
 }
 
 

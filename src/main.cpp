@@ -6,7 +6,7 @@
 #include <Editor/Editor.h>
 
 #include "Test/SpacialSceneTest.h"
-#include "Test/LAB3.h"
+#include "Test/ApplicationDrawing2D.h"
 #include "Test/LAB4.h"
 #include <Test/LSystem.h>
 #include <Test/ImguiTest.h>
@@ -15,6 +15,6 @@
 int main() {
     Engine engine=Engine();
     //engine.run<LAB5>();
-    engine.runInEditor<LAB5>();
+    engine.runInEditor<ApplicationDrawing2D>();
     return 0;
 }

@@ -99,7 +99,7 @@ add_executable(OGL_Engine
         src/engine/Test/SpacialSceneTest.cpp
         src/engine/Test/TextTest.cpp
         src/engine/Test/PrimitivesTest.cpp
-        src/engine/Test/LAB3.cpp
+        src/engine/Test/ApplicationDrawing2D.cpp
         src/engine/Test/LSystem.cpp
         src/engine/Test/LAB4.cpp
         src/engine/Test/LAB5.cpp
