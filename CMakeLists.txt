@@ -105,6 +105,8 @@ add_executable(OGL_Engine
         src/engine/Test/LAB5.cpp
         src/engine/Test/ImguiTest.cpp
 
+        src/engine/Editor/Editor.cpp
+        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h src/engine/Test/LAB5_Sim.cpp src/engine/Test/LAB5_Sim.h)
 
 )
 
