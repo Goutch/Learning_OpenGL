@@ -1,6 +1,6 @@
 #pragma once
 #define GLEW_STATIC
-#include "glew.h"
+#include "Gl/glew.h"
 
 namespace GL_Debug{
     void init();
