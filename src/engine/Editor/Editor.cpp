@@ -8,12 +8,13 @@
 #include <Entities/Canvas/Rect.h>
 #include <Entities/Canvas/Line.h>
 #include <imgui.h>
-Editor::Editor(Scene &scene) {
-    this->current_scene = &scene;
+Editor::Editor(Scene* scene) {
+    this->current_scene=scene;
 }
 
 Editor::~Editor() {
     delete current_scene_canvas;
+    delete current_scene;
 }
 
 void Editor::init(const Canvas &canvas, Renderer &renderer, Window &window) {
@@ -21,15 +22,12 @@ void Editor::init(const Canvas &canvas, Renderer &renderer, Window &window) {
     current_scene_canvas = new Canvas(canvas, renderer.DEFAULT_CANVAS_SHADER, canvas.getPixelWidth() / 2,
                                       canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
                                       canvas.getPixelHeight() / 4);
-    current_scene->init(*current_scene_canvas, renderer, window);
-
-    secondary_material.setShader(renderer.DEFAULT_CANVAS_SHADER);
-    secondary_material.setColor(Color(0.5, 0.5, 0.5));
-
-    primary_material.setShader(renderer.DEFAULT_CANVAS_SHADER);
-    primary_material.setColor(Color(1, 1, 1));
+    current_scene->init(*current_scene_canvas, renderer, window);;
 }
-
+void Editor::setScene(Scene* scene) {
+    this->current_scene=scene;
+    current_scene->init(*current_scene_canvas, *renderer, *window);
+}
 void Editor::update(float delta) {
     Scene::update(delta);
     current_scene->update(delta);
@@ -84,10 +82,9 @@ void Editor::draw() const {
     ImGui::End();
 }
 
-void Editor::destroy() {
-    current_scene->destroy();
-    Scene::destroy();
-}
+
+
+
 
 
 

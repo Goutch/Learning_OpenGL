@@ -12,11 +12,12 @@ protected:
     std::vector<SpacialEntity*> spacialEntities;
     Camera camera;
 public:
+
     void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
     void update(float delta) override;
     void render() const override;
     void draw() const override;
-    void destroy() override;
+    ~SpacialScene();
     void addEntity(SpacialEntity *entity);
 
     void addLight(PointLight* light);

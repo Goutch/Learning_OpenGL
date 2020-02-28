@@ -10,12 +10,11 @@
 #include "Test/LAB4.h"
 #include <Test/LSystem.h>
 #include <Test/ImguiTest.h>
-#include <Test/LAB5_Sim.h>
+#include <Test/LAB5.h>
 
 int main() {
     Engine engine=Engine();
-    auto s=LAB5_Sim();
-    auto e=Editor(s);
-    engine.start(e);
+    //engine.run<LAB5>();
+    engine.runInEditor<LAB5>();
     return 0;
 }

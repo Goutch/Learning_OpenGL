@@ -3,7 +3,7 @@
 #include <GL/glew.h>
 #include "Shader.h"
 #include <fstream>
-#include "Core/Debug/Log.h"
+#include "Core/Log.h"
 #include <sstream>
 #include <glm/gtc/type_ptr.hpp>
 

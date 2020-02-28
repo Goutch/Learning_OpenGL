@@ -26,6 +26,4 @@ public:
     static void warning(const std::string &s);
 
     static void error(const std::string &s);
-
-
 };

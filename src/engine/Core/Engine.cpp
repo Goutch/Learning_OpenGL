@@ -1,79 +1,70 @@
-//
-// Created by User on 18-Nov.-2019.
-//
 
-#define GLEW_STATIC
-#include <GL/glew.h>
-
+#include "Engine.h"
+#include <API/GL/GL_API.h>
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
 #include "Scene.h"
 #include "Utils/Timer.h"
-#include "memory"
 #include "Window.h"
-#include "Engine.h"
 #include "Core/Rendering/BatchRenderer.h"
 #include "Core/Rendering/SimpleRenderer.h"
-#include "Debug/Debug.h"
+#include <type_traits>
 #include "Core/Canvas.h"
+#include "Log.h"
 
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
-    window = new Window();
-    if (window->open("WINDOW", 1000, 700)) {
-        initGlew();
-        initDebug();
-        initImgui();
-        glClearColor(0.4,0.4,0.7,1);
-    }
+    graphics = new GL_API();
+    window = new Window(graphics->createWindow("WINDOW", 1000, 700));
+    initImgui();
+    renderer = new SimpleRenderer();
+    canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
 }
 
-void Engine::start(Scene &scene) {
+void Engine::start() {
+    Log::status("Initializing scene..");
+    scene->init(*canvas, *renderer, *window);
+    Log::status("Initialized scene");
 
-        Renderer* renderer =new SimpleRenderer();
-        Canvas canvas=Canvas(*window,renderer->DEFAULT_CANVAS_SHADER);
+    double delta_time = 0;
+    Timer delta_time_timer;
 
-        Log::status("Initializing scene..");
-        scene.init(canvas, *renderer, *window);
-        Log::status("Initialized scene");
+    Log::status("Starting main loop..");
+    while (!window->shouldClose()) {
 
-        double delta_time = 0;
-        Timer delta_time_timer;
+        window->pollEvents();
+        scene->update((float) delta_time);
 
-        Log::status("Starting main loop..");
-        while (!window->shouldClose())
-        {
+        ImGui_ImplOpenGL3_NewFrame();
+        ImGui_ImplGlfw_NewFrame();
+        ImGui::NewFrame();
 
-            window->pollEvents();
-            scene.update((float)delta_time);
+        scene->draw();
+        scene->render();
+        renderer->renderOnMainBuffer(*canvas);
 
-            ImGui_ImplOpenGL3_NewFrame();
-            ImGui_ImplGlfw_NewFrame();
-            ImGui::NewFrame();
+        ImGui::Render();
+        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
-            scene.draw();
-            scene.render();
-            renderer->renderOnMainBuffer(canvas);
+        window->swapBuffer();
 
-            ImGui::Render();
-            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
-            window->swapBuffer();
-
-            delta_time = delta_time_timer.ms();
-            delta_time_timer.reset();
-            printFPS();
-        }
-        Log::status("Cleaning up..");
-        scene.destroy();
-    printGLErrors();
+        delta_time = delta_time_timer.ms();
+        delta_time_timer.reset();
+        printFPS();
+    }
+    Log::status("Cleaning up..");
+    delete scene;
 }
 
 Engine::~Engine() {
+    delete canvas;
+    delete renderer;
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
+    graphics->terminate();
+    delete graphics;
     delete window;
 }
 
@@ -90,33 +81,17 @@ void Engine::initImgui() {
     IMGUI_CHECKVERSION();
     ImGui::CreateContext();
     ImGuiIO &io = ImGui::GetIO();
-    ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(),true);
+    ImGui_ImplGlfw_InitForOpenGL(&window->getHandle(), true);
     ImGui_ImplOpenGL3_Init("#version 330 core");
     // Setup Dear ImGui style
     ImGui::StyleColorsDark();
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
 
-void Engine::initGlew() {
-    if(glewInit() == GLEW_OK){
-        Log::status("Initialized GLEW");
 
-        std::string version = (char *) glGetString(GL_VERSION);
-        Log::message("OPENGL Version " + version);
-        //enable textures
-        glEnable(GL_TEXTURE_2D);
-        //enable cull face
-        glEnable(GL_CULL_FACE);
-        glCullFace(GL_BACK);
-        //enable depth Test
-        glEnable(GL_DEPTH_TEST);
-        glDepthFunc(GL_LESS);
-        //enable transparency
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-    }
-    Log::error("failed to initialize GLEW");
-}
+
+
+
 
 
 

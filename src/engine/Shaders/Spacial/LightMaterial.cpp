@@ -8,7 +8,7 @@
 #include "Core/SpacialScene.h"
 #include "Ressources/Texture.h"
 #include <Shaders/Shader.h>
-#include <Core/Debug/Log.h>
+#include <Core/Log.h>
 void LightMaterial::bind() const {
     SpacialMaterial::bind();
     shader->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight());

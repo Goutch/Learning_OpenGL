@@ -7,7 +7,7 @@
 #include "Texture.h"
 #include "stb_image.h"
 #include "stb_image_write.h"
-#include "Core/Debug/Log.h"
+#include "Core/Log.h"
 #include <fstream>
 
 Texture::Texture(const std::string &path, bool flip_on_load) {
@@ -44,7 +44,7 @@ void Texture::load(const std::string &path, bool flip_on_load) {
     Log::status("Loading getTexture:" + path);
     if (f.good()) {
         unsigned char *buffer;
-        stbi_set_flip_vertically_on_load(true);
+        stbi_set_flip_vertically_on_load(flip_on_load);
         buffer = stbi_load(path.c_str(), &width, &height, &bits_per_pixel, 4);
         setTexturePixelData(buffer, width, height, false);
         if (buffer) {
@@ -57,6 +57,7 @@ void Texture::load(const std::string &path, bool flip_on_load) {
 }
 
 void Texture::setTexturePixelData(unsigned char *data, int width, int height, bool smoothed, Type type) {
+
     this->width = width;
     this->height = height;
     this->type = type;
@@ -71,6 +72,8 @@ void Texture::setTexturePixelData(unsigned char *data, int width, int height, bo
 
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP_TO_EDGE);
     glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP_TO_EDGE);
+
+
     switch (type) {
         case RGBA:
             glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA8, width, height, 0, GL_RGBA, GL_UNSIGNED_BYTE, data);
@@ -82,7 +85,6 @@ void Texture::setTexturePixelData(unsigned char *data, int width, int height, bo
             glTexImage2D(GL_TEXTURE_2D, 0, GL_DEPTH_COMPONENT32F, width, height, 0, GL_DEPTH_COMPONENT, GL_FLOAT, data);
             break;
     }
-
     unbind();
 }
 
@@ -121,5 +123,7 @@ void Texture::save(std::string path) const {
 
 
 }
+
+
 
 

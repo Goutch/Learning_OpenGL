@@ -2,7 +2,7 @@
 // Created by User on 04-Feb.-2020.
 //
 #include <Core/Canvas.h>
-#include <Core/Debug/Log.h>
+#include <Core/Log.h>
 #include "LSystem.h"
 #include <Core/Rendering/Renderer.h>
 #include <stack>

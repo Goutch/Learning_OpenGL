@@ -24,11 +24,12 @@ protected:
 
 public:
 	Scene();
+
 	virtual void init(const Canvas &canvas, Renderer &renderer, Window& window);
 	virtual void update(float delta);
 	virtual void draw() const;
 	virtual void render() const;
-	virtual void destroy();
+    ~Scene();
     void addEntity(CanvasEntity* entity);
 	const Canvas& getCanvas() const;
     Window& getWindow() const;
