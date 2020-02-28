@@ -8,8 +8,8 @@
 #include "Entities/Spacial/Light/PointLight.h"
 #include "Entities/Spacial/Light/DirectionnalLight.h"
 #include "Entities/Spacial/Camera.h"
-void SpacialSceneTest::init(const Canvas &viewport, Renderer &renderer, Window &window){
-    SpacialScene::init(viewport,renderer,window);
+void SpacialSceneTest::init(const Canvas &viewport, Renderer &renderer, Input &input){
+    SpacialScene::init(viewport, renderer, input);
 
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);

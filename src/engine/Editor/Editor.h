@@ -11,7 +11,7 @@ class Editor: public Scene{
 
 
 public:
-    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
     Editor(Scene* scene);
     ~Editor();
     void update(float delta) override;

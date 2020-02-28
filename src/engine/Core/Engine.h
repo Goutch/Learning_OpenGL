@@ -4,13 +4,14 @@ class Scene;
 class Window;
 class Canvas;
 class Renderer;
+class Input;
 #include <ctime>
 #include <API/API.h>
 #include <Editor/Editor.h>
-
 class Engine {
 private:
     Window* window=nullptr;
+    Input* input=nullptr;
     API* graphics=nullptr;
     Scene* scene=nullptr;
     Canvas* canvas=nullptr;

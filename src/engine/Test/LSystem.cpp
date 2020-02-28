@@ -7,8 +7,8 @@
 #include <Core/Rendering/Renderer.h>
 #include <stack>
 
-void LSystem::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void LSystem::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
     generations.push_back(START);
     for (int i = 0; i < NUMBER_OF_RECURSE; ++i) {
         generate();

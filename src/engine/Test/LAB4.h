@@ -17,7 +17,7 @@ private:
     CanvasMaterial material = CanvasMaterial(shader, Color::RED);
     void fractale(float lastX, float lastY, int gen);
 public:
-    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
     void draw() const override;
 };

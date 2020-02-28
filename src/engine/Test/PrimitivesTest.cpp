@@ -8,8 +8,8 @@
 #include <Entities/Canvas/Line.h>
 #include <Entities/Canvas/Rect.h>
 
-void PrimitivesTest::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void PrimitivesTest::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
     material.setShader(renderer.DEFAULT_CANVAS_SHADER);
     material.setColor(Color::RED);
     float w=canvas.getPixelWidth();

@@ -26,7 +26,7 @@ class LSystem : public Scene {
                                 "../src/engine/Shaders/ShadersSources/LSystemFragment.glsl");
     CanvasMaterial material =CanvasMaterial(shader);
 public:
-    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
 private:
     void generate();

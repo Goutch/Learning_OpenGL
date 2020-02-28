@@ -16,7 +16,7 @@ class TextTest : public Scene{
     FontMaterial font = FontMaterial(shader,"../res/consolas.bmp",128, 128);
 
 public:
-    void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
+    void init(const Canvas &viewport, Renderer &renderer, Input &input) override;
 
 };
 

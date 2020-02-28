@@ -8,8 +8,8 @@
 #include "Entities/Spacial/Camera.h"
 #include <Core/Rendering/Renderer.h>
 #include <Core/Canvas.h>
-void SpacialScene::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void SpacialScene::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
     camera.init(*this);
 }
 void SpacialScene::update(float delta) {

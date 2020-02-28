@@ -17,16 +17,16 @@ Editor::~Editor() {
     delete current_scene;
 }
 
-void Editor::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
     current_scene_canvas = new Canvas(canvas, renderer.DEFAULT_CANVAS_SHADER, canvas.getPixelWidth() / 2,
                                       canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
                                       canvas.getPixelHeight() / 4);
-    current_scene->init(*current_scene_canvas, renderer, window);;
+    current_scene->init(*current_scene_canvas, renderer, input);;
 }
 void Editor::setScene(Scene* scene) {
     this->current_scene=scene;
-    current_scene->init(*current_scene_canvas, *renderer, *window);
+    current_scene->init(*current_scene_canvas, *renderer, *input);
 }
 void Editor::update(float delta) {
     Scene::update(delta);
@@ -36,6 +36,7 @@ void Editor::update(float delta) {
 void Editor::draw() const {
     current_scene->draw();
     current_scene->render();
+
     ImGuiID dockspaceID = 0;
     float h,w;
     w=canvas->getPixelWidth();
