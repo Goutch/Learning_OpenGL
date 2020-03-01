@@ -12,7 +12,9 @@
 
 class ApplicationDrawing2D : public Scene {
 private:
-    mutable Color color;
+    mutable Color background_color;
+    mutable Color fill_color;
+    mutable char line_width;
 public:
 
     void init(const Canvas &canvas, Renderer &renderer, Window &window) override;

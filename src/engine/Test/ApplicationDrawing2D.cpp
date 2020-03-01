@@ -16,7 +16,9 @@ void ApplicationDrawing2D::draw() const {
     Scene::draw();
     ImGui::Begin("Properties");
     {
-        ImGui::ColorPicker4("Color", &color.r);
+        ImGui::ColorPicker4("Background Color", &background_color.r);
+        ImGui::ColorPicker4("Fill Color", &fill_color.r);
+        ImGui::InputText("Line Width", &line_width, 4);
     }
     ImGui::End();
 }

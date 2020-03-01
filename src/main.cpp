@@ -14,7 +14,7 @@
 
 int main() {
     Engine engine=Engine();
-    //engine.run<LAB5>();
-    engine.runInEditor<ApplicationDrawing2D>();
+    engine.run<ApplicationDrawing2D>();
+    //engine.runInEditor<ApplicationDrawing2D>();
     return 0;
 }
