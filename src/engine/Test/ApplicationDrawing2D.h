@@ -19,6 +19,8 @@ public:
 
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
+    void update(float delta) override;
+
     void draw() const override;
 };
 

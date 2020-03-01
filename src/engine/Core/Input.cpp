@@ -100,3 +100,11 @@ void Input::setCursor(Input::CursorImage image) {
             break;
     }
 }
+
+bool Input::getMouseButtonPressed(unsigned int button) const {
+    return glfwGetMouseButton(window, button) == GLFW_PRESS;
+}
+
+bool Input::getMouseButtonReleased(unsigned int button) const {
+    return glfwGetMouseButton(window, button) == GLFW_RELEASE;
+}

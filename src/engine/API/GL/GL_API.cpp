@@ -51,6 +51,7 @@ GLFWwindow *GL_API::createWindow(std::string title, int width, int height) {
     }
     Log::error("failed to initialize GLFW");
     init();
+    glfwSwapInterval(1);
     return window;
 
 }
