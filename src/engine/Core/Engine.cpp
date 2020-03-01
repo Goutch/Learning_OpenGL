@@ -63,12 +63,12 @@ void Engine::start() {
 Engine::~Engine() {
     delete canvas;
     delete renderer;
-    delete input;
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
     graphics->terminate();
     delete graphics;
+    delete input;
     delete window;
 }
 

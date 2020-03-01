@@ -5,16 +5,23 @@
 class KeyPressListener;
 class Input {
 public:
-    enum CURSOR{
+    enum CursorImage{
         HAND=GLFW_HAND_CURSOR,
         ARROW=GLFW_ARROW_CURSOR,
         IBEAM=GLFW_IBEAM_CURSOR,
-
+        CROSSHAIR=GLFW_CROSSHAIR_CURSOR,
+        HRESIZE=GLFW_HRESIZE_CURSOR,
+        VRESIZE=GLFW_VRESIZE_CURSOR,
     };
 private:
     static std::list<KeyPressListener*> keyboardListeners;
     GLFWwindow *window;
-    GLFWcursor *cursor;
+    GLFWcursor *arrow_cursor;
+    GLFWcursor *hand_cursor;
+    GLFWcursor *i_beam_cursor;
+    GLFWcursor *v_resize_cursor;
+    GLFWcursor *h_resize_cursor;
+    GLFWcursor *crosshair_cursor;
 
     bool cursor_shown=true;
 public:
@@ -28,5 +35,5 @@ public:
     static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
     void subscribeKeyPress(KeyPressListener& l) const;
     void unsubscribeKeyPress(KeyPressListener& l) const;
-
+    void setCursor(CursorImage image);
 };
