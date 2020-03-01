@@ -12,19 +12,21 @@
 #include <type_traits>
 #include "Core/Canvas.h"
 #include "Log.h"
-
+#include "Input.h"
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     graphics = new GL_API();
     window = new Window(graphics->createWindow("WINDOW", 1000, 700));
-    initImgui();
+    input=new Input(&window->getHandle());
     renderer = new SimpleRenderer();
     canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
+
+    initImgui();
 }
 
 void Engine::start() {
     Log::status("Initializing scene..");
-    scene->init(*canvas, *renderer, *window);
+    scene->init(*canvas, *renderer, *input);
     Log::status("Initialized scene");
 
     double delta_time = 0;
@@ -34,19 +36,20 @@ void Engine::start() {
     while (!window->shouldClose()) {
 
         window->pollEvents();
+        if (input->isKeyDown(GLFW_KEY_ESCAPE)) {
+            window->close();
+        }
         scene->update((float) delta_time);
 
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
-
         scene->draw();
+
         scene->render();
         renderer->renderOnMainBuffer(*canvas);
-
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
-
         window->swapBuffer();
 
         delta_time = delta_time_timer.ms();
@@ -65,6 +68,7 @@ Engine::~Engine() {
     ImGui::DestroyContext();
     graphics->terminate();
     delete graphics;
+    delete input;
     delete window;
 }
 

@@ -8,8 +8,8 @@
 #include "Entities/Canvas/Line.h"
 
 int maxGen = 8;
-void LAB4::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void LAB4::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
     float w = canvas.getPixelWidth();
     float h = canvas.getPixelHeight();
     fractale(w/2,0,1);

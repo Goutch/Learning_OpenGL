@@ -23,8 +23,8 @@ void ApplicationDrawing2D::draw() const {
     ImGui::End();
 }
 
-void ApplicationDrawing2D::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void ApplicationDrawing2D::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
 }
 
 

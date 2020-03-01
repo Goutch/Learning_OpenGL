@@ -3,8 +3,8 @@
 #include <Entities/Spacial/MeshRenderer.h>
 #include <Entities/Spacial/FPSController.h>
 #include <Entities/Spacial/Light/DirectionnalLight.h>
-void LAB5::init(const Canvas &viewport, Renderer &renderer, Window &window) {
-    SpacialScene::init(viewport, renderer, window);
+void LAB5::init(const Canvas &viewport, Renderer &renderer, Input &input) {
+    SpacialScene::init(viewport, renderer, input);
     ambient_light=Color(0.1,0.1,0.1,1);
     dragon_material.shine(30);
     dragon_material.damp(16);

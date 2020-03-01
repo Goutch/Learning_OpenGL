@@ -5,8 +5,8 @@
 #include "ImguiTest.h"
 #include "imgui.h"
 #include <Core/Rendering/Renderer.h>
-void ImguiTest::init(const Canvas &canvas, Renderer &renderer, Window &window) {
-    Scene::init(canvas, renderer, window);
+void ImguiTest::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+    Scene::init(canvas, renderer, input);
 
 }
 

@@ -1,6 +1,6 @@
 #pragma once
 
-class Window;
+class Input;
 class Renderer;
 class SpacialEntity;
 class Transform;
@@ -18,20 +18,20 @@ class Scene
 {
 protected:
     const Canvas* canvas;
-    Window* window;
+    Input* input;
     Renderer* renderer;
     std::vector<CanvasEntity*> canvasEntities;
 
 public:
 	Scene();
 
-	virtual void init(const Canvas &canvas, Renderer &renderer, Window& window);
+	virtual void init(const Canvas &canvas, Renderer &renderer, Input &input);
 	virtual void update(float delta);
 	virtual void draw() const;
 	virtual void render() const;
     ~Scene();
     void addEntity(CanvasEntity* entity);
 	const Canvas& getCanvas() const;
-    Window& getWindow() const;
+    Input& getInput() const;
 	Renderer& getRenderer()const ;
 };

@@ -6,7 +6,7 @@
 class PrimitivesTest: public Scene {
 public:
     CanvasMaterial material;
-    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
 public:
 

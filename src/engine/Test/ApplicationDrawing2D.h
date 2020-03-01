@@ -17,7 +17,7 @@ private:
     mutable char line_width;
 public:
 
-    void init(const Canvas &canvas, Renderer &renderer, Window &window) override;
+    void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
     void draw() const override;
 };

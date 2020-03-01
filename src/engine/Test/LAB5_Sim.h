@@ -20,6 +20,6 @@ class LAB5_Sim : public SpacialScene{
 public:
     void update(float delta) override;
 
-    void init(const Canvas &viewport, Renderer &renderer, Window &window) override;
+    void init(const Canvas &viewport, Renderer &renderer, Input &input) override;
 };
 
