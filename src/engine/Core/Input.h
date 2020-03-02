@@ -30,8 +30,8 @@ public:
     bool isKeyDown(unsigned int keycode)const;
     bool isKeyPressed(unsigned int keycode)const;
     void getMousePosition(double &x, double &y)const;
-    bool getMouseButtonPressed(unsigned int button) const;
-    bool getMouseButtonReleased(unsigned int button) const;
+    bool getMouseButtonPressed(int button) const;
+    bool getMouseButtonReleased(int button) const;
     void showCursor(bool showCursor);
     void setMousePosition(double x,double y);
     static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);

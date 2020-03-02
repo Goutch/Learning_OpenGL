@@ -14,6 +14,8 @@ public:
     const static Color BLUE;
 
     Color(float r=0,float g=0,float b=0, float a=1);
+
+    Color& operator=(const Color& color) noexcept;
 };
 
 

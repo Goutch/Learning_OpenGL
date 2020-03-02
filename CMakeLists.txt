@@ -31,7 +31,7 @@ set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_draw.cpp
         Dependencies/IMGUI/imgui_widgets.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
-        Dependencies/IMGUI/imgui_impl_glfw.cpp src/engine/Core/Input.cpp src/engine/Core/Input.h)
+        Dependencies/IMGUI/imgui_impl_glfw.cpp src/engine/Core/Input.cpp src/engine/Core/Input.h src/engine/Entities/Canvas/Point.cpp src/engine/Entities/Canvas/Point.h)
 add_executable(OGL_Engine
         ${IMGUI_FILES}
         Dependencies/STB_IMAGE/stb_image.cpp

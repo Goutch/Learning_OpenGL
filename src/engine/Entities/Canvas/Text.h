@@ -3,6 +3,7 @@
 #include <Shaders/Canvas/FontMaterial.h>
 #include "Entities/Spacial/SpacialEntity.h"
 #include "CanvasEntity.h"
+#include "Ressources/Mesh.h"
 
 class Text : public CanvasEntity {
 private:
