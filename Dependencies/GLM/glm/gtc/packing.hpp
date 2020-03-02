@@ -35,7 +35,7 @@ namespace glm
 	/// @see uint16 packUnorm2x8(vec2 const& v)
 	/// @see uint32 packUnorm4x8(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packUnorm4x8.xml">GLSL packUnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint8 packUnorm1x8(float v);
 
 	/// Convert a single 8-bit integer to a normalized floating-point value.
@@ -47,7 +47,7 @@ namespace glm
 	/// @see vec2 unpackUnorm2x8(uint16 p)
 	/// @see vec4 unpackUnorm4x8(uint32 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackUnorm4x8.xml">GLSL unpackUnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL float unpackUnorm1x8(uint8 p);
 
 	/// First, converts each component of the normalized floating-point value v into 8-bit integer values.
@@ -63,7 +63,7 @@ namespace glm
 	/// @see uint8 packUnorm1x8(float const& v)
 	/// @see uint32 packUnorm4x8(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packUnorm4x8.xml">GLSL packUnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint16 packUnorm2x8(vec2 const& v);
 
 	/// First, unpacks a single 16-bit unsigned integer p into a pair of 8-bit unsigned integers.
@@ -79,7 +79,7 @@ namespace glm
 	/// @see float unpackUnorm1x8(uint8 v)
 	/// @see vec4 unpackUnorm4x8(uint32 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackUnorm4x8.xml">GLSL unpackUnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL vec2 unpackUnorm2x8(uint16 p);
 
 	/// First, converts the normalized floating-point value v into 8-bit integer value.
@@ -92,7 +92,7 @@ namespace glm
 	/// @see uint16 packSnorm2x8(vec2 const& v)
 	/// @see uint32 packSnorm4x8(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packSnorm4x8.xml">GLSL packSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint8 packSnorm1x8(float s);
 
 	/// First, unpacks a single 8-bit unsigned integer p into a single 8-bit signed integers.
@@ -105,7 +105,7 @@ namespace glm
 	/// @see vec2 unpackSnorm2x8(uint16 p)
 	/// @see vec4 unpackSnorm4x8(uint32 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackSnorm4x8.xml">GLSL unpackSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL float unpackSnorm1x8(uint8 p);
 
 	/// First, converts each component of the normalized floating-point value v into 8-bit integer values.
@@ -121,7 +121,7 @@ namespace glm
 	/// @see uint8 packSnorm1x8(float const& v)
 	/// @see uint32 packSnorm4x8(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packSnorm4x8.xml">GLSL packSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint16 packSnorm2x8(vec2 const& v);
 
 	/// First, unpacks a single 16-bit unsigned integer p into a pair of 8-bit signed integers.
@@ -137,7 +137,7 @@ namespace glm
 	/// @see float unpackSnorm1x8(uint8 p)
 	/// @see vec4 unpackSnorm4x8(uint32 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackSnorm4x8.xml">GLSL unpackSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL vec2 unpackSnorm2x8(uint16 p);
 
 	/// First, converts the normalized floating-point value v into a 16-bit integer value.
@@ -150,7 +150,7 @@ namespace glm
 	/// @see uint16 packSnorm1x16(float const& v)
 	/// @see uint64 packSnorm4x16(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packUnorm4x8.xml">GLSL packUnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint16 packUnorm1x16(float v);
 
 	/// First, unpacks a single 16-bit unsigned integer p into a of 16-bit unsigned integers.
@@ -163,7 +163,7 @@ namespace glm
 	/// @see vec2 unpackUnorm2x16(uint32 p)
 	/// @see vec4 unpackUnorm4x16(uint64 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackUnorm2x16.xml">GLSL unpackUnorm2x16 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL float unpackUnorm1x16(uint16 p);
 
 	/// First, converts each component of the normalized floating-point value v into 16-bit integer values.
@@ -179,7 +179,7 @@ namespace glm
 	/// @see uint16 packUnorm1x16(float const& v)
 	/// @see uint32 packUnorm2x16(vec2 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packUnorm4x8.xml">GLSL packUnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint64 packUnorm4x16(vec4 const& v);
 
 	/// First, unpacks a single 64-bit unsigned integer p into four 16-bit unsigned integers.
@@ -195,7 +195,7 @@ namespace glm
 	/// @see float unpackUnorm1x16(uint16 p)
 	/// @see vec2 unpackUnorm2x16(uint32 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackUnorm2x16.xml">GLSL unpackUnorm2x16 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL vec4 unpackUnorm4x16(uint64 p);
 
 	/// First, converts the normalized floating-point value v into 16-bit integer value.
@@ -208,7 +208,7 @@ namespace glm
 	/// @see uint32 packSnorm2x16(vec2 const& v)
 	/// @see uint64 packSnorm4x16(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packSnorm4x8.xml">GLSL packSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint16 packSnorm1x16(float v);
 
 	/// First, unpacks a single 16-bit unsigned integer p into a single 16-bit signed integers.
@@ -221,7 +221,7 @@ namespace glm
 	/// @see vec2 unpackSnorm2x16(uint32 p)
 	/// @see vec4 unpackSnorm4x16(uint64 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackSnorm1x16.xml">GLSL unpackSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL float unpackSnorm1x16(uint16 p);
 
 	/// First, converts each component of the normalized floating-point value v into 16-bit integer values.
@@ -237,7 +237,7 @@ namespace glm
 	/// @see uint16 packSnorm1x16(float const& v)
 	/// @see uint32 packSnorm2x16(vec2 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packSnorm4x8.xml">GLSL packSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint64 packSnorm4x16(vec4 const& v);
 
 	/// First, unpacks a single 64-bit unsigned integer p into four 16-bit signed integers.
@@ -253,7 +253,7 @@ namespace glm
 	/// @see float unpackSnorm1x16(uint16 p)
 	/// @see vec2 unpackSnorm2x16(uint32 p)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackSnorm2x16.xml">GLSL unpackSnorm4x8 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL vec4 unpackSnorm4x16(uint64 p);
 
 	/// Returns an unsigned integer obtained by converting the components of a floating-point scalar
@@ -264,7 +264,7 @@ namespace glm
 	/// @see uint32 packHalf2x16(vec2 const& v)
 	/// @see uint64 packHalf4x16(vec4 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packHalf2x16.xml">GLSL packHalf2x16 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint16 packHalf1x16(float v);
 
 	/// Returns a floating-point scalar with components obtained by unpacking a 16-bit unsigned integer into a 16-bit value,
@@ -275,7 +275,7 @@ namespace glm
 	/// @see vec2 unpackHalf2x16(uint32 const& v)
 	/// @see vec4 unpackHalf4x16(uint64 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackHalf2x16.xml">GLSL unpackHalf2x16 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL float unpackHalf1x16(uint16 v);
 
 	/// Returns an unsigned integer obtained by converting the components of a four-component floating-point vector
@@ -288,7 +288,7 @@ namespace glm
 	/// @see uint16 packHalf1x16(float const& v)
 	/// @see uint32 packHalf2x16(vec2 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/packHalf2x16.xml">GLSL packHalf2x16 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL uint64 packHalf4x16(vec4 const& v);
 
 	/// Returns a four-component floating-point vector with components obtained by unpacking a 64-bit unsigned integer into four 16-bit values,
@@ -301,7 +301,7 @@ namespace glm
 	/// @see float unpackHalf1x16(uint16 const& v)
 	/// @see vec2 unpackHalf2x16(uint32 const& v)
 	/// @see <a href="http://www.opengl.org/sdk/docs/manglsl/xhtml/unpackHalf2x16.xml">GLSL unpackHalf2x16 man page</a>
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	GLM_FUNC_DECL vec4 unpackHalf4x16(uint64 p);
 
 	/// Returns an unsigned integer obtained by converting the components of a four-component signed integer vector
@@ -476,7 +476,7 @@ namespace glm
 	///
 	/// @see gtc_packing
 	/// @see vec<3, T, Q> unpackRGBM(vec<4, T, Q> const& p)
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<4, T, Q> packRGBM(vec<3, T, Q> const& rgb);
 
@@ -486,7 +486,7 @@ namespace glm
 	///
 	/// @see gtc_packing
 	/// @see vec<4, T, Q> packRGBM(vec<3, float, Q> const& v)
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	template<length_t L, typename T, qualifier Q>
 	GLM_FUNC_DECL vec<3, T, Q> unpackRGBM(vec<4, T, Q> const& rgbm);
 
@@ -497,7 +497,7 @@ namespace glm
 	///
 	/// @see gtc_packing
 	/// @see vec<L, float, Q> unpackHalf(vec<L, uint16, Q> const& p)
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	template<length_t L, qualifier Q>
 	GLM_FUNC_DECL vec<L, uint16, Q> packHalf(vec<L, float, Q> const& v);
 
@@ -507,7 +507,7 @@ namespace glm
 	///
 	/// @see gtc_packing
 	/// @see vec<L, uint16, Q> packHalf(vec<L, float, Q> const& v)
-	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Point Pack and Unpack Functions</a>
+	/// @see <a href="http://www.opengl.org/registry/doc/GLSLangSpec.4.20.8.pdf">GLSL 4.20.8 specification, section 8.4 Floating-Ellipse Pack and Unpack Functions</a>
 	template<length_t L, qualifier Q>
 	GLM_FUNC_DECL vec<L, float, Q> unpackHalf(vec<L, uint16, Q> const& p);
 

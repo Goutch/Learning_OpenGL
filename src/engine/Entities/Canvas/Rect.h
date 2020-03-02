@@ -4,10 +4,9 @@
 #include "CanvasEntity.h"
 
 class Rect: public CanvasEntity {
-    const CanvasMaterial* material;
+    Color color;
 public:
-    Rect(vec2 position,vec2 size,const CanvasMaterial& material);
-    Rect(vec2 position,vec2 size,const Color& color);
+    Rect(glm::vec2 position,glm::vec2 size,const Color color);
     void draw(const Scene &scene) const override;
 };
 

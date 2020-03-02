@@ -13,11 +13,11 @@
 #include <Core/Canvas.h>
 #include <Core/Log.h>
 #include <Core/Input.h>
-#include <Entities/Canvas/Point.h>
+#include <Entities/Canvas/Ellipse.h>
 
 void ApplicationDrawing2D::draw() const {
     Scene::draw();
-
+    glClearColor(background_color.r, background_color.g, background_color.b, background_color.a);
     ImGui::Begin("Properties");
     {
         ImGui::ColorPicker4("Background Color", &background_color.r);
