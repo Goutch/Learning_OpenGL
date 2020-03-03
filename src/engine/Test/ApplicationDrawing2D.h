@@ -7,6 +7,8 @@
 #include <Entities/Canvas/Ellipse.h>
 #include <Entities/Canvas/Rect.h>
 #include <Core/Log.h>
+#include <Entities/Canvas/Text.h>
+#include <Shaders/Shader.h>
 #include "map"
 #include "Events/KeyPressListener.h"
 
@@ -140,15 +142,48 @@ private:
         }
     };
 
+    class DrawTextTool : public Tool {
+        bool pressed = false;
+        Text* text;
+        void onMousePressed(double x, double y, ApplicationDrawing2D& scene) override{
+            if(!pressed) {
+                scene.addEntity(text = new Text("", glm::vec2(x, scene.getWindowHeight() - y), scene.font,12));
+            }
+
+            pressed = true;
+        }
+
+        void onMouseReleased(double x, double y, ApplicationDrawing2D& scene) override{
+            pressed = false;
+        }
+
+        void onKeyPressed(int key, ApplicationDrawing2D& scene) override {
+
+        }
+
+        void onKeyReleased(int key, ApplicationDrawing2D& scene) override {
+            if(key == GLFW_KEY_BACKSPACE) {
+                if(!text->getText().empty())
+                    text->setText(text->getText().substr(0, text->getText().size() - 1));
+            }
+            else {
+                text->setText(text->getText() + char(key));
+            }
+        }
+    };
+    DrawTextTool drawTextTool = DrawTextTool();
     DrawRectangleTool drawRectangleTool = DrawRectangleTool();
     DrawEllipseTool drawEllipseTool = DrawEllipseTool();
     DrawPointTool drawPointTool = DrawPointTool();
-    std::map<int, Tool*> tools = { {0, &drawPointTool}, {1, &drawRectangleTool}, {2, &drawEllipseTool} };
+    std::map<int, Tool*> tools = { {0, &drawPointTool}, {1, &drawRectangleTool}, {2, &drawEllipseTool}, {3, &drawTextTool} };
     unsigned int windowHeight;
     mutable Color background_color;
     mutable Color fill_color;
     mutable char line_width[4];
     mutable int tool = 0;
+    Shader shader = Shader("../src/engine/Shaders/ShadersSources/TextVertex.glsl",
+                           "../src/engine/Shaders/ShadersSources/TextFragment.glsl");
+    FontMaterial font = FontMaterial(shader,"../res/consolas.bmp",128, 128);
 
 public:
     unsigned int getWindowHeight() const;

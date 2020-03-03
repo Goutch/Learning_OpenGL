@@ -7,6 +7,7 @@
 
 #include "Test/SpacialSceneTest.h"
 #include "Test/ApplicationDrawing2D.h"
+#include "Test/TextTest.h"
 #include "Test/LAB4.h"
 #include <Test/LSystem.h>
 #include <Test/ImguiTest.h>
