@@ -9,7 +9,18 @@
 #include "Core/Log.h"
 #include "math.h"
 #include "Utils/Timer.h"
-void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
+
+
+void Geometry::make_triangle(VAO &vao, float x1, float y1, float x2, float y2, float x3, float y3) {
+    std::vector<unsigned int> indicies={2,1,0};
+    std::vector<float> position = {x1, y1, 0,
+                                   x2, y2, 0,
+                                   x3, y3, 0};
+    vao.indicies(indicies.data(), indicies.size());
+    vao.put(Mesh::VERTICIES, 3, position.data(), position.size());
+}
+
+void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial &font) {
     float font_width = 1;
     float font_height = 1;
 
@@ -85,7 +96,7 @@ void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
 
     auto vert = std::vector<float>();
     auto uvs = std::vector<float>();
-    for(unsigned int i = 0; i < text.size(); ++i) {
+    for (unsigned int i = 0; i < text.size(); ++i) {
         vert.push_back(font_width * (i));
         vert.push_back(0);
         vert.push_back(0);
@@ -104,19 +115,19 @@ void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
 
         float uvs_current_char[8];
         font.getCoordinates(uvs_current_char, text[i]);
-        for(int j = 0; j < 8; ++j) {
+        for (int j = 0; j < 8; ++j) {
             uvs.push_back(uvs_current_char[j]);
         }
     }
 
     auto indices = std::vector<unsigned int>();
-    for(unsigned int i = 0; i < text.size(); ++i) {
-        indices.push_back(2 + (4*i));
-        indices.push_back(1 + (4*i));
-        indices.push_back(0 + (4*i));
-        indices.push_back(0 + (4*i));
-        indices.push_back(3 + (4*i));
-        indices.push_back(2 + (4*i));
+    for (unsigned int i = 0; i < text.size(); ++i) {
+        indices.push_back(2 + (4 * i));
+        indices.push_back(1 + (4 * i));
+        indices.push_back(0 + (4 * i));
+        indices.push_back(0 + (4 * i));
+        indices.push_back(3 + (4 * i));
+        indices.push_back(2 + (4 * i));
     }
 
     mesh.indicies(indices.data(), indices.size());
@@ -124,26 +135,26 @@ void Geometry::make_text(Mesh &mesh, std::string text, FontMaterial& font) {
     mesh.uvs(uvs.data(), uvs.size());
 }
 
-void Geometry::make_quad(VAO &vao,float width,float height,float offsetX,float offsetY) {
+void Geometry::make_quad(VAO &vao, float width, float height, float offsetX, float offsetY) {
     //1-------2
     //|       |
     //|       |
     //0-------3
 
-    width/=2;
-    height/=2;
+    width /= 2;
+    height /= 2;
     auto vert = std::vector<float>();
-    vert.push_back(-width+offsetX);
-    vert.push_back(-height+offsetY);
+    vert.push_back(-width + offsetX);
+    vert.push_back(-height + offsetY);
     vert.push_back(0);
-    vert.push_back(-width+offsetX);
-    vert.push_back(height+offsetY);
+    vert.push_back(-width + offsetX);
+    vert.push_back(height + offsetY);
     vert.push_back(0);
-    vert.push_back(width+offsetX);
-    vert.push_back(height+offsetY);
+    vert.push_back(width + offsetX);
+    vert.push_back(height + offsetY);
     vert.push_back(0);
-    vert.push_back(width+offsetX);
-    vert.push_back(-height+offsetY);
+    vert.push_back(width + offsetX);
+    vert.push_back(-height + offsetY);
     vert.push_back(0);
 
     auto indices = std::vector<unsigned int>();
@@ -389,7 +400,7 @@ void Geometry::make_cube(VAO &vao) {
 }
 
 
-void Geometry::make_sphere(VAO &vao, float radius,int xCount,int yCount) {
+void Geometry::make_sphere(VAO &vao, float radius, int xCount, int yCount) {
     //https://www.songho.ca/opengl/gl_sphere.html
     const double PI = 3.14159265359;
     auto vertices = std::vector<float>();
@@ -405,16 +416,14 @@ void Geometry::make_sphere(VAO &vao, float radius,int xCount,int yCount) {
     float stackStep = PI / yCount;
     float sectorAngle, stackAngle;
 
-    for(int i = 0; i <= yCount; ++i)
-    {
+    for (int i = 0; i <= yCount; ++i) {
         stackAngle = PI / 2 - i * stackStep;        // starting from pi/2 to -pi/2
         xy = radius * cosf(stackAngle);             // r * cos(u)
         z = radius * sinf(stackAngle);              // r * sin(u)
 
         // add (sectorCount+1) vertices per stack
         // the first and last vertices have same position and normal, but different tex coords
-        for(int j = 0; j <= xCount; ++j)
-        {
+        for (int j = 0; j <= xCount; ++j) {
             sectorAngle = j * sectorStep;           // starting from 0 to 2pi
 
             // vertex position (x, y, z)
@@ -433,32 +442,28 @@ void Geometry::make_sphere(VAO &vao, float radius,int xCount,int yCount) {
             normals.push_back(nz);
 
             // vertex tex coord (s, t) range between [0, 1]
-            s = (float)j / xCount;
-            t = (float)i / yCount;
+            s = (float) j / xCount;
+            t = (float) i / yCount;
             uvs.push_back(s);
             uvs.push_back(t);
         }
     }
     int k1, k2;
-    for(int i = 0; i <yCount; ++i)
-    {
+    for (int i = 0; i < yCount; ++i) {
         k1 = i * (xCount + 1);     // beginning of current stack
         k2 = k1 + xCount + 1;      // beginning of next stack
 
-        for(int j = 0; j < xCount; ++j, ++k1, ++k2)
-        {
+        for (int j = 0; j < xCount; ++j, ++k1, ++k2) {
             // 2 triangles per sector excluding first and last stacks
             // k1 => k2 => k1+1
-            if(i != 0)
-            {
+            if (i != 0) {
                 indices.push_back(k1);
                 indices.push_back(k2);
                 indices.push_back(k1 + 1);
             }
 
             // k1+1 => k2 => k2+1
-            if(i != (yCount-1))
-            {
+            if (i != (yCount - 1)) {
                 indices.push_back(k1 + 1);
                 indices.push_back(k2);
                 indices.push_back(k2 + 1);
@@ -466,7 +471,7 @@ void Geometry::make_sphere(VAO &vao, float radius,int xCount,int yCount) {
         }
     }
 
-    vao.indicies(indices.data(),indices.size());
+    vao.indicies(indices.data(), indices.size());
     vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
     vao.put(Mesh::NORMALS, 3, normals.data(), normals.size());
     vao.put(Mesh::UVS, 2, uvs.data(), uvs.size());
@@ -556,9 +561,9 @@ void Geometry::import(VAO &vao, std::string path) {
             }
         }
         file.close();
-        float* orderedUvs=new float[(vertices.size() / 3) * 2];
-        unsigned int* orderedIndices=new unsigned int[indices.size()];
-        float* orderedNormals=new float[vertices.size()];
+        float *orderedUvs = new float[(vertices.size() / 3) * 2];
+        unsigned int *orderedIndices = new unsigned int[indices.size()];
+        float *orderedNormals = new float[vertices.size()];
         auto data = std::vector<std::string>();
         data.reserve(3);
         for (unsigned int i = 0; i < indices.size(); ++i) {
@@ -582,7 +587,7 @@ void Geometry::import(VAO &vao, std::string path) {
         vao.indicies(orderedIndices, indices.size());
         vao.put(Mesh::VERTICIES, 3, vertices.data(), vertices.size());
         if (!uvs.empty())
-            vao.put(Mesh::UVS, 2, orderedUvs, (vertices.size()/3)*2);
+            vao.put(Mesh::UVS, 2, orderedUvs, (vertices.size() / 3) * 2);
         if (!normals.empty())
             vao.put(Mesh::NORMALS, 3, orderedNormals, vertices.size());
         delete[](orderedIndices);
@@ -592,5 +597,6 @@ void Geometry::import(VAO &vao, std::string path) {
     catch (const std::exception &e) {
         Log::error("cant import model:" + path + "\n" + e.what());
     }
-    Log::message(path +" loaded in "+std::to_string(t.ms())+"s with "+std::to_string(vao.getVertexCount())+" vertices" );
+    Log::message(path + " loaded in " + std::to_string(t.ms()) + "s with " + std::to_string(vao.getVertexCount()) +
+                 " vertices");
 }

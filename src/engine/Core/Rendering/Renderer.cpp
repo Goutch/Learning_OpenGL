@@ -9,7 +9,7 @@
 
 #include <Core/Canvas.h>
 #include <Core/Rendering/FBO.h>
-
+#include "Geometry/Geometry.h"
 
 Renderer::Renderer() {
     depthShader_light_space_matrix_location = DEPTH_SHADER.uniformLocation("space");
@@ -61,6 +61,7 @@ void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection) const {
     buffer.unbind();
     temp_materials.clear();
     temp_transforms.clear();
+    temp_vaos.clear();
 }
 
 void Renderer::draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material) const {
@@ -79,7 +80,16 @@ void Renderer::drawRect(float x, float y, float width, float height, const Color
     CanvasTransform& t=temp_transforms.back();
     draw(QUAD,t,m);
 }
-
+void Renderer::drawTriangle(float x1, float y1,float x2,float y2,float x3,float y3, const Color &color) {
+    temp_materials.emplace_back(  DEFAULT_CANVAS_SHADER, color);
+    temp_transforms.emplace_back();
+    temp_vaos.emplace_back();
+    CanvasMaterial& m=temp_materials.back();
+    CanvasTransform& t=temp_transforms.back();
+    VAO& v=temp_vaos.back();
+    Geometry::make_triangle(v,x1,y1,x2,y2,x3,y3);
+    draw(v,t,m);
+}
 void Renderer::drawEllipse(float x, float y, float width, float height, const Color &color) {
     temp_materials.emplace_back(  ELLIPSE_SHADER, color);
     temp_transforms.emplace_back(  vec2(x, y), 0, vec2(width, height));
