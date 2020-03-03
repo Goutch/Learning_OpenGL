@@ -2,7 +2,7 @@
 
 #include <GLFW/glfw3.h>
 #include <list>
-class KeyPressListener;
+class KeyListener;
 class Input {
 public:
     enum CursorImage{
@@ -14,7 +14,7 @@ public:
         VRESIZE=GLFW_VRESIZE_CURSOR,
     };
 private:
-    static std::list<KeyPressListener*> keyboardListeners;
+    static std::list<KeyListener*> keyboardListeners;
     GLFWwindow *window;
     GLFWcursor *arrow_cursor;
     GLFWcursor *hand_cursor;
@@ -35,7 +35,7 @@ public:
     void showCursor(bool showCursor);
     void setMousePosition(double x,double y);
     static void keyCallback(GLFWwindow* window, int key, int scancode, int action, int mods);
-    void subscribeKeyPress(KeyPressListener& l) const;
-    void unsubscribeKeyPress(KeyPressListener& l) const;
+    void subscribeKey(KeyListener& l) const;
+    void unsubscribeKey(KeyListener& l) const;
     void setCursor(CursorImage image);
 };

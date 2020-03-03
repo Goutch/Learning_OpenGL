@@ -5,7 +5,7 @@
 #include "Input.h"
 #include <Events/KeyPressListener.h>
 
-std::list<KeyPressListener *> Input::keyboardListeners = std::list<KeyPressListener *>();
+std::list<KeyListener *> Input::keyboardListeners = std::list<KeyListener *>();
 
 Input::Input(GLFWwindow *window) {
     this->window = window;
@@ -61,20 +61,22 @@ void Input::showCursor(bool showCursor) {
 }
 
 void Input::keyCallback(GLFWwindow *window, int key, int scancode, int action, int mods) {
-    if (action = GLFW_PRESS) {
+    if (action == GLFW_PRESS) {
         for (auto l:keyboardListeners) {
-            l->onKeyPress(static_cast<unsigned char>(key));
+            l->onKeyPress(key);
         }
     } else if (action == GLFW_RELEASE) {
-        //idk do somehting
+        for (auto l:keyboardListeners) {
+            l->onKeyReleased(key);
+        }
     }
 }
 
-void Input::subscribeKeyPress(KeyPressListener &l) const {
+void Input::subscribeKey(KeyListener &l) const {
     keyboardListeners.push_back(&l);
 }
 
-void Input::unsubscribeKeyPress(KeyPressListener &l) const {
+void Input::unsubscribeKey(KeyListener &l) const {
     keyboardListeners.remove(&l);
 }
 

@@ -25,17 +25,15 @@ void ApplicationDrawing2D::draw() const {
         ImGui::InputText("Line Width", line_width, 4);
 
         ImGui::RadioButton("point", &tool, 0);
-        ImGui::RadioButton("ligne", &tool, 1);
-        ImGui::RadioButton("rectangle", &tool, 2);
-        ImGui::RadioButton("triangle", &tool, 3);
-        ImGui::RadioButton("ellipse", &tool, 4);
+        ImGui::RadioButton("rectangle", &tool, 1);
+        ImGui::RadioButton("ellipse", &tool, 2);
     }
     ImGui::End();
 }
 
 void ApplicationDrawing2D::init(const Canvas &canvas, Renderer &renderer, Input &input) {
     Scene::init(canvas, renderer, input);
-
+    input.subscribeKey(*this);
     windowHeight = canvas.getPixelHeight();
 }
 
@@ -58,6 +56,20 @@ void ApplicationDrawing2D::update(float delta) {
 
 unsigned int ApplicationDrawing2D::getWindowHeight() const {
     return windowHeight;
+}
+
+void ApplicationDrawing2D::onKeyPress(int key) {
+    if(tools[tool] != nullptr)
+        tools[tool]->onKeyPressed(key, *this);
+}
+
+void ApplicationDrawing2D::onKeyReleased(int key) {
+    if(tools[tool] != nullptr)
+        tools[tool]->onKeyReleased(key, *this);
+}
+
+ApplicationDrawing2D::~ApplicationDrawing2D() {
+    input->unsubscribeKey(*this);
 }
 
 

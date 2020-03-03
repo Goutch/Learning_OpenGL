@@ -1,8 +1,9 @@
 #pragma once
 
-class KeyPressListener{
+class KeyListener{
 public:
-    virtual void onKeyPress(char key)=0;
+    virtual void onKeyPress(int key)=0;
+    virtual void onKeyReleased(int key)=0;
 };
 
 
