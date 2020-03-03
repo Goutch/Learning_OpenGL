@@ -9,8 +9,11 @@
 #include <Core/Log.h>
 #include <Entities/Canvas/Text.h>
 #include <Shaders/Shader.h>
+#include <Entities/Canvas/Image.h>
 #include "map"
 #include "Events/KeyPressListener.h"
+#include "Entities/Spacial/MeshRenderer.h"
+#include "Core/Rendering/Renderer.h"
 
 class ApplicationDrawing2D : public Scene, KeyListener {
 private:
@@ -147,7 +150,7 @@ private:
         Text* text;
         void onMousePressed(double x, double y, ApplicationDrawing2D& scene) override{
             if(!pressed) {
-                scene.addEntity(text = new Text("", glm::vec2(x, scene.getWindowHeight() - y), scene.font,12));
+                scene.addEntity(text = new Text("", glm::vec2(x, scene.getWindowHeight() - y), *scene.font,100));
             }
 
             pressed = true;
@@ -171,19 +174,51 @@ private:
             }
         }
     };
+
+    class DrawImageTool : public Tool {
+        bool pressed = false;
+        Image* texture;
+        void onMousePressed(double x, double y, ApplicationDrawing2D& scene) override{
+            if(!pressed) {
+                scene.addEntity(texture = new Image(glm::vec2(x, scene.getWindowHeight() - y), 0, glm::vec2(100,100), &scene.textureMat));
+            }
+
+            pressed = true;
+        }
+
+        void onMouseReleased(double x, double y, ApplicationDrawing2D& scene) override{
+            pressed = false;
+        }
+
+        void onKeyPressed(int key, ApplicationDrawing2D& scene) override {
+
+        }
+
+        void onKeyReleased(int key, ApplicationDrawing2D& scene) override {
+
+        }
+    };
+    DrawImageTool drawImageTool = DrawImageTool();
     DrawTextTool drawTextTool = DrawTextTool();
     DrawRectangleTool drawRectangleTool = DrawRectangleTool();
     DrawEllipseTool drawEllipseTool = DrawEllipseTool();
     DrawPointTool drawPointTool = DrawPointTool();
-    std::map<int, Tool*> tools = { {0, &drawPointTool}, {1, &drawRectangleTool}, {2, &drawEllipseTool}, {3, &drawTextTool} };
+    std::map<int, Tool*> tools = { {0, &drawPointTool}, {1, &drawRectangleTool}, {2, &drawEllipseTool}, {3, &drawTextTool}, {4, &drawImageTool} };
     unsigned int windowHeight;
     mutable Color background_color;
     mutable Color fill_color;
     mutable char line_width[4];
     mutable int tool = 0;
+    mutable char font_path[32] = "../res/consolas.bmp";
+    mutable char font_width[32] = "128";
+    mutable char font_height[32] = "128";
+    mutable char texture_path[32] = "../res/consolas.bmp";
     Shader shader = Shader("../src/engine/Shaders/ShadersSources/TextVertex.glsl",
                            "../src/engine/Shaders/ShadersSources/TextFragment.glsl");
-    FontMaterial font = FontMaterial(shader,"../res/consolas.bmp",128, 128);
+
+    mutable FontMaterial* font = new FontMaterial(shader,"../res/consolas.bmp",128, 128);
+    mutable Texture* texture = new Texture(texture_path);
+    mutable CanvasMaterial textureMat = CanvasMaterial();
 
 public:
     unsigned int getWindowHeight() const;
