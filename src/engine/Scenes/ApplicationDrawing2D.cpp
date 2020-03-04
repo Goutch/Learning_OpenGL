@@ -1,20 +1,10 @@
 //
 // Created by Simon on 2020-02-04.
 //
-#include <filesystem>
+//#include <filesystem>
 
 #include "ApplicationDrawing2D.h"
-#include <Core/Rendering/Renderer.h>
-#include "Entities/Canvas/Text.h"
-#include <Geometry/Geometry.h>
-
-#include <Core/Window.h>
-#include "imgui.h"
-#include <Core/Canvas.h>
-#include <Core/Log.h>
-#include <Core/Input.h>
-#include <Entities/Canvas/Ellipse.h>
-#include "imgui_demo.cpp"
+#include "API_ALL.h"
 
 void ApplicationDrawing2D::draw() const {
     Scene::draw();

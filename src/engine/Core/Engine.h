@@ -7,10 +7,11 @@ class Renderer;
 class Input;
 #include <ctime>
 #include <API/API.h>
-#include <Editor/Editor.h>
-
+#include <Scenes/Editor/Editor.h>
+#include "Log.h"
 class Engine {
 private:
+
     Window* window=nullptr;
     Input* input=nullptr;
     API* graphics=nullptr;
@@ -31,7 +32,9 @@ public:
             delete scene;
         }
         scene = new Editor(new T());
-        start();
+        Log::status("Initializing scene..");
+        scene->init(*canvas, *renderer, *input);
+        Log::status("Initialized scene");
     }
     template<class T>
     void run(){
@@ -40,11 +43,14 @@ public:
             delete scene;
         }
         scene = new T();
-        start();
+        Log::status("Initializing scene..");
+        scene->init(*canvas, *renderer, *input);
+        Log::status("Initialized scene");
     }
 
 private:
     void start();
     void printFPS();
+    void drawSceneSelector();
 };
 

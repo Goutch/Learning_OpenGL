@@ -6,7 +6,7 @@
 #include "Core/SpacialScene.h"
 #include "Geometry/Geometry.h"
 #include <Shaders/Shader.h>
-class SpacialSceneTest : public SpacialScene {
+class SpacialSceneDemo : public SpacialScene {
 
     Shader shader = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
                            "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");

@@ -1,14 +1,9 @@
 //
 // Created by User on 2020-01-18.
 //
-
-#include "SpacialSceneTest.h"
-#include "Entities/Spacial/MeshRenderer.h"
-#include "Entities/Spacial/FPSController.h"
-#include "Entities/Spacial/Light/PointLight.h"
-#include "Entities/Spacial/Light/DirectionnalLight.h"
-#include "Entities/Spacial/Camera.h"
-void SpacialSceneTest::init(const Canvas &viewport, Renderer &renderer, Input &input){
+#include "SpacialSceneDemo.h"
+#include "API_ALL.h"
+void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &input){
     SpacialScene::init(viewport, renderer, input);
 
     //create cube_mesh mesh
@@ -41,14 +36,13 @@ void SpacialSceneTest::init(const Canvas &viewport, Renderer &renderer, Input &i
 
     //Directional sun light
     MeshRenderer* sun_cube=new MeshRenderer(cube_mesh, cube_material, vec3(0, 0, 30), vec3(0), vec3(3));
-    sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, 0, 0)));
+    sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
     cube_material.setColor(Color(1, 1, 0));
     addEntity(sun_cube);
     addLight(sun);
-    sun_cube->transform.parent=&sun->transform;
 }
 
-void SpacialSceneTest::update(float delta) {
+void SpacialSceneDemo::update(float delta) {
     SpacialScene::update(delta);
     sun->transform.rotate(quat(vec3(delta*0.01,0,0)));
 }
