@@ -219,7 +219,7 @@ private:
     mutable FontMaterial* font = new FontMaterial(shader,"../res/consolas.bmp",128, 128);
     mutable Texture* texture = new Texture(texture_path);
     mutable CanvasMaterial textureMat = CanvasMaterial();
-
+    mutable bool isHSV = false;
 public:
     unsigned int getWindowHeight() const;
 

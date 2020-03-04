@@ -21,8 +21,9 @@ void ApplicationDrawing2D::draw() const {
     glClearColor(background_color.r, background_color.g, background_color.b, background_color.a);
     ImGui::Begin("Properties");
     {
-        ImGui::ColorPicker4("Background Color", &background_color.r);
-        if(ImGui::ColorPicker4("Fill Color", &fill_color.r)) {
+        ImGui::Checkbox("HSV", &isHSV);
+        ImGui::ColorPicker4("Background Color", &background_color.r, isHSV ? ImGuiColorEditFlags_DisplayHSV | ImGuiColorEditFlags_PickerHueWheel : ImGuiColorEditFlags_DisplayRGB);
+        if(ImGui::ColorPicker4("Fill Color", &fill_color.r, isHSV ? ImGuiColorEditFlags_DisplayHSV | ImGuiColorEditFlags_PickerHueWheel : ImGuiColorEditFlags_DisplayRGB)) {
             const_cast<FontMaterial*>(font)->setColor(fill_color);
         }
         ImGui::InputText("Line Width", line_width, 4);
