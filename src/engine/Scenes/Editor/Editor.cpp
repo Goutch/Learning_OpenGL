@@ -38,6 +38,9 @@ void Editor::update(float delta) {
 
 void Editor::draw() const {
     current_scene->draw();
+    current_scene->getCanvas().getFrameBuffer().bind();
+    renderer->clear();
+    current_scene->getCanvas().getFrameBuffer().unbind();
     current_scene->render();
 
     ImGuiID dockspaceID = 0;
