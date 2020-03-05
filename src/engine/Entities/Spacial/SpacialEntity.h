@@ -7,7 +7,7 @@ class SpacialScene;
 #include "Entities/Spacial/Transform.h"
 class Scene;
 
-class SpacialEntity:Entity{
+class SpacialEntity: public Entity{
 public:
     Transform transform;
     SpacialEntity(vec3 position=vec3(0), vec3 rotation=vec3(0), vec3 scale=vec3(1));

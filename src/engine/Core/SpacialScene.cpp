@@ -72,6 +72,10 @@ SpacialScene::~SpacialScene() {
     point_lights.clear();
 }
 
+const std::vector<SpacialEntity *> &SpacialScene::getSpacialEntities() const {
+    return spacialEntities;
+}
+
 
 
 

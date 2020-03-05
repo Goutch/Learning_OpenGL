@@ -8,11 +8,13 @@
 #include <Entities/Canvas/Rect.h>
 #include <Entities/Canvas/Line.h>
 #include <imgui.h>
-Editor::Editor(Scene* scene) {
+#include <imgui_demo.cpp>
+#include "Core/Input.h"
+Editor::Editor(SpacialScene* scene) {
     this->current_scene=scene;
 }
 Editor::Editor() {
-    current_scene=new Scene();
+    current_scene=new SpacialScene();
 }
 
 Editor::~Editor() {
@@ -27,13 +29,38 @@ void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
                                       canvas.getPixelHeight() / 4);
     current_scene->init(*current_scene_canvas, renderer, input);;
 }
-void Editor::setScene(Scene* scene) {
+void Editor::setScene(SpacialScene* scene) {
     this->current_scene=scene;
     current_scene->init(*current_scene_canvas, *renderer, *input);
 }
 void Editor::update(float delta) {
     Scene::update(delta);
     current_scene->update(delta);
+    for(auto iter : selectedEntities) {
+        (*iter).transform.position(vec3(posX, posY, posZ));
+    }
+}
+
+void createTree(const std::vector<SpacialEntity*>& vector, Transform* parent, int& index, std::set<SpacialEntity*> &selectedEntities, SpacialScene* current_scene, float& posX, float& posY, float& posZ) {
+    for(auto iter : vector) {
+        if(iter->transform.parent == parent) {
+            if (ImGui::TreeNode((void*)(intptr_t)index, iter->getName().c_str(), index++))
+            {
+                if(ImGui::IsItemClicked()) {
+                    vec3 pos = iter->transform.localPosition();
+                    posX = pos[0];
+                    posY = pos[1];
+                    posZ = pos[2];
+
+                    if(!current_scene->getInput().isKeyDown(GLFW_KEY_LEFT_CONTROL))
+                        selectedEntities.clear();
+                    selectedEntities.emplace(iter);
+                }
+                createTree(vector, &iter->transform, index, selectedEntities, current_scene, posX, posY, posZ);
+                ImGui::TreePop();
+            }
+        }
+    }
 }
 
 void Editor::draw() const {
@@ -57,7 +84,6 @@ void Editor::draw() const {
     }
     ImGui::End();
 
-
     ImGui::SetNextWindowDockID(dockspaceID , ImGuiCond_FirstUseEver);
     ImGui::Begin("Scene rendering");
     {
@@ -76,6 +102,60 @@ void Editor::draw() const {
                 vMax,
                 ImVec2(0, 1),
                 ImVec2(1, 0));
+    }
+    ImGui::End();
+
+    ImGui::SetNextWindowDockID(dockspaceID , ImGuiCond_FirstUseEver);
+    ImGui::Begin("Transform") ;
+    {
+        ImGui::PushItemWidth(100);
+        if(!selectedEntities.empty()) {
+            vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
+            posX = pos[0];
+            posY = pos[1];
+            posZ = pos[2];
+        }
+
+        ImGui::SliderFloat("x", &posX, -10, 10); ImGui::SameLine();
+        ImGui::SliderFloat("y", &posY, -10, 10); ImGui::SameLine();
+        ImGui::SliderFloat("z", &posZ, -10, 10);
+    }
+    ImGui::End();
+
+    ImGui::SetNextWindowDockID(dockspaceID , ImGuiCond_FirstUseEver);
+    ImGui::Begin("Create things");
+    {
+        std::list<SpacialEntity*> parents;
+        for(auto iter : current_scene->getSpacialEntities()) {
+            if(iter->transform.parent == nullptr)
+                parents.push_back(iter);
+        }
+        if (ImGui::TreeNode("Basic trees")) {
+            int index = 0;
+            createTree(current_scene->getSpacialEntities(), nullptr, index, selectedEntities, current_scene, posX, posY, posZ);
+            ImGui::TreePop();
+        }
+
+        if(ImGui::Button("Cube")) {
+            SpacialEntity* entity;
+            current_scene->addEntity(entity = new MeshRenderer(renderer->CUBE, renderer->DEFAULT_SPACIAL_MATERIAL, vec3(0, 0, 0), vec3(0), vec3(1, 1, 1)));
+            entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
+            if(current_scene->getSpacialEntities().size() > 1)
+                entity->transform.parent = &current_scene->getSpacialEntities()[0]->transform;
+        }
+
+        if(ImGui::Button("Sphere")) {
+            SpacialEntity* entity;
+            current_scene->addEntity(entity = new MeshRenderer(renderer->SPHERE, renderer->DEFAULT_SPACIAL_MATERIAL, vec3(0, 0, 0), vec3(0), vec3(1, 1, 1)));
+            entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
+            if(current_scene->getSpacialEntities().size() > 1)
+                entity->transform.parent = &current_scene->getSpacialEntities()[0]->transform;
+        }
+        std::string text;
+        for(auto iter : selectedEntities)
+            text+=iter->getName();
+        if(!selectedEntities.empty())
+            ImGui::Text(text.c_str());
     }
     ImGui::End();
 }

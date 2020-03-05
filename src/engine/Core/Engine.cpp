@@ -10,6 +10,7 @@
 #include "Core/Rendering/BatchRenderer.h"
 #include "Core/Rendering/SimpleRenderer.h"
 #include <type_traits>
+#include <Scenes/BaseScene.h>
 #include "Core/Canvas.h"
 #include "Log.h"
 #include "Input.h"
@@ -109,7 +110,7 @@ void Engine::drawSceneSelector() {
             run<ApplicationDrawing2D>();
         }
         if(ImGui::Button("3D editor")){
-            runInEditor<SpacialSceneDemo>();
+            runInEditor<BaseScene>();
         }
         if(ImGui::Button("3D Features Scene")){
             run<SpacialSceneDemo>();

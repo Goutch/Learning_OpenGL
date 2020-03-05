@@ -9,15 +9,13 @@
 #include "Entities/Spacial/Transform.h"
 #include <Events/KeyPressListener.h>
 #include <Shaders/Shader.h>
-class TextTest : public Scene{
-    Transform transform = Transform();
-    Shader shader = Shader("../src/engine/Shaders/ShadersSources/TextVertex.glsl",
-                           "../src/engine/Shaders/ShadersSources/TextFragment.glsl");
-    FontMaterial font = FontMaterial(shader,"../res/consolas.bmp",128, 128);
+#include <Core/SpacialScene.h>
 
+class BaseScene : public SpacialScene{
 public:
     void init(const Canvas &viewport, Renderer &renderer, Input &input) override;
 
+    void draw() const override;
 };
 
 

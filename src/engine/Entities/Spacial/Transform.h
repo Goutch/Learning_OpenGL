@@ -20,6 +20,7 @@ public:
     mat4 getMatrix() const;
 
     vec3 position() const ;
+    vec3 localPosition() const;
     void position(const vec3& position);
     void translate(const vec3 & translation);
 

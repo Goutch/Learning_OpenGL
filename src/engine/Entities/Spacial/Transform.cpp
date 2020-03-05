@@ -54,6 +54,10 @@ vec3 Transform::position() const {
     return parent == nullptr ?transform_matrix[3]: (vec3)(parent->getMatrix()*transform_matrix)[3];
 }
 
+vec3 Transform::localPosition() const {
+    return transform_matrix[3];
+}
+
 vec3 Transform::scale() {
     vec3 s;
     s.x = glm::length(transform_matrix[0]);
@@ -75,6 +79,7 @@ void Transform::scale(vec3 scale) {
 vec3 Transform::eulerRotation() const {
     return glm::eulerAngles(rot);
 }
+
 
 
 

@@ -30,12 +30,15 @@ class CanvasMaterial;
 #include <Ressources/Color.h>
 #include <Entities/Spacial/Transform.h>
 #include <Ressources/Quad.h>
+#include <Ressources/Cube.h>
 #include <queue>
 #include <tuple>
 #include <Entities/Canvas/CanvasTransform.h>
 #include <Shaders/Shader.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
 #include <deque>
+#include <Ressources/Sphere.h>
+
 class Renderer {
 protected:
     struct CanvasElement {
@@ -54,6 +57,8 @@ protected:
 
 public:
     const Quad QUAD=Quad();
+    const Cube CUBE = Cube();
+    const Sphere SPHERE = Sphere(1, 100, 50);
     const Shader DEFAULT_SPACIAL_SHADER = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
                                                  "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
     const Shader DEPTH_SHADER = Shader("#version 330 core\n"

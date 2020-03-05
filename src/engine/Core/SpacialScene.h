@@ -10,6 +10,10 @@ protected:
     std::vector<DirectionalLight*> directional_lights;
     Color ambient_light=Color(0.1f,0.1f,0.1f);
     std::vector<SpacialEntity*> spacialEntities;
+public:
+    const std::vector<SpacialEntity *> &getSpacialEntities() const;
+
+protected:
     Camera camera;
 public:
 
