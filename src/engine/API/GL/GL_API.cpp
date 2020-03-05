@@ -20,7 +20,7 @@ void GL_API::init() {
         //enable cull face
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
-        //enable depth Test
+        //enable depth Scenes
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LESS);
         //enable transparency

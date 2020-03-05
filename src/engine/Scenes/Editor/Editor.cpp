@@ -11,6 +11,9 @@
 Editor::Editor(Scene* scene) {
     this->current_scene=scene;
 }
+Editor::Editor() {
+    current_scene=new Scene();
+}
 
 Editor::~Editor() {
     delete current_scene_canvas;
@@ -42,8 +45,6 @@ void Editor::draw() const {
     w=canvas->getPixelWidth();
     h=canvas->getPixelHeight();
     Scene::draw();
-
-
     ImGui::SetNextWindowPos(ImVec2(0,0));
     ImGui::SetNextWindowSize(ImVec2(w,h),0);
     ImGui::Begin("EDITOR");
@@ -75,6 +76,7 @@ void Editor::draw() const {
     }
     ImGui::End();
 }
+
 
 
 

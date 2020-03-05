@@ -15,7 +15,6 @@ void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const
 void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
-    clear();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while(!render_queue.empty()) {
         std::tuple<const SpacialMaterial*,const VAO*,const Transform *>& renderableObject=render_queue.front();

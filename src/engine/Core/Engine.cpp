@@ -13,22 +13,20 @@
 #include "Core/Canvas.h"
 #include "Log.h"
 #include "Input.h"
+
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     graphics = new GL_API();
     window = new Window(graphics->createWindow("WINDOW", 1000, 700));
-    input=new Input(&window->getHandle());
+    input = new Input(&window->getHandle());
     renderer = new SimpleRenderer();
     canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
 
     initImgui();
+    start();
 }
 
 void Engine::start() {
-    Log::status("Initializing scene..");
-    scene->init(*canvas, *renderer, *input);
-    Log::status("Initialized scene");
-
     double delta_time = 0;
     Timer delta_time_timer;
 
@@ -39,15 +37,24 @@ void Engine::start() {
         if (input->isKeyDown(GLFW_KEY_ESCAPE)) {
             window->close();
         }
-        scene->update((float) delta_time);
-
         ImGui_ImplOpenGL3_NewFrame();
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
-        scene->draw();
+        if (scene) {
 
-        scene->render();
-        renderer->renderOnMainBuffer(*canvas);
+            scene->update((float) delta_time);
+            scene->draw();
+            scene->getCanvas().getFrameBuffer().bind();
+            renderer->clear();
+            scene->getCanvas().getFrameBuffer().unbind();
+            scene->render();
+            renderer->clearColor();
+            renderer->renderOnMainBuffer(*canvas);
+        } else{
+            renderer->clear();
+            drawSceneSelector();
+        }
+
         ImGui::Render();
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         window->swapBuffer();
@@ -91,6 +98,27 @@ void Engine::initImgui() {
     ImGui::StyleColorsDark();
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;
 }
+
+#include "Scenes/ApplicationDrawing2D.h"
+#include "Scenes/Editor/Editor.h"
+#include "Scenes/SpacialSceneDemo.h"
+void Engine::drawSceneSelector() {
+    ImGui::Begin("SceneSelector");
+    {
+        if(ImGui::Button("2D editor")){
+            run<ApplicationDrawing2D>();
+        }
+        if(ImGui::Button("3D editor")){
+            run<Editor>();
+        }
+        if(ImGui::Button("3D Features Scene")){
+            run<SpacialSceneDemo>();
+        }
+    }
+    ImGui::End();
+}
+
+
 
 
 

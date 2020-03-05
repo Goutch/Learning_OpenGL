@@ -2,7 +2,7 @@
 
 #include <Core/Scene.h>
 #include <Core/Canvas.h>
-#include "Test/SpacialSceneTest.h"
+#include "Scenes/SpacialSceneDemo.h"
 
 class Editor: public Scene{
     Scene* current_scene;
@@ -13,6 +13,7 @@ class Editor: public Scene{
 public:
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
     Editor(Scene* scene);
+    Editor();
     ~Editor();
     void update(float delta) override;
     void setScene(Scene* scene);

@@ -31,7 +31,8 @@ set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_draw.cpp
         Dependencies/IMGUI/imgui_widgets.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
-        Dependencies/IMGUI/imgui_impl_glfw.cpp src/engine/Core/Input.cpp src/engine/Core/Input.h src/engine/Entities/Canvas/Ellipse.cpp src/engine/Entities/Canvas/Ellipse.h src/engine/Entities/Canvas/Image.cpp src/engine/Entities/Canvas/Image.h)
+        Dependencies/IMGUI/imgui_impl_glfw.cpp )
+
 add_executable(OGL_Engine
         ${IMGUI_FILES}
         Dependencies/STB_IMAGE/stb_image.cpp
@@ -67,6 +68,7 @@ add_executable(OGL_Engine
         src/engine/Entities/Canvas/Text.cpp
         src/engine/Entities/Canvas/Text.h
         src/engine/Entities/Entity.cpp
+        src/engine/Entities/Canvas/Image.cpp
 
         src/engine/Shaders/Shader.cpp
         src/engine/Shaders/Spacial/SpacialMaterial.cpp
@@ -94,20 +96,18 @@ add_executable(OGL_Engine
         src/engine/Utils/Timer.cpp
         src/engine/Utils/TimeUtils.cpp
 
-        src/engine/Editor/Editor.cpp
+        src/engine/Scenes/Editor/Editor.cpp
 
-        src/engine/Test/SpacialSceneTest.cpp
-        src/engine/Test/TextTest.cpp
-        src/engine/Test/PrimitivesTest.cpp
-        src/engine/Test/ApplicationDrawing2D.cpp
-        src/engine/Test/LSystem.cpp
-        src/engine/Test/LAB4.cpp
-        src/engine/Test/LAB5.cpp
-        src/engine/Test/ImguiTest.cpp
+        src/engine/Scenes/SpacialSceneDemo.cpp
+        src/engine/Scenes/TextTest.cpp
+        src/engine/Scenes/ApplicationDrawing2D.cpp
 
-        src/engine/Editor/Editor.cpp
-        src/engine/Test/ImguiTest.cpp src/engine/Test/ImguiTest.h src/engine/Test/LAB5.cpp src/engine/Test/LAB5.h src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h src/engine/Test/LAB5_Sim.cpp src/engine/Test/LAB5_Sim.h
-
+        src/engine/Scenes/Editor/Editor.cpp
+        src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h
+        src/engine/Core/Input.cpp src/engine/Core/Input.h
+        src/engine/Entities/Canvas/Ellipse.cpp
+        src/engine/Entities/Canvas/Ellipse.h
+        src/engine/API_ALL.h
 )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
