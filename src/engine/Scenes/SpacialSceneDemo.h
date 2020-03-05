@@ -7,20 +7,18 @@
 #include "Geometry/Geometry.h"
 #include <Shaders/Shader.h>
 class SpacialSceneDemo : public SpacialScene {
-
-    Shader shader = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
-                           "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
     Shader lightShader = Shader("../src/engine/Shaders/ShadersSources/LightVertex.glsl",
                                 "../src/engine/Shaders/ShadersSources/LightFragment.glsl");
 
-    SpacialMaterial cube_material = SpacialMaterial(shader);
+    Texture wall_texture = Texture("../res/wall.jpg", false);
+    Texture stone_texture= Texture("../res/stone.jpg", false);
+
     LightMaterial sphere_material = LightMaterial(lightShader, *this);
     LightMaterial dragon_material = LightMaterial(lightShader, *this);
-    LightMaterial ground_material = LightMaterial(lightShader, ground_texture, *this);
-    LightMaterial bunny_material = LightMaterial(lightShader,stone_texture, *this);
+    LightMaterial ground_material = LightMaterial(lightShader, Color(0.2,0.7,0.1), *this);
+    LightMaterial bunny_material = LightMaterial(lightShader,wall_texture, *this);
 
-    Texture ground_texture = Texture("../res/wall.jpg", false);
-    Texture stone_texture= Texture("../res/stone.jpg", false);
+
 
     Mesh dragon_mesh = Mesh("../res/dragon.obj");
     Mesh bunny_mesh = Mesh("../res/bunny.obj");

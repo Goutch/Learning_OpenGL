@@ -42,7 +42,7 @@ public:
     const mat4 getPixelProjection() const;
 
     const CanvasMaterial& getMaterial() const;
-
+    void clear();
     const FBO &getFrameBuffer() const;
 
     const VAO& getVAO() const;
