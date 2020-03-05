@@ -109,7 +109,7 @@ void Engine::drawSceneSelector() {
             run<ApplicationDrawing2D>();
         }
         if(ImGui::Button("3D editor")){
-            run<Editor>();
+            runInEditor<SpacialSceneDemo>();
         }
         if(ImGui::Button("3D Features Scene")){
             run<SpacialSceneDemo>();
