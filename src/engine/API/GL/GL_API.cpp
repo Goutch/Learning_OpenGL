@@ -20,18 +20,21 @@ void GL_API::init() {
         //enable cull face
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
-        //enable depth Scenes
+        //enable depth test
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LESS);
         //enable transparency
         glEnable(GL_BLEND);
         glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
+
         //antializing
         //glEnable(GL_MULTISAMPLE);
+        GL_Debug::init();
+        return;
     }
     Log::error("failed to initialize GLEW");
-    GL_Debug::init();
+
 }
 
 GLFWwindow *GL_API::createWindow(std::string title, int width, int height) {
@@ -49,7 +52,9 @@ GLFWwindow *GL_API::createWindow(std::string title, int width, int height) {
         glfwMakeContextCurrent(window);
         Log::status("window opened");
     }
-    Log::error("failed to initialize GLFW");
+    else{
+        Log::error("failed to initialize GLFW");
+    }
     init();
     glfwSwapInterval(1);
     return window;

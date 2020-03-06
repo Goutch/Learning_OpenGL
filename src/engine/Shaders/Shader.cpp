@@ -11,23 +11,56 @@
 Shader::Shader(const std::string &vertexShader, const std::string &fragmentShader, bool source) {
     program_id = glCreateProgram();
 
-    if(!source)Log::status("Compiling vertex getShader:" + vertexShader);
+    if (!source)Log::status("Compiling vertex getShader:" + vertexShader);
     std::string sourcevs;
-    !source?sourcevs= getSource(vertexShader):sourcevs=vertexShader;
+    !source ? sourcevs = getSource(vertexShader) : sourcevs = vertexShader;
     unsigned int vs = compileShader(GL_VERTEX_SHADER, sourcevs);
 
-    if(!source)Log::status("Compiling fragment getShader:" + fragmentShader);
+    if (!source)Log::status("Compiling fragment getShader:" + fragmentShader);
     std::string sourcefs;
-    !source?sourcefs= getSource(fragmentShader):sourcefs=fragmentShader;
+    !source ? sourcefs = getSource(fragmentShader) : sourcefs = fragmentShader;
     unsigned int fs = compileShader(GL_FRAGMENT_SHADER, sourcefs);
 
     glAttachShader(program_id, vs);
     glAttachShader(program_id, fs);
     glLinkProgram(program_id);
     glValidateProgram(program_id);
-    Log::debug("program id="+std::to_string(program_id));
+    Log::debug("program id=" + std::to_string(program_id));
     glDeleteShader(vs);
     glDeleteShader(fs);
+}
+
+
+Shader::Shader(const std::string &vertexShader, const std::string &geometryShader, const std::string &fragmentShader,
+               bool source) {
+    program_id = glCreateProgram();
+
+    if (!source)Log::status("Compiling vertex getShader:" + vertexShader);
+    std::string sourcevs;
+    !source ? sourcevs = getSource(vertexShader) : sourcevs = vertexShader;
+    unsigned int vs = compileShader(GL_VERTEX_SHADER, sourcevs);
+
+    if (!source)Log::status("Compiling geometry getShader:" + geometryShader);
+    std::string sourcegs;
+    !source ? sourcegs = getSource(geometryShader) : sourcegs = geometryShader;
+    unsigned int gs = compileShader(GL_GEOMETRY_SHADER, sourcegs);
+
+
+    if (!source)Log::status("Compiling fragment getShader:" + fragmentShader);
+    std::string sourcefs;
+    !source ? sourcefs = getSource(fragmentShader) : sourcefs = fragmentShader;
+    unsigned int fs = compileShader(GL_FRAGMENT_SHADER, sourcefs);
+
+    glAttachShader(program_id, vs);
+    glAttachShader(program_id, gs);
+    glAttachShader(program_id, fs);
+    glLinkProgram(program_id);
+    glValidateProgram(program_id);
+    Log::debug("program id=" + std::to_string(program_id));
+    glDeleteShader(vs);
+    glDeleteShader(gs);
+    glDeleteShader(fs);
+
 }
 
 Shader::~Shader() {
@@ -105,31 +138,30 @@ void Shader::loadUniform(unsigned int location, const glm::mat3 &m) const {
 void Shader::loadUniform(unsigned int location, const mat4 &m) const {
     glUniformMatrix4fv(location, 1, false, value_ptr(m));
 }
+
 void Shader::loadUniformIntArray(unsigned int location, int *i, unsigned int count) const {
-    glUniform1iv(location,count, i);
+    glUniform1iv(location, count, i);
 }
 
 void Shader::loadUniformFloatArray(unsigned int location, float *f, unsigned int count) const {
-    glUniform1fv(location,count, f);
+    glUniform1fv(location, count, f);
 }
 
 void Shader::loadUniformVec2Array(unsigned int location, const glm::vec2 *v, unsigned int count) const {
     const float *flat_array = &v[0].x;
-    glUniform2fv(location,count,flat_array);
+    glUniform2fv(location, count, flat_array);
 }
 
 void Shader::loadUniformVec3Array(unsigned int location, const glm::vec3 *v, unsigned int count) const {
     const float *flat_array = &v[0].x;
-    glUniform3fv(location,count,flat_array);
+    glUniform3fv(location, count, flat_array);
 }
 
 void Shader::loadUniformVec4Array(unsigned int location, const glm::vec4 *v, unsigned int count) const {
     const float *flat_array = &v[0].x;
 
-    glUniform4fv(location,count,flat_array);
+    glUniform4fv(location, count, flat_array);
 }
-
-
 
 
 unsigned int Shader::compileShader(unsigned int type, const std::string &source) {
@@ -144,7 +176,7 @@ unsigned int Shader::compileShader(unsigned int type, const std::string &source)
         glGetShaderiv(id, GL_INFO_LOG_LENGTH, &length);
         char *message = (char *) malloc(length * sizeof(char));
         glGetShaderInfoLog(id, length, &length, message);
-        Log::error( message);
+        Log::error(message);
         free(message);
     }
     return id;
@@ -161,15 +193,15 @@ std::string Shader::getSource(const std::string &path) {
             file.close();
             return str;
         } else {
-            Log::error( "Unable to find file:"+path);
+            Log::error("Unable to find file:" + path);
         }
 
     }
-    catch(std::exception &e)
-    {
-        Log::error("failed to read file "+path+"\n"+e.what());
+    catch (std::exception &e) {
+        Log::error("failed to read file " + path + "\n" + e.what());
     }
     return "";
 }
+
 
 

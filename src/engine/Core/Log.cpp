@@ -2,6 +2,7 @@
 // Created by User on 2020-01-17.
 //
 
+#include <stdexcept>
 #include "Log.h"
 #include "iostream"
 
@@ -28,10 +29,9 @@ void Log::status(const std::string &s) {
         std::clog << "[STATUS]" << s << std::endl;
     }
 }
-
-void Log::error(const std::string &s) {
+void Log::_error(const std::string &s, unsigned int line, std::string file, std::string function) {
     if (Log::log_level >= ERROR) {
-        std::cerr << "[ERROR]" << s << std::endl;
+        throw std::runtime_error("[ERROR]file :"+file+" at "+std::to_string(line)+":\n"+s) ;
     }
 }
 
@@ -40,3 +40,9 @@ void Log::warning(const std::string &s) {
         std::clog << "[WARNING]" << s << std::endl;
     }
 }
+
+
+
+
+
+

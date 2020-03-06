@@ -19,10 +19,10 @@ Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     graphics = new GL_API();
     window = new Window(graphics->createWindow("WINDOW", 1000, 700));
-    input = new Input(&window->getHandle());
+    input = new Input(window->getHandle());
     renderer = new SimpleRenderer();
     canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
-
+    imGuiEnabled = true;
     initImgui();
     start();
 }
@@ -38,9 +38,13 @@ void Engine::start() {
         if (input->isKeyDown(GLFW_KEY_ESCAPE)) {
             window->close();
         }
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+        if (imGuiEnabled) {
+            ImGui_ImplOpenGL3_NewFrame();
+            ImGui_ImplGlfw_NewFrame();
+            ImGui::NewFrame();
+        }
+
+
         if (scene) {
 
             scene->update((float) delta_time);
@@ -51,13 +55,15 @@ void Engine::start() {
             scene->render();
             renderer->clearColor();
             renderer->renderOnMainBuffer(*canvas);
-        } else{
+        } else {
             renderer->clear();
             drawSceneSelector();
         }
+        if (imGuiEnabled) {
+            ImGui::Render();
+            ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        }
 
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
         window->swapBuffer();
 
         delta_time = delta_time_timer.ms();
@@ -102,18 +108,20 @@ void Engine::initImgui() {
 
 #include "Scenes/ApplicationDrawing2D.h"
 #include "Scenes/Editor/Editor.h"
-#include "Scenes/SpacialSceneDemo.h"
+#include "Scenes/Demo3D/SpacialSceneDemo.h"
+
 void Engine::drawSceneSelector() {
     ImGui::Begin("SceneSelector");
     {
-        if(ImGui::Button("2D editor")){
+        if (ImGui::Button("2D editor")) {
             run<ApplicationDrawing2D>();
         }
         if(ImGui::Button("3D editor")){
             runInEditor<BaseScene>();
         }
-        if(ImGui::Button("3D Features Scene")){
+        if (ImGui::Button("3D Features Scene")) {
             run<SpacialSceneDemo>();
+            imGuiEnabled = false;
         }
     }
     ImGui::End();

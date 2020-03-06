@@ -7,27 +7,27 @@
 
 std::list<KeyListener *> Input::keyboardListeners = std::list<KeyListener *>();
 
-Input::Input(GLFWwindow *window) {
-    this->window = window;
-    //glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
-   //arrow_cursor = glfwCreateStandardCursor(ARROW);
-   //i_beam_cursor = glfwCreateStandardCursor(IBEAM);
-   //hand_cursor = glfwCreateStandardCursor(HAND);
-   //v_resize_cursor = glfwCreateStandardCursor(HRESIZE);
-   //h_resize_cursor = glfwCreateStandardCursor(VRESIZE);
-   //crosshair_cursor = glfwCreateStandardCursor(CROSSHAIR);
-   //setCursor(HAND);
-   // glfwSetCursor(window,hand_cursor);
-    glfwSetKeyCallback(window, Input::keyCallback);
+Input::Input(GLFWwindow& window) {
+    this->window = &window;
+    glfwSetInputMode(&window, GLFW_CURSOR, GLFW_CURSOR_NORMAL);
+    arrow_cursor = glfwCreateStandardCursor(ARROW);
+    i_beam_cursor = glfwCreateStandardCursor(IBEAM);
+    hand_cursor = glfwCreateStandardCursor(HAND);
+    v_resize_cursor = glfwCreateStandardCursor(HRESIZE);
+    h_resize_cursor = glfwCreateStandardCursor(VRESIZE);
+    crosshair_cursor = glfwCreateStandardCursor(CROSSHAIR);
+    setCursor(HAND);
+    glfwSetCursor(&window, hand_cursor);
+    glfwSetKeyCallback(&window, Input::keyCallback);
 }
 
 Input::~Input() {
-   // glfwDestroyCursor(arrow_cursor);
-   // glfwDestroyCursor(hand_cursor);
-   // glfwDestroyCursor(i_beam_cursor);
-   // glfwDestroyCursor(h_resize_cursor);
-   // glfwDestroyCursor(v_resize_cursor);
-   // glfwDestroyCursor(crosshair_cursor);
+    glfwDestroyCursor(arrow_cursor);
+    glfwDestroyCursor(hand_cursor);
+    glfwDestroyCursor(i_beam_cursor);
+    glfwDestroyCursor(h_resize_cursor);
+    glfwDestroyCursor(v_resize_cursor);
+    glfwDestroyCursor(crosshair_cursor);
 
 }
 

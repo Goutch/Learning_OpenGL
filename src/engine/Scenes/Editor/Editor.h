@@ -2,7 +2,7 @@
 
 #include <Core/Scene.h>
 #include <Core/Canvas.h>
-#include "Scenes/SpacialSceneDemo.h"
+#include "Scenes/Demo3D/SpacialSceneDemo.h"
 #include "set"
 
 class Editor: public Scene{

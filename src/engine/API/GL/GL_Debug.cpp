@@ -10,7 +10,7 @@ void GL_Debug::clearGLErrors() {
 
 void GL_Debug::printGLErrors() {
     while (GLenum error = glGetError()) {
-        Log::error("[OPENGL ERROR]:" + error);
+        Log::warning("[OPENGL ERROR]:" + error);
     }
 }
 void GL_Debug::init() {
@@ -109,7 +109,7 @@ void GL_Debug::GLDebugMessageCallback(GLenum source, GLenum type, GLuint id, GLe
             break;
     }
     if (severity != GL_DEBUG_SEVERITY_NOTIFICATION)
-        Log::error("[OPENGL]:ID:" + std::to_string(id) +
+        Log::warning("[OPENGL]:ID:" + std::to_string(id) +
                    "\nTYPE: " + _type.c_str() +
                    "\nSEVERITY: " +_severity.c_str() +
                    "\nSOURCE: "+_source.c_str() +

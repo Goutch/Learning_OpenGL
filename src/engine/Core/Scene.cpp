@@ -1,9 +1,10 @@
 //
 // Created by User on 2020-01-06.
 //
+#include "Core/Rendering/Renderer.h"
 #include "Scene.h"
 #include "Input.h"
-#include "Core/Rendering/Renderer.h"
+
 #include "Core/Window.h"
 
 #include "Utils/TimeUtils.h"

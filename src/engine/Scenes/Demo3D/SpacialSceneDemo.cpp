@@ -3,6 +3,7 @@
 //
 #include "SpacialSceneDemo.h"
 #include "API_ALL.h"
+#include "Grass.h"
 void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &input){
     SpacialScene::init(viewport, renderer, input);
     input.showCursor(false);
@@ -10,11 +11,9 @@ void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &i
     Geometry::make_cube(cube_mesh);
     Geometry::make_sphere(sphere_mesh,1,100,50);
 
-
-
     //ground
     addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
-
+    addEntity(new Grass());
     //sphere
     addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
     //bunnies
@@ -32,9 +31,6 @@ void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &i
     //controller
     addEntity(new FPSController(camera.transform, vec3(0, 2, 2), vec3(0), vec3(1)));
 
-    //middle point light
-    addLight(new PointLight(Color(1, 0, 0), 10, vec3(0, 1, 0)));
-
     //Directional sun light
 
     sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
@@ -44,5 +40,4 @@ void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &i
 
 void SpacialSceneDemo::update(float delta) {
     SpacialScene::update(delta);
-    sun->transform.rotate(quat(vec3(delta*0.01,0,0)));
 }

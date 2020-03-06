@@ -2,8 +2,6 @@
 #include "Log.h"
 #include "Events/WindowResizeListener.h"
 #include <GLFW/glfw3.h>
-#include <Events/KeyPressListener.h>
-
 std::list<WindowResizeListener *> Window::sizeListeners = std::list<WindowResizeListener *>();
 
 

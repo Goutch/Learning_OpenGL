@@ -1,8 +1,10 @@
 
-#define GLEW_STATIC
 
 #include "Renderer.h"
-#include <GL/glew.h>
+
+#define GLEW_STATIC
+
+#include "GL/glew.h"
 
 #include <Ressources/VAO.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
@@ -11,10 +13,13 @@
 #include <Core/Rendering/FBO.h>
 #include "Geometry/Geometry.h"
 
+const int Renderer::PRIMITIVE_TRIANGLES = GL_TRIANGLES;
+const int Renderer::PRIMITIVE_POINTS = GL_POINTS;
+
 Renderer::Renderer() {
     depthShader_light_space_matrix_location = DEPTH_SHADER.uniformLocation("space");
     depthShader_transform_mat_location = DEPTH_SHADER.uniformLocation("transform");
-    glClearColor(0.4,0.4,0.7,1);
+    glClearColor(0.4, 0.4, 0.7, 1);
 
 }
 
@@ -52,7 +57,10 @@ void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection) const {
         canvas_element.material->transform(canvas_element.transform->getMatrix());
         canvas_element.material->projection(projection);
         canvas_element.vao->bind();
-        glDrawElements(GL_TRIANGLES, canvas_element.vao->getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        if (canvas_element.vao->hasIndices())
+            glDrawElements(canvas_element.primitive, canvas_element.vao->getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        else
+            glDrawArrays(canvas_element.primitive,0,canvas_element.vao->getVertexCount());
         canvas_element.vao->unbind();
         canvas_element.material->unbind();
         canvas_elements.pop();
@@ -63,8 +71,9 @@ void Renderer::renderCanvas(const FBO &buffer, const mat4 &projection) const {
     temp_vaos.clear();
 }
 
-void Renderer::draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material) const {
-    canvas_elements.emplace(transform, material, vao);
+void
+Renderer::draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material, int primitive,bool cull_faces) const {
+    canvas_elements.emplace(transform, material, vao, primitive,cull_faces);
 }
 
 
@@ -73,43 +82,45 @@ void Renderer::wireframe(bool enable) {
 }
 
 void Renderer::drawRect(float x, float y, float width, float height, const Color &color) {
-    temp_materials.emplace_back(  DEFAULT_CANVAS_SHADER, color);
-    temp_transforms.emplace_back(  vec2(x, y), 0, vec2(width, height));
-    CanvasMaterial& m=temp_materials.back();
-    CanvasTransform& t=temp_transforms.back();
-    draw(QUAD,t,m);
+    temp_materials.emplace_back(DEFAULT_CANVAS_SHADER, color);
+    temp_transforms.emplace_back(vec2(x, y), 0, vec2(width, height));
+    CanvasMaterial &m = temp_materials.back();
+    CanvasTransform &t = temp_transforms.back();
+    draw(QUAD, t, m);
 }
-void Renderer::drawTriangle(float x1, float y1,float x2,float y2,float x3,float y3, const Color &color) {
-    temp_materials.emplace_back(  DEFAULT_CANVAS_SHADER, color);
+
+void Renderer::drawTriangle(float x1, float y1, float x2, float y2, float x3, float y3, const Color &color) {
+    temp_materials.emplace_back(DEFAULT_CANVAS_SHADER, color);
     temp_transforms.emplace_back();
     temp_vaos.emplace_back();
-    CanvasMaterial& m=temp_materials.back();
-    CanvasTransform& t=temp_transforms.back();
-    VAO& v=temp_vaos.back();
-    Geometry::make_triangle(v,x1,y1,x2,y2,x3,y3);
-    draw(v,t,m);
+    CanvasMaterial &m = temp_materials.back();
+    CanvasTransform &t = temp_transforms.back();
+    VAO &v = temp_vaos.back();
+    Geometry::make_triangle(v, x1, y1, x2, y2, x3, y3);
+    draw(v, t, m);
 }
+
 void Renderer::drawEllipse(float x, float y, float width, float height, const Color &color) {
-    temp_materials.emplace_back(  ELLIPSE_SHADER, color);
-    temp_transforms.emplace_back(  vec2(x, y), 0, vec2(width, height));
-    CanvasMaterial& m=temp_materials.back();
-    CanvasTransform& t=temp_transforms.back();
-    draw(QUAD,t,m);
+    temp_materials.emplace_back(ELLIPSE_SHADER, color);
+    temp_transforms.emplace_back(vec2(x, y), 0, vec2(width, height));
+    CanvasMaterial &m = temp_materials.back();
+    CanvasTransform &t = temp_transforms.back();
+    draw(QUAD, t, m);
 }
 
 void Renderer::drawLine(float x1, float y1, float x2, float y2, float width, const Color &color) {
-    vec2 p1=vec2(x1,y1);
-    vec2 p2=vec2(x2,y2);
+    vec2 p1 = vec2(x1, y1);
+    vec2 p2 = vec2(x2, y2);
     vec2 delta = p2 - p1;
     float x = p1.x + (delta.x / 2);
     float y = p1.y + (delta.y / 2);
-    float lenght = (float) sqrt((delta.x* delta.x) + (delta.y * delta.y)) + (width );
+    float lenght = (float) sqrt((delta.x * delta.x) + (delta.y * delta.y)) + (width);
     float rot = atan(delta.y, delta.x);
     temp_materials.emplace_back(DEFAULT_CANVAS_SHADER, color);
-    temp_transforms.emplace_back( vec2(x, y), rot, vec2(lenght, width));
-    CanvasMaterial& m=temp_materials.back();
-    CanvasTransform& t=temp_transforms.back();
-    draw(QUAD,t,m);
+    temp_transforms.emplace_back(vec2(x, y), rot, vec2(lenght, width));
+    CanvasMaterial &m = temp_materials.back();
+    CanvasTransform &t = temp_transforms.back();
+    draw(QUAD, t, m);
 
 }
 

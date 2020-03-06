@@ -25,7 +25,7 @@ private:
 
     bool cursor_shown=true;
 public:
-    explicit Input(GLFWwindow *window);
+    explicit Input(GLFWwindow &window);
     ~Input();
     bool isKeyDown(unsigned int keycode)const;
     bool isKeyPressed(unsigned int keycode)const;

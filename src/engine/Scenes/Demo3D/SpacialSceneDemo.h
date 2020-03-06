@@ -15,7 +15,7 @@ class SpacialSceneDemo : public SpacialScene {
 
     LightMaterial sphere_material = LightMaterial(lightShader, *this);
     LightMaterial dragon_material = LightMaterial(lightShader, *this);
-    LightMaterial ground_material = LightMaterial(lightShader, Color(0.2,0.7,0.1), *this);
+    LightMaterial ground_material = LightMaterial(lightShader, Color(0.6,0.85,0.1), *this);
     LightMaterial bunny_material = LightMaterial(lightShader,wall_texture, *this);
 
 

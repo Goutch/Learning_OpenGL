@@ -22,9 +22,23 @@ void BatchRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
-            for (auto &transform:transform_batch.second) {
-                material.transform(transform->getMatrix());
-                glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+            for (auto &draw_info:transform_batch.second) {
+                const Transform& transform=*std::get<0>(draw_info);
+                int primitive=std::get<1>(draw_info);
+                bool cull_faces=std::get<2>(draw_info);
+
+
+                if(cull_faces)
+                {
+                    glEnable(GL_CULL_FACE);
+                    glCullFace(GL_BACK);
+                } else{
+                    glDisable(GL_CULL_FACE);
+                }
+                if (vao.hasIndices())
+                    glDrawElements(primitive, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+                else
+                    glDrawArrays(primitive,0,vao.getVertexCount());
             }
             vao.unbind();
         }
@@ -44,9 +58,19 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
-            for (auto &transform:transform_batch.second) {
-                DEPTH_SHADER.loadUniform(depthShader_transform_mat_location, transform->getMatrix());
-                glDrawElements(GL_TRIANGLES, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+            for (auto &draw_info:transform_batch.second) {
+                const Transform& transform=*std::get<0>(draw_info);
+                int primitive=std::get<1>(draw_info);
+                bool cull_faces=std::get<2>(draw_info);
+                if(cull_faces)
+                {
+                    glEnable(GL_CULL_FACE);
+                    glCullFace(GL_BACK);
+                } else{
+                    glDisable(GL_CULL_FACE);
+                }
+                DEPTH_SHADER.loadUniform(depthShader_transform_mat_location, transform.getMatrix());
+                glDrawElements(primitive, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
             }
             vao.unbind();
         }
@@ -56,17 +80,17 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
     buffer.unbind();
 }
 
-void BatchRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform) const {
+void BatchRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform,int primitive,bool cull_faces) const {
     if (spacial_material_batch.find(&material) == spacial_material_batch.end()) {
         spacial_material_batch.insert(
-                std::make_pair(&material, std::unordered_map<const VAO *, std::list<const Transform *>>()));
+                std::make_pair(&material, std::unordered_map<const VAO *, std::list<std::tuple<const Transform *,int,bool>>>()));
     }
-    std::unordered_map<const VAO *, std::list<const Transform *>> &vao_batch = spacial_material_batch.at(&material);
+    std::unordered_map<const VAO *, std::list<std::tuple<const Transform *,int,bool >>> &vao_batch = spacial_material_batch.at(&material);
     if (vao_batch.find(&vao) == vao_batch.end()) {
-        vao_batch.insert(std::make_pair(&vao, std::list<const Transform *>()));
+        vao_batch.insert(std::make_pair(&vao, std::list<std::tuple<const Transform *,int ,bool>>()));
     }
-    std::list<const Transform *> &transform_batch = vao_batch.at(&vao);
-    transform_batch.push_back(&transform);
+    std::list<std::tuple<const Transform *,int ,bool>> &transform_batch = vao_batch.at(&vao);
+    transform_batch.emplace_back(&transform,primitive,cull_faces);
 }
 
 

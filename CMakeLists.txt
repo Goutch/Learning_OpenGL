@@ -31,7 +31,7 @@ set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_draw.cpp
         Dependencies/IMGUI/imgui_widgets.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
-        Dependencies/IMGUI/imgui_impl_glfw.cpp src/engine/Ressources/Cube.cpp src/engine/Ressources/Cube.h src/engine/Ressources/Sphere.cpp src/engine/Ressources/Sphere.h)
+        Dependencies/IMGUI/imgui_impl_glfw.cpp)
 
 add_executable(OGL_Engine
         ${IMGUI_FILES}
@@ -84,7 +84,10 @@ add_executable(OGL_Engine
         src/engine/Ressources/VAO.cpp
         src/engine/Ressources/VBO.cpp
         src/engine/Ressources/Quad.cpp
-
+        src/engine/Ressources/Cube.cpp
+        src/engine/Ressources/Cube.h
+        src/engine/Ressources/Sphere.cpp
+        src/engine/Ressources/Sphere.h
         src/engine/Ressources/Texture.cpp
         src/engine/Ressources/AtlasTexture.cpp
         src/engine/Ressources/Color.cpp
@@ -98,9 +101,12 @@ add_executable(OGL_Engine
 
         src/engine/Scenes/Editor/Editor.cpp
 
-        src/engine/Scenes/SpacialSceneDemo.cpp
+        src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp
+
         src/engine/Scenes/BaseScene.cpp
         src/engine/Scenes/ApplicationDrawing2D.cpp
+        src/engine/Scenes/Demo3D/Grass.cpp
+        src/engine/Scenes/Demo3D/Grass.h
 
         src/engine/Scenes/Editor/Editor.cpp
         src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h

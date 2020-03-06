@@ -1,7 +1,6 @@
 #pragma once
 
-#include "glm/mat4x4.hpp"
-#include <Shaders/Spacial/SpacialMaterial.h>
+
 
 class MeshRenderer;
 
@@ -21,41 +20,50 @@ class Texture;
 
 class FBO;
 
-using namespace glm;
+
 
 class Canvas;
 
 class CanvasMaterial;
-
+#include "glm/mat4x4.hpp"
+#include <Shaders/Spacial/SpacialMaterial.h>
 #include <Ressources/Color.h>
 #include <Entities/Spacial/Transform.h>
 #include <Ressources/Quad.h>
-#include <Ressources/Cube.h>
 #include <queue>
 #include <tuple>
 #include <Entities/Canvas/CanvasTransform.h>
 #include <Shaders/Shader.h>
 #include <Shaders/Canvas/CanvasMaterial.h>
 #include <deque>
+using namespace glm;
 #include <Ressources/Sphere.h>
+#include <Ressources/Cube.h>
 
 class Renderer {
+public:
+    static const int PRIMITIVE_TRIANGLES;
+    static const int PRIMITIVE_POINTS;
 protected:
     struct CanvasElement {
         const CanvasTransform *transform;
         const CanvasMaterial *material;
         const VAO *vao;
-
-        CanvasElement(const CanvasTransform &transform, const CanvasMaterial &material, const VAO &vao) {
+        int primitive;
+        bool cull_faces;
+        CanvasElement(const CanvasTransform &transform, const CanvasMaterial &material, const VAO &vao,int primitive,bool cull_faces) {
             this->transform = &transform;
             this->material = &material;
             this->vao = &vao;
+            this->primitive=primitive;
+            this->cull_faces=cull_faces;
         }
     };
 
     mutable std::queue<CanvasElement> canvas_elements;
 
 public:
+
     const Quad QUAD=Quad();
     const Cube CUBE = Cube();
     const Sphere SPHERE = Sphere(1, 100, 50);
@@ -148,11 +156,11 @@ public:
 
     virtual void renderOnMainBuffer(const Canvas &canvas);
 
-    virtual void draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform) const= 0;
+    virtual void draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform,int primitive=PRIMITIVE_TRIANGLES,bool cull_faces=true) const= 0;
 
     virtual void renderSpace(const FBO &buffer, const glm::mat4 &projection, const glm::mat4 &view_mat) const= 0;
 
-    virtual void draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material) const;
+    virtual void draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material,int primitive=PRIMITIVE_TRIANGLES,bool cull_faces=true) const;
 
     virtual void renderCanvas(const FBO &buffer, const glm::mat4 &projection) const;
 

@@ -8,8 +8,8 @@
 #include "Ressources/VAO.h"
 #include <Entities/Spacial/Transform.h>
 
-void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform& transform)const  {
-    render_queue.emplace(&material,&vao,&transform);
+void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform& transform,int primitive,bool cull_faces)const  {
+    render_queue.emplace(&material,&vao,&transform,primitive,cull_faces);
 }
 
 void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
@@ -17,17 +17,28 @@ void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, cons
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while(!render_queue.empty()) {
-        std::tuple<const SpacialMaterial*,const VAO*,const Transform *>& renderableObject=render_queue.front();
+        std::tuple<const SpacialMaterial*,const VAO*,const Transform *,int ,bool>& renderableObject=render_queue.front();
         const SpacialMaterial& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
-
+        int primitive=std::get<3>(renderableObject);
+        bool cull_faces=std::get<4>(renderableObject);
+        if(cull_faces)
+        {
+            glEnable(GL_CULL_FACE);
+            glCullFace(GL_BACK);
+        } else{
+            glDisable(GL_CULL_FACE);
+        }
         material.bind();
         material.projection(projection);
         material.view(view_mat);
         material.transform(transform.getMatrix());
         vao.bind();
-        glDrawElements(GL_TRIANGLES,vao.getVertexCount(),GL_UNSIGNED_INT,nullptr);
+        if (vao.hasIndices())
+            glDrawElements(primitive, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        else
+            glDrawArrays(primitive,0,vao.getVertexCount());
         vao.unbind();
         material.unbind();
 
@@ -44,14 +55,17 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     while(!render_queue.empty()) {
-        std::tuple<const SpacialMaterial*,const VAO*,const Transform *>& renderableObject=render_queue.front();
+        std::tuple<const SpacialMaterial*,const VAO*,const Transform *,int,bool>& renderableObject=render_queue.front();
         const SpacialMaterial& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
-
+        int primitive=std::get<3>(renderableObject);
         DEPTH_SHADER.loadUniform(depthShader_transform_mat_location, transform.getMatrix());
         vao.bind();
-        glDrawElements(GL_TRIANGLES,vao.getVertexCount(),GL_UNSIGNED_INT,nullptr);
+        if (vao.hasIndices())
+            glDrawElements(primitive, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        else
+            glDrawArrays(primitive,0,vao.getVertexCount());
         vao.unbind();
         render_queue.pop();
     }

@@ -5,11 +5,11 @@
 #include <Shaders/Shader.h>
 
 class SimpleRenderer:public Renderer {
-    mutable std::queue<std::tuple<const SpacialMaterial*,const VAO*,const Transform*>> render_queue;
+    mutable std::queue<std::tuple<const SpacialMaterial*,const VAO*,const Transform*,int,bool>> render_queue;
 
 public:
 
-    void draw(const VAO &vao, const SpacialMaterial &material , const Transform& transform)const  override;
+    void draw(const VAO &vao, const SpacialMaterial &material , const Transform& transform,int primitive,bool cull_faces)const  override;
 
     void renderSpace(const FBO &buffer, const glm::mat4 &projection=mat4(1.0f), const glm::mat4& view_mat=mat4(1.0f))const  override;
 

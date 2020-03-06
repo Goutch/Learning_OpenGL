@@ -19,6 +19,7 @@ private:
     Canvas* canvas=nullptr;
     Renderer* renderer=nullptr;
     std::time_t last_fps_print=std::time(0);
+    bool imGuiEnabled=true;
     unsigned int fps=0;
 public:
     Engine();

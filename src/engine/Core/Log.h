@@ -1,7 +1,7 @@
 #pragma once
 
 #include "string"
-
+#define error(s,...) _error(s, __LINE__,__FILE__,__func__)
 class Log {
 public:
     enum LogLevel{
@@ -25,5 +25,7 @@ public:
 
     static void warning(const std::string &s);
 
-    static void error(const std::string &s);
+    static void _error(const std::string &s,unsigned int line,std::string file,std::string function);
+
+
 };
