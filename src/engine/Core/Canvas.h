@@ -32,7 +32,7 @@ public:
 
     Canvas(const Canvas &parent_canvas, const Shader& shader,int pixel_width,int pixel_height, float offsetX = 0,
            float offsetY = 0);
-
+    Canvas();
     ~Canvas();
 
     unsigned int getPixelWidth() const;
