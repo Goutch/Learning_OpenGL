@@ -53,7 +53,7 @@ void Transform::rotation(const quat &rotation) {
     rot=quat();
     vec3 p=position();
     vec3 s=scale();
-    transform_matrix=mat4(1);
+    transform_matrix=mat4(1.0f);
     this->translate(p);
     this->rotate(rotation);
     this->scale(s);

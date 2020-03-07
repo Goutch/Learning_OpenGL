@@ -9,6 +9,7 @@
 #include <Entities/Canvas/Line.h>
 #include <imgui.h>
 #include <imgui_demo.cpp>
+#include <Core/Log.h>
 #include "Core/Input.h"
 
 Editor::Editor(SpacialScene *scene) {
@@ -20,25 +21,24 @@ Editor::Editor() {
 }
 
 Editor::~Editor() {
-    delete current_scene_canvas;
+    for (int i = 0; i < cameras_canvas.size(); ++i) {
+        delete cameras_canvas[i];
+    }
+    cameras_canvas.clear();
     delete current_scene;
 }
 
 void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+
     Scene::init(canvas, renderer, input);
-    current_scene_canvas = new Canvas(canvas, renderer.DEFAULT_CANVAS_SHADER, canvas.getPixelWidth() / 2,
-                                      canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
-                                      canvas.getPixelHeight() / 4);
-    current_scene->init(*current_scene_canvas, renderer, input);;
+    cameras_canvas.push_back(new Canvas(canvas, renderer.DEFAULT_CANVAS_SHADER, canvas.getPixelWidth() / 2,
+                                        canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
+                                        canvas.getPixelHeight() / 4));
+    current_scene->init(*cameras_canvas[0], renderer, input);;
 
     current_scene->getCamera().transform.position(vec3(0, 0, 3));
     current_scene->getCamera().setName("Camera 1");
     cameras.push_back(&current_scene->getCamera());
-}
-
-void Editor::setScene(SpacialScene *scene) {
-    this->current_scene = scene;
-    current_scene->init(*current_scene_canvas, *renderer, *input);
 }
 
 void Editor::update(float delta) {
@@ -94,17 +94,16 @@ void Editor::draw() const {
     ImGui::End();
 
 
-
     for (int i = 0; i < cameras.size(); ++i) {
         ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-        ImGui::Begin(std::string("Camera " + std::to_string(i+1)).c_str());
+        ImGui::Begin(std::string("Camera " + std::to_string(i + 1)).c_str());
         {
             current_scene->draw();
-            current_scene->getCanvas().getFrameBuffer().bind();
+            cameras_canvas[i]->getFrameBuffer().bind();
             renderer->clear();
-            current_scene->getCanvas().getFrameBuffer().unbind();
+            cameras_canvas[i]->getFrameBuffer().unbind();
             current_scene->setCamera(*cameras[i]);
-            current_scene->render();
+            renderer->renderSpace(cameras_canvas[i]->getFrameBuffer(),cameras[i]->getProjectionMatrix(),cameras[i]->getViewMatrix());
 
             Camera::ProjectionMode mode = current_scene->getCamera().getProjectionMode();
             ImGui::BeginChild("Projection");
@@ -117,15 +116,15 @@ void Editor::draw() const {
             ImGui::EndChild();
             ImVec2 vMin = ImGui::GetWindowContentRegionMin();
             ImVec2 vMax = ImGui::GetWindowContentRegionMax();
-            if (vMax.x != current_scene_canvas->getPixelWidth() ||
-                vMax.y != current_scene_canvas->getPixelHeight())
-                current_scene_canvas->setSize(vMax.x, vMax.y);
+            if (vMax.x != cameras_canvas[i]->getPixelWidth() ||
+                vMax.y != cameras_canvas[i]->getPixelHeight())
+                cameras_canvas[i]->setSize(vMax.x, vMax.y);
             vMin.x += ImGui::GetWindowPos().x;
             vMin.y += ImGui::GetWindowPos().y;
             vMax.x += ImGui::GetWindowPos().x;
             vMax.y += ImGui::GetWindowPos().y;
             ImGui::GetWindowDrawList()->AddImage(
-                    (void *) current_scene_canvas->getFrameBuffer().getTexture().getID(),
+                    (void *) cameras_canvas[i]->getFrameBuffer().getTexture().getID(),
                     vMin,
                     vMax,
                     ImVec2(0, 1),
@@ -190,7 +189,7 @@ void Editor::draw() const {
                                               vec3(0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
             if (selectedEntities.size() == 1) {
-                entity->transform.parent =&(*selectedEntities.begin())->transform;
+                entity->transform.parent = &(*selectedEntities.begin())->transform;
             }
         }
 
@@ -201,7 +200,7 @@ void Editor::draw() const {
                                               vec3(0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
             if (selectedEntities.size() == 1) {
-                entity->transform.parent =&(*selectedEntities.begin())->transform;
+                entity->transform.parent = &(*selectedEntities.begin())->transform;
             }
 
         }
@@ -209,10 +208,11 @@ void Editor::draw() const {
             Camera *entity;
             current_scene->addEntity(
                     entity = new Camera());
-            entity->setName("Camera: " + std::to_string(cameras.size()+1));
+            entity->setName("Camera: " + std::to_string(cameras.size() + 1));
             if (selectedEntities.size() == 1) {
-                entity->transform.parent =&(*selectedEntities.begin())->transform;
+                entity->transform.parent = &(*selectedEntities.begin())->transform;
             }
+            cameras_canvas.push_back(new Canvas(*canvas, renderer->DEFAULT_CANVAS_SHADER, 1, 1));
             cameras.push_back(entity);
         }
         std::string text;
