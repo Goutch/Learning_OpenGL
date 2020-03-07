@@ -29,6 +29,6 @@ public:
     const std::vector<PointLight*>& getPointLights() const;
     const std::vector<DirectionalLight*>& getDirectionalLights() const;
     const Color& getAmbientLight() const;
-    const Camera& getCamera() const;
+     Camera& getCamera();
 
 };

@@ -5,7 +5,7 @@
 
 class LightMaterial : public SpacialMaterial {
 private:
-    const SpacialScene *scene;
+    SpacialScene *scene;
     mutable std::vector<const Texture *> boundShadowMaps;
     float shineFactor = 0;
     float dampFactor = 16;
@@ -32,13 +32,13 @@ private:
             view_pos_location;
 
 public:
-    LightMaterial(const Shader &shader, const SpacialScene &scene);
+    LightMaterial(const Shader &shader, SpacialScene &scene);
 
-    LightMaterial(const Shader &shader, const Color &color, const SpacialScene &scene);
+    LightMaterial(const Shader &shader, const Color &color,SpacialScene &scene);
 
-    LightMaterial(const Shader &shader, const Texture &texture, const SpacialScene &scene);
+    LightMaterial(const Shader &shader, const Texture &texture, SpacialScene &scene);
 
-    LightMaterial(const Shader &shader, const Texture &texture, const Color &color, const SpacialScene &scene);
+    LightMaterial(const Shader &shader, const Texture &texture, const Color &color,SpacialScene &scene);
 
     void unbind() const override;
 

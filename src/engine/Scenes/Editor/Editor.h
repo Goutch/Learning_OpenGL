@@ -6,6 +6,7 @@
 #include "set"
 
 class Editor: public Scene{
+
     SpacialScene* current_scene;
     Canvas* current_scene_canvas;
     mutable Color color;

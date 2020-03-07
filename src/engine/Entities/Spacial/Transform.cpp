@@ -76,7 +76,9 @@ vec3 Transform::scale() {
 }
 
 void Transform::position(const vec3 &position) {
-    transform_matrix[3] = vec4(position, transform_matrix[3].w);
+    transform_matrix[3].x= position.x;
+    transform_matrix[3].y=position.y;
+    transform_matrix[3].z=position.z;
 }
 
 void Transform::scale(vec3 scale) {

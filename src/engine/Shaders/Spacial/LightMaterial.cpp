@@ -84,19 +84,19 @@ void LightMaterial::getUniformsLocations()  const{
 
 
 
-LightMaterial::LightMaterial(const Shader &shader, const SpacialScene &scene) : SpacialMaterial(shader) {
+LightMaterial::LightMaterial(const Shader &shader, SpacialScene &scene) : SpacialMaterial(shader) {
     this->scene = &scene;
 }
 
-LightMaterial::LightMaterial(const Shader &shader, const Color &color, const SpacialScene &scene) : SpacialMaterial(shader, color) {
+LightMaterial::LightMaterial(const Shader &shader, const Color &color,SpacialScene &scene) : SpacialMaterial(shader, color) {
     this->scene = &scene;
 }
 
-LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const SpacialScene &scene) : SpacialMaterial(shader, texture) {
+LightMaterial::LightMaterial(const Shader &shader, const Texture &texture,SpacialScene &scene) : SpacialMaterial(shader, texture) {
     this->scene = &scene;
 }
 
-LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const Color &color, const SpacialScene &scene) : SpacialMaterial(shader,
+LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const Color &color,SpacialScene &scene) : SpacialMaterial(shader,
                                                                                                                                      texture,
                                                                                                                                      color) {
     this->scene = &scene;

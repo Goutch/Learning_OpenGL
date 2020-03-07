@@ -2,7 +2,7 @@
 
 #include "Texture.h"
 
-class vec2;
+
 
 class AtlasTexture : public Texture {
 private:

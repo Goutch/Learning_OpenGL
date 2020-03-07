@@ -49,7 +49,7 @@ const std::vector<PointLight *> &SpacialScene::getPointLights() const {
 const Color &SpacialScene::getAmbientLight() const {
     return ambient_light;
 }
-const Camera &SpacialScene::getCamera() const {
+ Camera &SpacialScene::getCamera(){
     return camera;
 }
 
