@@ -10,7 +10,8 @@
 #include <Core/Canvas.h>
 void SpacialScene::init(const Canvas &canvas, Renderer &renderer, Input &input) {
     Scene::init(canvas, renderer, input);
-    camera.init(*this);
+    camera=new Camera();
+    addEntity(camera);
 }
 void SpacialScene::update(float delta) {
     Scene::update(delta);
@@ -33,7 +34,7 @@ void SpacialScene::addEntity(SpacialEntity *entity) {
     entity->init(*this);
 }
 void SpacialScene::render() const {
-    renderer->renderSpace(canvas->getFrameBuffer(), camera.getProjectionMatrix(), camera.getViewMatrix());
+    renderer->renderSpace(canvas->getFrameBuffer(), camera->getProjectionMatrix(), camera->getViewMatrix());
     Scene::render();
 }
 
@@ -50,7 +51,7 @@ const Color &SpacialScene::getAmbientLight() const {
     return ambient_light;
 }
  Camera &SpacialScene::getCamera(){
-    return camera;
+    return *camera;
 }
 
 void SpacialScene::addLight(DirectionalLight *light) {
@@ -74,6 +75,10 @@ SpacialScene::~SpacialScene() {
 
 const std::vector<SpacialEntity *> &SpacialScene::getSpacialEntities() const {
     return spacialEntities;
+}
+
+void SpacialScene::setCamera(Camera& camera) {
+    this->camera=&camera;
 }
 
 

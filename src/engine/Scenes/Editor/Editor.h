@@ -4,9 +4,11 @@
 #include <Core/Canvas.h>
 #include "Scenes/Demo3D/SpacialSceneDemo.h"
 #include "set"
+#include "vector"
 
 class Editor: public Scene{
 
+    mutable std::vector<Camera*> cameras;
     SpacialScene* current_scene;
     Canvas* current_scene_canvas;
     mutable Color color;

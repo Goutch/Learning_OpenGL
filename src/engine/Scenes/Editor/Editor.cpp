@@ -32,7 +32,8 @@ void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
     current_scene->init(*current_scene_canvas, renderer, input);;
 
     current_scene->getCamera().transform.position(vec3(0, 0, 3));
-
+    current_scene->getCamera().setName("Camera 1");
+    cameras.push_back(&current_scene->getCamera());
 }
 
 void Editor::setScene(SpacialScene *scene) {
@@ -76,11 +77,6 @@ void createTree(const std::vector<SpacialEntity *> &vector, Transform *parent, i
 }
 
 void Editor::draw() const {
-    current_scene->draw();
-    current_scene->getCanvas().getFrameBuffer().bind();
-    renderer->clear();
-    current_scene->getCanvas().getFrameBuffer().unbind();
-    current_scene->render();
 
     ImGuiID dockspaceID = 0;
     float h, w;
@@ -97,35 +93,47 @@ void Editor::draw() const {
     }
     ImGui::End();
 
-    ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-    ImGui::Begin("Scene rendering");
-    {
-        Camera::ProjectionMode mode = current_scene->getCamera().getProjectionMode();
-        ImGui::BeginChild("Projection");
-        if (ImGui::Button(mode == Camera::ProjectionMode::PERSPECTIVE ? "Perspective" : "Orthographic")) {
-            if (mode == Camera::ORTHOGRAPHIC)
-                current_scene->getCamera().setProjectionPerspective();
-            else
-                current_scene->getCamera().setProjectionOrtho(10,10);
+
+
+    for (int i = 0; i < cameras.size(); ++i) {
+        ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
+        ImGui::Begin(std::string("Camera " + std::to_string(i+1)).c_str());
+        {
+            current_scene->draw();
+            current_scene->getCanvas().getFrameBuffer().bind();
+            renderer->clear();
+            current_scene->getCanvas().getFrameBuffer().unbind();
+            current_scene->setCamera(*cameras[i]);
+            current_scene->render();
+
+            Camera::ProjectionMode mode = current_scene->getCamera().getProjectionMode();
+            ImGui::BeginChild("Projection");
+            if (ImGui::Button(mode == Camera::ProjectionMode::PERSPECTIVE ? "Perspective" : "Orthographic")) {
+                if (mode == Camera::ORTHOGRAPHIC)
+                    current_scene->getCamera().setProjectionPerspective();
+                else
+                    current_scene->getCamera().setProjectionOrtho(10, 10);
+            }
+            ImGui::EndChild();
+            ImVec2 vMin = ImGui::GetWindowContentRegionMin();
+            ImVec2 vMax = ImGui::GetWindowContentRegionMax();
+            if (vMax.x != current_scene_canvas->getPixelWidth() ||
+                vMax.y != current_scene_canvas->getPixelHeight())
+                current_scene_canvas->setSize(vMax.x, vMax.y);
+            vMin.x += ImGui::GetWindowPos().x;
+            vMin.y += ImGui::GetWindowPos().y;
+            vMax.x += ImGui::GetWindowPos().x;
+            vMax.y += ImGui::GetWindowPos().y;
+            ImGui::GetWindowDrawList()->AddImage(
+                    (void *) current_scene_canvas->getFrameBuffer().getTexture().getID(),
+                    vMin,
+                    vMax,
+                    ImVec2(0, 1),
+                    ImVec2(1, 0));
         }
-        ImGui::EndChild();
-        ImVec2 vMin = ImGui::GetWindowContentRegionMin();
-        ImVec2 vMax = ImGui::GetWindowContentRegionMax();
-        if (vMax.x != current_scene_canvas->getPixelWidth() ||
-            vMax.y != current_scene_canvas->getPixelHeight())
-            current_scene_canvas->setSize(vMax.x, vMax.y);
-        vMin.x += ImGui::GetWindowPos().x;
-        vMin.y += ImGui::GetWindowPos().y;
-        vMax.x += ImGui::GetWindowPos().x;
-        vMax.y += ImGui::GetWindowPos().y;
-        ImGui::GetWindowDrawList()->AddImage(
-                (void *) current_scene_canvas->getFrameBuffer().getTexture().getID(),
-                vMin,
-                vMax,
-                ImVec2(0, 1),
-                ImVec2(1, 0));
+        ImGui::End();
     }
-    ImGui::End();
+
 
     ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
     ImGui::Begin("Transform");
@@ -181,8 +189,9 @@ void Editor::draw() const {
                     entity = new MeshRenderer(renderer->CUBE, renderer->DEFAULT_SPACIAL_MATERIAL, vec3(0, 0, 0),
                                               vec3(0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
-            if (current_scene->getSpacialEntities().size() > 1)
-                entity->transform.parent = &current_scene->getSpacialEntities()[0]->transform;
+            if (selectedEntities.size() == 1) {
+                entity->transform.parent =&(*selectedEntities.begin())->transform;
+            }
         }
 
         if (ImGui::Button("Sphere")) {
@@ -191,8 +200,20 @@ void Editor::draw() const {
                     entity = new MeshRenderer(renderer->SPHERE, renderer->DEFAULT_SPACIAL_MATERIAL, vec3(0, 0, 0),
                                               vec3(0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
-            if (current_scene->getSpacialEntities().size() > 1)
-                entity->transform.parent = &current_scene->getSpacialEntities()[0]->transform;
+            if (selectedEntities.size() == 1) {
+                entity->transform.parent =&(*selectedEntities.begin())->transform;
+            }
+
+        }
+        if (ImGui::Button("Camera")) {
+            Camera *entity;
+            current_scene->addEntity(
+                    entity = new Camera());
+            entity->setName("Camera: " + std::to_string(cameras.size()+1));
+            if (selectedEntities.size() == 1) {
+                entity->transform.parent =&(*selectedEntities.begin())->transform;
+            }
+            cameras.push_back(entity);
         }
         std::string text;
         for (auto iter : selectedEntities)

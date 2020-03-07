@@ -12,9 +12,8 @@ protected:
     std::vector<SpacialEntity*> spacialEntities;
 public:
     const std::vector<SpacialEntity *> &getSpacialEntities() const;
-
 protected:
-    Camera camera;
+    Camera* camera;
 public:
 
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
@@ -23,7 +22,7 @@ public:
     void draw() const override;
     ~SpacialScene();
     void addEntity(SpacialEntity *entity);
-
+    void setCamera(Camera& camera);
     void addLight(PointLight* light);
     void addLight(DirectionalLight* light);
     const std::vector<PointLight*>& getPointLights() const;
