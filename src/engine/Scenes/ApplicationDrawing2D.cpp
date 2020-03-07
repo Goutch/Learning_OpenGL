@@ -16,7 +16,6 @@ void ApplicationDrawing2D::draw() const {
         if(ImGui::ColorPicker4("Fill Color", &fill_color.r, isHSV ? ImGuiColorEditFlags_DisplayHSV | ImGuiColorEditFlags_PickerHueWheel : ImGuiColorEditFlags_DisplayRGB)) {
             const_cast<FontMaterial*>(font)->setColor(fill_color);
         }
-        ImGui::InputText("Line Width", line_width, 4);
         ImGui::RadioButton("point", &tool, 0);
         ImGui::RadioButton("rectangle", &tool, 1);
         ImGui::RadioButton("ellipse", &tool, 2);

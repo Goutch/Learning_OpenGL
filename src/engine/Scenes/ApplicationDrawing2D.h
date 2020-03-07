@@ -207,7 +207,6 @@ private:
     unsigned int windowHeight;
     mutable Color background_color;
     mutable Color fill_color;
-    mutable char line_width[4];
     mutable int tool = 0;
     mutable char font_path[32] = "../res/consolas.bmp";
     mutable char font_width[32] = "128";
