@@ -62,6 +62,7 @@ void FPSController::update(float delta, SpacialScene &scene) {
     input.getMousePosition(x,y);
     change.x=(((width/2)-x)/width)*fov;
     change.y=(((height/2)-y)/height)*(fov*aspect_ratio);
+
     transform.rotate(quat(vec3(0,radians(change.x),0)));
     camera->rotate(quat(vec3(radians(change.y),0,0)));
 

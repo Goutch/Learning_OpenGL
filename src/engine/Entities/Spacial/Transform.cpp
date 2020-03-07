@@ -49,6 +49,15 @@ vec3 Transform::up() {
 quat Transform::rotation() const {
     return parent == nullptr ?rot: rot + parent->rotation();
 }
+void Transform::rotation(const quat &rotation) {
+    quat r=rot;
+    vec3 p=position();
+    vec3 s=scale();
+    transform_matrix=mat4(1);
+    this->translate(p);
+    this->rotate(r);
+    this->scale(s);
+}
 
 vec3 Transform::position() const {
     return parent == nullptr ?transform_matrix[3]: (vec3)(parent->getMatrix()*transform_matrix)[3];
@@ -79,6 +88,7 @@ void Transform::scale(vec3 scale) {
 vec3 Transform::eulerRotation() const {
     return glm::eulerAngles(rot);
 }
+
 
 
 

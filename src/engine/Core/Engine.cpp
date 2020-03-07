@@ -44,7 +44,6 @@ void Engine::start() {
             ImGui::NewFrame();
         }
 
-
         if (scene) {
 
             scene->update((float) delta_time);

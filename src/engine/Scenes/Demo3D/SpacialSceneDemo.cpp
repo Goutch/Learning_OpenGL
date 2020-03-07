@@ -4,13 +4,17 @@
 #include "SpacialSceneDemo.h"
 #include "API_ALL.h"
 #include "Grass.h"
-void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &input){
-    SpacialScene::init(viewport, renderer, input);
+void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &input){
+    SpacialScene::init(canvas, renderer, input);
+    //portal_canvas=new Canvas();
+    //portal_scene.init(canvas, renderer, input);
     input.showCursor(false);
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);
     Geometry::make_sphere(sphere_mesh,1,100,50);
 
+    portal_material.setShader(renderer.DEFAULT_SPACIAL_SHADER);
+    portal_material.setTexture(portal_canvas->getFrameBuffer().getTexture());
     //ground
     addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
     addEntity(new Grass());
@@ -36,8 +40,24 @@ void SpacialSceneDemo::init(const Canvas &viewport, Renderer &renderer, Input &i
     sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
 
     addLight(sun);
+
+
 }
 
 void SpacialSceneDemo::update(float delta) {
     SpacialScene::update(delta);
+   // portal_scene.update(delta);
+}
+
+void SpacialSceneDemo::render() const {
+    SpacialScene::render();
+}
+
+void SpacialSceneDemo::draw() const {
+    SpacialScene::draw();
+    //portal_scene.render();
+}
+
+SpacialSceneDemo::~SpacialSceneDemo() {
+    delete portal_canvas;
 }
