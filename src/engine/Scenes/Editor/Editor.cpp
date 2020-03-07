@@ -39,7 +39,7 @@ void Editor::update(float delta) {
     for(auto iter : selectedEntities) {
         (*iter).transform.position(vec3(posX, posY, posZ));
         quat quaternion = quat(vec3(rotX, rotY, rotZ));
-        //(*iter).transform.rotate(quaternion);
+        (*iter).transform.rotation(quaternion);
         if(sizeX != 0 && sizeY != 0 && sizeZ != 0)
             (*iter).transform.scale(vec3(sizeX, sizeY, sizeZ));
     }
