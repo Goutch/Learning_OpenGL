@@ -38,6 +38,10 @@ void Editor::update(float delta) {
     current_scene->update(delta);
     for(auto iter : selectedEntities) {
         (*iter).transform.position(vec3(posX, posY, posZ));
+        quat quaternion = quat(vec3(rotX, rotY, rotZ));
+        //(*iter).transform.rotate(quaternion);
+        if(sizeX != 0 && sizeY != 0 && sizeZ != 0)
+            (*iter).transform.scale(vec3(sizeX, sizeY, sizeZ));
     }
 }
 
@@ -114,11 +118,21 @@ void Editor::draw() const {
             posX = pos[0];
             posY = pos[1];
             posZ = pos[2];
+            vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
+            rotX = rot[0];
+            rotY = rot[1];
+            rotZ = rot[2];
         }
 
         ImGui::SliderFloat("x", &posX, -10, 10); ImGui::SameLine();
         ImGui::SliderFloat("y", &posY, -10, 10); ImGui::SameLine();
         ImGui::SliderFloat("z", &posZ, -10, 10);
+        ImGui::SliderFloat("rot x", &rotX, -10, 10);ImGui::SameLine();
+        ImGui::SliderFloat("rot y", &rotY, -10, 10);ImGui::SameLine();
+        ImGui::SliderFloat("rot z", &rotZ, -10, 10);
+        ImGui::SliderFloat("size x", &sizeX, -10, 10);ImGui::SameLine();
+        ImGui::SliderFloat("size y", &sizeY, -10, 10);ImGui::SameLine();
+        ImGui::SliderFloat("size z", &sizeZ, -10, 10);
     }
     ImGui::End();
 
@@ -130,7 +144,7 @@ void Editor::draw() const {
             if(iter->transform.parent == nullptr)
                 parents.push_back(iter);
         }
-        if (ImGui::TreeNode("Basic trees")) {
+        if (ImGui::TreeNode("Elements")) {
             int index = 0;
             createTree(current_scene->getSpacialEntities(), nullptr, index, selectedEntities, current_scene, posX, posY, posZ);
             ImGui::TreePop();
