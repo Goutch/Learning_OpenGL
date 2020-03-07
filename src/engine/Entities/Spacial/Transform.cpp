@@ -50,12 +50,12 @@ quat Transform::rotation() const {
     return parent == nullptr ?rot: rot + parent->rotation();
 }
 void Transform::rotation(const quat &rotation) {
-    quat r=rot;
+    rot=quat();
     vec3 p=position();
     vec3 s=scale();
     transform_matrix=mat4(1);
     this->translate(p);
-    this->rotate(r);
+    this->rotate(rotation);
     this->scale(s);
 }
 
