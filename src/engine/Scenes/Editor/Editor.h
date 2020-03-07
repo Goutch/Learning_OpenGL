@@ -22,6 +22,7 @@ class Editor: public Scene{
     mutable float posZ = 0;
     mutable float rotZ = 0;
     mutable float sizeZ = 1;
+    mutable bool activeRotation = false;
 public:
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
     Editor(SpacialScene* scene);
