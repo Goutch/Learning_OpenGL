@@ -11,7 +11,7 @@ using namespace glm;
 class Transform {
 
     mat4 transform_matrix=glm::mat4(1.0f);
-    quat rot;
+    quat rot=glm::identity<quat>();
 
 public:
     Transform* parent= nullptr;

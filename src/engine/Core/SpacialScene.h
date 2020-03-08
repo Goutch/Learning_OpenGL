@@ -23,6 +23,7 @@ public:
     ~SpacialScene();
     void addEntity(SpacialEntity *entity);
     void removeEntity(SpacialEntity *entity);
+    void removeLight(SpacialEntity *entity);
     void setCamera(Camera& camera);
     void addLight(PointLight* light);
     void addLight(DirectionalLight* light);
