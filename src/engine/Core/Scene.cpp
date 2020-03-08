@@ -17,23 +17,19 @@ Scene::Scene() {
 }
 
 void Scene::update(float delta) {
-
     if (input->isKeyDown(GLFW_KEY_F11)) {
         canvas->getFrameBuffer().save("../screenshot/" + TimeUtils::getTimeString() + ".png");
     }
 }
 
 void Scene::draw() const {
-
     for (auto e:canvasEntities) {
         e->draw(*this);
     }
     renderer->clear();
-
 }
 
 void Scene::render() const{
-
     renderer->renderCanvas(canvas->getFrameBuffer(), canvas->getPixelProjection());
 }
 
@@ -46,6 +42,7 @@ void Scene::init(const Canvas &canvas, Renderer &renderer, Input &input) {
 const Canvas &Scene::getCanvas() const {
     return *canvas;
 }
+
 void Scene::addEntity(CanvasEntity *entity) {
     canvasEntities.push_back(entity);
     entity->init(*this);
@@ -53,7 +50,6 @@ void Scene::addEntity(CanvasEntity *entity) {
 Renderer &Scene::getRenderer() const {
     return *renderer;
 }
-
 
 Input &Scene::getInput() const {
     return *input;

@@ -16,7 +16,7 @@ Input::Input(GLFWwindow& window) {
     v_resize_cursor = glfwCreateStandardCursor(HRESIZE);
     h_resize_cursor = glfwCreateStandardCursor(VRESIZE);
     crosshair_cursor = glfwCreateStandardCursor(CROSSHAIR);
-    glfwSetCursor(&window, hand_cursor);
+
     glfwSetKeyCallback(&window, Input::keyCallback);
 }
 
