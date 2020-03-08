@@ -6,7 +6,7 @@
 
 void Grass::init(SpacialScene &scene) {
     material = new LightMaterial(shader, scene);
-    material->setColor(Color(0.6,0.85,0.1));
+    material->setColor(Color(.5,.7,.4,1));
     SpacialEntity::init(scene);
     int ammount = 500000;
     int range = 50;
@@ -35,18 +35,17 @@ void Grass::draw(const SpacialScene &scene) const {
 
 void Grass::update(float delta, SpacialScene &scene) {
     SpacialEntity::update(delta, scene);
-    material->getShader().bind();
-    material->getShader().loadUniform("time", (float) timer.ms());
-    material->getShader().loadUniform("mvp",
-                                      scene.getCamera().getProjectionMatrix() * scene.getCamera().getViewMatrix() *
-                                      transform.getMatrix());
-    material->getShader().unbind();
-    //transform.position(vec3(scene.getCamera().transform.position().x,0,scene.getCamera().transform.position().z));
+
+
 }
 
 void Grass::onDestroy(SpacialScene &scene) {
     SpacialEntity::onDestroy(scene);
     delete material;
+}
+
+SpacialMaterial &Grass::getMaterial() {
+    return *material;
 }
 
 
