@@ -22,6 +22,7 @@ public:
     void draw() const override;
     ~SpacialScene();
     void addEntity(SpacialEntity *entity);
+    void removeEntity(SpacialEntity *entity);
     void setCamera(Camera& camera);
     void addLight(PointLight* light);
     void addLight(DirectionalLight* light);

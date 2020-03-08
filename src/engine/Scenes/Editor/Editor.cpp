@@ -237,6 +237,16 @@ void Editor::draw() const {
             cameras_canvas.push_back(new Canvas(*canvas, renderer->DEFAULT_CANVAS_SHADER, 1, 1));
             cameras.push_back(entity);
         }
+        if(ImGui::Button("Delete")) {
+            for (auto entity : selectedEntities) {
+                if(entity->getName()[0] != 'C')
+                    current_scene->removeEntity(entity);
+            }
+
+
+            selectedEntities.clear();
+        }
+
         std::string text;
         for (auto iter : selectedEntities)
             text += iter->getName();

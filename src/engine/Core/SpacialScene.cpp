@@ -81,6 +81,39 @@ void SpacialScene::setCamera(Camera& camera) {
     this->camera=&camera;
 }
 
+void SpacialScene::removeEntity(SpacialEntity *entity) {
+    for(auto entityInVec : spacialEntities) {
+        if(entityInVec == entity) {
+            Transform* parent = entityInVec->transform.parent;
+
+            std::list<SpacialEntity*> children;
+            for(auto entityInVec2 : spacialEntities) {
+                if(entityInVec2->transform.parent == &entity->transform) {
+                    children.push_back(entityInVec2);
+                }
+            }
+
+            for(auto child: children) {
+                removeEntity(child);
+            }
+
+            bool found = false;
+            for(int i = 0; i < spacialEntities.size() - 1; ++i) {
+                if(spacialEntities[i] == entity) {
+                    found = true;
+                }
+
+                if(found) {
+                    spacialEntities[i] = spacialEntities[i+1];
+                }
+            }
+
+            delete spacialEntities[spacialEntities.size() - 1];
+            spacialEntities.pop_back();
+        }
+    }
+}
+
 
 
 
