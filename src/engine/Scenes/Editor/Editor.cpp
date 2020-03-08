@@ -140,14 +140,74 @@ void Editor::draw() const {
     ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
     ImGui::Begin("Transform");
     {
+        bool sameposX = true;
+        bool samerotX = true;
+        bool samesizeX = true;
+        bool sameposY = true;
+        bool samerotY = true;
+        bool samesizeY = true;
+        bool sameposZ = true;
+        bool samerotZ = true;
+        bool samesizeZ = true;
 
         for (auto iter : selectedEntities) {
-            (*iter).transform.position(vec3(posX, posY, posZ));
-            quat quaternion = quat(vec3(rotX, rotY, rotZ));
+            vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
+            if(iter->transform.position()[0] != pos[0])
+                sameposX = false;
+            if(iter->transform.position()[1] != pos[1])
+                sameposY = false;
+            if(iter->transform.position()[2] != pos[2])
+                sameposZ = false;
+
+            vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
+            if(iter->transform.rotation()[0] != rot[0])
+                samerotX = false;
+            if(iter->transform.rotation()[1] != rot[1])
+                samerotY = false;
+            if(iter->transform.rotation()[2] != rot[2])
+                samerotZ = false;
+
+            vec3 size = (*(selectedEntities.begin()++))->transform.scale();
+            if(iter->transform.scale()[0] != size[0])
+                samesizeX = false;
+            if(iter->transform.scale()[1] != size[1])
+                samesizeY = false;
+            if(iter->transform.scale()[2] != size[2])
+                samesizeZ = false;
+        }
+
+        for (auto iter : selectedEntities) {
+            vec3 pos = iter->transform.localPosition();
+            if(sameposX)
+                pos[0] = posX;
+            if(sameposY)
+                pos[1] = posY;
+            if(sameposZ)
+                pos[2] = posZ;
+
+            (*iter).transform.position(pos);
+            vec3 rot = iter->transform.eulerRotation();
+            if(samerotX)
+                rot[0] = rotX;
+            if(samerotY)
+                rot[1] = rotY;
+            if(samerotZ)
+                rot[2] = rotZ;
+
+            quat quaternion = quat(rot);
             if(activeRotation)
                 (*iter).transform.rotation(quaternion);
+
+            vec3 size = iter->transform.scale();
+            if(samesizeX)
+                size[0] = sizeX;
+            if(samesizeY)
+                size[1] = sizeY;
+            if(samesizeZ)
+                size[2] = sizeZ;
+
             if (sizeX != 0 && sizeY != 0 && sizeZ != 0)
-                (*iter).transform.scale(vec3(sizeX, sizeY, sizeZ));
+                (*iter).transform.scale(size);
         }
 
         ImGui::PushItemWidth(100);
