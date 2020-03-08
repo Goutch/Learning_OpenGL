@@ -6,15 +6,19 @@
 #include "Grass.h"
 void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &input){
     SpacialScene::init(canvas, renderer, input);
-
+    ambient_light=Color(0.2,0.2,0.2,2);
     input.showCursor(false);
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);
     Geometry::make_sphere(sphere_mesh,1,100,50);
 
+    dragon_material.shine(30);
+    dragon_material.damp(16);
+    dragon_material.setColor(Color(0.7,0.4,0.4));
     //ground
     addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
     grass=new Grass();
+
     addEntity(grass);
     //sphere
     addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));

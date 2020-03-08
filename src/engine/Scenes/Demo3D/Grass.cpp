@@ -6,7 +6,7 @@
 
 void Grass::init(SpacialScene &scene) {
     material = new LightMaterial(shader, scene);
-    material->setColor(Color(0.6,0.85,0.1));
+    material->setColor(Color(.5,.7,.4,1));
     SpacialEntity::init(scene);
     int ammount = 500000;
     int range = 50;
