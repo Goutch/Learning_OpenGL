@@ -115,6 +115,7 @@ void SpacialScene::removeEntity(SpacialEntity *entity) {
             }
 
             delete spacialEntities[spacialEntities.size() - 1];
+            spacialEntities[spacialEntities.size() - 1]= nullptr;
             spacialEntities.pop_back();
         }
     }
@@ -123,8 +124,10 @@ void SpacialScene::removeEntity(SpacialEntity *entity) {
 void SpacialScene::removeLight(SpacialEntity *entity) {
     removeEntity(entity);
     for (int i = 0; i < point_lights.size(); ++i) {
-        if (!point_lights[i])
+        if (point_lights[i]!=nullptr) {
             point_lights.erase(point_lights.begin() + i);
+            break;
+        }
     }
 }
 

@@ -32,7 +32,7 @@ public:
 
     Canvas(const Canvas &parent_canvas, const Shader& shader,int pixel_width,int pixel_height, float offsetX = 0,
            float offsetY = 0);
-    Canvas();
+    Canvas(int sizeX=1,int sizeY=1);
     ~Canvas();
 
     unsigned int getPixelWidth() const;
@@ -42,7 +42,7 @@ public:
     const mat4 getPixelProjection() const;
 
     const CanvasMaterial& getMaterial() const;
-    void clear();
+
     const FBO &getFrameBuffer() const;
 
     const VAO& getVAO() const;

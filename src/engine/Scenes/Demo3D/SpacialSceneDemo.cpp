@@ -6,24 +6,24 @@
 #include "Grass.h"
 void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &input){
     SpacialScene::init(canvas, renderer, input);
-    //portal_canvas=new Canvas();
-    //portal_scene.init(canvas, renderer, input);
+
     input.showCursor(false);
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);
     Geometry::make_sphere(sphere_mesh,1,100,50);
 
-    portal_material.setShader(renderer.DEFAULT_SPACIAL_SHADER);
-    portal_material.setTexture(portal_canvas->getFrameBuffer().getTexture());
     //ground
     addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
-    addEntity(new Grass());
+    grass=new Grass();
+    addEntity(grass);
     //sphere
     addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
     //bunnies
     addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(10,0,0)));
     addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(-10,0,0)));
-
+    auto P=new MeshRenderer(cube_mesh,player_material);
+    P->transform.parent=&camera->transform;
+    addEntity(P);
     //dragons
     dragon_material.shine(20);
     dragon_material.damp(16);
@@ -40,13 +40,23 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
     sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
 
     addLight(sun);
-
+    mirror_material.setTexture(mirror_canvas.getFrameBuffer().getTexture());
+    MeshRenderer* mirror=new MeshRenderer(
+            mirror_quad,
+            mirror_material,vec3(-20,2,0),
+            vec3(0,3.1416/2,0),
+            vec3(4));
+    mirror_camera.parent=&mirror->transform;
+    addEntity(mirror);
+    mirror_camera.rotate(3.1416,vec3(0,1,0));
+    mirror_camera.position(vec3(0,0,-.5));
+    projection_mirror=glm::perspective<float>(glm::radians<float>(60),mirror_canvas.getPixelWidth()/mirror_canvas.getPixelHeight(),0.1,100);
 
 }
 
 void SpacialSceneDemo::update(float delta) {
     SpacialScene::update(delta);
-   // portal_scene.update(delta);
+    //mirror_camera.rotate(delta,vec3(0,1,0));
 }
 
 void SpacialSceneDemo::render() const {
@@ -54,10 +64,27 @@ void SpacialSceneDemo::render() const {
 }
 
 void SpacialSceneDemo::draw() const {
+
+    mat4 vm=glm::inverse(mirror_camera.getMatrix());
+    grass->getMaterial().getShader().bind();
+
+    grass->getMaterial().getShader().loadUniform("mvp",
+                                      projection_mirror *vm*
+                                      grass->transform.getMatrix());
+    grass->getMaterial().getShader().unbind();
     SpacialScene::draw();
-    //portal_scene.render();
+    mirror_canvas.getFrameBuffer().bind();
+    renderer->clear();
+    mirror_canvas.getFrameBuffer().unbind();
+    renderer->renderSpace(mirror_canvas.getFrameBuffer(),projection_mirror,glm::inverse(mirror_camera.getMatrix()));
+    grass->getMaterial().getShader().bind();
+
+    grass->getMaterial().getShader().loadUniform("mvp",
+                                                 camera->getProjectionMatrix() *camera->getViewMatrix()*
+                                                 grass->transform.getMatrix());
+    grass->getMaterial().getShader().unbind();
+    SpacialScene::draw();
 }
 
 SpacialSceneDemo::~SpacialSceneDemo() {
-    delete portal_canvas;
 }

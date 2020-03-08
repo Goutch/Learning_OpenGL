@@ -15,8 +15,8 @@ unsigned int Canvas::getPixelHeight() const {
 unsigned int Canvas::getPixelWidth() const {
     return pixel_width;
 }
-Canvas::Canvas() {
-    setSize(1,1);
+Canvas::Canvas(int sizeX,int sizeY) {
+    setSize(sizeX,sizeY);
 }
 Canvas::Canvas(const Window &window,const Shader& shader) {
     this->window = &window;
@@ -96,6 +96,8 @@ const VAO &Canvas::getVAO() const{
 const CanvasMaterial& Canvas::getMaterial() const {
     return material;
 }
+
+
 
 
 

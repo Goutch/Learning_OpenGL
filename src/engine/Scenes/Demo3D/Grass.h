@@ -7,7 +7,7 @@ class Grass :public SpacialEntity{
     VAO vao;
     Timer timer;
 public:
-
+    SpacialMaterial& getMaterial();
     void init(SpacialScene &scene) override;
 
     void draw(const SpacialScene &scene) const override;
