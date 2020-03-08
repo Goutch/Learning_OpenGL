@@ -8,11 +8,13 @@
 #include "Entities/Spacial/Camera.h"
 
 #include <Core/Canvas.h>
+
 void SpacialScene::init(const Canvas &canvas, Renderer &renderer, Input &input) {
     Scene::init(canvas, renderer, input);
-    camera=new Camera();
+    camera = new Camera();
     addEntity(camera);
 }
+
 void SpacialScene::update(float delta) {
     Scene::update(delta);
     for (auto e:spacialEntities) {
@@ -22,6 +24,7 @@ void SpacialScene::update(float delta) {
         directional_lights[i]->calculateShadowMap(*this);
     }
 }
+
 void SpacialScene::draw() const {
     for (auto e:spacialEntities) {
         e->draw(*this);
@@ -33,6 +36,7 @@ void SpacialScene::addEntity(SpacialEntity *entity) {
     spacialEntities.push_back(entity);
     entity->init(*this);
 }
+
 void SpacialScene::render() const {
     renderer->renderSpace(canvas->getFrameBuffer(), camera->getProjectionMatrix(), camera->getViewMatrix());
     Scene::render();
@@ -50,7 +54,8 @@ const std::vector<PointLight *> &SpacialScene::getPointLights() const {
 const Color &SpacialScene::getAmbientLight() const {
     return ambient_light;
 }
- Camera &SpacialScene::getCamera(){
+
+Camera &SpacialScene::getCamera() {
     return *camera;
 }
 
@@ -77,25 +82,49 @@ const std::vector<SpacialEntity *> &SpacialScene::getSpacialEntities() const {
     return spacialEntities;
 }
 
-void SpacialScene::setCamera(Camera& camera) {
-    this->camera=&camera;
+void SpacialScene::setCamera(Camera &camera) {
+    this->camera = &camera;
 }
 
 void SpacialScene::removeEntity(SpacialEntity *entity) {
-    for (int i = 0; i < spacialEntities.size(); ++i) {
-        if(spacialEntities[i]==entity)
-        {
-            spacialEntities.erase(spacialEntities.begin()+i);
-            break;
+
+    for (auto entityInVec : spacialEntities) {
+        if (entityInVec == entity) {
+            Transform *parent = entityInVec->transform.parent;
+
+            std::list<SpacialEntity *> children;
+            for (auto entityInVec2 : spacialEntities) {
+                if (entityInVec2->transform.parent == &entity->transform) {
+                    children.push_back(entityInVec2);
+                }
+            }
+
+            for (auto child: children) {
+                removeEntity(child);
+            }
+
+            bool found = false;
+            for (int i = 0; i < spacialEntities.size() - 1; ++i) {
+                if (spacialEntities[i] == entity) {
+                    found = true;
+                }
+
+                if (found) {
+                    spacialEntities[i] = spacialEntities[i + 1];
+                }
+            }
+
+            delete spacialEntities[spacialEntities.size() - 1];
+            spacialEntities.pop_back();
         }
     }
 }
 
-void SpacialScene::removeLight(SpacialEntity* entity) {
+void SpacialScene::removeLight(SpacialEntity *entity) {
     removeEntity(entity);
     for (int i = 0; i < point_lights.size(); ++i) {
-        if(!point_lights[i])
-            point_lights.erase(point_lights.begin()+i);
+        if (!point_lights[i])
+            point_lights.erase(point_lights.begin() + i);
     }
 }
 
