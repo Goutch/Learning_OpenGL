@@ -205,8 +205,8 @@ private:
     DrawPointTool drawPointTool = DrawPointTool();
     std::map<int, Tool*> tools = { {0, &drawPointTool}, {1, &drawRectangleTool}, {2, &drawEllipseTool}, {3, &drawTextTool}, {4, &drawImageTool} };
     unsigned int windowHeight;
-    mutable Color background_color;
-    mutable Color fill_color;
+    mutable Color background_color=Color(0,0,0);
+    mutable Color fill_color=Color(1,1,1);
     mutable int tool = 0;
     mutable char font_path[32] = "../res/consolas.bmp";
     mutable char font_width[32] = "128";
