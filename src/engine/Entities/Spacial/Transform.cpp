@@ -24,7 +24,7 @@ void Transform::translate(const vec3 &translation) {
 }
 
 void Transform::rotate(const quat &rotation) {
-    rot += rotation;
+    rot *= rotation;
     mat4 rot_matrix = glm::toMat4(rotation);
     transform_matrix = transform_matrix * rot_matrix;
 }
@@ -47,10 +47,10 @@ vec3 Transform::up() {
 }
 
 quat Transform::rotation() const {
-    return parent == nullptr ?rot: rot + parent->rotation();
+    return parent == nullptr ?rot: rot * parent->rotation();
 }
 void Transform::rotation(const quat &rotation) {
-    rot=quat();
+    rot=glm::identity<quat>();
     vec3 p=position();
     vec3 s=scale();
     transform_matrix=mat4(1.0f);
@@ -88,6 +88,7 @@ void Transform::scale(vec3 scale) {
 }
 
 vec3 Transform::eulerRotation() const {
+
     return glm::eulerAngles(rot);
 }
 

@@ -11,7 +11,7 @@
 #include <imgui_demo.cpp>
 #include <Core/Log.h>
 #include "Core/Input.h"
-
+#include "API_ALL.h"
 Editor::Editor(SpacialScene *scene) {
     this->current_scene = scene;
 }
@@ -26,6 +26,7 @@ Editor::~Editor() {
     }
     cameras_canvas.clear();
     delete current_scene;
+    delete material;
 }
 
 void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
@@ -39,6 +40,7 @@ void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
     current_scene->getCamera().transform.position(vec3(0, 0, 3));
     current_scene->getCamera().setName("Camera 1");
     cameras.push_back(&current_scene->getCamera());
+    material=new LightMaterial(shader,*current_scene);
 }
 
 void Editor::update(float delta) {
@@ -268,7 +270,7 @@ void Editor::draw() const {
         if (ImGui::Button("Cube")) {
             SpacialEntity *entity;
             current_scene->addEntity(
-                    entity = new MeshRenderer(renderer->CUBE, renderer->DEFAULT_SPACIAL_MATERIAL, vec3(0, 0, 0),
+                    entity = new MeshRenderer(renderer->CUBE,* material, vec3(0, 0, 0),
                                               vec3(0,0,0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
             if (selectedEntities.size() == 1) {
@@ -279,11 +281,25 @@ void Editor::draw() const {
         if (ImGui::Button("Sphere")) {
             SpacialEntity *entity;
             current_scene->addEntity(
-                    entity = new MeshRenderer(renderer->SPHERE, renderer->DEFAULT_SPACIAL_MATERIAL, vec3(0, 0, 0),
+                    entity = new MeshRenderer(renderer->SPHERE, * material, vec3(0, 0, 0),
                                               vec3(0,0,0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
             if (selectedEntities.size() == 1) {
                 entity->transform.parent = &(*selectedEntities.begin())->transform;
+            }
+
+        }
+        if (ImGui::Button("Light")) {
+            if(lightCount<4)
+            {
+                PointLight *entity;
+                current_scene->addLight(
+                        entity=new PointLight(Color(1,1,1),10,vec3(0)));
+                entity->setName("Light: " + std::to_string(lightCount+1));
+                if (selectedEntities.size() == 1) {
+                    entity->transform.parent = &(*selectedEntities.begin())->transform;
+                }
+                lightCount++;
             }
 
         }
@@ -300,11 +316,26 @@ void Editor::draw() const {
         }
         if(ImGui::Button("Delete")) {
             for (auto entity : selectedEntities) {
-                if(entity->getName()[0] != 'C')
+                if(entity->getName()[0]=='C') {
+                    for (int i = 0; i < cameras.size(); ++i) {
+                        if (cameras[i]->getName() == entity->getName()) {
+                            cameras_canvas.erase(cameras_canvas.begin()+i);
+                            cameras.erase(cameras.begin()+i);
+                            current_scene->removeEntity(entity);
+                        }
+                    }
+                }
+                else if(entity->getName()[0]=='L')
+                {
+                    current_scene->removeLight(entity);
+                    lightCount--;
+                }
+                else
+                {
                     current_scene->removeEntity(entity);
+                }
+
             }
-
-
             selectedEntities.clear();
         }
 

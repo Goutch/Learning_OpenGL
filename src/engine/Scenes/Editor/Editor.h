@@ -11,7 +11,7 @@ class Editor: public Scene{
     mutable std::vector<Camera*> cameras;
     mutable std::vector<Canvas*> cameras_canvas;
     SpacialScene* current_scene;
-
+    mutable int lightCount=0;
     mutable Color color;
     mutable std::set<SpacialEntity*> selectedEntities;
     mutable float posX = 0;
@@ -24,6 +24,9 @@ class Editor: public Scene{
     mutable float rotZ = 0;
     mutable float sizeZ = 1;
     mutable bool activeRotation = false;
+    Shader shader = Shader("../src/engine/Shaders/ShadersSources/LightVertex.glsl",
+                                "../src/engine/Shaders/ShadersSources/LightFragment.glsl");
+    LightMaterial* material;
 public:
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
