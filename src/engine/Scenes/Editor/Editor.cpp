@@ -150,29 +150,30 @@ void Editor::draw() const {
         bool samerotZ = true;
         bool samesizeZ = true;
 
+        if(selectedEntities.size() > 1)
         for (auto iter : selectedEntities) {
             vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
-            if(iter->transform.position()[0] != pos[0])
+            if(std::abs(iter->transform.position()[0] - pos[0]) > 0.0001f)
                 sameposX = false;
-            if(iter->transform.position()[1] != pos[1])
+            if(std::abs(iter->transform.position()[1] - pos[1]) > 0.0001f)
                 sameposY = false;
-            if(iter->transform.position()[2] != pos[2])
+            if(std::abs(iter->transform.position()[2] - pos[2]) > 0.0001f)
                 sameposZ = false;
 
             vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
-            if(iter->transform.rotation()[0] != rot[0])
+            if(std::abs(iter->transform.rotation()[0] - rot[0]) > 0.0001f)
                 samerotX = false;
-            if(iter->transform.rotation()[1] != rot[1])
+            if(std::abs(iter->transform.rotation()[1] - rot[1]) > 0.0001f)
                 samerotY = false;
-            if(iter->transform.rotation()[2] != rot[2])
+            if(std::abs(iter->transform.rotation()[2] - rot[2]) > 0.0001f)
                 samerotZ = false;
 
             vec3 size = (*(selectedEntities.begin()++))->transform.scale();
-            if(iter->transform.scale()[0] != size[0])
+            if(std::abs(iter->transform.scale()[0] - size[0]) > 0.0001f)
                 samesizeX = false;
-            if(iter->transform.scale()[1] != size[1])
+            if(std::abs(iter->transform.scale()[1] - size[1]) > 0.0001f)
                 samesizeY = false;
-            if(iter->transform.scale()[2] != size[2])
+            if(std::abs(iter->transform.scale()[2] - size[2]) > 0.0001f)
                 samesizeZ = false;
         }
 
