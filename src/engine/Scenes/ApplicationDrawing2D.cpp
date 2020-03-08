@@ -13,6 +13,7 @@ void ApplicationDrawing2D::draw() const {
     {
         ImGui::Checkbox("HSV", &isHSV);
         ImGui::ColorPicker4("Background Color", &background_color.r, isHSV ? ImGuiColorEditFlags_DisplayHSV | ImGuiColorEditFlags_PickerHueWheel : ImGuiColorEditFlags_DisplayRGB);
+
         if(ImGui::ColorPicker4("Fill Color", &fill_color.r, isHSV ? ImGuiColorEditFlags_DisplayHSV | ImGuiColorEditFlags_PickerHueWheel : ImGuiColorEditFlags_DisplayRGB)) {
             const_cast<FontMaterial*>(font)->setColor(fill_color);
         }
