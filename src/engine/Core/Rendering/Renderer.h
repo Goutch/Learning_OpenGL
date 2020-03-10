@@ -136,10 +136,7 @@ public:
 
 
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const = 0;
-    void drawRect(float x, float y, float width, float height, const Color &color);
-    void drawLine(float x1, float y1, float x2, float y2, float width, const Color &color);
-    void drawEllipse(float x, float y, float width, float height, const Color &color);
-    void drawTriangle(float x1, float y1,float x2,float y2,float x3,float y3, const Color &color);
+
     void wireframe(bool enable);
 
 };

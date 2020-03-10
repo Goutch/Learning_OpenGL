@@ -19,6 +19,8 @@ Light::Light() : Entity() {
 
 }
 
-const Color &Light::getColor() {
+const Color &Light::getColor()const {
     return color;
 }
+
+

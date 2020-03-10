@@ -43,7 +43,7 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
 
     sun = new DirectionalLight(Color(1,1,1),vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
 
-    addLight(sun);
+    instantiate(sun);
     mirror_material.setTexture(mirror_canvas.getFrameBuffer().getTexture());
     MeshRenderer* mirror=new MeshRenderer(
             mirror_quad,

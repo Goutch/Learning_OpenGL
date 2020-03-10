@@ -5,8 +5,10 @@
 
 class LightMaterial : public EntityMaterial {
 private:
+    const int MAX_DIRECTIONAL=1;
+    const int MAX_POINT=4;
     Scene *scene;
-    mutable std::vector<const Texture *> boundShadowMaps;
+
     float shineFactor = 0;
     float dampFactor = 16;
     mat4 bias_mat = mat4(0.5f, 0.0f, 0.0f, 0.0f,

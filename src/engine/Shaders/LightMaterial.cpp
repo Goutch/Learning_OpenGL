@@ -9,50 +9,56 @@
 #include "Ressources/Texture.h"
 #include <Shaders/Shader.h>
 #include <Entities/Camera.h>
-#include <Core/Log.h>
+#include <set>
 void LightMaterial::bind() const {
     EntityMaterial::bind();
     shader->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight());
     shader->loadUniform(damp_factor_location, dampFactor);
     shader->loadUniform(shine_factor_location, shineFactor);
 
-    std::vector<PointLight *> pointLights = scene->getPointLights();
+    auto pointLights =PointLight::getInstances();
     shader->loadUniform(point_light_count_location, (int) pointLights.size());
     shader->loadUniform(view_pos_location, scene->getCamera().transform.position());
+    int count=0;
     if (pointLights.size() > 0) {
         std::vector<float> radius;
         std::vector<vec3> positions;
         std::vector<vec3> colors;
-        for (unsigned int i = 0; i < pointLights.size(); ++i) {
-            radius.push_back(pointLights[i]->getRadius());
-            positions.push_back(pointLights[i]->transform.position());
-            colors.emplace_back(pointLights[i]->getColor());
-            if (i == 4)break;
+        for (auto pl  = pointLights.begin(); pl!=pointLights.end() ; pl++) {
+            radius.push_back((*pl)->getRadius());
+            positions.push_back((*pl)->transform.position());
+            colors.emplace_back((*pl)->getColor());
+            if (count == MAX_POINT)break;
+            count++;
         }
         shader->loadUniformVec3Array(point_light_positions_location, positions.data(), positions.size());
         shader->loadUniformVec3Array(point_light_colors_location, colors.data(), colors.size());
         shader->loadUniformFloatArray(point_light_radius_location, radius.data(), radius.size());
     }
-    std::vector<DirectionalLight *> directionalLights = scene->getDirectionalLights();
+    count=0;
+    auto directionalLights = DirectionalLight::getInstances();
     shader->loadUniform(directional_light_count_location, (int)directionalLights.size());
-    if (directionalLights.size() > 0) {
-        boundShadowMaps.push_back(&(directionalLights[0]->shadowMap()));
-
-        glm::mat4 depth_bias_mat=bias_mat* directionalLights[0]->getLightSpaceMat();
+    for (auto dl=directionalLights.begin(); dl!=directionalLights.end(); ++dl) {
+        glm::mat4 depth_bias_mat=bias_mat* (*dl)->getLightSpaceMat();
         shader->loadUniform(light_space_mat_location, depth_bias_mat);
         shader->loadUniform(directional_light_shadowMap_location, 1);
-        shader->loadUniform(directional_light_color_location, vec3(directionalLights[0]->getColor()));
-        shader->loadUniform(directional_light_direction_location, vec3(directionalLights[0]->transform.forward()));
-        boundShadowMaps[0]->bind(1);
+        shader->loadUniform(directional_light_color_location, vec3((*dl)->getColor()));
+        shader->loadUniform(directional_light_direction_location, vec3((*dl)->transform.forward()));
+        (*dl)->getShadowMap().bind(count+1);
+        count++;
     }
+
 }
 
 void LightMaterial::unbind() const {
     EntityMaterial::unbind();
-    for (int i = 0; i < boundShadowMaps.size(); ++i) {
-        boundShadowMaps[i]->unbind(i+1);
+    auto directionalLights = DirectionalLight::getInstances();
+    int count=0;
+    for (auto dl=directionalLights.begin(); dl!=directionalLights.end(); ++dl) {
+        (*dl)->getShadowMap().unbind(count+1);
+        count++;
     }
-    boundShadowMaps.clear();
+
 }
 
 void LightMaterial::shine(float shine) {

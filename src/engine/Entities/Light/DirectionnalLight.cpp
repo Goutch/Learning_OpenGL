@@ -7,6 +7,11 @@
 #include "Core/Rendering/BatchRenderer.h"
 #include "Core/Scene.h"
 #include "Entities/Camera.h"
+std::set<const DirectionalLight*> DirectionalLight::instances;
+void DirectionalLight::init(Scene &scene) {
+    Entity::init(scene);
+    instances.insert(this);
+}
 
 DirectionalLight::DirectionalLight(const Color &color, vec3 position, vec3 rotation) : Light(color, position,
                                                                                              rotation) {
@@ -21,7 +26,7 @@ DirectionalLight::DirectionalLight() : Light() {
     fbo = new FBO(quality,quality, FBO::DEPTH);
 }
 
-const Texture &DirectionalLight::shadowMap() {
+const Texture &DirectionalLight::getShadowMap() const {
     return fbo->getTexture();
 }
 
@@ -32,10 +37,19 @@ void DirectionalLight::calculateShadowMap(Scene &scene) {
     scene.getRenderer().renderDepth(*fbo, light_space_mat);
 }
 
-const mat4 &DirectionalLight::getLightSpaceMat() {
+const mat4 &DirectionalLight::getLightSpaceMat() const{
     return light_space_mat;
 }
 
 DirectionalLight::~DirectionalLight() {
     delete fbo;
+}
+
+void DirectionalLight::onDestroy(Scene &scene) {
+    Entity::onDestroy(scene);
+    instances.erase(this);
+}
+
+const std::set<const DirectionalLight *> &DirectionalLight::getInstances() {
+    return instances;
 }

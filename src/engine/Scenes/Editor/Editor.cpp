@@ -287,10 +287,10 @@ void Editor::draw() const {
 
         }
         if (ImGui::Button("Light")) {
-            if(lightCount<4)
+            if(PointLight::getInstances().size()<4)
             {
                 PointLight *entity;
-                current_scene->addLight(
+                current_scene->instantiate(
                         entity=new PointLight(Color(1,1,1),10,vec3(0)));
                 entity->setName("Light: " + std::to_string(lightCount+1));
                 if (selectedEntities.size() == 1) {
@@ -318,19 +318,15 @@ void Editor::draw() const {
                         if (cameras[i]->getName() == entity->getName()) {
                             cameras_canvas.erase(cameras_canvas.begin()+i);
                             cameras.erase(cameras.begin()+i);
-                            current_scene->removeEntity(entity);
+                            current_scene->destroy(entity);
                         }
                     }
                 }
-                else if(entity->getName()[0]=='L')
-                {
-                    current_scene->destroy(entity);
-                    lightCount--;
-                }
                 else
                 {
-                    current_scene->removeEntity(entity);
+                    current_scene->destroy(entity);
                 }
+
 
             }
             selectedEntities.clear();

@@ -39,7 +39,6 @@ void Engine::start() {
         ImGui_ImplGlfw_NewFrame();
         ImGui::NewFrame();
 
-
         if (scene) {
 
             scene->update((float) delta_time);

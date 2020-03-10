@@ -22,7 +22,7 @@ protected:
     std::vector<PointLight *> point_lights;
     std::vector<DirectionalLight *> directional_lights;
     Color ambient_light = Color(0.1f, 0.1f, 0.1f);
-    std::vector<Entity *> spacialEntities;
+    std::vector<Entity *> Entities;
 public:
     const std::vector<Entity *> &getSpacialEntities() const;
 

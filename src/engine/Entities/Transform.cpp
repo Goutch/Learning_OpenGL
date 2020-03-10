@@ -34,15 +34,15 @@ void Transform::rotate(float angle, vec3 axis) {
     transform_matrix = glm::rotate(transform_matrix, angle, axis);
 }
 
-vec3 Transform::forward() {
+vec3 Transform::forward() const{
     return glm::normalize(transform_matrix[2]);
 }
 
-vec3 Transform::right() {
+vec3 Transform::right()  const{
     return glm::normalize(transform_matrix[0]);
 }
 
-vec3 Transform::up() {
+vec3 Transform::up()  const{
     return glm::normalize(transform_matrix[1]);
 }
 

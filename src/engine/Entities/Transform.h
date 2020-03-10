@@ -31,9 +31,9 @@ public:
     void rotation(const quat& rotation);
     vec3 eulerRotation() const;
 
-    vec3 forward();
-    vec3 right();
-    vec3 up();
+    vec3 forward() const;
+    vec3 right() const;
+    vec3 up() const;
 
     void scale(vec3 scale);
     vec3 scale() const;
