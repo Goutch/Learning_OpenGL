@@ -3,22 +3,22 @@
 
 #include <GL/glew.h>
 #include "SimpleRenderer.h"
-#include <Shaders/Spacial/SpacialMaterial.h>
+#include <Shaders/EntityMaterial.h>
 #include <Core/Rendering/FBO.h>
 #include "Ressources/VAO.h"
-#include <Entities/Spacial/Transform.h>
+#include <Entities/Transform.h>
 
-void SimpleRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform& transform,int primitive,bool cull_faces)const  {
+void SimpleRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform& transform, int primitive, bool cull_faces)const  {
     render_queue.emplace(&material,&vao,&transform,primitive,cull_faces);
 }
 
-void SimpleRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
+void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while(!render_queue.empty()) {
-        std::tuple<const SpacialMaterial*,const VAO*,const Transform *,int ,bool>& renderableObject=render_queue.front();
-        const SpacialMaterial& material=*std::get<0>(renderableObject);
+        std::tuple<const EntityMaterial*,const VAO*,const Transform *,int ,bool>& renderableObject=render_queue.front();
+        const EntityMaterial& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
         int primitive=std::get<3>(renderableObject);
@@ -55,8 +55,8 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     while(!render_queue.empty()) {
-        std::tuple<const SpacialMaterial*,const VAO*,const Transform *,int,bool>& renderableObject=render_queue.front();
-        const SpacialMaterial& material=*std::get<0>(renderableObject);
+        std::tuple<const EntityMaterial*,const VAO*,const Transform *,int,bool>& renderableObject=render_queue.front();
+        const EntityMaterial& material=*std::get<0>(renderableObject);
         const VAO& vao=*std::get<1>(renderableObject);
         const Transform& transform=*std::get<2>(renderableObject);
         int primitive=std::get<3>(renderableObject);

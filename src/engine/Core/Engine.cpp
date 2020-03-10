@@ -7,11 +7,9 @@
 #include "Utils/Timer.h"
 #include "Window.h"
 #include "Core/Rendering/SimpleRenderer.h"
-#include <Scenes/BaseScene.h>
 #include "Core/Canvas.h"
 #include "Log.h"
 #include "Input.h"
-#include "Scenes/ApplicationDrawing2D.h"
 #include "Scenes/Demo3D/SpacialSceneDemo.h"
 
 Engine::Engine() {
@@ -20,7 +18,7 @@ Engine::Engine() {
     window = new Window(graphics->createWindow("WINDOW", 1000, 700));
     input = new Input(window->getHandle());
     renderer = new SimpleRenderer();
-    canvas = new Canvas(*window, renderer->DEFAULT_CANVAS_SHADER);
+    canvas = new Canvas(*window, renderer->DEFAULT_2D_SHADER);
     imGuiEnabled = true;
     initImgui();
     start();
@@ -106,11 +104,8 @@ void Engine::initImgui() {
 void Engine::drawSceneSelector() {
     ImGui::Begin("SceneSelector");
     {
-        if (ImGui::Button("2D editor")) {
-            run<ApplicationDrawing2D>();
-        }
         if (ImGui::Button("3D editor")) {
-            runInEditor<BaseScene>();
+            runInEditor<Scene>();
         }
         if (ImGui::Button("3D Features Scene")) {
             run<SpacialSceneDemo>();

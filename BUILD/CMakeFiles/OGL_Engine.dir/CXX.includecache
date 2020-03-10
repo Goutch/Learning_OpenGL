@@ -1659,16 +1659,16 @@ Core/Canvas.h
 ../src/engine/Core/Canvas.h
 Core/Scene.h
 ../src/engine/Core/Scene.h
-Core/SpacialScene.h
-../src/engine/Core/SpacialScene.h
+Core/Scene.h
+../src/engine/Core/Scene.h
 Core/Input.h
 ../src/engine/Core/Input.h
 Entities/Entity.h
 ../src/engine/Entities/Entity.h
 Entities/Spacial/Transform.h
 ../src/engine/Entities/Spacial/Transform.h
-Entities/Spacial/SpacialEntity.h
-../src/engine/Entities/Spacial/SpacialEntity.h
+Entities/Spacial/Entity.h
+../src/engine/Entities/Spacial/Entity.h
 Entities/Spacial/FPSController.h
 ../src/engine/Entities/Spacial/FPSController.h
 Entities/Spacial/Light/Light.h
@@ -1723,8 +1723,8 @@ Shaders/Canvas/CanvasMaterial.h
 ../src/engine/Shaders/Canvas/CanvasMaterial.h
 Shaders/Canvas/FontMaterial.h
 ../src/engine/Shaders/Canvas/FontMaterial.h
-Shaders/Spacial/SpacialMaterial.h
-../src/engine/Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
+../src/engine/Shaders/Spacial/EntityMaterial.h
 Shaders/Spacial/LightMaterial.h
 ../src/engine/Shaders/Spacial/LightMaterial.h
 Utils/Timer.h
@@ -1787,7 +1787,7 @@ vector
 ../src/engine/Core/Rendering/Renderer.h
 glm/mat4x4.hpp
 ../src/engine/Core/Rendering/glm/mat4x4.hpp
-Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
 -
 Ressources/Color.h
 -
@@ -1834,7 +1834,7 @@ Ressources/Color.h
 vector
 ../src/engine/Core/vector
 
-../src/engine/Core/SpacialScene.h
+../src/engine/Core/Scene.h
 Entities/Spacial/Camera.h
 -
 Scene.h
@@ -1885,8 +1885,8 @@ CanvasEntity.h
 ../src/engine/Entities/Canvas/Text.h
 Shaders/Canvas/FontMaterial.h
 -
-Entities/Spacial/SpacialEntity.h
-../src/engine/Entities/Canvas/Entities/Spacial/SpacialEntity.h
+Entities/Spacial/Entity.h
+../src/engine/Entities/Canvas/Entities/Spacial/Entity.h
 CanvasEntity.h
 ../src/engine/Entities/Canvas/CanvasEntity.h
 Ressources/Mesh.h
@@ -1897,22 +1897,22 @@ string
 -
 
 ../src/engine/Entities/Spacial/Camera.h
-SpacialEntity.h
-../src/engine/Entities/Spacial/SpacialEntity.h
+Entity.h
+../src/engine/Entities/Spacial/Entity.h
 Events/CanvasResizeListener.h
 ../src/engine/Entities/Spacial/Events/CanvasResizeListener.h
 
 ../src/engine/Entities/Spacial/FPSController.h
-SpacialEntity.h
-../src/engine/Entities/Spacial/SpacialEntity.h
+Entity.h
+../src/engine/Entities/Spacial/Entity.h
 
 ../src/engine/Entities/Spacial/Light/DirectionnalLight.h
 Light.h
 ../src/engine/Entities/Spacial/Light/Light.h
 
 ../src/engine/Entities/Spacial/Light/Light.h
-Entities/Spacial/SpacialEntity.h
-../src/engine/Entities/Spacial/Light/Entities/Spacial/SpacialEntity.h
+Entities/Spacial/Entity.h
+../src/engine/Entities/Spacial/Light/Entities/Spacial/Entity.h
 Ressources/Color.h
 ../src/engine/Entities/Spacial/Light/Ressources/Color.h
 
@@ -1921,12 +1921,12 @@ Light.h
 ../src/engine/Entities/Spacial/Light/Light.h
 
 ../src/engine/Entities/Spacial/MeshRenderer.h
-Core/SpacialScene.h
+Core/Scene.h
 -
-SpacialEntity.h
-../src/engine/Entities/Spacial/SpacialEntity.h
+Entity.h
+../src/engine/Entities/Spacial/Entity.h
 
-../src/engine/Entities/Spacial/SpacialEntity.h
+../src/engine/Entities/Spacial/Entity.h
 Entities/Entity.h
 ../src/engine/Entities/Spacial/Entities/Entity.h
 Entities/Spacial/Transform.h
@@ -2021,7 +2021,7 @@ Ressources/Texture.h
 -
 Ressources/AtlasTexture.h
 -
-Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
 -
 Ressources/Mesh.h
 -
@@ -2033,7 +2033,7 @@ Events/KeyPressListener.h
 -
 Shaders/Shader.h
 -
-Core/SpacialScene.h
+Core/Scene.h
 -
 
 ../src/engine/Scenes/Demo3D/SpacialSceneDemo.h
@@ -2043,8 +2043,8 @@ Shaders/Spacial/LightMaterial.h
 -
 Ressources/Texture.h
 -
-Core/SpacialScene.h
-../src/engine/Scenes/Demo3D/Core/SpacialScene.h
+Core/Scene.h
+../src/engine/Scenes/Demo3D/Core/Scene.h
 Geometry/Geometry.h
 ../src/engine/Scenes/Demo3D/Geometry/Geometry.h
 Shaders/Shader.h
@@ -2089,12 +2089,12 @@ vector
 -
 
 ../src/engine/Shaders/Spacial/LightMaterial.h
-SpacialMaterial.h
-../src/engine/Shaders/Spacial/SpacialMaterial.h
-Core/SpacialScene.h
+EntityMaterial.h
+../src/engine/Shaders/Spacial/EntityMaterial.h
+Core/Scene.h
 -
 
-../src/engine/Shaders/Spacial/SpacialMaterial.h
+../src/engine/Shaders/Spacial/EntityMaterial.h
 string
 -
 unordered_map
@@ -2485,8 +2485,8 @@ BatchRenderer.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/BatchRenderer.h
 Ressources/VAO.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Ressources/VAO.h
-Shaders/Spacial/SpacialMaterial.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Shaders/Spacial/EntityMaterial.h
 Entities/Spacial/Transform.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Entities/Spacial/Transform.h
 Core/Log.h
@@ -2553,7 +2553,7 @@ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Geometry/G
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Renderer.h
 glm/mat4x4.hpp
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/glm/mat4x4.hpp
-Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
 -
 Ressources/Color.h
 -
@@ -2583,7 +2583,7 @@ GL/glew.h
 -
 SimpleRenderer.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/SimpleRenderer.h
-Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
 -
 Core/Rendering/FBO.h
 -
@@ -2634,11 +2634,11 @@ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Ressources/Color.h
 vector
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/vector
 
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.cpp
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.cpp
 Core/Rendering/Renderer.h
 -
-SpacialScene.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.h
+Scene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h
 Entities/Spacial/Light/PointLight.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Entities/Spacial/Light/PointLight.h
 Entities/Spacial/Light/DirectionnalLight.h
@@ -2648,7 +2648,7 @@ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Entities/Spacial/Cam
 Core/Canvas.h
 -
 
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h
 Entities/Spacial/Camera.h
 -
 Scene.h
@@ -2763,8 +2763,8 @@ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/Core/Scen
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/Text.h
 Shaders/Canvas/FontMaterial.h
 -
-Entities/Spacial/SpacialEntity.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/Entities/Spacial/SpacialEntity.h
+Entities/Spacial/Entity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/Entities/Spacial/Entity.h
 CanvasEntity.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasEntity.h
 Ressources/Mesh.h
@@ -2783,12 +2783,12 @@ Camera.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Camera.h
 Core/Canvas.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/Canvas.h
-Core/SpacialScene.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/SpacialScene.h
+Core/Scene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/Scene.h
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Camera.h
-SpacialEntity.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+Entity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 Events/CanvasResizeListener.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Events/CanvasResizeListener.h
 
@@ -2797,14 +2797,14 @@ FPSController.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/FPSController.h
 Core/Input.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/Input.h
-Core/SpacialScene.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/SpacialScene.h
+Core/Scene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/Scene.h
 Core/Canvas.h
 -
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/FPSController.h
-SpacialEntity.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+Entity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp
 DirectionnalLight.h
@@ -2813,8 +2813,8 @@ Core/Rendering/FBO.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Core/Rendering/FBO.h
 Core/Rendering/BatchRenderer.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Core/Rendering/BatchRenderer.h
-Core/SpacialScene.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Core/SpacialScene.h
+Core/Scene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Core/Scene.h
 Entities/Spacial/Camera.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Entities/Spacial/Camera.h
 
@@ -2827,8 +2827,8 @@ Light.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Light.h
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Light.h
-Entities/Spacial/SpacialEntity.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Entities/Spacial/SpacialEntity.h
+Entities/Spacial/Entity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Entities/Spacial/Entity.h
 Ressources/Color.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Ressources/Color.h
 
@@ -2851,16 +2851,16 @@ Core/Scene.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Core/Scene.h
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/MeshRenderer.h
-Core/SpacialScene.h
+Core/Scene.h
 -
-SpacialEntity.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+Entity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.cpp
-SpacialEntity.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.cpp
+Entity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 Entities/Entity.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entities/Entity.h
 Entities/Spacial/Transform.h
@@ -3053,7 +3053,7 @@ Ressources/Texture.h
 -
 Ressources/AtlasTexture.h
 -
-Shaders/Spacial/SpacialMaterial.h
+Shaders/Spacial/EntityMaterial.h
 -
 Ressources/Mesh.h
 -
@@ -3065,7 +3065,7 @@ Events/KeyPressListener.h
 -
 Shaders/Shader.h
 -
-Core/SpacialScene.h
+Core/Scene.h
 -
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Scenes/Demo3D/Grass.cpp
@@ -3091,8 +3091,8 @@ Shaders/Spacial/LightMaterial.h
 -
 Ressources/Texture.h
 -
-Core/SpacialScene.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Scenes/Demo3D/Core/SpacialScene.h
+Core/Scene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Scenes/Demo3D/Core/Scene.h
 Geometry/Geometry.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Scenes/Demo3D/Geometry/Geometry.h
 Shaders/Shader.h
@@ -3197,8 +3197,8 @@ Entities/Spacial/Light/PointLight.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Entities/Spacial/Light/PointLight.h
 Entities/Spacial/Light/DirectionnalLight.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Entities/Spacial/Light/DirectionnalLight.h
-Core/SpacialScene.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Core/SpacialScene.h
+Core/Scene.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Core/Scene.h
 Ressources/Texture.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Ressources/Texture.h
 Shaders/Shader.h
@@ -3207,14 +3207,14 @@ Core/Log.h
 -
 
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/LightMaterial.h
-SpacialMaterial.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.h
-Core/SpacialScene.h
+EntityMaterial.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.h
+Core/Scene.h
 -
 
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.cpp
-SpacialMaterial.h
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.cpp
+EntityMaterial.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.h
 Core/Scene.h
 C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Core/Scene.h
 Ressources/Texture.h
@@ -3222,7 +3222,7 @@ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/Ressource
 Shaders/Shader.h
 -
 
-C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.h
+C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.h
 string
 -
 unordered_map

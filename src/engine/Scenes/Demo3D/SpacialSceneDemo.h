@@ -1,14 +1,14 @@
 #pragma once
 
 #include <Ressources/Mesh.h>
-#include <Shaders/Spacial/LightMaterial.h>
+#include <Shaders/LightMaterial.h>
 #include <Ressources/Texture.h>
-#include "Core/SpacialScene.h"
+#include "Core/Scene.h"
 #include "Geometry/Geometry.h"
 #include <Shaders/Shader.h>
 #include "Core/Canvas.h"
 class Grass;
-class SpacialSceneDemo : public SpacialScene {
+class SpacialSceneDemo : public Scene {
     Shader lightShader = Shader("../src/engine/Shaders/ShadersSources/LightVertex.glsl",
                                 "../src/engine/Shaders/ShadersSources/LightFragment.glsl");
     Shader default_shader= Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
@@ -22,8 +22,8 @@ class SpacialSceneDemo : public SpacialScene {
     LightMaterial dragon_material = LightMaterial(lightShader, *this);
     LightMaterial ground_material = LightMaterial(lightShader, Color(.5,.7,.4,1), *this);
     LightMaterial bunny_material = LightMaterial(lightShader,wall_texture, *this);
-    SpacialMaterial player_material=SpacialMaterial(default_shader,Color::BLUE);
-    SpacialMaterial mirror_material=SpacialMaterial(mirror_shader);
+    EntityMaterial player_material=EntityMaterial(default_shader, Color::BLUE);
+    EntityMaterial mirror_material=EntityMaterial(mirror_shader);
 
     Mesh dragon_mesh = Mesh("../res/dragon.obj");
     Mesh bunny_mesh = Mesh("../res/bunny.obj");
@@ -44,10 +44,8 @@ public:
 
     void draw() const override;
 
-public:
     void update(float delta) override;
 
-public:
     void init(const Canvas &viewport, Renderer &renderer, Input &input) override;
 
 };

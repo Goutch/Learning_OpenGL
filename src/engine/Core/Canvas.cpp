@@ -36,7 +36,7 @@ Canvas::Canvas(const Canvas &parent_canvas,const Shader& shader, int pixel_width
     parent_canvas.subscribeSizeChange(*this);
     subscribed_parent=true;
     material.setShader(shader);
-    transform.translate(vec2(offsetX, offsetY));
+    transform.translate(vec3(offsetX, offsetY,0));
     setSize(pixel_width,pixel_height);
     material.setShader(shader);
     material.setTexture(frame_buffer.getTexture());
@@ -81,7 +81,7 @@ const mat4 Canvas::getPixelProjection() const {
 void Canvas::setSize(int pixel_width,int pixel_height) {
     this->pixel_width=pixel_width;
     this->pixel_height=pixel_height;
-    transform.scale(vec2(pixel_width,pixel_height));
+    transform.scale(vec3(pixel_width,pixel_height,0));
     pixel_projection = glm::ortho<float>(0, pixel_width, 0, pixel_height, -100, 100);
     frame_buffer.setSize(pixel_width, pixel_height);
     for (auto l:sizeListeners) {
@@ -93,7 +93,7 @@ const VAO &Canvas::getVAO() const{
     return quad;
 }
 
-const CanvasMaterial& Canvas::getMaterial() const {
+const EntityMaterial& Canvas::getMaterial() const {
     return material;
 }
 

@@ -10,10 +10,10 @@ class Editor: public Scene{
 
     mutable std::vector<Camera*> cameras;
     mutable std::vector<Canvas*> cameras_canvas;
-    SpacialScene* current_scene;
+    Scene* current_scene;
     mutable int lightCount=0;
     mutable Color color;
-    mutable std::set<SpacialEntity*> selectedEntities;
+    mutable std::set<Entity*> selectedEntities;
     mutable float posX = 0;
     mutable float rotX = 0;
     mutable float sizeX = 1;
@@ -30,7 +30,7 @@ class Editor: public Scene{
 public:
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
-    Editor(SpacialScene* scene);
+    Editor(Scene* scene);
     Editor();
     ~Editor();
     void update(float delta) override;

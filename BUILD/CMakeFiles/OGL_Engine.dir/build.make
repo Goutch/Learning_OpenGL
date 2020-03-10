@@ -280,19 +280,19 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.s: cmake_f
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj: ../src/engine/Core/SpacialScene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\SpacialScene.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\SpacialScene.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: ../src/engine/Core/Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\SpacialScene.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\SpacialScene.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\SpacialScene.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\SpacialScene.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
@@ -350,19 +350,19 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.s: cmake
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\FPSController.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\FPSController.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj: ../src/engine/Entities/Spacial/SpacialEntity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\SpacialEntity.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\SpacialEntity.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj: ../src/engine/Entities/Spacial/Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Entity.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Entity.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\SpacialEntity.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\SpacialEntity.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Entity.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Entity.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\SpacialEntity.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\SpacialEntity.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Entity.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Entity.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
@@ -532,19 +532,19 @@ CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.s"
 	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Shader.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Shader.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj: ../src/engine/Shaders/Spacial/SpacialMaterial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\SpacialMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\SpacialMaterial.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj: ../src/engine/Shaders/Spacial/EntityMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\EntityMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\EntityMaterial.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\SpacialMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\SpacialMaterial.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\EntityMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\EntityMaterial.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\SpacialMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\SpacialMaterial.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\EntityMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\EntityMaterial.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
@@ -956,12 +956,12 @@ OGL_Engine_OBJECTS = \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj" \
@@ -974,7 +974,7 @@ OGL_Engine_OBJECTS = \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj" \
@@ -1023,12 +1023,12 @@ OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj
@@ -1041,7 +1041,7 @@ OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.ob
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj

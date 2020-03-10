@@ -10364,10 +10364,10 @@
 		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h">
 			<Option target="OGL_Engine"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.cpp">
+		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.cpp">
 			<Option target="OGL_Engine"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.h">
+		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h">
 			<Option target="OGL_Engine"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Window.cpp">
@@ -10460,10 +10460,10 @@
 		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/MeshRenderer.h">
 			<Option target="OGL_Engine"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.cpp">
+		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.cpp">
 			<Option target="OGL_Engine"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h">
+		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h">
 			<Option target="OGL_Engine"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Transform.cpp">
@@ -10592,10 +10592,10 @@
 		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/LightMaterial.h">
 			<Option target="OGL_Engine"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.cpp">
+		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.cpp">
 			<Option target="OGL_Engine"/>
 		</Unit>
-		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.h">
+		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.h">
 			<Option target="OGL_Engine"/>
 		</Unit>
 		<Unit filename="C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/TexturedMaterial.cpp">

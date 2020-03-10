@@ -20,21 +20,19 @@ class Texture;
 
 class FBO;
 
-
-
 class Canvas;
 
 class CanvasMaterial;
 #include "glm/mat4x4.hpp"
-#include <Shaders/Spacial/SpacialMaterial.h>
+#include <Shaders/EntityMaterial.h>
 #include <Ressources/Color.h>
-#include <Entities/Spacial/Transform.h>
+#include <Entities/Transform.h>
 #include <Ressources/Quad.h>
 #include <queue>
 #include <tuple>
-#include <Entities/Canvas/CanvasTransform.h>
+
 #include <Shaders/Shader.h>
-#include <Shaders/Canvas/CanvasMaterial.h>
+
 #include <deque>
 using namespace glm;
 #include <Ressources/Sphere.h>
@@ -44,26 +42,8 @@ class Renderer {
 public:
     static const int PRIMITIVE_TRIANGLES;
     static const int PRIMITIVE_POINTS;
-protected:
-    struct CanvasElement {
-        const CanvasTransform *transform;
-        const CanvasMaterial *material;
-        const VAO *vao;
-        int primitive;
-        bool cull_faces;
-        CanvasElement(const CanvasTransform &transform, const CanvasMaterial &material, const VAO &vao,int primitive,bool cull_faces) {
-            this->transform = &transform;
-            this->material = &material;
-            this->vao = &vao;
-            this->primitive=primitive;
-            this->cull_faces=cull_faces;
-        }
-    };
-
-    mutable std::queue<CanvasElement> canvas_elements;
 
 public:
-
     const Quad QUAD=Quad();
     const Cube CUBE = Cube();
     const Sphere SPHERE = Sphere(1, 100, 50);
@@ -103,7 +83,7 @@ public:
                                          "    else\n"
                                          "    { fragColor=material_color; }\n"
                                          "}", true);;
-    const Shader DEFAULT_CANVAS_SHADER = Shader("#version 330 core\n"
+    const Shader DEFAULT_2D_SHADER = Shader("#version 330 core\n"
                                                 "uniform mat4 projection;\n"
                                                 "uniform mat4 transform;\n"
                                                 "layout(location=0)in vec3 vertexPosition;\n"
@@ -136,15 +116,9 @@ protected:
 
     int depthShader_light_space_matrix_location;
     int depthShader_transform_mat_location;
-    mutable std::deque<CanvasMaterial> temp_materials;
-    mutable std::deque<CanvasTransform> temp_transforms;
-    mutable std::deque<VAO> temp_vaos;
 public:
-    const CanvasMaterial DEFAULT_CANVAS_MATERIAL = CanvasMaterial(DEFAULT_CANVAS_SHADER);
-    const SpacialMaterial DEFAULT_SPACIAL_MATERIAL = SpacialMaterial(DEFAULT_SPACIAL_SHADER);
-    const SpacialMaterial ELLIPSE_MATERIAL = SpacialMaterial(ELLIPSE_SHADER);
-    const Transform DEFAULT_TRANSFORM = Transform();
-
+    const EntityMaterial DEFAULT_2D_MATERIAL = EntityMaterial(DEFAULT_2D_SHADER);
+    const EntityMaterial DEFAULT_3D_MATERIAL = EntityMaterial(DEFAULT_SPACIAL_SHADER);
 
     Renderer();
 
@@ -156,13 +130,10 @@ public:
 
     virtual void renderOnMainBuffer(const Canvas &canvas);
 
-    virtual void draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform,int primitive=PRIMITIVE_TRIANGLES,bool cull_faces=true) const= 0;
+    virtual void draw(const VAO &vao, const EntityMaterial &material, const Transform &transform, int primitive=PRIMITIVE_TRIANGLES, bool cull_faces=true) const= 0;
 
-    virtual void renderSpace(const FBO &buffer, const glm::mat4 &projection, const glm::mat4 &view_mat) const= 0;
+    virtual void render(const FBO &buffer, const glm::mat4 &projection, const glm::mat4 &view_mat=mat4(1.0f)) const= 0;
 
-    virtual void draw(const VAO &vao, const CanvasTransform &transform, const CanvasMaterial &material,int primitive=PRIMITIVE_TRIANGLES,bool cull_faces=true) const;
-
-    virtual void renderCanvas(const FBO &buffer, const glm::mat4 &projection) const;
 
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const = 0;
     void drawRect(float x, float y, float width, float height, const Color &color);

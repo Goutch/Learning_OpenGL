@@ -2649,32 +2649,32 @@ src/engine/Core/Scene.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s
 .PHONY : src/engine/Core/Scene.cpp.s
 
-src/engine/Core/SpacialScene.obj: src/engine/Core/SpacialScene.cpp.obj
+src/engine/Core/Scene.obj: src/engine/Core/Scene.cpp.obj
 
-.PHONY : src/engine/Core/SpacialScene.obj
+.PHONY : src/engine/Core/Scene.obj
 
 # target to build an object file
-src/engine/Core/SpacialScene.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj
-.PHONY : src/engine/Core/SpacialScene.cpp.obj
+src/engine/Core/Scene.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
+.PHONY : src/engine/Core/Scene.cpp.obj
 
-src/engine/Core/SpacialScene.i: src/engine/Core/SpacialScene.cpp.i
+src/engine/Core/Scene.i: src/engine/Core/Scene.cpp.i
 
-.PHONY : src/engine/Core/SpacialScene.i
+.PHONY : src/engine/Core/Scene.i
 
 # target to preprocess a source file
-src/engine/Core/SpacialScene.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.i
-.PHONY : src/engine/Core/SpacialScene.cpp.i
+src/engine/Core/Scene.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i
+.PHONY : src/engine/Core/Scene.cpp.i
 
-src/engine/Core/SpacialScene.s: src/engine/Core/SpacialScene.cpp.s
+src/engine/Core/Scene.s: src/engine/Core/Scene.cpp.s
 
-.PHONY : src/engine/Core/SpacialScene.s
+.PHONY : src/engine/Core/Scene.s
 
 # target to generate assembly for a file
-src/engine/Core/SpacialScene.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.s
-.PHONY : src/engine/Core/SpacialScene.cpp.s
+src/engine/Core/Scene.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s
+.PHONY : src/engine/Core/Scene.cpp.s
 
 src/engine/Core/Window.obj: src/engine/Core/Window.cpp.obj
 
@@ -3081,32 +3081,32 @@ src/engine/Entities/Spacial/MeshRenderer.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.s
 .PHONY : src/engine/Entities/Spacial/MeshRenderer.cpp.s
 
-src/engine/Entities/Spacial/SpacialEntity.obj: src/engine/Entities/Spacial/SpacialEntity.cpp.obj
+src/engine/Entities/Spacial/Entity.obj: src/engine/Entities/Spacial/Entity.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/SpacialEntity.obj
+.PHONY : src/engine/Entities/Spacial/Entity.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/SpacialEntity.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj
-.PHONY : src/engine/Entities/Spacial/SpacialEntity.cpp.obj
+src/engine/Entities/Spacial/Entity.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj
+.PHONY : src/engine/Entities/Spacial/Entity.cpp.obj
 
-src/engine/Entities/Spacial/SpacialEntity.i: src/engine/Entities/Spacial/SpacialEntity.cpp.i
+src/engine/Entities/Spacial/Entity.i: src/engine/Entities/Spacial/Entity.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/SpacialEntity.i
+.PHONY : src/engine/Entities/Spacial/Entity.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/SpacialEntity.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.i
-.PHONY : src/engine/Entities/Spacial/SpacialEntity.cpp.i
+src/engine/Entities/Spacial/Entity.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.i
+.PHONY : src/engine/Entities/Spacial/Entity.cpp.i
 
-src/engine/Entities/Spacial/SpacialEntity.s: src/engine/Entities/Spacial/SpacialEntity.cpp.s
+src/engine/Entities/Spacial/Entity.s: src/engine/Entities/Spacial/Entity.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/SpacialEntity.s
+.PHONY : src/engine/Entities/Spacial/Entity.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/SpacialEntity.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.s
-.PHONY : src/engine/Entities/Spacial/SpacialEntity.cpp.s
+src/engine/Entities/Spacial/Entity.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.s
+.PHONY : src/engine/Entities/Spacial/Entity.cpp.s
 
 src/engine/Entities/Spacial/Transform.obj: src/engine/Entities/Spacial/Transform.cpp.obj
 
@@ -3675,32 +3675,32 @@ src/engine/Shaders/Spacial/LightMaterial.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.s
 .PHONY : src/engine/Shaders/Spacial/LightMaterial.cpp.s
 
-src/engine/Shaders/Spacial/SpacialMaterial.obj: src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj
+src/engine/Shaders/Spacial/EntityMaterial.obj: src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
 
-.PHONY : src/engine/Shaders/Spacial/SpacialMaterial.obj
+.PHONY : src/engine/Shaders/Spacial/EntityMaterial.obj
 
 # target to build an object file
-src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj
-.PHONY : src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj
+src/engine/Shaders/Spacial/EntityMaterial.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
+.PHONY : src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
 
-src/engine/Shaders/Spacial/SpacialMaterial.i: src/engine/Shaders/Spacial/SpacialMaterial.cpp.i
+src/engine/Shaders/Spacial/EntityMaterial.i: src/engine/Shaders/Spacial/EntityMaterial.cpp.i
 
-.PHONY : src/engine/Shaders/Spacial/SpacialMaterial.i
+.PHONY : src/engine/Shaders/Spacial/EntityMaterial.i
 
 # target to preprocess a source file
-src/engine/Shaders/Spacial/SpacialMaterial.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.i
-.PHONY : src/engine/Shaders/Spacial/SpacialMaterial.cpp.i
+src/engine/Shaders/Spacial/EntityMaterial.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.i
+.PHONY : src/engine/Shaders/Spacial/EntityMaterial.cpp.i
 
-src/engine/Shaders/Spacial/SpacialMaterial.s: src/engine/Shaders/Spacial/SpacialMaterial.cpp.s
+src/engine/Shaders/Spacial/EntityMaterial.s: src/engine/Shaders/Spacial/EntityMaterial.cpp.s
 
-.PHONY : src/engine/Shaders/Spacial/SpacialMaterial.s
+.PHONY : src/engine/Shaders/Spacial/EntityMaterial.s
 
 # target to generate assembly for a file
-src/engine/Shaders/Spacial/SpacialMaterial.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.s
-.PHONY : src/engine/Shaders/Spacial/SpacialMaterial.cpp.s
+src/engine/Shaders/Spacial/EntityMaterial.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.s
+.PHONY : src/engine/Shaders/Spacial/EntityMaterial.cpp.s
 
 src/engine/Shaders/TexturedMaterial.obj: src/engine/Shaders/TexturedMaterial.cpp.obj
 
@@ -4084,9 +4084,9 @@ help:
 	@echo ... src/engine/Core/Scene.obj
 	@echo ... src/engine/Core/Scene.i
 	@echo ... src/engine/Core/Scene.s
-	@echo ... src/engine/Core/SpacialScene.obj
-	@echo ... src/engine/Core/SpacialScene.i
-	@echo ... src/engine/Core/SpacialScene.s
+	@echo ... src/engine/Core/Scene.obj
+	@echo ... src/engine/Core/Scene.i
+	@echo ... src/engine/Core/Scene.s
 	@echo ... src/engine/Core/Window.obj
 	@echo ... src/engine/Core/Window.i
 	@echo ... src/engine/Core/Window.s
@@ -4132,9 +4132,9 @@ help:
 	@echo ... src/engine/Entities/Spacial/MeshRenderer.obj
 	@echo ... src/engine/Entities/Spacial/MeshRenderer.i
 	@echo ... src/engine/Entities/Spacial/MeshRenderer.s
-	@echo ... src/engine/Entities/Spacial/SpacialEntity.obj
-	@echo ... src/engine/Entities/Spacial/SpacialEntity.i
-	@echo ... src/engine/Entities/Spacial/SpacialEntity.s
+	@echo ... src/engine/Entities/Spacial/Entity.obj
+	@echo ... src/engine/Entities/Spacial/Entity.i
+	@echo ... src/engine/Entities/Spacial/Entity.s
 	@echo ... src/engine/Entities/Spacial/Transform.obj
 	@echo ... src/engine/Entities/Spacial/Transform.i
 	@echo ... src/engine/Entities/Spacial/Transform.s
@@ -4198,9 +4198,9 @@ help:
 	@echo ... src/engine/Shaders/Spacial/LightMaterial.obj
 	@echo ... src/engine/Shaders/Spacial/LightMaterial.i
 	@echo ... src/engine/Shaders/Spacial/LightMaterial.s
-	@echo ... src/engine/Shaders/Spacial/SpacialMaterial.obj
-	@echo ... src/engine/Shaders/Spacial/SpacialMaterial.i
-	@echo ... src/engine/Shaders/Spacial/SpacialMaterial.s
+	@echo ... src/engine/Shaders/Spacial/EntityMaterial.obj
+	@echo ... src/engine/Shaders/Spacial/EntityMaterial.i
+	@echo ... src/engine/Shaders/Spacial/EntityMaterial.s
 	@echo ... src/engine/Shaders/TexturedMaterial.obj
 	@echo ... src/engine/Shaders/TexturedMaterial.i
 	@echo ... src/engine/Shaders/TexturedMaterial.s

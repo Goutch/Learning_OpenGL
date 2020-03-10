@@ -1,23 +1,19 @@
-//
-// Created by User on 2020-01-26.
-//
 
 #include "Editor.h"
 #include <Core/Rendering/BatchRenderer.h>
-#include <Entities/Spacial/MeshRenderer.h>
-#include <Entities/Canvas/Rect.h>
-#include <Entities/Canvas/Line.h>
+#include <Entities/MeshRenderer.h>
+
 #include <imgui.h>
 #include <imgui_demo.cpp>
 #include <Core/Log.h>
 #include "Core/Input.h"
 #include "API_ALL.h"
-Editor::Editor(SpacialScene *scene) {
+Editor::Editor(Scene *scene) {
     this->current_scene = scene;
 }
 
 Editor::Editor() {
-    current_scene = new SpacialScene();
+    current_scene = new Scene();
 }
 
 Editor::~Editor() {
@@ -32,7 +28,7 @@ Editor::~Editor() {
 void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
 
     Scene::init(canvas, renderer, input);
-    cameras_canvas.push_back(new Canvas(canvas, renderer.DEFAULT_CANVAS_SHADER, canvas.getPixelWidth() / 2,
+    cameras_canvas.push_back(new Canvas(canvas, renderer.DEFAULT_2D_SHADER, canvas.getPixelWidth() / 2,
                                         canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
                                         canvas.getPixelHeight() / 4));
     current_scene->init(*cameras_canvas[0], renderer, input);;
@@ -48,8 +44,8 @@ void Editor::update(float delta) {
     current_scene->update(delta);
 }
 
-void createTree(const std::vector<SpacialEntity *> &vector, Transform *parent, int &index,
-                std::set<SpacialEntity *> &selectedEntities, SpacialScene *current_scene, float &posX, float &posY,
+void createTree(const std::vector<Entity *> &vector, Transform *parent, int &index,
+                std::set<Entity *> &selectedEntities, Scene *current_scene, float &posX, float &posY,
                 float &posZ, float &rotX, float &rotY, float &rotZ, float &sizeX, float &sizeY, float &sizeZ) {
     for (auto iter : vector) {
         if (iter->transform.parent == parent) {
@@ -108,7 +104,8 @@ void Editor::draw() const {
             renderer->clear();
             cameras_canvas[i]->getFrameBuffer().unbind();
             current_scene->setCamera(*cameras[i]);
-            renderer->renderSpace(cameras_canvas[i]->getFrameBuffer(),cameras[i]->getProjectionMatrix(),cameras[i]->getViewMatrix());
+            renderer->render(cameras_canvas[i]->getFrameBuffer(), cameras[i]->getProjectionMatrix(),
+                             cameras[i]->getViewMatrix());
 
             Camera::ProjectionMode mode = current_scene->getCamera().getProjectionMode();
             ImGui::BeginChild("Projection");
@@ -252,7 +249,7 @@ void Editor::draw() const {
     ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
     ImGui::Begin("Create things");
     {
-        std::list<SpacialEntity *> parents;
+        std::list<Entity *> parents;
         for (auto iter : current_scene->getSpacialEntities()) {
             if (iter->transform.parent == nullptr)
                 parents.push_back(iter);
@@ -268,10 +265,10 @@ void Editor::draw() const {
         }
 
         if (ImGui::Button("Cube")) {
-            SpacialEntity *entity;
-            current_scene->addEntity(
-                    entity = new MeshRenderer(renderer->CUBE,* material, vec3(0, 0, 0),
-                                              vec3(0,0,0), vec3(1, 1, 1)));
+            Entity *entity;
+            current_scene->instantiate(
+                    entity = new MeshRenderer(renderer->CUBE, *material, vec3(0, 0, 0),
+                                              vec3(0, 0, 0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
             if (selectedEntities.size() == 1) {
                 entity->transform.parent = &(*selectedEntities.begin())->transform;
@@ -279,10 +276,10 @@ void Editor::draw() const {
         }
 
         if (ImGui::Button("Sphere")) {
-            SpacialEntity *entity;
-            current_scene->addEntity(
-                    entity = new MeshRenderer(renderer->SPHERE, * material, vec3(0, 0, 0),
-                                              vec3(0,0,0), vec3(1, 1, 1)));
+            Entity *entity;
+            current_scene->instantiate(
+                    entity = new MeshRenderer(renderer->SPHERE, *material, vec3(0, 0, 0),
+                                              vec3(0, 0, 0), vec3(1, 1, 1)));
             entity->setName("Entity: " + std::to_string(current_scene->getSpacialEntities().size()));
             if (selectedEntities.size() == 1) {
                 entity->transform.parent = &(*selectedEntities.begin())->transform;
@@ -305,13 +302,13 @@ void Editor::draw() const {
         }
         if (ImGui::Button("Camera")) {
             Camera *entity;
-            current_scene->addEntity(
+            current_scene->instantiate(
                     entity = new Camera());
             entity->setName("Camera: " + std::to_string(cameras.size() + 1));
             if (selectedEntities.size() == 1) {
                 entity->transform.parent = &(*selectedEntities.begin())->transform;
             }
-            cameras_canvas.push_back(new Canvas(*canvas, renderer->DEFAULT_CANVAS_SHADER, 1, 1));
+            cameras_canvas.push_back(new Canvas(*canvas, renderer->DEFAULT_2D_SHADER, 1, 1));
             cameras.push_back(entity);
         }
         if(ImGui::Button("Delete")) {
@@ -327,7 +324,7 @@ void Editor::draw() const {
                 }
                 else if(entity->getName()[0]=='L')
                 {
-                    current_scene->removeLight(entity);
+                    current_scene->destroy(entity);
                     lightCount--;
                 }
                 else

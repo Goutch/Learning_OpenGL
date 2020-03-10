@@ -5,16 +5,18 @@
 #include <list>
 #include <Events/CanvasResizeListener.h>
 #include <Core/Rendering/FBO.h>
-#include <Entities/Canvas/CanvasTransform.h>
-#include <Shaders/Canvas/CanvasMaterial.h>
 #include <Ressources/Quad.h>
-
+#include <Entities/Transform.h>
+#include <Shaders/EntityMaterial.h>
 class window;
 
-//Virtual render space for a scene.
+/**
+ * @class Canvas
+ * Represent a virtual window of a scene
+ */
 class Canvas : WindowResizeListener,CanvasResizeListener {
 private:
-    CanvasMaterial material;
+    EntityMaterial material;
     Quad quad=Quad(0.5,0.5);
     mutable std::list<CanvasResizeListener *> sizeListeners;
     FBO frame_buffer = FBO(FBO::COLOR);
@@ -27,7 +29,7 @@ private:
     bool subscribed_parent=false;
     glm::vec2 parent_ratio;
 public:
-    CanvasTransform transform;
+    Transform transform;
     Canvas(const Window &window,const Shader& shader);
 
     Canvas(const Canvas &parent_canvas, const Shader& shader,int pixel_width,int pixel_height, float offsetX = 0,
@@ -41,7 +43,7 @@ public:
 
     const mat4 getPixelProjection() const;
 
-    const CanvasMaterial& getMaterial() const;
+    const EntityMaterial& getMaterial() const;
 
     const FBO &getFrameBuffer() const;
 

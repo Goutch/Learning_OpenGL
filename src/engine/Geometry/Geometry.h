@@ -4,7 +4,7 @@
 //    //https://en.wikipedia.org/wiki/Wavefront_.obj_file
 class VAO;
 #include <string>
-#include <Shaders/Canvas/FontMaterial.h>
+#include <Shaders/FontMaterial.h>
 #include "Ressources/Mesh.h"
 
 namespace Geometry{

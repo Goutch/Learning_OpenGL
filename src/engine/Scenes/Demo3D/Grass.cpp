@@ -4,10 +4,10 @@
 
 #include "Grass.h"
 
-void Grass::init(SpacialScene &scene) {
+void Grass::init(Scene &scene) {
     material = new LightMaterial(shader, scene);
     material->setColor(Color(.5,.7,.4,1));
-    SpacialEntity::init(scene);
+    Entity::init(scene);
     int ammount = 500000;
     int range = 50;
 
@@ -28,23 +28,23 @@ void Grass::init(SpacialScene &scene) {
     delete normals;
 }
 
-void Grass::draw(const SpacialScene &scene) const {
-    SpacialEntity::draw(scene);
+void Grass::draw(const Scene &scene) const {
+    Entity::draw(scene);
     scene.getRenderer().draw(vao, *material, transform, Renderer::PRIMITIVE_POINTS, false);
 }
 
-void Grass::update(float delta, SpacialScene &scene) {
-    SpacialEntity::update(delta, scene);
+void Grass::update(float delta, Scene &scene) {
+    Entity::update(delta, scene);
 
 
 }
 
-void Grass::onDestroy(SpacialScene &scene) {
-    SpacialEntity::onDestroy(scene);
+void Grass::onDestroy(Scene &scene) {
+    Entity::onDestroy(scene);
     delete material;
 }
 
-SpacialMaterial &Grass::getMaterial() {
+EntityMaterial &Grass::getMaterial() {
     return *material;
 }
 

@@ -1,13 +1,24 @@
 #pragma once
 
+
+class Scene;
+
+#include "Transform.h"
+class Scene;
+
 #include <string>
-class Entity {
+class Entity{
     std::string name;
 public:
+    Transform transform;
+    Entity(vec3 position, vec3 rotation=vec3(0), vec3 scale=vec3(1));
+    Entity();
+    virtual void init(Scene &scene);
+    virtual void draw(const Scene &scene) const;
+    virtual void update(float delta, Scene &scene);
+    virtual void onDestroy(Scene &scene);
     void setName(const std::string &name);
-
-public:
-    virtual ~Entity();
-
     const std::string &getName() const;
+
+
 };

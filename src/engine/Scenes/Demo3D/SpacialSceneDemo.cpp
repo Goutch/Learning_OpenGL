@@ -5,7 +5,7 @@
 #include "API_ALL.h"
 #include "Grass.h"
 void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &input){
-    SpacialScene::init(canvas, renderer, input);
+    Scene::init(canvas, renderer, input);
     ambient_light=Color(0.2,0.2,0.2,2);
     input.showCursor(false);
     //create cube_mesh mesh
@@ -16,28 +16,28 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
     dragon_material.damp(16);
     dragon_material.setColor(Color(0.7,0.4,0.4));
     //ground
-    addEntity(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
+    instantiate(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
     grass=new Grass();
 
-    addEntity(grass);
+    instantiate(grass);
     //sphere
-    addEntity(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
+    instantiate(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
     //bunnies
-    addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(10,0,0)));
-    addEntity(new MeshRenderer(bunny_mesh,bunny_material,vec3(-10,0,0)));
+    instantiate(new MeshRenderer(bunny_mesh, bunny_material, vec3(10, 0, 0)));
+    instantiate(new MeshRenderer(bunny_mesh, bunny_material, vec3(-10, 0, 0)));
     auto P=new MeshRenderer(cube_mesh,player_material);
     P->transform.parent=&camera->transform;
-    addEntity(P);
+    instantiate(P);
     //dragons
     dragon_material.shine(20);
     dragon_material.damp(16);
-    addEntity(new MeshRenderer(cube_mesh, dragon_material, vec3(0, 0.5, 10), vec3(0), vec3(12, 1, 8)));
-    addEntity(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, -10)));
-    addEntity(new MeshRenderer(cube_mesh, dragon_material, vec3(0, 0.5, -10), vec3(0), vec3(12, 1, 8)));
-    addEntity(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, 10)));
+    instantiate(new MeshRenderer(cube_mesh, dragon_material, vec3(0, 0.5, 10), vec3(0), vec3(12, 1, 8)));
+    instantiate(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, -10)));
+    instantiate(new MeshRenderer(cube_mesh, dragon_material, vec3(0, 0.5, -10), vec3(0), vec3(12, 1, 8)));
+    instantiate(new MeshRenderer(dragon_mesh, dragon_material, vec3(0, .9, 10)));
 
     //controller
-    addEntity(new FPSController(camera->transform, vec3(0, 2, 2), vec3(0), vec3(1)));
+    instantiate(new FPSController(camera->transform, vec3(0, 2, 2), vec3(0), vec3(1)));
 
     //Directional sun light
 
@@ -51,7 +51,7 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
             vec3(0,3.1416/2,0),
             vec3(4));
     mirror_camera.parent=&mirror->transform;
-    addEntity(mirror);
+    instantiate(mirror);
     mirror_camera.rotate(3.1416,vec3(0,1,0));
     mirror_camera.position(vec3(0,0,-.5));
     projection_mirror=glm::perspective<float>(glm::radians<float>(60),mirror_canvas.getPixelWidth()/mirror_canvas.getPixelHeight(),0.1,100);
@@ -59,12 +59,12 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
 }
 
 void SpacialSceneDemo::update(float delta) {
-    SpacialScene::update(delta);
+    Scene::update(delta);
     //mirror_camera.rotate(delta,vec3(0,1,0));
 }
 
 void SpacialSceneDemo::render() const {
-    SpacialScene::render();
+    Scene::render();
 }
 
 void SpacialSceneDemo::draw() const {
@@ -76,18 +76,18 @@ void SpacialSceneDemo::draw() const {
                                       projection_mirror *vm*
                                       grass->transform.getMatrix());
     grass->getMaterial().getShader().unbind();
-    SpacialScene::draw();
+    Scene::draw();
     mirror_canvas.getFrameBuffer().bind();
     renderer->clear();
     mirror_canvas.getFrameBuffer().unbind();
-    renderer->renderSpace(mirror_canvas.getFrameBuffer(),projection_mirror,glm::inverse(mirror_camera.getMatrix()));
+    renderer->render(mirror_canvas.getFrameBuffer(), projection_mirror, glm::inverse(mirror_camera.getMatrix()));
     grass->getMaterial().getShader().bind();
 
     grass->getMaterial().getShader().loadUniform("mvp",
                                                  camera->getProjectionMatrix() *camera->getViewMatrix()*
                                                  grass->transform.getMatrix());
     grass->getMaterial().getShader().unbind();
-    SpacialScene::draw();
+    Scene::draw();
 }
 
 SpacialSceneDemo::~SpacialSceneDemo() {

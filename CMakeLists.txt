@@ -33,8 +33,6 @@ set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
         Dependencies/IMGUI/imgui_impl_glfw.cpp)
 
-
-
 add_executable(OGL_Engine
         ${IMGUI_FILES}
         Dependencies/STB_IMAGE/stb_image.cpp
@@ -47,38 +45,30 @@ add_executable(OGL_Engine
         src/engine/Core/Engine.cpp
         src/engine/Core/Engine.cpp
         src/engine/Core/Window.cpp
-        src/engine/Core/Scene.cpp
         src/engine/Core/Canvas.cpp
         src/engine/Core/Rendering/Renderer.cpp
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
-        src/engine/Core/SpacialScene.cpp
+        src/engine/Core/Scene.cpp
         src/engine/Core/Log.cpp
 
-        src/engine/Entities/Spacial/MeshRenderer.cpp
-        src/engine/Entities/Spacial/Transform.cpp
-        src/engine/Entities/Spacial/FPSController.cpp
-        src/engine/Entities/Spacial/SpacialEntity.cpp
-        src/engine/Entities/Spacial/Light/Light.cpp
-        src/engine/Entities/Spacial/Light/DirectionnalLight.cpp
-        src/engine/Entities/Spacial/Light/PointLight.cpp
-        src/engine/Entities/Spacial/Camera.cpp
-        src/engine/Entities/Canvas/Rect.cpp
-        src/engine/Entities/Canvas/Line.cpp
-        src/engine/Entities/Canvas/CanvasTransform.cpp
-        src/engine/Entities/Canvas/CanvasEntity.cpp
-        src/engine/Entities/Canvas/Text.cpp
-        src/engine/Entities/Canvas/Text.h
+        src/engine/Entities/MeshRenderer.cpp
+        src/engine/Entities/Transform.cpp
+        src/engine/Entities/FPSController.cpp
         src/engine/Entities/Entity.cpp
-        src/engine/Entities/Canvas/Image.cpp
+        src/engine/Entities/Light/Light.cpp
+        src/engine/Entities/Light/DirectionnalLight.cpp
+        src/engine/Entities/Light/PointLight.cpp
+        src/engine/Entities/Camera.cpp
+        src/engine/Entities/Text.cpp
+        src/engine/Entities/Text.h
 
         src/engine/Shaders/Shader.cpp
-        src/engine/Shaders/Spacial/SpacialMaterial.cpp
-        src/engine/Shaders/Spacial/LightMaterial.cpp
-        src/engine/Shaders/Canvas/FontMaterial.cpp
-        src/engine/Shaders/Canvas/FontMaterial.h
+        src/engine/Shaders/EntityMaterial.cpp
+        src/engine/Shaders/LightMaterial.cpp
+        src/engine/Shaders/FontMaterial.cpp
+        src/engine/Shaders/FontMaterial.h
         src/engine/Shaders/Material.cpp
-        src/engine/Shaders/Canvas/CanvasMaterial.cpp
         src/engine/Shaders/TexturedMaterial.cpp
 
         src/engine/Geometry/Geometry.cpp
@@ -105,16 +95,11 @@ add_executable(OGL_Engine
 
         src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp
 
-        src/engine/Scenes/BaseScene.cpp
-        src/engine/Scenes/ApplicationDrawing2D.cpp
         src/engine/Scenes/Demo3D/Grass.cpp
         src/engine/Scenes/Demo3D/Grass.h
 
         src/engine/Scenes/Editor/Editor.cpp
-        src/engine/Entities/Entity.cpp src/engine/Entities/Entity.h
         src/engine/Core/Input.cpp src/engine/Core/Input.h
-        src/engine/Entities/Canvas/Ellipse.cpp
-        src/engine/Entities/Canvas/Ellipse.h
         src/engine/API_ALL.h
 )
 

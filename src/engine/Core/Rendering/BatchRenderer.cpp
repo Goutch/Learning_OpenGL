@@ -3,19 +3,19 @@
 #include <GL/glew.h>
 #include "BatchRenderer.h"
 #include "Ressources/VAO.h"
-#include "Shaders/Spacial/SpacialMaterial.h"
-#include "Entities/Spacial/Transform.h"
+#include "Shaders/EntityMaterial.h"
+#include "Entities/Transform.h"
 #include "Core/Log.h"
 #include "Core/Scene.h"
 
+#include "Core/Rendering/FBO.h"
 
-
-void BatchRenderer::renderSpace(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
+void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     buffer.bind();
     for (auto &vao_batch:spacial_material_batch) {
-        const SpacialMaterial &material = *vao_batch.first;
+        const EntityMaterial &material = *vao_batch.first;
         material.bind();
         material.projection(projection);
         material.view(view_mat);
@@ -80,7 +80,7 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
     buffer.unbind();
 }
 
-void BatchRenderer::draw(const VAO &vao, const SpacialMaterial &material, const Transform &transform,int primitive,bool cull_faces) const {
+void BatchRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform &transform, int primitive, bool cull_faces) const {
     if (spacial_material_batch.find(&material) == spacial_material_batch.end()) {
         spacial_material_batch.insert(
                 std::make_pair(&material, std::unordered_map<const VAO *, std::list<std::tuple<const Transform *,int,bool>>>()));

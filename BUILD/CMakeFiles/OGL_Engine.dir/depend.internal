@@ -475,7 +475,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Rendering/SimpleRenderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -485,7 +485,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj
  ../src/engine/Entities/Entity.h
  ../src/engine/Entities/Spacial/Camera.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -508,7 +508,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/Timer.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Engine.cpp
@@ -739,7 +739,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/BatchRenderer.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/BatchRenderer.h
@@ -972,7 +972,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj
  ../src/engine/Shaders/Canvas/FontMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Renderer.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Renderer.h
@@ -1186,7 +1186,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/Renderer.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Rendering/SimpleRenderer.cpp
@@ -1412,13 +1412,13 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/TimeUtils.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Input.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h
-CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
  ../Dependencies/GLFW/include/GLFW/glfw3.h
  ../Dependencies/GLM/glm/common.hpp
  ../Dependencies/GLM/glm/detail/_fixes.hpp
@@ -1626,7 +1626,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj
  ../src/engine/Entities/Spacial/Light/DirectionnalLight.h
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/WindowResizeListener.h
@@ -1639,11 +1639,11 @@ CMakeFiles/OGL_Engine.dir/src/engine/Core/SpacialScene.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.cpp
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/SpacialScene.h
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.cpp
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Scene.h
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj
  ../Dependencies/GLFW/include/GLFW/glfw3.h
  ../src/engine/Events/WindowResizeListener.h
@@ -2262,7 +2262,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasEntity.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasTransform.h
@@ -2482,7 +2482,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasEntity.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasTransform.h
@@ -2702,7 +2702,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasEntity.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasTransform.h
@@ -2922,7 +2922,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasEntity.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasTransform.h
@@ -3132,7 +3132,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Geometry/Geometry.h
  ../src/engine/Ressources/Color.h
@@ -3146,7 +3146,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj
  ../src/engine/Shaders/Canvas/FontMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasEntity.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Canvas/CanvasTransform.h
@@ -3356,7 +3356,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj
  ../src/engine/Core/Rendering/FBO.h
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
@@ -3373,7 +3373,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Camera.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Camera.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj
  ../Dependencies/GLFW/include/GLFW/glfw3.h
  ../Dependencies/GLM/glm/common.hpp
@@ -3576,7 +3576,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj
  ../src/engine/Core/Rendering/FBO.h
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
@@ -3593,7 +3593,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/FPSController.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/FPSController.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj
  ../Dependencies/GLFW/include/GLFW/glfw3.h
  ../Dependencies/GLM/glm/common.hpp
@@ -3796,12 +3796,12 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cp
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
  ../src/engine/Entities/Spacial/Camera.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Ressources/Color.h
@@ -3813,7 +3813,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cp
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/DirectionnalLight.h
@@ -4015,7 +4015,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj
  ../Dependencies/GLM/glm/vec4.hpp
  ../Dependencies/GLM/glm/vector_relational.hpp
  ../src/engine/Entities/Entity.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Ressources/Color.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Light.cpp
@@ -4217,7 +4217,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj
  ../Dependencies/GLM/glm/vec4.hpp
  ../Dependencies/GLM/glm/vector_relational.hpp
  ../src/engine/Entities/Entity.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Ressources/Color.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Light/Light.h
@@ -4425,7 +4425,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
@@ -4441,12 +4441,12 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj
  ../src/engine/Shaders/Canvas/CanvasMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/MeshRenderer.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/MeshRenderer.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj
  ../Dependencies/GLM/glm/common.hpp
  ../Dependencies/GLM/glm/detail/_fixes.hpp
  ../Dependencies/GLM/glm/detail/_swizzle.hpp
@@ -4644,8 +4644,8 @@ CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/SpacialEntity.cpp.obj
  ../Dependencies/GLM/glm/vector_relational.hpp
  ../src/engine/Entities/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.cpp
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/SpacialEntity.h
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.cpp
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Entities/Spacial/Entity.h
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj
  ../Dependencies/GLM/glm/common.hpp
  ../Dependencies/GLM/glm/detail/_fixes.hpp
@@ -5240,7 +5240,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -5254,7 +5254,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -5274,7 +5274,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/SimplexNoise.h
  ../src/engine/Utils/StringUtils.h
@@ -5808,7 +5808,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -5822,7 +5822,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -5842,7 +5842,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/SimplexNoise.h
  ../src/engine/Utils/StringUtils.h
@@ -6073,7 +6073,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -6088,7 +6088,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -6108,7 +6108,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/SimplexNoise.h
  ../src/engine/Utils/StringUtils.h
@@ -6318,7 +6318,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Core/Window.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
@@ -6326,7 +6326,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj
  ../src/engine/Entities/Entity.h
  ../src/engine/Entities/Spacial/Camera.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -6343,7 +6343,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj
  ../src/engine/Shaders/Canvas/FontMaterial.h
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Scenes/BaseScene.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Scenes/BaseScene.h
@@ -6554,7 +6554,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -6568,7 +6568,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -6588,7 +6588,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/SimplexNoise.h
  ../src/engine/Utils/StringUtils.h
@@ -6803,7 +6803,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -6817,7 +6817,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -6837,7 +6837,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/SimplexNoise.h
  ../src/engine/Utils/StringUtils.h
@@ -7055,7 +7055,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Rendering/Renderer.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Canvas/Ellipse.h
@@ -7069,7 +7069,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
  ../src/engine/Entities/Spacial/MeshRenderer.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/KeyPressListener.h
@@ -7090,7 +7090,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  ../src/engine/Utils/SimplexNoise.h
  ../src/engine/Utils/StringUtils.h
@@ -7967,7 +7967,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj
  ../src/engine/Core/Rendering/FBO.h
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
@@ -7975,7 +7975,7 @@ CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj
  ../src/engine/Entities/Spacial/Light/DirectionnalLight.h
  ../src/engine/Entities/Spacial/Light/Light.h
  ../src/engine/Entities/Spacial/Light/PointLight.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Ressources/Color.h
@@ -7985,8 +7985,8 @@ CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/LightMaterial.cpp
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/LightMaterial.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.h
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.h
+CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
  ../Dependencies/GLFW/include/GLFW/glfw3.h
  ../Dependencies/GLM/glm/common.hpp
  ../Dependencies/GLM/glm/detail/_fixes.hpp
@@ -8194,8 +8194,8 @@ CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/SpacialMaterial.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/TexturedMaterial.h
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.cpp
- C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/SpacialMaterial.h
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.cpp
+ C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Shaders/Spacial/EntityMaterial.h
 CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj
  ../Dependencies/GLM/glm/common.hpp
  ../Dependencies/GLM/glm/detail/_fixes.hpp
@@ -8565,12 +8565,12 @@ CMakeFiles/OGL_Engine.dir/src/main.cpp.obj
  ../src/engine/Core/Rendering/FBO.h
  ../src/engine/Core/Rendering/RBO.h
  ../src/engine/Core/Scene.h
- ../src/engine/Core/SpacialScene.h
+ ../src/engine/Core/Scene.h
  ../src/engine/Entities/Canvas/CanvasEntity.h
  ../src/engine/Entities/Canvas/CanvasTransform.h
  ../src/engine/Entities/Entity.h
  ../src/engine/Entities/Spacial/Camera.h
- ../src/engine/Entities/Spacial/SpacialEntity.h
+ ../src/engine/Entities/Spacial/Entity.h
  ../src/engine/Entities/Spacial/Transform.h
  ../src/engine/Events/CanvasResizeListener.h
  ../src/engine/Events/WindowResizeListener.h
@@ -8587,7 +8587,7 @@ CMakeFiles/OGL_Engine.dir/src/main.cpp.obj
  ../src/engine/Shaders/Material.h
  ../src/engine/Shaders/Shader.h
  ../src/engine/Shaders/Spacial/LightMaterial.h
- ../src/engine/Shaders/Spacial/SpacialMaterial.h
+ ../src/engine/Shaders/Spacial/EntityMaterial.h
  ../src/engine/Shaders/TexturedMaterial.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Engine.h
  C:/Users/User/Documents/Projects/OGL_Engine/src/engine/Core/Log.h
