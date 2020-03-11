@@ -27,7 +27,7 @@
 #include "Events/KeyPressListener.h"
 #include "Events/CanvasResizeListener.h"
 
-#include "Geometry/Geometry.h"
+#include "Utils/Geometry.h"
 #include "Ressources/Quad.h"
 #include "Ressources/Mesh.h"
 #include "Ressources/VAO.h"

@@ -63,15 +63,15 @@ add_executable(OGL_Engine
         src/engine/Entities/Text.cpp
         src/engine/Entities/Text.h
 
-        src/engine/Shaders/Shader.cpp
-        src/engine/Shaders/EntityMaterial.cpp
-        src/engine/Shaders/LightMaterial.cpp
-        src/engine/Shaders/FontMaterial.cpp
-        src/engine/Shaders/FontMaterial.h
-        src/engine/Shaders/Material.cpp
-        src/engine/Shaders/TexturedMaterial.cpp
+        src/engine/Ressources/Shaders/Shader.cpp
+        src/engine/Ressources/Shaders/Material/EntityMaterial.cpp
+        src/engine/Ressources/Shaders/Material/LightMaterial.cpp
+        src/engine/Ressources/Shaders/Material/FontMaterial.cpp
+        src/engine/Ressources/Shaders/Material/FontMaterial.h
+        src/engine/Ressources/Shaders/Material/Material.cpp
+        src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp
 
-        src/engine/Geometry/Geometry.cpp
+        src/engine/Utils/Geometry.cpp
         src/engine/Ressources/Mesh.cpp
         src/engine/Ressources/VAO.cpp
         src/engine/Ressources/VBO.cpp

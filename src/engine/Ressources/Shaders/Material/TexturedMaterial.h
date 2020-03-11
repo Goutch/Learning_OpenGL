@@ -2,7 +2,7 @@
 
 class Texture;
 
-#include "Material.h"
+#include "Ressources/Shaders/Material/Material.h"
 
 class TexturedMaterial : public Material {
 protected:

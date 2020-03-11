@@ -23,12 +23,12 @@ using namespace glm;
 class BatchRenderer:public Renderer {
 private:
 
-    mutable std::unordered_map<const EntityMaterial *, std::unordered_map<const VAO *, std::list<std::tuple<const Transform*,int,bool>>>> spacial_material_batch;
+    mutable std::unordered_map<RenderOption,std::unordered_map<const EntityMaterial *, std::unordered_map<const VAO *, std::list<std::tuple<const Transform*,int,bool>>>>> batches;
 
 public:
 
 
-    void draw(const VAO &vao, const EntityMaterial &material, const Transform& transform, int primitive, bool cull_faces) const override ;
+    void draw(const VAO &vao, const EntityMaterial &material, const Transform& transform,RenderOption options) const override ;
     void render(const FBO &buffer, const glm::mat4 &projection= mat4(1.0f), const glm::mat4& view_mat= mat4(1.0f)) const override ;
     void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const override ;
 

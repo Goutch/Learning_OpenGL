@@ -2,7 +2,7 @@
 // Created by User on 2020-01-26.
 //
 
-#include <Geometry/Geometry.h>
+#include <Utils/Geometry.h>
 #include "Canvas.h"
 #include "Core/Window.h"
 #include "Events/CanvasResizeListener.h"

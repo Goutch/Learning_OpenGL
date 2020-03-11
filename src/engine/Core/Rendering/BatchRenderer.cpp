@@ -11,10 +11,12 @@
 #include "Core/Rendering/FBO.h"
 
 void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
+    Log::message("render");
     glEnable(GL_DEPTH_TEST);
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
+
     buffer.bind();
-    for (auto &vao_batch:spacial_material_batch) {
+    for (auto &vao_batch:batches) {
         const EntityMaterial &material = *vao_batch.first;
         material.bind();
         material.projection(projection);
@@ -44,17 +46,18 @@ void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4
         }
         material.unbind();
     }
-    spacial_material_batch.clear();
+    batches.clear();
     buffer.unbind();
 }
 void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat)const  {
+    Log::message("depth");
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
 
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
-    for (auto &vao_batch:spacial_material_batch) {
+    for (auto &vao_batch:batches) {
         for (auto &transform_batch:vao_batch.second) {
             const VAO &vao = *transform_batch.first;
             vao.bind();
@@ -75,17 +78,18 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
             vao.unbind();
         }
     }
-    spacial_material_batch.clear();
+    batches.clear();
     DEPTH_SHADER.unbind();
     buffer.unbind();
 }
 
-void BatchRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform &transform, int primitive, bool cull_faces) const {
-    if (spacial_material_batch.find(&material) == spacial_material_batch.end()) {
-        spacial_material_batch.insert(
+void BatchRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform &transform,RenderOption options) const {
+    Log::message("draw");
+    if (batches.find(&material) == batches.end()) {
+        batches.insert(
                 std::make_pair(&material, std::unordered_map<const VAO *, std::list<std::tuple<const Transform *,int,bool>>>()));
     }
-    std::unordered_map<const VAO *, std::list<std::tuple<const Transform *,int,bool >>> &vao_batch = spacial_material_batch.at(&material);
+    std::unordered_map<const VAO *, std::list<std::tuple<const Transform *,int,bool >>> &vao_batch = batches.at(&material);
     if (vao_batch.find(&vao) == vao_batch.end()) {
         vao_batch.insert(std::make_pair(&vao, std::list<std::tuple<const Transform *,int ,bool>>()));
     }

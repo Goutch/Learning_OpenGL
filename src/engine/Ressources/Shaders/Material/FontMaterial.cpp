@@ -3,11 +3,11 @@
 //
 
 #include <Ressources/AtlasTexture.h>
-#include <Shaders/Shader.h>
+#include <Ressources/Shaders/Shader.h>
 #include "FontMaterial.h"
 
 FontMaterial::FontMaterial(const Shader &shader, std::string path_to_font_texture, unsigned int width,
-                           unsigned int height) :SpacialMaterial(shader, *(new AtlasTexture(path_to_font_texture, width, height, true))){
+                           unsigned int height) : EntityMaterial(shader, *(new AtlasTexture(path_to_font_texture, width, height, true))){
 
 }
 

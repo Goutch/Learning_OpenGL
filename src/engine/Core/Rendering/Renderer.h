@@ -22,7 +22,6 @@ class FBO;
 
 class Canvas;
 
-class CanvasMaterial;
 #include "glm/mat4x4.hpp"
 #include <Shaders/EntityMaterial.h>
 #include <Ressources/Color.h>
@@ -42,8 +41,14 @@ class Renderer {
 public:
     static const int PRIMITIVE_TRIANGLES;
     static const int PRIMITIVE_POINTS;
-
-public:
+    struct RenderOption{
+        bool cull_faces=true;
+        int primitive_type=PRIMITIVE_TRIANGLES;
+        bool operator==(const RenderOption &other){
+            return (primitive_type==other.primitive_type&&
+                    cull_faces==other.cull_faces);
+        }
+    };
     const Quad QUAD=Quad();
     const Cube CUBE = Cube();
     const Sphere SPHERE = Sphere(1, 100, 50);
@@ -130,7 +135,7 @@ public:
 
     virtual void renderOnMainBuffer(const Canvas &canvas);
 
-    virtual void draw(const VAO &vao, const EntityMaterial &material, const Transform &transform, int primitive=PRIMITIVE_TRIANGLES, bool cull_faces=true) const= 0;
+    virtual void draw(const VAO &vao, const EntityMaterial &material, const Transform &transform,const RenderOption renderOption={}) const= 0;
 
     virtual void render(const FBO &buffer, const glm::mat4 &projection, const glm::mat4 &view_mat=mat4(1.0f)) const= 0;
 

@@ -5,7 +5,7 @@
 #include "EntityMaterial.h"
 #include "Core/Scene.h"
 #include "Ressources/Texture.h"
-#include <Shaders/Shader.h>
+#include <Ressources/Shaders/Shader.h>
 EntityMaterial::EntityMaterial(): TexturedMaterial() {
 
 }

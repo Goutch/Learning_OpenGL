@@ -7,7 +7,7 @@
 #include "Entities/Light/DirectionnalLight.h"
 #include "Core/Scene.h"
 #include "Ressources/Texture.h"
-#include <Shaders/Shader.h>
+#include <Ressources/Shaders/Shader.h>
 #include <Entities/Camera.h>
 #include <set>
 void LightMaterial::bind() const {

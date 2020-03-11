@@ -4,8 +4,8 @@
 #include <unordered_map>
 #include <Ressources/Color.h>
 #include <glm/glm.hpp>
-#include <Shaders/TexturedMaterial.h>
-#include "Shaders/Material.h"
+#include <Ressources/Shaders/Material/TexturedMaterial.h>
+#include "Material.h"
 
 class Shader;
 class Texture;

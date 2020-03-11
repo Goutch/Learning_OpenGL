@@ -3,7 +3,7 @@
 //
 
 #include "Quad.h"
-#include <Geometry/Geometry.h>
+#include <Utils/Geometry.h>
 
 Quad::Quad(float offsetX, float offsetY) {
 

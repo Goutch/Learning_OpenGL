@@ -6,11 +6,9 @@
 
 #include "GL/glew.h"
 
-#include <Ressources/VAO.h>
 
 #include <Core/Canvas.h>
-#include <Core/Rendering/FBO.h>
-#include "Geometry/Geometry.h"
+
 
 const int Renderer::PRIMITIVE_TRIANGLES = GL_TRIANGLES;
 const int Renderer::PRIMITIVE_POINTS = GL_POINTS;

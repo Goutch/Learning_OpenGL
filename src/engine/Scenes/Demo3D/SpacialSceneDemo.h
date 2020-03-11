@@ -4,7 +4,7 @@
 #include <Shaders/LightMaterial.h>
 #include <Ressources/Texture.h>
 #include "Core/Scene.h"
-#include "Geometry/Geometry.h"
+#include "Utils/Geometry.h"
 #include <Shaders/Shader.h>
 #include <Entities/Camera.h>
 #include "Core/Canvas.h"

@@ -1,6 +1,6 @@
 
 #include "Mesh.h"
-#include "Geometry/Geometry.h"
+#include "Utils/Geometry.h"
 Mesh::Mesh():VAO() {
 }
 Mesh::Mesh(std::string path) {

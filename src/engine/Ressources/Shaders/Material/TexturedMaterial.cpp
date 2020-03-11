@@ -4,7 +4,7 @@
 
 #include "TexturedMaterial.h"
 #include <Ressources/Texture.h>
-#include "Shader.h"
+#include "Ressources/Shaders/Shader.h"
 
 TexturedMaterial::TexturedMaterial() {
 
