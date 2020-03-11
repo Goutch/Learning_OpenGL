@@ -8,6 +8,7 @@
 #include <Core/Log.h>
 #include "Core/Input.h"
 #include "API_ALL.h"
+
 Editor::Editor(Scene *scene) {
     this->current_scene = scene;
 }
@@ -37,87 +38,12 @@ void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
     current_scene->getCamera().transform.position(vec3(0, 0, 3));
     current_scene->getCamera().setName("Camera 1");
     cameras.push_back(&current_scene->getCamera());
-    material=new LightMaterial(shader,*current_scene);
-    auto e =new Entity();
-    e->setName("test");
-    e->setParent(&current_scene->getCamera());
-    current_scene->instantiate(e);
+    material = new LightMaterial(shader, *current_scene);
 }
 
 void Editor::update(float delta) {
     Scene::update(delta);
     current_scene->update(delta);
-}
-void createEntityTree(Entity* entity)
-{
-    if(entity->getChildren().size()==0)
-    {
-        ImGui::BulletText(entity->getName().c_str());
-    }
-    else
-    {
-        if(ImGui::TreeNode(entity->getName().c_str())){
-            for (auto child:entity->getChildren()) {
-                createEntityTree(child);
-            }
-            ImGui::TreePop();
-        }
-    }
-
-}
-void Editor::createHierachy() const {
-    std::list<Entity*> root_entities;
-    for (auto e:current_scene->getEntities()) {
-        if(e->getParent()== nullptr)
-        {
-            root_entities.push_back(e);
-        }
-    }
-    for (auto root_entity:root_entities) {
-        createEntityTree(root_entity);
-    }
-}
-
-
-
-
-
-
-void createTree(const std::vector<Entity *> &entities, Entity *parent, int &index,
-                std::set<Entity *> &selectedEntities, Scene *current_scene, float &posX, float &posY,
-                float &posZ, float &rotX, float &rotY, float &rotZ, float &sizeX, float &sizeY, float &sizeZ) {
-
-    for (auto iter : entities) {
-        if (iter== parent) {
-            if (ImGui::TreeNode((void *) (intptr_t) index, iter->getName().c_str(), index++)) {
-                if (ImGui::IsItemClicked()) {
-                    if (!current_scene->getInput().isKeyDown(GLFW_KEY_LEFT_CONTROL))
-                        selectedEntities.clear();
-                    selectedEntities.emplace(iter);
-
-                    if(!selectedEntities.empty()) {
-                        vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
-                        posX = pos[0];
-                        posY = pos[1];
-                        posZ = pos[2];
-                        vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
-                        rotX = rot[0];
-                        rotY = rot[1];
-                        rotZ = rot[2];
-                        vec3 size = (*(selectedEntities.begin()++))->transform.scale();
-                        sizeX = size[0];
-                        sizeY = size[1];
-                        sizeZ = size[2];
-                    }
-                }
-                createTree(entities, iter, index, selectedEntities, current_scene, posX, posY, posZ, rotX, rotY, rotZ, sizeX, sizeY, sizeZ);
-                ImGui::TreePop();
-            }
-        }
-    }
-}
-
-void Editor::draw() const {
 
     ImGuiID dockspaceID = 0;
     float h, w;
@@ -133,7 +59,8 @@ void Editor::draw() const {
                          0/* ImGuiDockNodeFlags_None|ImGuiDockNodeFlags_PassthruCentralNode|ImGuiDockNodeFlags_NoResize*/);
     }
     ImGui::End();
-
+    scene_tree.update(*input,dockspaceID,current_scene->getEntities(),selected_entities);
+    properties.update(dockspaceID, selected_entities);
 
     for (int i = 0; i < cameras.size(); ++i) {
         ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
@@ -175,177 +102,163 @@ void Editor::draw() const {
         ImGui::End();
     }
 
-
-    ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-    ImGui::Begin("Properties");
+   // ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
+    /*ImGui::Begin("Properties");
     {
-        ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-        ImGui::BeginChild("Transform");
-        {
-            bool sameposX = true;
-            bool samerotX = true;
-            bool samesizeX = true;
-            bool sameposY = true;
-            bool samerotY = true;
-            bool samesizeY = true;
-            bool sameposZ = true;
-            bool samerotZ = true;
-            bool samesizeZ = true;
+        if (!selected_entities.empty()) {
+            ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
+            ImGui::BeginChild("Transform");
+            {
+                bool sameposX = true;
+                bool samerotX = true;
+                bool samesizeX = true;
+                bool sameposY = true;
+                bool samerotY = true;
+                bool samesizeY = true;
+                bool sameposZ = true;
+                bool samerotZ = true;
+                bool samesizeZ = true;
 
-            if(selectedEntities.size() > 1)
-                for (auto iter : selectedEntities) {
-                    vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
-                    if(std::abs(iter->transform.position()[0] - pos[0]) > 0.0001f)
-                        sameposX = false;
-                    if(std::abs(iter->transform.position()[1] - pos[1]) > 0.0001f)
-                        sameposY = false;
-                    if(std::abs(iter->transform.position()[2] - pos[2]) > 0.0001f)
-                        sameposZ = false;
+                if (selected_entities.size() > 1)
+                    for (auto iter : selected_entities) {
+                        vec3 pos = (*(selected_entities.begin()++))->transform.localPosition();
+                        if (std::abs(iter->transform.position()[0] - pos[0]) > 0.0001f)
+                            sameposX = false;
+                        if (std::abs(iter->transform.position()[1] - pos[1]) > 0.0001f)
+                            sameposY = false;
+                        if (std::abs(iter->transform.position()[2] - pos[2]) > 0.0001f)
+                            sameposZ = false;
 
-                    vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
-                    if(std::abs(iter->transform.rotation()[0] - rot[0]) > 0.0001f)
-                        samerotX = false;
-                    if(std::abs(iter->transform.rotation()[1] - rot[1]) > 0.0001f)
-                        samerotY = false;
-                    if(std::abs(iter->transform.rotation()[2] - rot[2]) > 0.0001f)
-                        samerotZ = false;
+                        vec3 rot = (*(selected_entities.begin()++))->transform.eulerRotation();
+                        if (std::abs(iter->transform.rotation()[0] - rot[0]) > 0.0001f)
+                            samerotX = false;
+                        if (std::abs(iter->transform.rotation()[1] - rot[1]) > 0.0001f)
+                            samerotY = false;
+                        if (std::abs(iter->transform.rotation()[2] - rot[2]) > 0.0001f)
+                            samerotZ = false;
 
-                    vec3 size = (*(selectedEntities.begin()++))->transform.scale();
-                    if(std::abs(iter->transform.scale()[0] - size[0]) > 0.0001f)
-                        samesizeX = false;
-                    if(std::abs(iter->transform.scale()[1] - size[1]) > 0.0001f)
-                        samesizeY = false;
-                    if(std::abs(iter->transform.scale()[2] - size[2]) > 0.0001f)
-                        samesizeZ = false;
+                        vec3 size = (*(selected_entities.begin()++))->transform.scale();
+                        if (std::abs(iter->transform.scale()[0] - size[0]) > 0.0001f)
+                            samesizeX = false;
+                        if (std::abs(iter->transform.scale()[1] - size[1]) > 0.0001f)
+                            samesizeY = false;
+                        if (std::abs(iter->transform.scale()[2] - size[2]) > 0.0001f)
+                            samesizeZ = false;
+                    }
+
+                for (auto iter : selected_entities) {
+                    vec3 pos = iter->transform.localPosition();
+                    if (sameposX)
+                        pos[0] = posX;
+                    if (sameposY)
+                        pos[1] = posY;
+                    if (sameposZ)
+                        pos[2] = posZ;
+
+                    (*iter).transform.position(pos);
+                    vec3 rot = iter->transform.eulerRotation();
+                    if (samerotX)
+                        rot[0] = rotX;
+                    if (samerotY)
+                        rot[1] = rotY;
+                    if (samerotZ)
+                        rot[2] = rotZ;
+
+                    quat quaternion = quat(rot);
+                    if (activeRotation)
+                        (*iter).transform.rotation(quaternion);
+
+                    vec3 size = iter->transform.scale();
+                    if (samesizeX)
+                        size[0] = sizeX;
+                    if (samesizeY)
+                        size[1] = sizeY;
+                    if (samesizeZ)
+                        size[2] = sizeZ;
+
+                    if (sizeX != 0 && sizeY != 0 && sizeZ != 0)
+                        (*iter).transform.scale(size);
                 }
 
-            for (auto iter : selectedEntities) {
-                vec3 pos = iter->transform.localPosition();
-                if(sameposX)
-                    pos[0] = posX;
-                if(sameposY)
-                    pos[1] = posY;
-                if(sameposZ)
-                    pos[2] = posZ;
+                ImGui::PushItemWidth(100);
+                if (!selected_entities.empty()) {
+                    vec3 pos = (*(selected_entities.begin()++))->transform.localPosition();
+                    posX = pos[0];
+                    posY = pos[1];
+                    posZ = pos[2];
+                    vec3 rot = (*(selected_entities.begin()++))->transform.eulerRotation();
+                    rotX = rot[0];
+                    rotY = rot[1];
+                    rotZ = rot[2];
 
-                (*iter).transform.position(pos);
-                vec3 rot = iter->transform.eulerRotation();
-                if(samerotX)
-                    rot[0] = rotX;
-                if(samerotY)
-                    rot[1] = rotY;
-                if(samerotZ)
-                    rot[2] = rotZ;
+                    vec3 size = (*(selected_entities.begin()++))->transform.scale();
+                    sizeX = size[0];
+                    sizeY = size[1];
+                    sizeZ = size[2];
+                }
 
-                quat quaternion = quat(rot);
-                if(activeRotation)
-                    (*iter).transform.rotation(quaternion);
-
-                vec3 size = iter->transform.scale();
-                if(samesizeX)
-                    size[0] = sizeX;
-                if(samesizeY)
-                    size[1] = sizeY;
-                if(samesizeZ)
-                    size[2] = sizeZ;
-
-                if (sizeX != 0 && sizeY != 0 && sizeZ != 0)
-                    (*iter).transform.scale(size);
+                ImGui::InputFloat("x", &posX, 0.1f, 0.1f);
+                ImGui::SameLine();
+                ImGui::InputFloat("y", &posY, 0.1f, 0.1f);
+                ImGui::SameLine();
+                ImGui::InputFloat("z", &posZ, 0.1f, 0.1f);
+                ImGui::Checkbox("Active rotation", &activeRotation);
+                ImGui::InputFloat("rot x", &rotX, 0.1f, 0.1f);
+                ImGui::SameLine();
+                ImGui::InputFloat("rot y", &rotY, 0.1f, 0.1f);
+                ImGui::SameLine();
+                ImGui::InputFloat("rot z", &rotZ, 0.1f, 0.1f);
+                ImGui::InputFloat("size x", &sizeX, 0.1f, 0.1f);
+                ImGui::SameLine();
+                ImGui::InputFloat("size y", &sizeY, 0.1f, 0.1f);
+                ImGui::SameLine();
+                ImGui::InputFloat("size z", &sizeZ, 0.1f, 0.1f);
             }
-
-            ImGui::PushItemWidth(100);
-            if (!selectedEntities.empty()) {
-                vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
-                posX = pos[0];
-                posY = pos[1];
-                posZ = pos[2];
-                vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
-                rotX = rot[0];
-                rotY = rot[1];
-                rotZ = rot[2];
-
-                vec3 size = (*(selectedEntities.begin()++))->transform.scale();
-                sizeX = size[0];
-                sizeY = size[1];
-                sizeZ = size[2];
-            }
-
-            ImGui::InputFloat("x", &posX, 0.1f, 0.1f);
-            ImGui::SameLine();
-            ImGui::InputFloat("y", &posY, 0.1f, 0.1f);
-            ImGui::SameLine();
-            ImGui::InputFloat("z", &posZ, 0.1f, 0.1f);
-            ImGui::Checkbox("Active rotation", &activeRotation);
-            ImGui::InputFloat("rot x", &rotX, 0.1f, 0.1f);
-            ImGui::SameLine();
-            ImGui::InputFloat("rot y", &rotY, 0.1f, 0.1f);
-            ImGui::SameLine();
-            ImGui::InputFloat("rot z", &rotZ, 0.1f, 0.1f);
-            ImGui::InputFloat("size x", &sizeX, 0.1f, 0.1f);
-            ImGui::SameLine();
-            ImGui::InputFloat("size y", &sizeY, 0.1f, 0.1f);
-            ImGui::SameLine();
-            ImGui::InputFloat("size z", &sizeZ, 0.1f, 0.1f);
+            ImGui::EndChild();
         }
-        ImGui::EndChild();
     }
-    ImGui::End();
 
-    ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-    ImGui::Begin("Scene tree");
-    {
-        createHierachy();
-    }
-    ImGui::End();
+    ImGui::End();*/
+
     ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
     ImGui::Begin("Create");
     {
-        //std::list<Entity *> parents;
-        //for (auto iter : current_scene->getEntities()) {
-        //    if (iter->getParent() == nullptr)
-        //        parents.push_back(iter);
-        //}
-        /*if (ImGui::TreeNode("Elements")) {
-            int index = 0;
-
-            if(ImGui::IsItemClicked())
-                selectedEntities.clear();
-           createTree(current_scene->getEntities(), nullptr, index, selectedEntities, current_scene, posX, posY,
-                       posZ , rotX, rotY, rotZ, sizeX, sizeY, sizeZ);
-            ImGui::TreePop();
-
-        }*/
         if (ImGui::Button("Cube")) {
             Entity *entity;
-            current_scene->instantiate(
-                    entity = new MeshRenderer(renderer->CUBE, *material, vec3(0, 0, 0),
-                                              vec3(0, 0, 0), vec3(1, 1, 1)));
-            entity->setName("Entity: " + std::to_string(current_scene->getEntities().size()));
-            if (selectedEntities.size() == 1) {
-                entity->setParent(*selectedEntities.begin());
+            current_scene->instantiate(entity = new MeshRenderer(renderer->CUBE, *material, vec3(0, 0, 0),
+                                                                 vec3(0, 0, 0), vec3(1, 1, 1)));
+            entity->setName("Entity: " +
+                            std::to_string(current_scene->getEntities().size()));
+            if (selected_entities.size() == 1) {
+                entity->setParent(*selected_entities.begin());
             }
         }
 
         if (ImGui::Button("Sphere")) {
             Entity *entity;
-            current_scene->instantiate(
+            current_scene->
+                    instantiate(
                     entity = new MeshRenderer(renderer->SPHERE, *material, vec3(0, 0, 0),
-                                              vec3(0, 0, 0), vec3(1, 1, 1)));
+                                              vec3(0, 0, 0), vec3(1, 1, 1))
+            );
             entity->setName("Entity: " + std::to_string(current_scene->getEntities().size()));
-            if (selectedEntities.size() == 1) {
-                entity->setParent(*selectedEntities.begin());
+            if (selected_entities.size() == 1) {
+                entity->setParent(*selected_entities.begin());
             }
 
         }
         if (ImGui::Button("Light")) {
-            if(PointLight::getInstances().size()<4)
-            {
+            if (PointLight::getInstances().size() < 4) {
                 PointLight *entity;
-                current_scene->instantiate(
-                        entity=new PointLight(Color(1,1,1),10,vec3(0)));
-                entity->setName("Light: " + std::to_string(lightCount+1));
-                if (selectedEntities.size() == 1) {
-                    entity->setParent(*selectedEntities.begin());
+                current_scene->
+                        instantiate(
+                        entity = new PointLight(Color(1, 1, 1), 10, vec3(0))
+                );
+                entity->setName("Light: " +
+                                std::to_string(lightCount
+                                               + 1));
+                if (selected_entities.size() == 1) {
+                    entity->setParent(*selected_entities.begin());
                 }
                 lightCount++;
             }
@@ -353,45 +266,82 @@ void Editor::draw() const {
         }
         if (ImGui::Button("Camera")) {
             Camera *entity;
-            current_scene->instantiate(
-                    entity = new Camera());
-            entity->setName("Camera: " + std::to_string(cameras.size() + 1));
-            if (selectedEntities.size() == 1) {
-                entity->setParent(*selectedEntities.begin());
+            current_scene->
+                    instantiate(
+                    entity = new Camera()
+            );
+            entity->setName("Camera: " +
+                            std::to_string(cameras.size() + 1));
+            if (selected_entities.size() == 1) {
+                entity->setParent(*selected_entities.begin());
             }
             cameras_canvas.push_back(new Canvas(*canvas, renderer->DEFAULT_2D_SHADER, 1, 1));
             cameras.push_back(entity);
         }
-        if(ImGui::Button("Delete")) {
-            for (auto entity : selectedEntities) {
-                if(entity->getName()[0]=='C') {
+        if (ImGui::Button("Delete")) {
+            for (auto entity: selected_entities) {
+                if (entity->getName()[0] == 'C') {
                     for (int i = 0; i < cameras.size(); ++i) {
                         if (cameras[i]->getName() == entity->getName()) {
-                            cameras_canvas.erase(cameras_canvas.begin()+i);
-                            cameras.erase(cameras.begin()+i);
+                            cameras_canvas.erase(cameras_canvas.begin() + i);
+                            cameras.erase(cameras.begin() + i);
                             current_scene->destroy(entity);
                         }
                     }
+                } else {
+                    current_scene->
+                            destroy(entity);
                 }
-                else
-                {
-                    current_scene->destroy(entity);
-                }
-
-
             }
-            selectedEntities.clear();
+            selected_entities.clear();
         }
-
         std::string text;
-        for (auto iter : selectedEntities)
+        for (auto iter: selected_entities)
             text += iter->getName();
-        if (!selectedEntities.empty())
-            ImGui::Text(text.c_str());
+        if (!selected_entities.empty()) { ImGui::Text(text.c_str()); }
+
     }
     ImGui::End();
-
 }
+
+
+
+
+void createTree(const std::vector<Entity *> &entities, Entity *parent, int &index,
+                std::set<Entity *> &selectedEntities, Scene *current_scene, float &posX, float &posY,
+                float &posZ, float &rotX, float &rotY, float &rotZ, float &sizeX, float &sizeY, float &sizeZ) {
+
+    for (auto iter : entities) {
+        if (iter == parent) {
+            if (ImGui::TreeNode((void *) (intptr_t) index, iter->getName().c_str(), index++)) {
+                if (ImGui::IsItemClicked()) {
+                    if (!current_scene->getInput().isKeyDown(GLFW_KEY_LEFT_CONTROL))
+                        selectedEntities.clear();
+                    selectedEntities.emplace(iter);
+
+                    if (!selectedEntities.empty()) {
+                        vec3 pos = (*(selectedEntities.begin()++))->transform.localPosition();
+                        posX = pos[0];
+                        posY = pos[1];
+                        posZ = pos[2];
+                        vec3 rot = (*(selectedEntities.begin()++))->transform.eulerRotation();
+                        rotX = rot[0];
+                        rotY = rot[1];
+                        rotZ = rot[2];
+                        vec3 size = (*(selectedEntities.begin()++))->transform.scale();
+                        sizeX = size[0];
+                        sizeY = size[1];
+                        sizeZ = size[2];
+                    }
+                }
+                createTree(entities, iter, index, selectedEntities, current_scene, posX, posY, posZ, rotX, rotY, rotZ,
+                           sizeX, sizeY, sizeZ);
+                ImGui::TreePop();
+            }
+        }
+    }
+}
+
 
 
 

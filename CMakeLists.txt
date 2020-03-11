@@ -86,7 +86,6 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/FBO.cpp
         src/engine/Core/Rendering/RBO.cpp
 
-        src/engine/Utils/SimplexNoise.cpp
         src/engine/Utils/StringUtils.cpp
         src/engine/Utils/Timer.cpp
         src/engine/Utils/TimeUtils.cpp
@@ -101,6 +100,6 @@ add_executable(OGL_Engine
         src/engine/Scenes/Editor/Editor.cpp
         src/engine/Core/Input.cpp src/engine/Core/Input.h
         src/engine/API_ALL.h
-)
+        src/engine/Scenes/Editor/PropertyWindow.cpp src/engine/Scenes/Editor/PropertyWindow.h src/engine/Scenes/Editor/SceneTreeWindow.cpp src/engine/Scenes/Editor/SceneTreeWindow.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

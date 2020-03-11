@@ -19,12 +19,9 @@ class Renderer;
 
 class Scene {
 protected:
-    std::vector<PointLight *> point_lights;
-    std::vector<DirectionalLight *> directional_lights;
     Color ambient_light = Color(0.1f, 0.1f, 0.1f);
-    std::vector<Entity *> Entities;
-public:
-    const std::vector<Entity *> &getEntities() const;
+    std::vector<Entity *> entities;
+
 
 protected:
     const Canvas *canvas;
@@ -33,7 +30,9 @@ protected:
     Camera *camera;
 public:
 
-    Scene(){};
+    Scene() {};
+
+    const std::vector<Entity *> &getEntities() const;
 
     virtual void init(const Canvas &canvas, Renderer &renderer, Input &input);
 
@@ -45,21 +44,13 @@ public:
 
     ~Scene();
 
-    Entity& instantiate(Entity *entity);
+    Entity &instantiate(Entity *entity);
 
-    void removeEntity(Entity *entity);
 
     void destroy(Entity *entity);
 
     void setCamera(Camera &camera);
 
-    void addLight(PointLight *light);
-
-    void addLight(DirectionalLight *light);
-
-    const std::vector<PointLight *> &getPointLights() const;
-
-    const std::vector<DirectionalLight *> &getDirectionalLights() const;
 
     const Color &getAmbientLight() const;
 
@@ -69,6 +60,6 @@ public:
 
     Renderer &getRenderer() const;
 
-    Camera &getCamera();
+    Camera &getCamera() const;
 
 };

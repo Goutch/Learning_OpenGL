@@ -6,14 +6,17 @@
 #include "set"
 #include "vector"
 #include <list>
+#include "PropertyWindow.h"
+#include "SceneTreeWindow.h"
 class Editor: public Scene{
-
     mutable std::vector<Camera*> cameras;
     mutable std::vector<Canvas*> cameras_canvas;
     Scene* current_scene;
+    PropertyWindow properties;
+    SceneTreeWindow scene_tree;
     mutable int lightCount=0;
     mutable Color color;
-    mutable std::set<Entity*> selectedEntities;
+    mutable std::set<Entity*> selected_entities;
     mutable float posX = 0;
     mutable float rotX = 0;
     mutable float sizeX = 1;
@@ -34,8 +37,7 @@ public:
     Editor();
     ~Editor();
     void update(float delta) override;
-    void createHierachy() const;
-    void draw() const override ;
+
 };
 
 

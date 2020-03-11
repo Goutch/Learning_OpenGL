@@ -30,8 +30,7 @@ const Texture &DirectionalLight::getShadowMap() const {
     return fbo->getTexture();
 }
 
-void DirectionalLight::calculateShadowMap(Scene &scene) {
-    this->transform.position(scene.getCamera().transform.position());
+void DirectionalLight::calculateShadowMap(const Scene &scene) {
     light_space_mat = depth_projection * glm::inverse(this->transform.getMatrix());
     scene.draw();
     scene.getRenderer().renderDepth(*fbo, light_space_mat);
@@ -52,4 +51,9 @@ void DirectionalLight::onDestroy(Scene &scene) {
 
 const std::set<const DirectionalLight *> &DirectionalLight::getInstances() {
     return instances;
+}
+void DirectionalLight::update(float delta, Scene &scene) {
+    Entity::update(delta, scene);
+    this->transform.position(scene.getCamera().transform.position());
+    calculateShadowMap(scene);
 }

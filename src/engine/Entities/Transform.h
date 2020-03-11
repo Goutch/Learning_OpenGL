@@ -37,6 +37,7 @@ public:
 
     void scale(vec3 scale);
     vec3 scale() const;
+    void setScale(vec3 scale);
 };
 
 

@@ -11,7 +11,7 @@ Transform::Transform() {
 Transform::Transform(vec3 position, vec3 rotation, vec3 scale) {
     this->translate(position);
     this->rotate(quat(rotation));
-    this->scale(scale);
+    this->setScale(scale);
 }
 
 mat4 Transform::getMatrix() const {
@@ -82,13 +82,18 @@ void Transform::position(const vec3 &position) {
 }
 
 void Transform::scale(vec3 scale) {
+    transform_matrix[0] = transform_matrix[0] + (normalize(transform_matrix[0]) * scale.x);
+    transform_matrix[1] = transform_matrix[1] + (normalize(transform_matrix[1]) *scale.y);
+    transform_matrix[2] = transform_matrix[2] + (normalize(transform_matrix[2]) *scale.z);
+}
+
+void Transform::setScale(vec3 scale) {
     transform_matrix[0] = normalize(transform_matrix[0]) * scale.x;
     transform_matrix[1] = normalize(transform_matrix[1]) * scale.y;
     transform_matrix[2] = normalize(transform_matrix[2]) * scale.z;
 }
 
 vec3 Transform::eulerRotation() const {
-
     return glm::eulerAngles(rot);
 }
 

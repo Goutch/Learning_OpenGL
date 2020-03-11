@@ -44,6 +44,5 @@
 #include "Shaders/LightMaterial.h"
 
 #include "Utils/Timer.h"
-#include "Utils/SimplexNoise.h"
 #include "Utils/TimeUtils.h"
 #include "Utils/StringUtils.h"
