@@ -14,12 +14,6 @@ Entity::Entity() {
 
 }
 
-void Entity::onDestroy(Scene &scene) {
-    for (auto c=children.begin();c!=children.end();c++) {
-        scene.destroy(*c);
-    }
-}
-
 void Entity::draw(const Scene &scene) const {}
 
 void Entity::update(float delta, Scene &scene) {}
@@ -35,30 +29,56 @@ void Entity::setName(const std::string &name) {
 }
 
 void Entity::addChild(Entity *child) {
-    children.insert(child);
-    child->transform.parent = &transform;
+    if(children.find(child)==children.end())
+    {
+        children.insert(child);
+        child->parent=this;
+        child->transform.parent = &transform;
+    }
 }
 
 void Entity::removeChild(Entity *child) {
-    children.erase(child);
+    if(children.find(child)!=children.end())
+    {
+        children.erase(child);
+        child->parent= nullptr;
+        child->transform.parent = nullptr;
+    }
 }
 
 void Entity::removeChild(std::string name) {
     for (auto c = children.begin(); c != children.end(); c++) {
         if ((*c)->getName() == name) {
-            children.erase(c);
+            removeChild(*c);
             break;
         }
     }
 }
 
 void Entity::setParent(Entity *parent) {
-    parent->addChild(this);
+    if(parent!= nullptr)
+    {
+        parent->addChild(this);
+    }
+    else
+    {
+        this->parent= nullptr;
+        transform.parent= nullptr;
+    }
+
 }
 
 std::set<Entity *> Entity::getChildren() {
     return children;
 }
-
-
+Entity* Entity::getParent()
+{
+    return parent;
+}
+void Entity::onDestroy(Scene &scene) {
+    if(parent!= nullptr)parent->removeChild(this);
+    for (auto c=children.begin();c!=children.end();c++) {
+        scene.destroy(*c);
+    }
+}
 

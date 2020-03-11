@@ -11,6 +11,7 @@ class Scene;
 class Entity{
     std::string name;
     std::set<Entity*> children;
+    Entity* parent= nullptr;
 public:
     Transform transform;
     Entity(vec3 position, vec3 rotation=vec3(0), vec3 scale=vec3(1));
@@ -18,8 +19,8 @@ public:
     void addChild(Entity* child);
     void removeChild(Entity* child);
     void removeChild(std::string name);
-    void removeChild(unsigned int index);
     void setParent(Entity* parent);
+    Entity* getParent();
     std::set<Entity*> getChildren();
     virtual void init(Scene &scene);
     virtual void draw(const Scene &scene) const;

@@ -6,14 +6,14 @@
 #include <API_ALL.h>
 
 
-FPSController::FPSController(Transform& camera,vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
+FPSController::FPSController(Camera &camera, vec3 position, vec3 rotation, vec3 scale) : Entity(position, rotation, scale) {
     this->camera=&camera;
-    this->camera->parent=&transform;
+    camera.setParent(this);
 }
 
-FPSController::FPSController(Transform& camera): Entity() {
+FPSController::FPSController(Camera &camera): Entity() {
     this->camera=&camera;
-    this->camera->parent=&transform;
+    camera.setParent(this);
 }
 
 void FPSController::init(Scene &scene) {
@@ -61,7 +61,7 @@ void FPSController::update(float delta, Scene &scene) {
     change.y=(((height/2)-y)/height)*(fov*aspect_ratio);
 
     transform.rotate(quat(vec3(0,radians(change.x),0)));
-    camera->rotate(quat(vec3(radians(change.y),0,0)));
+    camera->transform.rotate(quat(vec3(radians(change.y),0,0)));
 
     input.setMousePosition(width/2,height/2);
 }

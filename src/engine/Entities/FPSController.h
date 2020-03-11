@@ -1,14 +1,15 @@
 #pragma once
 
 #include "Entity.h"
+#include "Camera.h"
 
 class FPSController: public Entity {
 private:
-    Transform* camera;
+    Camera* camera;
     float speed=100;
 public:
-    FPSController(Transform& camera,vec3 position,vec3 rotation,vec3 scale);
-    FPSController(Transform& camera);
+    FPSController(Camera &camera, vec3 position, vec3 rotation, vec3 scale);
+    FPSController(Camera &camera);
 
 
     void update(float delta, Scene &scene) override ;

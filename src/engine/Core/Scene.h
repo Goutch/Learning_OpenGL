@@ -24,7 +24,7 @@ protected:
     Color ambient_light = Color(0.1f, 0.1f, 0.1f);
     std::vector<Entity *> Entities;
 public:
-    const std::vector<Entity *> &getSpacialEntities() const;
+    const std::vector<Entity *> &getEntities() const;
 
 protected:
     const Canvas *canvas;

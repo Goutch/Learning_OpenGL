@@ -6,6 +6,7 @@
 #include "Core/Scene.h"
 #include "Geometry/Geometry.h"
 #include <Shaders/Shader.h>
+#include <Entities/Camera.h>
 #include "Core/Canvas.h"
 class Grass;
 class SpacialSceneDemo : public Scene {
@@ -32,8 +33,8 @@ class SpacialSceneDemo : public Scene {
     Quad mirror_quad;
 
     Canvas mirror_canvas=Canvas(600,600);
-    Transform mirror_camera;
-    mat4 projection_mirror;
+    Camera *mirror_camera;
+
 
     DirectionalLight *sun;
 

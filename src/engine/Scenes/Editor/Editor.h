@@ -5,7 +5,7 @@
 #include "Scenes/Demo3D/SpacialSceneDemo.h"
 #include "set"
 #include "vector"
-
+#include <list>
 class Editor: public Scene{
 
     mutable std::vector<Camera*> cameras;
@@ -34,7 +34,7 @@ public:
     Editor();
     ~Editor();
     void update(float delta) override;
-
+    void createHierachy() const;
     void draw() const override ;
 };
 

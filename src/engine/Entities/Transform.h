@@ -9,12 +9,12 @@
 #include "glm/gtx/matrix_decompose.hpp"
 using namespace glm;
 class Transform {
-
+    friend class Entity;
     mat4 transform_matrix=glm::mat4(1.0f);
     quat rot=glm::identity<quat>();
-
-public:
     Transform* parent= nullptr;
+public:
+
     Transform();
     Transform(vec3 position,vec3 rotation,vec3 scale);
     mat4 getMatrix() const;
