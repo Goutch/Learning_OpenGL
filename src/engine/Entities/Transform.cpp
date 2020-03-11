@@ -56,7 +56,7 @@ void Transform::rotation(const quat &rotation) {
     transform_matrix=mat4(1.0f);
     this->translate(p);
     this->rotate(rotation);
-    this->scale(s);
+    this->setScale(s);
 }
 
 vec3 Transform::position() const {

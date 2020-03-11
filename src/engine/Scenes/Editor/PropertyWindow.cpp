@@ -22,7 +22,7 @@ void PropertyWindow::update(ImGuiID dockspace_id,std::set<Entity*>& selected_ent
                 scale=transform.scale();
                 ImGui::DragFloat3("position",&position.x,0.1f);
                 ImGui::DragFloat3("rotation",&rotation.x,0.1f);
-                ImGui::DragFloat3("scale",&scale.x,0.1f,0.0001);
+                ImGui::DragFloat3("scale",&scale.x,0.1f,0.001f,std::numeric_limits<float>::max());
                 position_change=position-transform.position();
                 rotation_change=rotation-transform.eulerRotation();
                 scale_change=scale-transform.scale();
@@ -31,7 +31,7 @@ void PropertyWindow::update(ImGuiID dockspace_id,std::set<Entity*>& selected_ent
             for (auto e:selected_entities) {
                 e->transform.translate(position_change);
                 e->transform.rotate(quat(rotation_change));
-                //e->transform.scale(scale_change);
+                e->transform.scale(scale_change);
             }
         }
     }

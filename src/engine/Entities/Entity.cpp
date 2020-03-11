@@ -7,7 +7,7 @@
 Entity::Entity(vec3 position, vec3 rotation, vec3 scale) {
     transform.translate(position);
     transform.rotate(quat(rotation));
-    transform.scale(scale);
+    transform.setScale(scale);
 }
 
 Entity::Entity() {
