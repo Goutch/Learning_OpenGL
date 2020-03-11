@@ -5,7 +5,7 @@
 #include "SceneTreeWindow.h"
 void SceneTreeWindow::createHierachy(Input& input,const std::vector<Entity*>& entities,std::set<Entity*>& selected_entities) const {
 
-            std::list<Entity *> root_entities;
+    std::list<Entity *> root_entities;
     for (auto e:entities) {
         if (e->getParent() == nullptr) {
             root_entities.push_back(e);
@@ -32,11 +32,26 @@ void SceneTreeWindow::createEntityTree(Input& input,Entity *entity,std::set<Enti
         ImGui::Bullet();
         ImGui::SameLine();
         ImGui::Selectable(entity->getName().c_str(), is_selected);
-        if (!is_selected && ImGui::IsItemClicked()) {
-            if (!input.isKeyDown(GLFW_KEY_LEFT_CONTROL)) {
-                selected_entities.clear();
+        if (ImGui::IsItemClicked()) {
+            //if multiselect
+            if (input.isKeyDown(GLFW_KEY_LEFT_CONTROL)) {
+                if(is_selected)
+                {
+                    selected_entities.erase(entity);
+                }
+                if(!is_selected)
+                {
+                    selected_entities.insert(entity);
+                }
             }
-            selected_entities.insert(entity);
+            //no multiselect
+            else
+            {
+                selected_entities.clear();
+                selected_entities.insert(entity);
+            }
+
+
         }
 
     } else {
