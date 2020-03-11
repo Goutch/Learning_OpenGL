@@ -1,12 +1,9 @@
 
 #include "Editor.h"
 #include <Core/Rendering/BatchRenderer.h>
-#include <Entities/MeshRenderer.h>
 
 #include <imgui.h>
-#include <imgui_demo.cpp>
-#include <Core/Log.h>
-#include "Core/Input.h"
+
 #include "API_ALL.h"
 
 Editor::Editor(Scene *scene) {
@@ -137,13 +134,11 @@ void Editor::update(float delta) {
                         instantiate(
                         entity = new PointLight(Color(1, 1, 1), 10, vec3(0))
                 );
-                entity->setName("Light: " +
-                                std::to_string(lightCount
-                                               + 1));
+                entity->setName("Light: " +PointLight::getInstances().size()+ 1);
                 if (selected_entities.size() == 1) {
                     entity->setParent(*selected_entities.begin());
                 }
-                lightCount++;
+
             }
 
         }
@@ -178,11 +173,6 @@ void Editor::update(float delta) {
             }
             selected_entities.clear();
         }
-        std::string text;
-        for (auto iter: selected_entities)
-            text += iter->getName();
-        if (!selected_entities.empty()) { ImGui::Text(text.c_str()); }
-
     }
     ImGui::End();
 }
