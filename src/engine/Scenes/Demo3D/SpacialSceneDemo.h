@@ -1,21 +1,21 @@
 #pragma once
 
 #include <Ressources/Mesh.h>
-#include <Shaders/LightMaterial.h>
+#include <Ressources/Shaders/Material/LightMaterial.h>
 #include <Ressources/Texture.h>
 #include "Core/Scene.h"
 #include "Utils/Geometry.h"
-#include <Shaders/Shader.h>
+#include <Ressources/Shaders/Shader.h>
 #include <Entities/Camera.h>
 #include "Core/Canvas.h"
 class Grass;
 class SpacialSceneDemo : public Scene {
-    Shader lightShader = Shader("../src/engine/Shaders/ShadersSources/LightVertex.glsl",
-                                "../src/engine/Shaders/ShadersSources/LightFragment.glsl");
-    Shader default_shader= Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
-                                "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
-    Shader mirror_shader=Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
-                                "../src/engine/Shaders/ShadersSources/MirrorFragment.glsl");\
+    Shader lightShader = Shader("../res/shaders/LightVertex.glsl",
+                                "../res/shaders/LightFragment.glsl");
+    Shader default_shader= Shader("../res/shaders/DefaultVertex.glsl",
+                                "../res/shaders/DefaultFragment.glsl");
+    Shader mirror_shader=Shader("../res/shaders/DefaultVertex.glsl",
+                                "../res/shaders/MirrorFragment.glsl");\
 
     Texture wall_texture = Texture("../res/wall.jpg", false);
 

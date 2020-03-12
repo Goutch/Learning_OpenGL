@@ -23,19 +23,18 @@ class FBO;
 class Canvas;
 
 #include "glm/mat4x4.hpp"
-#include <Shaders/EntityMaterial.h>
+#include <Ressources/Shaders/Material/EntityMaterial.h>
 #include <Ressources/Color.h>
 #include <Entities/Transform.h>
 #include <Ressources/Quad.h>
 #include <queue>
 #include <tuple>
-
-#include <Shaders/Shader.h>
-
-#include <deque>
-using namespace glm;
+#include <Ressources/Shaders/Shader.h>
 #include <Ressources/Sphere.h>
 #include <Ressources/Cube.h>
+#include <deque>
+using namespace glm;
+
 
 class Renderer {
 public:
@@ -44,16 +43,25 @@ public:
     struct RenderOption{
         bool cull_faces=true;
         int primitive_type=PRIMITIVE_TRIANGLES;
-        bool operator==(const RenderOption &other){
+        bool depth_test=true;
+        RenderOption(){}
+        bool operator==(const RenderOption& other)const{
             return (primitive_type==other.primitive_type&&
                     cull_faces==other.cull_faces);
         }
+
+        std::size_t operator()()const{
+            return primitive_type
+                    <<cull_faces
+                    <<depth_test;
+        }
     };
+
     const Quad QUAD=Quad();
     const Cube CUBE = Cube();
     const Sphere SPHERE = Sphere(1, 100, 50);
-    const Shader DEFAULT_SPACIAL_SHADER = Shader("../src/engine/Shaders/ShadersSources/DefaultVertex.glsl",
-                                                 "../src/engine/Shaders/ShadersSources/DefaultFragment.glsl");
+    const Shader DEFAULT_SPACIAL_SHADER = Shader("../res/shaders/DefaultVertex.glsl",
+                                                 "../res/shaders/DefaultFragment.glsl");
     const Shader DEPTH_SHADER = Shader("#version 330 core\n"
                                        "layout(location = 0) in vec3 vertexPosition;\n"
                                        "uniform mat4 space;\n"
@@ -135,7 +143,7 @@ public:
 
     virtual void renderOnMainBuffer(const Canvas &canvas);
 
-    virtual void draw(const VAO &vao, const EntityMaterial &material, const Transform &transform,const RenderOption renderOption={}) const= 0;
+    virtual void draw(const VAO &vao, const EntityMaterial &material, const Transform &transform,RenderOption renderOption={}) const= 0;
 
     virtual void render(const FBO &buffer, const glm::mat4 &projection, const glm::mat4 &view_mat=mat4(1.0f)) const= 0;
 

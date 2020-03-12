@@ -64,9 +64,6 @@ void Editor::update(float delta) {
         ImGui::Begin(cameras[i]->getName().c_str());
         {
             current_scene->draw();
-            cameras_canvas[i]->getFrameBuffer().bind();
-            renderer->clear();
-            cameras_canvas[i]->getFrameBuffer().unbind();
             current_scene->setCamera(*cameras[i]);
             renderer->render(cameras_canvas[i]->getFrameBuffer(), cameras[i]->getProjectionMatrix(),
                              cameras[i]->getViewMatrix());

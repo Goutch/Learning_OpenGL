@@ -43,9 +43,6 @@ void Engine::start() {
 
             scene->update((float) delta_time);
             scene->draw();
-            scene->getCanvas().getFrameBuffer().bind();
-            renderer->clear();
-            scene->getCanvas().getFrameBuffer().unbind();
             scene->render();
             renderer->clearColor();
             renderer->renderOnMainBuffer(*canvas);

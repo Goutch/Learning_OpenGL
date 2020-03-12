@@ -7,7 +7,7 @@
 #include <Core/Rendering/FBO.h>
 #include <Ressources/Quad.h>
 #include <Entities/Transform.h>
-#include <Shaders/EntityMaterial.h>
+#include <Ressources/Shaders/Material/EntityMaterial.h>
 class window;
 
 /**

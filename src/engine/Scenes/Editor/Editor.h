@@ -18,8 +18,8 @@ class Editor: public Scene{
     mutable Color color;
     mutable std::set<Entity*> selected_entities;
 
-    Shader shader = Shader("../src/engine/Shaders/ShadersSources/LightVertex.glsl",
-                                "../src/engine/Shaders/ShadersSources/LightFragment.glsl");
+    Shader shader = Shader("../res/shaders/LightVertex.glsl",
+                                "../res/shaders/LightFragment.glsl");
     LightMaterial* material;
 public:
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;

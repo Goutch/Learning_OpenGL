@@ -3,17 +3,17 @@
 
 #include <GL/glew.h>
 #include "SimpleRenderer.h"
-#include <Shaders/EntityMaterial.h>
+#include <Ressources/Shaders/Material/EntityMaterial.h>
 #include <Core/Rendering/FBO.h>
 #include "Ressources/VAO.h"
 #include <Entities/Transform.h>
 
-void SimpleRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform& transform, int primitive, bool cull_faces)const  {
-    render_queue.emplace(&material,&vao,&transform,primitive,cull_faces);
+void SimpleRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform& transform,RenderOption options)const  {
+    //render_queue.emplace(&material,&vao,&transform,primitive,cull_faces);
 }
 
 void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
-    glEnable(GL_DEPTH_TEST);
+    /*glEnable(GL_DEPTH_TEST);
     buffer.bind();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     while(!render_queue.empty()) {
@@ -45,9 +45,10 @@ void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat
         render_queue.pop();
     }
     buffer.unbind();
+     */
 }
 
-void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const {
+void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const {/*
     glEnable(GL_DEPTH_TEST);
     buffer.bind();
     clearDepth();
@@ -71,6 +72,7 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
     }
     DEPTH_SHADER.unbind();
     buffer.unbind();
+    */
 }
 
 

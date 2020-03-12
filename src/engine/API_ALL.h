@@ -36,12 +36,12 @@
 #include "Ressources/Color.h"
 #include "Ressources/VBO.h"
 
-#include "Shaders/Shader.h"
-#include "Shaders/Material.h"
-#include "Shaders/TexturedMaterial.h"
-#include "Shaders/FontMaterial.h"
-#include "Shaders/EntityMaterial.h"
-#include "Shaders/LightMaterial.h"
+#include "Ressources/Shaders/Shader.h"
+#include "Ressources/Shaders/Material/Material.h"
+#include "Ressources/Shaders/Material/TexturedMaterial.h"
+#include "Ressources/Shaders/Material/FontMaterial.h"
+#include "Ressources/Shaders/Material/EntityMaterial.h"
+#include "Ressources/Shaders/Material/LightMaterial.h"
 
 #include "Utils/Timer.h"
 #include "Utils/TimeUtils.h"

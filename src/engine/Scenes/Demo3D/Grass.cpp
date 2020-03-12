@@ -30,7 +30,10 @@ void Grass::init(Scene &scene) {
 
 void Grass::draw(const Scene &scene) const {
     Entity::draw(scene);
-    scene.getRenderer().draw(vao, *material, transform, Renderer::PRIMITIVE_POINTS, false);
+    Renderer::RenderOption option;
+    option.cull_faces=false;
+    option.primitive_type=Renderer::PRIMITIVE_POINTS;
+    scene.getRenderer().draw(vao, *material, transform, option);
 }
 
 void Grass::update(float delta, Scene &scene) {
