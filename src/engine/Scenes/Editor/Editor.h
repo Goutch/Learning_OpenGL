@@ -8,13 +8,14 @@
 #include <list>
 #include "PropertyWindow.h"
 #include "SceneTreeWindow.h"
+#include "CameraWindow.h"
 class Editor: public Scene{
-    mutable std::vector<Camera*> cameras;
-    mutable std::vector<Canvas*> cameras_canvas;
+
     Scene* current_scene;
+    Canvas* current_scene_canvas;
     PropertyWindow properties;
     SceneTreeWindow scene_tree;
-
+    std::map<Camera*,CameraWindow*> cameras;
     mutable Color color;
     mutable std::set<Entity*> selected_entities;
 

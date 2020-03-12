@@ -6,8 +6,6 @@
 #include "Ressources/Shaders/Material/EntityMaterial.h"
 #include "Entities/Transform.h"
 
-#include "Core/Scene.h"
-
 #include "Core/Rendering/FBO.h"
 
 void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {

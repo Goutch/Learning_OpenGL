@@ -15,10 +15,10 @@ Editor::Editor() {
 }
 
 Editor::~Editor() {
-    for (int i = 0; i < cameras_canvas.size(); ++i) {
-        delete cameras_canvas[i];
+    for (auto c:cameras) {
+        delete c.second;
     }
-    cameras_canvas.clear();
+    delete current_scene_canvas;
     delete current_scene;
     delete material;
 }
@@ -26,15 +26,15 @@ Editor::~Editor() {
 void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
 
     Scene::init(canvas, renderer, input);
-    cameras_canvas.push_back(new Canvas(canvas, renderer.DEFAULT_2D_SHADER, canvas.getPixelWidth() / 2,
-                                        canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
-                                        canvas.getPixelHeight() / 4));
-    current_scene->init(*cameras_canvas[0], renderer, input);
+    current_scene_canvas = new Canvas(canvas, renderer.DEFAULT_2D_SHADER, canvas.getPixelWidth() / 2,
+                                      canvas.getPixelHeight() / 2, canvas.getPixelWidth() / 4,
+                                      canvas.getPixelHeight() / 4);
+    current_scene->init(*current_scene_canvas, renderer, input);
 
 
     current_scene->getCamera().transform.position(vec3(0, 0, 3));
     current_scene->getCamera().setName("Camera 1");
-    cameras.push_back(&current_scene->getCamera());
+    cameras.emplace(&current_scene->getCamera(),new CameraWindow());
     material = new LightMaterial(shader, *current_scene);
 }
 
@@ -56,44 +56,11 @@ void Editor::update(float delta) {
                          0/* ImGuiDockNodeFlags_None|ImGuiDockNodeFlags_PassthruCentralNode|ImGuiDockNodeFlags_NoResize*/);
     }
     ImGui::End();
-    scene_tree.update(*input,dockspaceID,current_scene->getEntities(),selected_entities);
+    scene_tree.update(*input, dockspaceID, current_scene->getEntities(), selected_entities);
     properties.update(dockspaceID, selected_entities);
-
-    for (int i = 0; i < cameras.size(); ++i) {
-        ImGui::SetNextWindowDockID(dockspaceID, ImGuiCond_FirstUseEver);
-        ImGui::Begin(cameras[i]->getName().c_str());
-        {
-            current_scene->draw();
-            current_scene->setCamera(*cameras[i]);
-            renderer->render(cameras_canvas[i]->getFrameBuffer(), cameras[i]->getProjectionMatrix(),
-                             cameras[i]->getViewMatrix());
-
-            Camera::ProjectionMode mode = current_scene->getCamera().getProjectionMode();
-            ImGui::BeginChild("Projection");
-            if (ImGui::Button(mode == Camera::ProjectionMode::PERSPECTIVE ? "Perspective" : "Orthographic")) {
-                if (mode == Camera::ORTHOGRAPHIC)
-                    current_scene->getCamera().setProjectionPerspective();
-                else
-                    current_scene->getCamera().setProjectionOrtho(10, 10);
-            }
-            ImGui::EndChild();
-            ImVec2 vMin = ImGui::GetWindowContentRegionMin();
-            ImVec2 vMax = ImGui::GetWindowContentRegionMax();
-            if (vMax.x != cameras_canvas[i]->getPixelWidth() ||
-                vMax.y != cameras_canvas[i]->getPixelHeight())
-                cameras_canvas[i]->setSize(vMax.x, vMax.y);
-            vMin.x += ImGui::GetWindowPos().x;
-            vMin.y += ImGui::GetWindowPos().y;
-            vMax.x += ImGui::GetWindowPos().x;
-            vMax.y += ImGui::GetWindowPos().y;
-            ImGui::GetWindowDrawList()->AddImage(
-                    (void *) cameras_canvas[i]->getFrameBuffer().getTexture().getID(),
-                    vMin,
-                    vMax,
-                    ImVec2(0, 1),
-                    ImVec2(1, 0));
-        }
-        ImGui::End();
+    for (auto &cam:cameras) {
+        //todo: handle deleted cameras
+        cam.second->update(current_scene, renderer, input, cam.first, dockspaceID);
     }
 
 
@@ -131,7 +98,7 @@ void Editor::update(float delta) {
                         instantiate(
                         entity = new PointLight(Color(1, 1, 1), 10, vec3(0))
                 );
-                entity->setName("Light: " +PointLight::getInstances().size()+ 1);
+                entity->setName("Light: " + PointLight::getInstances().size() + 1);
                 if (selected_entities.size() == 1) {
                     entity->setParent(*selected_entities.begin());
                 }
@@ -150,31 +117,17 @@ void Editor::update(float delta) {
             if (selected_entities.size() == 1) {
                 entity->setParent(*selected_entities.begin());
             }
-            cameras_canvas.push_back(new Canvas(*canvas, renderer->DEFAULT_2D_SHADER, 1, 1));
-            cameras.push_back(entity);
+            cameras.emplace(entity,new CameraWindow());
         }
         if (ImGui::Button("Delete")) {
             for (auto entity: selected_entities) {
-                if (entity->getName()[0] == 'C') {
-                    for (int i = 0; i < cameras.size(); ++i) {
-                        if (cameras[i]->getName() == entity->getName()) {
-                            cameras_canvas.erase(cameras_canvas.begin() + i);
-                            cameras.erase(cameras.begin() + i);
-                            current_scene->destroy(entity);
-                        }
-                    }
-                } else {
-                    current_scene->
-                            destroy(entity);
-                }
+                current_scene->destroy(entity);
             }
             selected_entities.clear();
         }
     }
     ImGui::End();
 }
-
-
 
 
 void createTree(const std::vector<Entity *> &entities, Entity *parent, int &index,

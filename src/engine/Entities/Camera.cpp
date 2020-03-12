@@ -13,24 +13,24 @@ void Camera::init(Scene &scene) {
     Entity::init(scene);
     this->canvas = &scene.getCanvas();
     canvas->subscribeSizeChange(*this);
-    setProjectionPerspective();
+    units.x=scene.getCanvas().getPixelWidth();
+    units.y=scene.getCanvas().getPixelHeight();
+    setProjectionPerspective(units.x,units.y);
 }
 
-void Camera::setProjectionPerspective() {
+
+void Camera::setProjectionPerspective(float width, float height) {
     this->projectionMode = PERSPECTIVE;
-    double w = (float) canvas->getPixelWidth();
-    double h = (float) canvas->getPixelHeight();
-    double aspect_ratio = w / h;
+    units.x=width;
+    units.y=height;
+    double aspect_ratio = width / height;
     projection_matrix = glm::perspective<float>(glm::radians(fov), aspect_ratio, 0.1f, 200.0f);
 }
-
 void Camera::setProjectionOrtho(float width, float height) {
     this->projectionMode = ORTHOGRAPHIC;
-    ortho_units.x=width;
-    ortho_units.y=height;
-    double w = (float) canvas->getPixelWidth();
-    double h = (float) canvas->getPixelHeight();
-    double aspect_ratio = w / h;
+    units.x=width;
+    units.y=height;
+    double aspect_ratio = width / height;
     projection_matrix = glm::ortho<float>(-width / 2, width / 2, -(height / 2) / aspect_ratio,
                                           (height / 2) / aspect_ratio, -100, 100);
 }
@@ -48,10 +48,12 @@ float Camera::getFOV() const {
 }
 
 void Camera::onCanvasSizeChange(unsigned int width, unsigned int height) {
+    units.x=width;
+    units.y=height;
     if (projectionMode == ORTHOGRAPHIC)
-        setProjectionOrtho(ortho_units.x,ortho_units.y);
+        setProjectionOrtho(units.x,units.y);
     else
-        setProjectionPerspective();
+        setProjectionPerspective(units.x,units.y);
 }
 
 void Camera::onDestroy(Scene &scene) {
@@ -61,12 +63,14 @@ void Camera::onDestroy(Scene &scene) {
 
 void Camera::setFOV(float fov) {
     this->fov = fov;
-    setProjectionPerspective();
+    setProjectionPerspective(units.x,units.y);
 }
 
 Camera::ProjectionMode Camera::getProjectionMode() {
     return projectionMode;
 }
+
+
 
 
 
