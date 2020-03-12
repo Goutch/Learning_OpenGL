@@ -13,7 +13,6 @@ void SimpleRenderer::draw(const VAO &vao, const EntityMaterial &material, const 
 }
 
 void SimpleRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
-    glEnable(GL_DEPTH_TEST);
     buffer.bind();
     clear();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
@@ -68,6 +67,7 @@ void SimpleRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space
         render_queue.pop();
     }
     DEPTH_SHADER.unbind();
+
     buffer.unbind();
 
 }

@@ -19,7 +19,10 @@ void Scene::update(float delta) {
 }
 
 void Scene::draw() const {
+    Log::message("draw");
+    int count=0;
     for (auto e:entities) {
+        Log::debug("drawcall#"+std::to_string(count++));
         e->draw(*this);
     }
 }

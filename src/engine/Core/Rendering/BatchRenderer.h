@@ -25,9 +25,9 @@ class BatchRenderer:public Renderer {
 private:
     struct Hash_fun{
         std::size_t operator()(const RenderOption& o)const{
-            return (o.primitive_type*2*2)
-                    +(o.cull_faces?1:0)
-                    +(o.depth_test?2:0);
+            return (o.primitive_type*4)
+                    +(o.cull_faces?2:0)
+                    +(o.depth_test?1:0);
         }
     };
     mutable std::unordered_map<RenderOption,std::unordered_map<const EntityMaterial *, std::unordered_map<const VAO *, std::list<const Transform*>>>,Hash_fun> batches;

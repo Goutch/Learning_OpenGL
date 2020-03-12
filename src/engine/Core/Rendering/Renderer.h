@@ -45,16 +45,17 @@ public:
         int primitive_type=PRIMITIVE_TRIANGLES;
         bool depth_test=true;
         RenderOption(){}
+        RenderOption(const RenderOption& other){
+            this->cull_faces=other.cull_faces;
+            this->depth_test=other.depth_test;
+            this->primitive_type=other.primitive_type;
+        }
         bool operator==(const RenderOption& other)const{
             return (primitive_type==other.primitive_type&&
-                    cull_faces==other.cull_faces);
+                    cull_faces==other.cull_faces&&
+                    depth_test==other.depth_test);
         }
 
-        std::size_t operator()()const{
-            return primitive_type
-                    <<cull_faces
-                    <<depth_test;
-        }
     };
 
     const Quad QUAD=Quad();

@@ -17,16 +17,15 @@ void GL_API::init() {
         Log::message("OPENGL Version " + version);
         //enable textures
         glEnable(GL_TEXTURE_2D);
+        //enable transparency
+        glEnable(GL_BLEND);
+        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
         //enable cull face
         glEnable(GL_CULL_FACE);
         glCullFace(GL_BACK);
         //enable depth test
         glEnable(GL_DEPTH_TEST);
         glDepthFunc(GL_LESS);
-        //enable transparency
-        glEnable(GL_BLEND);
-        glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-
 
         //antializing
         //glEnable(GL_MULTISAMPLE);
