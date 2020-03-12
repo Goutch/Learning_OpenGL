@@ -28,7 +28,7 @@ public:
     explicit Input(GLFWwindow &window);
     ~Input();
     bool isKeyDown(unsigned int keycode)const;
-    bool isKeyPressed(unsigned int keycode)const;
+    bool isKeyReleased(unsigned int keycode)const;
     void getMousePosition(double &x, double &y)const;
     bool getMouseButtonPressed(int button) const;
     bool getMouseButtonReleased(int button) const;

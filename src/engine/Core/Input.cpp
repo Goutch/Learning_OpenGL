@@ -40,9 +40,9 @@ bool Input::isKeyDown(unsigned int keycode) const {
     return state == GLFW_PRESS;
 }
 
-bool Input::isKeyPressed(unsigned int keycode) const {
+bool Input::isKeyReleased(unsigned int keycode) const {
     int state = glfwGetKey(window, keycode);
-    return state == GLFW_PRESS;
+    return state == GLFW_RELEASE;
 }
 
 void Input::getMousePosition(double &x, double &y) const {
