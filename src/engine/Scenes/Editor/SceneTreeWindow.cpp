@@ -3,7 +3,7 @@
 //
 
 #include "SceneTreeWindow.h"
-void SceneTreeWindow::createHierachy(Input& input,const std::vector<Entity*>& entities,std::set<Entity*>& selected_entities) const {
+void SceneTreeWindow::createHierachy(Input& input,const std::set<Entity*>& entities,std::set<Entity*>& selected_entities) const {
 
     std::list<Entity *> root_entities;
     for (auto e:entities) {
@@ -75,7 +75,7 @@ void SceneTreeWindow::handleClick(bool is_selected,Input &input, Entity *entity,
         }
     }
 }
-void SceneTreeWindow::update(Input& input,ImGuiID dockspace_id,const std::vector<Entity*>& entities,std::set<Entity *>& selected_entities) {
+void SceneTreeWindow::update(Input& input,ImGuiID dockspace_id,const std::set<Entity*>& entities,std::set<Entity *>& selected_entities) {
     ImGui::SetNextWindowDockID(dockspace_id, ImGuiCond_FirstUseEver);
     ImGui::Begin("Scene");
     createHierachy(input,entities,selected_entities);

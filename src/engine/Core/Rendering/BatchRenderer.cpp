@@ -5,7 +5,7 @@
 #include "Ressources/VAO.h"
 #include "Ressources/Shaders/Material/EntityMaterial.h"
 #include "Entities/Transform.h"
-#include "Core/Log.h"
+
 #include "Core/Scene.h"
 
 #include "Core/Rendering/FBO.h"
@@ -88,7 +88,6 @@ void BatchRenderer::draw(const VAO &vao, const EntityMaterial &material, const T
     }
     auto& vao_batch=material_batch.at(&vao);
     vao_batch.emplace_back(&transform);
-    Log::message(std::to_string(vao_batch.size()));
 }
 
 

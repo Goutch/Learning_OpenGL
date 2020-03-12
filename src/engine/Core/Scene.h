@@ -15,12 +15,12 @@ class Canvas;
 class Renderer;
 
 #include "Ressources/Color.h"
-#include <vector>
+#include <set>
 
 class Scene {
 protected:
     Color ambient_light = Color(0.1f, 0.1f, 0.1f);
-    std::vector<Entity *> entities;
+    std::set<Entity *> entities;
 
 
 protected:
@@ -32,7 +32,7 @@ public:
 
     Scene() {};
 
-    const std::vector<Entity *> &getEntities() const;
+    const std::set<Entity *> &getEntities() const;
 
     virtual void init(const Canvas &canvas, Renderer &renderer, Input &input);
 

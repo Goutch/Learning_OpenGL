@@ -19,16 +19,13 @@ void Scene::update(float delta) {
 }
 
 void Scene::draw() const {
-    Log::message("draw");
-    int count=0;
     for (auto e:entities) {
-        Log::debug("drawcall#"+std::to_string(count++));
         e->draw(*this);
     }
 }
 
 Entity& Scene::instantiate(Entity *entity) {
-    entities.push_back(entity);
+    entities.insert(entity);
     entity->init(*this);
 }
 
@@ -45,14 +42,14 @@ Camera &Scene::getCamera() const {
 }
 
 Scene::~Scene() {
-    for (unsigned int i = 0; i < entities.size(); ++i) {
-        entities[i]->onDestroy(*this);
-        delete entities[i];
+    for (auto e:entities) {
+        e->onDestroy(*this);
+        delete e;
     }
     entities.clear();
 }
 
-const std::vector<Entity *> &Scene::getEntities() const {
+const std::set<Entity *> &Scene::getEntities() const {
     return entities;
 }
 
@@ -72,16 +69,9 @@ Input &Scene::getInput() const {
 }
 
 void Scene::destroy(Entity *entity) {
-    for (auto e=entities.begin(); e != entities.end(); e++) {
-        if((*e)==entity)
-        {
-            (*e)->onDestroy(*this);
-            entities.erase(e);
-            break;
-        }
-    }
-
-
+    entity->onDestroy(*this);
+    entities.erase(entity);
+    delete entity;
 }
 
 
