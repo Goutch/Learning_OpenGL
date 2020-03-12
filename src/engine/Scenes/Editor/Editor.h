@@ -9,19 +9,20 @@
 #include "PropertyWindow.h"
 #include "SceneTreeWindow.h"
 #include "CameraWindow.h"
+#include "EntityCreationWindow.h"
+
 class Editor: public Scene{
 
     Scene* current_scene;
     Canvas* current_scene_canvas;
     PropertyWindow properties;
     SceneTreeWindow scene_tree;
+    EntityCreationWindow* entity_creator;
     std::map<Camera*,CameraWindow*> cameras;
     mutable Color color;
     mutable std::set<Entity*> selected_entities;
 
-    Shader shader = Shader("../res/shaders/LightVertex.glsl",
-                                "../res/shaders/LightFragment.glsl");
-    LightMaterial* material;
+
 public:
     void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
 
