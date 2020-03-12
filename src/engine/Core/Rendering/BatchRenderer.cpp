@@ -12,25 +12,23 @@
 
 void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     Log::message("render");
-
-    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     buffer.bind();
     clear();
+    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     for (auto option_batch:batches) {
         const RenderOption& option=option_batch.first;
         option.cull_faces?glEnable(GL_CULL_FACE):glDisable(GL_CULL_FACE);
         option.depth_test?glEnable(GL_DEPTH_TEST):glDisable(GL_CULL_FACE);
-        for (auto &vao_batch:option_batch.second) {
-            const EntityMaterial &material = *vao_batch.first;
+        for (auto &material_batch:option_batch.second) {
+            const EntityMaterial &material = *material_batch.first;
             material.bind();
             material.projection(projection);
             material.view(view_mat);
-            for (auto &transform_batch:vao_batch.second) {
-                const VAO &vao = *transform_batch.first;
+            for (auto &vao_batch:material_batch.second) {
+                const VAO &vao = *vao_batch.first;
                 vao.bind();
-                for (auto &transform_batch:transform_batch.second) {
-                    const Transform& transform=*transform_batch;
-
+                for (auto &transform:vao_batch.second) {
+                    material.transform(transform->getMatrix());
                     if (vao.hasIndices())
                         glDrawElements(option.primitive_type, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
                     else
@@ -46,9 +44,10 @@ void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4
 }
 void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat)const  {
     Log::message("depth");
-    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
+
     buffer.bind();
     clearDepth();
+    glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
     DEPTH_SHADER.bind();
     DEPTH_SHADER.loadUniform(depthShader_light_space_matrix_location, depth_space_mat);
     for (auto option_batch:batches) {

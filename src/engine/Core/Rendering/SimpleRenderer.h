@@ -5,7 +5,7 @@
 #include <Ressources/Shaders/Shader.h>
 
 class SimpleRenderer:public Renderer {
-    mutable std::queue<std::tuple<const EntityMaterial*,const VAO*,const Transform*,int,bool>> render_queue;
+    mutable std::queue<std::tuple<const EntityMaterial*,const VAO*,const Transform*,RenderOption>> render_queue;
 
 public:
 

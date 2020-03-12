@@ -79,9 +79,6 @@ void SpacialSceneDemo::draw() const {
                                       grass->transform.getMatrix());
     grass->getMaterial().getShader().unbind();
     Scene::draw();
-    mirror_canvas.getFrameBuffer().bind();
-    renderer->clear();
-    mirror_canvas.getFrameBuffer().unbind();
     renderer->render(mirror_canvas.getFrameBuffer(), mirror_camera->getProjectionMatrix(), vm);
     grass->getMaterial().getShader().bind();
 

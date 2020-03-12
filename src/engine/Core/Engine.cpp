@@ -7,6 +7,7 @@
 #include "Utils/Timer.h"
 #include "Window.h"
 #include "Core/Rendering/BatchRenderer.h"
+#include "Core/Rendering/SimpleRenderer.h"
 #include "Core/Canvas.h"
 #include "Log.h"
 #include "Input.h"
