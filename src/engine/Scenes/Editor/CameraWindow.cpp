@@ -5,7 +5,7 @@
 #include "CameraWindow.h"
 #include <Core/Scene.h>
 void CameraWindow::update(Scene* scene,Renderer* renderer,Input* input,Camera* camera,ImGuiID dockspace_id) {
-
+    //todo fix bugs with camera projection not updating
     ImGui::SetNextWindowDockID(dockspace_id, ImGuiCond_FirstUseEver);
     ImGui::Begin(camera->getName().c_str());
     {

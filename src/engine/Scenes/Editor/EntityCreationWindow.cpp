@@ -59,6 +59,10 @@ void EntityCreationWindow::update(Scene *scene, Entity *parent,std::set<Entity*>
         }
         if (ImGui::Button("Delete")) {
             for (auto entity: selected_entities) {
+                if(entity->getName()[0]=='C')
+                {
+                    cameras.erase((Camera*)entity);
+                }
                 scene->destroy(entity);
             }
             selected_entities.clear();
