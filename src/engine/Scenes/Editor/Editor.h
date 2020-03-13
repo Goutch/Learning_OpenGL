@@ -24,7 +24,7 @@ class Editor: public Scene{
 
 
 public:
-    void init(const Canvas &canvas, Renderer &renderer, Input &input) override;
+    void init(Canvas &canvas, Renderer &renderer, Input &input) override;
 
     Editor(Scene* scene);
     Editor();

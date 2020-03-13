@@ -47,7 +47,16 @@ void Renderer::wireframe(bool enable) {
     enable ? glPolygonMode(GL_FRONT_AND_BACK, GL_LINE) : glPolygonMode(GL_FRONT_AND_BACK, GL_FILL);
 }
 
+#include <stb_image_write.h>
+#include <Utils/TimeUtils.h>
 
+void Renderer::screenShot(int width, int height) {
+    unsigned char* pixel_data = new unsigned char[4*width*height];
+    glReadBuffer(GL_FRONT);
+    glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixel_data);
+    stbi_write_png(std::string("../screenshot/"+TimeUtils::getTimeString()+".png").c_str(),width,height,4,pixel_data,0);
+    delete[] pixel_data;
+}
 
 
 

@@ -152,5 +152,5 @@ public:
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const = 0;
 
     void wireframe(bool enable);
-
+    void screenShot(int width,int height);
 };

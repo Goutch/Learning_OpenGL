@@ -24,7 +24,7 @@ protected:
 
 
 protected:
-    const Canvas *canvas;
+    Canvas *canvas;
     Input *input;
     Renderer *renderer;
     Camera *camera;
@@ -34,7 +34,7 @@ public:
 
     const std::set<Entity *> &getEntities() const;
 
-    virtual void init(const Canvas &canvas, Renderer &renderer, Input &input);
+    virtual void init(Canvas &canvas, Renderer &renderer, Input &input);
 
     virtual void update(float delta);
 

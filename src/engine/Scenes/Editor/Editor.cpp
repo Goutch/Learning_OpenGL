@@ -24,7 +24,7 @@ Editor::~Editor() {
 
 }
 
-void Editor::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+void Editor::init(Canvas &canvas, Renderer &renderer, Input &input) {
 
     Scene::init(canvas, renderer, input);
     current_scene_canvas = new Canvas(canvas, renderer.DEFAULT_2D_SHADER, canvas.getPixelWidth() / 2,

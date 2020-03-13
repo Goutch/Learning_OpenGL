@@ -14,8 +14,8 @@ class SpacialSceneDemo : public Scene {
                                 "../res/shaders/LightFragment.glsl");
     Shader default_shader= Shader("../res/shaders/DefaultVertex.glsl",
                                 "../res/shaders/DefaultFragment.glsl");
-    Shader mirror_shader=Shader("../res/shaders/DefaultVertex.glsl",
-                                "../res/shaders/MirrorFragment.glsl");\
+    Shader edge_shader=Shader("../res/shaders/EdgeDetectionVertex.glsl",
+                                "../res/shaders/EdgeDetectionFragment.glsl");\
 
     Texture wall_texture = Texture("../res/wall.jpg", false);
 
@@ -24,21 +24,13 @@ class SpacialSceneDemo : public Scene {
     LightMaterial ground_material = LightMaterial(lightShader, Color(.5,.7,.4,1), *this);
     LightMaterial bunny_material = LightMaterial(lightShader,wall_texture, *this);
     EntityMaterial player_material=EntityMaterial(default_shader, Color::BLUE);
-    EntityMaterial mirror_material=EntityMaterial(mirror_shader);
 
     Mesh dragon_mesh = Mesh("../res/dragon.obj");
     Mesh bunny_mesh = Mesh("../res/bunny.obj");
     Mesh cube_mesh;
     Mesh sphere_mesh;
-    Quad mirror_quad;
-
-    Canvas mirror_canvas=Canvas(600,600);
-    Camera *mirror_camera;
-
-
     DirectionalLight *sun;
 
-    Grass* grass;
 public:
     ~SpacialSceneDemo();
     void render() const override;
@@ -47,7 +39,7 @@ public:
 
     void update(float delta) override;
 
-    void init(const Canvas &viewport, Renderer &renderer, Input &input) override;
+    void init(Canvas &canvas, Renderer &renderer, Input &input) override;
 
 };
 

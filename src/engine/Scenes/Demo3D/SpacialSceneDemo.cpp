@@ -4,8 +4,9 @@
 #include "SpacialSceneDemo.h"
 #include "API_ALL.h"
 #include "Grass.h"
-void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &input){
+void SpacialSceneDemo::init(Canvas &canvas, Renderer &renderer, Input &input){
     Scene::init(canvas, renderer, input);
+    canvas.setShader(edge_shader);
     ambient_light=Color(0.2,0.2,0.2,2);
     input.showCursor(false);
     //create cube_mesh mesh
@@ -17,9 +18,6 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
     dragon_material.setColor(Color(0.7,0.4,0.4));
     //ground
     instantiate(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
-    grass=new Grass();
-
-    instantiate(grass);
     //sphere
     instantiate(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
     //bunnies
@@ -45,23 +43,21 @@ void SpacialSceneDemo::init(const Canvas &canvas, Renderer &renderer, Input &inp
 
     instantiate(sun);
 
-    mirror_camera=new Camera();
-    instantiate(mirror_camera);
-    mirror_material.setTexture(mirror_canvas.getFrameBuffer().getTexture());
-    MeshRenderer* mirror=new MeshRenderer(
-            mirror_quad,
-            mirror_material,vec3(-20,2,0),
-            vec3(0,3.1416/2,0),
-            vec3(4));
-    mirror_camera->setParent(mirror);
-    instantiate(mirror);
-    mirror_camera->transform.rotate(3.1416,vec3(0,1,0));
-    mirror_camera->transform.position(vec3(0,0,-.5));
-
 }
 
 void SpacialSceneDemo::update(float delta) {
     Scene::update(delta);
+    if(input->isKeyDown(GLFW_KEY_1))
+    {
+        canvas->setShader(edge_shader);
+    }
+    if(input->isKeyDown(GLFW_KEY_0))
+    {
+        canvas->setShader(renderer->DEFAULT_2D_SHADER);
+    }
+    edge_shader.bind();
+    edge_shader.loadUniform("resolution",vec2(canvas->getPixelWidth(),canvas->getPixelHeight()));
+    edge_shader.unbind();
 
 }
 
@@ -70,22 +66,6 @@ void SpacialSceneDemo::render() const {
 }
 
 void SpacialSceneDemo::draw() const {
-
-    mat4 vm=mirror_camera->getViewMatrix();
-    grass->getMaterial().getShader().bind();
-
-    grass->getMaterial().getShader().loadUniform("mvp",
-                                      mirror_camera->getProjectionMatrix() *vm*
-                                      grass->transform.getMatrix());
-    grass->getMaterial().getShader().unbind();
-    Scene::draw();
-    renderer->render(mirror_canvas.getFrameBuffer(), mirror_camera->getProjectionMatrix(), vm);
-    grass->getMaterial().getShader().bind();
-
-    grass->getMaterial().getShader().loadUniform("mvp",
-                                                 camera->getProjectionMatrix() *camera->getViewMatrix()*
-                                                 grass->transform.getMatrix());
-    grass->getMaterial().getShader().unbind();
     Scene::draw();
 }
 

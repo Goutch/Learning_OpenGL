@@ -4,7 +4,7 @@
 
 #include <API_ALL.h>
 
-void Scene::init(const Canvas &canvas, Renderer &renderer, Input &input) {
+void Scene::init(Canvas &canvas, Renderer &renderer, Input &input) {
     this->canvas=&canvas;
     this->renderer=&renderer;
     this->input=&input;
@@ -13,6 +13,10 @@ void Scene::init(const Canvas &canvas, Renderer &renderer, Input &input) {
 }
 
 void Scene::update(float delta) {
+    if(input->isKeyDown(GLFW_KEY_F11))
+    {
+        renderer->screenShot(canvas->getPixelWidth(),canvas->getPixelHeight());
+    }
     for (auto e:entities) {
         e->update(delta, *this);
     }

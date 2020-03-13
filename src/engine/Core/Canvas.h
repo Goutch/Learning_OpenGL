@@ -36,7 +36,7 @@ public:
            float offsetY = 0);
     Canvas(int sizeX=1,int sizeY=1);
     ~Canvas();
-
+    void setShader(const Shader& shader);
     unsigned int getPixelWidth() const;
 
     unsigned int getPixelHeight() const;

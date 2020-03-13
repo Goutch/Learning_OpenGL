@@ -97,6 +97,10 @@ const EntityMaterial& Canvas::getMaterial() const {
     return material;
 }
 
+void Canvas::setShader(const Shader& shader) {
+    material.setShader(shader);
+}
+
 
 
 
