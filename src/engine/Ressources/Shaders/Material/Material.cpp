@@ -38,10 +38,19 @@ void Material::getUniformsLocations() const{
 }
 void Material::setColor(const Color &color) {
     this->color=color;
+    has_transparency=color.a!=1;
 }
 
 const Color &Material::getColor() const {
     return color;
+}
+
+void Material::setTransparent(bool transparent){
+    has_transparency=transparent;
+};
+
+bool Material::hasTransparency() const{
+    return has_transparency;
 }
 
 
