@@ -31,7 +31,7 @@ set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_draw.cpp
         Dependencies/IMGUI/imgui_widgets.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
-        Dependencies/IMGUI/imgui_impl_glfw.cpp)
+        Dependencies/IMGUI/imgui_impl_glfw.cpp src/engine/Math/Plane.cpp src/engine/Math/Plane.h)
 
 add_executable(OGL_Engine
         ${IMGUI_FILES}
@@ -100,6 +100,6 @@ add_executable(OGL_Engine
         src/engine/Scenes/Editor/Editor.cpp
         src/engine/Core/Input.cpp src/engine/Core/Input.h
         src/engine/API_ALL.h
-        src/engine/Scenes/Editor/PropertyWindow.cpp src/engine/Scenes/Editor/PropertyWindow.h src/engine/Scenes/Editor/SceneTreeWindow.cpp src/engine/Scenes/Editor/SceneTreeWindow.h src/engine/Scenes/Editor/CameraWindow.cpp src/engine/Scenes/Editor/CameraWindow.h src/engine/Scenes/Editor/EntityCreationWindow.cpp src/engine/Scenes/Editor/EntityCreationWindow.h)
+        src/engine/Scenes/Editor/PropertyWindow.cpp src/engine/Scenes/Editor/PropertyWindow.h src/engine/Scenes/Editor/SceneTreeWindow.cpp src/engine/Scenes/Editor/SceneTreeWindow.h src/engine/Scenes/Editor/CameraWindow.cpp src/engine/Scenes/Editor/CameraWindow.h src/engine/Scenes/Editor/EntityCreationWindow.cpp src/engine/Scenes/Editor/EntityCreationWindow.h src/engine/Math/BoundingBox.cpp src/engine/Math/BoundingBox.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})
