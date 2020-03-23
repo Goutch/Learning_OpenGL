@@ -23,7 +23,7 @@ void CameraWindow::update(Scene* scene,Renderer* renderer,Input* input,Camera* c
             if (mode == Camera::ORTHOGRAPHIC)
                 scene->getCamera().setProjectionPerspective(vMax.x, vMax.y);
             else
-                scene->getCamera().setProjectionOrtho(10, 10);
+                scene->getCamera().setProjectionOrthographic(10, 10);
         }
         ImGui::EndChild();
 
@@ -34,7 +34,7 @@ void CameraWindow::update(Scene* scene,Renderer* renderer,Input* input,Camera* c
             if (mode == Camera::PERSPECTIVE)
                 scene->getCamera().setProjectionPerspective(vMax.x, vMax.y);
             else
-                scene->getCamera().setProjectionOrtho(10, 10);
+                scene->getCamera().setProjectionOrthographic(10, 10);
         }
 
         vMin.x += ImGui::GetWindowPos().x;

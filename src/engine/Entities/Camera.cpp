@@ -26,7 +26,7 @@ void Camera::setProjectionPerspective(float width, float height) {
     double aspect_ratio = width / height;
     projection_matrix = glm::perspective<float>(glm::radians(fov), aspect_ratio, 0.1f, 200.0f);
 }
-void Camera::setProjectionOrtho(float width, float height) {
+void Camera::setProjectionOrthographic(float width, float height) {
     this->projectionMode = ORTHOGRAPHIC;
     units.x=width;
     units.y=height;
@@ -51,7 +51,7 @@ void Camera::onCanvasSizeChange(unsigned int width, unsigned int height) {
     units.x=width;
     units.y=height;
     if (projectionMode == ORTHOGRAPHIC)
-        setProjectionOrtho(units.x,units.y);
+        setProjectionOrthographic(units.x, units.y);
     else
         setProjectionPerspective(units.x,units.y);
 }

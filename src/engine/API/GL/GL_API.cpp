@@ -9,7 +9,6 @@
 #include "GL_Debug.h"
 #include <GLFW/glfw3.h>
 void GL_API::init() {
-
     if(glewInit() == GLEW_OK){
         Log::status("Initialized GLEW");
 

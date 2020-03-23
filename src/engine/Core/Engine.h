@@ -49,8 +49,9 @@ public:
         Log::status("Initialized scene");
     }
 
-private:
     void start();
+
+private:
     void printFPS();
     void drawSceneSelector();
 };

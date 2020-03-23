@@ -3,21 +3,23 @@
 //
 
 #include <API_ALL.h>
+#include "Scene.h"
+
 
 void Scene::init(Canvas &canvas, Renderer &renderer, Input &input) {
-    this->canvas=&canvas;
-    this->renderer=&renderer;
-    this->input=&input;
+    this->canvas = &canvas;
+    this->renderer = &renderer;
+    this->input = &input;
     camera = new Camera();
     instantiate(camera);
 }
 
 void Scene::update(float delta) {
-    if(input->isKeyDown(GLFW_KEY_F11))
-    {
-        renderer->screenShot(canvas->getPixelWidth(),canvas->getPixelHeight());
+    if (input->isKeyDown(GLFW_KEY_F11)) {
+        renderer->screenShot(canvas->getPixelWidth(), canvas->getPixelHeight());
     }
     for (auto e:entities) {
+
         e->update(delta, *this);
     }
 }
@@ -28,7 +30,7 @@ void Scene::draw() const {
     }
 }
 
-Entity& Scene::instantiate(Entity *entity) {
+Entity &Scene::instantiate(Entity *entity) {
     entities.insert(entity);
     entity->init(*this);
 }
@@ -60,6 +62,7 @@ const std::set<Entity *> &Scene::getEntities() const {
 void Scene::setCamera(Camera &camera) {
     this->camera = &camera;
 }
+
 const Canvas &Scene::getCanvas() const {
     return *canvas;
 }
@@ -76,6 +79,10 @@ void Scene::destroy(Entity *entity) {
     entity->onDestroy(*this);
     entities.erase(entity);
     delete entity;
+}
+
+Camera*&Scene::getCameraPtr() {
+    return camera;
 }
 
 

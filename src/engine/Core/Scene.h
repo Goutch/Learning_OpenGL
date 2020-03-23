@@ -61,5 +61,5 @@ public:
     Renderer &getRenderer() const;
 
     Camera &getCamera() const;
-
+    Camera*& getCameraPtr();
 };

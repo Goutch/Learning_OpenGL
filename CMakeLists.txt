@@ -89,7 +89,7 @@ add_executable(OGL_Engine
         src/engine/Utils/StringUtils.cpp
         src/engine/Utils/Timer.cpp
         src/engine/Utils/TimeUtils.cpp
-
+        src/engine/Utils/SimplexNoise.cpp
         src/engine/Scenes/Editor/Editor.cpp
 
         src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp
@@ -100,6 +100,28 @@ add_executable(OGL_Engine
         src/engine/Scenes/Editor/Editor.cpp
         src/engine/Core/Input.cpp src/engine/Core/Input.h
         src/engine/API_ALL.h
-        src/engine/Scenes/Editor/PropertyWindow.cpp src/engine/Scenes/Editor/PropertyWindow.h src/engine/Scenes/Editor/SceneTreeWindow.cpp src/engine/Scenes/Editor/SceneTreeWindow.h src/engine/Scenes/Editor/CameraWindow.cpp src/engine/Scenes/Editor/CameraWindow.h src/engine/Scenes/Editor/EntityCreationWindow.cpp src/engine/Scenes/Editor/EntityCreationWindow.h)
+        src/engine/Scenes/Editor/PropertyWindow.cpp
+        src/engine/Scenes/Editor/PropertyWindow.h
+        src/engine/Scenes/Editor/SceneTreeWindow.cpp
+        src/engine/Scenes/Editor/SceneTreeWindow.h
+        src/engine/Scenes/Editor/CameraWindow.cpp
+        src/engine/Scenes/Editor/CameraWindow.h
+        src/engine/Scenes/Editor/EntityCreationWindow.cpp
+        src/engine/Scenes/Editor/EntityCreationWindow.h
+        src/engine/Scenes/Test/VoxelDictionary.h
+        src/engine/Scenes/Test/Test.cpp
+        src/engine/Scenes/Test/Test.h
+        src/engine/Scenes/Test/Chunk.h
+        src/engine/Scenes/Test/Chunk.cpp
+        src/engine/Scenes/Test/ChunkGenerator.cpp
+        src/engine/Scenes/Test/ChunkGenerator.h
+        src/engine/Scenes/Test/Voxel.h
+        src/engine/Scenes/Test/ChunkRenderer.cpp
+        src/engine/Scenes/Test/ChunkRenderer.h
+        src/engine/Scenes/Test/ChunkManager.cpp
+        src/engine/Scenes/Test/ChunkManager.h
+        src/engine/Scenes/Test/ChunkLoader.cpp
+        src/engine/Scenes/Test/ChunkLoader.h
+        src/engine/Scenes/Test/CameraFrustum.cpp src/engine/Scenes/Test/CameraFrustum.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

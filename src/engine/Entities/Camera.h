@@ -20,7 +20,7 @@ public:
     Camera(vec3 position=vec3(0), vec3 rotation=vec3(0));
     void setFOV(float fov);
     void setProjectionPerspective(float width,float height);
-    void setProjectionOrtho(float width,float height);
+    void setProjectionOrthographic(float width, float height);
     mat4 getViewMatrix() const;
 
     void onDestroy(Scene &scene) override;

@@ -4,6 +4,7 @@
 
 #include "Entity.h"
 #include <Core/Scene.h>
+
 Entity::Entity(vec3 position, vec3 rotation, vec3 scale) {
     transform.translate(position);
     transform.rotate(quat(rotation));
@@ -14,9 +15,9 @@ Entity::Entity() {
 
 }
 
-void Entity::draw(const Scene &scene) const {}
+void Entity::draw(const Scene &scene) const { if (!enabled)return; }
 
-void Entity::update(float delta, Scene &scene) {}
+void Entity::update(float delta, Scene &scene) { if (!enabled)return; }
 
 void Entity::init(Scene &scene) {}
 
@@ -29,19 +30,17 @@ void Entity::setName(const std::string &name) {
 }
 
 void Entity::addChild(Entity *child) {
-    if(children.find(child)==children.end())
-    {
+    if (children.find(child) == children.end()) {
         children.insert(child);
-        child->parent=this;
+        child->parent = this;
         child->transform.parent = &transform;
     }
 }
 
 void Entity::removeChild(Entity *child) {
-    if(children.find(child)!=children.end())
-    {
+    if (children.find(child) != children.end()) {
         children.erase(child);
-        child->parent= nullptr;
+        child->parent = nullptr;
         child->transform.parent = nullptr;
     }
 }
@@ -56,14 +55,11 @@ void Entity::removeChild(std::string name) {
 }
 
 void Entity::setParent(Entity *parent) {
-    if(parent!= nullptr)
-    {
+    if (parent != nullptr) {
         parent->addChild(this);
-    }
-    else
-    {
-        this->parent= nullptr;
-        transform.parent= nullptr;
+    } else {
+        this->parent = nullptr;
+        transform.parent = nullptr;
     }
 
 }
@@ -71,14 +67,23 @@ void Entity::setParent(Entity *parent) {
 std::set<Entity *> Entity::getChildren() {
     return children;
 }
-Entity* Entity::getParent()
-{
+
+Entity *Entity::getParent() {
     return parent;
 }
+
 void Entity::onDestroy(Scene &scene) {
-    if(parent!= nullptr)parent->removeChild(this);
-    for (auto c=children.begin();c!=children.end();c++) {
+    if (parent != nullptr)parent->removeChild(this);
+    for (auto c = children.begin(); c != children.end(); c++) {
         scene.destroy(*c);
     }
+}
+
+void Entity::setEnabled(bool enabled) {
+    this->enabled=enabled;
+}
+
+bool Entity::isEnabled() {
+    return enabled;
 }
 

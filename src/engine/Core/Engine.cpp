@@ -4,25 +4,19 @@
 #include <imgui.h>
 #include <imgui_impl_glfw.h>
 #include <imgui_impl_opengl3.h>
-#include "Utils/Timer.h"
 #include "Window.h"
 #include "Core/Rendering/BatchRenderer.h"
-#include "Core/Rendering/SimpleRenderer.h"
-#include "Core/Canvas.h"
-#include "Log.h"
-#include "Input.h"
 #include "Scenes/Demo3D/SpacialSceneDemo.h"
 
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     graphics = new GL_API();
-    window = new Window(graphics->createWindow("WINDOW", 1000, 700));
+    window = new Window(graphics->createWindow("WINDOW", 900, 600));
     input = new Input(window->getHandle());
     renderer = new BatchRenderer();
     canvas = new Canvas(*window, renderer->DEFAULT_2D_SHADER);
     imGuiEnabled = true;
     initImgui();
-    start();
 }
 
 void Engine::start() {
