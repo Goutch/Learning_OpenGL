@@ -5,8 +5,6 @@
 #include <cmath>
 
 class ChunkManager {
-
-
     std::unordered_map<ChunkPosition, Chunk *, ChunkPosition::hash_fun> chunk_map;
 public:
     ~ChunkManager();

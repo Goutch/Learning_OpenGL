@@ -5,11 +5,11 @@
 #include <unordered_set>
 #include <queue>
 #include "ChunkLoader.h"
-#include "CameraFrustum.h"
+
 class Test:public Scene {
     ChunkManager manager;
-    CameraFrustum camera_frustum=CameraFrustum(*this);
-    ChunkLoader loader=ChunkLoader(*this,manager,camera_frustum);
+
+    ChunkLoader loader=ChunkLoader(*this,manager);
 
 public:
 

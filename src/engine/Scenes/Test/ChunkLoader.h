@@ -2,7 +2,7 @@
 #include <API_ALL.h>
 class ChunkRenderer;
 class ChunkManager;
-class CameraFrustum;
+
 #include <thread>
 #include "Chunk.h"
 class ChunkLoader {
@@ -14,9 +14,9 @@ class ChunkLoader {
     std::list<ChunkRenderer*> chunk_pool;
     ChunkManager* manager;
     Scene* scene;
-    CameraFrustum* camera_frustum;
+
 public:
-    ChunkLoader(Scene& scene ,ChunkManager& manager,CameraFrustum & cameraFrustum);
+    ChunkLoader(Scene& scene ,ChunkManager& manager);
     void setLoaderTransform(Transform& transform);
     void update(float delta);
     void createChunk(int x,int y,int z);

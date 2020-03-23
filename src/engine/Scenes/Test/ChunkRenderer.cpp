@@ -8,21 +8,21 @@
 #include "ChunkManager.h"
 #include <thread>
 #include <future>
-#include "CameraFrustum.h"
+
 ChunkRenderer::ChunkRenderer(const EntityMaterial &solid_material, const EntityMaterial &transparent_material,
-                             ChunkManager &chunkManager,CameraFrustum& cameraFrustum) :
+                             ChunkManager &chunkManager) :
         Entity(vec3(0), vec3(0), vec3(1)) {
     this->solid_material = &solid_material;
     this->transparent_material = &transparent_material;
     this->chunkManager = &chunkManager;
-    this->camera_frustum=&cameraFrustum;
+
     setEnabled(false);
 }
 
 void ChunkRenderer::draw(const Scene &scene) const {
     if(!current_chunk->empty &&
     thread_results.empty()&&
-    camera_frustum->boxInFrustum(getChunkCenter(),Chunk::SIZE_X,Chunk::SIZE_Y,Chunk::SIZE_Z)!=CameraFrustum::FRUSTUM_OUTSIDE)
+    scene.getCamera().isBoxInFrustum(transform.position(),vec3(Chunk::SIZE_X,Chunk::SIZE_Y,Chunk::SIZE_Z)))
     {
         Renderer &renderer = scene.getRenderer();
         renderer.draw(solid_voxels, *solid_material, transform);

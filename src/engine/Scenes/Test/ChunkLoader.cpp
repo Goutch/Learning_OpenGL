@@ -10,10 +10,10 @@ void ChunkLoader::setLoaderTransform(Transform &transform) {
     this->loader = &transform;
 }
 
-ChunkLoader::ChunkLoader(Scene &scene, ChunkManager &manager,CameraFrustum &cameraFrustum) {
+ChunkLoader::ChunkLoader(Scene &scene, ChunkManager &manager) {
     this->manager = &manager;
     this->scene = &scene;
-    this->camera_frustum=&cameraFrustum;
+
     chunk_transparent_material.setTransparent(true);
 }
 
@@ -68,7 +68,7 @@ void ChunkLoader::update(float delta) {
 
 
 void ChunkLoader::createChunk(int x, int y, int z) {
-    auto c = new ChunkRenderer(chunk_solid_material, chunk_transparent_material, *manager,*camera_frustum);
+    auto c = new ChunkRenderer(chunk_solid_material, chunk_transparent_material, *manager);
     scene->instantiate(c);
     c->setChunk(&manager->getChunk(x, y, z));
     loaded_chunks.emplace(c->getChunk().position, c);

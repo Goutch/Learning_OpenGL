@@ -7,5 +7,5 @@ struct Plane {
     Plane();
     Plane(glm::vec4 equation);
     void set(glm::vec4 equation);
-    float distance(const glm::vec3& point);
+    float distance(const glm::vec3& point) const;
 };

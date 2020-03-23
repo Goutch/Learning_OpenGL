@@ -13,10 +13,9 @@ void Test::init(Canvas &canvas, Renderer &renderer, Input &input) {
 }
 
 void Test::update(float delta) {
-
     Scene::update(delta);
     loader.update(delta);
-    camera_frustum.update();
+
 }
 
 void Test::render() const {

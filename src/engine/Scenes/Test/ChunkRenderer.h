@@ -6,6 +6,8 @@ class Voxel;
 class ChunkManager;
 
 #include <future>
+#include <Math/BoundingBox.h>
+
 class CameraFrustum;
 class ChunkRenderer : public Entity {
     enum Side{
@@ -35,9 +37,9 @@ class ChunkRenderer : public Entity {
     Chunk* chunk_back;
     std::queue<std::future<void>> thread_results;
     std::mutex mesh_mutex;
-    CameraFrustum* camera_frustum;
+
 public:
-    ChunkRenderer(const EntityMaterial &solid_material,const EntityMaterial &transparent_material, ChunkManager &chunkManager,CameraFrustum& cameraFrustum);
+    ChunkRenderer(const EntityMaterial &solid_material,const EntityMaterial &transparent_material, ChunkManager &chunkManager);
 
     void setChunk(Chunk *chunk);
 

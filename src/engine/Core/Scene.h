@@ -51,7 +51,6 @@ public:
 
     void setCamera(Camera &camera);
 
-
     const Color &getAmbientLight() const;
 
     const Canvas &getCanvas() const;

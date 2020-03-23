@@ -27,7 +27,8 @@ include_directories(Dependencies/STB_IMAGE)
 
 message("Including IMGUI")
 include_directories(Dependencies/IMGUI)
-set(IMGUI_FILES         Dependencies/IMGUI/imgui.cpp
+set(IMGUI_FILES
+        Dependencies/IMGUI/imgui.cpp
         Dependencies/IMGUI/imgui_draw.cpp
         Dependencies/IMGUI/imgui_widgets.cpp
         Dependencies/IMGUI/imgui_impl_opengl3.cpp
@@ -38,6 +39,7 @@ add_executable(OGL_Engine
         Dependencies/STB_IMAGE/stb_image.cpp
 
         src/main.cpp
+        src/engine/API_ALL.h
 
         src/engine/API/GL/GL_API.cpp
         src/engine/API/GL/GL_Debug.cpp
@@ -49,8 +51,13 @@ add_executable(OGL_Engine
         src/engine/Core/Rendering/Renderer.cpp
         src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
+        src/engine/Core/Rendering/FBO.cpp
+        src/engine/Core/Rendering/RBO.cpp
         src/engine/Core/Scene.cpp
         src/engine/Core/Log.cpp
+        src/engine/Core/Input.cpp
+        src/engine/Core/Input.h
+
 
         src/engine/Entities/MeshRenderer.cpp
         src/engine/Entities/Transform.cpp
@@ -71,7 +78,9 @@ add_executable(OGL_Engine
         src/engine/Ressources/Shaders/Material/Material.cpp
         src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp
 
-        src/engine/Utils/Geometry.cpp
+        src/engine/Math/Plane.cpp
+
+
         src/engine/Ressources/Mesh.cpp
         src/engine/Ressources/VAO.cpp
         src/engine/Ressources/VBO.cpp
@@ -83,23 +92,19 @@ add_executable(OGL_Engine
         src/engine/Ressources/Texture.cpp
         src/engine/Ressources/AtlasTexture.cpp
         src/engine/Ressources/Color.cpp
-        src/engine/Core/Rendering/FBO.cpp
-        src/engine/Core/Rendering/RBO.cpp
+
 
         src/engine/Utils/StringUtils.cpp
         src/engine/Utils/Timer.cpp
         src/engine/Utils/TimeUtils.cpp
         src/engine/Utils/SimplexNoise.cpp
-        src/engine/Scenes/Editor/Editor.cpp
+        src/engine/Utils/Geometry.cpp
 
         src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp
-
         src/engine/Scenes/Demo3D/Grass.cpp
         src/engine/Scenes/Demo3D/Grass.h
 
         src/engine/Scenes/Editor/Editor.cpp
-        src/engine/Core/Input.cpp src/engine/Core/Input.h
-        src/engine/API_ALL.h
         src/engine/Scenes/Editor/PropertyWindow.cpp
         src/engine/Scenes/Editor/PropertyWindow.h
         src/engine/Scenes/Editor/SceneTreeWindow.cpp
@@ -108,6 +113,7 @@ add_executable(OGL_Engine
         src/engine/Scenes/Editor/CameraWindow.h
         src/engine/Scenes/Editor/EntityCreationWindow.cpp
         src/engine/Scenes/Editor/EntityCreationWindow.h
+
         src/engine/Scenes/Test/VoxelDictionary.h
         src/engine/Scenes/Test/Test.cpp
         src/engine/Scenes/Test/Test.h
@@ -122,6 +128,7 @@ add_executable(OGL_Engine
         src/engine/Scenes/Test/ChunkManager.h
         src/engine/Scenes/Test/ChunkLoader.cpp
         src/engine/Scenes/Test/ChunkLoader.h
-        src/engine/Scenes/Test/CameraFrustum.cpp src/engine/Scenes/Test/CameraFrustum.h)
+
+        )
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

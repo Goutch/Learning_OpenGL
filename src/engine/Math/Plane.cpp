@@ -12,6 +12,6 @@ void Plane::set(glm::vec4 equation){
     this->d=equation.w;
 }
 
-float Plane::distance(const glm::vec3 &point) {
+float Plane::distance(const glm::vec3 &point) const{
     return (normal.x * point.x) + (normal.y * point.y) + (normal.z * point.z)+d;
 }

@@ -22,6 +22,7 @@ void Scene::update(float delta) {
 
         e->update(delta, *this);
     }
+    camera->calculateFrustumPlanes();
 }
 
 void Scene::draw() const {

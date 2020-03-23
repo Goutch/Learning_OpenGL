@@ -35,7 +35,8 @@ public:
     const mat4 &getProjectionMatrix() const;
     float getFOV() const;
     void onCanvasSizeChange(unsigned int width, unsigned int height) override;
-    bool isPointInFrustum(const vec3& point);
-    bool isBoundingBoxInFrustum(const BoundingBox& box);
+    bool isPointInFrustum(const vec3& point) const;
+    bool isBoundingBoxInFrustum(const BoundingBox& box) const;
+    bool isBoxInFrustum(const vec3& position,const vec3& size) const;
 };
 

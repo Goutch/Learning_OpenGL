@@ -73,19 +73,18 @@ Camera::ProjectionMode Camera::getProjectionMode() {
 
 void Camera::update(float delta, Scene &scene) {
     Entity::update(delta, scene);
-    calculateFrustumPlanes();
 }
 
 void Camera::calculateFrustumPlanes() {
-    mat4 m=transpose(mat4(projection_matrix))*getViewMatrix();
-    frustum_planes[0].set((m[3] + m[0]));//left
-    frustum_planes[1].set((m[3] - m[0]));//right
-    frustum_planes[3].set((m[3] + m[1]));//bottom
-    frustum_planes[2].set((m[3] - m[1]));//top
-    frustum_planes[4].set((m[3] + m[2]));//near
-    frustum_planes[5].set((m[3] - m[2]));//far
+    mat4 m=projection_matrix*getViewMatrix();
+    frustum_planes[0].set((vec4(m[0][3] + m[0][0], m[1][3] + m[1][0], m[2][3] + m[2][0], m[3][3] + m[3][0])));//left
+    frustum_planes[1].set((vec4(m[0][3] - m[0][0], m[1][3] - m[1][0], m[2][3] - m[2][0], m[3][3] - m[3][0])));//right
+    frustum_planes[3].set((vec4(m[0][3] + m[0][1], m[1][3] + m[1][1], m[2][3] + m[2][1], m[3][3] + m[3][1])));//bottom
+    frustum_planes[2].set((vec4(m[0][3] - m[0][1], m[1][3] - m[1][1], m[2][3] - m[2][1], m[3][3] - m[3][1])));//top
+    frustum_planes[4].set((vec4(m[0][3] + m[0][2], m[1][3] + m[1][2], m[2][3] + m[2][2], m[3][3] + m[3][2])));//near
+    frustum_planes[5].set((vec4(m[0][3] - m[0][2], m[1][3] - m[1][2], m[2][3] - m[2][2], m[3][3] - m[3][2])));//far
 }
-bool Camera::isPointInFrustum(const vec3& point){
+bool Camera::isPointInFrustum(const vec3& point) const{
     for (int i = 0; i < frustum_planes.size(); i++) {
         if ( 0>frustum_planes[i].distance(point)) {
             return false;
@@ -94,15 +93,19 @@ bool Camera::isPointInFrustum(const vec3& point){
     return true;
 }
 
-bool Camera::isBoundingBoxInFrustum(const BoundingBox &box) {
-    if(isPointInFrustum(box.pos)){return true;}
-    if(isPointInFrustum(box.pos+box.size)){return true;}
-    if(isPointInFrustum(box.pos+(vec3(box.size.x,0,0)))){return true;}
-    if(isPointInFrustum(box.pos+(vec3(0,box.size.y,0)))){return true;}
-    if(isPointInFrustum(box.pos+(vec3(0,0,box.size.z)))){return true;}
-    if(isPointInFrustum(box.pos+(vec3(box.size.x,box.size.y,0)))){return true;}
-    if(isPointInFrustum(box.pos+(vec3(0,box.size.y,box.size.z)))){return true;}
-    return isPointInFrustum(box.pos + (vec3(box.size.x, 0, box.size.z)));
+bool Camera::isBoundingBoxInFrustum(const BoundingBox &box) const {
+    return isBoxInFrustum(box.pos,box.size);
+}
+
+bool Camera::isBoxInFrustum(const vec3 &position, const vec3 &size) const {
+    if(isPointInFrustum(position)){return true;}
+    if(isPointInFrustum(position+size)){return true;}
+    if(isPointInFrustum(position+(vec3(size.x,0,0)))){return true;}
+    if(isPointInFrustum(position+(vec3(0,size.y,0)))){return true;}
+    if(isPointInFrustum(position+(vec3(0,0,size.z)))){return true;}
+    if(isPointInFrustum(position+(vec3(size.x,size.y,0)))){return true;}
+    if(isPointInFrustum(position+(vec3(0,size.y,size.z)))){return true;}
+    return isPointInFrustum(position + (vec3(size.x, 0, size.z)));
 }
 
 
