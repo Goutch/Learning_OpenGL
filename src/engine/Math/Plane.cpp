@@ -8,8 +8,10 @@ Plane::Plane(glm::vec4 equation) {
     set(equation);
 }
 void Plane::set(glm::vec4 equation){
-    this->normal=glm::vec3(equation.x,equation.y,equation.z);
-    this->d=equation.w;
+    this->normal = glm::vec3(equation.x, equation.y, equation.z);
+    float l=glm::length(normal);
+    normal/=l;
+    this->d = equation.w/l;
 }
 
 float Plane::distance(const glm::vec3 &point) const{

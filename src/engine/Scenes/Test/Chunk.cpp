@@ -1,5 +1,5 @@
 #include "Chunk.h"
-
+const float Chunk::RADIUS=sqrt((Chunk::SIZE_X*Chunk::SIZE_X)+(Chunk::SIZE_Y*Chunk::SIZE_Y)+(Chunk::SIZE_Z*Chunk::SIZE_Z))/2;
 unsigned int Chunk::index(int x, int y, int z) {
     return (x * SIZE_Y * SIZE_Z) + (z * SIZE_Y) + y;
 }

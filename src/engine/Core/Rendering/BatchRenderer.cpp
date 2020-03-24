@@ -9,6 +9,7 @@
 #include "Core/Rendering/FBO.h"
 
 void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
+
     buffer.bind();
     clear();
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
@@ -28,6 +29,7 @@ void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4
                     for (auto &transform:vao_batches.second) {
                         material.transform(transform->getMatrix());
                         if (vao.hasIndices())
+
                             glDrawElements(option.primitive_type, vao.getVertexCount(), GL_UNSIGNED_INT, nullptr);
                         else
                             glDrawArrays(option.primitive_type, 0, vao.getVertexCount());
@@ -79,6 +81,8 @@ void BatchRenderer::renderDepth(const FBO &buffer, const glm::mat4 &depth_space_
 
 void BatchRenderer::draw(const VAO &vao, const EntityMaterial &material, const Transform &transform,
                          RenderOption options) const {
+    draw_count++;
+    vertices_count+=vao.getVertexCount();
     int batch_index=material.hasTransparency()?1:0;
     if (batches[batch_index].find(options) == batches[batch_index].end()) {
         batches[batch_index].emplace(options,

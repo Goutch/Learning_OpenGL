@@ -37,9 +37,13 @@ using namespace glm;
 
 
 class Renderer {
+protected:
+    mutable unsigned int draw_count=0;
+    mutable unsigned int vertices_count=0;
 public:
     static const int PRIMITIVE_TRIANGLES;
     static const int PRIMITIVE_POINTS;
+
     struct RenderOption{
         bool cull_faces=true;
         int primitive_type=PRIMITIVE_TRIANGLES;
@@ -57,6 +61,7 @@ public:
         }
 
     };
+
 
     const Quad QUAD=Quad();
     const Cube CUBE = Cube();
@@ -150,7 +155,8 @@ public:
 
 
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const = 0;
-
     void wireframe(bool enable);
     void screenShot(int width,int height);
+    unsigned int getVerticesCount();
+    unsigned int getDrawCount();
 };

@@ -6,7 +6,7 @@
 class FPSController: public Entity {
 private:
     Camera* camera;
-    float speed=1000;
+    float speed=100;
 public:
     FPSController(Camera &camera, vec3 position, vec3 rotation, vec3 scale);
     FPSController(Camera &camera);

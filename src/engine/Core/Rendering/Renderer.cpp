@@ -41,6 +41,8 @@ void Renderer::renderOnMainBuffer(const Canvas &canvas) {
     glDrawElements(GL_TRIANGLES, canvas.getVAO().getVertexCount(), GL_UNSIGNED_INT, nullptr);
     canvas.getVAO().unbind();
     canvas.getMaterial().unbind();
+    draw_count=0;
+    vertices_count=0;
 }
 
 void Renderer::wireframe(bool enable) {
@@ -56,6 +58,14 @@ void Renderer::screenShot(int width, int height) {
     glReadPixels(0, 0, width, height, GL_RGBA, GL_UNSIGNED_BYTE, pixel_data);
     stbi_write_png(std::string("../screenshot/"+TimeUtils::getTimeString()+".png").c_str(),width,height,4,pixel_data,0);
     delete[] pixel_data;
+}
+
+unsigned int Renderer::getVerticesCount() {
+    return vertices_count;
+}
+
+unsigned int Renderer::getDrawCount() {
+    return draw_count;
 }
 
 

@@ -40,6 +40,7 @@ void Engine::start() {
             scene->draw();
             scene->render();
             renderer->clearColor();
+            printFPS();
             renderer->renderOnMainBuffer(*canvas);
         } else {
             renderer->clear();
@@ -52,7 +53,7 @@ void Engine::start() {
 
         delta_time = delta_time_timer.ms();
         delta_time_timer.reset();
-        printFPS();
+
     }
     Log::status("Cleaning up..");
     delete scene;
@@ -74,6 +75,8 @@ void Engine::printFPS() {
     fps++;
     if (last_fps_print < std::time(0) - 1) {
         Log::debug("fps:" + std::to_string(fps));
+        Log::debug("draw calls:"+std::to_string(renderer->getDrawCount()));
+        Log::debug("vertices:"+std::to_string(renderer->getVerticesCount()));
         fps = 0;
         last_fps_print = std::time(0);
     }

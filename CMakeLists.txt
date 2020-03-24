@@ -49,7 +49,6 @@ add_executable(OGL_Engine
         src/engine/Core/Window.cpp
         src/engine/Core/Canvas.cpp
         src/engine/Core/Rendering/Renderer.cpp
-        src/engine/Core/Rendering/SimpleRenderer.cpp
         src/engine/Core/Rendering/BatchRenderer.cpp
         src/engine/Core/Rendering/FBO.cpp
         src/engine/Core/Rendering/RBO.cpp
@@ -129,6 +128,6 @@ add_executable(OGL_Engine
         src/engine/Scenes/Test/ChunkLoader.cpp
         src/engine/Scenes/Test/ChunkLoader.h
 
-        )
+        src/engine/Utils/Thread.cpp src/engine/Utils/Thread.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

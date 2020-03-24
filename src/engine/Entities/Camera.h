@@ -37,6 +37,8 @@ public:
     void onCanvasSizeChange(unsigned int width, unsigned int height) override;
     bool isPointInFrustum(const vec3& point) const;
     bool isBoundingBoxInFrustum(const BoundingBox& box) const;
-    bool isBoxInFrustum(const vec3& position,const vec3& size) const;
+    bool isBoxInFrustum(const vec3& position,float size_x,float size_y,float size_z) const;
+
+    bool isSphereInFrustum(const vec3 &position, float radius) const;
 };
 

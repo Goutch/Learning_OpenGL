@@ -10,4 +10,6 @@ public:
     ~ChunkManager();
     bool exist(int x, int y, int z) const;
     Chunk &getChunk(int x, int y, int z);
+
+    unsigned char getVoxel(int x, int y, int z);
 };

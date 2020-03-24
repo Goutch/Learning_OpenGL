@@ -7,8 +7,8 @@ class ChunkManager;
 
 #include <future>
 #include <Math/BoundingBox.h>
+#include <Utils/Thread.h>
 
-class CameraFrustum;
 class ChunkRenderer : public Entity {
     enum Side{
         up,
@@ -18,6 +18,7 @@ class ChunkRenderer : public Entity {
         front,
         back
     };
+
     Camera** pCamera;
     unsigned char *data;
     Mesh solid_voxels;
@@ -26,6 +27,9 @@ class ChunkRenderer : public Entity {
     ChunkManager *chunkManager;
     std::vector<unsigned int> indicies;
     std::vector<vec3> vertex_positions;
+    std::vector<vec2> vertex_uv;
+    std::vector<vec4> vertex_occlusion;
+    std::vector<vec3> vertex_normals;
     std::vector<Color> vertex_colors;
     const EntityMaterial* transparent_material;
     const EntityMaterial* solid_material;
@@ -35,10 +39,11 @@ class ChunkRenderer : public Entity {
     Chunk* chunk_right;
     Chunk* chunk_front;
     Chunk* chunk_back;
-    std::queue<std::future<void>> thread_results;
+    std::queue<Thread<void>> thread_results;
     std::mutex mesh_mutex;
 
 public:
+
     ChunkRenderer(const EntityMaterial &solid_material,const EntityMaterial &transparent_material, ChunkManager &chunkManager);
 
     void setChunk(Chunk *chunk);

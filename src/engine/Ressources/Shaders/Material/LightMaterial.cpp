@@ -47,7 +47,6 @@ void LightMaterial::bind() const {
         (*dl)->getShadowMap().bind(count+1);
         count++;
     }
-
 }
 
 void LightMaterial::unbind() const {

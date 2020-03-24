@@ -10,11 +10,13 @@ void ChunkLoader::setLoaderTransform(Transform &transform) {
     this->loader = &transform;
 }
 
-ChunkLoader::ChunkLoader(Scene &scene, ChunkManager &manager) {
+ChunkLoader::ChunkLoader(Scene &scene, ChunkManager &manager,EntityMaterial& solid_material,
+                         EntityMaterial& transparent_material) {
     this->manager = &manager;
     this->scene = &scene;
+    this->chunk_transparent_material=&transparent_material;
+    this->chunk_solid_material=&solid_material;
 
-    chunk_transparent_material.setTransparent(true);
 }
 
 void ChunkLoader::update(float delta) {
@@ -25,7 +27,7 @@ void ChunkLoader::update(float delta) {
     p.z = floor(p.z);
     ChunkPosition loader_position = ChunkPosition(p.x, p.y, p.z);
 
-    int range = 9;
+    int range = 1;
     //add to pool chunks if it is too far away
     for (auto &c:loaded_chunks) {
         ChunkPosition distance = c.second->getChunk().position - loader_position;
@@ -41,7 +43,7 @@ void ChunkLoader::update(float delta) {
     }
     //load all chunks in range create and new renderer if the pool is empty
     for (int x = -range; x <= range; ++x) {
-        for (int y = -1; y < 1; ++y) {
+        for (int y = -range; y < range; ++y) {
             for (int z = -range; z <= range; ++z) {
                 ChunkPosition chunk_pos = ChunkPosition(x + loader_position.x, y + loader_position.y,
                                                         z + loader_position.z);
@@ -68,7 +70,7 @@ void ChunkLoader::update(float delta) {
 
 
 void ChunkLoader::createChunk(int x, int y, int z) {
-    auto c = new ChunkRenderer(chunk_solid_material, chunk_transparent_material, *manager);
+    auto c = new ChunkRenderer(*chunk_solid_material, *chunk_transparent_material, *manager);
     scene->instantiate(c);
     c->setChunk(&manager->getChunk(x, y, z));
     loaded_chunks.emplace(c->getChunk().position, c);
