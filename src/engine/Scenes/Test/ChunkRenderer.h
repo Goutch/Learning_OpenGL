@@ -20,34 +20,41 @@ class ChunkRenderer : public Entity {
     };
 
     Camera** pCamera;
-    unsigned char *data;
-    Mesh solid_voxels;
-    Mesh transparent_voxels;
+
     Chunk *current_chunk;
     ChunkManager *chunkManager;
+
+    Mesh mesh;
+    bool empty=false;
+    const EntityMaterial* material;
     std::vector<unsigned int> indicies;
     std::vector<vec3> vertex_positions;
     std::vector<vec2> vertex_uv;
     std::vector<vec4> vertex_occlusion;
-    std::vector<vec3> vertex_normals;
     std::vector<Color> vertex_colors;
+
+    Mesh transparent_mesh;
+    bool transparent_empty=false;
+    std::vector<unsigned int> transparent_indicies;
+    std::vector<vec3> transparent_vertex_positions;
+    std::vector<Color> transparent_vertex_colors;
     const EntityMaterial* transparent_material;
-    const EntityMaterial* solid_material;
+
     Chunk* chunk_up;
     Chunk* chunk_down;
     Chunk* chunk_left;
     Chunk* chunk_right;
     Chunk* chunk_front;
     Chunk* chunk_back;
-    std::queue<Thread<void>> thread_results;
+    std::queue<Thread<void>> threads;
     std::mutex mesh_mutex;
-
+    void setChunk(ChunkPosition chunk);
 public:
 
     ChunkRenderer(const EntityMaterial &solid_material,const EntityMaterial &transparent_material, ChunkManager &chunkManager);
 
-    void setChunk(Chunk *chunk);
-
+    void setChunkAsynch(ChunkPosition position);
+    bool isLoading();
     Chunk &getChunk() const;
 
     void rebuild();

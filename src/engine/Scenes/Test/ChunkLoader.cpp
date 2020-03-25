@@ -27,14 +27,16 @@ void ChunkLoader::update(float delta) {
     p.z = floor(p.z);
     ChunkPosition loader_position = ChunkPosition(p.x, p.y, p.z);
 
-    int range = 1;
+    int range =3;
     //add to pool chunks if it is too far away
     for (auto &c:loaded_chunks) {
-        ChunkPosition distance = c.second->getChunk().position - loader_position;
-        if (abs(distance.x) > range ||
-            abs(distance.y) > range ||
-            abs(distance.z) > range) {
-            chunk_pool.push_back(c.second);
+        if(!c.second->isLoading()){
+            ChunkPosition distance = c.second->getChunk().position - loader_position;
+            if (abs(distance.x) > range ||
+                abs(distance.y) > range ||
+                abs(distance.z) > range) {
+                chunk_pool.push_back(c.second);
+            }
         }
     }
     //remove from loaded chunks too far away
@@ -53,7 +55,7 @@ void ChunkLoader::update(float delta) {
                 if (it == loaded_chunks.end()) {
                     if (!chunk_pool.empty()) {
 
-                        chunk_pool.front()->setChunk(&manager->getChunk(chunk_pos.x, chunk_pos.y, chunk_pos.z));
+                        chunk_pool.front()->setChunkAsynch(chunk_pos);
 
                         loaded_chunks.emplace(chunk_pos, chunk_pool.front());
                         chunk_pool.pop_front();
@@ -72,6 +74,7 @@ void ChunkLoader::update(float delta) {
 void ChunkLoader::createChunk(int x, int y, int z) {
     auto c = new ChunkRenderer(*chunk_solid_material, *chunk_transparent_material, *manager);
     scene->instantiate(c);
-    c->setChunk(&manager->getChunk(x, y, z));
-    loaded_chunks.emplace(c->getChunk().position, c);
+    auto pos=ChunkPosition(x, y, z);
+    c->setChunkAsynch(pos);
+    loaded_chunks.emplace(pos, c);
 }

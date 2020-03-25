@@ -26,3 +26,7 @@ void Chunk::set(int x, int y, int z, unsigned char value) {
 void Chunk::set(int i, unsigned char value) {
     data[i]=value;
 }
+
+Chunk::~Chunk() {
+    delete[] data;
+}

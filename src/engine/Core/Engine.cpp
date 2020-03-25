@@ -74,9 +74,9 @@ Engine::~Engine() {
 void Engine::printFPS() {
     fps++;
     if (last_fps_print < std::time(0) - 1) {
-        Log::debug("fps:" + std::to_string(fps));
-        Log::debug("draw calls:"+std::to_string(renderer->getDrawCount()));
-        Log::debug("vertices:"+std::to_string(renderer->getVerticesCount()));
+        Log::debug("Fps:" + std::to_string(fps));
+        Log::debug("Draw calls:"+std::to_string(renderer->getDrawCount()));
+        Log::debug("Vertices:"+std::to_string(renderer->getVerticesCount()));
         fps = 0;
         last_fps_print = std::time(0);
     }

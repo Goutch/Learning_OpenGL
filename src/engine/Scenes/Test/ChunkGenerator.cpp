@@ -40,9 +40,9 @@ void ChunkGenerator::generate(Chunk &chunk) {
         voxel_pos.z = chunk_pos.z;
     }*/
 
-    float scale_layer_1 = 0.0005;
-    float scale_layer_2 = 0.005;
-    float scale_layer_3 = 0.05;
+    float scale_layer_1 = 0.005;
+    float scale_layer_2 = 0.01;
+    float scale_layer_3 = 0.1;
 
     //float scale_caves=0.05;
     int index=0;
@@ -50,19 +50,19 @@ void ChunkGenerator::generate(Chunk &chunk) {
         voxel_pos.x+=1;
         for (int z = 0; z < Chunk::SIZE_Z; ++z) {
             voxel_pos.z+=1;
-            float layer_1=SimplexNoise::noise(voxel_pos.x * scale_layer_1, voxel_pos.z * scale_layer_1) *128;
+            float layer_1=SimplexNoise::noise(voxel_pos.x * scale_layer_1, voxel_pos.z * scale_layer_1) *64;
             float layer_2=SimplexNoise::noise(voxel_pos.x* scale_layer_2, voxel_pos.z* scale_layer_2) *8;
             float layer_3=SimplexNoise::noise(voxel_pos.x * scale_layer_3, voxel_pos.z* scale_layer_3) *2;
 
             float h= layer_1+layer_2+layer_3;
             for (int y = 0; y < Chunk::SIZE_Y; ++y) {
                 voxel_pos.y+=1;
-               /* float cave=SimplexNoise::noise(voxel_pos.x*scale_caves,voxel_pos.y*scale_caves,voxel_pos.z*scale_caves);
-                if(cave<0.5)
+                /*float cave=SimplexNoise::noise(voxel_pos.x*scale_caves,voxel_pos.y*scale_caves,voxel_pos.z*scale_caves);
+                if(cave<-0.3&&voxel_pos.y<h)
                 {
                     chunk.set(index, VOXELS::AIR);
                 }
-                else*/ if (voxel_pos.y < h && voxel_pos.y >= 0 && voxel_pos.y <= 3) {
+               else */if (voxel_pos.y < h &&  voxel_pos.y <= 3) {
                     chunk.set(index, VOXELS::SAND);
                 }
                 else if (voxel_pos.y < h) {

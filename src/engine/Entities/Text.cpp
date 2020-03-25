@@ -12,6 +12,7 @@ Text::Text(std::string text, const vec3 &position, FontMaterial &font, float siz
     this->text= text;
     this->size = size;
     transform.setScale(vec3(size,size,0));
+
 }
 
 void Text::draw(const Scene &scene) const {

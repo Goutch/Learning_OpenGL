@@ -4,10 +4,10 @@
 
 static const std::vector<Voxel> VOXELS_DICTIONNARY={
         {AIR,"AIR",Color(0,0,0,0)},
-        {GRASS,"GRASS",Color(0.3,0.8,0.3)},
+        {GRASS,"GRASS",Color(0.3,0.6,0.2)},
         {DIRT,"DIRT",Color(0.7,0.5,0.5)},
         {SAND,"SAND",Color(0.7,0.7,0.2)},
-        {WATER,"WATER",Color(0.1,0.3,0.8)},
+        {WATER,"WATER",Color(0,0.8,0.8,0.5)},
 };
 
 
