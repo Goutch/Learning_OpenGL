@@ -4,7 +4,7 @@ uniform vec4 material_color;
 uniform sampler2D texture_0;
 uniform int has_texture;
 in vec2 uv;
-in vec4 occlusion;
+flat in int occlusion_case;
 in vec4 color;
 out vec4 fragColor;
 const float occlusion_value=0.33;
@@ -12,136 +12,140 @@ void main()
 {
     vec4 c=material_color*color;
     vec4 occluded_color;
-    bool X=occlusion.x>=0.5;
-    bool Y=occlusion.y>=0.5;
-    bool Z=occlusion.z>=0.5;
-    bool W=occlusion.w>=0.5;
     //Y---W
     //|   |
     //X---Z
 
-    //o---o
-    //|   |
-    //o---o
-    if (!X && !Y && !Z && !W)
+    switch (occlusion_case)
     {
+        //o---o
+        //|   |
+        //o---o
+        //if (!X && !Y && !Z && !W)
+        case 0:{
         occluded_color=c;
-    }
-    //o---o
-    //|   |
-    //x---o
-    else if (X && !Y && !Z && !W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (1.-(uv.y))*(1.-(uv.x)));
-    }
-    //x---o
-    //|   |
-    //o---o
-    else if (!X && Y && !Z && !W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (uv.y)*(1.-uv.x));
-    }
-    //o---o
-    //|   |
-    //o---x
-    else if (!X && !Y && Z && !W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (1.-uv.y)*(uv.x));
-
-    }
-    //o---x
-    //|   |
-    //o---o
-    else if (!X && !Y && !Z && W)
-    {
-        occluded_color= mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (uv.y)*(uv.x));
-    }
-    //x---o
-    //|   |
-    //x---o
-    else if (X && Y && !Z && !W)
-    {
-        occluded_color=  mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (1.-uv.x));
-    }
-    //x---o
-    //|   |
-    //o---x
-    else if (!X && Y && Z && !W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (1.-uv.x)*uv.y)*mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (uv.x)*(1.-(uv.y)));
-    }
-    //o---x
-    //|   |
-    //o---x
-    else if (!X && !Y && Z && W)
-    {
-        occluded_color=  mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (uv.x));
-    }
-
-    //o---x
-    //|   |
-    //x---o
-    else if (X && !Y && !Z && W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (uv.x)*(uv.y))*mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (1.-(uv.x))*(1.-(uv.y)));
-    }
-
-
-    //x---x
-    //|   |
-    //o---o
-    else if (!X && Y && !Z && W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (uv.y));
-    }
-
-    //o---o
-    //|   |
-    //x---x
-    else if (X && !Y && Z && !W)
-    {
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), (1.-uv.y));
-    }
-
-    //x---o
-    //|   |
-    //x---x
-    else if (X && Y && Z && !W)
-    {
-        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, (uv.x)*(uv.y));
-    }
-
-    //x---x
-    //|   |
-    //o---x
-    else if (!X && Y && Z && W)
-    {
-        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, (1.-uv.x)*(1.-uv.y));
-    }
-
-    //o---x
-    //|   |
-    //x---x
-    else if (X && !Y && Z && W)
-    {
-        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, (1.-uv.x)*(uv.y));
-    }
-    //x---x
-    //|   |
-    //x---o
-    else if (X && Y && !Z && W)
-    {
-        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, (uv.x)*(1.-uv.y));
-    }
-    //x---x
-    //|   |
-    //x---x
-    else if (X&&Y&&Z&&W)
-    {
+        break; }
+        //o---o
+        //|   |
+        //x---o
+        //if (X && !Y && !Z && !W)
+        case 1:{
+        float v=(1.-(uv.y))*(1.-(uv.x));
+        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //x---o
+        //|   |
+        //o---o
+        //if (!X && Y && !Z && !W)
+        case 2:{
+        float v=(uv.y)*(1.-uv.x);
+        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //x---o
+        //|   |
+        //x---o
+        //if (X && Y && !Z && !W)
+        case 3:{
+        float v= (1.-uv.x);
+        occluded_color=  mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //o---o
+        //|   |
+        //o---x
+        // if (!X && !Y && Z && !W)
+        case 4:{
+        float v=(1.-uv.y)*(uv.x);
+        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //o---o
+        //|   |
+        //x---x
+        //if (X && !Y && Z && !W)
+        case 5:{
+        float v=(1.-uv.y);
+        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //x---o
+        //|   |
+        //o---x
+        //if (!X && Y && Z && !W)
+        case 6:{
+        float v1=(1.-uv.x)*uv.y;
+        float v2=(uv.x)*(1.-(uv.y));
+        occluded_color=mix(c, vec4((c.rgb)-(c.rgb*occlusion_value), 1), v1)*mix(c, vec4((c.rgb)-(c.rgb*occlusion_value), 1), v2);
+        break; }
+        //x---o
+        //|   |
+        //x---x
+        //if (X && Y && Z && !W)
+        case 7:{
+        float v=(uv.x)*(uv.y);
+        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
+        break; }
+        //o---x
+        //|   |
+        //o---o
+        //if (!X && !Y && !Z && W)
+        case 8:{
+        float v=(uv.y)*(uv.x);
+        occluded_color= mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //o---x
+        //|   |
+        //x---o
+        //if (X && !Y && !Z && W)
+        case 9:{
+        float v1=(uv.x)*(uv.y);
+        float v2=(1.-(uv.x))*(1.-(uv.y));
+        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v1)*mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v2);
+        break; }
+        //x---x
+        //|   |
+        //o---o
+        //if (!X && Y && !Z && W)
+        case 10:{
+        float v=(uv.y);
+        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //x---x
+        //|   |
+        //x---o
+        //if (X && Y && !Z && W)
+        case 11:{
+        float v=(uv.x)*(1.-uv.y);
+        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
+        break; }
+        //o---x
+        //|   |
+        //o---x
+        //if (!X && !Y && Z && W)
+        case 12:{
+        float v=(uv.x);
+        occluded_color=  mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
+        break; }
+        //o---x
+        //|   |
+        //x---x
+        //if (X && !Y && Z && W)
+        case 13:{
+        float v=(1.-uv.x)*(uv.y);
+        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
+        break; }
+        //x---x
+        //|   |
+        //o---x
+        //if (!X && Y && Z && W)
+        case 14:{
+        float v= (1.-uv.x)*(1.-uv.y);
+        occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
+        break; }
+        //x---x
+        //|   |
+        //x---x
+        //if (X&&Y&&Z&&W)
+        case 15:{
         occluded_color=vec4(c.rgb-(c.rgb*occlusion_value), 1);
-    }
-    else {
-        occluded_color=c;
+        break; }
     }
     fragColor=occluded_color;
 }

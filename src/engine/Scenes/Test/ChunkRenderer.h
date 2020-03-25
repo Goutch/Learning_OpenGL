@@ -30,7 +30,7 @@ class ChunkRenderer : public Entity {
     std::vector<unsigned int> indicies;
     std::vector<vec3> vertex_positions;
     std::vector<vec2> vertex_uv;
-    std::vector<vec4> vertex_occlusion;
+    std::vector<int> vertex_occlusion;
     std::vector<Color> vertex_colors;
 
     Mesh transparent_mesh;

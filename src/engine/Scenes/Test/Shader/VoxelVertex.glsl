@@ -7,14 +7,14 @@ layout(location=0)in vec3 vertexPosition;
 layout(location=1)in vec2 vertexUv;
 layout(location=2)in vec3 vertexNormal;
 layout(location=3)in vec4 vertexColor;
-layout(location=4)in vec4 vertexOcclusion;
+layout(location=4)in int faceOcclusion;
 out vec4 color;
 out vec2 uv;
-out vec4 occlusion;
+flat out int occlusion_case;
 void main()
 {
     color=vertexColor;
-    occlusion=vertexOcclusion;
+    occlusion_case=faceOcclusion;
     uv=vertexUv;
     gl_Position=projection*view*transform*vec4(vertexPosition,1.);
 }

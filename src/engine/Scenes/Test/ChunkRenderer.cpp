@@ -50,28 +50,31 @@ void ChunkRenderer::update(float delta, Scene &scene) {
         }
     }
 }
+
 bool ChunkRenderer::isLoading() {
     return !threads.empty();
 }
 
 void ChunkRenderer::setChunk(ChunkPosition position) {
     mesh_mutex.lock();
-    current_chunk = &chunkManager->getChunk(position.x,position.y,position.z);
+    current_chunk = &chunkManager->getChunk(position.x, position.y, position.z);
     chunk_up = &chunkManager->getChunk(position.x, position.y + 1, position.z);
-    chunk_down = &chunkManager->getChunk(position.x, position.y - 1,position.z);
-    chunk_left = &chunkManager->getChunk(position.x - 1,position.y, position.z);
+    chunk_down = &chunkManager->getChunk(position.x, position.y - 1, position.z);
+    chunk_left = &chunkManager->getChunk(position.x - 1, position.y, position.z);
     chunk_right = &chunkManager->getChunk(position.x + 1, position.y, position.z);
     chunk_front = &chunkManager->getChunk(position.x, position.y, position.z + 1);
     chunk_back = &chunkManager->getChunk(position.x, position.y, position.z - 1);
     rebuild();
 }
+
 void ChunkRenderer::setChunkAsynch(ChunkPosition position) {
     this->transform.position(vec3(
             position.x * Chunk::SIZE_X,
             position.y * Chunk::SIZE_Y,
             position.z * Chunk::SIZE_Z));
     threads.push(Thread<void>(
-            std::make_shared<std::future<void>>(std::async(std::launch::async, &ChunkRenderer::setChunk, this,position))));
+            std::make_shared<std::future<void>>(
+                    std::async(std::launch::async, &ChunkRenderer::setChunk, this, position))));
 }
 
 Chunk &ChunkRenderer::getChunk() const {
@@ -107,7 +110,7 @@ void ChunkRenderer::onBuildFinish() {
         mesh.vertices(&vertex_positions[0].x, vertex_positions.size() * 3);
         mesh.colors(&vertex_colors[0].r, vertex_colors.size() * 4);
         mesh.uvs(&vertex_uv[0].x, vertex_uv.size() * 2);
-        mesh.put(4, 4, &vertex_occlusion[0].x, vertex_occlusion.size() * 4);
+        mesh.put(4, 1, vertex_occlusion.data(), vertex_occlusion.size());
         empty = false;
     } else {
         empty = true;
@@ -141,9 +144,10 @@ void ChunkRenderer::createVoxel(int x, int y, int z, const Voxel &voxel) {
 
 void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRenderer::Side side) {
     unsigned int indices_offset = vertex_positions.size();
-    unsigned int transparent_indices_offset=transparent_vertex_positions.size();
+    unsigned int transparent_indices_offset = transparent_vertex_positions.size();
     bool added_side = false;
     bool inverse = false;
+    bool neighbours[3][3];
     switch (side) {
         case up: {
             const Voxel &voxel_up = VOXELS_DICTIONNARY.at(
@@ -155,8 +159,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
 
-
-                    bool neighbours[3][3];
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
@@ -165,15 +167,7 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                     z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-                    vec4 occlusion = vec4(neighbours[0][0] + neighbours[1][0] + neighbours[0][1],
-                                          neighbours[0][1] + neighbours[0][2] + neighbours[1][2],
-                                          neighbours[2][1] + neighbours[2][0] + neighbours[1][0],
-                                          neighbours[1][2] + neighbours[2][2] + neighbours[2][1]);
 
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
                 } else {
                     transparent_vertex_positions.emplace_back(x, y + 1, z);
                     transparent_vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
@@ -195,8 +189,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x, y, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
 
-
-                    bool neighbours[3][3];
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
@@ -205,17 +197,8 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                     z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-                    vec4 occlusion = vec4(neighbours[0][0] + neighbours[1][0] + neighbours[0][1],
-                                          neighbours[0][1] + neighbours[0][2] + neighbours[1][2],
-                                          neighbours[2][1] + neighbours[2][0] + neighbours[1][0],
-                                          neighbours[1][2] + neighbours[2][2] + neighbours[2][1]);
 
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                }
-                else{
+                } else {
                     transparent_vertex_positions.emplace_back(x, y, z);
                     transparent_vertex_positions.emplace_back(vec3(x + 1, y, z));
                     transparent_vertex_positions.emplace_back(vec3(x, y, z + 1));
@@ -239,7 +222,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
 
 
-                    bool neighbours[3][3];
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
@@ -248,15 +230,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                     z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-                    vec4 occlusion = vec4(neighbours[0][0] + neighbours[1][0] + neighbours[0][1],
-                                          neighbours[0][1] + neighbours[0][2] + neighbours[1][2],
-                                          neighbours[2][1] + neighbours[2][0] + neighbours[1][0],
-                                          neighbours[1][2] + neighbours[2][2] + neighbours[2][1]);
-
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
 
                 } else {
                     transparent_vertex_positions.emplace_back(x + 1, y, z);
@@ -279,8 +252,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x, y, z + 1));
                     vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
 
-
-                    bool neighbours[3][3];
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
@@ -289,15 +260,7 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                     z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-                    vec4 occlusion = vec4(neighbours[0][0] + neighbours[1][0] + neighbours[0][1],
-                                          neighbours[0][1] + neighbours[0][2] + neighbours[1][2],
-                                          neighbours[2][1] + neighbours[2][0] + neighbours[1][0],
-                                          neighbours[1][2] + neighbours[2][2] + neighbours[2][1]);
 
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
 
                 } else {
                     transparent_vertex_positions.emplace_back(x, y, z);
@@ -319,8 +282,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
 
-
-                    bool neighbours[3][3];
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
@@ -329,15 +290,7 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                     z + 1 + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-                    vec4 occlusion = vec4(neighbours[0][0] + neighbours[1][0] + neighbours[0][1],
-                                          neighbours[0][1] + neighbours[0][2] + neighbours[1][2],
-                                          neighbours[2][1] + neighbours[2][0] + neighbours[1][0],
-                                          neighbours[1][2] + neighbours[2][2] + neighbours[2][1]);
 
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
 
                 } else {
                     transparent_vertex_positions.emplace_back(x, y, z + 1);
@@ -360,8 +313,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x, y + 1, z));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
 
-
-                    bool neighbours[3][3];
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
                             neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
@@ -370,15 +321,7 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                     z - 1 + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-                    vec4 occlusion = vec4(neighbours[0][0] + neighbours[1][0] + neighbours[0][1],
-                                          neighbours[0][1] + neighbours[0][2] + neighbours[1][2],
-                                          neighbours[2][1] + neighbours[2][0] + neighbours[1][0],
-                                          neighbours[1][2] + neighbours[2][2] + neighbours[2][1]);
 
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
-                    vertex_occlusion.emplace_back(occlusion);
 
                 } else {
                     transparent_vertex_positions.emplace_back(x, y, z);
@@ -404,6 +347,15 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
             vertex_uv.emplace_back(vec2(0, 1));
             vertex_uv.emplace_back(vec2(1, 1));
 
+            int occlusion_case = (neighbours[0][0] + neighbours[1][0] + neighbours[0][1] > 0) +
+                                 ((neighbours[0][1] + neighbours[0][2] + neighbours[1][2] > 0)*2) +
+                                 ((neighbours[2][1] + neighbours[2][0] + neighbours[1][0] > 0)*4) +
+                                 ((neighbours[1][2] + neighbours[2][2] + neighbours[2][1] > 0)*8);
+
+            vertex_occlusion.emplace_back(occlusion_case);
+            vertex_occlusion.emplace_back(occlusion_case);
+            vertex_occlusion.emplace_back(occlusion_case);
+            vertex_occlusion.emplace_back(occlusion_case);
             //  1---3
             //  | / |
             //  0---2
