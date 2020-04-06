@@ -4,7 +4,7 @@ project(OGL_Engine)
 set(CMAKE_CXX_STANDARD 11)
 
 include_directories(src/engine)
-
+include_directories(src/app)
 find_package(OpenGL REQUIRED)
 set(CMAKE_MODULE_PATH ${CMAKE_MODULE_PATH} "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -99,34 +99,35 @@ add_executable(OGL_Engine
         src/engine/Utils/SimplexNoise.cpp
         src/engine/Utils/Geometry.cpp
 
-        src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp
-        src/engine/Scenes/Demo3D/Grass.cpp
-        src/engine/Scenes/Demo3D/Grass.h
+        src/app/Scenes/Demo3D/SpacialSceneDemo.cpp
+        src/app/Scenes/Demo3D/Grass.cpp
+        src/app/Scenes/Demo3D/Grass.h
 
-        src/engine/Scenes/Editor/Editor.cpp
-        src/engine/Scenes/Editor/PropertyWindow.cpp
-        src/engine/Scenes/Editor/PropertyWindow.h
-        src/engine/Scenes/Editor/SceneTreeWindow.cpp
-        src/engine/Scenes/Editor/SceneTreeWindow.h
-        src/engine/Scenes/Editor/CameraWindow.cpp
-        src/engine/Scenes/Editor/CameraWindow.h
-        src/engine/Scenes/Editor/EntityCreationWindow.cpp
-        src/engine/Scenes/Editor/EntityCreationWindow.h
+        src/app/Scenes/Editor/Editor.cpp
+        src/app/Scenes/Editor/Editor.h
+        src/app/Scenes/Editor/PropertyWindow.cpp
+        src/app/Scenes/Editor/PropertyWindow.h
+        src/app/Scenes/Editor/SceneTreeWindow.cpp
+        src/app/Scenes/Editor/SceneTreeWindow.h
+        src/app/Scenes/Editor/CameraWindow.cpp
+        src/app/Scenes/Editor/CameraWindow.h
+        src/app/Scenes/Editor/EntityCreationWindow.cpp
+        src/app/Scenes/Editor/EntityCreationWindow.h
 
-        src/engine/Scenes/Test/VoxelDictionary.h
-        src/engine/Scenes/Test/Test.cpp
-        src/engine/Scenes/Test/Test.h
-        src/engine/Scenes/Test/Chunk.h
-        src/engine/Scenes/Test/Chunk.cpp
-        src/engine/Scenes/Test/ChunkGenerator.cpp
-        src/engine/Scenes/Test/ChunkGenerator.h
-        src/engine/Scenes/Test/Voxel.h
-        src/engine/Scenes/Test/ChunkRenderer.cpp
-        src/engine/Scenes/Test/ChunkRenderer.h
-        src/engine/Scenes/Test/ChunkManager.cpp
-        src/engine/Scenes/Test/ChunkManager.h
-        src/engine/Scenes/Test/ChunkLoader.cpp
-        src/engine/Scenes/Test/ChunkLoader.h
+        src/app/Scenes/Test/VoxelDictionary.h
+        src/app/Scenes/Test/Test.cpp
+        src/app/Scenes/Test/Test.h
+        src/app/Scenes/Test/Chunk.h
+        src/app/Scenes/Test/Chunk.cpp
+        src/app/Scenes/Test/ChunkGenerator.cpp
+        src/app/Scenes/Test/ChunkGenerator.h
+        src/app/Scenes/Test/Voxel.h
+        src/app/Scenes/Test/ChunkRenderer.cpp
+        src/app/Scenes/Test/ChunkRenderer.h
+        src/app/Scenes/Test/ChunkManager.cpp
+        src/app/Scenes/Test/ChunkManager.h
+        src/app/Scenes/Test/ChunkLoader.cpp
+        src/app/Scenes/Test/ChunkLoader.h
 
         src/engine/Utils/Thread.cpp src/engine/Utils/Thread.h)
 

@@ -8,8 +8,8 @@
 
 class Test:public Scene {
     ChunkManager manager;
-    Shader chunk_shader=Shader("../src/engine/Scenes/Test/Shader/VoxelVertex.glsl","../src/engine/Scenes/Test/Shader/VoxelFragment.glsl");
-    Shader transparent_chunk_shader=Shader("../src/engine/Scenes/Test/Shader/TransparentVoxelVertex.glsl","../src/engine/Scenes/Test/Shader/TransparentVoxelFragment.glsl");
+    Shader chunk_shader=Shader("../src/app/Scenes/Test/Shader/VoxelVertex.glsl","../src/engine/Scenes/Test/Shader/VoxelFragment.glsl");
+    Shader transparent_chunk_shader=Shader("../src/app/Scenes/Test/Shader/TransparentVoxelVertex.glsl","../src/engine/Scenes/Test/Shader/TransparentVoxelFragment.glsl");
     EntityMaterial chunk_transparent_material=EntityMaterial(transparent_chunk_shader,Color::WHITE);
     EntityMaterial chunk_solid_material=EntityMaterial(chunk_shader,Color::WHITE);
     ChunkLoader loader=ChunkLoader(*this,manager,chunk_solid_material,chunk_transparent_material);

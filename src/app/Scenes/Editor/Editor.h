@@ -2,7 +2,7 @@
 
 #include <Core/Scene.h>
 #include <Core/Canvas.h>
-#include "Scenes/Demo3D/SpacialSceneDemo.h"
+#include "../Demo3D/SpacialSceneDemo.h"
 #include "set"
 #include "vector"
 #include <list>
