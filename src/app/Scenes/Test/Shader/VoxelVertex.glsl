@@ -9,12 +9,12 @@ layout(location=2)in vec3 vertexNormal;
 layout(location=3)in vec4 vertexColor;
 layout(location=4)in int faceOcclusion;
 out vec4 color;
-out vec2 uv;
+out vec2 tex_coord;
 flat out int occlusion_case;
 void main()
 {
     color=vertexColor;
     occlusion_case=faceOcclusion;
-    uv=vertexUv;
+    tex_coord=vertexUv;
     gl_Position=projection*view*transform*vec4(vertexPosition,1.);
 }
