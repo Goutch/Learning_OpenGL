@@ -7,7 +7,7 @@ varying in vec2 tex_coord;
 flat in int occlusion_case;
 in vec4 color;
 out vec4 fragColor;
-const float occlusion_value=0.33;
+const float occlusion_value=0.15;
 void main()
 {
     vec4 c=material_color*color;
@@ -16,7 +16,7 @@ void main()
     //Y---W
     //|   |
     //X---Z
-    vec2 uv=tex_coord*5;
+    vec2 uv=tex_coord;
     switch (occlusion_case)
     {
         //o---o
@@ -31,7 +31,7 @@ void main()
         //x---o
         //if (X && !Y && !Z && !W)
         case 1:{
-        float v=(1.-(uv.y))*(1.-(uv.x));
+        float v=sqrt(pow((1.-(uv.y)),2)*pow((1.-(uv.x)),2));
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
         break; }
         //x---o
@@ -39,7 +39,7 @@ void main()
         //o---o
         //if (!X && Y && !Z && !W)
         case 2:{
-        float v=(uv.y)*(1.-uv.x);
+        float v=sqrt(pow((uv.y),2)*pow((1.-uv.x),2));
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
         break; }
         //x---o
@@ -55,7 +55,7 @@ void main()
         //o---x
         // if (!X && !Y && Z && !W)
         case 4:{
-        float v=(1.-uv.y)*(uv.x);
+        float v=sqrt(pow((1.-uv.y),2)*pow((uv.x),2));
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
         break; }
         //o---o
@@ -71,9 +71,9 @@ void main()
         //o---x
         //if (!X && Y && Z && !W)
         case 6:{
-        float v1=(1.-uv.x)*uv.y;
-        float v2=(uv.x)*(1.-(uv.y));
-        occluded_color=mix(c, vec4((c.rgb)-(c.rgb*occlusion_value), 1), v1)*mix(c, vec4((c.rgb)-(c.rgb*occlusion_value), 1), v2);
+        float v1=distance(uv.x,uv.y);
+        float v2=distance(1.-(uv.x),1.-(uv.y));
+        occluded_color=(mix(c, vec4((c.rgb)-(c.rgb*occlusion_value), 1), v1)+mix(c, vec4((c.rgb)-(c.rgb*occlusion_value), 1), v2))*0.5;
         break; }
         //x---o
         //|   |
@@ -88,7 +88,7 @@ void main()
         //o---o
         //if (!X && !Y && !Z && W)
         case 8:{
-        float v=(uv.y)*(uv.x);
+        float v=sqrt(pow((uv.y),2)*pow((uv.x),2));
         occluded_color= mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
         break; }
         //o---x
@@ -96,14 +96,13 @@ void main()
         //x---o
         //if (X && !Y && !Z && W)
         case 9:{
-        float v1=(uv.x)*(uv.y);
-        float v2=(1.-(uv.x))*(1.-(uv.y));
-        occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v1)*mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v2);
+        float v1=distance(1.-uv.x,uv.y);
+        float v2=distance(uv.x,1.-uv.y);
+        occluded_color=(mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v1)+mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v2))*0.5;
         break; }
         //x---x
         //|   |
         //o---o
-        //if (!X && Y && !Z && W)
         case 10:{
         float v=(uv.y);
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -111,7 +110,6 @@ void main()
         //x---x
         //|   |
         //x---o
-        //if (X && Y && !Z && W)
         case 11:{
         float v=(uv.x)*(1.-uv.y);
         occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
@@ -119,7 +117,6 @@ void main()
         //o---x
         //|   |
         //o---x
-        //if (!X && !Y && Z && W)
         case 12:{
         float v=(uv.x);
         occluded_color=  mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -127,7 +124,6 @@ void main()
         //o---x
         //|   |
         //x---x
-        //if (X && !Y && Z && W)
         case 13:{
         float v=(1.-uv.x)*(uv.y);
         occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
@@ -135,7 +131,6 @@ void main()
         //x---x
         //|   |
         //o---x
-        //if (!X && Y && Z && W)
         case 14:{
         float v= (1.-uv.x)*(1.-uv.y);
         occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
@@ -143,7 +138,6 @@ void main()
         //x---x
         //|   |
         //x---x
-        //if (X&&Y&&Z&&W)
         case 15:{
         occluded_color=vec4(c.rgb-(c.rgb*occlusion_value), 1);
         break; }
