@@ -12,24 +12,19 @@ void main()
 {
     vec4 c=material_color*color;
     vec4 occluded_color;
-
-    //Y---W
-    //|   |
-    //X---Z
     vec2 uv=tex_coord;
+    
     switch (occlusion_case)
     {
         //o---o
         //|   |
         //o---o
-        //if (!X && !Y && !Z && !W)
         case 0:{
         occluded_color=c;
         break; }
         //o---o
         //|   |
         //x---o
-        //if (X && !Y && !Z && !W)
         case 1:{
         float v=sqrt(pow((1.-(uv.y)),2)*pow((1.-(uv.x)),2));
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -37,7 +32,6 @@ void main()
         //x---o
         //|   |
         //o---o
-        //if (!X && Y && !Z && !W)
         case 2:{
         float v=sqrt(pow((uv.y),2)*pow((1.-uv.x),2));
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -45,7 +39,6 @@ void main()
         //x---o
         //|   |
         //x---o
-        //if (X && Y && !Z && !W)
         case 3:{
         float v= (1.-uv.x);
         occluded_color=  mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -53,7 +46,6 @@ void main()
         //o---o
         //|   |
         //o---x
-        // if (!X && !Y && Z && !W)
         case 4:{
         float v=sqrt(pow((1.-uv.y),2)*pow((uv.x),2));
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -61,7 +53,6 @@ void main()
         //o---o
         //|   |
         //x---x
-        //if (X && !Y && Z && !W)
         case 5:{
         float v=(1.-uv.y);
         occluded_color=mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -69,7 +60,6 @@ void main()
         //x---o
         //|   |
         //o---x
-        //if (!X && Y && Z && !W)
         case 6:{
         float v1=distance(uv.x,uv.y);
         float v2=distance(1.-(uv.x),1.-(uv.y));
@@ -78,7 +68,6 @@ void main()
         //x---o
         //|   |
         //x---x
-        //if (X && Y && Z && !W)
         case 7:{
         float v=(uv.x)*(uv.y);
         occluded_color=mix(vec4(c.rgb-(c.rgb*occlusion_value), 1), c, v);
@@ -86,7 +75,6 @@ void main()
         //o---x
         //|   |
         //o---o
-        //if (!X && !Y && !Z && W)
         case 8:{
         float v=sqrt(pow((uv.y),2)*pow((uv.x),2));
         occluded_color= mix(c, vec4(c.rgb-(c.rgb*occlusion_value), 1), v);
@@ -94,7 +82,6 @@ void main()
         //o---x
         //|   |
         //x---o
-        //if (X && !Y && !Z && W)
         case 9:{
         float v1=distance(1.-uv.x,uv.y);
         float v2=distance(uv.x,1.-uv.y);
