@@ -15,7 +15,7 @@ struct Thread {
             return result->get();
         }
     };
-    bool isFinish()
+    bool isFinish() const
     {
         auto status = result->wait_for(std::chrono::milliseconds(0));
         return status == std::future_status::ready;

@@ -12,6 +12,6 @@ public:
     ~ChunkManager();
     bool exist(int x, int y, int z) const;
     Chunk &getChunk(int x, int y, int z);
-
+    ChunkPosition worldToChunk(vec3 pos);
     unsigned char getVoxel(int x, int y, int z);
 };

@@ -5,12 +5,17 @@ class ChunkManager;
 
 #include <thread>
 #include "Chunk.h"
+#include <Utils/Thread.h>
 class ChunkLoader {
+    const int MAX_LOADER_THREADS=32;
     EntityMaterial* chunk_transparent_material;
     EntityMaterial* chunk_solid_material;
     Transform* loader;
     std::unordered_map<ChunkPosition,ChunkRenderer*,ChunkPosition::hash_fun> loaded_chunks;
-    std::list<ChunkRenderer*> chunk_pool;
+    std::unordered_map<ChunkPosition,std::pair<ChunkRenderer*,Thread<void>>,ChunkPosition::hash_fun> loading_chunks;//renderers currently loading
+    std::list<ChunkRenderer*> chunks_pool;//unused chunks renderer
+    int range=16;
+    std::list<ChunkPosition> view;
     ChunkManager* manager;
     Scene* scene;
 
@@ -19,7 +24,7 @@ public:
     EntityMaterial& transparent_material);
     void setLoaderTransform(Transform& transform);
     void update(float delta);
-    void createChunk(int x,int y,int z);
+    ~ChunkLoader();
 };
 
 

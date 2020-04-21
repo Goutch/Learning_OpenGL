@@ -28,5 +28,5 @@ void Chunk::set(int i, unsigned char value) {
 }
 
 Chunk::~Chunk() {
-    delete[] data;
+
 }

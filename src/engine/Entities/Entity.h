@@ -24,7 +24,7 @@ public:
     void setParent(Entity* parent);
     Entity* getParent();
     void setEnabled(bool enabled);
-    bool isEnabled();
+    bool isEnabled() const;
     std::set<Entity*> getChildren();
     virtual void init(Scene &scene);
     virtual void draw(const Scene &scene) const;

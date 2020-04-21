@@ -7,8 +7,11 @@ enum VOXELS{
     AIR,
     GRASS,
     DIRT,
+    STONE,
     SAND,
     WATER,
+    WOOD,
+    LEAF
 };
 struct Voxel {
     Color color;

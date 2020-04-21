@@ -83,7 +83,7 @@ void Entity::setEnabled(bool enabled) {
     this->enabled=enabled;
 }
 
-bool Entity::isEnabled() {
+bool Entity::isEnabled() const {
     return enabled;
 }
 

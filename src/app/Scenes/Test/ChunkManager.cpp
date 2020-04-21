@@ -4,17 +4,17 @@
 
 #include "ChunkManager.h"
 #include "ChunkGenerator.h"
-Chunk &ChunkManager::getChunk(int x, int y, int z) {
 
-    if(!exist(x,y,z))
-    {
-        std::lock_guard<std::mutex> lock(chunk_map_mutex);
-        auto c=new Chunk(x,y,z);
-        chunk_map.emplace(c->position,c);
+Chunk &ChunkManager::getChunk(int x, int y, int z) {
+    std::lock_guard<std::mutex> lock(chunk_map_mutex);
+    if (chunk_map.find({x, y, z}) == chunk_map.end()) {
+
+        auto c = new Chunk(x, y, z);
+        chunk_map.emplace(c->position, c);
         ChunkGenerator::generate(*c);
         return *c;
     }
-    return *chunk_map.at({x,y,z});
+    return *chunk_map.at({x, y, z});
 }
 
 
@@ -24,12 +24,24 @@ ChunkManager::~ChunkManager() {
     }
 }
 
-unsigned char ChunkManager::getVoxel(int x,int y,int z){
-    ChunkPosition chunk_pos=ChunkPosition(floor(x/(float)Chunk::SIZE_X),floor(y/(float)Chunk::SIZE_Y),floor(z/(float)Chunk::SIZE_Z));
-    vec3 voxel_position=vec3(x-(chunk_pos.x*Chunk::SIZE_X),y-(chunk_pos.y*Chunk::SIZE_Y),z-(chunk_pos.z*Chunk::SIZE_Z));
-    return getChunk(chunk_pos.x,chunk_pos.y,chunk_pos.z).at(voxel_position.x,voxel_position.y,voxel_position.z);
+unsigned char ChunkManager::getVoxel(int x, int y, int z) {
+    ChunkPosition chunk_pos = ChunkPosition(floor(x / (float) Chunk::SIZE_X), floor(y / (float) Chunk::SIZE_Y),
+                                            floor(z / (float) Chunk::SIZE_Z));
+    vec3 voxel_position = vec3(x - (chunk_pos.x * Chunk::SIZE_X), y - (chunk_pos.y * Chunk::SIZE_Y),
+                               z - (chunk_pos.z * Chunk::SIZE_Z));
+    return getChunk(chunk_pos.x, chunk_pos.y, chunk_pos.z).at(voxel_position.x, voxel_position.y, voxel_position.z);
 }
-bool ChunkManager::exist(int x,int y, int z) const {
+
+bool ChunkManager::exist(int x, int y, int z) const {
     std::lock_guard<std::mutex> lock(chunk_map_mutex);
-    return chunk_map.find({x,y,z})!= chunk_map.end();
+    return chunk_map.find({x, y, z}) != chunk_map.end();
+}
+
+ChunkPosition ChunkManager::worldToChunk(vec3 pos) {
+
+    pos *= vec3(1 / (float) Chunk::SIZE_X, 1 / (float) Chunk::SIZE_Y, 1 / (float) Chunk::SIZE_Z);
+    pos.x = floor(pos.x);
+    pos.y = floor(pos.y);
+    pos.z = floor(pos.z);
+    return ChunkPosition(pos.x, pos.y, pos.z);
 }

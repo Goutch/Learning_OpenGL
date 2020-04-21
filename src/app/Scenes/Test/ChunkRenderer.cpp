@@ -9,8 +9,7 @@
 #include <future>
 
 ChunkRenderer::ChunkRenderer(const EntityMaterial &solid_material, const EntityMaterial &transparent_material,
-                             ChunkManager &chunkManager) :
-        Entity(vec3(0), vec3(0), vec3(1)) {
+                             ChunkManager &chunkManager) : Entity(vec3(0), vec3(0), vec3(1)) {
     this->material = &solid_material;
     this->transparent_material = &transparent_material;
     this->chunkManager = &chunkManager;
@@ -18,8 +17,8 @@ ChunkRenderer::ChunkRenderer(const EntityMaterial &solid_material, const EntityM
 }
 
 void ChunkRenderer::draw(const Scene &scene) const {
-    if ((!empty || !transparent_empty) &&
-        threads.empty() &&
+
+    if (isEnabled() && (!empty || !transparent_empty) &&
         scene.getCamera().isSphereInFrustum(getChunkCenter(), Chunk::RADIUS)) {
         Renderer &renderer = scene.getRenderer();
         if (!empty)renderer.draw(mesh, *material, transform);
@@ -41,22 +40,13 @@ void ChunkRenderer::init(Scene &scene) {
     pCamera = &scene.getCameraPtr();
 }
 
-void ChunkRenderer::update(float delta, Scene &scene) {
-    Entity::update(delta, scene);
-    if (!threads.empty()) {
-        if (threads.front().isFinish()) {
-            threads.pop();
-            onBuildFinish();
-        }
-    }
-}
-
-bool ChunkRenderer::isLoading() {
-    return !threads.empty();
-}
 
 void ChunkRenderer::setChunk(ChunkPosition position) {
-    mesh_mutex.lock();
+    Timer t;
+    this->transform.position(vec3(
+            position.x * Chunk::SIZE_X,
+            position.y * Chunk::SIZE_Y,
+            position.z * Chunk::SIZE_Z));
     current_chunk = &chunkManager->getChunk(position.x, position.y, position.z);
     chunk_up = &chunkManager->getChunk(position.x, position.y + 1, position.z);
     chunk_down = &chunkManager->getChunk(position.x, position.y - 1, position.z);
@@ -65,28 +55,23 @@ void ChunkRenderer::setChunk(ChunkPosition position) {
     chunk_front = &chunkManager->getChunk(position.x, position.y, position.z + 1);
     chunk_back = &chunkManager->getChunk(position.x, position.y, position.z - 1);
     rebuild();
+
+    //Log::debug("rebuild time:" + std::to_string(t.ms()));
 }
 
-void ChunkRenderer::setChunkAsynch(ChunkPosition position) {
-    this->transform.position(vec3(
-            position.x * Chunk::SIZE_X,
-            position.y * Chunk::SIZE_Y,
-            position.z * Chunk::SIZE_Z));
-    threads.push(Thread<void>(
-            std::make_shared<std::future<void>>(
-                    std::async(std::launch::async, &ChunkRenderer::setChunk, this, position))));
-}
 
 Chunk &ChunkRenderer::getChunk() const {
     return *current_chunk;
 }
 
 void ChunkRenderer::rebuild() {
+
+    mesh_mutex.lock();
     indicies.clear();
     vertex_occlusion.clear();
     vertex_positions.clear();
     vertex_colors.clear();
-    vertex_uv.clear();
+    vertex_uv_index.clear();
 
     transparent_indicies.clear();
     transparent_vertex_colors.clear();
@@ -102,24 +87,22 @@ void ChunkRenderer::rebuild() {
         }
     }
     mesh_mutex.unlock();
+
 }
 
 void ChunkRenderer::onBuildFinish() {
+    std::lock_guard<std::mutex> lock(mesh_mutex);
     if (!indicies.empty()) {
         mesh.indicies(indicies.data(), indicies.size());
         mesh.vertices(&vertex_positions[0].x, vertex_positions.size() * 3);
         mesh.colors(&vertex_colors[0].r, vertex_colors.size() * 4);
-        mesh.uvs(&vertex_uv[0].x, vertex_uv.size() * 2);
+        mesh.put(1,1,vertex_uv_index.data(), vertex_uv_index.size());
         mesh.put(4, 1, vertex_occlusion.data(), vertex_occlusion.size());
         empty = false;
     } else {
         empty = true;
     }
-    indicies.clear();
-    vertex_occlusion.clear();
-    vertex_positions.clear();
-    vertex_colors.clear();
-    vertex_uv.clear();
+
     if (!transparent_indicies.empty()) {
         transparent_mesh.indicies(transparent_indicies.data(), transparent_indicies.size());
         transparent_mesh.vertices(&transparent_vertex_positions[0].x, transparent_vertex_positions.size() * 3);
@@ -128,9 +111,7 @@ void ChunkRenderer::onBuildFinish() {
     } else {
         transparent_empty = true;
     }
-    transparent_indicies.clear();
-    transparent_vertex_colors.clear();
-    transparent_vertex_positions.clear();
+
 }
 
 void ChunkRenderer::createVoxel(int x, int y, int z, const Voxel &voxel) {
@@ -142,6 +123,12 @@ void ChunkRenderer::createVoxel(int x, int y, int z, const Voxel &voxel) {
     createSide(x, y, z, voxel, Side::back);
 }
 
+bool isInChunk(int x, int y, int z) {
+    return !(x < 0 || x >= Chunk::SIZE_X ||
+             y < 0 || y >= Chunk::SIZE_Y - 1 ||
+             z < 0 || z >= Chunk::SIZE_Z - 1);
+}
+
 void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRenderer::Side side) {
     unsigned int indices_offset = vertex_positions.size();
     unsigned int transparent_indices_offset = transparent_vertex_positions.size();
@@ -151,20 +138,30 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
     switch (side) {
         case up: {
             const Voxel &voxel_up = VOXELS_DICTIONNARY.at(
-                    y >= Chunk::SIZE_Y - 1 ? chunk_up->at(x, 0, z) : current_chunk->at(x, y + 1, z));
+                    y >= Chunk::SIZE_Y - 1 ?
+                    chunk_up->at(x, 0, z) :
+                    current_chunk->at(x, y + 1, z));
             if (voxel_up.is_transparent && voxel_up != voxel) {
                 if (!voxel.is_transparent) {
                     vertex_positions.emplace_back(x, y + 1, z);
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
                     vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
-
+                    int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
-                            neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
-                                    x + i + (current_chunk->position.x * Chunk::SIZE_X),
-                                    y + 1 + (current_chunk->position.y * Chunk::SIZE_Y),
-                                    z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
+                            posX = x + i;
+                            posY = y + 1;
+                            posZ = z + j;
+
+                            neighbours[i + 1][j + 1] = isInChunk(posX, posY, posZ) ?
+                                                       !VOXELS_DICTIONNARY[current_chunk->at(posX, posY,
+                                                                                             posZ)].is_transparent :
+                                                       !VOXELS_DICTIONNARY[chunkManager->getVoxel(
+                                                               posX + (current_chunk->position.x * Chunk::SIZE_X),
+                                                               posY + (current_chunk->position.y * Chunk::SIZE_Y),
+                                                               posZ + (current_chunk->position.z *
+                                                                       Chunk::SIZE_Z))].is_transparent;
                         }
                     }
 
@@ -188,13 +185,20 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x + 1, y, z));
                     vertex_positions.emplace_back(vec3(x, y, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
-
+                    int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
-                            neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
-                                    x + i + (current_chunk->position.x * Chunk::SIZE_X),
-                                    y - 1 + (current_chunk->position.y * Chunk::SIZE_Y),
-                                    z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
+                            posX = x + i;
+                            posY = y - 1;
+                            posZ = z + j;
+                            neighbours[i + 1][j + 1] = isInChunk(posX, posY, posZ) ?
+                                                       !VOXELS_DICTIONNARY[current_chunk->at(posX, posY,
+                                                                                             posZ)].is_transparent :
+                                                       !VOXELS_DICTIONNARY[chunkManager->getVoxel(
+                                                               posX + (current_chunk->position.x * Chunk::SIZE_X),
+                                                               posY + (current_chunk->position.y * Chunk::SIZE_Y),
+                                                               posZ + (current_chunk->position.z *
+                                                                       Chunk::SIZE_Z))].is_transparent;
                         }
                     }
 
@@ -216,18 +220,24 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
             if (voxel_right.is_transparent && voxel_right != voxel) {
                 if (!voxel.is_transparent) {
                     vertex_positions.emplace_back(x + 1, y, z);
-
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
                     vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
 
-
+                    int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
-                            neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
-                                    x + 1 + (current_chunk->position.x * Chunk::SIZE_X),
-                                    y + i + (current_chunk->position.y * Chunk::SIZE_Y),
-                                    z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
+                            posX = x + 1;
+                            posY = y + i;
+                            posZ = z + j;
+                            neighbours[i + 1][j + 1] = isInChunk(posX, posY, posZ) ?
+                                                       !VOXELS_DICTIONNARY[current_chunk->at(posX, posY,
+                                                                                             posZ)].is_transparent :
+                                                       !VOXELS_DICTIONNARY[chunkManager->getVoxel(
+                                                               posX + (current_chunk->position.x * Chunk::SIZE_X),
+                                                               posY + (current_chunk->position.y * Chunk::SIZE_Y),
+                                                               posZ + (current_chunk->position.z *
+                                                                       Chunk::SIZE_Z))].is_transparent;
                         }
                     }
 
@@ -251,13 +261,20 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x, y + 1, z));
                     vertex_positions.emplace_back(vec3(x, y, z + 1));
                     vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
-
+                    int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
-                            neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
-                                    x - 1 + (current_chunk->position.x * Chunk::SIZE_X),
-                                    y + i + (current_chunk->position.y * Chunk::SIZE_Y),
-                                    z + j + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
+                            posX = x - 1;
+                            posY = y + i;
+                            posZ = z + j;
+                            neighbours[i + 1][j + 1] = isInChunk(posX, posY, posZ) ?
+                                                       !VOXELS_DICTIONNARY[current_chunk->at(posX, posY,
+                                                                                             posZ)].is_transparent :
+                                                       !VOXELS_DICTIONNARY[chunkManager->getVoxel(
+                                                               posX + (current_chunk->position.x * Chunk::SIZE_X),
+                                                               posY + (current_chunk->position.y * Chunk::SIZE_Y),
+                                                               posZ + (current_chunk->position.z *
+                                                                       Chunk::SIZE_Z))].is_transparent;
                         }
                     }
 
@@ -281,13 +298,20 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
                     vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
-
+                    int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
-                            neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
-                                    x + i + (current_chunk->position.x * Chunk::SIZE_X),
-                                    y + j + (current_chunk->position.y * Chunk::SIZE_Y),
-                                    z + 1 + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
+                            posX = x + i;
+                            posY = y + j;
+                            posZ = z + 1;
+                            neighbours[i + 1][j + 1] = isInChunk(posX, posY, posZ) ?
+                                                       !VOXELS_DICTIONNARY[current_chunk->at(posX, posY,
+                                                                                             posZ)].is_transparent :
+                                                       !VOXELS_DICTIONNARY[chunkManager->getVoxel(
+                                                               posX + (current_chunk->position.x * Chunk::SIZE_X),
+                                                               posY + (current_chunk->position.y * Chunk::SIZE_Y),
+                                                               posZ + (current_chunk->position.z *
+                                                                       Chunk::SIZE_Z))].is_transparent;
                         }
                     }
 
@@ -312,13 +336,20 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     vertex_positions.emplace_back(vec3(x + 1, y, z));
                     vertex_positions.emplace_back(vec3(x, y + 1, z));
                     vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
-
+                    int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
-                            neighbours[i + 1][j + 1] = !VOXELS_DICTIONNARY[chunkManager->getVoxel(
-                                    x + i + (current_chunk->position.x * Chunk::SIZE_X),
-                                    y + j + (current_chunk->position.y * Chunk::SIZE_Y),
-                                    z - 1 + (current_chunk->position.z * Chunk::SIZE_Z))].is_transparent;
+                            posX = x + i;
+                            posY = y + j;
+                            posZ = z - 1;
+                            neighbours[i + 1][j + 1] = isInChunk(posX, posY, posZ) ?
+                                                       !VOXELS_DICTIONNARY[current_chunk->at(posX, posY,
+                                                                                             posZ)].is_transparent :
+                                                       !VOXELS_DICTIONNARY[chunkManager->getVoxel(
+                                                               posX + (current_chunk->position.x * Chunk::SIZE_X),
+                                                               posY + (current_chunk->position.y * Chunk::SIZE_Y),
+                                                               posZ + (current_chunk->position.z *
+                                                                       Chunk::SIZE_Z))].is_transparent;
                         }
                     }
 
@@ -342,23 +373,27 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
             vertex_colors.emplace_back(voxel.color);
             vertex_colors.emplace_back(voxel.color);
 
-            vertex_uv.emplace_back(vec2(0, 0));
-            vertex_uv.emplace_back(vec2(1, 0));
-            vertex_uv.emplace_back(vec2(0, 1));
-            vertex_uv.emplace_back(vec2(1, 1));
+            vertex_uv_index.emplace_back(0);
+            vertex_uv_index.emplace_back(1);
+            vertex_uv_index.emplace_back(2);
+            vertex_uv_index.emplace_back(3);
 
-            int occlusion_case = (neighbours[0][0] + neighbours[1][0] + neighbours[0][1] > 0) +
-                                 ((neighbours[0][1] + neighbours[0][2] + neighbours[1][2] > 0)*2) +
-                                 ((neighbours[2][1] + neighbours[2][0] + neighbours[1][0] > 0)*4) +
-                                 ((neighbours[1][2] + neighbours[2][2] + neighbours[2][1] > 0)*8);
+            unsigned int occlusion_case = (neighbours[0][0] + neighbours[1][0] + neighbours[0][1] > 0) +
+                                 ((neighbours[0][1] + neighbours[0][2] + neighbours[1][2] > 0) * 2) +
+                                 ((neighbours[2][1] + neighbours[2][0] + neighbours[1][0] > 0) * 4) +
+                                 ((neighbours[1][2] + neighbours[2][2] + neighbours[2][1] > 0) * 8);
 
-            vertex_occlusion.emplace_back(occlusion_case);
-            vertex_occlusion.emplace_back(occlusion_case);
-            vertex_occlusion.emplace_back(occlusion_case);
-            vertex_occlusion.emplace_back(occlusion_case);
-            //  1---3
-            //  | / |
-            //  0---2
+            vertex_occlusion.
+                    emplace_back(occlusion_case);
+            vertex_occlusion.
+                    emplace_back(occlusion_case);
+            vertex_occlusion.
+                    emplace_back(occlusion_case);
+            vertex_occlusion.
+                    emplace_back(occlusion_case);
+//  1---3
+//  | / |
+//  0---2
             if (inverse) {
 
                 indicies.push_back(0 + indices_offset);
@@ -382,9 +417,9 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
             transparent_vertex_colors.emplace_back(voxel.color);
 
 
-            //  1---3
-            //  | / |
-            //  0---2
+//  1---3
+//  | / |
+//  0---2
             if (inverse) {
 
                 transparent_indicies.push_back(0 + transparent_indices_offset);

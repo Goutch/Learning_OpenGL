@@ -4,7 +4,7 @@ uniform vec4 material_color;
 uniform sampler2D texture_0;
 uniform int has_texture;
 varying in vec2 tex_coord;
-flat in int occlusion_case;
+flat in uint occlusion_case;
 in vec4 color;
 out vec4 fragColor;
 const float occlusion_value=0.15;
@@ -13,7 +13,7 @@ void main()
     vec4 c=material_color*color;
     vec4 occluded_color;
     vec2 uv=tex_coord;
-    
+
     switch (occlusion_case)
     {
         //o---o

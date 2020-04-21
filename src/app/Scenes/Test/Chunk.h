@@ -20,13 +20,13 @@ struct ChunkPosition{
     }
 };
 struct Chunk{
-    static const int SIZE_X =32;
-    static const int SIZE_Y =32;
-    static const int SIZE_Z =32;
+    static const int SIZE_X =16;
+    static const int SIZE_Y =16;
+    static const int SIZE_Z =16;
     static const float RADIUS;
     ChunkPosition position;
 
-    unsigned char* data=new unsigned char[SIZE_X*SIZE_Y*SIZE_Z];
+    unsigned char data[SIZE_X*SIZE_Y*SIZE_Z];
     Chunk(int x,int y,int z);
     ~Chunk();
     static unsigned int index(int x, int y, int z);

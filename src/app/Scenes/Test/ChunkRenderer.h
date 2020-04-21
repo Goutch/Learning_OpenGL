@@ -7,7 +7,7 @@ class ChunkManager;
 
 #include <future>
 #include <Math/BoundingBox.h>
-#include <Utils/Thread.h>
+
 
 class ChunkRenderer : public Entity {
     enum Side{
@@ -29,8 +29,8 @@ class ChunkRenderer : public Entity {
     const EntityMaterial* material;
     std::vector<unsigned int> indicies;
     std::vector<vec3> vertex_positions;
-    std::vector<vec2> vertex_uv;
-    std::vector<int> vertex_occlusion;
+    std::vector<unsigned int> vertex_uv_index;
+    std::vector<unsigned int> vertex_occlusion;
     std::vector<Color> vertex_colors;
 
     Mesh transparent_mesh;
@@ -46,14 +46,12 @@ class ChunkRenderer : public Entity {
     Chunk* chunk_right;
     Chunk* chunk_front;
     Chunk* chunk_back;
-    std::queue<Thread<void>> threads;
+
     std::mutex mesh_mutex;
-    void setChunk(ChunkPosition chunk);
 public:
 
     ChunkRenderer(const EntityMaterial &solid_material,const EntityMaterial &transparent_material, ChunkManager &chunkManager);
 
-    void setChunkAsynch(ChunkPosition position);
     bool isLoading();
     Chunk &getChunk() const;
 
@@ -62,11 +60,12 @@ public:
 
     void init(Scene &scene) override;
     vec3 getChunkCenter() const;
-    void update(float delta, Scene &scene) override;
 
     void draw(const Scene &scene) const override;
     float getDistanceToCamera() const;
     void createVoxel(int x, int y, int z, const Voxel &voxel);
     void createSide(int x,int y,int z,const Voxel& voxel, Side side);
     std::size_t operator<(const ChunkRenderer &other) const;
+
+    void setChunk(ChunkPosition chunk);
 };
