@@ -18,19 +18,22 @@ class ChunkRenderer : public Entity {
         front,
         back
     };
-
+    struct Vertex{
+        unsigned int x,y,z;
+        unsigned int uv_index;
+        unsigned int occlusion;
+        Color color;
+    };
     Camera** pCamera;
 
     Chunk *current_chunk;
     ChunkManager *chunkManager;
 
-    Mesh mesh;
+    VAO mesh;
     bool empty=false;
     const EntityMaterial* material;
     std::vector<unsigned int> indicies;
-    std::vector<vec3> vertex_positions;
-    std::vector<unsigned int> vertex_uv_index;
-    std::vector<unsigned int> vertex_occlusion;
+    std::vector<int32_t> vertex_data;
     std::vector<Color> vertex_colors;
 
     Mesh transparent_mesh;
@@ -48,6 +51,7 @@ class ChunkRenderer : public Entity {
     Chunk* chunk_back;
 
     std::mutex mesh_mutex;
+    void compressVertexData(Vertex& vertex);
 public:
 
     ChunkRenderer(const EntityMaterial &solid_material,const EntityMaterial &transparent_material, ChunkManager &chunkManager);

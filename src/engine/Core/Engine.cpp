@@ -11,7 +11,7 @@
 Engine::Engine() {
     Log::logLevel(Log::DEBUG);
     graphics = new GL_API();
-    window = new Window(graphics->createWindow("WINDOW", 1200, 900));
+    window = new Window(graphics->createWindow("WINDOW", 300, 200));
     input = new Input(window->getHandle());
     renderer = new BatchRenderer();
     canvas = new Canvas(*window, renderer->DEFAULT_2D_SHADER);

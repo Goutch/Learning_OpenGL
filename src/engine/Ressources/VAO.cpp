@@ -4,6 +4,8 @@
 #define GLEW_STATIC
 
 #include <GL/glew.h>
+#include <Utils/Timer.h>
+#include <Core/Log.h>
 
 VAO::VAO() {
     glGenVertexArrays(1, &vao_id);
@@ -64,14 +66,20 @@ void VAO::put(unsigned int atribute_position, unsigned int atribute_count_per_ve
 }
 void VAO::indicies(unsigned int *indices, unsigned int indices_lenght) {
     glBindVertexArray(vao_id);
+
+
     if (!has_index_buffer) {
         glGenBuffers(1, &index_buffer_id);
     }
+
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer_id);
+
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_lenght * sizeof(unsigned int), indices, GL_STATIC_DRAW);
+
     glBindVertexArray(0);
     has_index_buffer = true;
     vertexCount = indices_lenght;
+
 
 }
 

@@ -3,10 +3,8 @@ uniform mat4 projection;
 uniform mat4 view;
 uniform mat4 transform;
 
-layout(location=0)in vec3 vertexPosition;
-layout(location=1)in uint vertex_uv_index;
+layout(location=0)in int vertex_data;//32bits total|18 bits for position/2 bits for uvs/4 bits occlusion/8 open
 layout(location=3)in vec4 vertexColor;
-layout(location=4)in uint faceOcclusion;
 out vec4 color;
 vec2 vertex_uv[4]=vec2[4](
 vec2(0, 0),
@@ -15,11 +13,13 @@ vec2(0, 1),
 vec2(1, 1)
 );
 out vec2 tex_coord;
-flat out uint occlusion_case;
+flat out int occlusion_case;
 void main()
 {
+    vec3 position=vec3(float((vertex_data>>26)&0x3F),float((vertex_data>>20)&0x3F),float((vertex_data>>14)&0x3F));
+    tex_coord=vertex_uv[(vertex_data>>12)&0x03];
+    occlusion_case=(vertex_data>>8)&0xF;
     color=vertexColor;
-    occlusion_case=faceOcclusion;
-    tex_coord=vertex_uv[vertex_uv_index];
-    gl_Position=projection*view*transform*vec4(vertexPosition, 1.);
+    gl_Position=projection*view*transform*vec4(position, 1.);
+
 }

@@ -68,11 +68,8 @@ void ChunkRenderer::rebuild() {
 
     mesh_mutex.lock();
     indicies.clear();
-    vertex_occlusion.clear();
-    vertex_positions.clear();
     vertex_colors.clear();
-    vertex_uv_index.clear();
-
+    vertex_data.clear();
     transparent_indicies.clear();
     transparent_vertex_colors.clear();
     transparent_vertex_positions.clear();
@@ -92,13 +89,22 @@ void ChunkRenderer::rebuild() {
 
 void ChunkRenderer::onBuildFinish() {
     std::lock_guard<std::mutex> lock(mesh_mutex);
+
     if (!indicies.empty()) {
+        Timer t;
+        Timer ti;
         mesh.indicies(indicies.data(), indicies.size());
-        mesh.vertices(&vertex_positions[0].x, vertex_positions.size() * 3);
-        mesh.colors(&vertex_colors[0].r, vertex_colors.size() * 4);
-        mesh.put(1,1,vertex_uv_index.data(), vertex_uv_index.size());
-        mesh.put(4, 1, vertex_occlusion.data(), vertex_occlusion.size());
+        float i=ti.ms();
+        if(i>0.01)
+        {
+            Log::debug("index:" + std::to_string(i));
+
+        }
+        mesh.put(0, 1, vertex_data.data(), vertex_data.size());
+        mesh.put(3, 4, &vertex_colors[0].r, vertex_colors.size() * 4);
+
         empty = false;
+
     } else {
         empty = true;
     }
@@ -111,6 +117,7 @@ void ChunkRenderer::onBuildFinish() {
     } else {
         transparent_empty = true;
     }
+
 
 }
 
@@ -129,12 +136,16 @@ bool isInChunk(int x, int y, int z) {
              z < 0 || z >= Chunk::SIZE_Z - 1);
 }
 
+//  1---3
+//  | / |
+//  0---2
 void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRenderer::Side side) {
-    unsigned int indices_offset = vertex_positions.size();
+    unsigned int indices_offset = vertex_data.size();
     unsigned int transparent_indices_offset = transparent_vertex_positions.size();
     bool added_side = false;
     bool inverse = false;
     bool neighbours[3][3];
+    Vertex vertex[4];
     switch (side) {
         case up: {
             const Voxel &voxel_up = VOXELS_DICTIONNARY.at(
@@ -143,10 +154,18 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     current_chunk->at(x, y + 1, z));
             if (voxel_up.is_transparent && voxel_up != voxel) {
                 if (!voxel.is_transparent) {
-                    vertex_positions.emplace_back(x, y + 1, z);
-                    vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
-                    vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
-                    vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
+                    vertex[0].x = x;
+                    vertex[0].y = y + 1;
+                    vertex[0].z = z;
+                    vertex[1].x = x + 1;
+                    vertex[1].y = y + 1;
+                    vertex[1].z = z;
+                    vertex[2].x = x;
+                    vertex[2].y = y + 1;
+                    vertex[2].z = z + 1;
+                    vertex[3].x = x + 1;
+                    vertex[3].y = y + 1;
+                    vertex[3].z = z + 1;
                     int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
@@ -181,10 +200,23 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     y <= 0 ? chunk_down->at(x, Chunk::SIZE_Y - 1, z) : current_chunk->at(x, y - 1, z));
             if (voxel_down.is_transparent && voxel_down != voxel) {
                 if (!voxel.is_transparent) {
-                    vertex_positions.emplace_back(x, y, z);
-                    vertex_positions.emplace_back(vec3(x + 1, y, z));
-                    vertex_positions.emplace_back(vec3(x, y, z + 1));
-                    vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
+                    vertex[0].x = x;
+                    vertex[0].y = y;
+                    vertex[0].z = z;
+
+                    vertex[1].x = x + 1;
+                    vertex[1].y = y;
+                    vertex[1].z = z;
+
+                    vertex[2].x = x;
+                    vertex[2].y = y;
+                    vertex[2].z = z + 1;
+
+                    vertex[3].x = x + 1;
+                    vertex[3].y = y;
+                    vertex[3].z = z + 1;
+
+
                     int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
@@ -219,10 +251,22 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     x >= Chunk::SIZE_X - 1 ? chunk_right->at(0, y, z) : current_chunk->at(x + 1, y, z));
             if (voxel_right.is_transparent && voxel_right != voxel) {
                 if (!voxel.is_transparent) {
-                    vertex_positions.emplace_back(x + 1, y, z);
-                    vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
-                    vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
-                    vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
+                    vertex[0].x = x + 1;
+                    vertex[0].y = y;
+                    vertex[0].z = z;
+
+                    vertex[1].x = x + 1;
+                    vertex[1].y = y + 1;
+                    vertex[1].z = z;
+
+                    vertex[2].x = x + 1;
+                    vertex[2].y = y;
+                    vertex[2].z = z + 1;
+
+                    vertex[3].x = x + 1;
+                    vertex[3].y = y + 1;
+                    vertex[3].z = z + 1;
+
 
                     int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
@@ -257,10 +301,22 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     x <= 0 ? chunk_left->at(Chunk::SIZE_X - 1, y, z) : current_chunk->at(x - 1, y, z));
             if (voxel_left.is_transparent && voxel_left != voxel) {
                 if (!voxel.is_transparent) {
-                    vertex_positions.emplace_back(x, y, z);
-                    vertex_positions.emplace_back(vec3(x, y + 1, z));
-                    vertex_positions.emplace_back(vec3(x, y, z + 1));
-                    vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
+                    vertex[0].x = x;
+                    vertex[0].y = y;
+                    vertex[0].z = z;
+
+                    vertex[1].x = x;
+                    vertex[1].y = y + 1;
+                    vertex[1].z = z;
+
+                    vertex[2].x = x;
+                    vertex[2].y = y;
+                    vertex[2].z = z + 1;
+
+                    vertex[3].x = x;
+                    vertex[3].y = y + 1;
+                    vertex[3].z = z + 1;
+
                     int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
@@ -277,8 +333,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                                                                        Chunk::SIZE_Z))].is_transparent;
                         }
                     }
-
-
                 } else {
                     transparent_vertex_positions.emplace_back(x, y, z);
                     transparent_vertex_positions.emplace_back(vec3(x, y + 1, z));
@@ -294,10 +348,22 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     z >= Chunk::SIZE_Z - 1 ? chunk_front->at(x, y, 0) : current_chunk->at(x, y, z + 1));
             if (voxel_front.is_transparent && voxel_front != voxel) {
                 if (!voxel.is_transparent) {
-                    vertex_positions.emplace_back(x, y, z + 1);
-                    vertex_positions.emplace_back(vec3(x + 1, y, z + 1));
-                    vertex_positions.emplace_back(vec3(x, y + 1, z + 1));
-                    vertex_positions.emplace_back(vec3(x + 1, y + 1, z + 1));
+                    vertex[0].x = x;
+                    vertex[0].y = y;
+                    vertex[0].z = z + 1;
+
+                    vertex[1].x = x + 1;
+                    vertex[1].y = y;
+                    vertex[1].z = z + 1;
+
+                    vertex[2].x = x;
+                    vertex[2].y = y + 1;
+                    vertex[2].z = z + 1;
+
+                    vertex[3].x = x + 1;
+                    vertex[3].y = y + 1;
+                    vertex[3].z = z + 1;
+
                     int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
@@ -332,10 +398,21 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
                     z <= 0 ? chunk_back->at(x, y, Chunk::SIZE_Z - 1) : current_chunk->at(x, y, z - 1));
             if (voxel_back.is_transparent && voxel_back != voxel) {
                 if (!voxel.is_transparent) {
-                    vertex_positions.emplace_back(x, y, z);
-                    vertex_positions.emplace_back(vec3(x + 1, y, z));
-                    vertex_positions.emplace_back(vec3(x, y + 1, z));
-                    vertex_positions.emplace_back(vec3(x + 1, y + 1, z));
+                    vertex[0].x = x;
+                    vertex[0].y = y;
+                    vertex[0].z = z;
+
+                    vertex[1].x = x + 1;
+                    vertex[1].y = y;
+                    vertex[1].z = z;
+
+                    vertex[2].x = x;
+                    vertex[2].y = y + 1;
+                    vertex[2].z = z;
+
+                    vertex[3].x = x + 1;
+                    vertex[3].y = y + 1;
+                    vertex[3].z = z;
                     int posX, posY, posZ;
                     for (int i = -1; i <= 1; ++i) {
                         for (int j = -1; j <= 1; ++j) {
@@ -368,32 +445,16 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
 
     if (added_side) {
         if (!voxel.is_transparent) {
-            vertex_colors.emplace_back(voxel.color);
-            vertex_colors.emplace_back(voxel.color);
-            vertex_colors.emplace_back(voxel.color);
-            vertex_colors.emplace_back(voxel.color);
-
-            vertex_uv_index.emplace_back(0);
-            vertex_uv_index.emplace_back(1);
-            vertex_uv_index.emplace_back(2);
-            vertex_uv_index.emplace_back(3);
-
             unsigned int occlusion_case = (neighbours[0][0] + neighbours[1][0] + neighbours[0][1] > 0) +
-                                 ((neighbours[0][1] + neighbours[0][2] + neighbours[1][2] > 0) * 2) +
-                                 ((neighbours[2][1] + neighbours[2][0] + neighbours[1][0] > 0) * 4) +
-                                 ((neighbours[1][2] + neighbours[2][2] + neighbours[2][1] > 0) * 8);
-
-            vertex_occlusion.
-                    emplace_back(occlusion_case);
-            vertex_occlusion.
-                    emplace_back(occlusion_case);
-            vertex_occlusion.
-                    emplace_back(occlusion_case);
-            vertex_occlusion.
-                    emplace_back(occlusion_case);
-//  1---3
-//  | / |
-//  0---2
+                                          ((neighbours[0][1] + neighbours[0][2] + neighbours[1][2] > 0) * 2) +
+                                          ((neighbours[2][1] + neighbours[2][0] + neighbours[1][0] > 0) * 4) +
+                                          ((neighbours[1][2] + neighbours[2][2] + neighbours[2][1] > 0) * 8);
+            for (int i = 0; i < 4; ++i) {
+                vertex[i].occlusion = occlusion_case;
+                vertex[i].uv_index = i;
+                vertex[i].color = voxel.color;
+                compressVertexData(vertex[i]);
+            }
             if (inverse) {
 
                 indicies.push_back(0 + indices_offset);
@@ -416,10 +477,6 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
             transparent_vertex_colors.emplace_back(voxel.color);
             transparent_vertex_colors.emplace_back(voxel.color);
 
-
-//  1---3
-//  | / |
-//  0---2
             if (inverse) {
 
                 transparent_indicies.push_back(0 + transparent_indices_offset);
@@ -440,10 +497,32 @@ void ChunkRenderer::createSide(int x, int y, int z, const Voxel &voxel, ChunkRen
     }
 }
 
+//x-----|y-----|z------|uv|occl|open----|
+//0000 0000 0000 0000 0000 0000 0000 0000
+void ChunkRenderer::compressVertexData(ChunkRenderer::Vertex &vertex) {
+    int32_t data = 0;
+    data += vertex.x << 26;
+    data += vertex.y << 20;
+    data += vertex.z << 14;
+    data += vertex.uv_index << 12;
+    data += vertex.occlusion << 8;
+
+    vertex_data.push_back(data);
+    vertex_colors.push_back(vertex.color);
+
+   /* Log::debug("position:("+std::to_string((data>>26)&0x3F)+","+
+    std::to_string(int32_t((data>>20)&0x3F))+","+
+    std::to_string(int32_t((data>>14)&0x3F))+")"+
+    "|uv:"+std::to_string(int32_t((data>>12)&0x03))+
+    "|occlusion:"+std::to_string(int32_t((data>>8)&0xF)));*/
+}
+
 
 std::size_t ChunkRenderer::operator<(const ChunkRenderer &other) const {
     return getDistanceToCamera() < other.getDistanceToCamera();
 }
+
+
 
 
 
