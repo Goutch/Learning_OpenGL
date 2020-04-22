@@ -30,24 +30,24 @@ void Engine::start() {
         if (input->isKeyDown(GLFW_KEY_ESCAPE)) {
             window->close();
         }
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
+       // ImGui_ImplOpenGL3_NewFrame();
+       // ImGui_ImplGlfw_NewFrame();
+        //ImGui::NewFrame();
 
         if (scene) {
-
             scene->update((float) delta_time);
             scene->draw();
             scene->render();
             renderer->clearColor();
             printFPS();
             renderer->renderOnMainBuffer(*canvas);
+
         } else {
             renderer->clear();
             drawSceneSelector();
         }
-        ImGui::Render();
-        ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
+        //ImGui::Render();
+        //ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         window->swapBuffer();
 

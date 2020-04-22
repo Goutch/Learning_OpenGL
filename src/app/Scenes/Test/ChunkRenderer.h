@@ -29,14 +29,14 @@ class ChunkRenderer : public Entity {
     Chunk *current_chunk;
     ChunkManager *chunkManager;
 
-    VAO mesh;
+    VAO* mesh= nullptr;
     bool empty=false;
     const EntityMaterial* material;
     std::vector<unsigned int> indicies;
     std::vector<int32_t> vertex_data;
     std::vector<Color> vertex_colors;
 
-    Mesh transparent_mesh;
+    //Mesh transparent_mesh;
     bool transparent_empty=false;
     std::vector<unsigned int> transparent_indicies;
     std::vector<vec3> transparent_vertex_positions;
@@ -64,6 +64,8 @@ public:
 
     void init(Scene &scene) override;
     vec3 getChunkCenter() const;
+
+    virtual ~ChunkRenderer();
 
     void draw(const Scene &scene) const override;
     float getDistanceToCamera() const;

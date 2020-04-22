@@ -7,7 +7,7 @@ class ChunkManager;
 #include "Chunk.h"
 #include <Utils/Thread.h>
 class ChunkLoader {
-    const int MAX_LOADER_THREADS=16;
+    const int MAX_LOADER_THREADS=1;
     EntityMaterial* chunk_transparent_material;
     EntityMaterial* chunk_solid_material;
     Transform* loader;

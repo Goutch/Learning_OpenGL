@@ -11,7 +11,6 @@ struct comp {
     bool operator()(const std::pair<float, ChunkPosition> &a, const std::pair<float, ChunkPosition> &b) {
         return a.first >b.first;
     }
-
 };
 
 void ChunkLoader::setLoaderTransform(Transform &transform) {
@@ -43,8 +42,9 @@ ChunkLoader::ChunkLoader(Scene &scene, ChunkManager &manager, EntityMaterial &so
 }
 
 void ChunkLoader::update(float delta) {
-    // Log::debug("UPDATE_BEGIN:");
     Timer t;
+   Log::debug("UPDATE_BEGIN:");
+
     std::list<ChunkPosition> finished_loading_chunks;
     for (auto &c:loading_chunks) {
         const Thread<void> &t = c.second.second;
@@ -59,6 +59,7 @@ void ChunkLoader::update(float delta) {
     for (const auto &c:finished_loading_chunks) {
         loading_chunks.erase(c);
     }
+
     //Log::debug("build finish time:"+std::to_string(t.ms()));
     //t.reset();
     ChunkPosition loader_chunk_position = manager->worldToChunk(loader->position());
@@ -79,6 +80,8 @@ void ChunkLoader::update(float delta) {
     for (auto &pos:unloaded_chunk) {
         loaded_chunks.erase(pos);
     }
+
+
     //Log::debug("unload time:"+std::to_string(t.ms()));
     // t.reset();
     //load all chunks in range create and new renderer if the pool is empty
@@ -109,9 +112,7 @@ void ChunkLoader::update(float delta) {
             chunks_pool.pop_front();
         }
     }
-
-    // Log::debug("UPDATE_END:"+std::to_string(t.ms()));
-
+    Log::debug("UPDATE_END:"+std::to_string(t.ms()));
 }
 
 

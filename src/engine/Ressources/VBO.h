@@ -14,6 +14,7 @@ public:
     void set(float* data,unsigned int data_length);
     void set(int *data, unsigned int data_length);
     void set(unsigned int *data, unsigned int data_length);
+    unsigned int getId();
     ~VBO();
     void bind() const;
     void unbind() const;

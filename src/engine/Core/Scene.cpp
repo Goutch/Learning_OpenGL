@@ -15,13 +15,13 @@ void Scene::init(Canvas &canvas, Renderer &renderer, Input &input) {
 }
 
 void Scene::update(float delta) {
-    if (input->isKeyDown(GLFW_KEY_F11)) {
+    /* if (input->isKeyDown(GLFW_KEY_F11)) {
         renderer->screenShot(canvas->getPixelWidth(), canvas->getPixelHeight());
     }
-    for (auto e:entities) {
+   for (auto e:entities) {
 
         e->update(delta, *this);
-    }
+    }*/
     camera->calculateFrustumPlanes();
 }
 

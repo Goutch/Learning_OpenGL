@@ -8,7 +8,11 @@
 #include <Core/Log.h>
 
 VAO::VAO() {
+    Timer t;
     glGenVertexArrays(1, &vao_id);
+    Log::debug("new vao:"+std::to_string(vao_id));
+    Log::debug("time:"+std::to_string(t.ms()));
+
 }
 
 VAO::~VAO() {
@@ -32,53 +36,69 @@ void VAO::unbind() const {
 void
 VAO::put(unsigned int atribute_position, unsigned int atribute_count_per_vertex, float *data, unsigned int data_count,
          bool is_static) {
+    Timer t;
     if (!has_index_buffer) {
         vertexCount = data_count / atribute_count_per_vertex;
     }
     glBindVertexArray(vao_id);
     if (vbos.find(atribute_position) == vbos.end())
+    {
         vbos.insert(std::pair<unsigned int, VBO *>(atribute_position,
                                                    new VBO(atribute_position, atribute_count_per_vertex, data,
                                                            data_count, is_static)));
+        Log::debug("new vbo:"+std::to_string(vbos.at(atribute_position)->getId()));
+    }
+
     else {
         vbos.at(atribute_position)->set(data, data_count);
+        Log::debug("set vbo:"+std::to_string(vbos.at(atribute_position)->getId()));
         // delete vbos.at(atribute_position);
         //vbos.at(atribute_position) = new VBO(atribute_position, atribute_count_per_vertex, data, data_count,is_static);
     }
     glBindVertexArray(0);
+    Log::debug("time:"+std::to_string(t.ms()));
 }
 void VAO::put(unsigned int atribute_position, unsigned int atribute_count_per_vertex, unsigned int *data,
               unsigned int data_count, bool is_static) {
+    Timer t;
     if (!has_index_buffer) {
         vertexCount = data_count / atribute_count_per_vertex;
     }
     glBindVertexArray(vao_id);
     if (vbos.find(atribute_position) == vbos.end())
+    {
+
         vbos.insert(std::pair<unsigned int, VBO *>(atribute_position,
                                                    new VBO(atribute_position, atribute_count_per_vertex, data,
                                                            data_count, is_static)));
+        Log::debug("new vbo:"+std::to_string(vbos.at(atribute_position)->getId()));
+    }
     else {
+        Log::debug("set vbo:"+std::to_string(vbos.at(atribute_position)->getId()));
         vbos.at(atribute_position)->set(data, data_count);
-        // delete vbos.at(atribute_position);
-        //vbos.at(atribute_position) = new VBO(atribute_position, atribute_count_per_vertex, data, data_count,is_static);
     }
     glBindVertexArray(0);
+    Log::debug("time:"+std::to_string(t.ms()));
 }
-void VAO::indicies(unsigned int *indices, unsigned int indices_lenght) {
+void VAO::indicies(unsigned int *indices, unsigned int indices_lenght, bool is_static) {
+    Timer t;
     glBindVertexArray(vao_id);
-
 
     if (!has_index_buffer) {
         glGenBuffers(1, &index_buffer_id);
+        Log::debug("new ebo:"+std::to_string(index_buffer_id));
+    } else{
+        Log::debug("set ebo:"+std::to_string(index_buffer_id));
     }
 
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, index_buffer_id);
 
-    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_lenght * sizeof(unsigned int), indices, GL_STATIC_DRAW);
+    glBufferData(GL_ELEMENT_ARRAY_BUFFER, indices_lenght * sizeof(unsigned int), indices, is_static?GL_STATIC_DRAW:GL_DYNAMIC_DRAW);
 
     glBindVertexArray(0);
     has_index_buffer = true;
     vertexCount = indices_lenght;
+    Log::debug("time:"+std::to_string(t.ms()));
 
 
 }

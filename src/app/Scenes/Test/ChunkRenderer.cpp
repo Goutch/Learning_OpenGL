@@ -13,16 +13,16 @@ ChunkRenderer::ChunkRenderer(const EntityMaterial &solid_material, const EntityM
     this->material = &solid_material;
     this->transparent_material = &transparent_material;
     this->chunkManager = &chunkManager;
-    setEnabled(false);
+
 }
 
 void ChunkRenderer::draw(const Scene &scene) const {
 
-    if (isEnabled() && (!empty || !transparent_empty) &&
+    if (isEnabled() &&mesh && (!empty || !transparent_empty) &&
         scene.getCamera().isSphereInFrustum(getChunkCenter(), Chunk::RADIUS)) {
         Renderer &renderer = scene.getRenderer();
-        if (!empty)renderer.draw(mesh, *material, transform);
-        if (!transparent_empty)renderer.draw(transparent_mesh, *transparent_material, transform);
+        if (!empty)renderer.draw(*mesh, *material, transform);
+       // if (!transparent_empty)renderer.draw(transparent_mesh, *transparent_material, transform);
     }
 }
 
@@ -84,24 +84,18 @@ void ChunkRenderer::rebuild() {
         }
     }
     mesh_mutex.unlock();
-
 }
 
 void ChunkRenderer::onBuildFinish() {
+    if(!mesh)
+        mesh=new VAO();
     std::lock_guard<std::mutex> lock(mesh_mutex);
-
     if (!indicies.empty()) {
         Timer t;
-        Timer ti;
-        mesh.indicies(indicies.data(), indicies.size());
-        float i=ti.ms();
-        if(i>0.01)
-        {
-            Log::debug("index:" + std::to_string(i));
-
-        }
-        mesh.put(0, 1, vertex_data.data(), vertex_data.size());
-        mesh.put(3, 4, &vertex_colors[0].r, vertex_colors.size() * 4);
+        mesh->indicies(indicies.data(), indicies.size(),false);
+        Log::debug(std::to_string(t.ms()));
+        mesh->put(0, 1, vertex_data.data(), vertex_data.size(),false);
+        mesh->put(3, 4, &vertex_colors[0].r, vertex_colors.size() * 4,false);
 
         empty = false;
 
@@ -109,15 +103,15 @@ void ChunkRenderer::onBuildFinish() {
         empty = true;
     }
 
-    if (!transparent_indicies.empty()) {
+   /* if (!transparent_indicies.empty()) {
         transparent_mesh.indicies(transparent_indicies.data(), transparent_indicies.size());
         transparent_mesh.vertices(&transparent_vertex_positions[0].x, transparent_vertex_positions.size() * 3);
         transparent_mesh.colors(&transparent_vertex_colors[0].r, transparent_vertex_colors.size() * 4);
         transparent_empty = false;
     } else {
         transparent_empty = true;
-    }
-
+    }*/
+    transparent_empty=true;
 
 }
 
@@ -520,6 +514,11 @@ void ChunkRenderer::compressVertexData(ChunkRenderer::Vertex &vertex) {
 
 std::size_t ChunkRenderer::operator<(const ChunkRenderer &other) const {
     return getDistanceToCamera() < other.getDistanceToCamera();
+}
+
+ChunkRenderer::~ChunkRenderer() {
+    if(mesh)
+        delete mesh;
 }
 
 
