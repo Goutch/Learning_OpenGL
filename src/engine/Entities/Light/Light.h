@@ -13,6 +13,7 @@ public:
     Light(const Color& color);
     Light();
     const Color& getColor() const;
+    void setColor(Color color);
 
 
 };

@@ -23,4 +23,8 @@ const Color &Light::getColor()const {
     return color;
 }
 
+void Light::setColor(Color color) {
+    this->color=color;
+}
+
 

@@ -112,13 +112,14 @@ void Texture::save(std::string path) const {
         //delete[] depth_buffer;
         Log::warning("Screenshot not supported for depth getTexture");
 
-    } else if (type == RGBA) {
+    } else if (type == RGBA||RGB) {
         unsigned char *color_buffer = new unsigned char[width * height * 4];
         glGetTexImage(GL_TEXTURE_2D, 0, GL_RGBA, GL_UNSIGNED_BYTE, color_buffer);
         stbi_write_png(path.c_str(), width, height, 4, color_buffer, 0);
         delete[] color_buffer;
         Log::message("ScreenShot:" + path);
     }
+
     unbind();
 
 
