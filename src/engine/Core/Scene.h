@@ -21,7 +21,10 @@ class Scene {
 protected:
     Color ambient_light = Color(0.1f, 0.1f, 0.1f);
     std::set<Entity *> entities;
-
+    bool pressing_tonal_mapping_key = false;
+    bool tonal_mapping = false;
+public:
+    bool isTonalMapping() const;
 
 protected:
     Canvas *canvas;

@@ -17,6 +17,13 @@ void Scene::update(float delta) {
     {
         renderer->screenShot(canvas->getPixelWidth(),canvas->getPixelHeight());
     }
+    if(input->isKeyDown(GLFW_KEY_M)) {
+        pressing_tonal_mapping_key = true;
+    }
+    if(pressing_tonal_mapping_key && input->isKeyReleased(GLFW_KEY_M)) {
+        tonal_mapping = !tonal_mapping;
+        pressing_tonal_mapping_key = false;
+    }
     for (auto e:entities) {
         e->update(delta, *this);
     }
@@ -76,6 +83,10 @@ void Scene::destroy(Entity *entity) {
     entity->onDestroy(*this);
     entities.erase(entity);
     delete entity;
+}
+
+bool Scene::isTonalMapping() const {
+    return tonal_mapping;
 }
 
 

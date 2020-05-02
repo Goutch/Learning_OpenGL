@@ -30,7 +30,8 @@ private:
 
             light_space_mat_location,
 
-            view_pos_location;
+            view_pos_location,
+            tonal_mapping_location;
 
 public:
     LightMaterial(const Shader &shader, Scene &scene);

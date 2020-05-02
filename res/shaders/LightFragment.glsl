@@ -7,6 +7,7 @@ in vec3 normal;
 in vec3 frag_pos;
 in vec4 shadow_coord;
 
+uniform bool tonal_mapping;
 uniform sampler2D texture_0;
 uniform int has_texture;
 uniform vec4 material_color;
@@ -24,7 +25,6 @@ uniform int directional_light_count;
 uniform vec3 directional_light_color;
 uniform sampler2D directional_light_shadowMap;
 uniform vec3 directional_light_direction;
-
 out vec4 fragColor;
 
 vec3 calculateLight(vec3 lightDir,vec3 color)
@@ -85,7 +85,12 @@ void main(){
     else {
         hdrColor=material_color*vec4(light,1.);
     }
-    
-    fragColor = vec4(hdrColor.rgb / (hdrColor.rgb + vec3(1.0)), 1.0);
+
+    if(tonal_mapping) {
+        fragColor = vec4(hdrColor.rgb / (hdrColor.rgb + vec3(1.0)), 1.0);
+    }
+    else {
+        fragColor = hdrColor;
+    }
 }
 

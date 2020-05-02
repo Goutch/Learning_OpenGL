@@ -15,6 +15,7 @@ void LightMaterial::bind() const {
     shader->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight());
     shader->loadUniform(damp_factor_location, dampFactor);
     shader->loadUniform(shine_factor_location, shineFactor);
+    shader->loadUniform(tonal_mapping_location, scene->isTonalMapping());
 
     auto pointLights =PointLight::getInstances();
     shader->loadUniform(point_light_count_location, (int) pointLights.size());
@@ -87,6 +88,7 @@ void LightMaterial::getUniformsLocations()  const{
     light_space_mat_location=shader->uniformLocation("depth_bias_mat");
     directional_light_count_location=shader->uniformLocation("directional_light_count");
     directional_light_direction_location=shader->uniformLocation("directional_light_direction");
+    tonal_mapping_location=shader->uniformLocation("tonal_mapping");
 }
 
 
