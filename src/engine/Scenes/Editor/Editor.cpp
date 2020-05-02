@@ -59,6 +59,21 @@ void Editor::update(float delta) {
     }
     ImGui::End();
 
+    ImGui::Begin("Bezier Proprieties");
+    {
+        ImGui::DragFloat2("p1 x", &p1.x, 1);
+        ImGui::DragFloat2("p2 x", &p2.x, 1);
+        ImGui::DragFloat2("p3 x", &p3.x, 1);
+        ImGui::DragFloat2("p4 x", &p4.x, 1);
+    }
+    ImGui::End();
+
+    ImGui::Begin("Bezier");
+    {
+        ImGui::GetWindowDrawList()->AddBezierCurve(p1, p2, p3, p4, ImColor(200,200,200,255), 2, 36);
+    }
+    ImGui::End();
+
     scene_tree.update(*input, dockspaceID, current_scene->getEntities(), selected_entities);
     properties.update(dockspaceID, selected_entities);
     entity_creator->update(current_scene,(selected_entities.empty()? nullptr:*selected_entities.begin()),selected_entities,dockspaceID,cameras);

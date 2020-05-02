@@ -22,7 +22,10 @@ class Editor: public Scene{
     mutable Color color;
     mutable std::set<Entity*> selected_entities;
 
-
+    ImVec2 p1;
+    ImVec2 p2;
+    ImVec2 p3;
+    ImVec2 p4;
 public:
     void init(Canvas &canvas, Renderer &renderer, Input &input) override;
 
