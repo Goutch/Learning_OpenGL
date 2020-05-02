@@ -75,15 +75,17 @@ void main(){
             light+=calculateLight(lightDir,point_light_colors[i])*intensity;
         }
     }
-
+    vec4 hdrColor;
     if (has_texture==1)
     {
         //texture
         vec4 textureColor=texture(texture_0, uv);
-        fragColor=textureColor*material_color*vec4(light,1.);
+        hdrColor = textureColor*material_color*vec4(light,1.);
     }
     else {
-        fragColor=material_color*vec4(light,1.);
+        hdrColor=material_color*vec4(light,1.);
     }
+    
+    fragColor = vec4(hdrColor.rgb / (hdrColor.rgb + vec3(1.0)), 1.0);
 }
 
