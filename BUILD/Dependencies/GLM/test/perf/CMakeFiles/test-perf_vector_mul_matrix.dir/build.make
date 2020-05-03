@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 # Include any dependencies generated for this target.
 include Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/depend.make
@@ -59,16 +59,16 @@ include Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/fl
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj: Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/flags.make
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj: Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/includes_CXX.rsp
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj: ../Dependencies/GLM/test/perf/perf_vector_mul_matrix.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj"
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\test-perf_vector_mul_matrix.dir\perf_vector_mul_matrix.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\GLM\test\perf\perf_vector_mul_matrix.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj"
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\test-perf_vector_mul_matrix.dir\perf_vector_mul_matrix.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\GLM\test\perf\perf_vector_mul_matrix.cpp
 
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.i"
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\GLM\test\perf\perf_vector_mul_matrix.cpp > CMakeFiles\test-perf_vector_mul_matrix.dir\perf_vector_mul_matrix.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\GLM\test\perf\perf_vector_mul_matrix.cpp > CMakeFiles\test-perf_vector_mul_matrix.dir\perf_vector_mul_matrix.cpp.i
 
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.s"
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\GLM\test\perf\perf_vector_mul_matrix.cpp -o CMakeFiles\test-perf_vector_mul_matrix.dir\perf_vector_mul_matrix.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\GLM\test\perf\perf_vector_mul_matrix.cpp -o CMakeFiles\test-perf_vector_mul_matrix.dir\perf_vector_mul_matrix.cpp.s
 
 # Object files for target test-perf_vector_mul_matrix
 test__perf_vector_mul_matrix_OBJECTS = \
@@ -82,8 +82,8 @@ Dependencies/GLM/test/perf/test-perf_vector_mul_matrix.exe: Dependencies/GLM/tes
 Dependencies/GLM/test/perf/test-perf_vector_mul_matrix.exe: Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/linklibs.rsp
 Dependencies/GLM/test/perf/test-perf_vector_mul_matrix.exe: Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/objects1.rsp
 Dependencies/GLM/test/perf/test-perf_vector_mul_matrix.exe: Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test-perf_vector_mul_matrix.exe"
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\test-perf_vector_mul_matrix.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable test-perf_vector_mul_matrix.exe"
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\test-perf_vector_mul_matrix.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/build: Dependencies/GLM/test/perf/test-perf_vector_mul_matrix.exe
@@ -91,10 +91,10 @@ Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/build: Dep
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/build
 
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/clean:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && $(CMAKE_COMMAND) -P CMakeFiles\test-perf_vector_mul_matrix.dir\cmake_clean.cmake
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf && $(CMAKE_COMMAND) -P CMakeFiles\test-perf_vector_mul_matrix.dir\cmake_clean.cmake
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/clean
 
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\Projects\OGL_Engine C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\GLM\test\perf C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\GitHub\OGL_Engine C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\GLM\test\perf C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/depend
 

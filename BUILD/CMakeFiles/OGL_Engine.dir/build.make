@@ -33,19 +33,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 # Include any dependencies generated for this target.
 include CMakeFiles/OGL_Engine.dir/depend.make
@@ -59,884 +59,814 @@ include CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.obj: ../Dependencies/IMGUI/imgui.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui.cpp
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui.cpp.i
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui.cpp.s
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.obj: ../Dependencies/IMGUI/imgui_draw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_draw.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_draw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_draw.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_draw.cpp
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_draw.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_draw.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_draw.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_draw.cpp.i
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_draw.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_draw.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_draw.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_draw.cpp.s
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj: ../Dependencies/IMGUI/imgui_widgets.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_widgets.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_widgets.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_widgets.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_widgets.cpp
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_widgets.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_widgets.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_widgets.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_widgets.cpp.i
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_widgets.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_widgets.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_widgets.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_widgets.cpp.s
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj: ../Dependencies/IMGUI/imgui_impl_opengl3.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_opengl3.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_impl_opengl3.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_opengl3.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_impl_opengl3.cpp
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_impl_opengl3.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_opengl3.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_impl_opengl3.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_opengl3.cpp.i
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_impl_opengl3.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_opengl3.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_impl_opengl3.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_opengl3.cpp.s
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj: ../Dependencies/IMGUI/imgui_impl_glfw.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_glfw.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_impl_glfw.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_glfw.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_impl_glfw.cpp
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_impl_glfw.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_glfw.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_impl_glfw.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_glfw.cpp.i
 
 CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\IMGUI\imgui_impl_glfw.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_glfw.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\IMGUI\imgui_impl_glfw.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\IMGUI\imgui_impl_glfw.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj: ../src/engine/Math/Plane.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Math\Plane.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Math\Plane.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Math\Plane.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Math\Plane.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Math\Plane.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Math\Plane.cpp.s
 
 CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj: ../Dependencies/STB_IMAGE/stb_image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\STB_IMAGE\stb_image.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\STB_IMAGE\stb_image.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\Dependencies\STB_IMAGE\stb_image.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\STB_IMAGE\stb_image.cpp
 
 CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\STB_IMAGE\stb_image.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\STB_IMAGE\stb_image.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\STB_IMAGE\stb_image.cpp > CMakeFiles\OGL_Engine.dir\Dependencies\STB_IMAGE\stb_image.cpp.i
 
 CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\Dependencies\STB_IMAGE\stb_image.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\STB_IMAGE\stb_image.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\Dependencies\STB_IMAGE\stb_image.cpp -o CMakeFiles\OGL_Engine.dir\Dependencies\STB_IMAGE\stb_image.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/main.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/main.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/main.cpp.obj: ../src/main.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object CMakeFiles/OGL_Engine.dir/src/main.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\main.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\main.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OGL_Engine.dir/src/main.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\main.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\main.cpp
 
 CMakeFiles/OGL_Engine.dir/src/main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/main.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\main.cpp > CMakeFiles\OGL_Engine.dir\src\main.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\main.cpp > CMakeFiles\OGL_Engine.dir\src\main.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/main.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\main.cpp -o CMakeFiles\OGL_Engine.dir\src\main.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\main.cpp -o CMakeFiles\OGL_Engine.dir\src\main.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj: ../src/engine/API/GL/GL_API.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_API.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\API\GL\GL_API.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_API.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\API\GL\GL_API.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\API\GL\GL_API.cpp > CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_API.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\API\GL\GL_API.cpp > CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_API.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\API\GL\GL_API.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_API.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\API\GL\GL_API.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_API.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj: ../src/engine/API/GL/GL_Debug.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_Debug.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\API\GL\GL_Debug.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_Debug.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\API\GL\GL_Debug.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\API\GL\GL_Debug.cpp > CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_Debug.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\API\GL\GL_Debug.cpp > CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_Debug.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\API\GL\GL_Debug.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_Debug.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\API\GL\GL_Debug.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\API\GL\GL_Debug.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj: ../src/engine/Core/Engine.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_10) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Engine.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Engine.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Engine.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Engine.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Engine.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Engine.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Engine.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Engine.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Engine.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Engine.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Engine.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Engine.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj: ../src/engine/Core/Window.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_11) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Window.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Window.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Window.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Window.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Window.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Window.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Window.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Window.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Window.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Window.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: ../src/engine/Core/Scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_12) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Window.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Window.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj: ../src/engine/Core/Canvas.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Canvas.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Canvas.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_13) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Canvas.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Canvas.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Canvas.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Canvas.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Canvas.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Canvas.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Canvas.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Canvas.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Canvas.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Canvas.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj: ../src/engine/Core/Rendering/Renderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Renderer.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\Renderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_14) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Renderer.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\Renderer.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\Renderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Renderer.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\Renderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Renderer.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\Renderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Renderer.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\Renderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Renderer.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj: ../src/engine/Core/Rendering/SimpleRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\SimpleRenderer.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\SimpleRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_15) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\SimpleRenderer.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\SimpleRenderer.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\SimpleRenderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\SimpleRenderer.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\SimpleRenderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\SimpleRenderer.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\SimpleRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\SimpleRenderer.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\SimpleRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\SimpleRenderer.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj: ../src/engine/Core/Rendering/BatchRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_16) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\BatchRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\BatchRenderer.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj: ../src/engine/Core/Scene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_17) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Scene.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Scene.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Scene.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Scene.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Scene.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj: ../src/engine/Core/Log.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Log.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Log.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_18) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Log.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Log.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Log.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Log.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Log.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Log.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Log.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Log.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Log.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Log.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj: ../src/engine/Entities/Spacial/MeshRenderer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\MeshRenderer.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\MeshRenderer.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj: ../src/engine/Entities/MeshRenderer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_19) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\MeshRenderer.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\MeshRenderer.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\MeshRenderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\MeshRenderer.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\MeshRenderer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\MeshRenderer.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\MeshRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\MeshRenderer.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\MeshRenderer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\MeshRenderer.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj: ../src/engine/Entities/Spacial/Transform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Transform.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Transform.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj: ../src/engine/Entities/Transform.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_20) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Transform.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Transform.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Transform.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Transform.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Transform.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Transform.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Transform.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Transform.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Transform.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Transform.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj: ../src/engine/Entities/Spacial/FPSController.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\FPSController.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\FPSController.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj: ../src/engine/Entities/FPSController.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_21) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\FPSController.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\FPSController.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\FPSController.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\FPSController.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\FPSController.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\FPSController.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\FPSController.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\FPSController.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj: ../src/engine/Entities/Spacial/Entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Entity.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Entity.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Entity.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Entity.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Entity.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Entity.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj: ../src/engine/Entities/Spacial/Light/Light.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\Light.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\Light.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\Light.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\Light.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\Light.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\Light.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj: ../src/engine/Entities/Spacial/Light/DirectionnalLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\DirectionnalLight.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\DirectionnalLight.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\DirectionnalLight.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\DirectionnalLight.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\DirectionnalLight.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\DirectionnalLight.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj: ../src/engine/Entities/Spacial/Light/PointLight.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\PointLight.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\PointLight.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\PointLight.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\PointLight.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Light\PointLight.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Light\PointLight.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj: ../src/engine/Entities/Spacial/Camera.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Camera.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Camera.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Camera.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Camera.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Spacial\Camera.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Spacial\Camera.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj: ../src/engine/Entities/Canvas/Rect.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Rect.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Rect.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Rect.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Rect.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Rect.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Rect.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj: ../src/engine/Entities/Canvas/Line.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Line.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Line.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Line.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Line.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Line.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Line.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj: ../src/engine/Entities/Canvas/CanvasTransform.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\CanvasTransform.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\CanvasTransform.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\CanvasTransform.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\CanvasTransform.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\CanvasTransform.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\CanvasTransform.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj: ../src/engine/Entities/Canvas/CanvasEntity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\CanvasEntity.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\CanvasEntity.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\CanvasEntity.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\CanvasEntity.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\CanvasEntity.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\CanvasEntity.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj: ../src/engine/Entities/Canvas/Text.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Text.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Text.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Text.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Text.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Text.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Text.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\FPSController.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\FPSController.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj: ../src/engine/Entities/Entity.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Entity.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Entity.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_22) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Entity.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Entity.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Entity.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Entity.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Entity.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Entity.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Entity.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Entity.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Entity.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Entity.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj: ../src/engine/Entities/Canvas/Image.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Image.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Image.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj: ../src/engine/Entities/Light/Light.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_23) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\Light.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\Light.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Image.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Image.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\Light.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\Light.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Image.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Image.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\Light.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\Light.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj: ../src/engine/Shaders/Shader.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Shader.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Shader.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj: ../src/engine/Entities/Light/DirectionnalLight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_24) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\DirectionnalLight.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\DirectionnalLight.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Shader.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Shader.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\DirectionnalLight.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\DirectionnalLight.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Shader.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Shader.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\DirectionnalLight.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\DirectionnalLight.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj: ../src/engine/Shaders/Spacial/EntityMaterial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\EntityMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\EntityMaterial.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj: ../src/engine/Entities/Light/PointLight.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_25) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\PointLight.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\PointLight.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\EntityMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\EntityMaterial.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\PointLight.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\PointLight.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\EntityMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\EntityMaterial.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Light\PointLight.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Light\PointLight.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj: ../src/engine/Shaders/Spacial/LightMaterial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\LightMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\LightMaterial.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj: ../src/engine/Entities/Camera.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_26) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Camera.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Camera.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\LightMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\LightMaterial.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Camera.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Camera.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Spacial\LightMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Spacial\LightMaterial.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Camera.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Camera.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj: ../src/engine/Shaders/Canvas/FontMaterial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Canvas\FontMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Canvas\FontMaterial.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj: ../src/engine/Entities/Text.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_27) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Text.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Text.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Canvas\FontMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Canvas\FontMaterial.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Text.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Text.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Canvas\FontMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Canvas\FontMaterial.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Entities\Text.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Text.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj: ../src/engine/Shaders/Material.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Material.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Material.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj: ../src/engine/Ressources/Shaders/Shader.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_28) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Shader.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Shader.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Material.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Material.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Shader.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Shader.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Material.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Material.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Shader.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Shader.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj: ../src/engine/Shaders/Canvas/CanvasMaterial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Canvas\CanvasMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Canvas\CanvasMaterial.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj: ../src/engine/Ressources/Shaders/Material/EntityMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_29) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\EntityMaterial.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\EntityMaterial.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Canvas\CanvasMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Canvas\CanvasMaterial.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\EntityMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\EntityMaterial.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\Canvas\CanvasMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\Canvas\CanvasMaterial.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\EntityMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\EntityMaterial.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj: ../src/engine/Shaders/TexturedMaterial.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\TexturedMaterial.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\TexturedMaterial.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj: ../src/engine/Ressources/Shaders/Material/LightMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_30) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\LightMaterial.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\LightMaterial.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\TexturedMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Shaders\TexturedMaterial.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\LightMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\LightMaterial.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Shaders\TexturedMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Shaders\TexturedMaterial.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\LightMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\LightMaterial.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj: ../src/engine/Geometry/Geometry.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Geometry\Geometry.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Geometry\Geometry.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj: ../src/engine/Ressources/Shaders/Material/FontMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_31) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\FontMaterial.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\FontMaterial.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Geometry\Geometry.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Geometry\Geometry.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\FontMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\FontMaterial.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Geometry\Geometry.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Geometry\Geometry.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\FontMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\FontMaterial.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj: ../src/engine/Ressources/Shaders/Material/Material.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_32) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\Material.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\Material.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\Material.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\Material.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\Material.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\Material.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj: ../src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_33) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\TexturedMaterial.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\TexturedMaterial.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\TexturedMaterial.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\TexturedMaterial.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Shaders\Material\TexturedMaterial.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Shaders\Material\TexturedMaterial.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj: ../src/engine/Utils/Geometry.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_34) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\Geometry.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\Geometry.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\Geometry.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\Geometry.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\Geometry.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\Geometry.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj: ../src/engine/Ressources/Mesh.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Mesh.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Mesh.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_35) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Mesh.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Mesh.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Mesh.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Mesh.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Mesh.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Mesh.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Mesh.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Mesh.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Mesh.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Mesh.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj: ../src/engine/Ressources/VAO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VAO.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\VAO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_36) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VAO.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\VAO.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\VAO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VAO.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\VAO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VAO.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\VAO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VAO.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\VAO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VAO.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj: ../src/engine/Ressources/VBO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VBO.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\VBO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_37) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VBO.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\VBO.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\VBO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VBO.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\VBO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VBO.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\VBO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VBO.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\VBO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\VBO.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.obj: ../src/engine/Ressources/Quad.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Quad.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Quad.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_38) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Quad.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Quad.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Quad.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Quad.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Quad.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Quad.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Quad.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Quad.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Quad.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Quad.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj: ../src/engine/Ressources/Cube.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Cube.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Cube.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_39) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Cube.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Cube.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Cube.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Cube.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Cube.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Cube.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Cube.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Cube.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Cube.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Cube.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Cube.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj: ../src/engine/Ressources/Sphere.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Sphere.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Sphere.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_40) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Sphere.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Sphere.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Sphere.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Sphere.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Sphere.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Sphere.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Sphere.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Sphere.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Sphere.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Sphere.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Sphere.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.obj: ../src/engine/Ressources/Texture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Texture.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Texture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_41) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Texture.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Texture.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Texture.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Texture.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Texture.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Texture.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Texture.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Texture.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Texture.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Texture.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Texture.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.obj: ../src/engine/Ressources/AtlasTexture.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\AtlasTexture.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\AtlasTexture.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_42) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\AtlasTexture.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\AtlasTexture.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\AtlasTexture.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\AtlasTexture.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\AtlasTexture.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\AtlasTexture.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\AtlasTexture.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\AtlasTexture.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\AtlasTexture.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\AtlasTexture.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj: ../src/engine/Ressources/Color.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Color.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Color.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_43) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Color.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Color.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Color.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Color.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Color.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Color.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Ressources\Color.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Color.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Ressources\Color.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Ressources\Color.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj: ../src/engine/Core/Rendering/FBO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\FBO.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\FBO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_44) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\FBO.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\FBO.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\FBO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\FBO.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\FBO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\FBO.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\FBO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\FBO.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\FBO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\FBO.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj: ../src/engine/Core/Rendering/RBO.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\RBO.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\RBO.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_45) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\RBO.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\RBO.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\RBO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\RBO.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\RBO.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\RBO.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Rendering\RBO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\RBO.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj: ../src/engine/Utils/SimplexNoise.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\SimplexNoise.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\SimplexNoise.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\SimplexNoise.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\SimplexNoise.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\SimplexNoise.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\SimplexNoise.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\RBO.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\RBO.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj: ../src/engine/Utils/StringUtils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\StringUtils.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\StringUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_46) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\StringUtils.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\StringUtils.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\StringUtils.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\StringUtils.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\StringUtils.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\StringUtils.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\StringUtils.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\StringUtils.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\StringUtils.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\StringUtils.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj: ../src/engine/Utils/Timer.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\Timer.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\Timer.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_47) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\Timer.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\Timer.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\Timer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\Timer.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\Timer.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\Timer.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\Timer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\Timer.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\Timer.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\Timer.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj: ../src/engine/Utils/TimeUtils.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\TimeUtils.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\TimeUtils.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_48) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\TimeUtils.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\TimeUtils.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\TimeUtils.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\TimeUtils.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\TimeUtils.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Utils\TimeUtils.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Utils\TimeUtils.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\TimeUtils.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Utils\TimeUtils.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Utils\TimeUtils.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj: ../src/engine/Scenes/Editor/Editor.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\Editor.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Editor\Editor.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_49) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\Editor.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\Editor.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Editor\Editor.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\Editor.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\Editor.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\Editor.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Editor\Editor.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\Editor.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\Editor.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\Editor.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj: ../src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_50) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj: ../src/engine/Scenes/BaseScene.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\BaseScene.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\BaseScene.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\BaseScene.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\BaseScene.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\BaseScene.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\BaseScene.cpp.s
-
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj: ../src/engine/Scenes/ApplicationDrawing2D.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_60) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\ApplicationDrawing2D.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\ApplicationDrawing2D.cpp
-
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\ApplicationDrawing2D.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\ApplicationDrawing2D.cpp.i
-
-CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\ApplicationDrawing2D.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\ApplicationDrawing2D.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\SpacialSceneDemo.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj: ../src/engine/Scenes/Demo3D/Grass.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_61) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\Grass.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Demo3D\Grass.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_51) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\Grass.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Demo3D\Grass.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Demo3D\Grass.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\Grass.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Demo3D\Grass.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\Grass.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Scenes\Demo3D\Grass.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\Grass.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Demo3D\Grass.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Demo3D\Grass.cpp.s
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj: ../src/engine/Core/Input.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_62) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Input.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Input.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_52) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Input.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Input.cpp
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Input.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Input.cpp.i
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Input.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Input.cpp.i
 
 CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Core\Input.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Input.cpp.s
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Input.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Input.cpp.s
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj: ../src/engine/Entities/Canvas/Ellipse.cpp
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_63) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj"
-	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Ellipse.cpp.obj -c C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Ellipse.cpp
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj: ../src/engine/Scenes/Editor/PropertyWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_53) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\PropertyWindow.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\PropertyWindow.cpp
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.i"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Ellipse.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Ellipse.cpp.i
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\PropertyWindow.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\PropertyWindow.cpp.i
 
-CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.s"
-	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\Projects\OGL_Engine\src\engine\Entities\Canvas\Ellipse.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Entities\Canvas\Ellipse.cpp.s
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\PropertyWindow.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\PropertyWindow.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj: ../src/engine/Scenes/Editor/SceneTreeWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_54) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\SceneTreeWindow.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\SceneTreeWindow.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\SceneTreeWindow.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\SceneTreeWindow.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\SceneTreeWindow.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\SceneTreeWindow.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj: ../src/engine/Scenes/Editor/CameraWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_55) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\CameraWindow.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\CameraWindow.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\CameraWindow.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\CameraWindow.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\CameraWindow.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\CameraWindow.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj: ../src/engine/Scenes/Editor/EntityCreationWindow.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_56) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\EntityCreationWindow.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\EntityCreationWindow.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\EntityCreationWindow.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\EntityCreationWindow.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Scenes\Editor\EntityCreationWindow.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Scenes\Editor\EntityCreationWindow.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj: ../src/engine/Math/BoundingBox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_57) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Math\BoundingBox.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Math\BoundingBox.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Math\BoundingBox.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Math\BoundingBox.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Math\BoundingBox.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Math\BoundingBox.cpp.s
+
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj: CMakeFiles/OGL_Engine.dir/flags.make
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj: CMakeFiles/OGL_Engine.dir/includes_CXX.rsp
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj: ../src/engine/Core/Rendering/Skybox.cpp
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_58) "Building CXX object CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj"
+	C:\MinGW\bin\g++.exe  $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Skybox.cpp.obj -c C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\Skybox.cpp
+
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.i: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.i"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\Skybox.cpp > CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Skybox.cpp.i
+
+CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.s: cmake_force
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.s"
+	C:\MinGW\bin\g++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S C:\Users\User\Documents\GitHub\OGL_Engine\src\engine\Core\Rendering\Skybox.cpp -o CMakeFiles\OGL_Engine.dir\src\engine\Core\Rendering\Skybox.cpp.s
 
 # Object files for target OGL_Engine
 OGL_Engine_OBJECTS = \
@@ -945,42 +875,35 @@ OGL_Engine_OBJECTS = \
 "CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/main.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj" \
@@ -992,17 +915,19 @@ OGL_Engine_OBJECTS = \
 "CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj" \
 "CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj" \
-"CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj"
+"CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj" \
+"CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj"
 
 # External object files for target OGL_Engine
 OGL_Engine_EXTERNAL_OBJECTS =
@@ -1012,42 +937,35 @@ OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_draw.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_widgets.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_opengl3.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/Dependencies/IMGUI/imgui_impl_glfw.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/Dependencies/STB_IMAGE/stb_image.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/main.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_API.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/API/GL/GL_Debug.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Engine.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Canvas.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Renderer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/BatchRenderer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Log.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Mesh.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VAO.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.obj
@@ -1059,22 +977,24 @@ OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/AtlasTexture.cpp
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Color.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/FBO.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/RBO.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Utils/StringUtils.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Utils/Timer.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Utils/TimeUtils.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/Grass.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Input.cpp.obj
-OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj
+OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/build.make
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/linklibs.rsp
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/objects1.rsp
 OGL_Engine.exe: CMakeFiles/OGL_Engine.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_64) "Linking CXX executable OGL_Engine.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles --progress-num=$(CMAKE_PROGRESS_59) "Linking CXX executable OGL_Engine.exe"
 	$(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\OGL_Engine.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
@@ -1087,6 +1007,6 @@ CMakeFiles/OGL_Engine.dir/clean:
 .PHONY : CMakeFiles/OGL_Engine.dir/clean
 
 CMakeFiles/OGL_Engine.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\Projects\OGL_Engine C:\Users\User\Documents\Projects\OGL_Engine C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles\OGL_Engine.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" C:\Users\User\Documents\GitHub\OGL_Engine C:\Users\User\Documents\GitHub\OGL_Engine C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles\OGL_Engine.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/OGL_Engine.dir/depend
 

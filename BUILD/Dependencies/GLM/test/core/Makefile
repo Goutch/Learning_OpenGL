@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-relea
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -79,14 +79,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\core\CMakeFiles\progress.marks
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\core\CMakeFiles\progress.marks
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/clean
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/rule
 
 # Convenience name for target.
@@ -121,12 +121,12 @@ test-core_setup_precision: Dependencies/GLM/test/core/CMakeFiles/test-core_setup
 
 # fast build rule for target.
 test-core_setup_precision/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/build
 .PHONY : test-core_setup_precision/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/rule
 
 # Convenience name for target.
@@ -136,12 +136,12 @@ test-core_force_aligned_gentypes: Dependencies/GLM/test/core/CMakeFiles/test-cor
 
 # fast build rule for target.
 test-core_force_aligned_gentypes/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/build
 .PHONY : test-core_force_aligned_gentypes/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/rule
 
 # Convenience name for target.
@@ -151,12 +151,12 @@ test-core_force_pure: Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure
 
 # fast build rule for target.
 test-core_force_pure/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/build
 .PHONY : test-core_force_pure/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/rule
 
 # Convenience name for target.
@@ -166,12 +166,12 @@ test-core_type_vec3: Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.d
 
 # fast build rule for target.
 test-core_type_vec3/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/build
 .PHONY : test-core_type_vec3/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/rule
 
 # Convenience name for target.
@@ -181,12 +181,12 @@ test-core_cpp_constexpr: Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_con
 
 # fast build rule for target.
 test-core_cpp_constexpr/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/build
 .PHONY : test-core_cpp_constexpr/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ test-core_force_inline: Dependencies/GLM/test/core/CMakeFiles/test-core_force_in
 
 # fast build rule for target.
 test-core_force_inline/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/build
 .PHONY : test-core_force_inline/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/rule
 
 # Convenience name for target.
@@ -211,12 +211,12 @@ test-core_force_ctor_init: Dependencies/GLM/test/core/CMakeFiles/test-core_force
 
 # fast build rule for target.
 test-core_force_ctor_init/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/build
 .PHONY : test-core_force_ctor_init/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/rule
 
 # Convenience name for target.
@@ -226,12 +226,12 @@ test-core_cpp_defaulted_ctor: Dependencies/GLM/test/core/CMakeFiles/test-core_cp
 
 # fast build rule for target.
 test-core_cpp_defaulted_ctor/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/build
 .PHONY : test-core_cpp_defaulted_ctor/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/rule
 
 # Convenience name for target.
@@ -241,12 +241,12 @@ test-core_type_mat2x2: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2
 
 # fast build rule for target.
 test-core_type_mat2x2/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/build
 .PHONY : test-core_type_mat2x2/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/rule
 
 # Convenience name for target.
@@ -256,12 +256,12 @@ test-core_force_unrestricted_gentype: Dependencies/GLM/test/core/CMakeFiles/test
 
 # fast build rule for target.
 test-core_force_unrestricted_gentype/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/build
 .PHONY : test-core_force_unrestricted_gentype/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/rule
 
 # Convenience name for target.
@@ -271,12 +271,12 @@ test-core_type_mat3x3: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3
 
 # fast build rule for target.
 test-core_type_mat3x3/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/build
 .PHONY : test-core_type_mat3x3/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/rule
 
 # Convenience name for target.
@@ -286,12 +286,12 @@ test-core_type_ctor: Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.d
 
 # fast build rule for target.
 test-core_type_ctor/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/build
 .PHONY : test-core_type_ctor/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/rule
 
 # Convenience name for target.
@@ -301,12 +301,12 @@ test-core_force_explicit_ctor: Dependencies/GLM/test/core/CMakeFiles/test-core_f
 
 # fast build rule for target.
 test-core_force_explicit_ctor/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/build
 .PHONY : test-core_force_explicit_ctor/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/rule
 
 # Convenience name for target.
@@ -316,12 +316,12 @@ test-core_force_xyzw_only: Dependencies/GLM/test/core/CMakeFiles/test-core_force
 
 # fast build rule for target.
 test-core_force_xyzw_only/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/build
 .PHONY : test-core_force_xyzw_only/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/rule
 
 # Convenience name for target.
@@ -331,12 +331,12 @@ test-core_type_aligned: Dependencies/GLM/test/core/CMakeFiles/test-core_type_ali
 
 # fast build rule for target.
 test-core_type_aligned/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/build
 .PHONY : test-core_type_aligned/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/rule
 
 # Convenience name for target.
@@ -346,12 +346,12 @@ test-core_func_exponential: Dependencies/GLM/test/core/CMakeFiles/test-core_func
 
 # fast build rule for target.
 test-core_func_exponential/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/build
 .PHONY : test-core_func_exponential/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/rule
 
 # Convenience name for target.
@@ -361,12 +361,12 @@ test-core_type_mat4x3: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4
 
 # fast build rule for target.
 test-core_type_mat4x3/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/build
 .PHONY : test-core_type_mat4x3/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/rule
 
 # Convenience name for target.
@@ -376,12 +376,12 @@ test-core_type_int: Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir
 
 # fast build rule for target.
 test-core_type_int/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/build
 .PHONY : test-core_type_int/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/rule
 
 # Convenience name for target.
@@ -391,12 +391,12 @@ test-core_type_cast: Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.d
 
 # fast build rule for target.
 test-core_type_cast/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/build
 .PHONY : test-core_type_cast/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/rule
 
 # Convenience name for target.
@@ -406,12 +406,12 @@ test-core_func_integer_find_lsb: Dependencies/GLM/test/core/CMakeFiles/test-core
 
 # fast build rule for target.
 test-core_func_integer_find_lsb/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/build
 .PHONY : test-core_func_integer_find_lsb/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/rule
 
 # Convenience name for target.
@@ -421,12 +421,12 @@ test-core_type_length: Dependencies/GLM/test/core/CMakeFiles/test-core_type_leng
 
 # fast build rule for target.
 test-core_type_length/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/build
 .PHONY : test-core_type_length/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/rule
 
 # Convenience name for target.
@@ -436,12 +436,12 @@ test-core_type_mat2x3: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2
 
 # fast build rule for target.
 test-core_type_mat2x3/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/build
 .PHONY : test-core_type_mat2x3/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/rule
 
 # Convenience name for target.
@@ -451,12 +451,12 @@ test-core_type_mat2x4: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2
 
 # fast build rule for target.
 test-core_type_mat2x4/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/build
 .PHONY : test-core_type_mat2x4/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/rule
 
 # Convenience name for target.
@@ -466,12 +466,12 @@ test-core_type_mat3x2: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3
 
 # fast build rule for target.
 test-core_type_mat3x2/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/build
 .PHONY : test-core_type_mat3x2/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/rule
 
 # Convenience name for target.
@@ -481,12 +481,12 @@ test-core_type_mat3x4: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3
 
 # fast build rule for target.
 test-core_type_mat3x4/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/build
 .PHONY : test-core_type_mat3x4/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/rule
 
 # Convenience name for target.
@@ -496,12 +496,12 @@ test-core_type_mat4x2: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4
 
 # fast build rule for target.
 test-core_type_mat4x2/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/build
 .PHONY : test-core_type_mat4x2/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/rule
 
 # Convenience name for target.
@@ -511,12 +511,12 @@ test-core_type_mat4x4: Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4
 
 # fast build rule for target.
 test-core_type_mat4x4/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/build
 .PHONY : test-core_type_mat4x4/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/rule
 
 # Convenience name for target.
@@ -526,12 +526,12 @@ test-core_type_vec1: Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.d
 
 # fast build rule for target.
 test-core_type_vec1/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/build
 .PHONY : test-core_type_vec1/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/rule
 
 # Convenience name for target.
@@ -541,12 +541,12 @@ test-core_type_vec2: Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.d
 
 # fast build rule for target.
 test-core_type_vec2/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/build
 .PHONY : test-core_type_vec2/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/rule
 
 # Convenience name for target.
@@ -556,12 +556,12 @@ test-core_type_vec4: Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.d
 
 # fast build rule for target.
 test-core_type_vec4/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/build
 .PHONY : test-core_type_vec4/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/rule
 
 # Convenience name for target.
@@ -571,12 +571,12 @@ test-core_func_integer_find_msb: Dependencies/GLM/test/core/CMakeFiles/test-core
 
 # fast build rule for target.
 test-core_func_integer_find_msb/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/build
 .PHONY : test-core_func_integer_find_msb/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/rule
 
 # Convenience name for target.
@@ -586,12 +586,12 @@ test-core_func_common: Dependencies/GLM/test/core/CMakeFiles/test-core_func_comm
 
 # fast build rule for target.
 test-core_func_common/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/build
 .PHONY : test-core_func_common/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/rule
 
 # Convenience name for target.
@@ -601,12 +601,12 @@ test-core_func_geometric: Dependencies/GLM/test/core/CMakeFiles/test-core_func_g
 
 # fast build rule for target.
 test-core_func_geometric/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/build
 .PHONY : test-core_func_geometric/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/rule
 
 # Convenience name for target.
@@ -616,12 +616,12 @@ test-core_func_integer: Dependencies/GLM/test/core/CMakeFiles/test-core_func_int
 
 # fast build rule for target.
 test-core_func_integer/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/build
 .PHONY : test-core_func_integer/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/rule
 
 # Convenience name for target.
@@ -631,12 +631,12 @@ test-core_func_noise: Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise
 
 # fast build rule for target.
 test-core_func_noise/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/build
 .PHONY : test-core_func_noise/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/rule
 
 # Convenience name for target.
@@ -646,12 +646,12 @@ test-core_func_integer_bit_count: Dependencies/GLM/test/core/CMakeFiles/test-cor
 
 # fast build rule for target.
 test-core_func_integer_bit_count/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/build
 .PHONY : test-core_func_integer_bit_count/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/rule
 
 # Convenience name for target.
@@ -661,12 +661,12 @@ test-core_func_matrix: Dependencies/GLM/test/core/CMakeFiles/test-core_func_matr
 
 # fast build rule for target.
 test-core_func_matrix/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/build
 .PHONY : test-core_func_matrix/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/rule
 
 # Convenience name for target.
@@ -676,12 +676,12 @@ test-core_func_packing: Dependencies/GLM/test/core/CMakeFiles/test-core_func_pac
 
 # fast build rule for target.
 test-core_func_packing/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/build
 .PHONY : test-core_func_packing/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/rule
 
 # Convenience name for target.
@@ -691,12 +691,12 @@ test-core_func_trigonometric: Dependencies/GLM/test/core/CMakeFiles/test-core_fu
 
 # fast build rule for target.
 test-core_func_trigonometric/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/build
 .PHONY : test-core_func_trigonometric/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/rule
 
 # Convenience name for target.
@@ -706,12 +706,12 @@ test-core_setup_platform_unknown: Dependencies/GLM/test/core/CMakeFiles/test-cor
 
 # fast build rule for target.
 test-core_setup_platform_unknown/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/build
 .PHONY : test-core_setup_platform_unknown/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/rule
 
 # Convenience name for target.
@@ -721,12 +721,12 @@ test-core_func_vector_relational: Dependencies/GLM/test/core/CMakeFiles/test-cor
 
 # fast build rule for target.
 test-core_func_vector_relational/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/build
 .PHONY : test-core_func_vector_relational/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/rule
 
 # Convenience name for target.
@@ -736,12 +736,12 @@ test-core_func_swizzle: Dependencies/GLM/test/core/CMakeFiles/test-core_func_swi
 
 # fast build rule for target.
 test-core_func_swizzle/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/build
 .PHONY : test-core_func_swizzle/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/rule
 
 # Convenience name for target.
@@ -751,12 +751,12 @@ test-core_setup_force_cxx98: Dependencies/GLM/test/core/CMakeFiles/test-core_set
 
 # fast build rule for target.
 test-core_setup_force_cxx98/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/build
 .PHONY : test-core_setup_force_cxx98/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/rule
 
 # Convenience name for target.
@@ -766,12 +766,12 @@ test-core_setup_force_size_t_length: Dependencies/GLM/test/core/CMakeFiles/test-
 
 # fast build rule for target.
 test-core_setup_force_size_t_length/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/build
 .PHONY : test-core_setup_force_size_t_length/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/rule
 .PHONY : Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/rule
 
 # Convenience name for target.
@@ -781,7 +781,7 @@ test-core_setup_message: Dependencies/GLM/test/core/CMakeFiles/test-core_setup_m
 
 # fast build rule for target.
 test-core_setup_message/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/build
 .PHONY : test-core_setup_message/fast
 
 core_cpp_constexpr.obj: core_cpp_constexpr.cpp.obj
@@ -790,7 +790,7 @@ core_cpp_constexpr.obj: core_cpp_constexpr.cpp.obj
 
 # target to build an object file
 core_cpp_constexpr.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/core_cpp_constexpr.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/core_cpp_constexpr.cpp.obj
 .PHONY : core_cpp_constexpr.cpp.obj
 
 core_cpp_constexpr.i: core_cpp_constexpr.cpp.i
@@ -799,7 +799,7 @@ core_cpp_constexpr.i: core_cpp_constexpr.cpp.i
 
 # target to preprocess a source file
 core_cpp_constexpr.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/core_cpp_constexpr.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/core_cpp_constexpr.cpp.i
 .PHONY : core_cpp_constexpr.cpp.i
 
 core_cpp_constexpr.s: core_cpp_constexpr.cpp.s
@@ -808,7 +808,7 @@ core_cpp_constexpr.s: core_cpp_constexpr.cpp.s
 
 # target to generate assembly for a file
 core_cpp_constexpr.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/core_cpp_constexpr.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_constexpr.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_constexpr.dir/core_cpp_constexpr.cpp.s
 .PHONY : core_cpp_constexpr.cpp.s
 
 core_cpp_defaulted_ctor.obj: core_cpp_defaulted_ctor.cpp.obj
@@ -817,7 +817,7 @@ core_cpp_defaulted_ctor.obj: core_cpp_defaulted_ctor.cpp.obj
 
 # target to build an object file
 core_cpp_defaulted_ctor.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/core_cpp_defaulted_ctor.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/core_cpp_defaulted_ctor.cpp.obj
 .PHONY : core_cpp_defaulted_ctor.cpp.obj
 
 core_cpp_defaulted_ctor.i: core_cpp_defaulted_ctor.cpp.i
@@ -826,7 +826,7 @@ core_cpp_defaulted_ctor.i: core_cpp_defaulted_ctor.cpp.i
 
 # target to preprocess a source file
 core_cpp_defaulted_ctor.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/core_cpp_defaulted_ctor.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/core_cpp_defaulted_ctor.cpp.i
 .PHONY : core_cpp_defaulted_ctor.cpp.i
 
 core_cpp_defaulted_ctor.s: core_cpp_defaulted_ctor.cpp.s
@@ -835,7 +835,7 @@ core_cpp_defaulted_ctor.s: core_cpp_defaulted_ctor.cpp.s
 
 # target to generate assembly for a file
 core_cpp_defaulted_ctor.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/core_cpp_defaulted_ctor.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_cpp_defaulted_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_cpp_defaulted_ctor.dir/core_cpp_defaulted_ctor.cpp.s
 .PHONY : core_cpp_defaulted_ctor.cpp.s
 
 core_force_aligned_gentypes.obj: core_force_aligned_gentypes.cpp.obj
@@ -844,7 +844,7 @@ core_force_aligned_gentypes.obj: core_force_aligned_gentypes.cpp.obj
 
 # target to build an object file
 core_force_aligned_gentypes.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/core_force_aligned_gentypes.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/core_force_aligned_gentypes.cpp.obj
 .PHONY : core_force_aligned_gentypes.cpp.obj
 
 core_force_aligned_gentypes.i: core_force_aligned_gentypes.cpp.i
@@ -853,7 +853,7 @@ core_force_aligned_gentypes.i: core_force_aligned_gentypes.cpp.i
 
 # target to preprocess a source file
 core_force_aligned_gentypes.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/core_force_aligned_gentypes.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/core_force_aligned_gentypes.cpp.i
 .PHONY : core_force_aligned_gentypes.cpp.i
 
 core_force_aligned_gentypes.s: core_force_aligned_gentypes.cpp.s
@@ -862,7 +862,7 @@ core_force_aligned_gentypes.s: core_force_aligned_gentypes.cpp.s
 
 # target to generate assembly for a file
 core_force_aligned_gentypes.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/core_force_aligned_gentypes.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_aligned_gentypes.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_aligned_gentypes.dir/core_force_aligned_gentypes.cpp.s
 .PHONY : core_force_aligned_gentypes.cpp.s
 
 core_force_ctor_init.obj: core_force_ctor_init.cpp.obj
@@ -871,7 +871,7 @@ core_force_ctor_init.obj: core_force_ctor_init.cpp.obj
 
 # target to build an object file
 core_force_ctor_init.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/core_force_ctor_init.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/core_force_ctor_init.cpp.obj
 .PHONY : core_force_ctor_init.cpp.obj
 
 core_force_ctor_init.i: core_force_ctor_init.cpp.i
@@ -880,7 +880,7 @@ core_force_ctor_init.i: core_force_ctor_init.cpp.i
 
 # target to preprocess a source file
 core_force_ctor_init.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/core_force_ctor_init.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/core_force_ctor_init.cpp.i
 .PHONY : core_force_ctor_init.cpp.i
 
 core_force_ctor_init.s: core_force_ctor_init.cpp.s
@@ -889,7 +889,7 @@ core_force_ctor_init.s: core_force_ctor_init.cpp.s
 
 # target to generate assembly for a file
 core_force_ctor_init.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/core_force_ctor_init.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_ctor_init.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_ctor_init.dir/core_force_ctor_init.cpp.s
 .PHONY : core_force_ctor_init.cpp.s
 
 core_force_explicit_ctor.obj: core_force_explicit_ctor.cpp.obj
@@ -898,7 +898,7 @@ core_force_explicit_ctor.obj: core_force_explicit_ctor.cpp.obj
 
 # target to build an object file
 core_force_explicit_ctor.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/core_force_explicit_ctor.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/core_force_explicit_ctor.cpp.obj
 .PHONY : core_force_explicit_ctor.cpp.obj
 
 core_force_explicit_ctor.i: core_force_explicit_ctor.cpp.i
@@ -907,7 +907,7 @@ core_force_explicit_ctor.i: core_force_explicit_ctor.cpp.i
 
 # target to preprocess a source file
 core_force_explicit_ctor.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/core_force_explicit_ctor.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/core_force_explicit_ctor.cpp.i
 .PHONY : core_force_explicit_ctor.cpp.i
 
 core_force_explicit_ctor.s: core_force_explicit_ctor.cpp.s
@@ -916,7 +916,7 @@ core_force_explicit_ctor.s: core_force_explicit_ctor.cpp.s
 
 # target to generate assembly for a file
 core_force_explicit_ctor.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/core_force_explicit_ctor.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_explicit_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_explicit_ctor.dir/core_force_explicit_ctor.cpp.s
 .PHONY : core_force_explicit_ctor.cpp.s
 
 core_force_inline.obj: core_force_inline.cpp.obj
@@ -925,7 +925,7 @@ core_force_inline.obj: core_force_inline.cpp.obj
 
 # target to build an object file
 core_force_inline.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/core_force_inline.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/core_force_inline.cpp.obj
 .PHONY : core_force_inline.cpp.obj
 
 core_force_inline.i: core_force_inline.cpp.i
@@ -934,7 +934,7 @@ core_force_inline.i: core_force_inline.cpp.i
 
 # target to preprocess a source file
 core_force_inline.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/core_force_inline.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/core_force_inline.cpp.i
 .PHONY : core_force_inline.cpp.i
 
 core_force_inline.s: core_force_inline.cpp.s
@@ -943,7 +943,7 @@ core_force_inline.s: core_force_inline.cpp.s
 
 # target to generate assembly for a file
 core_force_inline.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/core_force_inline.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_inline.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_inline.dir/core_force_inline.cpp.s
 .PHONY : core_force_inline.cpp.s
 
 core_force_pure.obj: core_force_pure.cpp.obj
@@ -952,7 +952,7 @@ core_force_pure.obj: core_force_pure.cpp.obj
 
 # target to build an object file
 core_force_pure.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/core_force_pure.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/core_force_pure.cpp.obj
 .PHONY : core_force_pure.cpp.obj
 
 core_force_pure.i: core_force_pure.cpp.i
@@ -961,7 +961,7 @@ core_force_pure.i: core_force_pure.cpp.i
 
 # target to preprocess a source file
 core_force_pure.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/core_force_pure.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/core_force_pure.cpp.i
 .PHONY : core_force_pure.cpp.i
 
 core_force_pure.s: core_force_pure.cpp.s
@@ -970,7 +970,7 @@ core_force_pure.s: core_force_pure.cpp.s
 
 # target to generate assembly for a file
 core_force_pure.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/core_force_pure.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_pure.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_pure.dir/core_force_pure.cpp.s
 .PHONY : core_force_pure.cpp.s
 
 core_force_unrestricted_gentype.obj: core_force_unrestricted_gentype.cpp.obj
@@ -979,7 +979,7 @@ core_force_unrestricted_gentype.obj: core_force_unrestricted_gentype.cpp.obj
 
 # target to build an object file
 core_force_unrestricted_gentype.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/core_force_unrestricted_gentype.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/core_force_unrestricted_gentype.cpp.obj
 .PHONY : core_force_unrestricted_gentype.cpp.obj
 
 core_force_unrestricted_gentype.i: core_force_unrestricted_gentype.cpp.i
@@ -988,7 +988,7 @@ core_force_unrestricted_gentype.i: core_force_unrestricted_gentype.cpp.i
 
 # target to preprocess a source file
 core_force_unrestricted_gentype.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/core_force_unrestricted_gentype.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/core_force_unrestricted_gentype.cpp.i
 .PHONY : core_force_unrestricted_gentype.cpp.i
 
 core_force_unrestricted_gentype.s: core_force_unrestricted_gentype.cpp.s
@@ -997,7 +997,7 @@ core_force_unrestricted_gentype.s: core_force_unrestricted_gentype.cpp.s
 
 # target to generate assembly for a file
 core_force_unrestricted_gentype.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/core_force_unrestricted_gentype.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_unrestricted_gentype.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_unrestricted_gentype.dir/core_force_unrestricted_gentype.cpp.s
 .PHONY : core_force_unrestricted_gentype.cpp.s
 
 core_force_xyzw_only.obj: core_force_xyzw_only.cpp.obj
@@ -1006,7 +1006,7 @@ core_force_xyzw_only.obj: core_force_xyzw_only.cpp.obj
 
 # target to build an object file
 core_force_xyzw_only.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/core_force_xyzw_only.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/core_force_xyzw_only.cpp.obj
 .PHONY : core_force_xyzw_only.cpp.obj
 
 core_force_xyzw_only.i: core_force_xyzw_only.cpp.i
@@ -1015,7 +1015,7 @@ core_force_xyzw_only.i: core_force_xyzw_only.cpp.i
 
 # target to preprocess a source file
 core_force_xyzw_only.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/core_force_xyzw_only.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/core_force_xyzw_only.cpp.i
 .PHONY : core_force_xyzw_only.cpp.i
 
 core_force_xyzw_only.s: core_force_xyzw_only.cpp.s
@@ -1024,7 +1024,7 @@ core_force_xyzw_only.s: core_force_xyzw_only.cpp.s
 
 # target to generate assembly for a file
 core_force_xyzw_only.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/core_force_xyzw_only.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_force_xyzw_only.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_force_xyzw_only.dir/core_force_xyzw_only.cpp.s
 .PHONY : core_force_xyzw_only.cpp.s
 
 core_func_common.obj: core_func_common.cpp.obj
@@ -1033,7 +1033,7 @@ core_func_common.obj: core_func_common.cpp.obj
 
 # target to build an object file
 core_func_common.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/core_func_common.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/core_func_common.cpp.obj
 .PHONY : core_func_common.cpp.obj
 
 core_func_common.i: core_func_common.cpp.i
@@ -1042,7 +1042,7 @@ core_func_common.i: core_func_common.cpp.i
 
 # target to preprocess a source file
 core_func_common.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/core_func_common.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/core_func_common.cpp.i
 .PHONY : core_func_common.cpp.i
 
 core_func_common.s: core_func_common.cpp.s
@@ -1051,7 +1051,7 @@ core_func_common.s: core_func_common.cpp.s
 
 # target to generate assembly for a file
 core_func_common.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/core_func_common.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_common.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_common.dir/core_func_common.cpp.s
 .PHONY : core_func_common.cpp.s
 
 core_func_exponential.obj: core_func_exponential.cpp.obj
@@ -1060,7 +1060,7 @@ core_func_exponential.obj: core_func_exponential.cpp.obj
 
 # target to build an object file
 core_func_exponential.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/core_func_exponential.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/core_func_exponential.cpp.obj
 .PHONY : core_func_exponential.cpp.obj
 
 core_func_exponential.i: core_func_exponential.cpp.i
@@ -1069,7 +1069,7 @@ core_func_exponential.i: core_func_exponential.cpp.i
 
 # target to preprocess a source file
 core_func_exponential.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/core_func_exponential.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/core_func_exponential.cpp.i
 .PHONY : core_func_exponential.cpp.i
 
 core_func_exponential.s: core_func_exponential.cpp.s
@@ -1078,7 +1078,7 @@ core_func_exponential.s: core_func_exponential.cpp.s
 
 # target to generate assembly for a file
 core_func_exponential.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/core_func_exponential.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_exponential.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_exponential.dir/core_func_exponential.cpp.s
 .PHONY : core_func_exponential.cpp.s
 
 core_func_geometric.obj: core_func_geometric.cpp.obj
@@ -1087,7 +1087,7 @@ core_func_geometric.obj: core_func_geometric.cpp.obj
 
 # target to build an object file
 core_func_geometric.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/core_func_geometric.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/core_func_geometric.cpp.obj
 .PHONY : core_func_geometric.cpp.obj
 
 core_func_geometric.i: core_func_geometric.cpp.i
@@ -1096,7 +1096,7 @@ core_func_geometric.i: core_func_geometric.cpp.i
 
 # target to preprocess a source file
 core_func_geometric.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/core_func_geometric.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/core_func_geometric.cpp.i
 .PHONY : core_func_geometric.cpp.i
 
 core_func_geometric.s: core_func_geometric.cpp.s
@@ -1105,7 +1105,7 @@ core_func_geometric.s: core_func_geometric.cpp.s
 
 # target to generate assembly for a file
 core_func_geometric.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/core_func_geometric.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_geometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_geometric.dir/core_func_geometric.cpp.s
 .PHONY : core_func_geometric.cpp.s
 
 core_func_integer.obj: core_func_integer.cpp.obj
@@ -1114,7 +1114,7 @@ core_func_integer.obj: core_func_integer.cpp.obj
 
 # target to build an object file
 core_func_integer.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/core_func_integer.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/core_func_integer.cpp.obj
 .PHONY : core_func_integer.cpp.obj
 
 core_func_integer.i: core_func_integer.cpp.i
@@ -1123,7 +1123,7 @@ core_func_integer.i: core_func_integer.cpp.i
 
 # target to preprocess a source file
 core_func_integer.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/core_func_integer.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/core_func_integer.cpp.i
 .PHONY : core_func_integer.cpp.i
 
 core_func_integer.s: core_func_integer.cpp.s
@@ -1132,7 +1132,7 @@ core_func_integer.s: core_func_integer.cpp.s
 
 # target to generate assembly for a file
 core_func_integer.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/core_func_integer.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer.dir/core_func_integer.cpp.s
 .PHONY : core_func_integer.cpp.s
 
 core_func_integer_bit_count.obj: core_func_integer_bit_count.cpp.obj
@@ -1141,7 +1141,7 @@ core_func_integer_bit_count.obj: core_func_integer_bit_count.cpp.obj
 
 # target to build an object file
 core_func_integer_bit_count.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/core_func_integer_bit_count.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/core_func_integer_bit_count.cpp.obj
 .PHONY : core_func_integer_bit_count.cpp.obj
 
 core_func_integer_bit_count.i: core_func_integer_bit_count.cpp.i
@@ -1150,7 +1150,7 @@ core_func_integer_bit_count.i: core_func_integer_bit_count.cpp.i
 
 # target to preprocess a source file
 core_func_integer_bit_count.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/core_func_integer_bit_count.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/core_func_integer_bit_count.cpp.i
 .PHONY : core_func_integer_bit_count.cpp.i
 
 core_func_integer_bit_count.s: core_func_integer_bit_count.cpp.s
@@ -1159,7 +1159,7 @@ core_func_integer_bit_count.s: core_func_integer_bit_count.cpp.s
 
 # target to generate assembly for a file
 core_func_integer_bit_count.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/core_func_integer_bit_count.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_bit_count.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_bit_count.dir/core_func_integer_bit_count.cpp.s
 .PHONY : core_func_integer_bit_count.cpp.s
 
 core_func_integer_find_lsb.obj: core_func_integer_find_lsb.cpp.obj
@@ -1168,7 +1168,7 @@ core_func_integer_find_lsb.obj: core_func_integer_find_lsb.cpp.obj
 
 # target to build an object file
 core_func_integer_find_lsb.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/core_func_integer_find_lsb.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/core_func_integer_find_lsb.cpp.obj
 .PHONY : core_func_integer_find_lsb.cpp.obj
 
 core_func_integer_find_lsb.i: core_func_integer_find_lsb.cpp.i
@@ -1177,7 +1177,7 @@ core_func_integer_find_lsb.i: core_func_integer_find_lsb.cpp.i
 
 # target to preprocess a source file
 core_func_integer_find_lsb.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/core_func_integer_find_lsb.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/core_func_integer_find_lsb.cpp.i
 .PHONY : core_func_integer_find_lsb.cpp.i
 
 core_func_integer_find_lsb.s: core_func_integer_find_lsb.cpp.s
@@ -1186,7 +1186,7 @@ core_func_integer_find_lsb.s: core_func_integer_find_lsb.cpp.s
 
 # target to generate assembly for a file
 core_func_integer_find_lsb.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/core_func_integer_find_lsb.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_lsb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_lsb.dir/core_func_integer_find_lsb.cpp.s
 .PHONY : core_func_integer_find_lsb.cpp.s
 
 core_func_integer_find_msb.obj: core_func_integer_find_msb.cpp.obj
@@ -1195,7 +1195,7 @@ core_func_integer_find_msb.obj: core_func_integer_find_msb.cpp.obj
 
 # target to build an object file
 core_func_integer_find_msb.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/core_func_integer_find_msb.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/core_func_integer_find_msb.cpp.obj
 .PHONY : core_func_integer_find_msb.cpp.obj
 
 core_func_integer_find_msb.i: core_func_integer_find_msb.cpp.i
@@ -1204,7 +1204,7 @@ core_func_integer_find_msb.i: core_func_integer_find_msb.cpp.i
 
 # target to preprocess a source file
 core_func_integer_find_msb.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/core_func_integer_find_msb.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/core_func_integer_find_msb.cpp.i
 .PHONY : core_func_integer_find_msb.cpp.i
 
 core_func_integer_find_msb.s: core_func_integer_find_msb.cpp.s
@@ -1213,7 +1213,7 @@ core_func_integer_find_msb.s: core_func_integer_find_msb.cpp.s
 
 # target to generate assembly for a file
 core_func_integer_find_msb.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/core_func_integer_find_msb.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_integer_find_msb.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_integer_find_msb.dir/core_func_integer_find_msb.cpp.s
 .PHONY : core_func_integer_find_msb.cpp.s
 
 core_func_matrix.obj: core_func_matrix.cpp.obj
@@ -1222,7 +1222,7 @@ core_func_matrix.obj: core_func_matrix.cpp.obj
 
 # target to build an object file
 core_func_matrix.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/core_func_matrix.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/core_func_matrix.cpp.obj
 .PHONY : core_func_matrix.cpp.obj
 
 core_func_matrix.i: core_func_matrix.cpp.i
@@ -1231,7 +1231,7 @@ core_func_matrix.i: core_func_matrix.cpp.i
 
 # target to preprocess a source file
 core_func_matrix.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/core_func_matrix.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/core_func_matrix.cpp.i
 .PHONY : core_func_matrix.cpp.i
 
 core_func_matrix.s: core_func_matrix.cpp.s
@@ -1240,7 +1240,7 @@ core_func_matrix.s: core_func_matrix.cpp.s
 
 # target to generate assembly for a file
 core_func_matrix.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/core_func_matrix.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_matrix.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_matrix.dir/core_func_matrix.cpp.s
 .PHONY : core_func_matrix.cpp.s
 
 core_func_noise.obj: core_func_noise.cpp.obj
@@ -1249,7 +1249,7 @@ core_func_noise.obj: core_func_noise.cpp.obj
 
 # target to build an object file
 core_func_noise.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/core_func_noise.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/core_func_noise.cpp.obj
 .PHONY : core_func_noise.cpp.obj
 
 core_func_noise.i: core_func_noise.cpp.i
@@ -1258,7 +1258,7 @@ core_func_noise.i: core_func_noise.cpp.i
 
 # target to preprocess a source file
 core_func_noise.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/core_func_noise.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/core_func_noise.cpp.i
 .PHONY : core_func_noise.cpp.i
 
 core_func_noise.s: core_func_noise.cpp.s
@@ -1267,7 +1267,7 @@ core_func_noise.s: core_func_noise.cpp.s
 
 # target to generate assembly for a file
 core_func_noise.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/core_func_noise.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_noise.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_noise.dir/core_func_noise.cpp.s
 .PHONY : core_func_noise.cpp.s
 
 core_func_packing.obj: core_func_packing.cpp.obj
@@ -1276,7 +1276,7 @@ core_func_packing.obj: core_func_packing.cpp.obj
 
 # target to build an object file
 core_func_packing.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/core_func_packing.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/core_func_packing.cpp.obj
 .PHONY : core_func_packing.cpp.obj
 
 core_func_packing.i: core_func_packing.cpp.i
@@ -1285,7 +1285,7 @@ core_func_packing.i: core_func_packing.cpp.i
 
 # target to preprocess a source file
 core_func_packing.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/core_func_packing.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/core_func_packing.cpp.i
 .PHONY : core_func_packing.cpp.i
 
 core_func_packing.s: core_func_packing.cpp.s
@@ -1294,7 +1294,7 @@ core_func_packing.s: core_func_packing.cpp.s
 
 # target to generate assembly for a file
 core_func_packing.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/core_func_packing.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_packing.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_packing.dir/core_func_packing.cpp.s
 .PHONY : core_func_packing.cpp.s
 
 core_func_swizzle.obj: core_func_swizzle.cpp.obj
@@ -1303,7 +1303,7 @@ core_func_swizzle.obj: core_func_swizzle.cpp.obj
 
 # target to build an object file
 core_func_swizzle.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/core_func_swizzle.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/core_func_swizzle.cpp.obj
 .PHONY : core_func_swizzle.cpp.obj
 
 core_func_swizzle.i: core_func_swizzle.cpp.i
@@ -1312,7 +1312,7 @@ core_func_swizzle.i: core_func_swizzle.cpp.i
 
 # target to preprocess a source file
 core_func_swizzle.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/core_func_swizzle.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/core_func_swizzle.cpp.i
 .PHONY : core_func_swizzle.cpp.i
 
 core_func_swizzle.s: core_func_swizzle.cpp.s
@@ -1321,7 +1321,7 @@ core_func_swizzle.s: core_func_swizzle.cpp.s
 
 # target to generate assembly for a file
 core_func_swizzle.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/core_func_swizzle.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_swizzle.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_swizzle.dir/core_func_swizzle.cpp.s
 .PHONY : core_func_swizzle.cpp.s
 
 core_func_trigonometric.obj: core_func_trigonometric.cpp.obj
@@ -1330,7 +1330,7 @@ core_func_trigonometric.obj: core_func_trigonometric.cpp.obj
 
 # target to build an object file
 core_func_trigonometric.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/core_func_trigonometric.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/core_func_trigonometric.cpp.obj
 .PHONY : core_func_trigonometric.cpp.obj
 
 core_func_trigonometric.i: core_func_trigonometric.cpp.i
@@ -1339,7 +1339,7 @@ core_func_trigonometric.i: core_func_trigonometric.cpp.i
 
 # target to preprocess a source file
 core_func_trigonometric.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/core_func_trigonometric.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/core_func_trigonometric.cpp.i
 .PHONY : core_func_trigonometric.cpp.i
 
 core_func_trigonometric.s: core_func_trigonometric.cpp.s
@@ -1348,7 +1348,7 @@ core_func_trigonometric.s: core_func_trigonometric.cpp.s
 
 # target to generate assembly for a file
 core_func_trigonometric.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/core_func_trigonometric.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_trigonometric.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_trigonometric.dir/core_func_trigonometric.cpp.s
 .PHONY : core_func_trigonometric.cpp.s
 
 core_func_vector_relational.obj: core_func_vector_relational.cpp.obj
@@ -1357,7 +1357,7 @@ core_func_vector_relational.obj: core_func_vector_relational.cpp.obj
 
 # target to build an object file
 core_func_vector_relational.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/core_func_vector_relational.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/core_func_vector_relational.cpp.obj
 .PHONY : core_func_vector_relational.cpp.obj
 
 core_func_vector_relational.i: core_func_vector_relational.cpp.i
@@ -1366,7 +1366,7 @@ core_func_vector_relational.i: core_func_vector_relational.cpp.i
 
 # target to preprocess a source file
 core_func_vector_relational.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/core_func_vector_relational.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/core_func_vector_relational.cpp.i
 .PHONY : core_func_vector_relational.cpp.i
 
 core_func_vector_relational.s: core_func_vector_relational.cpp.s
@@ -1375,7 +1375,7 @@ core_func_vector_relational.s: core_func_vector_relational.cpp.s
 
 # target to generate assembly for a file
 core_func_vector_relational.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/core_func_vector_relational.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_func_vector_relational.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_func_vector_relational.dir/core_func_vector_relational.cpp.s
 .PHONY : core_func_vector_relational.cpp.s
 
 core_setup_force_cxx98.obj: core_setup_force_cxx98.cpp.obj
@@ -1384,7 +1384,7 @@ core_setup_force_cxx98.obj: core_setup_force_cxx98.cpp.obj
 
 # target to build an object file
 core_setup_force_cxx98.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/core_setup_force_cxx98.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/core_setup_force_cxx98.cpp.obj
 .PHONY : core_setup_force_cxx98.cpp.obj
 
 core_setup_force_cxx98.i: core_setup_force_cxx98.cpp.i
@@ -1393,7 +1393,7 @@ core_setup_force_cxx98.i: core_setup_force_cxx98.cpp.i
 
 # target to preprocess a source file
 core_setup_force_cxx98.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/core_setup_force_cxx98.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/core_setup_force_cxx98.cpp.i
 .PHONY : core_setup_force_cxx98.cpp.i
 
 core_setup_force_cxx98.s: core_setup_force_cxx98.cpp.s
@@ -1402,7 +1402,7 @@ core_setup_force_cxx98.s: core_setup_force_cxx98.cpp.s
 
 # target to generate assembly for a file
 core_setup_force_cxx98.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/core_setup_force_cxx98.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_cxx98.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_cxx98.dir/core_setup_force_cxx98.cpp.s
 .PHONY : core_setup_force_cxx98.cpp.s
 
 core_setup_force_size_t_length.obj: core_setup_force_size_t_length.cpp.obj
@@ -1411,7 +1411,7 @@ core_setup_force_size_t_length.obj: core_setup_force_size_t_length.cpp.obj
 
 # target to build an object file
 core_setup_force_size_t_length.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/core_setup_force_size_t_length.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/core_setup_force_size_t_length.cpp.obj
 .PHONY : core_setup_force_size_t_length.cpp.obj
 
 core_setup_force_size_t_length.i: core_setup_force_size_t_length.cpp.i
@@ -1420,7 +1420,7 @@ core_setup_force_size_t_length.i: core_setup_force_size_t_length.cpp.i
 
 # target to preprocess a source file
 core_setup_force_size_t_length.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/core_setup_force_size_t_length.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/core_setup_force_size_t_length.cpp.i
 .PHONY : core_setup_force_size_t_length.cpp.i
 
 core_setup_force_size_t_length.s: core_setup_force_size_t_length.cpp.s
@@ -1429,7 +1429,7 @@ core_setup_force_size_t_length.s: core_setup_force_size_t_length.cpp.s
 
 # target to generate assembly for a file
 core_setup_force_size_t_length.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/core_setup_force_size_t_length.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_force_size_t_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_force_size_t_length.dir/core_setup_force_size_t_length.cpp.s
 .PHONY : core_setup_force_size_t_length.cpp.s
 
 core_setup_message.obj: core_setup_message.cpp.obj
@@ -1438,7 +1438,7 @@ core_setup_message.obj: core_setup_message.cpp.obj
 
 # target to build an object file
 core_setup_message.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/core_setup_message.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/core_setup_message.cpp.obj
 .PHONY : core_setup_message.cpp.obj
 
 core_setup_message.i: core_setup_message.cpp.i
@@ -1447,7 +1447,7 @@ core_setup_message.i: core_setup_message.cpp.i
 
 # target to preprocess a source file
 core_setup_message.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/core_setup_message.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/core_setup_message.cpp.i
 .PHONY : core_setup_message.cpp.i
 
 core_setup_message.s: core_setup_message.cpp.s
@@ -1456,7 +1456,7 @@ core_setup_message.s: core_setup_message.cpp.s
 
 # target to generate assembly for a file
 core_setup_message.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/core_setup_message.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_message.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_message.dir/core_setup_message.cpp.s
 .PHONY : core_setup_message.cpp.s
 
 core_setup_platform_unknown.obj: core_setup_platform_unknown.cpp.obj
@@ -1465,7 +1465,7 @@ core_setup_platform_unknown.obj: core_setup_platform_unknown.cpp.obj
 
 # target to build an object file
 core_setup_platform_unknown.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/core_setup_platform_unknown.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/core_setup_platform_unknown.cpp.obj
 .PHONY : core_setup_platform_unknown.cpp.obj
 
 core_setup_platform_unknown.i: core_setup_platform_unknown.cpp.i
@@ -1474,7 +1474,7 @@ core_setup_platform_unknown.i: core_setup_platform_unknown.cpp.i
 
 # target to preprocess a source file
 core_setup_platform_unknown.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/core_setup_platform_unknown.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/core_setup_platform_unknown.cpp.i
 .PHONY : core_setup_platform_unknown.cpp.i
 
 core_setup_platform_unknown.s: core_setup_platform_unknown.cpp.s
@@ -1483,7 +1483,7 @@ core_setup_platform_unknown.s: core_setup_platform_unknown.cpp.s
 
 # target to generate assembly for a file
 core_setup_platform_unknown.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/core_setup_platform_unknown.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_platform_unknown.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_platform_unknown.dir/core_setup_platform_unknown.cpp.s
 .PHONY : core_setup_platform_unknown.cpp.s
 
 core_setup_precision.obj: core_setup_precision.cpp.obj
@@ -1492,7 +1492,7 @@ core_setup_precision.obj: core_setup_precision.cpp.obj
 
 # target to build an object file
 core_setup_precision.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.obj
 .PHONY : core_setup_precision.cpp.obj
 
 core_setup_precision.i: core_setup_precision.cpp.i
@@ -1501,7 +1501,7 @@ core_setup_precision.i: core_setup_precision.cpp.i
 
 # target to preprocess a source file
 core_setup_precision.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.i
 .PHONY : core_setup_precision.cpp.i
 
 core_setup_precision.s: core_setup_precision.cpp.s
@@ -1510,7 +1510,7 @@ core_setup_precision.s: core_setup_precision.cpp.s
 
 # target to generate assembly for a file
 core_setup_precision.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_setup_precision.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.s
 .PHONY : core_setup_precision.cpp.s
 
 core_type_aligned.obj: core_type_aligned.cpp.obj
@@ -1519,7 +1519,7 @@ core_type_aligned.obj: core_type_aligned.cpp.obj
 
 # target to build an object file
 core_type_aligned.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/core_type_aligned.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/core_type_aligned.cpp.obj
 .PHONY : core_type_aligned.cpp.obj
 
 core_type_aligned.i: core_type_aligned.cpp.i
@@ -1528,7 +1528,7 @@ core_type_aligned.i: core_type_aligned.cpp.i
 
 # target to preprocess a source file
 core_type_aligned.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/core_type_aligned.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/core_type_aligned.cpp.i
 .PHONY : core_type_aligned.cpp.i
 
 core_type_aligned.s: core_type_aligned.cpp.s
@@ -1537,7 +1537,7 @@ core_type_aligned.s: core_type_aligned.cpp.s
 
 # target to generate assembly for a file
 core_type_aligned.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/core_type_aligned.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_aligned.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_aligned.dir/core_type_aligned.cpp.s
 .PHONY : core_type_aligned.cpp.s
 
 core_type_cast.obj: core_type_cast.cpp.obj
@@ -1546,7 +1546,7 @@ core_type_cast.obj: core_type_cast.cpp.obj
 
 # target to build an object file
 core_type_cast.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/core_type_cast.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/core_type_cast.cpp.obj
 .PHONY : core_type_cast.cpp.obj
 
 core_type_cast.i: core_type_cast.cpp.i
@@ -1555,7 +1555,7 @@ core_type_cast.i: core_type_cast.cpp.i
 
 # target to preprocess a source file
 core_type_cast.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/core_type_cast.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/core_type_cast.cpp.i
 .PHONY : core_type_cast.cpp.i
 
 core_type_cast.s: core_type_cast.cpp.s
@@ -1564,7 +1564,7 @@ core_type_cast.s: core_type_cast.cpp.s
 
 # target to generate assembly for a file
 core_type_cast.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/core_type_cast.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_cast.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_cast.dir/core_type_cast.cpp.s
 .PHONY : core_type_cast.cpp.s
 
 core_type_ctor.obj: core_type_ctor.cpp.obj
@@ -1573,7 +1573,7 @@ core_type_ctor.obj: core_type_ctor.cpp.obj
 
 # target to build an object file
 core_type_ctor.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/core_type_ctor.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/core_type_ctor.cpp.obj
 .PHONY : core_type_ctor.cpp.obj
 
 core_type_ctor.i: core_type_ctor.cpp.i
@@ -1582,7 +1582,7 @@ core_type_ctor.i: core_type_ctor.cpp.i
 
 # target to preprocess a source file
 core_type_ctor.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/core_type_ctor.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/core_type_ctor.cpp.i
 .PHONY : core_type_ctor.cpp.i
 
 core_type_ctor.s: core_type_ctor.cpp.s
@@ -1591,7 +1591,7 @@ core_type_ctor.s: core_type_ctor.cpp.s
 
 # target to generate assembly for a file
 core_type_ctor.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/core_type_ctor.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_ctor.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_ctor.dir/core_type_ctor.cpp.s
 .PHONY : core_type_ctor.cpp.s
 
 core_type_int.obj: core_type_int.cpp.obj
@@ -1600,7 +1600,7 @@ core_type_int.obj: core_type_int.cpp.obj
 
 # target to build an object file
 core_type_int.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/core_type_int.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/core_type_int.cpp.obj
 .PHONY : core_type_int.cpp.obj
 
 core_type_int.i: core_type_int.cpp.i
@@ -1609,7 +1609,7 @@ core_type_int.i: core_type_int.cpp.i
 
 # target to preprocess a source file
 core_type_int.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/core_type_int.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/core_type_int.cpp.i
 .PHONY : core_type_int.cpp.i
 
 core_type_int.s: core_type_int.cpp.s
@@ -1618,7 +1618,7 @@ core_type_int.s: core_type_int.cpp.s
 
 # target to generate assembly for a file
 core_type_int.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/core_type_int.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_int.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_int.dir/core_type_int.cpp.s
 .PHONY : core_type_int.cpp.s
 
 core_type_length.obj: core_type_length.cpp.obj
@@ -1627,7 +1627,7 @@ core_type_length.obj: core_type_length.cpp.obj
 
 # target to build an object file
 core_type_length.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/core_type_length.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/core_type_length.cpp.obj
 .PHONY : core_type_length.cpp.obj
 
 core_type_length.i: core_type_length.cpp.i
@@ -1636,7 +1636,7 @@ core_type_length.i: core_type_length.cpp.i
 
 # target to preprocess a source file
 core_type_length.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/core_type_length.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/core_type_length.cpp.i
 .PHONY : core_type_length.cpp.i
 
 core_type_length.s: core_type_length.cpp.s
@@ -1645,7 +1645,7 @@ core_type_length.s: core_type_length.cpp.s
 
 # target to generate assembly for a file
 core_type_length.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/core_type_length.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_length.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_length.dir/core_type_length.cpp.s
 .PHONY : core_type_length.cpp.s
 
 core_type_mat2x2.obj: core_type_mat2x2.cpp.obj
@@ -1654,7 +1654,7 @@ core_type_mat2x2.obj: core_type_mat2x2.cpp.obj
 
 # target to build an object file
 core_type_mat2x2.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/core_type_mat2x2.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/core_type_mat2x2.cpp.obj
 .PHONY : core_type_mat2x2.cpp.obj
 
 core_type_mat2x2.i: core_type_mat2x2.cpp.i
@@ -1663,7 +1663,7 @@ core_type_mat2x2.i: core_type_mat2x2.cpp.i
 
 # target to preprocess a source file
 core_type_mat2x2.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/core_type_mat2x2.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/core_type_mat2x2.cpp.i
 .PHONY : core_type_mat2x2.cpp.i
 
 core_type_mat2x2.s: core_type_mat2x2.cpp.s
@@ -1672,7 +1672,7 @@ core_type_mat2x2.s: core_type_mat2x2.cpp.s
 
 # target to generate assembly for a file
 core_type_mat2x2.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/core_type_mat2x2.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x2.dir/core_type_mat2x2.cpp.s
 .PHONY : core_type_mat2x2.cpp.s
 
 core_type_mat2x3.obj: core_type_mat2x3.cpp.obj
@@ -1681,7 +1681,7 @@ core_type_mat2x3.obj: core_type_mat2x3.cpp.obj
 
 # target to build an object file
 core_type_mat2x3.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/core_type_mat2x3.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/core_type_mat2x3.cpp.obj
 .PHONY : core_type_mat2x3.cpp.obj
 
 core_type_mat2x3.i: core_type_mat2x3.cpp.i
@@ -1690,7 +1690,7 @@ core_type_mat2x3.i: core_type_mat2x3.cpp.i
 
 # target to preprocess a source file
 core_type_mat2x3.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/core_type_mat2x3.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/core_type_mat2x3.cpp.i
 .PHONY : core_type_mat2x3.cpp.i
 
 core_type_mat2x3.s: core_type_mat2x3.cpp.s
@@ -1699,7 +1699,7 @@ core_type_mat2x3.s: core_type_mat2x3.cpp.s
 
 # target to generate assembly for a file
 core_type_mat2x3.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/core_type_mat2x3.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x3.dir/core_type_mat2x3.cpp.s
 .PHONY : core_type_mat2x3.cpp.s
 
 core_type_mat2x4.obj: core_type_mat2x4.cpp.obj
@@ -1708,7 +1708,7 @@ core_type_mat2x4.obj: core_type_mat2x4.cpp.obj
 
 # target to build an object file
 core_type_mat2x4.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/core_type_mat2x4.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/core_type_mat2x4.cpp.obj
 .PHONY : core_type_mat2x4.cpp.obj
 
 core_type_mat2x4.i: core_type_mat2x4.cpp.i
@@ -1717,7 +1717,7 @@ core_type_mat2x4.i: core_type_mat2x4.cpp.i
 
 # target to preprocess a source file
 core_type_mat2x4.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/core_type_mat2x4.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/core_type_mat2x4.cpp.i
 .PHONY : core_type_mat2x4.cpp.i
 
 core_type_mat2x4.s: core_type_mat2x4.cpp.s
@@ -1726,7 +1726,7 @@ core_type_mat2x4.s: core_type_mat2x4.cpp.s
 
 # target to generate assembly for a file
 core_type_mat2x4.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/core_type_mat2x4.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat2x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat2x4.dir/core_type_mat2x4.cpp.s
 .PHONY : core_type_mat2x4.cpp.s
 
 core_type_mat3x2.obj: core_type_mat3x2.cpp.obj
@@ -1735,7 +1735,7 @@ core_type_mat3x2.obj: core_type_mat3x2.cpp.obj
 
 # target to build an object file
 core_type_mat3x2.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/core_type_mat3x2.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/core_type_mat3x2.cpp.obj
 .PHONY : core_type_mat3x2.cpp.obj
 
 core_type_mat3x2.i: core_type_mat3x2.cpp.i
@@ -1744,7 +1744,7 @@ core_type_mat3x2.i: core_type_mat3x2.cpp.i
 
 # target to preprocess a source file
 core_type_mat3x2.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/core_type_mat3x2.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/core_type_mat3x2.cpp.i
 .PHONY : core_type_mat3x2.cpp.i
 
 core_type_mat3x2.s: core_type_mat3x2.cpp.s
@@ -1753,7 +1753,7 @@ core_type_mat3x2.s: core_type_mat3x2.cpp.s
 
 # target to generate assembly for a file
 core_type_mat3x2.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/core_type_mat3x2.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x2.dir/core_type_mat3x2.cpp.s
 .PHONY : core_type_mat3x2.cpp.s
 
 core_type_mat3x3.obj: core_type_mat3x3.cpp.obj
@@ -1762,7 +1762,7 @@ core_type_mat3x3.obj: core_type_mat3x3.cpp.obj
 
 # target to build an object file
 core_type_mat3x3.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/core_type_mat3x3.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/core_type_mat3x3.cpp.obj
 .PHONY : core_type_mat3x3.cpp.obj
 
 core_type_mat3x3.i: core_type_mat3x3.cpp.i
@@ -1771,7 +1771,7 @@ core_type_mat3x3.i: core_type_mat3x3.cpp.i
 
 # target to preprocess a source file
 core_type_mat3x3.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/core_type_mat3x3.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/core_type_mat3x3.cpp.i
 .PHONY : core_type_mat3x3.cpp.i
 
 core_type_mat3x3.s: core_type_mat3x3.cpp.s
@@ -1780,7 +1780,7 @@ core_type_mat3x3.s: core_type_mat3x3.cpp.s
 
 # target to generate assembly for a file
 core_type_mat3x3.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/core_type_mat3x3.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x3.dir/core_type_mat3x3.cpp.s
 .PHONY : core_type_mat3x3.cpp.s
 
 core_type_mat3x4.obj: core_type_mat3x4.cpp.obj
@@ -1789,7 +1789,7 @@ core_type_mat3x4.obj: core_type_mat3x4.cpp.obj
 
 # target to build an object file
 core_type_mat3x4.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/core_type_mat3x4.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/core_type_mat3x4.cpp.obj
 .PHONY : core_type_mat3x4.cpp.obj
 
 core_type_mat3x4.i: core_type_mat3x4.cpp.i
@@ -1798,7 +1798,7 @@ core_type_mat3x4.i: core_type_mat3x4.cpp.i
 
 # target to preprocess a source file
 core_type_mat3x4.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/core_type_mat3x4.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/core_type_mat3x4.cpp.i
 .PHONY : core_type_mat3x4.cpp.i
 
 core_type_mat3x4.s: core_type_mat3x4.cpp.s
@@ -1807,7 +1807,7 @@ core_type_mat3x4.s: core_type_mat3x4.cpp.s
 
 # target to generate assembly for a file
 core_type_mat3x4.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/core_type_mat3x4.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat3x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat3x4.dir/core_type_mat3x4.cpp.s
 .PHONY : core_type_mat3x4.cpp.s
 
 core_type_mat4x2.obj: core_type_mat4x2.cpp.obj
@@ -1816,7 +1816,7 @@ core_type_mat4x2.obj: core_type_mat4x2.cpp.obj
 
 # target to build an object file
 core_type_mat4x2.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/core_type_mat4x2.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/core_type_mat4x2.cpp.obj
 .PHONY : core_type_mat4x2.cpp.obj
 
 core_type_mat4x2.i: core_type_mat4x2.cpp.i
@@ -1825,7 +1825,7 @@ core_type_mat4x2.i: core_type_mat4x2.cpp.i
 
 # target to preprocess a source file
 core_type_mat4x2.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/core_type_mat4x2.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/core_type_mat4x2.cpp.i
 .PHONY : core_type_mat4x2.cpp.i
 
 core_type_mat4x2.s: core_type_mat4x2.cpp.s
@@ -1834,7 +1834,7 @@ core_type_mat4x2.s: core_type_mat4x2.cpp.s
 
 # target to generate assembly for a file
 core_type_mat4x2.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/core_type_mat4x2.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x2.dir/core_type_mat4x2.cpp.s
 .PHONY : core_type_mat4x2.cpp.s
 
 core_type_mat4x3.obj: core_type_mat4x3.cpp.obj
@@ -1843,7 +1843,7 @@ core_type_mat4x3.obj: core_type_mat4x3.cpp.obj
 
 # target to build an object file
 core_type_mat4x3.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/core_type_mat4x3.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/core_type_mat4x3.cpp.obj
 .PHONY : core_type_mat4x3.cpp.obj
 
 core_type_mat4x3.i: core_type_mat4x3.cpp.i
@@ -1852,7 +1852,7 @@ core_type_mat4x3.i: core_type_mat4x3.cpp.i
 
 # target to preprocess a source file
 core_type_mat4x3.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/core_type_mat4x3.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/core_type_mat4x3.cpp.i
 .PHONY : core_type_mat4x3.cpp.i
 
 core_type_mat4x3.s: core_type_mat4x3.cpp.s
@@ -1861,7 +1861,7 @@ core_type_mat4x3.s: core_type_mat4x3.cpp.s
 
 # target to generate assembly for a file
 core_type_mat4x3.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/core_type_mat4x3.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x3.dir/core_type_mat4x3.cpp.s
 .PHONY : core_type_mat4x3.cpp.s
 
 core_type_mat4x4.obj: core_type_mat4x4.cpp.obj
@@ -1870,7 +1870,7 @@ core_type_mat4x4.obj: core_type_mat4x4.cpp.obj
 
 # target to build an object file
 core_type_mat4x4.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/core_type_mat4x4.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/core_type_mat4x4.cpp.obj
 .PHONY : core_type_mat4x4.cpp.obj
 
 core_type_mat4x4.i: core_type_mat4x4.cpp.i
@@ -1879,7 +1879,7 @@ core_type_mat4x4.i: core_type_mat4x4.cpp.i
 
 # target to preprocess a source file
 core_type_mat4x4.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/core_type_mat4x4.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/core_type_mat4x4.cpp.i
 .PHONY : core_type_mat4x4.cpp.i
 
 core_type_mat4x4.s: core_type_mat4x4.cpp.s
@@ -1888,7 +1888,7 @@ core_type_mat4x4.s: core_type_mat4x4.cpp.s
 
 # target to generate assembly for a file
 core_type_mat4x4.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/core_type_mat4x4.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_mat4x4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_mat4x4.dir/core_type_mat4x4.cpp.s
 .PHONY : core_type_mat4x4.cpp.s
 
 core_type_vec1.obj: core_type_vec1.cpp.obj
@@ -1897,7 +1897,7 @@ core_type_vec1.obj: core_type_vec1.cpp.obj
 
 # target to build an object file
 core_type_vec1.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/core_type_vec1.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/core_type_vec1.cpp.obj
 .PHONY : core_type_vec1.cpp.obj
 
 core_type_vec1.i: core_type_vec1.cpp.i
@@ -1906,7 +1906,7 @@ core_type_vec1.i: core_type_vec1.cpp.i
 
 # target to preprocess a source file
 core_type_vec1.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/core_type_vec1.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/core_type_vec1.cpp.i
 .PHONY : core_type_vec1.cpp.i
 
 core_type_vec1.s: core_type_vec1.cpp.s
@@ -1915,7 +1915,7 @@ core_type_vec1.s: core_type_vec1.cpp.s
 
 # target to generate assembly for a file
 core_type_vec1.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/core_type_vec1.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec1.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec1.dir/core_type_vec1.cpp.s
 .PHONY : core_type_vec1.cpp.s
 
 core_type_vec2.obj: core_type_vec2.cpp.obj
@@ -1924,7 +1924,7 @@ core_type_vec2.obj: core_type_vec2.cpp.obj
 
 # target to build an object file
 core_type_vec2.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/core_type_vec2.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/core_type_vec2.cpp.obj
 .PHONY : core_type_vec2.cpp.obj
 
 core_type_vec2.i: core_type_vec2.cpp.i
@@ -1933,7 +1933,7 @@ core_type_vec2.i: core_type_vec2.cpp.i
 
 # target to preprocess a source file
 core_type_vec2.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/core_type_vec2.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/core_type_vec2.cpp.i
 .PHONY : core_type_vec2.cpp.i
 
 core_type_vec2.s: core_type_vec2.cpp.s
@@ -1942,7 +1942,7 @@ core_type_vec2.s: core_type_vec2.cpp.s
 
 # target to generate assembly for a file
 core_type_vec2.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/core_type_vec2.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec2.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec2.dir/core_type_vec2.cpp.s
 .PHONY : core_type_vec2.cpp.s
 
 core_type_vec3.obj: core_type_vec3.cpp.obj
@@ -1951,7 +1951,7 @@ core_type_vec3.obj: core_type_vec3.cpp.obj
 
 # target to build an object file
 core_type_vec3.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/core_type_vec3.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/core_type_vec3.cpp.obj
 .PHONY : core_type_vec3.cpp.obj
 
 core_type_vec3.i: core_type_vec3.cpp.i
@@ -1960,7 +1960,7 @@ core_type_vec3.i: core_type_vec3.cpp.i
 
 # target to preprocess a source file
 core_type_vec3.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/core_type_vec3.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/core_type_vec3.cpp.i
 .PHONY : core_type_vec3.cpp.i
 
 core_type_vec3.s: core_type_vec3.cpp.s
@@ -1969,7 +1969,7 @@ core_type_vec3.s: core_type_vec3.cpp.s
 
 # target to generate assembly for a file
 core_type_vec3.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/core_type_vec3.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec3.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec3.dir/core_type_vec3.cpp.s
 .PHONY : core_type_vec3.cpp.s
 
 core_type_vec4.obj: core_type_vec4.cpp.obj
@@ -1978,7 +1978,7 @@ core_type_vec4.obj: core_type_vec4.cpp.obj
 
 # target to build an object file
 core_type_vec4.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/core_type_vec4.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/core_type_vec4.cpp.obj
 .PHONY : core_type_vec4.cpp.obj
 
 core_type_vec4.i: core_type_vec4.cpp.i
@@ -1987,7 +1987,7 @@ core_type_vec4.i: core_type_vec4.cpp.i
 
 # target to preprocess a source file
 core_type_vec4.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/core_type_vec4.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/core_type_vec4.cpp.i
 .PHONY : core_type_vec4.cpp.i
 
 core_type_vec4.s: core_type_vec4.cpp.s
@@ -1996,7 +1996,7 @@ core_type_vec4.s: core_type_vec4.cpp.s
 
 # target to generate assembly for a file
 core_type_vec4.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/core_type_vec4.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\core\CMakeFiles\test-core_type_vec4.dir\build.make Dependencies/GLM/test/core/CMakeFiles/test-core_type_vec4.dir/core_type_vec4.cpp.s
 .PHONY : core_type_vec4.cpp.s
 
 # Help Target
@@ -2198,6 +2198,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

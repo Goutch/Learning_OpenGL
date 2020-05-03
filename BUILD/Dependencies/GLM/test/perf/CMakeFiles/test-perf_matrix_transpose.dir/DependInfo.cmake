@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test/perf/perf_matrix_transpose.cpp" "C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.obj"
+  "C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test/perf/perf_matrix_transpose.cpp" "C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

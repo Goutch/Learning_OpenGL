@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-relea
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,14 +79,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\gtx\CMakeFiles\progress.marks
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\gtx\CMakeFiles\progress.marks
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/clean
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/rule
 
 # Convenience name for target.
@@ -121,12 +121,12 @@ test-gtx_normalize_dot: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_
 
 # fast build rule for target.
 test-gtx_normalize_dot/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/build
 .PHONY : test-gtx_normalize_dot/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/rule
 
 # Convenience name for target.
@@ -136,12 +136,12 @@ test-gtx: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/rule
 
 # fast build rule for target.
 test-gtx/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/build
 .PHONY : test-gtx/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/rule
 
 # Convenience name for target.
@@ -151,12 +151,12 @@ test-gtx_optimum_pow: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.
 
 # fast build rule for target.
 test-gtx_optimum_pow/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/build
 .PHONY : test-gtx_optimum_pow/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/rule
 
 # Convenience name for target.
@@ -166,12 +166,12 @@ test-gtx_compatibility: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibil
 
 # fast build rule for target.
 test-gtx_compatibility/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/build
 .PHONY : test-gtx_compatibility/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/rule
 
 # Convenience name for target.
@@ -181,12 +181,12 @@ test-gtx_scalar_relational: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar
 
 # fast build rule for target.
 test-gtx_scalar_relational/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/build
 .PHONY : test-gtx_scalar_relational/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ test-gtx_io: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/rule
 
 # fast build rule for target.
 test-gtx_io/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/build
 .PHONY : test-gtx_io/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/rule
 
 # Convenience name for target.
@@ -211,12 +211,12 @@ test-gtx_associated_min_max: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_assoc
 
 # fast build rule for target.
 test-gtx_associated_min_max/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/build
 .PHONY : test-gtx_associated_min_max/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/rule
 
 # Convenience name for target.
@@ -226,12 +226,12 @@ test-gtx_closest_point: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_po
 
 # fast build rule for target.
 test-gtx_closest_point/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/build
 .PHONY : test-gtx_closest_point/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/rule
 
 # Convenience name for target.
@@ -241,12 +241,12 @@ test-gtx_range: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/rule
 
 # fast build rule for target.
 test-gtx_range/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/build
 .PHONY : test-gtx_range/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/rule
 
 # Convenience name for target.
@@ -256,12 +256,12 @@ test-gtx_euler_angle: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.
 
 # fast build rule for target.
 test-gtx_euler_angle/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/build
 .PHONY : test-gtx_euler_angle/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/rule
 
 # Convenience name for target.
@@ -271,12 +271,12 @@ test-gtx_color_encoding: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_enc
 
 # fast build rule for target.
 test-gtx_color_encoding/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/build
 .PHONY : test-gtx_color_encoding/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/rule
 
 # Convenience name for target.
@@ -286,12 +286,12 @@ test-gtx_log_base: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/ru
 
 # fast build rule for target.
 test-gtx_log_base/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/build
 .PHONY : test-gtx_log_base/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/rule
 
 # Convenience name for target.
@@ -301,12 +301,12 @@ test-gtx_color_space: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.
 
 # fast build rule for target.
 test-gtx_color_space/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/build
 .PHONY : test-gtx_color_space/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/rule
 
 # Convenience name for target.
@@ -316,12 +316,12 @@ test-gtx_color_space_YCoCg: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_
 
 # fast build rule for target.
 test-gtx_color_space_YCoCg/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/build
 .PHONY : test-gtx_color_space_YCoCg/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/rule
 
 # Convenience name for target.
@@ -331,12 +331,12 @@ test-gtx_intersect: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/
 
 # fast build rule for target.
 test-gtx_intersect/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/build
 .PHONY : test-gtx_intersect/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/rule
 
 # Convenience name for target.
@@ -346,12 +346,12 @@ test-gtx_common: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/rule
 
 # fast build rule for target.
 test-gtx_common/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/build
 .PHONY : test-gtx_common/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/rule
 
 # Convenience name for target.
@@ -361,12 +361,12 @@ test-gtx_component_wise: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component
 
 # fast build rule for target.
 test-gtx_component_wise/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/build
 .PHONY : test-gtx_component_wise/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/rule
 
 # Convenience name for target.
@@ -376,12 +376,12 @@ test-gtx_spline: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/rule
 
 # fast build rule for target.
 test-gtx_spline/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/build
 .PHONY : test-gtx_spline/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/rule
 
 # Convenience name for target.
@@ -391,12 +391,12 @@ test-gtx_easing: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/rule
 
 # fast build rule for target.
 test-gtx_easing/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/build
 .PHONY : test-gtx_easing/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/rule
 
 # Convenience name for target.
@@ -406,12 +406,12 @@ test-gtx_vector_query: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_quer
 
 # fast build rule for target.
 test-gtx_vector_query/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/build
 .PHONY : test-gtx_vector_query/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/rule
 
 # Convenience name for target.
@@ -421,12 +421,12 @@ test-gtx_extend: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/rule
 
 # fast build rule for target.
 test-gtx_extend/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/build
 .PHONY : test-gtx_extend/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/rule
 
 # Convenience name for target.
@@ -436,12 +436,12 @@ test-gtx_extended_min_max: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extende
 
 # fast build rule for target.
 test-gtx_extended_min_max/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/build
 .PHONY : test-gtx_extended_min_max/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/rule
 
 # Convenience name for target.
@@ -451,12 +451,12 @@ test-gtx_exterior_product: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterio
 
 # fast build rule for target.
 test-gtx_exterior_product/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/build
 .PHONY : test-gtx_exterior_product/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/rule
 
 # Convenience name for target.
@@ -466,12 +466,12 @@ test-gtx_fast_exponential: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_ex
 
 # fast build rule for target.
 test-gtx_fast_exponential/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/build
 .PHONY : test-gtx_fast_exponential/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/rule
 
 # Convenience name for target.
@@ -481,12 +481,12 @@ test-gtx_fast_square_root: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_sq
 
 # fast build rule for target.
 test-gtx_fast_square_root/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/build
 .PHONY : test-gtx_fast_square_root/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/rule
 
 # Convenience name for target.
@@ -496,12 +496,12 @@ test-gtx_fast_trigonometry: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_t
 
 # fast build rule for target.
 test-gtx_fast_trigonometry/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/build
 .PHONY : test-gtx_fast_trigonometry/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/rule
 
 # Convenience name for target.
@@ -511,12 +511,12 @@ test-gtx_functions: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/
 
 # fast build rule for target.
 test-gtx_functions/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/build
 .PHONY : test-gtx_functions/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/rule
 
 # Convenience name for target.
@@ -526,12 +526,12 @@ test-gtx_vec_swizzle: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.
 
 # fast build rule for target.
 test-gtx_vec_swizzle/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/build
 .PHONY : test-gtx_vec_swizzle/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/rule
 
 # Convenience name for target.
@@ -541,12 +541,12 @@ test-gtx_gradient_paint: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_
 
 # fast build rule for target.
 test-gtx_gradient_paint/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/build
 .PHONY : test-gtx_gradient_paint/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/rule
 
 # Convenience name for target.
@@ -556,12 +556,12 @@ test-gtx_handed_coordinate_space: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_
 
 # fast build rule for target.
 test-gtx_handed_coordinate_space/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/build
 .PHONY : test-gtx_handed_coordinate_space/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/rule
 
 # Convenience name for target.
@@ -571,12 +571,12 @@ test-gtx_norm: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/rule
 
 # fast build rule for target.
 test-gtx_norm/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/build
 .PHONY : test-gtx_norm/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/rule
 
 # Convenience name for target.
@@ -586,12 +586,12 @@ test-gtx_integer: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/rule
 
 # fast build rule for target.
 test-gtx_integer/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/build
 .PHONY : test-gtx_integer/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/rule
 
 # Convenience name for target.
@@ -601,12 +601,12 @@ test-gtx_load: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/rule
 
 # fast build rule for target.
 test-gtx_load/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/build
 .PHONY : test-gtx_load/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/rule
 
 # Convenience name for target.
@@ -616,12 +616,12 @@ test-gtx_number_precision: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_
 
 # fast build rule for target.
 test-gtx_number_precision/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/build
 .PHONY : test-gtx_number_precision/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/rule
 
 # Convenience name for target.
@@ -631,12 +631,12 @@ test-gtx_matrix_factorisation: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_mat
 
 # fast build rule for target.
 test-gtx_matrix_factorisation/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/build
 .PHONY : test-gtx_matrix_factorisation/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/rule
 
 # Convenience name for target.
@@ -646,12 +646,12 @@ test-gtx_matrix_cross_product: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_mat
 
 # fast build rule for target.
 test-gtx_matrix_cross_product/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/build
 .PHONY : test-gtx_matrix_cross_product/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/rule
 
 # Convenience name for target.
@@ -661,12 +661,12 @@ test-gtx_matrix_decompose: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_
 
 # fast build rule for target.
 test-gtx_matrix_decompose/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/build
 .PHONY : test-gtx_matrix_decompose/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/rule
 
 # Convenience name for target.
@@ -676,12 +676,12 @@ test-gtx_perpendicular: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicu
 
 # fast build rule for target.
 test-gtx_perpendicular/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/build
 .PHONY : test-gtx_perpendicular/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/rule
 
 # Convenience name for target.
@@ -691,12 +691,12 @@ test-gtx_matrix_interpolation: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_mat
 
 # fast build rule for target.
 test-gtx_matrix_interpolation/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/build
 .PHONY : test-gtx_matrix_interpolation/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/rule
 
 # Convenience name for target.
@@ -706,12 +706,12 @@ test-gtx_matrix_major_storage: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_mat
 
 # fast build rule for target.
 test-gtx_matrix_major_storage/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/build
 .PHONY : test-gtx_matrix_major_storage/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/rule
 
 # Convenience name for target.
@@ -721,12 +721,12 @@ test-gtx_matrix_operation: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_
 
 # fast build rule for target.
 test-gtx_matrix_operation/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/build
 .PHONY : test-gtx_matrix_operation/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/rule
 
 # Convenience name for target.
@@ -736,12 +736,12 @@ test-gtx_matrix_query: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_quer
 
 # fast build rule for target.
 test-gtx_matrix_query/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/build
 .PHONY : test-gtx_matrix_query/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/rule
 
 # Convenience name for target.
@@ -751,12 +751,12 @@ test-gtx_matrix_transform_2d: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matr
 
 # fast build rule for target.
 test-gtx_matrix_transform_2d/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/build
 .PHONY : test-gtx_matrix_transform_2d/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/rule
 
 # Convenience name for target.
@@ -766,12 +766,12 @@ test-gtx_vector_angle: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angl
 
 # fast build rule for target.
 test-gtx_vector_angle/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/build
 .PHONY : test-gtx_vector_angle/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/rule
 
 # Convenience name for target.
@@ -781,12 +781,12 @@ test-gtx_normal: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/rule
 
 # fast build rule for target.
 test-gtx_normal/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/build
 .PHONY : test-gtx_normal/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/rule
 
 # Convenience name for target.
@@ -796,12 +796,12 @@ test-gtx_projection: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.di
 
 # fast build rule for target.
 test-gtx_projection/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/build
 .PHONY : test-gtx_projection/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/rule
 
 # Convenience name for target.
@@ -811,12 +811,12 @@ test-gtx_orthonormalize: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonorm
 
 # fast build rule for target.
 test-gtx_orthonormalize/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/build
 .PHONY : test-gtx_orthonormalize/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/rule
 
 # Convenience name for target.
@@ -826,12 +826,12 @@ test-gtx_polar_coordinates: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_
 
 # fast build rule for target.
 test-gtx_polar_coordinates/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/build
 .PHONY : test-gtx_polar_coordinates/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/rule
 
 # Convenience name for target.
@@ -841,12 +841,12 @@ test-gtx_quaternion: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.di
 
 # fast build rule for target.
 test-gtx_quaternion/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/build
 .PHONY : test-gtx_quaternion/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/rule
 
 # Convenience name for target.
@@ -856,12 +856,12 @@ test-gtx_texture: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/rule
 
 # fast build rule for target.
 test-gtx_texture/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/build
 .PHONY : test-gtx_texture/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/rule
 
 # Convenience name for target.
@@ -871,12 +871,12 @@ test-gtx_dual_quaternion: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_qua
 
 # fast build rule for target.
 test-gtx_dual_quaternion/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/build
 .PHONY : test-gtx_dual_quaternion/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/rule
 
 # Convenience name for target.
@@ -886,12 +886,12 @@ test-gtx_rotate_normalized_axis: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_r
 
 # fast build rule for target.
 test-gtx_rotate_normalized_axis/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/build
 .PHONY : test-gtx_rotate_normalized_axis/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/rule
 
 # Convenience name for target.
@@ -901,12 +901,12 @@ test-gtx_rotate_vector: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vec
 
 # fast build rule for target.
 test-gtx_rotate_vector/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/build
 .PHONY : test-gtx_rotate_vector/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/rule
 
 # Convenience name for target.
@@ -916,12 +916,12 @@ test-gtx_scalar_multiplication: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_sc
 
 # fast build rule for target.
 test-gtx_scalar_multiplication/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/build
 .PHONY : test-gtx_scalar_multiplication/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/rule
 
 # Convenience name for target.
@@ -931,12 +931,12 @@ test-gtx_string_cast: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.
 
 # fast build rule for target.
 test-gtx_string_cast/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/build
 .PHONY : test-gtx_string_cast/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/rule
 
 # Convenience name for target.
@@ -946,12 +946,12 @@ test-gtx_type_aligned: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligne
 
 # fast build rule for target.
 test-gtx_type_aligned/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/build
 .PHONY : test-gtx_type_aligned/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/rule
 
 # Convenience name for target.
@@ -961,12 +961,12 @@ test-gtx_type_trait: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.di
 
 # fast build rule for target.
 test-gtx_type_trait/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/build
 .PHONY : test-gtx_type_trait/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/rule
 .PHONY : Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/rule
 
 # Convenience name for target.
@@ -976,7 +976,7 @@ test-gtx_wrap: Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/rule
 
 # fast build rule for target.
 test-gtx_wrap/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/build
 .PHONY : test-gtx_wrap/fast
 
 gtx.obj: gtx.cpp.obj
@@ -985,7 +985,7 @@ gtx.obj: gtx.cpp.obj
 
 # target to build an object file
 gtx.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/gtx.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/gtx.cpp.obj
 .PHONY : gtx.cpp.obj
 
 gtx.i: gtx.cpp.i
@@ -994,7 +994,7 @@ gtx.i: gtx.cpp.i
 
 # target to preprocess a source file
 gtx.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/gtx.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/gtx.cpp.i
 .PHONY : gtx.cpp.i
 
 gtx.s: gtx.cpp.s
@@ -1003,7 +1003,7 @@ gtx.s: gtx.cpp.s
 
 # target to generate assembly for a file
 gtx.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/gtx.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx.dir/gtx.cpp.s
 .PHONY : gtx.cpp.s
 
 gtx_associated_min_max.obj: gtx_associated_min_max.cpp.obj
@@ -1012,7 +1012,7 @@ gtx_associated_min_max.obj: gtx_associated_min_max.cpp.obj
 
 # target to build an object file
 gtx_associated_min_max.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/gtx_associated_min_max.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/gtx_associated_min_max.cpp.obj
 .PHONY : gtx_associated_min_max.cpp.obj
 
 gtx_associated_min_max.i: gtx_associated_min_max.cpp.i
@@ -1021,7 +1021,7 @@ gtx_associated_min_max.i: gtx_associated_min_max.cpp.i
 
 # target to preprocess a source file
 gtx_associated_min_max.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/gtx_associated_min_max.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/gtx_associated_min_max.cpp.i
 .PHONY : gtx_associated_min_max.cpp.i
 
 gtx_associated_min_max.s: gtx_associated_min_max.cpp.s
@@ -1030,7 +1030,7 @@ gtx_associated_min_max.s: gtx_associated_min_max.cpp.s
 
 # target to generate assembly for a file
 gtx_associated_min_max.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/gtx_associated_min_max.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_associated_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_associated_min_max.dir/gtx_associated_min_max.cpp.s
 .PHONY : gtx_associated_min_max.cpp.s
 
 gtx_closest_point.obj: gtx_closest_point.cpp.obj
@@ -1039,7 +1039,7 @@ gtx_closest_point.obj: gtx_closest_point.cpp.obj
 
 # target to build an object file
 gtx_closest_point.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/gtx_closest_point.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/gtx_closest_point.cpp.obj
 .PHONY : gtx_closest_point.cpp.obj
 
 gtx_closest_point.i: gtx_closest_point.cpp.i
@@ -1048,7 +1048,7 @@ gtx_closest_point.i: gtx_closest_point.cpp.i
 
 # target to preprocess a source file
 gtx_closest_point.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/gtx_closest_point.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/gtx_closest_point.cpp.i
 .PHONY : gtx_closest_point.cpp.i
 
 gtx_closest_point.s: gtx_closest_point.cpp.s
@@ -1057,7 +1057,7 @@ gtx_closest_point.s: gtx_closest_point.cpp.s
 
 # target to generate assembly for a file
 gtx_closest_point.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/gtx_closest_point.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_closest_point.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_closest_point.dir/gtx_closest_point.cpp.s
 .PHONY : gtx_closest_point.cpp.s
 
 gtx_color_encoding.obj: gtx_color_encoding.cpp.obj
@@ -1066,7 +1066,7 @@ gtx_color_encoding.obj: gtx_color_encoding.cpp.obj
 
 # target to build an object file
 gtx_color_encoding.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/gtx_color_encoding.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/gtx_color_encoding.cpp.obj
 .PHONY : gtx_color_encoding.cpp.obj
 
 gtx_color_encoding.i: gtx_color_encoding.cpp.i
@@ -1075,7 +1075,7 @@ gtx_color_encoding.i: gtx_color_encoding.cpp.i
 
 # target to preprocess a source file
 gtx_color_encoding.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/gtx_color_encoding.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/gtx_color_encoding.cpp.i
 .PHONY : gtx_color_encoding.cpp.i
 
 gtx_color_encoding.s: gtx_color_encoding.cpp.s
@@ -1084,7 +1084,7 @@ gtx_color_encoding.s: gtx_color_encoding.cpp.s
 
 # target to generate assembly for a file
 gtx_color_encoding.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/gtx_color_encoding.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_encoding.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_encoding.dir/gtx_color_encoding.cpp.s
 .PHONY : gtx_color_encoding.cpp.s
 
 gtx_color_space.obj: gtx_color_space.cpp.obj
@@ -1093,7 +1093,7 @@ gtx_color_space.obj: gtx_color_space.cpp.obj
 
 # target to build an object file
 gtx_color_space.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/gtx_color_space.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/gtx_color_space.cpp.obj
 .PHONY : gtx_color_space.cpp.obj
 
 gtx_color_space.i: gtx_color_space.cpp.i
@@ -1102,7 +1102,7 @@ gtx_color_space.i: gtx_color_space.cpp.i
 
 # target to preprocess a source file
 gtx_color_space.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/gtx_color_space.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/gtx_color_space.cpp.i
 .PHONY : gtx_color_space.cpp.i
 
 gtx_color_space.s: gtx_color_space.cpp.s
@@ -1111,7 +1111,7 @@ gtx_color_space.s: gtx_color_space.cpp.s
 
 # target to generate assembly for a file
 gtx_color_space.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/gtx_color_space.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space.dir/gtx_color_space.cpp.s
 .PHONY : gtx_color_space.cpp.s
 
 gtx_color_space_YCoCg.obj: gtx_color_space_YCoCg.cpp.obj
@@ -1120,7 +1120,7 @@ gtx_color_space_YCoCg.obj: gtx_color_space_YCoCg.cpp.obj
 
 # target to build an object file
 gtx_color_space_YCoCg.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/gtx_color_space_YCoCg.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/gtx_color_space_YCoCg.cpp.obj
 .PHONY : gtx_color_space_YCoCg.cpp.obj
 
 gtx_color_space_YCoCg.i: gtx_color_space_YCoCg.cpp.i
@@ -1129,7 +1129,7 @@ gtx_color_space_YCoCg.i: gtx_color_space_YCoCg.cpp.i
 
 # target to preprocess a source file
 gtx_color_space_YCoCg.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/gtx_color_space_YCoCg.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/gtx_color_space_YCoCg.cpp.i
 .PHONY : gtx_color_space_YCoCg.cpp.i
 
 gtx_color_space_YCoCg.s: gtx_color_space_YCoCg.cpp.s
@@ -1138,7 +1138,7 @@ gtx_color_space_YCoCg.s: gtx_color_space_YCoCg.cpp.s
 
 # target to generate assembly for a file
 gtx_color_space_YCoCg.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/gtx_color_space_YCoCg.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_color_space_YCoCg.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_color_space_YCoCg.dir/gtx_color_space_YCoCg.cpp.s
 .PHONY : gtx_color_space_YCoCg.cpp.s
 
 gtx_common.obj: gtx_common.cpp.obj
@@ -1147,7 +1147,7 @@ gtx_common.obj: gtx_common.cpp.obj
 
 # target to build an object file
 gtx_common.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/gtx_common.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/gtx_common.cpp.obj
 .PHONY : gtx_common.cpp.obj
 
 gtx_common.i: gtx_common.cpp.i
@@ -1156,7 +1156,7 @@ gtx_common.i: gtx_common.cpp.i
 
 # target to preprocess a source file
 gtx_common.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/gtx_common.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/gtx_common.cpp.i
 .PHONY : gtx_common.cpp.i
 
 gtx_common.s: gtx_common.cpp.s
@@ -1165,7 +1165,7 @@ gtx_common.s: gtx_common.cpp.s
 
 # target to generate assembly for a file
 gtx_common.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/gtx_common.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_common.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_common.dir/gtx_common.cpp.s
 .PHONY : gtx_common.cpp.s
 
 gtx_compatibility.obj: gtx_compatibility.cpp.obj
@@ -1174,7 +1174,7 @@ gtx_compatibility.obj: gtx_compatibility.cpp.obj
 
 # target to build an object file
 gtx_compatibility.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/gtx_compatibility.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/gtx_compatibility.cpp.obj
 .PHONY : gtx_compatibility.cpp.obj
 
 gtx_compatibility.i: gtx_compatibility.cpp.i
@@ -1183,7 +1183,7 @@ gtx_compatibility.i: gtx_compatibility.cpp.i
 
 # target to preprocess a source file
 gtx_compatibility.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/gtx_compatibility.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/gtx_compatibility.cpp.i
 .PHONY : gtx_compatibility.cpp.i
 
 gtx_compatibility.s: gtx_compatibility.cpp.s
@@ -1192,7 +1192,7 @@ gtx_compatibility.s: gtx_compatibility.cpp.s
 
 # target to generate assembly for a file
 gtx_compatibility.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/gtx_compatibility.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_compatibility.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_compatibility.dir/gtx_compatibility.cpp.s
 .PHONY : gtx_compatibility.cpp.s
 
 gtx_component_wise.obj: gtx_component_wise.cpp.obj
@@ -1201,7 +1201,7 @@ gtx_component_wise.obj: gtx_component_wise.cpp.obj
 
 # target to build an object file
 gtx_component_wise.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/gtx_component_wise.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/gtx_component_wise.cpp.obj
 .PHONY : gtx_component_wise.cpp.obj
 
 gtx_component_wise.i: gtx_component_wise.cpp.i
@@ -1210,7 +1210,7 @@ gtx_component_wise.i: gtx_component_wise.cpp.i
 
 # target to preprocess a source file
 gtx_component_wise.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/gtx_component_wise.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/gtx_component_wise.cpp.i
 .PHONY : gtx_component_wise.cpp.i
 
 gtx_component_wise.s: gtx_component_wise.cpp.s
@@ -1219,7 +1219,7 @@ gtx_component_wise.s: gtx_component_wise.cpp.s
 
 # target to generate assembly for a file
 gtx_component_wise.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/gtx_component_wise.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_component_wise.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_component_wise.dir/gtx_component_wise.cpp.s
 .PHONY : gtx_component_wise.cpp.s
 
 gtx_dual_quaternion.obj: gtx_dual_quaternion.cpp.obj
@@ -1228,7 +1228,7 @@ gtx_dual_quaternion.obj: gtx_dual_quaternion.cpp.obj
 
 # target to build an object file
 gtx_dual_quaternion.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/gtx_dual_quaternion.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/gtx_dual_quaternion.cpp.obj
 .PHONY : gtx_dual_quaternion.cpp.obj
 
 gtx_dual_quaternion.i: gtx_dual_quaternion.cpp.i
@@ -1237,7 +1237,7 @@ gtx_dual_quaternion.i: gtx_dual_quaternion.cpp.i
 
 # target to preprocess a source file
 gtx_dual_quaternion.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/gtx_dual_quaternion.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/gtx_dual_quaternion.cpp.i
 .PHONY : gtx_dual_quaternion.cpp.i
 
 gtx_dual_quaternion.s: gtx_dual_quaternion.cpp.s
@@ -1246,7 +1246,7 @@ gtx_dual_quaternion.s: gtx_dual_quaternion.cpp.s
 
 # target to generate assembly for a file
 gtx_dual_quaternion.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/gtx_dual_quaternion.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_dual_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_dual_quaternion.dir/gtx_dual_quaternion.cpp.s
 .PHONY : gtx_dual_quaternion.cpp.s
 
 gtx_easing.obj: gtx_easing.cpp.obj
@@ -1255,7 +1255,7 @@ gtx_easing.obj: gtx_easing.cpp.obj
 
 # target to build an object file
 gtx_easing.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/gtx_easing.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/gtx_easing.cpp.obj
 .PHONY : gtx_easing.cpp.obj
 
 gtx_easing.i: gtx_easing.cpp.i
@@ -1264,7 +1264,7 @@ gtx_easing.i: gtx_easing.cpp.i
 
 # target to preprocess a source file
 gtx_easing.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/gtx_easing.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/gtx_easing.cpp.i
 .PHONY : gtx_easing.cpp.i
 
 gtx_easing.s: gtx_easing.cpp.s
@@ -1273,7 +1273,7 @@ gtx_easing.s: gtx_easing.cpp.s
 
 # target to generate assembly for a file
 gtx_easing.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/gtx_easing.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_easing.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_easing.dir/gtx_easing.cpp.s
 .PHONY : gtx_easing.cpp.s
 
 gtx_euler_angle.obj: gtx_euler_angle.cpp.obj
@@ -1282,7 +1282,7 @@ gtx_euler_angle.obj: gtx_euler_angle.cpp.obj
 
 # target to build an object file
 gtx_euler_angle.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/gtx_euler_angle.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/gtx_euler_angle.cpp.obj
 .PHONY : gtx_euler_angle.cpp.obj
 
 gtx_euler_angle.i: gtx_euler_angle.cpp.i
@@ -1291,7 +1291,7 @@ gtx_euler_angle.i: gtx_euler_angle.cpp.i
 
 # target to preprocess a source file
 gtx_euler_angle.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/gtx_euler_angle.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/gtx_euler_angle.cpp.i
 .PHONY : gtx_euler_angle.cpp.i
 
 gtx_euler_angle.s: gtx_euler_angle.cpp.s
@@ -1300,7 +1300,7 @@ gtx_euler_angle.s: gtx_euler_angle.cpp.s
 
 # target to generate assembly for a file
 gtx_euler_angle.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/gtx_euler_angle.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_euler_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_euler_angle.dir/gtx_euler_angle.cpp.s
 .PHONY : gtx_euler_angle.cpp.s
 
 gtx_extend.obj: gtx_extend.cpp.obj
@@ -1309,7 +1309,7 @@ gtx_extend.obj: gtx_extend.cpp.obj
 
 # target to build an object file
 gtx_extend.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/gtx_extend.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/gtx_extend.cpp.obj
 .PHONY : gtx_extend.cpp.obj
 
 gtx_extend.i: gtx_extend.cpp.i
@@ -1318,7 +1318,7 @@ gtx_extend.i: gtx_extend.cpp.i
 
 # target to preprocess a source file
 gtx_extend.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/gtx_extend.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/gtx_extend.cpp.i
 .PHONY : gtx_extend.cpp.i
 
 gtx_extend.s: gtx_extend.cpp.s
@@ -1327,7 +1327,7 @@ gtx_extend.s: gtx_extend.cpp.s
 
 # target to generate assembly for a file
 gtx_extend.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/gtx_extend.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extend.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extend.dir/gtx_extend.cpp.s
 .PHONY : gtx_extend.cpp.s
 
 gtx_extended_min_max.obj: gtx_extended_min_max.cpp.obj
@@ -1336,7 +1336,7 @@ gtx_extended_min_max.obj: gtx_extended_min_max.cpp.obj
 
 # target to build an object file
 gtx_extended_min_max.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/gtx_extended_min_max.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/gtx_extended_min_max.cpp.obj
 .PHONY : gtx_extended_min_max.cpp.obj
 
 gtx_extended_min_max.i: gtx_extended_min_max.cpp.i
@@ -1345,7 +1345,7 @@ gtx_extended_min_max.i: gtx_extended_min_max.cpp.i
 
 # target to preprocess a source file
 gtx_extended_min_max.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/gtx_extended_min_max.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/gtx_extended_min_max.cpp.i
 .PHONY : gtx_extended_min_max.cpp.i
 
 gtx_extended_min_max.s: gtx_extended_min_max.cpp.s
@@ -1354,7 +1354,7 @@ gtx_extended_min_max.s: gtx_extended_min_max.cpp.s
 
 # target to generate assembly for a file
 gtx_extended_min_max.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/gtx_extended_min_max.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_extended_min_max.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_extended_min_max.dir/gtx_extended_min_max.cpp.s
 .PHONY : gtx_extended_min_max.cpp.s
 
 gtx_exterior_product.obj: gtx_exterior_product.cpp.obj
@@ -1363,7 +1363,7 @@ gtx_exterior_product.obj: gtx_exterior_product.cpp.obj
 
 # target to build an object file
 gtx_exterior_product.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/gtx_exterior_product.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/gtx_exterior_product.cpp.obj
 .PHONY : gtx_exterior_product.cpp.obj
 
 gtx_exterior_product.i: gtx_exterior_product.cpp.i
@@ -1372,7 +1372,7 @@ gtx_exterior_product.i: gtx_exterior_product.cpp.i
 
 # target to preprocess a source file
 gtx_exterior_product.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/gtx_exterior_product.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/gtx_exterior_product.cpp.i
 .PHONY : gtx_exterior_product.cpp.i
 
 gtx_exterior_product.s: gtx_exterior_product.cpp.s
@@ -1381,7 +1381,7 @@ gtx_exterior_product.s: gtx_exterior_product.cpp.s
 
 # target to generate assembly for a file
 gtx_exterior_product.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/gtx_exterior_product.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_exterior_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_exterior_product.dir/gtx_exterior_product.cpp.s
 .PHONY : gtx_exterior_product.cpp.s
 
 gtx_fast_exponential.obj: gtx_fast_exponential.cpp.obj
@@ -1390,7 +1390,7 @@ gtx_fast_exponential.obj: gtx_fast_exponential.cpp.obj
 
 # target to build an object file
 gtx_fast_exponential.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/gtx_fast_exponential.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/gtx_fast_exponential.cpp.obj
 .PHONY : gtx_fast_exponential.cpp.obj
 
 gtx_fast_exponential.i: gtx_fast_exponential.cpp.i
@@ -1399,7 +1399,7 @@ gtx_fast_exponential.i: gtx_fast_exponential.cpp.i
 
 # target to preprocess a source file
 gtx_fast_exponential.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/gtx_fast_exponential.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/gtx_fast_exponential.cpp.i
 .PHONY : gtx_fast_exponential.cpp.i
 
 gtx_fast_exponential.s: gtx_fast_exponential.cpp.s
@@ -1408,7 +1408,7 @@ gtx_fast_exponential.s: gtx_fast_exponential.cpp.s
 
 # target to generate assembly for a file
 gtx_fast_exponential.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/gtx_fast_exponential.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_exponential.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_exponential.dir/gtx_fast_exponential.cpp.s
 .PHONY : gtx_fast_exponential.cpp.s
 
 gtx_fast_square_root.obj: gtx_fast_square_root.cpp.obj
@@ -1417,7 +1417,7 @@ gtx_fast_square_root.obj: gtx_fast_square_root.cpp.obj
 
 # target to build an object file
 gtx_fast_square_root.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/gtx_fast_square_root.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/gtx_fast_square_root.cpp.obj
 .PHONY : gtx_fast_square_root.cpp.obj
 
 gtx_fast_square_root.i: gtx_fast_square_root.cpp.i
@@ -1426,7 +1426,7 @@ gtx_fast_square_root.i: gtx_fast_square_root.cpp.i
 
 # target to preprocess a source file
 gtx_fast_square_root.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/gtx_fast_square_root.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/gtx_fast_square_root.cpp.i
 .PHONY : gtx_fast_square_root.cpp.i
 
 gtx_fast_square_root.s: gtx_fast_square_root.cpp.s
@@ -1435,7 +1435,7 @@ gtx_fast_square_root.s: gtx_fast_square_root.cpp.s
 
 # target to generate assembly for a file
 gtx_fast_square_root.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/gtx_fast_square_root.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_square_root.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_square_root.dir/gtx_fast_square_root.cpp.s
 .PHONY : gtx_fast_square_root.cpp.s
 
 gtx_fast_trigonometry.obj: gtx_fast_trigonometry.cpp.obj
@@ -1444,7 +1444,7 @@ gtx_fast_trigonometry.obj: gtx_fast_trigonometry.cpp.obj
 
 # target to build an object file
 gtx_fast_trigonometry.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/gtx_fast_trigonometry.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/gtx_fast_trigonometry.cpp.obj
 .PHONY : gtx_fast_trigonometry.cpp.obj
 
 gtx_fast_trigonometry.i: gtx_fast_trigonometry.cpp.i
@@ -1453,7 +1453,7 @@ gtx_fast_trigonometry.i: gtx_fast_trigonometry.cpp.i
 
 # target to preprocess a source file
 gtx_fast_trigonometry.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/gtx_fast_trigonometry.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/gtx_fast_trigonometry.cpp.i
 .PHONY : gtx_fast_trigonometry.cpp.i
 
 gtx_fast_trigonometry.s: gtx_fast_trigonometry.cpp.s
@@ -1462,7 +1462,7 @@ gtx_fast_trigonometry.s: gtx_fast_trigonometry.cpp.s
 
 # target to generate assembly for a file
 gtx_fast_trigonometry.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/gtx_fast_trigonometry.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_fast_trigonometry.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_fast_trigonometry.dir/gtx_fast_trigonometry.cpp.s
 .PHONY : gtx_fast_trigonometry.cpp.s
 
 gtx_functions.obj: gtx_functions.cpp.obj
@@ -1471,7 +1471,7 @@ gtx_functions.obj: gtx_functions.cpp.obj
 
 # target to build an object file
 gtx_functions.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/gtx_functions.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/gtx_functions.cpp.obj
 .PHONY : gtx_functions.cpp.obj
 
 gtx_functions.i: gtx_functions.cpp.i
@@ -1480,7 +1480,7 @@ gtx_functions.i: gtx_functions.cpp.i
 
 # target to preprocess a source file
 gtx_functions.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/gtx_functions.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/gtx_functions.cpp.i
 .PHONY : gtx_functions.cpp.i
 
 gtx_functions.s: gtx_functions.cpp.s
@@ -1489,7 +1489,7 @@ gtx_functions.s: gtx_functions.cpp.s
 
 # target to generate assembly for a file
 gtx_functions.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/gtx_functions.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_functions.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_functions.dir/gtx_functions.cpp.s
 .PHONY : gtx_functions.cpp.s
 
 gtx_gradient_paint.obj: gtx_gradient_paint.cpp.obj
@@ -1498,7 +1498,7 @@ gtx_gradient_paint.obj: gtx_gradient_paint.cpp.obj
 
 # target to build an object file
 gtx_gradient_paint.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/gtx_gradient_paint.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/gtx_gradient_paint.cpp.obj
 .PHONY : gtx_gradient_paint.cpp.obj
 
 gtx_gradient_paint.i: gtx_gradient_paint.cpp.i
@@ -1507,7 +1507,7 @@ gtx_gradient_paint.i: gtx_gradient_paint.cpp.i
 
 # target to preprocess a source file
 gtx_gradient_paint.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/gtx_gradient_paint.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/gtx_gradient_paint.cpp.i
 .PHONY : gtx_gradient_paint.cpp.i
 
 gtx_gradient_paint.s: gtx_gradient_paint.cpp.s
@@ -1516,7 +1516,7 @@ gtx_gradient_paint.s: gtx_gradient_paint.cpp.s
 
 # target to generate assembly for a file
 gtx_gradient_paint.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/gtx_gradient_paint.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_gradient_paint.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_gradient_paint.dir/gtx_gradient_paint.cpp.s
 .PHONY : gtx_gradient_paint.cpp.s
 
 gtx_handed_coordinate_space.obj: gtx_handed_coordinate_space.cpp.obj
@@ -1525,7 +1525,7 @@ gtx_handed_coordinate_space.obj: gtx_handed_coordinate_space.cpp.obj
 
 # target to build an object file
 gtx_handed_coordinate_space.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/gtx_handed_coordinate_space.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/gtx_handed_coordinate_space.cpp.obj
 .PHONY : gtx_handed_coordinate_space.cpp.obj
 
 gtx_handed_coordinate_space.i: gtx_handed_coordinate_space.cpp.i
@@ -1534,7 +1534,7 @@ gtx_handed_coordinate_space.i: gtx_handed_coordinate_space.cpp.i
 
 # target to preprocess a source file
 gtx_handed_coordinate_space.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/gtx_handed_coordinate_space.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/gtx_handed_coordinate_space.cpp.i
 .PHONY : gtx_handed_coordinate_space.cpp.i
 
 gtx_handed_coordinate_space.s: gtx_handed_coordinate_space.cpp.s
@@ -1543,7 +1543,7 @@ gtx_handed_coordinate_space.s: gtx_handed_coordinate_space.cpp.s
 
 # target to generate assembly for a file
 gtx_handed_coordinate_space.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/gtx_handed_coordinate_space.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_handed_coordinate_space.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_handed_coordinate_space.dir/gtx_handed_coordinate_space.cpp.s
 .PHONY : gtx_handed_coordinate_space.cpp.s
 
 gtx_integer.obj: gtx_integer.cpp.obj
@@ -1552,7 +1552,7 @@ gtx_integer.obj: gtx_integer.cpp.obj
 
 # target to build an object file
 gtx_integer.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/gtx_integer.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/gtx_integer.cpp.obj
 .PHONY : gtx_integer.cpp.obj
 
 gtx_integer.i: gtx_integer.cpp.i
@@ -1561,7 +1561,7 @@ gtx_integer.i: gtx_integer.cpp.i
 
 # target to preprocess a source file
 gtx_integer.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/gtx_integer.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/gtx_integer.cpp.i
 .PHONY : gtx_integer.cpp.i
 
 gtx_integer.s: gtx_integer.cpp.s
@@ -1570,7 +1570,7 @@ gtx_integer.s: gtx_integer.cpp.s
 
 # target to generate assembly for a file
 gtx_integer.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/gtx_integer.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_integer.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_integer.dir/gtx_integer.cpp.s
 .PHONY : gtx_integer.cpp.s
 
 gtx_intersect.obj: gtx_intersect.cpp.obj
@@ -1579,7 +1579,7 @@ gtx_intersect.obj: gtx_intersect.cpp.obj
 
 # target to build an object file
 gtx_intersect.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/gtx_intersect.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/gtx_intersect.cpp.obj
 .PHONY : gtx_intersect.cpp.obj
 
 gtx_intersect.i: gtx_intersect.cpp.i
@@ -1588,7 +1588,7 @@ gtx_intersect.i: gtx_intersect.cpp.i
 
 # target to preprocess a source file
 gtx_intersect.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/gtx_intersect.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/gtx_intersect.cpp.i
 .PHONY : gtx_intersect.cpp.i
 
 gtx_intersect.s: gtx_intersect.cpp.s
@@ -1597,7 +1597,7 @@ gtx_intersect.s: gtx_intersect.cpp.s
 
 # target to generate assembly for a file
 gtx_intersect.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/gtx_intersect.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_intersect.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_intersect.dir/gtx_intersect.cpp.s
 .PHONY : gtx_intersect.cpp.s
 
 gtx_io.obj: gtx_io.cpp.obj
@@ -1606,7 +1606,7 @@ gtx_io.obj: gtx_io.cpp.obj
 
 # target to build an object file
 gtx_io.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/gtx_io.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/gtx_io.cpp.obj
 .PHONY : gtx_io.cpp.obj
 
 gtx_io.i: gtx_io.cpp.i
@@ -1615,7 +1615,7 @@ gtx_io.i: gtx_io.cpp.i
 
 # target to preprocess a source file
 gtx_io.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/gtx_io.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/gtx_io.cpp.i
 .PHONY : gtx_io.cpp.i
 
 gtx_io.s: gtx_io.cpp.s
@@ -1624,7 +1624,7 @@ gtx_io.s: gtx_io.cpp.s
 
 # target to generate assembly for a file
 gtx_io.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/gtx_io.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_io.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_io.dir/gtx_io.cpp.s
 .PHONY : gtx_io.cpp.s
 
 gtx_load.obj: gtx_load.cpp.obj
@@ -1633,7 +1633,7 @@ gtx_load.obj: gtx_load.cpp.obj
 
 # target to build an object file
 gtx_load.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/gtx_load.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/gtx_load.cpp.obj
 .PHONY : gtx_load.cpp.obj
 
 gtx_load.i: gtx_load.cpp.i
@@ -1642,7 +1642,7 @@ gtx_load.i: gtx_load.cpp.i
 
 # target to preprocess a source file
 gtx_load.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/gtx_load.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/gtx_load.cpp.i
 .PHONY : gtx_load.cpp.i
 
 gtx_load.s: gtx_load.cpp.s
@@ -1651,7 +1651,7 @@ gtx_load.s: gtx_load.cpp.s
 
 # target to generate assembly for a file
 gtx_load.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/gtx_load.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_load.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_load.dir/gtx_load.cpp.s
 .PHONY : gtx_load.cpp.s
 
 gtx_log_base.obj: gtx_log_base.cpp.obj
@@ -1660,7 +1660,7 @@ gtx_log_base.obj: gtx_log_base.cpp.obj
 
 # target to build an object file
 gtx_log_base.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/gtx_log_base.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/gtx_log_base.cpp.obj
 .PHONY : gtx_log_base.cpp.obj
 
 gtx_log_base.i: gtx_log_base.cpp.i
@@ -1669,7 +1669,7 @@ gtx_log_base.i: gtx_log_base.cpp.i
 
 # target to preprocess a source file
 gtx_log_base.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/gtx_log_base.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/gtx_log_base.cpp.i
 .PHONY : gtx_log_base.cpp.i
 
 gtx_log_base.s: gtx_log_base.cpp.s
@@ -1678,7 +1678,7 @@ gtx_log_base.s: gtx_log_base.cpp.s
 
 # target to generate assembly for a file
 gtx_log_base.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/gtx_log_base.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_log_base.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_log_base.dir/gtx_log_base.cpp.s
 .PHONY : gtx_log_base.cpp.s
 
 gtx_matrix_cross_product.obj: gtx_matrix_cross_product.cpp.obj
@@ -1687,7 +1687,7 @@ gtx_matrix_cross_product.obj: gtx_matrix_cross_product.cpp.obj
 
 # target to build an object file
 gtx_matrix_cross_product.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/gtx_matrix_cross_product.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/gtx_matrix_cross_product.cpp.obj
 .PHONY : gtx_matrix_cross_product.cpp.obj
 
 gtx_matrix_cross_product.i: gtx_matrix_cross_product.cpp.i
@@ -1696,7 +1696,7 @@ gtx_matrix_cross_product.i: gtx_matrix_cross_product.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_cross_product.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/gtx_matrix_cross_product.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/gtx_matrix_cross_product.cpp.i
 .PHONY : gtx_matrix_cross_product.cpp.i
 
 gtx_matrix_cross_product.s: gtx_matrix_cross_product.cpp.s
@@ -1705,7 +1705,7 @@ gtx_matrix_cross_product.s: gtx_matrix_cross_product.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_cross_product.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/gtx_matrix_cross_product.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_cross_product.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_cross_product.dir/gtx_matrix_cross_product.cpp.s
 .PHONY : gtx_matrix_cross_product.cpp.s
 
 gtx_matrix_decompose.obj: gtx_matrix_decompose.cpp.obj
@@ -1714,7 +1714,7 @@ gtx_matrix_decompose.obj: gtx_matrix_decompose.cpp.obj
 
 # target to build an object file
 gtx_matrix_decompose.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/gtx_matrix_decompose.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/gtx_matrix_decompose.cpp.obj
 .PHONY : gtx_matrix_decompose.cpp.obj
 
 gtx_matrix_decompose.i: gtx_matrix_decompose.cpp.i
@@ -1723,7 +1723,7 @@ gtx_matrix_decompose.i: gtx_matrix_decompose.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_decompose.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/gtx_matrix_decompose.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/gtx_matrix_decompose.cpp.i
 .PHONY : gtx_matrix_decompose.cpp.i
 
 gtx_matrix_decompose.s: gtx_matrix_decompose.cpp.s
@@ -1732,7 +1732,7 @@ gtx_matrix_decompose.s: gtx_matrix_decompose.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_decompose.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/gtx_matrix_decompose.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_decompose.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_decompose.dir/gtx_matrix_decompose.cpp.s
 .PHONY : gtx_matrix_decompose.cpp.s
 
 gtx_matrix_factorisation.obj: gtx_matrix_factorisation.cpp.obj
@@ -1741,7 +1741,7 @@ gtx_matrix_factorisation.obj: gtx_matrix_factorisation.cpp.obj
 
 # target to build an object file
 gtx_matrix_factorisation.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/gtx_matrix_factorisation.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/gtx_matrix_factorisation.cpp.obj
 .PHONY : gtx_matrix_factorisation.cpp.obj
 
 gtx_matrix_factorisation.i: gtx_matrix_factorisation.cpp.i
@@ -1750,7 +1750,7 @@ gtx_matrix_factorisation.i: gtx_matrix_factorisation.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_factorisation.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/gtx_matrix_factorisation.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/gtx_matrix_factorisation.cpp.i
 .PHONY : gtx_matrix_factorisation.cpp.i
 
 gtx_matrix_factorisation.s: gtx_matrix_factorisation.cpp.s
@@ -1759,7 +1759,7 @@ gtx_matrix_factorisation.s: gtx_matrix_factorisation.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_factorisation.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/gtx_matrix_factorisation.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_factorisation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_factorisation.dir/gtx_matrix_factorisation.cpp.s
 .PHONY : gtx_matrix_factorisation.cpp.s
 
 gtx_matrix_interpolation.obj: gtx_matrix_interpolation.cpp.obj
@@ -1768,7 +1768,7 @@ gtx_matrix_interpolation.obj: gtx_matrix_interpolation.cpp.obj
 
 # target to build an object file
 gtx_matrix_interpolation.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/gtx_matrix_interpolation.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/gtx_matrix_interpolation.cpp.obj
 .PHONY : gtx_matrix_interpolation.cpp.obj
 
 gtx_matrix_interpolation.i: gtx_matrix_interpolation.cpp.i
@@ -1777,7 +1777,7 @@ gtx_matrix_interpolation.i: gtx_matrix_interpolation.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_interpolation.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/gtx_matrix_interpolation.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/gtx_matrix_interpolation.cpp.i
 .PHONY : gtx_matrix_interpolation.cpp.i
 
 gtx_matrix_interpolation.s: gtx_matrix_interpolation.cpp.s
@@ -1786,7 +1786,7 @@ gtx_matrix_interpolation.s: gtx_matrix_interpolation.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_interpolation.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/gtx_matrix_interpolation.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_interpolation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_interpolation.dir/gtx_matrix_interpolation.cpp.s
 .PHONY : gtx_matrix_interpolation.cpp.s
 
 gtx_matrix_major_storage.obj: gtx_matrix_major_storage.cpp.obj
@@ -1795,7 +1795,7 @@ gtx_matrix_major_storage.obj: gtx_matrix_major_storage.cpp.obj
 
 # target to build an object file
 gtx_matrix_major_storage.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/gtx_matrix_major_storage.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/gtx_matrix_major_storage.cpp.obj
 .PHONY : gtx_matrix_major_storage.cpp.obj
 
 gtx_matrix_major_storage.i: gtx_matrix_major_storage.cpp.i
@@ -1804,7 +1804,7 @@ gtx_matrix_major_storage.i: gtx_matrix_major_storage.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_major_storage.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/gtx_matrix_major_storage.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/gtx_matrix_major_storage.cpp.i
 .PHONY : gtx_matrix_major_storage.cpp.i
 
 gtx_matrix_major_storage.s: gtx_matrix_major_storage.cpp.s
@@ -1813,7 +1813,7 @@ gtx_matrix_major_storage.s: gtx_matrix_major_storage.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_major_storage.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/gtx_matrix_major_storage.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_major_storage.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_major_storage.dir/gtx_matrix_major_storage.cpp.s
 .PHONY : gtx_matrix_major_storage.cpp.s
 
 gtx_matrix_operation.obj: gtx_matrix_operation.cpp.obj
@@ -1822,7 +1822,7 @@ gtx_matrix_operation.obj: gtx_matrix_operation.cpp.obj
 
 # target to build an object file
 gtx_matrix_operation.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/gtx_matrix_operation.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/gtx_matrix_operation.cpp.obj
 .PHONY : gtx_matrix_operation.cpp.obj
 
 gtx_matrix_operation.i: gtx_matrix_operation.cpp.i
@@ -1831,7 +1831,7 @@ gtx_matrix_operation.i: gtx_matrix_operation.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_operation.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/gtx_matrix_operation.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/gtx_matrix_operation.cpp.i
 .PHONY : gtx_matrix_operation.cpp.i
 
 gtx_matrix_operation.s: gtx_matrix_operation.cpp.s
@@ -1840,7 +1840,7 @@ gtx_matrix_operation.s: gtx_matrix_operation.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_operation.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/gtx_matrix_operation.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_operation.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_operation.dir/gtx_matrix_operation.cpp.s
 .PHONY : gtx_matrix_operation.cpp.s
 
 gtx_matrix_query.obj: gtx_matrix_query.cpp.obj
@@ -1849,7 +1849,7 @@ gtx_matrix_query.obj: gtx_matrix_query.cpp.obj
 
 # target to build an object file
 gtx_matrix_query.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/gtx_matrix_query.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/gtx_matrix_query.cpp.obj
 .PHONY : gtx_matrix_query.cpp.obj
 
 gtx_matrix_query.i: gtx_matrix_query.cpp.i
@@ -1858,7 +1858,7 @@ gtx_matrix_query.i: gtx_matrix_query.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_query.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/gtx_matrix_query.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/gtx_matrix_query.cpp.i
 .PHONY : gtx_matrix_query.cpp.i
 
 gtx_matrix_query.s: gtx_matrix_query.cpp.s
@@ -1867,7 +1867,7 @@ gtx_matrix_query.s: gtx_matrix_query.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_query.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/gtx_matrix_query.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_query.dir/gtx_matrix_query.cpp.s
 .PHONY : gtx_matrix_query.cpp.s
 
 gtx_matrix_transform_2d.obj: gtx_matrix_transform_2d.cpp.obj
@@ -1876,7 +1876,7 @@ gtx_matrix_transform_2d.obj: gtx_matrix_transform_2d.cpp.obj
 
 # target to build an object file
 gtx_matrix_transform_2d.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/gtx_matrix_transform_2d.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/gtx_matrix_transform_2d.cpp.obj
 .PHONY : gtx_matrix_transform_2d.cpp.obj
 
 gtx_matrix_transform_2d.i: gtx_matrix_transform_2d.cpp.i
@@ -1885,7 +1885,7 @@ gtx_matrix_transform_2d.i: gtx_matrix_transform_2d.cpp.i
 
 # target to preprocess a source file
 gtx_matrix_transform_2d.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/gtx_matrix_transform_2d.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/gtx_matrix_transform_2d.cpp.i
 .PHONY : gtx_matrix_transform_2d.cpp.i
 
 gtx_matrix_transform_2d.s: gtx_matrix_transform_2d.cpp.s
@@ -1894,7 +1894,7 @@ gtx_matrix_transform_2d.s: gtx_matrix_transform_2d.cpp.s
 
 # target to generate assembly for a file
 gtx_matrix_transform_2d.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/gtx_matrix_transform_2d.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_matrix_transform_2d.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_matrix_transform_2d.dir/gtx_matrix_transform_2d.cpp.s
 .PHONY : gtx_matrix_transform_2d.cpp.s
 
 gtx_norm.obj: gtx_norm.cpp.obj
@@ -1903,7 +1903,7 @@ gtx_norm.obj: gtx_norm.cpp.obj
 
 # target to build an object file
 gtx_norm.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/gtx_norm.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/gtx_norm.cpp.obj
 .PHONY : gtx_norm.cpp.obj
 
 gtx_norm.i: gtx_norm.cpp.i
@@ -1912,7 +1912,7 @@ gtx_norm.i: gtx_norm.cpp.i
 
 # target to preprocess a source file
 gtx_norm.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/gtx_norm.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/gtx_norm.cpp.i
 .PHONY : gtx_norm.cpp.i
 
 gtx_norm.s: gtx_norm.cpp.s
@@ -1921,7 +1921,7 @@ gtx_norm.s: gtx_norm.cpp.s
 
 # target to generate assembly for a file
 gtx_norm.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/gtx_norm.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_norm.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_norm.dir/gtx_norm.cpp.s
 .PHONY : gtx_norm.cpp.s
 
 gtx_normal.obj: gtx_normal.cpp.obj
@@ -1930,7 +1930,7 @@ gtx_normal.obj: gtx_normal.cpp.obj
 
 # target to build an object file
 gtx_normal.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/gtx_normal.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/gtx_normal.cpp.obj
 .PHONY : gtx_normal.cpp.obj
 
 gtx_normal.i: gtx_normal.cpp.i
@@ -1939,7 +1939,7 @@ gtx_normal.i: gtx_normal.cpp.i
 
 # target to preprocess a source file
 gtx_normal.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/gtx_normal.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/gtx_normal.cpp.i
 .PHONY : gtx_normal.cpp.i
 
 gtx_normal.s: gtx_normal.cpp.s
@@ -1948,7 +1948,7 @@ gtx_normal.s: gtx_normal.cpp.s
 
 # target to generate assembly for a file
 gtx_normal.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/gtx_normal.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normal.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normal.dir/gtx_normal.cpp.s
 .PHONY : gtx_normal.cpp.s
 
 gtx_normalize_dot.obj: gtx_normalize_dot.cpp.obj
@@ -1957,7 +1957,7 @@ gtx_normalize_dot.obj: gtx_normalize_dot.cpp.obj
 
 # target to build an object file
 gtx_normalize_dot.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/gtx_normalize_dot.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/gtx_normalize_dot.cpp.obj
 .PHONY : gtx_normalize_dot.cpp.obj
 
 gtx_normalize_dot.i: gtx_normalize_dot.cpp.i
@@ -1966,7 +1966,7 @@ gtx_normalize_dot.i: gtx_normalize_dot.cpp.i
 
 # target to preprocess a source file
 gtx_normalize_dot.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/gtx_normalize_dot.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/gtx_normalize_dot.cpp.i
 .PHONY : gtx_normalize_dot.cpp.i
 
 gtx_normalize_dot.s: gtx_normalize_dot.cpp.s
@@ -1975,7 +1975,7 @@ gtx_normalize_dot.s: gtx_normalize_dot.cpp.s
 
 # target to generate assembly for a file
 gtx_normalize_dot.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/gtx_normalize_dot.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_normalize_dot.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_normalize_dot.dir/gtx_normalize_dot.cpp.s
 .PHONY : gtx_normalize_dot.cpp.s
 
 gtx_number_precision.obj: gtx_number_precision.cpp.obj
@@ -1984,7 +1984,7 @@ gtx_number_precision.obj: gtx_number_precision.cpp.obj
 
 # target to build an object file
 gtx_number_precision.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/gtx_number_precision.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/gtx_number_precision.cpp.obj
 .PHONY : gtx_number_precision.cpp.obj
 
 gtx_number_precision.i: gtx_number_precision.cpp.i
@@ -1993,7 +1993,7 @@ gtx_number_precision.i: gtx_number_precision.cpp.i
 
 # target to preprocess a source file
 gtx_number_precision.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/gtx_number_precision.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/gtx_number_precision.cpp.i
 .PHONY : gtx_number_precision.cpp.i
 
 gtx_number_precision.s: gtx_number_precision.cpp.s
@@ -2002,7 +2002,7 @@ gtx_number_precision.s: gtx_number_precision.cpp.s
 
 # target to generate assembly for a file
 gtx_number_precision.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/gtx_number_precision.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_number_precision.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_number_precision.dir/gtx_number_precision.cpp.s
 .PHONY : gtx_number_precision.cpp.s
 
 gtx_optimum_pow.obj: gtx_optimum_pow.cpp.obj
@@ -2011,7 +2011,7 @@ gtx_optimum_pow.obj: gtx_optimum_pow.cpp.obj
 
 # target to build an object file
 gtx_optimum_pow.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/gtx_optimum_pow.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/gtx_optimum_pow.cpp.obj
 .PHONY : gtx_optimum_pow.cpp.obj
 
 gtx_optimum_pow.i: gtx_optimum_pow.cpp.i
@@ -2020,7 +2020,7 @@ gtx_optimum_pow.i: gtx_optimum_pow.cpp.i
 
 # target to preprocess a source file
 gtx_optimum_pow.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/gtx_optimum_pow.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/gtx_optimum_pow.cpp.i
 .PHONY : gtx_optimum_pow.cpp.i
 
 gtx_optimum_pow.s: gtx_optimum_pow.cpp.s
@@ -2029,7 +2029,7 @@ gtx_optimum_pow.s: gtx_optimum_pow.cpp.s
 
 # target to generate assembly for a file
 gtx_optimum_pow.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/gtx_optimum_pow.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_optimum_pow.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_optimum_pow.dir/gtx_optimum_pow.cpp.s
 .PHONY : gtx_optimum_pow.cpp.s
 
 gtx_orthonormalize.obj: gtx_orthonormalize.cpp.obj
@@ -2038,7 +2038,7 @@ gtx_orthonormalize.obj: gtx_orthonormalize.cpp.obj
 
 # target to build an object file
 gtx_orthonormalize.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/gtx_orthonormalize.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/gtx_orthonormalize.cpp.obj
 .PHONY : gtx_orthonormalize.cpp.obj
 
 gtx_orthonormalize.i: gtx_orthonormalize.cpp.i
@@ -2047,7 +2047,7 @@ gtx_orthonormalize.i: gtx_orthonormalize.cpp.i
 
 # target to preprocess a source file
 gtx_orthonormalize.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/gtx_orthonormalize.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/gtx_orthonormalize.cpp.i
 .PHONY : gtx_orthonormalize.cpp.i
 
 gtx_orthonormalize.s: gtx_orthonormalize.cpp.s
@@ -2056,7 +2056,7 @@ gtx_orthonormalize.s: gtx_orthonormalize.cpp.s
 
 # target to generate assembly for a file
 gtx_orthonormalize.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/gtx_orthonormalize.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_orthonormalize.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_orthonormalize.dir/gtx_orthonormalize.cpp.s
 .PHONY : gtx_orthonormalize.cpp.s
 
 gtx_perpendicular.obj: gtx_perpendicular.cpp.obj
@@ -2065,7 +2065,7 @@ gtx_perpendicular.obj: gtx_perpendicular.cpp.obj
 
 # target to build an object file
 gtx_perpendicular.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/gtx_perpendicular.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/gtx_perpendicular.cpp.obj
 .PHONY : gtx_perpendicular.cpp.obj
 
 gtx_perpendicular.i: gtx_perpendicular.cpp.i
@@ -2074,7 +2074,7 @@ gtx_perpendicular.i: gtx_perpendicular.cpp.i
 
 # target to preprocess a source file
 gtx_perpendicular.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/gtx_perpendicular.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/gtx_perpendicular.cpp.i
 .PHONY : gtx_perpendicular.cpp.i
 
 gtx_perpendicular.s: gtx_perpendicular.cpp.s
@@ -2083,7 +2083,7 @@ gtx_perpendicular.s: gtx_perpendicular.cpp.s
 
 # target to generate assembly for a file
 gtx_perpendicular.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/gtx_perpendicular.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_perpendicular.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_perpendicular.dir/gtx_perpendicular.cpp.s
 .PHONY : gtx_perpendicular.cpp.s
 
 gtx_polar_coordinates.obj: gtx_polar_coordinates.cpp.obj
@@ -2092,7 +2092,7 @@ gtx_polar_coordinates.obj: gtx_polar_coordinates.cpp.obj
 
 # target to build an object file
 gtx_polar_coordinates.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/gtx_polar_coordinates.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/gtx_polar_coordinates.cpp.obj
 .PHONY : gtx_polar_coordinates.cpp.obj
 
 gtx_polar_coordinates.i: gtx_polar_coordinates.cpp.i
@@ -2101,7 +2101,7 @@ gtx_polar_coordinates.i: gtx_polar_coordinates.cpp.i
 
 # target to preprocess a source file
 gtx_polar_coordinates.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/gtx_polar_coordinates.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/gtx_polar_coordinates.cpp.i
 .PHONY : gtx_polar_coordinates.cpp.i
 
 gtx_polar_coordinates.s: gtx_polar_coordinates.cpp.s
@@ -2110,7 +2110,7 @@ gtx_polar_coordinates.s: gtx_polar_coordinates.cpp.s
 
 # target to generate assembly for a file
 gtx_polar_coordinates.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/gtx_polar_coordinates.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_polar_coordinates.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_polar_coordinates.dir/gtx_polar_coordinates.cpp.s
 .PHONY : gtx_polar_coordinates.cpp.s
 
 gtx_projection.obj: gtx_projection.cpp.obj
@@ -2119,7 +2119,7 @@ gtx_projection.obj: gtx_projection.cpp.obj
 
 # target to build an object file
 gtx_projection.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/gtx_projection.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/gtx_projection.cpp.obj
 .PHONY : gtx_projection.cpp.obj
 
 gtx_projection.i: gtx_projection.cpp.i
@@ -2128,7 +2128,7 @@ gtx_projection.i: gtx_projection.cpp.i
 
 # target to preprocess a source file
 gtx_projection.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/gtx_projection.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/gtx_projection.cpp.i
 .PHONY : gtx_projection.cpp.i
 
 gtx_projection.s: gtx_projection.cpp.s
@@ -2137,7 +2137,7 @@ gtx_projection.s: gtx_projection.cpp.s
 
 # target to generate assembly for a file
 gtx_projection.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/gtx_projection.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_projection.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_projection.dir/gtx_projection.cpp.s
 .PHONY : gtx_projection.cpp.s
 
 gtx_quaternion.obj: gtx_quaternion.cpp.obj
@@ -2146,7 +2146,7 @@ gtx_quaternion.obj: gtx_quaternion.cpp.obj
 
 # target to build an object file
 gtx_quaternion.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/gtx_quaternion.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/gtx_quaternion.cpp.obj
 .PHONY : gtx_quaternion.cpp.obj
 
 gtx_quaternion.i: gtx_quaternion.cpp.i
@@ -2155,7 +2155,7 @@ gtx_quaternion.i: gtx_quaternion.cpp.i
 
 # target to preprocess a source file
 gtx_quaternion.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/gtx_quaternion.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/gtx_quaternion.cpp.i
 .PHONY : gtx_quaternion.cpp.i
 
 gtx_quaternion.s: gtx_quaternion.cpp.s
@@ -2164,7 +2164,7 @@ gtx_quaternion.s: gtx_quaternion.cpp.s
 
 # target to generate assembly for a file
 gtx_quaternion.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/gtx_quaternion.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_quaternion.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_quaternion.dir/gtx_quaternion.cpp.s
 .PHONY : gtx_quaternion.cpp.s
 
 gtx_range.obj: gtx_range.cpp.obj
@@ -2173,7 +2173,7 @@ gtx_range.obj: gtx_range.cpp.obj
 
 # target to build an object file
 gtx_range.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/gtx_range.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/gtx_range.cpp.obj
 .PHONY : gtx_range.cpp.obj
 
 gtx_range.i: gtx_range.cpp.i
@@ -2182,7 +2182,7 @@ gtx_range.i: gtx_range.cpp.i
 
 # target to preprocess a source file
 gtx_range.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/gtx_range.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/gtx_range.cpp.i
 .PHONY : gtx_range.cpp.i
 
 gtx_range.s: gtx_range.cpp.s
@@ -2191,7 +2191,7 @@ gtx_range.s: gtx_range.cpp.s
 
 # target to generate assembly for a file
 gtx_range.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/gtx_range.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_range.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_range.dir/gtx_range.cpp.s
 .PHONY : gtx_range.cpp.s
 
 gtx_rotate_normalized_axis.obj: gtx_rotate_normalized_axis.cpp.obj
@@ -2200,7 +2200,7 @@ gtx_rotate_normalized_axis.obj: gtx_rotate_normalized_axis.cpp.obj
 
 # target to build an object file
 gtx_rotate_normalized_axis.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/gtx_rotate_normalized_axis.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/gtx_rotate_normalized_axis.cpp.obj
 .PHONY : gtx_rotate_normalized_axis.cpp.obj
 
 gtx_rotate_normalized_axis.i: gtx_rotate_normalized_axis.cpp.i
@@ -2209,7 +2209,7 @@ gtx_rotate_normalized_axis.i: gtx_rotate_normalized_axis.cpp.i
 
 # target to preprocess a source file
 gtx_rotate_normalized_axis.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/gtx_rotate_normalized_axis.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/gtx_rotate_normalized_axis.cpp.i
 .PHONY : gtx_rotate_normalized_axis.cpp.i
 
 gtx_rotate_normalized_axis.s: gtx_rotate_normalized_axis.cpp.s
@@ -2218,7 +2218,7 @@ gtx_rotate_normalized_axis.s: gtx_rotate_normalized_axis.cpp.s
 
 # target to generate assembly for a file
 gtx_rotate_normalized_axis.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/gtx_rotate_normalized_axis.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_normalized_axis.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_normalized_axis.dir/gtx_rotate_normalized_axis.cpp.s
 .PHONY : gtx_rotate_normalized_axis.cpp.s
 
 gtx_rotate_vector.obj: gtx_rotate_vector.cpp.obj
@@ -2227,7 +2227,7 @@ gtx_rotate_vector.obj: gtx_rotate_vector.cpp.obj
 
 # target to build an object file
 gtx_rotate_vector.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/gtx_rotate_vector.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/gtx_rotate_vector.cpp.obj
 .PHONY : gtx_rotate_vector.cpp.obj
 
 gtx_rotate_vector.i: gtx_rotate_vector.cpp.i
@@ -2236,7 +2236,7 @@ gtx_rotate_vector.i: gtx_rotate_vector.cpp.i
 
 # target to preprocess a source file
 gtx_rotate_vector.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/gtx_rotate_vector.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/gtx_rotate_vector.cpp.i
 .PHONY : gtx_rotate_vector.cpp.i
 
 gtx_rotate_vector.s: gtx_rotate_vector.cpp.s
@@ -2245,7 +2245,7 @@ gtx_rotate_vector.s: gtx_rotate_vector.cpp.s
 
 # target to generate assembly for a file
 gtx_rotate_vector.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/gtx_rotate_vector.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_rotate_vector.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_rotate_vector.dir/gtx_rotate_vector.cpp.s
 .PHONY : gtx_rotate_vector.cpp.s
 
 gtx_scalar_multiplication.obj: gtx_scalar_multiplication.cpp.obj
@@ -2254,7 +2254,7 @@ gtx_scalar_multiplication.obj: gtx_scalar_multiplication.cpp.obj
 
 # target to build an object file
 gtx_scalar_multiplication.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/gtx_scalar_multiplication.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/gtx_scalar_multiplication.cpp.obj
 .PHONY : gtx_scalar_multiplication.cpp.obj
 
 gtx_scalar_multiplication.i: gtx_scalar_multiplication.cpp.i
@@ -2263,7 +2263,7 @@ gtx_scalar_multiplication.i: gtx_scalar_multiplication.cpp.i
 
 # target to preprocess a source file
 gtx_scalar_multiplication.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/gtx_scalar_multiplication.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/gtx_scalar_multiplication.cpp.i
 .PHONY : gtx_scalar_multiplication.cpp.i
 
 gtx_scalar_multiplication.s: gtx_scalar_multiplication.cpp.s
@@ -2272,7 +2272,7 @@ gtx_scalar_multiplication.s: gtx_scalar_multiplication.cpp.s
 
 # target to generate assembly for a file
 gtx_scalar_multiplication.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/gtx_scalar_multiplication.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_multiplication.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_multiplication.dir/gtx_scalar_multiplication.cpp.s
 .PHONY : gtx_scalar_multiplication.cpp.s
 
 gtx_scalar_relational.obj: gtx_scalar_relational.cpp.obj
@@ -2281,7 +2281,7 @@ gtx_scalar_relational.obj: gtx_scalar_relational.cpp.obj
 
 # target to build an object file
 gtx_scalar_relational.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/gtx_scalar_relational.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/gtx_scalar_relational.cpp.obj
 .PHONY : gtx_scalar_relational.cpp.obj
 
 gtx_scalar_relational.i: gtx_scalar_relational.cpp.i
@@ -2290,7 +2290,7 @@ gtx_scalar_relational.i: gtx_scalar_relational.cpp.i
 
 # target to preprocess a source file
 gtx_scalar_relational.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/gtx_scalar_relational.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/gtx_scalar_relational.cpp.i
 .PHONY : gtx_scalar_relational.cpp.i
 
 gtx_scalar_relational.s: gtx_scalar_relational.cpp.s
@@ -2299,7 +2299,7 @@ gtx_scalar_relational.s: gtx_scalar_relational.cpp.s
 
 # target to generate assembly for a file
 gtx_scalar_relational.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/gtx_scalar_relational.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_scalar_relational.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_scalar_relational.dir/gtx_scalar_relational.cpp.s
 .PHONY : gtx_scalar_relational.cpp.s
 
 gtx_spline.obj: gtx_spline.cpp.obj
@@ -2308,7 +2308,7 @@ gtx_spline.obj: gtx_spline.cpp.obj
 
 # target to build an object file
 gtx_spline.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/gtx_spline.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/gtx_spline.cpp.obj
 .PHONY : gtx_spline.cpp.obj
 
 gtx_spline.i: gtx_spline.cpp.i
@@ -2317,7 +2317,7 @@ gtx_spline.i: gtx_spline.cpp.i
 
 # target to preprocess a source file
 gtx_spline.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/gtx_spline.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/gtx_spline.cpp.i
 .PHONY : gtx_spline.cpp.i
 
 gtx_spline.s: gtx_spline.cpp.s
@@ -2326,7 +2326,7 @@ gtx_spline.s: gtx_spline.cpp.s
 
 # target to generate assembly for a file
 gtx_spline.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/gtx_spline.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_spline.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_spline.dir/gtx_spline.cpp.s
 .PHONY : gtx_spline.cpp.s
 
 gtx_string_cast.obj: gtx_string_cast.cpp.obj
@@ -2335,7 +2335,7 @@ gtx_string_cast.obj: gtx_string_cast.cpp.obj
 
 # target to build an object file
 gtx_string_cast.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/gtx_string_cast.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/gtx_string_cast.cpp.obj
 .PHONY : gtx_string_cast.cpp.obj
 
 gtx_string_cast.i: gtx_string_cast.cpp.i
@@ -2344,7 +2344,7 @@ gtx_string_cast.i: gtx_string_cast.cpp.i
 
 # target to preprocess a source file
 gtx_string_cast.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/gtx_string_cast.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/gtx_string_cast.cpp.i
 .PHONY : gtx_string_cast.cpp.i
 
 gtx_string_cast.s: gtx_string_cast.cpp.s
@@ -2353,7 +2353,7 @@ gtx_string_cast.s: gtx_string_cast.cpp.s
 
 # target to generate assembly for a file
 gtx_string_cast.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/gtx_string_cast.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_string_cast.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_string_cast.dir/gtx_string_cast.cpp.s
 .PHONY : gtx_string_cast.cpp.s
 
 gtx_texture.obj: gtx_texture.cpp.obj
@@ -2362,7 +2362,7 @@ gtx_texture.obj: gtx_texture.cpp.obj
 
 # target to build an object file
 gtx_texture.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/gtx_texture.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/gtx_texture.cpp.obj
 .PHONY : gtx_texture.cpp.obj
 
 gtx_texture.i: gtx_texture.cpp.i
@@ -2371,7 +2371,7 @@ gtx_texture.i: gtx_texture.cpp.i
 
 # target to preprocess a source file
 gtx_texture.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/gtx_texture.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/gtx_texture.cpp.i
 .PHONY : gtx_texture.cpp.i
 
 gtx_texture.s: gtx_texture.cpp.s
@@ -2380,7 +2380,7 @@ gtx_texture.s: gtx_texture.cpp.s
 
 # target to generate assembly for a file
 gtx_texture.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/gtx_texture.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_texture.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_texture.dir/gtx_texture.cpp.s
 .PHONY : gtx_texture.cpp.s
 
 gtx_type_aligned.obj: gtx_type_aligned.cpp.obj
@@ -2389,7 +2389,7 @@ gtx_type_aligned.obj: gtx_type_aligned.cpp.obj
 
 # target to build an object file
 gtx_type_aligned.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/gtx_type_aligned.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/gtx_type_aligned.cpp.obj
 .PHONY : gtx_type_aligned.cpp.obj
 
 gtx_type_aligned.i: gtx_type_aligned.cpp.i
@@ -2398,7 +2398,7 @@ gtx_type_aligned.i: gtx_type_aligned.cpp.i
 
 # target to preprocess a source file
 gtx_type_aligned.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/gtx_type_aligned.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/gtx_type_aligned.cpp.i
 .PHONY : gtx_type_aligned.cpp.i
 
 gtx_type_aligned.s: gtx_type_aligned.cpp.s
@@ -2407,7 +2407,7 @@ gtx_type_aligned.s: gtx_type_aligned.cpp.s
 
 # target to generate assembly for a file
 gtx_type_aligned.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/gtx_type_aligned.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_aligned.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_aligned.dir/gtx_type_aligned.cpp.s
 .PHONY : gtx_type_aligned.cpp.s
 
 gtx_type_trait.obj: gtx_type_trait.cpp.obj
@@ -2416,7 +2416,7 @@ gtx_type_trait.obj: gtx_type_trait.cpp.obj
 
 # target to build an object file
 gtx_type_trait.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/gtx_type_trait.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/gtx_type_trait.cpp.obj
 .PHONY : gtx_type_trait.cpp.obj
 
 gtx_type_trait.i: gtx_type_trait.cpp.i
@@ -2425,7 +2425,7 @@ gtx_type_trait.i: gtx_type_trait.cpp.i
 
 # target to preprocess a source file
 gtx_type_trait.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/gtx_type_trait.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/gtx_type_trait.cpp.i
 .PHONY : gtx_type_trait.cpp.i
 
 gtx_type_trait.s: gtx_type_trait.cpp.s
@@ -2434,7 +2434,7 @@ gtx_type_trait.s: gtx_type_trait.cpp.s
 
 # target to generate assembly for a file
 gtx_type_trait.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/gtx_type_trait.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_type_trait.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_type_trait.dir/gtx_type_trait.cpp.s
 .PHONY : gtx_type_trait.cpp.s
 
 gtx_vec_swizzle.obj: gtx_vec_swizzle.cpp.obj
@@ -2443,7 +2443,7 @@ gtx_vec_swizzle.obj: gtx_vec_swizzle.cpp.obj
 
 # target to build an object file
 gtx_vec_swizzle.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.obj
 .PHONY : gtx_vec_swizzle.cpp.obj
 
 gtx_vec_swizzle.i: gtx_vec_swizzle.cpp.i
@@ -2452,7 +2452,7 @@ gtx_vec_swizzle.i: gtx_vec_swizzle.cpp.i
 
 # target to preprocess a source file
 gtx_vec_swizzle.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.i
 .PHONY : gtx_vec_swizzle.cpp.i
 
 gtx_vec_swizzle.s: gtx_vec_swizzle.cpp.s
@@ -2461,7 +2461,7 @@ gtx_vec_swizzle.s: gtx_vec_swizzle.cpp.s
 
 # target to generate assembly for a file
 gtx_vec_swizzle.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vec_swizzle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.s
 .PHONY : gtx_vec_swizzle.cpp.s
 
 gtx_vector_angle.obj: gtx_vector_angle.cpp.obj
@@ -2470,7 +2470,7 @@ gtx_vector_angle.obj: gtx_vector_angle.cpp.obj
 
 # target to build an object file
 gtx_vector_angle.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/gtx_vector_angle.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/gtx_vector_angle.cpp.obj
 .PHONY : gtx_vector_angle.cpp.obj
 
 gtx_vector_angle.i: gtx_vector_angle.cpp.i
@@ -2479,7 +2479,7 @@ gtx_vector_angle.i: gtx_vector_angle.cpp.i
 
 # target to preprocess a source file
 gtx_vector_angle.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/gtx_vector_angle.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/gtx_vector_angle.cpp.i
 .PHONY : gtx_vector_angle.cpp.i
 
 gtx_vector_angle.s: gtx_vector_angle.cpp.s
@@ -2488,7 +2488,7 @@ gtx_vector_angle.s: gtx_vector_angle.cpp.s
 
 # target to generate assembly for a file
 gtx_vector_angle.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/gtx_vector_angle.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_angle.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_angle.dir/gtx_vector_angle.cpp.s
 .PHONY : gtx_vector_angle.cpp.s
 
 gtx_vector_query.obj: gtx_vector_query.cpp.obj
@@ -2497,7 +2497,7 @@ gtx_vector_query.obj: gtx_vector_query.cpp.obj
 
 # target to build an object file
 gtx_vector_query.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/gtx_vector_query.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/gtx_vector_query.cpp.obj
 .PHONY : gtx_vector_query.cpp.obj
 
 gtx_vector_query.i: gtx_vector_query.cpp.i
@@ -2506,7 +2506,7 @@ gtx_vector_query.i: gtx_vector_query.cpp.i
 
 # target to preprocess a source file
 gtx_vector_query.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/gtx_vector_query.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/gtx_vector_query.cpp.i
 .PHONY : gtx_vector_query.cpp.i
 
 gtx_vector_query.s: gtx_vector_query.cpp.s
@@ -2515,7 +2515,7 @@ gtx_vector_query.s: gtx_vector_query.cpp.s
 
 # target to generate assembly for a file
 gtx_vector_query.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/gtx_vector_query.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_vector_query.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vector_query.dir/gtx_vector_query.cpp.s
 .PHONY : gtx_vector_query.cpp.s
 
 gtx_wrap.obj: gtx_wrap.cpp.obj
@@ -2524,7 +2524,7 @@ gtx_wrap.obj: gtx_wrap.cpp.obj
 
 # target to build an object file
 gtx_wrap.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/gtx_wrap.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/gtx_wrap.cpp.obj
 .PHONY : gtx_wrap.cpp.obj
 
 gtx_wrap.i: gtx_wrap.cpp.i
@@ -2533,7 +2533,7 @@ gtx_wrap.i: gtx_wrap.cpp.i
 
 # target to preprocess a source file
 gtx_wrap.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/gtx_wrap.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/gtx_wrap.cpp.i
 .PHONY : gtx_wrap.cpp.i
 
 gtx_wrap.s: gtx_wrap.cpp.s
@@ -2542,7 +2542,7 @@ gtx_wrap.s: gtx_wrap.cpp.s
 
 # target to generate assembly for a file
 gtx_wrap.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/gtx_wrap.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtx\CMakeFiles\test-gtx_wrap.dir\build.make Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_wrap.dir/gtx_wrap.cpp.s
 .PHONY : gtx_wrap.cpp.s
 
 # Help Target
@@ -2796,6 +2796,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

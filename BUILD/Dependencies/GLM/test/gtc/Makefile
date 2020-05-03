@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-relea
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -79,14 +79,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\gtc\CMakeFiles\progress.marks
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\gtc\CMakeFiles\progress.marks
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/clean
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/rule
 
 # Convenience name for target.
@@ -121,12 +121,12 @@ test-gtc_vec1: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/rule
 
 # fast build rule for target.
 test-gtc_vec1/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/build
 .PHONY : test-gtc_vec1/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/rule
 
 # Convenience name for target.
@@ -136,12 +136,12 @@ test-gtc_bitfield: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/ru
 
 # fast build rule for target.
 test-gtc_bitfield/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/build
 .PHONY : test-gtc_bitfield/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/rule
 
 # Convenience name for target.
@@ -151,12 +151,12 @@ test-gtc_color_space: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.
 
 # fast build rule for target.
 test-gtc_color_space/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/build
 .PHONY : test-gtc_color_space/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/rule
 
 # Convenience name for target.
@@ -166,12 +166,12 @@ test-gtc_integer: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/rule
 
 # fast build rule for target.
 test-gtc_integer/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/build
 .PHONY : test-gtc_integer/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/rule
 
 # Convenience name for target.
@@ -181,12 +181,12 @@ test-gtc_epsilon: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/rule
 
 # fast build rule for target.
 test-gtc_epsilon/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/build
 .PHONY : test-gtc_epsilon/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/rule
 
 # Convenience name for target.
@@ -196,12 +196,12 @@ test-gtc_constants: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/
 
 # fast build rule for target.
 test-gtc_constants/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/build
 .PHONY : test-gtc_constants/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/rule
 
 # Convenience name for target.
@@ -211,12 +211,12 @@ test-gtc_matrix_transform: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_
 
 # fast build rule for target.
 test-gtc_matrix_transform/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/build
 .PHONY : test-gtc_matrix_transform/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/rule
 
 # Convenience name for target.
@@ -226,12 +226,12 @@ test-gtc_matrix_inverse: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_in
 
 # fast build rule for target.
 test-gtc_matrix_inverse/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/build
 .PHONY : test-gtc_matrix_inverse/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/rule
 
 # Convenience name for target.
@@ -241,12 +241,12 @@ test-gtc_matrix_access: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_acc
 
 # fast build rule for target.
 test-gtc_matrix_access/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/build
 .PHONY : test-gtc_matrix_access/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/rule
 
 # Convenience name for target.
@@ -256,12 +256,12 @@ test-gtc_matrix_integer: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_in
 
 # fast build rule for target.
 test-gtc_matrix_integer/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/build
 .PHONY : test-gtc_matrix_integer/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/rule
 
 # Convenience name for target.
@@ -271,12 +271,12 @@ test-gtc_noise: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/rule
 
 # fast build rule for target.
 test-gtc_noise/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/build
 .PHONY : test-gtc_noise/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/rule
 
 # Convenience name for target.
@@ -286,12 +286,12 @@ test-gtc_packing: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/rule
 
 # fast build rule for target.
 test-gtc_packing/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/build
 .PHONY : test-gtc_packing/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/rule
 
 # Convenience name for target.
@@ -301,12 +301,12 @@ test-gtc_quaternion: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.di
 
 # fast build rule for target.
 test-gtc_quaternion/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/build
 .PHONY : test-gtc_quaternion/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/rule
 
 # Convenience name for target.
@@ -316,12 +316,12 @@ test-gtc_random: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/rule
 
 # fast build rule for target.
 test-gtc_random/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/build
 .PHONY : test-gtc_random/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/rule
 
 # Convenience name for target.
@@ -331,12 +331,12 @@ test-gtc_round: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/rule
 
 # fast build rule for target.
 test-gtc_round/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/build
 .PHONY : test-gtc_round/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/rule
 
 # Convenience name for target.
@@ -346,12 +346,12 @@ test-gtc_reciprocal: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.di
 
 # fast build rule for target.
 test-gtc_reciprocal/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/build
 .PHONY : test-gtc_reciprocal/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/rule
 
 # Convenience name for target.
@@ -361,12 +361,12 @@ test-gtc_type_aligned: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligne
 
 # fast build rule for target.
 test-gtc_type_aligned/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/build
 .PHONY : test-gtc_type_aligned/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/rule
 
 # Convenience name for target.
@@ -376,12 +376,12 @@ test-gtc_type_precision: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_prec
 
 # fast build rule for target.
 test-gtc_type_precision/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/build
 .PHONY : test-gtc_type_precision/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/rule
 
 # Convenience name for target.
@@ -391,12 +391,12 @@ test-gtc_type_ptr: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/ru
 
 # fast build rule for target.
 test-gtc_type_ptr/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/build
 .PHONY : test-gtc_type_ptr/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/rule
 .PHONY : Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/rule
 
 # Convenience name for target.
@@ -406,7 +406,7 @@ test-gtc_ulp: Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/rule
 
 # fast build rule for target.
 test-gtc_ulp/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/build
 .PHONY : test-gtc_ulp/fast
 
 gtc_bitfield.obj: gtc_bitfield.cpp.obj
@@ -415,7 +415,7 @@ gtc_bitfield.obj: gtc_bitfield.cpp.obj
 
 # target to build an object file
 gtc_bitfield.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/gtc_bitfield.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/gtc_bitfield.cpp.obj
 .PHONY : gtc_bitfield.cpp.obj
 
 gtc_bitfield.i: gtc_bitfield.cpp.i
@@ -424,7 +424,7 @@ gtc_bitfield.i: gtc_bitfield.cpp.i
 
 # target to preprocess a source file
 gtc_bitfield.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/gtc_bitfield.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/gtc_bitfield.cpp.i
 .PHONY : gtc_bitfield.cpp.i
 
 gtc_bitfield.s: gtc_bitfield.cpp.s
@@ -433,7 +433,7 @@ gtc_bitfield.s: gtc_bitfield.cpp.s
 
 # target to generate assembly for a file
 gtc_bitfield.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/gtc_bitfield.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_bitfield.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_bitfield.dir/gtc_bitfield.cpp.s
 .PHONY : gtc_bitfield.cpp.s
 
 gtc_color_space.obj: gtc_color_space.cpp.obj
@@ -442,7 +442,7 @@ gtc_color_space.obj: gtc_color_space.cpp.obj
 
 # target to build an object file
 gtc_color_space.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/gtc_color_space.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/gtc_color_space.cpp.obj
 .PHONY : gtc_color_space.cpp.obj
 
 gtc_color_space.i: gtc_color_space.cpp.i
@@ -451,7 +451,7 @@ gtc_color_space.i: gtc_color_space.cpp.i
 
 # target to preprocess a source file
 gtc_color_space.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/gtc_color_space.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/gtc_color_space.cpp.i
 .PHONY : gtc_color_space.cpp.i
 
 gtc_color_space.s: gtc_color_space.cpp.s
@@ -460,7 +460,7 @@ gtc_color_space.s: gtc_color_space.cpp.s
 
 # target to generate assembly for a file
 gtc_color_space.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/gtc_color_space.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_color_space.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_color_space.dir/gtc_color_space.cpp.s
 .PHONY : gtc_color_space.cpp.s
 
 gtc_constants.obj: gtc_constants.cpp.obj
@@ -469,7 +469,7 @@ gtc_constants.obj: gtc_constants.cpp.obj
 
 # target to build an object file
 gtc_constants.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/gtc_constants.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/gtc_constants.cpp.obj
 .PHONY : gtc_constants.cpp.obj
 
 gtc_constants.i: gtc_constants.cpp.i
@@ -478,7 +478,7 @@ gtc_constants.i: gtc_constants.cpp.i
 
 # target to preprocess a source file
 gtc_constants.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/gtc_constants.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/gtc_constants.cpp.i
 .PHONY : gtc_constants.cpp.i
 
 gtc_constants.s: gtc_constants.cpp.s
@@ -487,7 +487,7 @@ gtc_constants.s: gtc_constants.cpp.s
 
 # target to generate assembly for a file
 gtc_constants.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/gtc_constants.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_constants.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_constants.dir/gtc_constants.cpp.s
 .PHONY : gtc_constants.cpp.s
 
 gtc_epsilon.obj: gtc_epsilon.cpp.obj
@@ -496,7 +496,7 @@ gtc_epsilon.obj: gtc_epsilon.cpp.obj
 
 # target to build an object file
 gtc_epsilon.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/gtc_epsilon.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/gtc_epsilon.cpp.obj
 .PHONY : gtc_epsilon.cpp.obj
 
 gtc_epsilon.i: gtc_epsilon.cpp.i
@@ -505,7 +505,7 @@ gtc_epsilon.i: gtc_epsilon.cpp.i
 
 # target to preprocess a source file
 gtc_epsilon.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/gtc_epsilon.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/gtc_epsilon.cpp.i
 .PHONY : gtc_epsilon.cpp.i
 
 gtc_epsilon.s: gtc_epsilon.cpp.s
@@ -514,7 +514,7 @@ gtc_epsilon.s: gtc_epsilon.cpp.s
 
 # target to generate assembly for a file
 gtc_epsilon.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/gtc_epsilon.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_epsilon.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_epsilon.dir/gtc_epsilon.cpp.s
 .PHONY : gtc_epsilon.cpp.s
 
 gtc_integer.obj: gtc_integer.cpp.obj
@@ -523,7 +523,7 @@ gtc_integer.obj: gtc_integer.cpp.obj
 
 # target to build an object file
 gtc_integer.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/gtc_integer.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/gtc_integer.cpp.obj
 .PHONY : gtc_integer.cpp.obj
 
 gtc_integer.i: gtc_integer.cpp.i
@@ -532,7 +532,7 @@ gtc_integer.i: gtc_integer.cpp.i
 
 # target to preprocess a source file
 gtc_integer.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/gtc_integer.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/gtc_integer.cpp.i
 .PHONY : gtc_integer.cpp.i
 
 gtc_integer.s: gtc_integer.cpp.s
@@ -541,7 +541,7 @@ gtc_integer.s: gtc_integer.cpp.s
 
 # target to generate assembly for a file
 gtc_integer.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/gtc_integer.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_integer.dir/gtc_integer.cpp.s
 .PHONY : gtc_integer.cpp.s
 
 gtc_matrix_access.obj: gtc_matrix_access.cpp.obj
@@ -550,7 +550,7 @@ gtc_matrix_access.obj: gtc_matrix_access.cpp.obj
 
 # target to build an object file
 gtc_matrix_access.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/gtc_matrix_access.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/gtc_matrix_access.cpp.obj
 .PHONY : gtc_matrix_access.cpp.obj
 
 gtc_matrix_access.i: gtc_matrix_access.cpp.i
@@ -559,7 +559,7 @@ gtc_matrix_access.i: gtc_matrix_access.cpp.i
 
 # target to preprocess a source file
 gtc_matrix_access.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/gtc_matrix_access.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/gtc_matrix_access.cpp.i
 .PHONY : gtc_matrix_access.cpp.i
 
 gtc_matrix_access.s: gtc_matrix_access.cpp.s
@@ -568,7 +568,7 @@ gtc_matrix_access.s: gtc_matrix_access.cpp.s
 
 # target to generate assembly for a file
 gtc_matrix_access.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/gtc_matrix_access.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_access.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_access.dir/gtc_matrix_access.cpp.s
 .PHONY : gtc_matrix_access.cpp.s
 
 gtc_matrix_integer.obj: gtc_matrix_integer.cpp.obj
@@ -577,7 +577,7 @@ gtc_matrix_integer.obj: gtc_matrix_integer.cpp.obj
 
 # target to build an object file
 gtc_matrix_integer.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/gtc_matrix_integer.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/gtc_matrix_integer.cpp.obj
 .PHONY : gtc_matrix_integer.cpp.obj
 
 gtc_matrix_integer.i: gtc_matrix_integer.cpp.i
@@ -586,7 +586,7 @@ gtc_matrix_integer.i: gtc_matrix_integer.cpp.i
 
 # target to preprocess a source file
 gtc_matrix_integer.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/gtc_matrix_integer.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/gtc_matrix_integer.cpp.i
 .PHONY : gtc_matrix_integer.cpp.i
 
 gtc_matrix_integer.s: gtc_matrix_integer.cpp.s
@@ -595,7 +595,7 @@ gtc_matrix_integer.s: gtc_matrix_integer.cpp.s
 
 # target to generate assembly for a file
 gtc_matrix_integer.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/gtc_matrix_integer.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_integer.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_integer.dir/gtc_matrix_integer.cpp.s
 .PHONY : gtc_matrix_integer.cpp.s
 
 gtc_matrix_inverse.obj: gtc_matrix_inverse.cpp.obj
@@ -604,7 +604,7 @@ gtc_matrix_inverse.obj: gtc_matrix_inverse.cpp.obj
 
 # target to build an object file
 gtc_matrix_inverse.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/gtc_matrix_inverse.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/gtc_matrix_inverse.cpp.obj
 .PHONY : gtc_matrix_inverse.cpp.obj
 
 gtc_matrix_inverse.i: gtc_matrix_inverse.cpp.i
@@ -613,7 +613,7 @@ gtc_matrix_inverse.i: gtc_matrix_inverse.cpp.i
 
 # target to preprocess a source file
 gtc_matrix_inverse.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/gtc_matrix_inverse.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/gtc_matrix_inverse.cpp.i
 .PHONY : gtc_matrix_inverse.cpp.i
 
 gtc_matrix_inverse.s: gtc_matrix_inverse.cpp.s
@@ -622,7 +622,7 @@ gtc_matrix_inverse.s: gtc_matrix_inverse.cpp.s
 
 # target to generate assembly for a file
 gtc_matrix_inverse.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/gtc_matrix_inverse.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_inverse.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_inverse.dir/gtc_matrix_inverse.cpp.s
 .PHONY : gtc_matrix_inverse.cpp.s
 
 gtc_matrix_transform.obj: gtc_matrix_transform.cpp.obj
@@ -631,7 +631,7 @@ gtc_matrix_transform.obj: gtc_matrix_transform.cpp.obj
 
 # target to build an object file
 gtc_matrix_transform.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/gtc_matrix_transform.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/gtc_matrix_transform.cpp.obj
 .PHONY : gtc_matrix_transform.cpp.obj
 
 gtc_matrix_transform.i: gtc_matrix_transform.cpp.i
@@ -640,7 +640,7 @@ gtc_matrix_transform.i: gtc_matrix_transform.cpp.i
 
 # target to preprocess a source file
 gtc_matrix_transform.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/gtc_matrix_transform.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/gtc_matrix_transform.cpp.i
 .PHONY : gtc_matrix_transform.cpp.i
 
 gtc_matrix_transform.s: gtc_matrix_transform.cpp.s
@@ -649,7 +649,7 @@ gtc_matrix_transform.s: gtc_matrix_transform.cpp.s
 
 # target to generate assembly for a file
 gtc_matrix_transform.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/gtc_matrix_transform.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_matrix_transform.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_matrix_transform.dir/gtc_matrix_transform.cpp.s
 .PHONY : gtc_matrix_transform.cpp.s
 
 gtc_noise.obj: gtc_noise.cpp.obj
@@ -658,7 +658,7 @@ gtc_noise.obj: gtc_noise.cpp.obj
 
 # target to build an object file
 gtc_noise.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/gtc_noise.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/gtc_noise.cpp.obj
 .PHONY : gtc_noise.cpp.obj
 
 gtc_noise.i: gtc_noise.cpp.i
@@ -667,7 +667,7 @@ gtc_noise.i: gtc_noise.cpp.i
 
 # target to preprocess a source file
 gtc_noise.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/gtc_noise.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/gtc_noise.cpp.i
 .PHONY : gtc_noise.cpp.i
 
 gtc_noise.s: gtc_noise.cpp.s
@@ -676,7 +676,7 @@ gtc_noise.s: gtc_noise.cpp.s
 
 # target to generate assembly for a file
 gtc_noise.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/gtc_noise.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_noise.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_noise.dir/gtc_noise.cpp.s
 .PHONY : gtc_noise.cpp.s
 
 gtc_packing.obj: gtc_packing.cpp.obj
@@ -685,7 +685,7 @@ gtc_packing.obj: gtc_packing.cpp.obj
 
 # target to build an object file
 gtc_packing.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/gtc_packing.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/gtc_packing.cpp.obj
 .PHONY : gtc_packing.cpp.obj
 
 gtc_packing.i: gtc_packing.cpp.i
@@ -694,7 +694,7 @@ gtc_packing.i: gtc_packing.cpp.i
 
 # target to preprocess a source file
 gtc_packing.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/gtc_packing.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/gtc_packing.cpp.i
 .PHONY : gtc_packing.cpp.i
 
 gtc_packing.s: gtc_packing.cpp.s
@@ -703,7 +703,7 @@ gtc_packing.s: gtc_packing.cpp.s
 
 # target to generate assembly for a file
 gtc_packing.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/gtc_packing.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_packing.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_packing.dir/gtc_packing.cpp.s
 .PHONY : gtc_packing.cpp.s
 
 gtc_quaternion.obj: gtc_quaternion.cpp.obj
@@ -712,7 +712,7 @@ gtc_quaternion.obj: gtc_quaternion.cpp.obj
 
 # target to build an object file
 gtc_quaternion.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/gtc_quaternion.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/gtc_quaternion.cpp.obj
 .PHONY : gtc_quaternion.cpp.obj
 
 gtc_quaternion.i: gtc_quaternion.cpp.i
@@ -721,7 +721,7 @@ gtc_quaternion.i: gtc_quaternion.cpp.i
 
 # target to preprocess a source file
 gtc_quaternion.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/gtc_quaternion.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/gtc_quaternion.cpp.i
 .PHONY : gtc_quaternion.cpp.i
 
 gtc_quaternion.s: gtc_quaternion.cpp.s
@@ -730,7 +730,7 @@ gtc_quaternion.s: gtc_quaternion.cpp.s
 
 # target to generate assembly for a file
 gtc_quaternion.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/gtc_quaternion.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_quaternion.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_quaternion.dir/gtc_quaternion.cpp.s
 .PHONY : gtc_quaternion.cpp.s
 
 gtc_random.obj: gtc_random.cpp.obj
@@ -739,7 +739,7 @@ gtc_random.obj: gtc_random.cpp.obj
 
 # target to build an object file
 gtc_random.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/gtc_random.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/gtc_random.cpp.obj
 .PHONY : gtc_random.cpp.obj
 
 gtc_random.i: gtc_random.cpp.i
@@ -748,7 +748,7 @@ gtc_random.i: gtc_random.cpp.i
 
 # target to preprocess a source file
 gtc_random.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/gtc_random.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/gtc_random.cpp.i
 .PHONY : gtc_random.cpp.i
 
 gtc_random.s: gtc_random.cpp.s
@@ -757,7 +757,7 @@ gtc_random.s: gtc_random.cpp.s
 
 # target to generate assembly for a file
 gtc_random.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/gtc_random.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_random.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_random.dir/gtc_random.cpp.s
 .PHONY : gtc_random.cpp.s
 
 gtc_reciprocal.obj: gtc_reciprocal.cpp.obj
@@ -766,7 +766,7 @@ gtc_reciprocal.obj: gtc_reciprocal.cpp.obj
 
 # target to build an object file
 gtc_reciprocal.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/gtc_reciprocal.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/gtc_reciprocal.cpp.obj
 .PHONY : gtc_reciprocal.cpp.obj
 
 gtc_reciprocal.i: gtc_reciprocal.cpp.i
@@ -775,7 +775,7 @@ gtc_reciprocal.i: gtc_reciprocal.cpp.i
 
 # target to preprocess a source file
 gtc_reciprocal.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/gtc_reciprocal.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/gtc_reciprocal.cpp.i
 .PHONY : gtc_reciprocal.cpp.i
 
 gtc_reciprocal.s: gtc_reciprocal.cpp.s
@@ -784,7 +784,7 @@ gtc_reciprocal.s: gtc_reciprocal.cpp.s
 
 # target to generate assembly for a file
 gtc_reciprocal.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/gtc_reciprocal.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_reciprocal.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_reciprocal.dir/gtc_reciprocal.cpp.s
 .PHONY : gtc_reciprocal.cpp.s
 
 gtc_round.obj: gtc_round.cpp.obj
@@ -793,7 +793,7 @@ gtc_round.obj: gtc_round.cpp.obj
 
 # target to build an object file
 gtc_round.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/gtc_round.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/gtc_round.cpp.obj
 .PHONY : gtc_round.cpp.obj
 
 gtc_round.i: gtc_round.cpp.i
@@ -802,7 +802,7 @@ gtc_round.i: gtc_round.cpp.i
 
 # target to preprocess a source file
 gtc_round.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/gtc_round.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/gtc_round.cpp.i
 .PHONY : gtc_round.cpp.i
 
 gtc_round.s: gtc_round.cpp.s
@@ -811,7 +811,7 @@ gtc_round.s: gtc_round.cpp.s
 
 # target to generate assembly for a file
 gtc_round.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/gtc_round.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_round.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_round.dir/gtc_round.cpp.s
 .PHONY : gtc_round.cpp.s
 
 gtc_type_aligned.obj: gtc_type_aligned.cpp.obj
@@ -820,7 +820,7 @@ gtc_type_aligned.obj: gtc_type_aligned.cpp.obj
 
 # target to build an object file
 gtc_type_aligned.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/gtc_type_aligned.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/gtc_type_aligned.cpp.obj
 .PHONY : gtc_type_aligned.cpp.obj
 
 gtc_type_aligned.i: gtc_type_aligned.cpp.i
@@ -829,7 +829,7 @@ gtc_type_aligned.i: gtc_type_aligned.cpp.i
 
 # target to preprocess a source file
 gtc_type_aligned.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/gtc_type_aligned.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/gtc_type_aligned.cpp.i
 .PHONY : gtc_type_aligned.cpp.i
 
 gtc_type_aligned.s: gtc_type_aligned.cpp.s
@@ -838,7 +838,7 @@ gtc_type_aligned.s: gtc_type_aligned.cpp.s
 
 # target to generate assembly for a file
 gtc_type_aligned.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/gtc_type_aligned.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_aligned.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_aligned.dir/gtc_type_aligned.cpp.s
 .PHONY : gtc_type_aligned.cpp.s
 
 gtc_type_precision.obj: gtc_type_precision.cpp.obj
@@ -847,7 +847,7 @@ gtc_type_precision.obj: gtc_type_precision.cpp.obj
 
 # target to build an object file
 gtc_type_precision.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/gtc_type_precision.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/gtc_type_precision.cpp.obj
 .PHONY : gtc_type_precision.cpp.obj
 
 gtc_type_precision.i: gtc_type_precision.cpp.i
@@ -856,7 +856,7 @@ gtc_type_precision.i: gtc_type_precision.cpp.i
 
 # target to preprocess a source file
 gtc_type_precision.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/gtc_type_precision.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/gtc_type_precision.cpp.i
 .PHONY : gtc_type_precision.cpp.i
 
 gtc_type_precision.s: gtc_type_precision.cpp.s
@@ -865,7 +865,7 @@ gtc_type_precision.s: gtc_type_precision.cpp.s
 
 # target to generate assembly for a file
 gtc_type_precision.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/gtc_type_precision.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_precision.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_precision.dir/gtc_type_precision.cpp.s
 .PHONY : gtc_type_precision.cpp.s
 
 gtc_type_ptr.obj: gtc_type_ptr.cpp.obj
@@ -874,7 +874,7 @@ gtc_type_ptr.obj: gtc_type_ptr.cpp.obj
 
 # target to build an object file
 gtc_type_ptr.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/gtc_type_ptr.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/gtc_type_ptr.cpp.obj
 .PHONY : gtc_type_ptr.cpp.obj
 
 gtc_type_ptr.i: gtc_type_ptr.cpp.i
@@ -883,7 +883,7 @@ gtc_type_ptr.i: gtc_type_ptr.cpp.i
 
 # target to preprocess a source file
 gtc_type_ptr.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/gtc_type_ptr.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/gtc_type_ptr.cpp.i
 .PHONY : gtc_type_ptr.cpp.i
 
 gtc_type_ptr.s: gtc_type_ptr.cpp.s
@@ -892,7 +892,7 @@ gtc_type_ptr.s: gtc_type_ptr.cpp.s
 
 # target to generate assembly for a file
 gtc_type_ptr.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/gtc_type_ptr.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_type_ptr.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_type_ptr.dir/gtc_type_ptr.cpp.s
 .PHONY : gtc_type_ptr.cpp.s
 
 gtc_ulp.obj: gtc_ulp.cpp.obj
@@ -901,7 +901,7 @@ gtc_ulp.obj: gtc_ulp.cpp.obj
 
 # target to build an object file
 gtc_ulp.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/gtc_ulp.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/gtc_ulp.cpp.obj
 .PHONY : gtc_ulp.cpp.obj
 
 gtc_ulp.i: gtc_ulp.cpp.i
@@ -910,7 +910,7 @@ gtc_ulp.i: gtc_ulp.cpp.i
 
 # target to preprocess a source file
 gtc_ulp.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/gtc_ulp.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/gtc_ulp.cpp.i
 .PHONY : gtc_ulp.cpp.i
 
 gtc_ulp.s: gtc_ulp.cpp.s
@@ -919,7 +919,7 @@ gtc_ulp.s: gtc_ulp.cpp.s
 
 # target to generate assembly for a file
 gtc_ulp.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/gtc_ulp.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_ulp.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_ulp.dir/gtc_ulp.cpp.s
 .PHONY : gtc_ulp.cpp.s
 
 gtc_vec1.obj: gtc_vec1.cpp.obj
@@ -928,7 +928,7 @@ gtc_vec1.obj: gtc_vec1.cpp.obj
 
 # target to build an object file
 gtc_vec1.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/gtc_vec1.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/gtc_vec1.cpp.obj
 .PHONY : gtc_vec1.cpp.obj
 
 gtc_vec1.i: gtc_vec1.cpp.i
@@ -937,7 +937,7 @@ gtc_vec1.i: gtc_vec1.cpp.i
 
 # target to preprocess a source file
 gtc_vec1.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/gtc_vec1.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/gtc_vec1.cpp.i
 .PHONY : gtc_vec1.cpp.i
 
 gtc_vec1.s: gtc_vec1.cpp.s
@@ -946,7 +946,7 @@ gtc_vec1.s: gtc_vec1.cpp.s
 
 # target to generate assembly for a file
 gtc_vec1.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/gtc_vec1.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\gtc\CMakeFiles\test-gtc_vec1.dir\build.make Dependencies/GLM/test/gtc/CMakeFiles/test-gtc_vec1.dir/gtc_vec1.cpp.s
 .PHONY : gtc_vec1.cpp.s
 
 # Help Target
@@ -1048,6 +1048,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

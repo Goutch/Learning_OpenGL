@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test/ext/ext_scalar_int_sized.cpp" "C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/ext/CMakeFiles/test-ext_scalar_int_sized.dir/ext_scalar_int_sized.cpp.obj"
+  "C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test/ext/ext_scalar_int_sized.cpp" "C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/ext/CMakeFiles/test-ext_scalar_int_sized.dir/ext_scalar_int_sized.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

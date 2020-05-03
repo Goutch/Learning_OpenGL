@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-relea
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,9 +79,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles\progress.marks
 	$(MAKE) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -2622,32 +2622,32 @@ src/engine/Core/Rendering/SimpleRenderer.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/SimpleRenderer.cpp.s
 .PHONY : src/engine/Core/Rendering/SimpleRenderer.cpp.s
 
-src/engine/Core/Scene.obj: src/engine/Core/Scene.cpp.obj
+src/engine/Core/Rendering/Skybox.obj: src/engine/Core/Rendering/Skybox.cpp.obj
 
-.PHONY : src/engine/Core/Scene.obj
+.PHONY : src/engine/Core/Rendering/Skybox.obj
 
 # target to build an object file
-src/engine/Core/Scene.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.obj
-.PHONY : src/engine/Core/Scene.cpp.obj
+src/engine/Core/Rendering/Skybox.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.obj
+.PHONY : src/engine/Core/Rendering/Skybox.cpp.obj
 
-src/engine/Core/Scene.i: src/engine/Core/Scene.cpp.i
+src/engine/Core/Rendering/Skybox.i: src/engine/Core/Rendering/Skybox.cpp.i
 
-.PHONY : src/engine/Core/Scene.i
+.PHONY : src/engine/Core/Rendering/Skybox.i
 
 # target to preprocess a source file
-src/engine/Core/Scene.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.i
-.PHONY : src/engine/Core/Scene.cpp.i
+src/engine/Core/Rendering/Skybox.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.i
+.PHONY : src/engine/Core/Rendering/Skybox.cpp.i
 
-src/engine/Core/Scene.s: src/engine/Core/Scene.cpp.s
+src/engine/Core/Rendering/Skybox.s: src/engine/Core/Rendering/Skybox.cpp.s
 
-.PHONY : src/engine/Core/Scene.s
+.PHONY : src/engine/Core/Rendering/Skybox.s
 
 # target to generate assembly for a file
-src/engine/Core/Scene.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Scene.cpp.s
-.PHONY : src/engine/Core/Scene.cpp.s
+src/engine/Core/Rendering/Skybox.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Rendering/Skybox.cpp.s
+.PHONY : src/engine/Core/Rendering/Skybox.cpp.s
 
 src/engine/Core/Scene.obj: src/engine/Core/Scene.cpp.obj
 
@@ -2703,194 +2703,32 @@ src/engine/Core/Window.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Core/Window.cpp.s
 .PHONY : src/engine/Core/Window.cpp.s
 
-src/engine/Entities/Canvas/CanvasEntity.obj: src/engine/Entities/Canvas/CanvasEntity.cpp.obj
+src/engine/Entities/Camera.obj: src/engine/Entities/Camera.cpp.obj
 
-.PHONY : src/engine/Entities/Canvas/CanvasEntity.obj
-
-# target to build an object file
-src/engine/Entities/Canvas/CanvasEntity.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.obj
-.PHONY : src/engine/Entities/Canvas/CanvasEntity.cpp.obj
-
-src/engine/Entities/Canvas/CanvasEntity.i: src/engine/Entities/Canvas/CanvasEntity.cpp.i
-
-.PHONY : src/engine/Entities/Canvas/CanvasEntity.i
-
-# target to preprocess a source file
-src/engine/Entities/Canvas/CanvasEntity.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.i
-.PHONY : src/engine/Entities/Canvas/CanvasEntity.cpp.i
-
-src/engine/Entities/Canvas/CanvasEntity.s: src/engine/Entities/Canvas/CanvasEntity.cpp.s
-
-.PHONY : src/engine/Entities/Canvas/CanvasEntity.s
-
-# target to generate assembly for a file
-src/engine/Entities/Canvas/CanvasEntity.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasEntity.cpp.s
-.PHONY : src/engine/Entities/Canvas/CanvasEntity.cpp.s
-
-src/engine/Entities/Canvas/CanvasTransform.obj: src/engine/Entities/Canvas/CanvasTransform.cpp.obj
-
-.PHONY : src/engine/Entities/Canvas/CanvasTransform.obj
+.PHONY : src/engine/Entities/Camera.obj
 
 # target to build an object file
-src/engine/Entities/Canvas/CanvasTransform.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.obj
-.PHONY : src/engine/Entities/Canvas/CanvasTransform.cpp.obj
+src/engine/Entities/Camera.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.obj
+.PHONY : src/engine/Entities/Camera.cpp.obj
 
-src/engine/Entities/Canvas/CanvasTransform.i: src/engine/Entities/Canvas/CanvasTransform.cpp.i
+src/engine/Entities/Camera.i: src/engine/Entities/Camera.cpp.i
 
-.PHONY : src/engine/Entities/Canvas/CanvasTransform.i
-
-# target to preprocess a source file
-src/engine/Entities/Canvas/CanvasTransform.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.i
-.PHONY : src/engine/Entities/Canvas/CanvasTransform.cpp.i
-
-src/engine/Entities/Canvas/CanvasTransform.s: src/engine/Entities/Canvas/CanvasTransform.cpp.s
-
-.PHONY : src/engine/Entities/Canvas/CanvasTransform.s
-
-# target to generate assembly for a file
-src/engine/Entities/Canvas/CanvasTransform.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/CanvasTransform.cpp.s
-.PHONY : src/engine/Entities/Canvas/CanvasTransform.cpp.s
-
-src/engine/Entities/Canvas/Ellipse.obj: src/engine/Entities/Canvas/Ellipse.cpp.obj
-
-.PHONY : src/engine/Entities/Canvas/Ellipse.obj
-
-# target to build an object file
-src/engine/Entities/Canvas/Ellipse.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.obj
-.PHONY : src/engine/Entities/Canvas/Ellipse.cpp.obj
-
-src/engine/Entities/Canvas/Ellipse.i: src/engine/Entities/Canvas/Ellipse.cpp.i
-
-.PHONY : src/engine/Entities/Canvas/Ellipse.i
+.PHONY : src/engine/Entities/Camera.i
 
 # target to preprocess a source file
-src/engine/Entities/Canvas/Ellipse.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.i
-.PHONY : src/engine/Entities/Canvas/Ellipse.cpp.i
+src/engine/Entities/Camera.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.i
+.PHONY : src/engine/Entities/Camera.cpp.i
 
-src/engine/Entities/Canvas/Ellipse.s: src/engine/Entities/Canvas/Ellipse.cpp.s
+src/engine/Entities/Camera.s: src/engine/Entities/Camera.cpp.s
 
-.PHONY : src/engine/Entities/Canvas/Ellipse.s
-
-# target to generate assembly for a file
-src/engine/Entities/Canvas/Ellipse.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Ellipse.cpp.s
-.PHONY : src/engine/Entities/Canvas/Ellipse.cpp.s
-
-src/engine/Entities/Canvas/Image.obj: src/engine/Entities/Canvas/Image.cpp.obj
-
-.PHONY : src/engine/Entities/Canvas/Image.obj
-
-# target to build an object file
-src/engine/Entities/Canvas/Image.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.obj
-.PHONY : src/engine/Entities/Canvas/Image.cpp.obj
-
-src/engine/Entities/Canvas/Image.i: src/engine/Entities/Canvas/Image.cpp.i
-
-.PHONY : src/engine/Entities/Canvas/Image.i
-
-# target to preprocess a source file
-src/engine/Entities/Canvas/Image.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.i
-.PHONY : src/engine/Entities/Canvas/Image.cpp.i
-
-src/engine/Entities/Canvas/Image.s: src/engine/Entities/Canvas/Image.cpp.s
-
-.PHONY : src/engine/Entities/Canvas/Image.s
+.PHONY : src/engine/Entities/Camera.s
 
 # target to generate assembly for a file
-src/engine/Entities/Canvas/Image.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Image.cpp.s
-.PHONY : src/engine/Entities/Canvas/Image.cpp.s
-
-src/engine/Entities/Canvas/Line.obj: src/engine/Entities/Canvas/Line.cpp.obj
-
-.PHONY : src/engine/Entities/Canvas/Line.obj
-
-# target to build an object file
-src/engine/Entities/Canvas/Line.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.obj
-.PHONY : src/engine/Entities/Canvas/Line.cpp.obj
-
-src/engine/Entities/Canvas/Line.i: src/engine/Entities/Canvas/Line.cpp.i
-
-.PHONY : src/engine/Entities/Canvas/Line.i
-
-# target to preprocess a source file
-src/engine/Entities/Canvas/Line.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.i
-.PHONY : src/engine/Entities/Canvas/Line.cpp.i
-
-src/engine/Entities/Canvas/Line.s: src/engine/Entities/Canvas/Line.cpp.s
-
-.PHONY : src/engine/Entities/Canvas/Line.s
-
-# target to generate assembly for a file
-src/engine/Entities/Canvas/Line.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Line.cpp.s
-.PHONY : src/engine/Entities/Canvas/Line.cpp.s
-
-src/engine/Entities/Canvas/Rect.obj: src/engine/Entities/Canvas/Rect.cpp.obj
-
-.PHONY : src/engine/Entities/Canvas/Rect.obj
-
-# target to build an object file
-src/engine/Entities/Canvas/Rect.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.obj
-.PHONY : src/engine/Entities/Canvas/Rect.cpp.obj
-
-src/engine/Entities/Canvas/Rect.i: src/engine/Entities/Canvas/Rect.cpp.i
-
-.PHONY : src/engine/Entities/Canvas/Rect.i
-
-# target to preprocess a source file
-src/engine/Entities/Canvas/Rect.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.i
-.PHONY : src/engine/Entities/Canvas/Rect.cpp.i
-
-src/engine/Entities/Canvas/Rect.s: src/engine/Entities/Canvas/Rect.cpp.s
-
-.PHONY : src/engine/Entities/Canvas/Rect.s
-
-# target to generate assembly for a file
-src/engine/Entities/Canvas/Rect.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Rect.cpp.s
-.PHONY : src/engine/Entities/Canvas/Rect.cpp.s
-
-src/engine/Entities/Canvas/Text.obj: src/engine/Entities/Canvas/Text.cpp.obj
-
-.PHONY : src/engine/Entities/Canvas/Text.obj
-
-# target to build an object file
-src/engine/Entities/Canvas/Text.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.obj
-.PHONY : src/engine/Entities/Canvas/Text.cpp.obj
-
-src/engine/Entities/Canvas/Text.i: src/engine/Entities/Canvas/Text.cpp.i
-
-.PHONY : src/engine/Entities/Canvas/Text.i
-
-# target to preprocess a source file
-src/engine/Entities/Canvas/Text.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.i
-.PHONY : src/engine/Entities/Canvas/Text.cpp.i
-
-src/engine/Entities/Canvas/Text.s: src/engine/Entities/Canvas/Text.cpp.s
-
-.PHONY : src/engine/Entities/Canvas/Text.s
-
-# target to generate assembly for a file
-src/engine/Entities/Canvas/Text.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Canvas/Text.cpp.s
-.PHONY : src/engine/Entities/Canvas/Text.cpp.s
+src/engine/Entities/Camera.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Camera.cpp.s
+.PHONY : src/engine/Entities/Camera.cpp.s
 
 src/engine/Entities/Entity.obj: src/engine/Entities/Entity.cpp.obj
 
@@ -2919,248 +2757,248 @@ src/engine/Entities/Entity.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Entity.cpp.s
 .PHONY : src/engine/Entities/Entity.cpp.s
 
-src/engine/Entities/Spacial/Camera.obj: src/engine/Entities/Spacial/Camera.cpp.obj
+src/engine/Entities/FPSController.obj: src/engine/Entities/FPSController.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/Camera.obj
-
-# target to build an object file
-src/engine/Entities/Spacial/Camera.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.obj
-.PHONY : src/engine/Entities/Spacial/Camera.cpp.obj
-
-src/engine/Entities/Spacial/Camera.i: src/engine/Entities/Spacial/Camera.cpp.i
-
-.PHONY : src/engine/Entities/Spacial/Camera.i
-
-# target to preprocess a source file
-src/engine/Entities/Spacial/Camera.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.i
-.PHONY : src/engine/Entities/Spacial/Camera.cpp.i
-
-src/engine/Entities/Spacial/Camera.s: src/engine/Entities/Spacial/Camera.cpp.s
-
-.PHONY : src/engine/Entities/Spacial/Camera.s
-
-# target to generate assembly for a file
-src/engine/Entities/Spacial/Camera.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Camera.cpp.s
-.PHONY : src/engine/Entities/Spacial/Camera.cpp.s
-
-src/engine/Entities/Spacial/FPSController.obj: src/engine/Entities/Spacial/FPSController.cpp.obj
-
-.PHONY : src/engine/Entities/Spacial/FPSController.obj
+.PHONY : src/engine/Entities/FPSController.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/FPSController.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.obj
-.PHONY : src/engine/Entities/Spacial/FPSController.cpp.obj
+src/engine/Entities/FPSController.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.obj
+.PHONY : src/engine/Entities/FPSController.cpp.obj
 
-src/engine/Entities/Spacial/FPSController.i: src/engine/Entities/Spacial/FPSController.cpp.i
+src/engine/Entities/FPSController.i: src/engine/Entities/FPSController.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/FPSController.i
+.PHONY : src/engine/Entities/FPSController.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/FPSController.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.i
-.PHONY : src/engine/Entities/Spacial/FPSController.cpp.i
+src/engine/Entities/FPSController.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.i
+.PHONY : src/engine/Entities/FPSController.cpp.i
 
-src/engine/Entities/Spacial/FPSController.s: src/engine/Entities/Spacial/FPSController.cpp.s
+src/engine/Entities/FPSController.s: src/engine/Entities/FPSController.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/FPSController.s
+.PHONY : src/engine/Entities/FPSController.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/FPSController.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/FPSController.cpp.s
-.PHONY : src/engine/Entities/Spacial/FPSController.cpp.s
+src/engine/Entities/FPSController.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/FPSController.cpp.s
+.PHONY : src/engine/Entities/FPSController.cpp.s
 
-src/engine/Entities/Spacial/Light/DirectionnalLight.obj: src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj
+src/engine/Entities/Light/DirectionnalLight.obj: src/engine/Entities/Light/DirectionnalLight.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/Light/DirectionnalLight.obj
+.PHONY : src/engine/Entities/Light/DirectionnalLight.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj
-.PHONY : src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.obj
+src/engine/Entities/Light/DirectionnalLight.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.obj
+.PHONY : src/engine/Entities/Light/DirectionnalLight.cpp.obj
 
-src/engine/Entities/Spacial/Light/DirectionnalLight.i: src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.i
+src/engine/Entities/Light/DirectionnalLight.i: src/engine/Entities/Light/DirectionnalLight.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/Light/DirectionnalLight.i
+.PHONY : src/engine/Entities/Light/DirectionnalLight.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.i
-.PHONY : src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.i
+src/engine/Entities/Light/DirectionnalLight.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.i
+.PHONY : src/engine/Entities/Light/DirectionnalLight.cpp.i
 
-src/engine/Entities/Spacial/Light/DirectionnalLight.s: src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.s
+src/engine/Entities/Light/DirectionnalLight.s: src/engine/Entities/Light/DirectionnalLight.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/Light/DirectionnalLight.s
+.PHONY : src/engine/Entities/Light/DirectionnalLight.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.s
-.PHONY : src/engine/Entities/Spacial/Light/DirectionnalLight.cpp.s
+src/engine/Entities/Light/DirectionnalLight.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/DirectionnalLight.cpp.s
+.PHONY : src/engine/Entities/Light/DirectionnalLight.cpp.s
 
-src/engine/Entities/Spacial/Light/Light.obj: src/engine/Entities/Spacial/Light/Light.cpp.obj
+src/engine/Entities/Light/Light.obj: src/engine/Entities/Light/Light.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/Light/Light.obj
+.PHONY : src/engine/Entities/Light/Light.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/Light/Light.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.obj
-.PHONY : src/engine/Entities/Spacial/Light/Light.cpp.obj
+src/engine/Entities/Light/Light.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.obj
+.PHONY : src/engine/Entities/Light/Light.cpp.obj
 
-src/engine/Entities/Spacial/Light/Light.i: src/engine/Entities/Spacial/Light/Light.cpp.i
+src/engine/Entities/Light/Light.i: src/engine/Entities/Light/Light.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/Light/Light.i
+.PHONY : src/engine/Entities/Light/Light.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/Light/Light.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.i
-.PHONY : src/engine/Entities/Spacial/Light/Light.cpp.i
+src/engine/Entities/Light/Light.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.i
+.PHONY : src/engine/Entities/Light/Light.cpp.i
 
-src/engine/Entities/Spacial/Light/Light.s: src/engine/Entities/Spacial/Light/Light.cpp.s
+src/engine/Entities/Light/Light.s: src/engine/Entities/Light/Light.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/Light/Light.s
+.PHONY : src/engine/Entities/Light/Light.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/Light/Light.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/Light.cpp.s
-.PHONY : src/engine/Entities/Spacial/Light/Light.cpp.s
+src/engine/Entities/Light/Light.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/Light.cpp.s
+.PHONY : src/engine/Entities/Light/Light.cpp.s
 
-src/engine/Entities/Spacial/Light/PointLight.obj: src/engine/Entities/Spacial/Light/PointLight.cpp.obj
+src/engine/Entities/Light/PointLight.obj: src/engine/Entities/Light/PointLight.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/Light/PointLight.obj
+.PHONY : src/engine/Entities/Light/PointLight.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/Light/PointLight.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.obj
-.PHONY : src/engine/Entities/Spacial/Light/PointLight.cpp.obj
+src/engine/Entities/Light/PointLight.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.obj
+.PHONY : src/engine/Entities/Light/PointLight.cpp.obj
 
-src/engine/Entities/Spacial/Light/PointLight.i: src/engine/Entities/Spacial/Light/PointLight.cpp.i
+src/engine/Entities/Light/PointLight.i: src/engine/Entities/Light/PointLight.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/Light/PointLight.i
+.PHONY : src/engine/Entities/Light/PointLight.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/Light/PointLight.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.i
-.PHONY : src/engine/Entities/Spacial/Light/PointLight.cpp.i
+src/engine/Entities/Light/PointLight.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.i
+.PHONY : src/engine/Entities/Light/PointLight.cpp.i
 
-src/engine/Entities/Spacial/Light/PointLight.s: src/engine/Entities/Spacial/Light/PointLight.cpp.s
+src/engine/Entities/Light/PointLight.s: src/engine/Entities/Light/PointLight.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/Light/PointLight.s
+.PHONY : src/engine/Entities/Light/PointLight.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/Light/PointLight.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Light/PointLight.cpp.s
-.PHONY : src/engine/Entities/Spacial/Light/PointLight.cpp.s
+src/engine/Entities/Light/PointLight.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Light/PointLight.cpp.s
+.PHONY : src/engine/Entities/Light/PointLight.cpp.s
 
-src/engine/Entities/Spacial/MeshRenderer.obj: src/engine/Entities/Spacial/MeshRenderer.cpp.obj
+src/engine/Entities/MeshRenderer.obj: src/engine/Entities/MeshRenderer.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/MeshRenderer.obj
+.PHONY : src/engine/Entities/MeshRenderer.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/MeshRenderer.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.obj
-.PHONY : src/engine/Entities/Spacial/MeshRenderer.cpp.obj
+src/engine/Entities/MeshRenderer.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.obj
+.PHONY : src/engine/Entities/MeshRenderer.cpp.obj
 
-src/engine/Entities/Spacial/MeshRenderer.i: src/engine/Entities/Spacial/MeshRenderer.cpp.i
+src/engine/Entities/MeshRenderer.i: src/engine/Entities/MeshRenderer.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/MeshRenderer.i
+.PHONY : src/engine/Entities/MeshRenderer.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/MeshRenderer.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.i
-.PHONY : src/engine/Entities/Spacial/MeshRenderer.cpp.i
+src/engine/Entities/MeshRenderer.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.i
+.PHONY : src/engine/Entities/MeshRenderer.cpp.i
 
-src/engine/Entities/Spacial/MeshRenderer.s: src/engine/Entities/Spacial/MeshRenderer.cpp.s
+src/engine/Entities/MeshRenderer.s: src/engine/Entities/MeshRenderer.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/MeshRenderer.s
+.PHONY : src/engine/Entities/MeshRenderer.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/MeshRenderer.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/MeshRenderer.cpp.s
-.PHONY : src/engine/Entities/Spacial/MeshRenderer.cpp.s
+src/engine/Entities/MeshRenderer.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/MeshRenderer.cpp.s
+.PHONY : src/engine/Entities/MeshRenderer.cpp.s
 
-src/engine/Entities/Spacial/Entity.obj: src/engine/Entities/Spacial/Entity.cpp.obj
+src/engine/Entities/Text.obj: src/engine/Entities/Text.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/Entity.obj
+.PHONY : src/engine/Entities/Text.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/Entity.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.obj
-.PHONY : src/engine/Entities/Spacial/Entity.cpp.obj
+src/engine/Entities/Text.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.obj
+.PHONY : src/engine/Entities/Text.cpp.obj
 
-src/engine/Entities/Spacial/Entity.i: src/engine/Entities/Spacial/Entity.cpp.i
+src/engine/Entities/Text.i: src/engine/Entities/Text.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/Entity.i
+.PHONY : src/engine/Entities/Text.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/Entity.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.i
-.PHONY : src/engine/Entities/Spacial/Entity.cpp.i
+src/engine/Entities/Text.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.i
+.PHONY : src/engine/Entities/Text.cpp.i
 
-src/engine/Entities/Spacial/Entity.s: src/engine/Entities/Spacial/Entity.cpp.s
+src/engine/Entities/Text.s: src/engine/Entities/Text.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/Entity.s
+.PHONY : src/engine/Entities/Text.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/Entity.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Entity.cpp.s
-.PHONY : src/engine/Entities/Spacial/Entity.cpp.s
+src/engine/Entities/Text.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Text.cpp.s
+.PHONY : src/engine/Entities/Text.cpp.s
 
-src/engine/Entities/Spacial/Transform.obj: src/engine/Entities/Spacial/Transform.cpp.obj
+src/engine/Entities/Transform.obj: src/engine/Entities/Transform.cpp.obj
 
-.PHONY : src/engine/Entities/Spacial/Transform.obj
+.PHONY : src/engine/Entities/Transform.obj
 
 # target to build an object file
-src/engine/Entities/Spacial/Transform.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.obj
-.PHONY : src/engine/Entities/Spacial/Transform.cpp.obj
+src/engine/Entities/Transform.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.obj
+.PHONY : src/engine/Entities/Transform.cpp.obj
 
-src/engine/Entities/Spacial/Transform.i: src/engine/Entities/Spacial/Transform.cpp.i
+src/engine/Entities/Transform.i: src/engine/Entities/Transform.cpp.i
 
-.PHONY : src/engine/Entities/Spacial/Transform.i
+.PHONY : src/engine/Entities/Transform.i
 
 # target to preprocess a source file
-src/engine/Entities/Spacial/Transform.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.i
-.PHONY : src/engine/Entities/Spacial/Transform.cpp.i
+src/engine/Entities/Transform.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.i
+.PHONY : src/engine/Entities/Transform.cpp.i
 
-src/engine/Entities/Spacial/Transform.s: src/engine/Entities/Spacial/Transform.cpp.s
+src/engine/Entities/Transform.s: src/engine/Entities/Transform.cpp.s
 
-.PHONY : src/engine/Entities/Spacial/Transform.s
+.PHONY : src/engine/Entities/Transform.s
 
 # target to generate assembly for a file
-src/engine/Entities/Spacial/Transform.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Spacial/Transform.cpp.s
-.PHONY : src/engine/Entities/Spacial/Transform.cpp.s
+src/engine/Entities/Transform.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Entities/Transform.cpp.s
+.PHONY : src/engine/Entities/Transform.cpp.s
 
-src/engine/Geometry/Geometry.obj: src/engine/Geometry/Geometry.cpp.obj
+src/engine/Math/BoundingBox.obj: src/engine/Math/BoundingBox.cpp.obj
 
-.PHONY : src/engine/Geometry/Geometry.obj
+.PHONY : src/engine/Math/BoundingBox.obj
 
 # target to build an object file
-src/engine/Geometry/Geometry.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.obj
-.PHONY : src/engine/Geometry/Geometry.cpp.obj
+src/engine/Math/BoundingBox.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.obj
+.PHONY : src/engine/Math/BoundingBox.cpp.obj
 
-src/engine/Geometry/Geometry.i: src/engine/Geometry/Geometry.cpp.i
+src/engine/Math/BoundingBox.i: src/engine/Math/BoundingBox.cpp.i
 
-.PHONY : src/engine/Geometry/Geometry.i
+.PHONY : src/engine/Math/BoundingBox.i
 
 # target to preprocess a source file
-src/engine/Geometry/Geometry.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.i
-.PHONY : src/engine/Geometry/Geometry.cpp.i
+src/engine/Math/BoundingBox.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.i
+.PHONY : src/engine/Math/BoundingBox.cpp.i
 
-src/engine/Geometry/Geometry.s: src/engine/Geometry/Geometry.cpp.s
+src/engine/Math/BoundingBox.s: src/engine/Math/BoundingBox.cpp.s
 
-.PHONY : src/engine/Geometry/Geometry.s
+.PHONY : src/engine/Math/BoundingBox.s
 
 # target to generate assembly for a file
-src/engine/Geometry/Geometry.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Geometry/Geometry.cpp.s
-.PHONY : src/engine/Geometry/Geometry.cpp.s
+src/engine/Math/BoundingBox.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Math/BoundingBox.cpp.s
+.PHONY : src/engine/Math/BoundingBox.cpp.s
+
+src/engine/Math/Plane.obj: src/engine/Math/Plane.cpp.obj
+
+.PHONY : src/engine/Math/Plane.obj
+
+# target to build an object file
+src/engine/Math/Plane.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.obj
+.PHONY : src/engine/Math/Plane.cpp.obj
+
+src/engine/Math/Plane.i: src/engine/Math/Plane.cpp.i
+
+.PHONY : src/engine/Math/Plane.i
+
+# target to preprocess a source file
+src/engine/Math/Plane.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.i
+.PHONY : src/engine/Math/Plane.cpp.i
+
+src/engine/Math/Plane.s: src/engine/Math/Plane.cpp.s
+
+.PHONY : src/engine/Math/Plane.s
+
+# target to generate assembly for a file
+src/engine/Math/Plane.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Math/Plane.cpp.s
+.PHONY : src/engine/Math/Plane.cpp.s
 
 src/engine/Ressources/AtlasTexture.obj: src/engine/Ressources/AtlasTexture.cpp.obj
 
@@ -3297,6 +3135,168 @@ src/engine/Ressources/Quad.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Quad.cpp.s
 .PHONY : src/engine/Ressources/Quad.cpp.s
 
+src/engine/Ressources/Shaders/Material/EntityMaterial.obj: src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj
+
+.PHONY : src/engine/Ressources/Shaders/Material/EntityMaterial.obj
+
+# target to build an object file
+src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj
+.PHONY : src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.obj
+
+src/engine/Ressources/Shaders/Material/EntityMaterial.i: src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.i
+
+.PHONY : src/engine/Ressources/Shaders/Material/EntityMaterial.i
+
+# target to preprocess a source file
+src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.i
+.PHONY : src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.i
+
+src/engine/Ressources/Shaders/Material/EntityMaterial.s: src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.s
+
+.PHONY : src/engine/Ressources/Shaders/Material/EntityMaterial.s
+
+# target to generate assembly for a file
+src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.s
+.PHONY : src/engine/Ressources/Shaders/Material/EntityMaterial.cpp.s
+
+src/engine/Ressources/Shaders/Material/FontMaterial.obj: src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj
+
+.PHONY : src/engine/Ressources/Shaders/Material/FontMaterial.obj
+
+# target to build an object file
+src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj
+.PHONY : src/engine/Ressources/Shaders/Material/FontMaterial.cpp.obj
+
+src/engine/Ressources/Shaders/Material/FontMaterial.i: src/engine/Ressources/Shaders/Material/FontMaterial.cpp.i
+
+.PHONY : src/engine/Ressources/Shaders/Material/FontMaterial.i
+
+# target to preprocess a source file
+src/engine/Ressources/Shaders/Material/FontMaterial.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.i
+.PHONY : src/engine/Ressources/Shaders/Material/FontMaterial.cpp.i
+
+src/engine/Ressources/Shaders/Material/FontMaterial.s: src/engine/Ressources/Shaders/Material/FontMaterial.cpp.s
+
+.PHONY : src/engine/Ressources/Shaders/Material/FontMaterial.s
+
+# target to generate assembly for a file
+src/engine/Ressources/Shaders/Material/FontMaterial.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/FontMaterial.cpp.s
+.PHONY : src/engine/Ressources/Shaders/Material/FontMaterial.cpp.s
+
+src/engine/Ressources/Shaders/Material/LightMaterial.obj: src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj
+
+.PHONY : src/engine/Ressources/Shaders/Material/LightMaterial.obj
+
+# target to build an object file
+src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj
+.PHONY : src/engine/Ressources/Shaders/Material/LightMaterial.cpp.obj
+
+src/engine/Ressources/Shaders/Material/LightMaterial.i: src/engine/Ressources/Shaders/Material/LightMaterial.cpp.i
+
+.PHONY : src/engine/Ressources/Shaders/Material/LightMaterial.i
+
+# target to preprocess a source file
+src/engine/Ressources/Shaders/Material/LightMaterial.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.i
+.PHONY : src/engine/Ressources/Shaders/Material/LightMaterial.cpp.i
+
+src/engine/Ressources/Shaders/Material/LightMaterial.s: src/engine/Ressources/Shaders/Material/LightMaterial.cpp.s
+
+.PHONY : src/engine/Ressources/Shaders/Material/LightMaterial.s
+
+# target to generate assembly for a file
+src/engine/Ressources/Shaders/Material/LightMaterial.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/LightMaterial.cpp.s
+.PHONY : src/engine/Ressources/Shaders/Material/LightMaterial.cpp.s
+
+src/engine/Ressources/Shaders/Material/Material.obj: src/engine/Ressources/Shaders/Material/Material.cpp.obj
+
+.PHONY : src/engine/Ressources/Shaders/Material/Material.obj
+
+# target to build an object file
+src/engine/Ressources/Shaders/Material/Material.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.obj
+.PHONY : src/engine/Ressources/Shaders/Material/Material.cpp.obj
+
+src/engine/Ressources/Shaders/Material/Material.i: src/engine/Ressources/Shaders/Material/Material.cpp.i
+
+.PHONY : src/engine/Ressources/Shaders/Material/Material.i
+
+# target to preprocess a source file
+src/engine/Ressources/Shaders/Material/Material.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.i
+.PHONY : src/engine/Ressources/Shaders/Material/Material.cpp.i
+
+src/engine/Ressources/Shaders/Material/Material.s: src/engine/Ressources/Shaders/Material/Material.cpp.s
+
+.PHONY : src/engine/Ressources/Shaders/Material/Material.s
+
+# target to generate assembly for a file
+src/engine/Ressources/Shaders/Material/Material.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/Material.cpp.s
+.PHONY : src/engine/Ressources/Shaders/Material/Material.cpp.s
+
+src/engine/Ressources/Shaders/Material/TexturedMaterial.obj: src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj
+
+.PHONY : src/engine/Ressources/Shaders/Material/TexturedMaterial.obj
+
+# target to build an object file
+src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj
+.PHONY : src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.obj
+
+src/engine/Ressources/Shaders/Material/TexturedMaterial.i: src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.i
+
+.PHONY : src/engine/Ressources/Shaders/Material/TexturedMaterial.i
+
+# target to preprocess a source file
+src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.i
+.PHONY : src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.i
+
+src/engine/Ressources/Shaders/Material/TexturedMaterial.s: src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.s
+
+.PHONY : src/engine/Ressources/Shaders/Material/TexturedMaterial.s
+
+# target to generate assembly for a file
+src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.s
+.PHONY : src/engine/Ressources/Shaders/Material/TexturedMaterial.cpp.s
+
+src/engine/Ressources/Shaders/Shader.obj: src/engine/Ressources/Shaders/Shader.cpp.obj
+
+.PHONY : src/engine/Ressources/Shaders/Shader.obj
+
+# target to build an object file
+src/engine/Ressources/Shaders/Shader.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.obj
+.PHONY : src/engine/Ressources/Shaders/Shader.cpp.obj
+
+src/engine/Ressources/Shaders/Shader.i: src/engine/Ressources/Shaders/Shader.cpp.i
+
+.PHONY : src/engine/Ressources/Shaders/Shader.i
+
+# target to preprocess a source file
+src/engine/Ressources/Shaders/Shader.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.i
+.PHONY : src/engine/Ressources/Shaders/Shader.cpp.i
+
+src/engine/Ressources/Shaders/Shader.s: src/engine/Ressources/Shaders/Shader.cpp.s
+
+.PHONY : src/engine/Ressources/Shaders/Shader.s
+
+# target to generate assembly for a file
+src/engine/Ressources/Shaders/Shader.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/Shaders/Shader.cpp.s
+.PHONY : src/engine/Ressources/Shaders/Shader.cpp.s
+
 src/engine/Ressources/Sphere.obj: src/engine/Ressources/Sphere.cpp.obj
 
 .PHONY : src/engine/Ressources/Sphere.obj
@@ -3405,60 +3405,6 @@ src/engine/Ressources/VBO.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Ressources/VBO.cpp.s
 .PHONY : src/engine/Ressources/VBO.cpp.s
 
-src/engine/Scenes/ApplicationDrawing2D.obj: src/engine/Scenes/ApplicationDrawing2D.cpp.obj
-
-.PHONY : src/engine/Scenes/ApplicationDrawing2D.obj
-
-# target to build an object file
-src/engine/Scenes/ApplicationDrawing2D.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.obj
-.PHONY : src/engine/Scenes/ApplicationDrawing2D.cpp.obj
-
-src/engine/Scenes/ApplicationDrawing2D.i: src/engine/Scenes/ApplicationDrawing2D.cpp.i
-
-.PHONY : src/engine/Scenes/ApplicationDrawing2D.i
-
-# target to preprocess a source file
-src/engine/Scenes/ApplicationDrawing2D.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.i
-.PHONY : src/engine/Scenes/ApplicationDrawing2D.cpp.i
-
-src/engine/Scenes/ApplicationDrawing2D.s: src/engine/Scenes/ApplicationDrawing2D.cpp.s
-
-.PHONY : src/engine/Scenes/ApplicationDrawing2D.s
-
-# target to generate assembly for a file
-src/engine/Scenes/ApplicationDrawing2D.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/ApplicationDrawing2D.cpp.s
-.PHONY : src/engine/Scenes/ApplicationDrawing2D.cpp.s
-
-src/engine/Scenes/BaseScene.obj: src/engine/Scenes/BaseScene.cpp.obj
-
-.PHONY : src/engine/Scenes/BaseScene.obj
-
-# target to build an object file
-src/engine/Scenes/BaseScene.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.obj
-.PHONY : src/engine/Scenes/BaseScene.cpp.obj
-
-src/engine/Scenes/BaseScene.i: src/engine/Scenes/BaseScene.cpp.i
-
-.PHONY : src/engine/Scenes/BaseScene.i
-
-# target to preprocess a source file
-src/engine/Scenes/BaseScene.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.i
-.PHONY : src/engine/Scenes/BaseScene.cpp.i
-
-src/engine/Scenes/BaseScene.s: src/engine/Scenes/BaseScene.cpp.s
-
-.PHONY : src/engine/Scenes/BaseScene.s
-
-# target to generate assembly for a file
-src/engine/Scenes/BaseScene.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/BaseScene.cpp.s
-.PHONY : src/engine/Scenes/BaseScene.cpp.s
-
 src/engine/Scenes/Demo3D/Grass.obj: src/engine/Scenes/Demo3D/Grass.cpp.obj
 
 .PHONY : src/engine/Scenes/Demo3D/Grass.obj
@@ -3513,6 +3459,33 @@ src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.s
 .PHONY : src/engine/Scenes/Demo3D/SpacialSceneDemo.cpp.s
 
+src/engine/Scenes/Editor/CameraWindow.obj: src/engine/Scenes/Editor/CameraWindow.cpp.obj
+
+.PHONY : src/engine/Scenes/Editor/CameraWindow.obj
+
+# target to build an object file
+src/engine/Scenes/Editor/CameraWindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.obj
+.PHONY : src/engine/Scenes/Editor/CameraWindow.cpp.obj
+
+src/engine/Scenes/Editor/CameraWindow.i: src/engine/Scenes/Editor/CameraWindow.cpp.i
+
+.PHONY : src/engine/Scenes/Editor/CameraWindow.i
+
+# target to preprocess a source file
+src/engine/Scenes/Editor/CameraWindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.i
+.PHONY : src/engine/Scenes/Editor/CameraWindow.cpp.i
+
+src/engine/Scenes/Editor/CameraWindow.s: src/engine/Scenes/Editor/CameraWindow.cpp.s
+
+.PHONY : src/engine/Scenes/Editor/CameraWindow.s
+
+# target to generate assembly for a file
+src/engine/Scenes/Editor/CameraWindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/CameraWindow.cpp.s
+.PHONY : src/engine/Scenes/Editor/CameraWindow.cpp.s
+
 src/engine/Scenes/Editor/Editor.obj: src/engine/Scenes/Editor/Editor.cpp.obj
 
 .PHONY : src/engine/Scenes/Editor/Editor.obj
@@ -3540,221 +3513,113 @@ src/engine/Scenes/Editor/Editor.cpp.s:
 	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/Editor.cpp.s
 .PHONY : src/engine/Scenes/Editor/Editor.cpp.s
 
-src/engine/Shaders/Canvas/CanvasMaterial.obj: src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj
+src/engine/Scenes/Editor/EntityCreationWindow.obj: src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj
 
-.PHONY : src/engine/Shaders/Canvas/CanvasMaterial.obj
-
-# target to build an object file
-src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj
-.PHONY : src/engine/Shaders/Canvas/CanvasMaterial.cpp.obj
-
-src/engine/Shaders/Canvas/CanvasMaterial.i: src/engine/Shaders/Canvas/CanvasMaterial.cpp.i
-
-.PHONY : src/engine/Shaders/Canvas/CanvasMaterial.i
-
-# target to preprocess a source file
-src/engine/Shaders/Canvas/CanvasMaterial.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.i
-.PHONY : src/engine/Shaders/Canvas/CanvasMaterial.cpp.i
-
-src/engine/Shaders/Canvas/CanvasMaterial.s: src/engine/Shaders/Canvas/CanvasMaterial.cpp.s
-
-.PHONY : src/engine/Shaders/Canvas/CanvasMaterial.s
-
-# target to generate assembly for a file
-src/engine/Shaders/Canvas/CanvasMaterial.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/CanvasMaterial.cpp.s
-.PHONY : src/engine/Shaders/Canvas/CanvasMaterial.cpp.s
-
-src/engine/Shaders/Canvas/FontMaterial.obj: src/engine/Shaders/Canvas/FontMaterial.cpp.obj
-
-.PHONY : src/engine/Shaders/Canvas/FontMaterial.obj
+.PHONY : src/engine/Scenes/Editor/EntityCreationWindow.obj
 
 # target to build an object file
-src/engine/Shaders/Canvas/FontMaterial.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.obj
-.PHONY : src/engine/Shaders/Canvas/FontMaterial.cpp.obj
+src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj
+.PHONY : src/engine/Scenes/Editor/EntityCreationWindow.cpp.obj
 
-src/engine/Shaders/Canvas/FontMaterial.i: src/engine/Shaders/Canvas/FontMaterial.cpp.i
+src/engine/Scenes/Editor/EntityCreationWindow.i: src/engine/Scenes/Editor/EntityCreationWindow.cpp.i
 
-.PHONY : src/engine/Shaders/Canvas/FontMaterial.i
+.PHONY : src/engine/Scenes/Editor/EntityCreationWindow.i
 
 # target to preprocess a source file
-src/engine/Shaders/Canvas/FontMaterial.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.i
-.PHONY : src/engine/Shaders/Canvas/FontMaterial.cpp.i
+src/engine/Scenes/Editor/EntityCreationWindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.i
+.PHONY : src/engine/Scenes/Editor/EntityCreationWindow.cpp.i
 
-src/engine/Shaders/Canvas/FontMaterial.s: src/engine/Shaders/Canvas/FontMaterial.cpp.s
+src/engine/Scenes/Editor/EntityCreationWindow.s: src/engine/Scenes/Editor/EntityCreationWindow.cpp.s
 
-.PHONY : src/engine/Shaders/Canvas/FontMaterial.s
+.PHONY : src/engine/Scenes/Editor/EntityCreationWindow.s
 
 # target to generate assembly for a file
-src/engine/Shaders/Canvas/FontMaterial.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Canvas/FontMaterial.cpp.s
-.PHONY : src/engine/Shaders/Canvas/FontMaterial.cpp.s
+src/engine/Scenes/Editor/EntityCreationWindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/EntityCreationWindow.cpp.s
+.PHONY : src/engine/Scenes/Editor/EntityCreationWindow.cpp.s
 
-src/engine/Shaders/Material.obj: src/engine/Shaders/Material.cpp.obj
+src/engine/Scenes/Editor/PropertyWindow.obj: src/engine/Scenes/Editor/PropertyWindow.cpp.obj
 
-.PHONY : src/engine/Shaders/Material.obj
+.PHONY : src/engine/Scenes/Editor/PropertyWindow.obj
 
 # target to build an object file
-src/engine/Shaders/Material.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.obj
-.PHONY : src/engine/Shaders/Material.cpp.obj
+src/engine/Scenes/Editor/PropertyWindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.obj
+.PHONY : src/engine/Scenes/Editor/PropertyWindow.cpp.obj
 
-src/engine/Shaders/Material.i: src/engine/Shaders/Material.cpp.i
+src/engine/Scenes/Editor/PropertyWindow.i: src/engine/Scenes/Editor/PropertyWindow.cpp.i
 
-.PHONY : src/engine/Shaders/Material.i
+.PHONY : src/engine/Scenes/Editor/PropertyWindow.i
 
 # target to preprocess a source file
-src/engine/Shaders/Material.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.i
-.PHONY : src/engine/Shaders/Material.cpp.i
+src/engine/Scenes/Editor/PropertyWindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.i
+.PHONY : src/engine/Scenes/Editor/PropertyWindow.cpp.i
 
-src/engine/Shaders/Material.s: src/engine/Shaders/Material.cpp.s
+src/engine/Scenes/Editor/PropertyWindow.s: src/engine/Scenes/Editor/PropertyWindow.cpp.s
 
-.PHONY : src/engine/Shaders/Material.s
+.PHONY : src/engine/Scenes/Editor/PropertyWindow.s
 
 # target to generate assembly for a file
-src/engine/Shaders/Material.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Material.cpp.s
-.PHONY : src/engine/Shaders/Material.cpp.s
+src/engine/Scenes/Editor/PropertyWindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/PropertyWindow.cpp.s
+.PHONY : src/engine/Scenes/Editor/PropertyWindow.cpp.s
 
-src/engine/Shaders/Shader.obj: src/engine/Shaders/Shader.cpp.obj
+src/engine/Scenes/Editor/SceneTreeWindow.obj: src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj
 
-.PHONY : src/engine/Shaders/Shader.obj
+.PHONY : src/engine/Scenes/Editor/SceneTreeWindow.obj
 
 # target to build an object file
-src/engine/Shaders/Shader.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.obj
-.PHONY : src/engine/Shaders/Shader.cpp.obj
+src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj
+.PHONY : src/engine/Scenes/Editor/SceneTreeWindow.cpp.obj
 
-src/engine/Shaders/Shader.i: src/engine/Shaders/Shader.cpp.i
+src/engine/Scenes/Editor/SceneTreeWindow.i: src/engine/Scenes/Editor/SceneTreeWindow.cpp.i
 
-.PHONY : src/engine/Shaders/Shader.i
+.PHONY : src/engine/Scenes/Editor/SceneTreeWindow.i
 
 # target to preprocess a source file
-src/engine/Shaders/Shader.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.i
-.PHONY : src/engine/Shaders/Shader.cpp.i
+src/engine/Scenes/Editor/SceneTreeWindow.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.i
+.PHONY : src/engine/Scenes/Editor/SceneTreeWindow.cpp.i
 
-src/engine/Shaders/Shader.s: src/engine/Shaders/Shader.cpp.s
+src/engine/Scenes/Editor/SceneTreeWindow.s: src/engine/Scenes/Editor/SceneTreeWindow.cpp.s
 
-.PHONY : src/engine/Shaders/Shader.s
+.PHONY : src/engine/Scenes/Editor/SceneTreeWindow.s
 
 # target to generate assembly for a file
-src/engine/Shaders/Shader.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Shader.cpp.s
-.PHONY : src/engine/Shaders/Shader.cpp.s
+src/engine/Scenes/Editor/SceneTreeWindow.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Scenes/Editor/SceneTreeWindow.cpp.s
+.PHONY : src/engine/Scenes/Editor/SceneTreeWindow.cpp.s
 
-src/engine/Shaders/Spacial/LightMaterial.obj: src/engine/Shaders/Spacial/LightMaterial.cpp.obj
+src/engine/Utils/Geometry.obj: src/engine/Utils/Geometry.cpp.obj
 
-.PHONY : src/engine/Shaders/Spacial/LightMaterial.obj
+.PHONY : src/engine/Utils/Geometry.obj
 
 # target to build an object file
-src/engine/Shaders/Spacial/LightMaterial.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.obj
-.PHONY : src/engine/Shaders/Spacial/LightMaterial.cpp.obj
+src/engine/Utils/Geometry.cpp.obj:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.obj
+.PHONY : src/engine/Utils/Geometry.cpp.obj
 
-src/engine/Shaders/Spacial/LightMaterial.i: src/engine/Shaders/Spacial/LightMaterial.cpp.i
+src/engine/Utils/Geometry.i: src/engine/Utils/Geometry.cpp.i
 
-.PHONY : src/engine/Shaders/Spacial/LightMaterial.i
-
-# target to preprocess a source file
-src/engine/Shaders/Spacial/LightMaterial.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.i
-.PHONY : src/engine/Shaders/Spacial/LightMaterial.cpp.i
-
-src/engine/Shaders/Spacial/LightMaterial.s: src/engine/Shaders/Spacial/LightMaterial.cpp.s
-
-.PHONY : src/engine/Shaders/Spacial/LightMaterial.s
-
-# target to generate assembly for a file
-src/engine/Shaders/Spacial/LightMaterial.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/LightMaterial.cpp.s
-.PHONY : src/engine/Shaders/Spacial/LightMaterial.cpp.s
-
-src/engine/Shaders/Spacial/EntityMaterial.obj: src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
-
-.PHONY : src/engine/Shaders/Spacial/EntityMaterial.obj
-
-# target to build an object file
-src/engine/Shaders/Spacial/EntityMaterial.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
-.PHONY : src/engine/Shaders/Spacial/EntityMaterial.cpp.obj
-
-src/engine/Shaders/Spacial/EntityMaterial.i: src/engine/Shaders/Spacial/EntityMaterial.cpp.i
-
-.PHONY : src/engine/Shaders/Spacial/EntityMaterial.i
+.PHONY : src/engine/Utils/Geometry.i
 
 # target to preprocess a source file
-src/engine/Shaders/Spacial/EntityMaterial.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.i
-.PHONY : src/engine/Shaders/Spacial/EntityMaterial.cpp.i
+src/engine/Utils/Geometry.cpp.i:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.i
+.PHONY : src/engine/Utils/Geometry.cpp.i
 
-src/engine/Shaders/Spacial/EntityMaterial.s: src/engine/Shaders/Spacial/EntityMaterial.cpp.s
+src/engine/Utils/Geometry.s: src/engine/Utils/Geometry.cpp.s
 
-.PHONY : src/engine/Shaders/Spacial/EntityMaterial.s
-
-# target to generate assembly for a file
-src/engine/Shaders/Spacial/EntityMaterial.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/Spacial/EntityMaterial.cpp.s
-.PHONY : src/engine/Shaders/Spacial/EntityMaterial.cpp.s
-
-src/engine/Shaders/TexturedMaterial.obj: src/engine/Shaders/TexturedMaterial.cpp.obj
-
-.PHONY : src/engine/Shaders/TexturedMaterial.obj
-
-# target to build an object file
-src/engine/Shaders/TexturedMaterial.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.obj
-.PHONY : src/engine/Shaders/TexturedMaterial.cpp.obj
-
-src/engine/Shaders/TexturedMaterial.i: src/engine/Shaders/TexturedMaterial.cpp.i
-
-.PHONY : src/engine/Shaders/TexturedMaterial.i
-
-# target to preprocess a source file
-src/engine/Shaders/TexturedMaterial.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.i
-.PHONY : src/engine/Shaders/TexturedMaterial.cpp.i
-
-src/engine/Shaders/TexturedMaterial.s: src/engine/Shaders/TexturedMaterial.cpp.s
-
-.PHONY : src/engine/Shaders/TexturedMaterial.s
+.PHONY : src/engine/Utils/Geometry.s
 
 # target to generate assembly for a file
-src/engine/Shaders/TexturedMaterial.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Shaders/TexturedMaterial.cpp.s
-.PHONY : src/engine/Shaders/TexturedMaterial.cpp.s
-
-src/engine/Utils/SimplexNoise.obj: src/engine/Utils/SimplexNoise.cpp.obj
-
-.PHONY : src/engine/Utils/SimplexNoise.obj
-
-# target to build an object file
-src/engine/Utils/SimplexNoise.cpp.obj:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.obj
-.PHONY : src/engine/Utils/SimplexNoise.cpp.obj
-
-src/engine/Utils/SimplexNoise.i: src/engine/Utils/SimplexNoise.cpp.i
-
-.PHONY : src/engine/Utils/SimplexNoise.i
-
-# target to preprocess a source file
-src/engine/Utils/SimplexNoise.cpp.i:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.i
-.PHONY : src/engine/Utils/SimplexNoise.cpp.i
-
-src/engine/Utils/SimplexNoise.s: src/engine/Utils/SimplexNoise.cpp.s
-
-.PHONY : src/engine/Utils/SimplexNoise.s
-
-# target to generate assembly for a file
-src/engine/Utils/SimplexNoise.cpp.s:
-	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Utils/SimplexNoise.cpp.s
-.PHONY : src/engine/Utils/SimplexNoise.cpp.s
+src/engine/Utils/Geometry.cpp.s:
+	$(MAKE) -f CMakeFiles\OGL_Engine.dir\build.make CMakeFiles/OGL_Engine.dir/src/engine/Utils/Geometry.cpp.s
+.PHONY : src/engine/Utils/Geometry.cpp.s
 
 src/engine/Utils/StringUtils.obj: src/engine/Utils/StringUtils.cpp.obj
 
@@ -4081,66 +3946,48 @@ help:
 	@echo ... src/engine/Core/Rendering/SimpleRenderer.obj
 	@echo ... src/engine/Core/Rendering/SimpleRenderer.i
 	@echo ... src/engine/Core/Rendering/SimpleRenderer.s
-	@echo ... src/engine/Core/Scene.obj
-	@echo ... src/engine/Core/Scene.i
-	@echo ... src/engine/Core/Scene.s
+	@echo ... src/engine/Core/Rendering/Skybox.obj
+	@echo ... src/engine/Core/Rendering/Skybox.i
+	@echo ... src/engine/Core/Rendering/Skybox.s
 	@echo ... src/engine/Core/Scene.obj
 	@echo ... src/engine/Core/Scene.i
 	@echo ... src/engine/Core/Scene.s
 	@echo ... src/engine/Core/Window.obj
 	@echo ... src/engine/Core/Window.i
 	@echo ... src/engine/Core/Window.s
-	@echo ... src/engine/Entities/Canvas/CanvasEntity.obj
-	@echo ... src/engine/Entities/Canvas/CanvasEntity.i
-	@echo ... src/engine/Entities/Canvas/CanvasEntity.s
-	@echo ... src/engine/Entities/Canvas/CanvasTransform.obj
-	@echo ... src/engine/Entities/Canvas/CanvasTransform.i
-	@echo ... src/engine/Entities/Canvas/CanvasTransform.s
-	@echo ... src/engine/Entities/Canvas/Ellipse.obj
-	@echo ... src/engine/Entities/Canvas/Ellipse.i
-	@echo ... src/engine/Entities/Canvas/Ellipse.s
-	@echo ... src/engine/Entities/Canvas/Image.obj
-	@echo ... src/engine/Entities/Canvas/Image.i
-	@echo ... src/engine/Entities/Canvas/Image.s
-	@echo ... src/engine/Entities/Canvas/Line.obj
-	@echo ... src/engine/Entities/Canvas/Line.i
-	@echo ... src/engine/Entities/Canvas/Line.s
-	@echo ... src/engine/Entities/Canvas/Rect.obj
-	@echo ... src/engine/Entities/Canvas/Rect.i
-	@echo ... src/engine/Entities/Canvas/Rect.s
-	@echo ... src/engine/Entities/Canvas/Text.obj
-	@echo ... src/engine/Entities/Canvas/Text.i
-	@echo ... src/engine/Entities/Canvas/Text.s
+	@echo ... src/engine/Entities/Camera.obj
+	@echo ... src/engine/Entities/Camera.i
+	@echo ... src/engine/Entities/Camera.s
 	@echo ... src/engine/Entities/Entity.obj
 	@echo ... src/engine/Entities/Entity.i
 	@echo ... src/engine/Entities/Entity.s
-	@echo ... src/engine/Entities/Spacial/Camera.obj
-	@echo ... src/engine/Entities/Spacial/Camera.i
-	@echo ... src/engine/Entities/Spacial/Camera.s
-	@echo ... src/engine/Entities/Spacial/FPSController.obj
-	@echo ... src/engine/Entities/Spacial/FPSController.i
-	@echo ... src/engine/Entities/Spacial/FPSController.s
-	@echo ... src/engine/Entities/Spacial/Light/DirectionnalLight.obj
-	@echo ... src/engine/Entities/Spacial/Light/DirectionnalLight.i
-	@echo ... src/engine/Entities/Spacial/Light/DirectionnalLight.s
-	@echo ... src/engine/Entities/Spacial/Light/Light.obj
-	@echo ... src/engine/Entities/Spacial/Light/Light.i
-	@echo ... src/engine/Entities/Spacial/Light/Light.s
-	@echo ... src/engine/Entities/Spacial/Light/PointLight.obj
-	@echo ... src/engine/Entities/Spacial/Light/PointLight.i
-	@echo ... src/engine/Entities/Spacial/Light/PointLight.s
-	@echo ... src/engine/Entities/Spacial/MeshRenderer.obj
-	@echo ... src/engine/Entities/Spacial/MeshRenderer.i
-	@echo ... src/engine/Entities/Spacial/MeshRenderer.s
-	@echo ... src/engine/Entities/Spacial/Entity.obj
-	@echo ... src/engine/Entities/Spacial/Entity.i
-	@echo ... src/engine/Entities/Spacial/Entity.s
-	@echo ... src/engine/Entities/Spacial/Transform.obj
-	@echo ... src/engine/Entities/Spacial/Transform.i
-	@echo ... src/engine/Entities/Spacial/Transform.s
-	@echo ... src/engine/Geometry/Geometry.obj
-	@echo ... src/engine/Geometry/Geometry.i
-	@echo ... src/engine/Geometry/Geometry.s
+	@echo ... src/engine/Entities/FPSController.obj
+	@echo ... src/engine/Entities/FPSController.i
+	@echo ... src/engine/Entities/FPSController.s
+	@echo ... src/engine/Entities/Light/DirectionnalLight.obj
+	@echo ... src/engine/Entities/Light/DirectionnalLight.i
+	@echo ... src/engine/Entities/Light/DirectionnalLight.s
+	@echo ... src/engine/Entities/Light/Light.obj
+	@echo ... src/engine/Entities/Light/Light.i
+	@echo ... src/engine/Entities/Light/Light.s
+	@echo ... src/engine/Entities/Light/PointLight.obj
+	@echo ... src/engine/Entities/Light/PointLight.i
+	@echo ... src/engine/Entities/Light/PointLight.s
+	@echo ... src/engine/Entities/MeshRenderer.obj
+	@echo ... src/engine/Entities/MeshRenderer.i
+	@echo ... src/engine/Entities/MeshRenderer.s
+	@echo ... src/engine/Entities/Text.obj
+	@echo ... src/engine/Entities/Text.i
+	@echo ... src/engine/Entities/Text.s
+	@echo ... src/engine/Entities/Transform.obj
+	@echo ... src/engine/Entities/Transform.i
+	@echo ... src/engine/Entities/Transform.s
+	@echo ... src/engine/Math/BoundingBox.obj
+	@echo ... src/engine/Math/BoundingBox.i
+	@echo ... src/engine/Math/BoundingBox.s
+	@echo ... src/engine/Math/Plane.obj
+	@echo ... src/engine/Math/Plane.i
+	@echo ... src/engine/Math/Plane.s
 	@echo ... src/engine/Ressources/AtlasTexture.obj
 	@echo ... src/engine/Ressources/AtlasTexture.i
 	@echo ... src/engine/Ressources/AtlasTexture.s
@@ -4156,6 +4003,24 @@ help:
 	@echo ... src/engine/Ressources/Quad.obj
 	@echo ... src/engine/Ressources/Quad.i
 	@echo ... src/engine/Ressources/Quad.s
+	@echo ... src/engine/Ressources/Shaders/Material/EntityMaterial.obj
+	@echo ... src/engine/Ressources/Shaders/Material/EntityMaterial.i
+	@echo ... src/engine/Ressources/Shaders/Material/EntityMaterial.s
+	@echo ... src/engine/Ressources/Shaders/Material/FontMaterial.obj
+	@echo ... src/engine/Ressources/Shaders/Material/FontMaterial.i
+	@echo ... src/engine/Ressources/Shaders/Material/FontMaterial.s
+	@echo ... src/engine/Ressources/Shaders/Material/LightMaterial.obj
+	@echo ... src/engine/Ressources/Shaders/Material/LightMaterial.i
+	@echo ... src/engine/Ressources/Shaders/Material/LightMaterial.s
+	@echo ... src/engine/Ressources/Shaders/Material/Material.obj
+	@echo ... src/engine/Ressources/Shaders/Material/Material.i
+	@echo ... src/engine/Ressources/Shaders/Material/Material.s
+	@echo ... src/engine/Ressources/Shaders/Material/TexturedMaterial.obj
+	@echo ... src/engine/Ressources/Shaders/Material/TexturedMaterial.i
+	@echo ... src/engine/Ressources/Shaders/Material/TexturedMaterial.s
+	@echo ... src/engine/Ressources/Shaders/Shader.obj
+	@echo ... src/engine/Ressources/Shaders/Shader.i
+	@echo ... src/engine/Ressources/Shaders/Shader.s
 	@echo ... src/engine/Ressources/Sphere.obj
 	@echo ... src/engine/Ressources/Sphere.i
 	@echo ... src/engine/Ressources/Sphere.s
@@ -4168,45 +4033,30 @@ help:
 	@echo ... src/engine/Ressources/VBO.obj
 	@echo ... src/engine/Ressources/VBO.i
 	@echo ... src/engine/Ressources/VBO.s
-	@echo ... src/engine/Scenes/ApplicationDrawing2D.obj
-	@echo ... src/engine/Scenes/ApplicationDrawing2D.i
-	@echo ... src/engine/Scenes/ApplicationDrawing2D.s
-	@echo ... src/engine/Scenes/BaseScene.obj
-	@echo ... src/engine/Scenes/BaseScene.i
-	@echo ... src/engine/Scenes/BaseScene.s
 	@echo ... src/engine/Scenes/Demo3D/Grass.obj
 	@echo ... src/engine/Scenes/Demo3D/Grass.i
 	@echo ... src/engine/Scenes/Demo3D/Grass.s
 	@echo ... src/engine/Scenes/Demo3D/SpacialSceneDemo.obj
 	@echo ... src/engine/Scenes/Demo3D/SpacialSceneDemo.i
 	@echo ... src/engine/Scenes/Demo3D/SpacialSceneDemo.s
+	@echo ... src/engine/Scenes/Editor/CameraWindow.obj
+	@echo ... src/engine/Scenes/Editor/CameraWindow.i
+	@echo ... src/engine/Scenes/Editor/CameraWindow.s
 	@echo ... src/engine/Scenes/Editor/Editor.obj
 	@echo ... src/engine/Scenes/Editor/Editor.i
 	@echo ... src/engine/Scenes/Editor/Editor.s
-	@echo ... src/engine/Shaders/Canvas/CanvasMaterial.obj
-	@echo ... src/engine/Shaders/Canvas/CanvasMaterial.i
-	@echo ... src/engine/Shaders/Canvas/CanvasMaterial.s
-	@echo ... src/engine/Shaders/Canvas/FontMaterial.obj
-	@echo ... src/engine/Shaders/Canvas/FontMaterial.i
-	@echo ... src/engine/Shaders/Canvas/FontMaterial.s
-	@echo ... src/engine/Shaders/Material.obj
-	@echo ... src/engine/Shaders/Material.i
-	@echo ... src/engine/Shaders/Material.s
-	@echo ... src/engine/Shaders/Shader.obj
-	@echo ... src/engine/Shaders/Shader.i
-	@echo ... src/engine/Shaders/Shader.s
-	@echo ... src/engine/Shaders/Spacial/LightMaterial.obj
-	@echo ... src/engine/Shaders/Spacial/LightMaterial.i
-	@echo ... src/engine/Shaders/Spacial/LightMaterial.s
-	@echo ... src/engine/Shaders/Spacial/EntityMaterial.obj
-	@echo ... src/engine/Shaders/Spacial/EntityMaterial.i
-	@echo ... src/engine/Shaders/Spacial/EntityMaterial.s
-	@echo ... src/engine/Shaders/TexturedMaterial.obj
-	@echo ... src/engine/Shaders/TexturedMaterial.i
-	@echo ... src/engine/Shaders/TexturedMaterial.s
-	@echo ... src/engine/Utils/SimplexNoise.obj
-	@echo ... src/engine/Utils/SimplexNoise.i
-	@echo ... src/engine/Utils/SimplexNoise.s
+	@echo ... src/engine/Scenes/Editor/EntityCreationWindow.obj
+	@echo ... src/engine/Scenes/Editor/EntityCreationWindow.i
+	@echo ... src/engine/Scenes/Editor/EntityCreationWindow.s
+	@echo ... src/engine/Scenes/Editor/PropertyWindow.obj
+	@echo ... src/engine/Scenes/Editor/PropertyWindow.i
+	@echo ... src/engine/Scenes/Editor/PropertyWindow.s
+	@echo ... src/engine/Scenes/Editor/SceneTreeWindow.obj
+	@echo ... src/engine/Scenes/Editor/SceneTreeWindow.i
+	@echo ... src/engine/Scenes/Editor/SceneTreeWindow.s
+	@echo ... src/engine/Utils/Geometry.obj
+	@echo ... src/engine/Utils/Geometry.i
+	@echo ... src/engine/Utils/Geometry.s
 	@echo ... src/engine/Utils/StringUtils.obj
 	@echo ... src/engine/Utils/StringUtils.i
 	@echo ... src/engine/Utils/StringUtils.s

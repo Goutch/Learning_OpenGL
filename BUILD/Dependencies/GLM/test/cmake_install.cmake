@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test
+# Install script for directory: C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -34,12 +34,12 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for each subdirectory.
-  include("C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/bug/cmake_install.cmake")
-  include("C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/core/cmake_install.cmake")
-  include("C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/ext/cmake_install.cmake")
-  include("C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/gtc/cmake_install.cmake")
-  include("C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/gtx/cmake_install.cmake")
-  include("C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/perf/cmake_install.cmake")
+  include("C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/bug/cmake_install.cmake")
+  include("C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/core/cmake_install.cmake")
+  include("C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/ext/cmake_install.cmake")
+  include("C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/gtc/cmake_install.cmake")
+  include("C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/gtx/cmake_install.cmake")
+  include("C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/perf/cmake_install.cmake")
 
 endif()
 

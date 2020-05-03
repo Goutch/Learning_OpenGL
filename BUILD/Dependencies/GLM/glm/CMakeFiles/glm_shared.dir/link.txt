@@ -1,3 +1,3 @@
-"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\glm_shared.dir/objects.a
+"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f CMakeFiles\glm_shared.dir/objects.a
 C:\MinGW\bin\ar.exe cr CMakeFiles\glm_shared.dir/objects.a @CMakeFiles\glm_shared.dir\objects1.rsp
 C:\MinGW\bin\g++.exe  -O3 -DNDEBUG  -shared -o libglm_shared.dll -Wl,--out-implib,libglm_shared.dll.a -Wl,--major-image-version,0,--minor-image-version,0 -Wl,--whole-archive CMakeFiles\glm_shared.dir/objects.a -Wl,--no-whole-archive @CMakeFiles\glm_shared.dir\linklibs.rsp

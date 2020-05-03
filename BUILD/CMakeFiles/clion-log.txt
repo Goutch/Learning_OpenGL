@@ -1,4 +1,4 @@
-"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" C:\Users\User\Documents\Projects\OGL_Engine
+"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Release -G "CodeBlocks - MinGW Makefiles" C:\Users\User\Documents\GitHub\OGL_Engine
 Including GLEW
 Linking GLEW
 Including GLFW
@@ -9,4 +9,4 @@ Including STB
 Including IMGUI
 -- Configuring done
 -- Generating done
--- Build files have been written to: C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release
+-- Build files have been written to: C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release

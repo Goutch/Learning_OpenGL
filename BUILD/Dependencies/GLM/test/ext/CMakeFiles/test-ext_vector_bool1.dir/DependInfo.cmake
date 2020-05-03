@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test/ext/ext_vector_bool1.cpp" "C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/ext/CMakeFiles/test-ext_vector_bool1.dir/ext_vector_bool1.cpp.obj"
+  "C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test/ext/ext_vector_bool1.cpp" "C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/ext/CMakeFiles/test-ext_vector_bool1.dir/ext_vector_bool1.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

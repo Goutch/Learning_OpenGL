@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test/core/core_setup_precision.cpp" "C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.obj"
+  "C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test/core/core_setup_precision.cpp" "C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/core/CMakeFiles/test-core_setup_precision.dir/core_setup_precision.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 

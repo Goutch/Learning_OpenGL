@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-relea
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -69,7 +69,7 @@ rebuild_cache/fast: rebuild_cache
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -79,14 +79,14 @@ edit_cache/fast: edit_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\bug\CMakeFiles\progress.marks
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\bug\CMakeFiles\progress.marks
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/clean
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/rule
 .PHONY : Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/rule
 
 # Convenience name for target.
@@ -121,7 +121,7 @@ test-bug_ms_vec_static: Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_sta
 
 # fast build rule for target.
 test-bug_ms_vec_static/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/build
 .PHONY : test-bug_ms_vec_static/fast
 
 bug_ms_vec_static.obj: bug_ms_vec_static.cpp.obj
@@ -130,7 +130,7 @@ bug_ms_vec_static.obj: bug_ms_vec_static.cpp.obj
 
 # target to build an object file
 bug_ms_vec_static.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/bug_ms_vec_static.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/bug_ms_vec_static.cpp.obj
 .PHONY : bug_ms_vec_static.cpp.obj
 
 bug_ms_vec_static.i: bug_ms_vec_static.cpp.i
@@ -139,7 +139,7 @@ bug_ms_vec_static.i: bug_ms_vec_static.cpp.i
 
 # target to preprocess a source file
 bug_ms_vec_static.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/bug_ms_vec_static.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/bug_ms_vec_static.cpp.i
 .PHONY : bug_ms_vec_static.cpp.i
 
 bug_ms_vec_static.s: bug_ms_vec_static.cpp.s
@@ -148,7 +148,7 @@ bug_ms_vec_static.s: bug_ms_vec_static.cpp.s
 
 # target to generate assembly for a file
 bug_ms_vec_static.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/bug_ms_vec_static.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\bug\CMakeFiles\test-bug_ms_vec_static.dir\build.make Dependencies/GLM/test/bug/CMakeFiles/test-bug_ms_vec_static.dir/bug_ms_vec_static.cpp.s
 .PHONY : bug_ms_vec_static.cpp.s
 
 # Help Target
@@ -174,6 +174,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

@@ -38,19 +38,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E remove -f
+RM = "C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E remove -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = C:\Users\User\Documents\Projects\OGL_Engine
+CMAKE_SOURCE_DIR = C:\Users\User\Documents\GitHub\OGL_Engine
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release
+CMAKE_BINARY_DIR = C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -58,7 +58,7 @@ CMAKE_BINARY_DIR = C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-relea
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -69,7 +69,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2019.3.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2019.2.2\bin\cmake\win\bin\cmake.exe" -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -79,14 +79,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf\CMakeFiles\progress.marks
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/all
-	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release\CMakeFiles 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\Dependencies\GLM\test\perf\CMakeFiles\progress.marks
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/all
+	$(CMAKE_COMMAND) -E cmake_progress_start C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/clean
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/clean
 .PHONY : clean
 
 # The main clean target
@@ -96,22 +96,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/preinstall
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/rule
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/rule
 
 # Convenience name for target.
@@ -121,12 +121,12 @@ test-perf_matrix_div: Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div
 
 # fast build rule for target.
 test-perf_matrix_div/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/build
 .PHONY : test-perf_matrix_div/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/rule
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/rule
 
 # Convenience name for target.
@@ -136,12 +136,12 @@ test-perf_matrix_inverse: Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix
 
 # fast build rule for target.
 test-perf_matrix_inverse/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/build
 .PHONY : test-perf_matrix_inverse/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/rule
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/rule
 
 # Convenience name for target.
@@ -151,12 +151,12 @@ test-perf_matrix_mul: Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul
 
 # fast build rule for target.
 test-perf_matrix_mul/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/build
 .PHONY : test-perf_matrix_mul/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/rule
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/rule
 
 # Convenience name for target.
@@ -166,12 +166,12 @@ test-perf_vector_mul_matrix: Dependencies/GLM/test/perf/CMakeFiles/test-perf_vec
 
 # fast build rule for target.
 test-perf_vector_mul_matrix/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/build
 .PHONY : test-perf_vector_mul_matrix/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/rule
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/rule
 
 # Convenience name for target.
@@ -181,12 +181,12 @@ test-perf_matrix_mul_vector: Dependencies/GLM/test/perf/CMakeFiles/test-perf_mat
 
 # fast build rule for target.
 test-perf_matrix_mul_vector/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/build
 .PHONY : test-perf_matrix_mul_vector/fast
 
 # Convenience name for target.
 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/rule:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/rule
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f CMakeFiles\Makefile2 Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/rule
 .PHONY : Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/rule
 
 # Convenience name for target.
@@ -196,7 +196,7 @@ test-perf_matrix_transpose: Dependencies/GLM/test/perf/CMakeFiles/test-perf_matr
 
 # fast build rule for target.
 test-perf_matrix_transpose/fast:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/build
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/build
 .PHONY : test-perf_matrix_transpose/fast
 
 perf_matrix_div.obj: perf_matrix_div.cpp.obj
@@ -205,7 +205,7 @@ perf_matrix_div.obj: perf_matrix_div.cpp.obj
 
 # target to build an object file
 perf_matrix_div.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/perf_matrix_div.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/perf_matrix_div.cpp.obj
 .PHONY : perf_matrix_div.cpp.obj
 
 perf_matrix_div.i: perf_matrix_div.cpp.i
@@ -214,7 +214,7 @@ perf_matrix_div.i: perf_matrix_div.cpp.i
 
 # target to preprocess a source file
 perf_matrix_div.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/perf_matrix_div.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/perf_matrix_div.cpp.i
 .PHONY : perf_matrix_div.cpp.i
 
 perf_matrix_div.s: perf_matrix_div.cpp.s
@@ -223,7 +223,7 @@ perf_matrix_div.s: perf_matrix_div.cpp.s
 
 # target to generate assembly for a file
 perf_matrix_div.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/perf_matrix_div.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_div.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_div.dir/perf_matrix_div.cpp.s
 .PHONY : perf_matrix_div.cpp.s
 
 perf_matrix_inverse.obj: perf_matrix_inverse.cpp.obj
@@ -232,7 +232,7 @@ perf_matrix_inverse.obj: perf_matrix_inverse.cpp.obj
 
 # target to build an object file
 perf_matrix_inverse.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/perf_matrix_inverse.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/perf_matrix_inverse.cpp.obj
 .PHONY : perf_matrix_inverse.cpp.obj
 
 perf_matrix_inverse.i: perf_matrix_inverse.cpp.i
@@ -241,7 +241,7 @@ perf_matrix_inverse.i: perf_matrix_inverse.cpp.i
 
 # target to preprocess a source file
 perf_matrix_inverse.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/perf_matrix_inverse.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/perf_matrix_inverse.cpp.i
 .PHONY : perf_matrix_inverse.cpp.i
 
 perf_matrix_inverse.s: perf_matrix_inverse.cpp.s
@@ -250,7 +250,7 @@ perf_matrix_inverse.s: perf_matrix_inverse.cpp.s
 
 # target to generate assembly for a file
 perf_matrix_inverse.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/perf_matrix_inverse.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_inverse.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_inverse.dir/perf_matrix_inverse.cpp.s
 .PHONY : perf_matrix_inverse.cpp.s
 
 perf_matrix_mul.obj: perf_matrix_mul.cpp.obj
@@ -259,7 +259,7 @@ perf_matrix_mul.obj: perf_matrix_mul.cpp.obj
 
 # target to build an object file
 perf_matrix_mul.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/perf_matrix_mul.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/perf_matrix_mul.cpp.obj
 .PHONY : perf_matrix_mul.cpp.obj
 
 perf_matrix_mul.i: perf_matrix_mul.cpp.i
@@ -268,7 +268,7 @@ perf_matrix_mul.i: perf_matrix_mul.cpp.i
 
 # target to preprocess a source file
 perf_matrix_mul.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/perf_matrix_mul.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/perf_matrix_mul.cpp.i
 .PHONY : perf_matrix_mul.cpp.i
 
 perf_matrix_mul.s: perf_matrix_mul.cpp.s
@@ -277,7 +277,7 @@ perf_matrix_mul.s: perf_matrix_mul.cpp.s
 
 # target to generate assembly for a file
 perf_matrix_mul.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/perf_matrix_mul.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul.dir/perf_matrix_mul.cpp.s
 .PHONY : perf_matrix_mul.cpp.s
 
 perf_matrix_mul_vector.obj: perf_matrix_mul_vector.cpp.obj
@@ -286,7 +286,7 @@ perf_matrix_mul_vector.obj: perf_matrix_mul_vector.cpp.obj
 
 # target to build an object file
 perf_matrix_mul_vector.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/perf_matrix_mul_vector.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/perf_matrix_mul_vector.cpp.obj
 .PHONY : perf_matrix_mul_vector.cpp.obj
 
 perf_matrix_mul_vector.i: perf_matrix_mul_vector.cpp.i
@@ -295,7 +295,7 @@ perf_matrix_mul_vector.i: perf_matrix_mul_vector.cpp.i
 
 # target to preprocess a source file
 perf_matrix_mul_vector.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/perf_matrix_mul_vector.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/perf_matrix_mul_vector.cpp.i
 .PHONY : perf_matrix_mul_vector.cpp.i
 
 perf_matrix_mul_vector.s: perf_matrix_mul_vector.cpp.s
@@ -304,7 +304,7 @@ perf_matrix_mul_vector.s: perf_matrix_mul_vector.cpp.s
 
 # target to generate assembly for a file
 perf_matrix_mul_vector.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/perf_matrix_mul_vector.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_mul_vector.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_mul_vector.dir/perf_matrix_mul_vector.cpp.s
 .PHONY : perf_matrix_mul_vector.cpp.s
 
 perf_matrix_transpose.obj: perf_matrix_transpose.cpp.obj
@@ -313,7 +313,7 @@ perf_matrix_transpose.obj: perf_matrix_transpose.cpp.obj
 
 # target to build an object file
 perf_matrix_transpose.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.obj
 .PHONY : perf_matrix_transpose.cpp.obj
 
 perf_matrix_transpose.i: perf_matrix_transpose.cpp.i
@@ -322,7 +322,7 @@ perf_matrix_transpose.i: perf_matrix_transpose.cpp.i
 
 # target to preprocess a source file
 perf_matrix_transpose.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.i
 .PHONY : perf_matrix_transpose.cpp.i
 
 perf_matrix_transpose.s: perf_matrix_transpose.cpp.s
@@ -331,7 +331,7 @@ perf_matrix_transpose.s: perf_matrix_transpose.cpp.s
 
 # target to generate assembly for a file
 perf_matrix_transpose.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_matrix_transpose.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_matrix_transpose.dir/perf_matrix_transpose.cpp.s
 .PHONY : perf_matrix_transpose.cpp.s
 
 perf_vector_mul_matrix.obj: perf_vector_mul_matrix.cpp.obj
@@ -340,7 +340,7 @@ perf_vector_mul_matrix.obj: perf_vector_mul_matrix.cpp.obj
 
 # target to build an object file
 perf_vector_mul_matrix.cpp.obj:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.obj
 .PHONY : perf_vector_mul_matrix.cpp.obj
 
 perf_vector_mul_matrix.i: perf_vector_mul_matrix.cpp.i
@@ -349,7 +349,7 @@ perf_vector_mul_matrix.i: perf_vector_mul_matrix.cpp.i
 
 # target to preprocess a source file
 perf_vector_mul_matrix.cpp.i:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.i
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.i
 .PHONY : perf_vector_mul_matrix.cpp.i
 
 perf_vector_mul_matrix.s: perf_vector_mul_matrix.cpp.s
@@ -358,7 +358,7 @@ perf_vector_mul_matrix.s: perf_vector_mul_matrix.cpp.s
 
 # target to generate assembly for a file
 perf_vector_mul_matrix.cpp.s:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.s
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(MAKE) -f Dependencies\GLM\test\perf\CMakeFiles\test-perf_vector_mul_matrix.dir\build.make Dependencies/GLM/test/perf/CMakeFiles/test-perf_vector_mul_matrix.dir/perf_vector_mul_matrix.cpp.s
 .PHONY : perf_vector_mul_matrix.cpp.s
 
 # Help Target
@@ -404,6 +404,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d C:\Users\User\Documents\Projects\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d C:\Users\User\Documents\GitHub\OGL_Engine\cmake-build-release && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

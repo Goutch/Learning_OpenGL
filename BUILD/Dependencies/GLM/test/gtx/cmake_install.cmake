@@ -1,4 +1,4 @@
-# Install script for directory: C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test/gtx
+# Install script for directory: C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test/gtx
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

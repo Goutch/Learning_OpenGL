@@ -4,7 +4,7 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "C:/Users/User/Documents/Projects/OGL_Engine/Dependencies/GLM/test/gtx/gtx_vec_swizzle.cpp" "C:/Users/User/Documents/Projects/OGL_Engine/cmake-build-release/Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.obj"
+  "C:/Users/User/Documents/GitHub/OGL_Engine/Dependencies/GLM/test/gtx/gtx_vec_swizzle.cpp" "C:/Users/User/Documents/GitHub/OGL_Engine/cmake-build-release/Dependencies/GLM/test/gtx/CMakeFiles/test-gtx_vec_swizzle.dir/gtx_vec_swizzle.cpp.obj"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
