@@ -70,11 +70,12 @@ void SpacialSceneDemo::init(Canvas &canvas, Renderer &renderer, Input &input) {
     //controller
     instantiate(new FPSController(*camera, vec3(0, 2, 2), vec3(0), vec3(1)));
 
-    Entity* e=new PointLight(Color(1,1,1),50,vec3(0,5,0));
-    e->setParent(camera);
-    instantiate(e);
+   instantiate(new PointLight(Color(1,0,0),50,vec3(3,1,3)));
+    instantiate(new PointLight(Color(0,1,0),50,vec3(3,1,-3)));
+    instantiate(new PointLight(Color(0,0,1),50,vec3(-3,1,3)));
+    instantiate(new PointLight(Color(1,1,1),50,vec3(-3,1,-3)));
     //Directional sun light
-   sun = new DirectionalLight(Color(1, 1, 1), vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
+   sun = new DirectionalLight(Color(0.5, 0.5, 0.5), vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
 
     instantiate(sun);
 }
