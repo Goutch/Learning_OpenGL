@@ -10,13 +10,30 @@
 
 void BatchRenderer::render(const FBO &buffer, const mat4 &projection, const mat4 &view_mat) const {
     buffer.bind();
-    clear();
+
     glViewport(0, 0, buffer.getTexture().getWidth(), buffer.getTexture().getHeight());
+    clear();
+    if(skybox)
+    {
+        glDisable(GL_CULL_FACE);
+        glDisable(GL_DEPTH_TEST);
+        skybox->getMaterial().bind();
+        skybox->getTransform().position(inverse(view_mat)[3]);
+        skybox->getMaterial().transform(skybox->getTransform().getMatrix());
+        skybox->getMaterial().projection(projection);
+        skybox->getMaterial().view(view_mat);
+        skybox->getMesh().bind();
+        glDrawElements(GL_TRIANGLES, skybox->getMesh().getVertexCount(), GL_UNSIGNED_INT, nullptr);
+        skybox->getMesh().unbind();
+        skybox->getMaterial().unbind();
+
+    }
+
     for (auto& batch:batches) {
         for (auto& option_batch:batch) {
             const RenderOption &option = option_batch.first;
             option.cull_faces ? glEnable(GL_CULL_FACE) : glDisable(GL_CULL_FACE);
-            option.depth_test ? glEnable(GL_DEPTH_TEST) : glDisable(GL_CULL_FACE);
+            option.depth_test ? glEnable(GL_DEPTH_TEST) : glDisable(GL_DEPTH_TEST);
             for (auto &material_batch:option_batch.second) {
                 const EntityMaterial &material = *material_batch.first;
                 material.bind();

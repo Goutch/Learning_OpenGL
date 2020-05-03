@@ -28,12 +28,17 @@ void AtlasTexture::setCellSize(unsigned int cellWidth, unsigned int cellHeight){
 void AtlasTexture::getCoordinates(float (&uvs)[8], unsigned int column,unsigned int row) const{
     row = (height - cellHeight)/cellHeight - row;
 
+
     uvs[0]=(float)(column*cellWidth)/width;
     uvs[1]=(float)(row*cellHeight)/height;
+
+
     uvs[2]=(float)(column*cellWidth)/width;
     uvs[3]=(float)(row*cellHeight+cellHeight)/height;
+
     uvs[4]=(float)(column*cellWidth+cellWidth)/width;
     uvs[5]=(float)(row*cellHeight+cellHeight)/height;
+
     uvs[6]=(float)(column*cellWidth+cellWidth)/width;
     uvs[7]=(float)(row*cellHeight)/height;
 }

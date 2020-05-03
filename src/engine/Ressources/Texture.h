@@ -23,13 +23,13 @@ protected:
 public:
     Texture();
 
-    Texture(const std::string &path, bool flip_on_load = true);
+    Texture(const std::string &path, bool flip_on_load = true, bool smoothed=true);
 
     virtual ~Texture();
 
-    void load(const std::string &path, bool flip_on_load = true);
+    void load(const std::string &path, bool flip_on_load = true, bool smoothed=true);
 
-    Texture(unsigned char *data, int width, int height);
+    Texture(unsigned char *data, int width, int height, bool smoothed=true);
     void bind(unsigned int slot = 0) const;
     void setTexturePixelData(unsigned char *data, int width, int height, bool smoothed=true, Type type=RGBA);
     void unbind(unsigned int slot = 0) const;

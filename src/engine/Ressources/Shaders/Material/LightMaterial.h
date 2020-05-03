@@ -10,6 +10,8 @@ private:
     Scene *scene;
     float shineFactor = 0;
     float dampFactor = 16;
+    bool has_normal_map=false;
+    Texture* normal_map;
     mat4 bias_mat = mat4(0.5f, 0.0f, 0.0f, 0.0f,
                          0.0f, 0.5f, 0.0f, 0.0f,
                          0.0f, 0.0f, 0.5f, 0.0f,
@@ -31,7 +33,9 @@ private:
             light_space_mat_location,
 
             view_pos_location,
-            tonal_mapping_location;
+            tonal_mapping_location,
+            has_normal_map_location,
+            normal_map_location;
 
 public:
     LightMaterial(const Shader &shader, Scene &scene);
@@ -49,6 +53,7 @@ public:
     void shine(float);
 
     void damp(float);
+    void normalMap(Texture* normal_map);
 
 protected:
     virtual void getUniformsLocations() const override ;

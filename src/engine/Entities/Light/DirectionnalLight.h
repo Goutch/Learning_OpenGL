@@ -11,7 +11,7 @@ public:
 private:
     FBO* fbo;
     const float range=30;
-    const float quality=2048;
+    const float quality=4096;
     glm::mat4 depth_projection= glm::ortho<float>(-range,range,-range,range,-range,100);
 
     mutable glm::mat4 light_space_mat;

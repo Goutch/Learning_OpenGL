@@ -21,8 +21,9 @@ class Texture;
 class FBO;
 
 class Canvas;
-
+class AtlasTexture;
 #include "glm/mat4x4.hpp"
+#include "Skybox.h"
 #include <Ressources/Shaders/Material/EntityMaterial.h>
 #include <Ressources/Color.h>
 #include <Entities/Transform.h>
@@ -127,13 +128,12 @@ public:
                                                 "}", true);;
 
 protected:
-
+    Skybox* skybox= nullptr;
     int depthShader_light_space_matrix_location;
     int depthShader_transform_mat_location;
 public:
     const EntityMaterial DEFAULT_2D_MATERIAL = EntityMaterial(DEFAULT_2D_SHADER);
     const EntityMaterial DEFAULT_3D_MATERIAL = EntityMaterial(DEFAULT_SPACIAL_SHADER);
-
     Renderer();
 
     void clear() const ;
@@ -150,7 +150,7 @@ public:
 
 
     virtual void renderDepth(const FBO &buffer, const glm::mat4 &depth_space_mat) const = 0;
-
+    void setSkyboxTexture(AtlasTexture& texture);
     void wireframe(bool enable);
     void screenShot(int width,int height);
 };

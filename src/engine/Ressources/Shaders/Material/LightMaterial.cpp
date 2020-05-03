@@ -12,6 +12,11 @@
 #include <set>
 void LightMaterial::bind() const {
     EntityMaterial::bind();
+    shader->loadUniform(has_normal_map_location,has_normal_map);
+    if(has_normal_map){
+        shader->loadUniform(normal_map_location,1);
+        normal_map->bind(1);
+    }
     shader->loadUniform(ambient_light_location, (vec3) scene->getAmbientLight());
     shader->loadUniform(damp_factor_location, dampFactor);
     shader->loadUniform(shine_factor_location, shineFactor);
@@ -42,10 +47,10 @@ void LightMaterial::bind() const {
     for (auto dl=directionalLights.begin(); dl!=directionalLights.end(); ++dl) {
         glm::mat4 depth_bias_mat=bias_mat* (*dl)->getLightSpaceMat();
         shader->loadUniform(light_space_mat_location, depth_bias_mat);
-        shader->loadUniform(directional_light_shadowMap_location, 1);
+        shader->loadUniform(directional_light_shadowMap_location, count+2);
         shader->loadUniform(directional_light_color_location, vec3((*dl)->getColor()));
         shader->loadUniform(directional_light_direction_location, vec3((*dl)->transform.forward()));
-        (*dl)->getShadowMap().bind(count+1);
+        (*dl)->getShadowMap().bind(count+2);
         count++;
     }
 
@@ -53,10 +58,11 @@ void LightMaterial::bind() const {
 
 void LightMaterial::unbind() const {
     EntityMaterial::unbind();
+    if(has_normal_map)normal_map->unbind(1);
     auto directionalLights = DirectionalLight::getInstances();
     int count=0;
     for (auto dl=directionalLights.begin(); dl!=directionalLights.end(); ++dl) {
-        (*dl)->getShadowMap().unbind(count+1);
+        (*dl)->getShadowMap().unbind(count+2);
         count++;
     }
 
@@ -89,6 +95,9 @@ void LightMaterial::getUniformsLocations()  const{
     directional_light_count_location=shader->uniformLocation("directional_light_count");
     directional_light_direction_location=shader->uniformLocation("directional_light_direction");
     tonal_mapping_location=shader->uniformLocation("tonal_mapping");
+    has_normal_map_location=shader->uniformLocation("has_normal_map");
+    normal_map_location=shader->uniformLocation("normal_map");
+
 }
 
 
@@ -109,6 +118,17 @@ LightMaterial::LightMaterial(const Shader &shader, const Texture &texture, const
                                                                                                                              texture,
                                                                                                                              color) {
     this->scene = &scene;
+}
+
+void LightMaterial::normalMap(Texture *normal_map) {
+    if(normal_map)
+    {
+        this->normal_map=normal_map;
+        has_normal_map=true;
+
+    } else{
+        has_normal_map=false;
+    }
 }
 
 

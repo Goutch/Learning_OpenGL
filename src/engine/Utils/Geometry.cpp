@@ -600,3 +600,88 @@ void Geometry::import(VAO &vao, std::string path) {
     Log::message(path + " loaded in " + std::to_string(t.ms()) + "s with " + std::to_string(vao.getVertexCount()) +
                  " vertices");
 }
+
+void Geometry::make_skybox(VAO &vao,AtlasTexture& texture) {
+
+   std::vector<vec3> positions;
+   std::vector<float> uvs;
+   std::vector<unsigned int> indices;
+   float uv_buffer[8];
+    //front
+    //1-------2
+    //|       |
+    //|       |
+    //0-------3
+    positions.push_back(vec3(-1,1,-1));
+
+    positions.push_back(vec3(-1,-1,-1));
+    positions.push_back(vec3(1,-1,-1));
+
+    positions.push_back(vec3(1,1,-1));
+   texture.getCoordinates(uv_buffer,5);
+    for (int i = 0; i < 8; ++i) {
+        uvs.push_back(uv_buffer[i]);
+    }
+    indices.push_back(0);
+    indices.push_back(3);
+    indices.push_back(2);
+    indices.push_back(2);
+    indices.push_back(1);
+    indices.push_back(0);
+
+    //back
+    //5-------6
+    //|       |
+    //|       |
+    //4-------7
+    positions.push_back(vec3(-1,-1,1));
+    positions.push_back(vec3(-1,1,1));
+    positions.push_back(vec3(1,1,1));
+    positions.push_back(vec3(1,-1,1));
+    texture.getCoordinates(uv_buffer,7);
+    for (int i = 0; i < 8; ++i) {
+        uvs.push_back(uv_buffer[i]);
+    }
+    indices.push_back(4);
+    indices.push_back(5);
+    indices.push_back(6);
+    indices.push_back(6);
+    indices.push_back(7);
+    indices.push_back(4);
+    //top
+    //9-------10
+    //|       |
+    //|       |
+    //8-------11
+
+    positions.push_back(vec3(-1,1,-1));
+    positions.push_back(vec3(-1,1,1));
+    positions.push_back(vec3(1,1,1));
+    positions.push_back(vec3(1,1,-1));
+    texture.getCoordinates(uv_buffer,1);
+    for (int i = 0; i < 8; ++i) {
+        uvs.push_back(uv_buffer[i]);
+    }
+    indices.push_back(8);
+    indices.push_back(11);
+    indices.push_back(10);
+    indices.push_back(10);
+    indices.push_back(9);
+    indices.push_back(8);
+    /*
+    texture.getCoordinates(uv_buffer,9);
+    for (int i = 0; i < 8; ++i) {
+        uvs.push_back(uv_buffer[i]);
+    }
+    texture.getCoordinates(uv_buffer,6);
+    for (int i = 0; i < 8; ++i) {
+        uvs.push_back(uv_buffer[i]);
+    }
+    texture.getCoordinates(uv_buffer,4);
+    for (int i = 0; i < 8; ++i) {
+        uvs.push_back(uv_buffer[i]);
+    }*/
+    vao.put(Mesh::UVS,2,uvs.data(),uvs.size());
+    vao.put(Mesh::VERTICIES,3,&positions[0].x,positions.size()*3);
+    vao.indicies(indices.data(),indices.size());
+}

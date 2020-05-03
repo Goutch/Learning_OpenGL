@@ -58,6 +58,11 @@ void Renderer::screenShot(int width, int height) {
     delete[] pixel_data;
 }
 
+void Renderer::setSkyboxTexture(AtlasTexture& texture) {
+    if(skybox)delete skybox;
+    skybox=new Skybox(texture,DEFAULT_SPACIAL_SHADER);
+}
+
 
 
 

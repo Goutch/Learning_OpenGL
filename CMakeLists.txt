@@ -100,6 +100,6 @@ add_executable(OGL_Engine
         src/engine/Scenes/Editor/Editor.cpp
         src/engine/Core/Input.cpp src/engine/Core/Input.h
         src/engine/API_ALL.h
-        src/engine/Scenes/Editor/PropertyWindow.cpp src/engine/Scenes/Editor/PropertyWindow.h src/engine/Scenes/Editor/SceneTreeWindow.cpp src/engine/Scenes/Editor/SceneTreeWindow.h src/engine/Scenes/Editor/CameraWindow.cpp src/engine/Scenes/Editor/CameraWindow.h src/engine/Scenes/Editor/EntityCreationWindow.cpp src/engine/Scenes/Editor/EntityCreationWindow.h src/engine/Math/BoundingBox.cpp src/engine/Math/BoundingBox.h)
+        src/engine/Scenes/Editor/PropertyWindow.cpp src/engine/Scenes/Editor/PropertyWindow.h src/engine/Scenes/Editor/SceneTreeWindow.cpp src/engine/Scenes/Editor/SceneTreeWindow.h src/engine/Scenes/Editor/CameraWindow.cpp src/engine/Scenes/Editor/CameraWindow.h src/engine/Scenes/Editor/EntityCreationWindow.cpp src/engine/Scenes/Editor/EntityCreationWindow.h src/engine/Math/BoundingBox.cpp src/engine/Math/BoundingBox.h src/engine/Core/Rendering/Skybox.cpp src/engine/Core/Rendering/Skybox.h)
 
 target_link_libraries(OGL_Engine glfw3 libglew32.a ${OPENGL_LIBRARIES})

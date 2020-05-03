@@ -6,6 +6,7 @@ class Texture;
 
 class TexturedMaterial : public Material {
 protected:
+
     const Texture *texture;
     mutable int has_texture_location, texture_0_location;
     bool has_texture=false;
@@ -25,7 +26,7 @@ public:
 
     const Texture &getTexture() const;
 
-    void setTexture(const Texture &texture);
+    void setTexture(const Texture &texture,int position=0);
 
     void bind() const override;
 

@@ -6,6 +6,7 @@ class VAO;
 #include <string>
 #include <Ressources/Shaders/Material/FontMaterial.h>
 #include "Ressources/Mesh.h"
+#include <Ressources/AtlasTexture.h>
 
 namespace Geometry{
     void make_triangle(VAO& vao,float x1,float y1,float x2,float y2,float x3,float y3);
@@ -14,6 +15,7 @@ namespace Geometry{
     void make_quad(VAO& vao,float width=1,float height=1,float offsetX=0,float offsetY=0);
     void make_text(Mesh &mesh, std::string text, FontMaterial& font);
     void make_plane(VAO& vao,int sizeX,int sizeZ);
+    void make_skybox(VAO& vao,AtlasTexture& texture);
     void import(VAO& vao,std::string path);
 
 }

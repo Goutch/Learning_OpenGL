@@ -27,9 +27,12 @@ TexturedMaterial::TexturedMaterial(const Shader &shader, const Color color, cons
     setTexture(texture);
 }
 
-void TexturedMaterial::setTexture(const Texture &texture) {
-    this->texture = &texture;
-    has_texture = (this->texture != nullptr);
+void TexturedMaterial::setTexture(const Texture &texture,int position) {
+    if(position==0)
+    {
+        this->texture = &texture;
+        has_texture = (this->texture != nullptr);
+    }
 }
 
 const Texture &TexturedMaterial::getTexture() const {

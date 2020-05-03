@@ -35,17 +35,23 @@ void createRainbowTexture(Texture &texture) {
 
 void SpacialSceneDemo::init(Canvas &canvas, Renderer &renderer, Input &input) {
     Scene::init(canvas, renderer, input);
-
-    ambient_light = Color(0.2, 0.2, 0.2, 2);
+   // renderer.setSkyboxTexture(skybox_texture);
+    ambient_light = Color(0.2, 0.2, 0.2, 1);
     input.showCursor(false);
     //create cube_mesh mesh
     Geometry::make_cube(cube_mesh);
-    Geometry::make_sphere(sphere_mesh, 1, 100, 50);
+
 
     //ground
     instantiate(new MeshRenderer(cube_mesh, ground_material, vec3(0, -.5, 0), vec3(0), vec3(1000, 1, 1000)));
     //sphere
-    instantiate(new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0)));
+        Geometry::make_sphere(sphere_mesh,2,100,100);
+    sphere_material.normalMap(&earth_normal_map);
+    sphere_material.shine(20);
+    sphere_material.damp(16);
+    Entity* sphere=new MeshRenderer(sphere_mesh, sphere_material, vec3(0, 5, 0));
+    sphere->transform.rotate(quat(vec3(3.1616/2,0,0)));
+    instantiate(sphere);
     //bunnies
     createRainbowTexture(rainbow_texture);
     rainbow_material.damp(16);
@@ -64,12 +70,13 @@ void SpacialSceneDemo::init(Canvas &canvas, Renderer &renderer, Input &input) {
     //controller
     instantiate(new FPSController(*camera, vec3(0, 2, 2), vec3(0), vec3(1)));
 
+    Entity* e=new PointLight(Color(1,1,1),50,vec3(0,5,0));
+    e->setParent(camera);
+    instantiate(e);
     //Directional sun light
-
-    sun = new DirectionalLight(Color(1, 1, 1), vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
+   sun = new DirectionalLight(Color(1, 1, 1), vec3(0, 2, 0), glm::radians(vec3(-45, -45, 0)));
 
     instantiate(sun);
-
 }
 
 void SpacialSceneDemo::update(float delta) {
@@ -95,6 +102,7 @@ void SpacialSceneDemo::update(float delta) {
 
 void SpacialSceneDemo::render() const {
     Scene::render();
+
 }
 
 void SpacialSceneDemo::draw() const {

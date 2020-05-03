@@ -10,18 +10,18 @@
 #include "Core/Log.h"
 #include <fstream>
 
-Texture::Texture(const std::string &path, bool flip_on_load) {
+Texture::Texture(const std::string &path, bool flip_on_load, bool smoothed) {
     glGenTextures(1, &texture_id);
-    load(path, flip_on_load);
+    load(path, flip_on_load,smoothed);
 }
 
 Texture::Texture() {
     glGenTextures(1, &texture_id);
 }
 
-Texture::Texture(unsigned char *data, int width, int height) {
+Texture::Texture(unsigned char *data, int width, int height, bool smoothed) {
     glGenTextures(1, &texture_id);
-    setTexturePixelData(data, width, height, false);
+    setTexturePixelData(data, width, height, smoothed);
 }
 
 void Texture::bind(unsigned int slot) const {
@@ -39,14 +39,14 @@ Texture::~Texture() {
     glDeleteTextures(1, &texture_id);
 }
 
-void Texture::load(const std::string &path, bool flip_on_load) {
+void Texture::load(const std::string &path, bool flip_on_load, bool smoothed) {
     std::ifstream f(path.c_str());
     Log::status("Loading getTexture:" + path);
     if (f.good()) {
         unsigned char *buffer;
         stbi_set_flip_vertically_on_load(flip_on_load);
         buffer = stbi_load(path.c_str(), &width, &height, &bits_per_pixel, 4);
-        setTexturePixelData(buffer, width, height, false);
+        setTexturePixelData(buffer, width, height, smoothed);
         if (buffer) {
             stbi_image_free(buffer);
         }

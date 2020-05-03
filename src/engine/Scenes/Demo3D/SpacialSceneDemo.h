@@ -13,8 +13,6 @@ class Grass;
 class SpacialSceneDemo : public Scene {
     Shader lightShader = Shader("../res/shaders/LightVertex.glsl",
                                 "../res/shaders/LightFragment.glsl");
-    Shader default_shader= Shader("../res/shaders/DefaultVertex.glsl",
-                                "../res/shaders/DefaultFragment.glsl");
     Shader edge_shader=Shader("../res/shaders/EdgeDetectionVertex.glsl",
                                 "../res/shaders/EdgeDetectionFragment.glsl");
     Shader negative_shader=Shader("../res/shaders/negativeVertex.glsl",
@@ -24,8 +22,11 @@ class SpacialSceneDemo : public Scene {
     Texture wall_texture = Texture("../res/wall.jpg", false);
     Texture rainbow_texture=Texture();
     Texture duck_texture=Texture("../res/duck/duck.jpg",false);
+    Texture earth_texture=Texture("../res/earth/4096_earth.jpg");
+    Texture earth_normal_map=Texture("../res/earth/4096_normal.jpg");
+
     LightMaterial rainbow_material=LightMaterial(lightShader,rainbow_texture,*this);
-    LightMaterial sphere_material = LightMaterial(lightShader, *this);
+    LightMaterial sphere_material = LightMaterial(lightShader, earth_texture,*this);
     LightMaterial dragon_material = LightMaterial(lightShader, *this);
     LightMaterial ground_material = LightMaterial(lightShader, Color(.5,.7,.4,1), *this);
     LightMaterial bunny_material = LightMaterial(lightShader,wall_texture, *this);
