@@ -1,3 +1,3 @@
 # OGL_Engine
 
-Make sure to compile with MINGW.
+My first attempt at an engine with opengl in c++
